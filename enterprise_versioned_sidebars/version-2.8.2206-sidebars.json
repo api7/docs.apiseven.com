@@ -1,0 +1,50 @@
+{
+  "docs": [
+    {
+      "type": "doc",
+      "id": "introduction"
+    },
+    {
+      "type": "doc",
+      "id": "platform-architecture"
+    },
+    {
+      "type": "category",
+      "label": "Features",
+      "items": [
+        "features/overview",
+        "features/user-login",
+        "features/resource",
+        "features/monitoring-reports",
+        "features/workspace",
+        "features/role",
+        "features/user",
+        "features/certificate",
+        "features/consumer",
+        "features/gateway"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "PoC Guide",
+      "items": [
+        "poc/installation",
+        "poc/verification"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Best Practices",
+      "items": [
+        "best-practices/api-management",
+        "best-practices/apache-skywalking",
+        "best-practices/dubbo",
+        "best-practices/ldap"
+      ]
+    },
+    {
+      "type": "doc",
+      "id": "faq"
+    }
+  ]
+}

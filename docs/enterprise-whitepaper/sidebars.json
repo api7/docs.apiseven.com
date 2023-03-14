@@ -1,0 +1,31 @@
+{
+  "docs": [
+    {
+      "type": "category",
+      "label": "Overview",
+      "items": [
+        "overview/introduction",
+        "overview/architecture",
+        "overview/highlights",
+        "overview/modules",
+        "overview/features",
+        "overview/feature-highlights"
+      ]
+    }, {
+      "type": "category",
+      "label": "Features",
+      "items": [
+        "features/plugins",
+        "features/authentication",
+        "features/canary-release",
+        "features/service-governance",
+        "features/log-auditing",
+        "features/refined-routing",
+        "features/monitoring-alerting",
+        "features/protocol-conversion",
+        "features/multi-tenancy",
+        "features/performance"
+      ]
+    }
+  ]
+}

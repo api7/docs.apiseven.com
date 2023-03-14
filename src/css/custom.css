@@ -1,0 +1,119 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary-lightest: rgb(228, 222, 222);
+  --ifm-color-primary-lighter: #d0312d;
+  --ifm-color-primary-light: #f8f8fa;
+  --ifm-color-primary: #3166DD;
+  --ifm-color-dark: #000;
+  --ifm-color-primary-dark: #a5a0a0;
+  --ifm-color-primary-darker: #9a2521;
+  --ifm-color-shadow--lw: #7f1e1b;
+  --color-title: #101827;
+  --color-github-button: #101827;
+  --color-github-button-hover: #000;
+  --color-primary: #3166DD;
+  --color-subtitle: #000;
+  --color-secondary: #4b5563;
+  --color-secondary-bg: #f3f4f6;
+  --color-secondary-text: #444952;
+  --color-border: #eee;
+  --ifm-navbar-link-color: #272733;
+  --ifm-color-success-contrast-background: #f2f6fe;
+  --ifm-color-success-dark: #3166DD;
+  --ifm-color-info-contrast-background: #f2f6fe;
+  --ifm-color-info-dark: #3166DD;
+  --ifm-menu-color: #1A202C;
+  --ifm-container-width-xl: 1470px;
+  --docusaurus-highlighted-code-line-bg: rgba(158, 158, 158, 0.15);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Markdown Tip > a CSS */
+.alert a {
+  color: var(--ifm-color-success-contrast-foreground) !important;
+  text-decoration-color: var(--ifm-alert-border-color) !important;
+  text-decoration: underline;
+}
+
+.navbar--fixed-top {
+  background-color: #f7faff;
+  top: 70px;
+  align-items: center;
+}
+
+/* Mobile Sidebar */
+.navbar-sidebar {
+  top: 70px;
+}
+
+.navbar__brand {
+  margin-right: 30px;
+}
+
+.navbar__link {
+  margin-right: 15px;
+  font-weight: 400;
+}
+
+.navbar__link--active {
+  border-radius: 4px;
+  border: 1.5px solid var(--color-primary);
+  font-weight: 500;
+}
+
+.navbar__title {
+  font-weight: 400;
+}
+
+@media (min-width: 997px) {
+  .DocSearch-Modal {
+    margin: 70px auto auto !important;
+  }
+}
+
+.DocSearch-Container {
+  z-index: 500 !important;
+}
+
+.menu {
+  font-weight: 400;
+  padding-top: 20px !important;
+}
+
+@media (min-width: 997px) {
+  .container {
+    padding-left: 32px;
+    padding-top: 2rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  /* Desktop Style */
+  :root {
+    --ifm-menu-color-background-active: #FFFFFF;
+  }
+}
+
+.pagination-nav__label {
+  color: #1C1E21;
+}
+
+.pagination-nav__link:hover .pagination-nav__label {
+  color: var(--ifm-color-primary);
+}
