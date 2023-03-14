@@ -23,7 +23,7 @@ Refer to https://github.com/api7/docs/pull/45
 1. Git clone this repository.
 
 ```bash
-git clone git@github.com:api7/docs.git
+git clone git@github.com:api7/docs.apiseven.com.git
 ```
 
 2. Create a new branch.
