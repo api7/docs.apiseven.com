@@ -201,7 +201,7 @@ $ curl 172.28.0.17:80/get -H "Host: test.com"
 
 检查以下三种情况以验证API7 Enterprise的高可用性。
 
-## 手动停止一个节点上的API7-Gateway服务
+### 手动停止一个节点上的API7-Gateway服务
 ```sh
 [xxx@api7-highavailability4 ~]$ cd api7-2.13.2209.1-dp/
 [xxx@api7-highavailability4 api7-2.13.2209.1-dp]$ ls
@@ -216,7 +216,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 然后尝试访问数据面负载均衡，看看API7-Gateway服务是否在工作。
 
-## 手动停止一个节点上的API7-Dashboard服务
+### 手动停止一个节点上的API7-Dashboard服务
 ```sh
 $ cd api7-2.13.2209.1-cp/
 $ docker compose down
@@ -224,7 +224,7 @@ $ docker compose down
 
 然后尝试访问控制面负载均衡，看看API7-Dashboard服务是否在工作。
 
-## 手动停止一个节点上的etcd服务
+### 手动停止一个节点上的etcd服务
 ```sh
 [xxx@api7-highavailability1 api7-2.13.2209.1-cp]$ docker ps 
 CONTAINER ID   IMAGE                                          COMMAND                  CREATED         STATUS         PORTS                                       NAMES
