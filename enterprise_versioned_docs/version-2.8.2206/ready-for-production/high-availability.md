@@ -6,7 +6,7 @@ tags:
 ---
 本文将指导你如何部署具备高可用性的API7 Enter。我们将以构建一个最小可用的高可用性架构为例进行演示，包括数据面(Data Plane)的高可用、控制面(Control Plane)的高可用和etcd集群的高可用。
 
-# 部署架构
+## 部署架构
 用以下组件建立一个高可用架构（最小可用版）。
 
 ![](https://static.apiseven.com/uploads/2023/03/16/wPEDJzYG_high_availability_architecture.png)
@@ -15,7 +15,7 @@ tags:
 - etcd的高可用是必要的，因为etcd存储着重要的数据和配置。根据etcd Raft协议，最小的etcd集群需要至少三个节点。
 - 控制面(Control Plane)的高可用是可选的。当控制面发生故障时，你将无法修改API网关的配置，但它不会影响已在运行的业务API请求。因此，如果需要控制成本且可接受风险，可以只部署一个控制面实例。
 
-# 准备节点
+## 准备节点
 我们通常需要至少七个节点（三个etcd节点+两个数据面节点+两个控制面节点）来完成高可用架构，但本文示例中我们只用了五个节点，通过将etcd集群和API7-Dashboard部署在同一个节点上来减少节点总数。在生产实践中，你可以根据你的预算来选择是否混部以节约节点，或增加更多节点提供更好的保障。
 
 对于每个节点，我们的最低配置要求如下。
@@ -28,7 +28,7 @@ tags:
 | api7-highavailability4 | API7-Gateway         | 80、443、9091    |  2C4G             | Centos 7.6及以上   | 20.10.7及以上   |
 | api7-highavailability5 | API7-Gateway         | 80、443、9091    |  2C4G             | Centos 7.6及以上   | 20.10.7及以上   |
 
-### 关于操作系统和Docker版本选择
+#### 关于操作系统和Docker版本选择
 Docker使用20.10.7及以上，已知它与3.10.0-327（CentOS 7.2）及以下版本不兼容。建议使用3.10.0-927（CentOS 7.6）或更高版本。可以执行以下命令检查当前内核版本号。
 ```sh
 $ uname -a
@@ -38,10 +38,10 @@ Linux api7-highavailability1 3.10.0-1160.76.1.el7.x86_64 #1 SMP Wed Aug 10 16:21
 ```sh
 yum update -y kernel
 ```
-### 安全配置
+#### 安全配置
 在每个节点上配置SELinux和防火墙服务（firewalld或iptables），以允许对端口的访问。
 
-### 开放端口
+#### 开放端口
 - API7-Gateway :
   - 80: HTTP访问。
   - 443: HTTPs访问。
@@ -52,17 +52,17 @@ yum update -y kernel
   - 2379:对外提供数据和配置的端口。
   - 2380:集群环境下用于 Peer 通讯的端口。
 
-# 安装软件
+## 安装软件
 请确保每个节点都安装了Docker和Docerk-compose。
 
 Docker安装: https://docs.docker.com/engine/install/centos/
 
 Docker-compose安装: https://docs.docker.com/desktop/install/linux-install/
 
-# 下载API7 Enterprise
+## 下载API7 Enterprise
 https://api7.ai/try?product=enterprise
 
-# 导出ip（可选）
+## 导出ip（可选）
 通过提前导出机器的IP，避免在后续步骤中手动修改IP。
 ```sh
 export ha_ip1=${your_host_ip1}
@@ -71,7 +71,7 @@ export ha_ip3=${your_host_ip3}
 export ha_ip4=${your_host_ip4}
 export ha_ip5=${your_host_ip5}
 ```
-# ectd高可用部署
+## ectd高可用部署
 **步骤1**:在三个etcd节点上安装Docker:api7-highavailability1、api7-highavailability2、api7-highavailability3。
 
 **步骤2**:登录api7-highavailability1、api7-highavailability2、api7-highavailability，创建 'etcd_data'目录。
@@ -91,7 +91,7 @@ $ docker exec etcd bash -c "etcdctl --endpoints $ha_ip1:2379,$ha_ip2:2379,$ha_ip
 172.28.0.15:2379 is healthy: successfully committed proposal: took = 3.133916ms
 ```
 
-# 控制面（Control Plane）高可用部署（可选）
+## 控制面（Control Plane）高可用部署（可选）
 
 如果你不需要控制面的高可用，那么只需部署一个节点（例如，api7-highhavailability1）。
 
@@ -149,7 +149,7 @@ Logfile : /usr/local/apisix-dashboard/logs/error.log
 
 **步骤6**: 登录API7 Enterprise控制台, 创建一个新的集群并测试功能。
 
-# 数据面(Data Plane)高可用部署
+## 数据面(Data Plane)高可用部署
 
 **步骤1**:在两个数据面节点上安装Docker:api7-highavailability4、api7-highavailability5
 
@@ -196,7 +196,7 @@ $ curl 172.28.0.17:80/get -H "Host: test.com"
 }
 ```
 
-# 验证整体的高可用
+## 验证整体的高可用
 我们需要在两个API7-Dashboard服务前面安装一个控制面负载均衡，在两个API7-Gateway服务前面安装一个数据面负载均衡。可以使用任意负载均衡产品。
 
 检查以下三种情况以验证API7 Enterprise的高可用性。
