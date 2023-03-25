@@ -44,7 +44,7 @@
     },
     {
       "type": "category",
-      "label": "集群管理",
+      "label": "cluster",
       "items": [
         "cluster/list",
         "cluster/etcd",
