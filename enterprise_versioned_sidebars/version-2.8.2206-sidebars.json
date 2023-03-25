@@ -43,6 +43,15 @@
       ]
     },
     {
+      "type": "category",
+      "label": "集群管理",
+      "items": [
+        "/cluster/list",
+        "/cluster/etcd",
+        "/cluster/workspace"
+      ]
+    },
+    {
       "type": "doc",
       "id": "faq"
     }
