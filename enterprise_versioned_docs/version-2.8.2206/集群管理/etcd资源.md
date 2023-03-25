@@ -1,6 +1,6 @@
 ---
 title: etcd资源
-slug: /集群管理/etcd资源
+slug: /cluster/etcd
 tags:
   - API7 Enterprise
 ---
