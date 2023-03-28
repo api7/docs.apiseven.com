@@ -53,6 +53,16 @@
     },
     {
       "type": "category",
+      "label": "开发者门户",
+      "items": [
+        "devportal/overview",
+        "devportal/application",
+        "devportal/developer",
+        "devportal/settings"
+      ]
+    },
+    {
+      "type": "category",
       "label": "生产实践",
       "items": [
         "ready-for-production/high-availability"

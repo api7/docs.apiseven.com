@@ -1,6 +1,6 @@
 ---
 title: 概览
-slug: /开发者门户/概览
+slug: /devportal/overview
 tags:
 - API7 Enterprise
 ---

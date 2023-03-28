@@ -11,15 +11,16 @@ tags:
 帮助用户识别不同上游。
 
 ### 上游类型
+上游使用的负载均衡算法的类型。
 
 ### 上游描述
 对上游的进一步说明，通常包括用途定位、使用注意事项等。
 
 ### 负载均衡算法
-带权轮询(Round Robin)：
-带权一致性哈希（CHash）:
+[参考文档](https://apisix.apache.org/zh/docs/apisix/admin-api/#upstream-body-request-methods)，了解不同负载均衡算法的区别。
 
 ### 目标节点
+
 
 ### Host请求头
 
