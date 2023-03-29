@@ -7,6 +7,9 @@ tags:
 
 本文将指导您作为一个开发者，如何登录开发者门户，申请订阅 API 以获取访问凭证，并成功调用 API。
 
+## 背景知识
+[了解什么是开发者门户](https://docs.apiseven.com/enterprise/devportal/overview)，以及什么是开发者门户的"管理端"和“展示端”。
+
 ## 前置要求
 开发者门户中已有发布的 API。可以让管理员参考对应文档[发布 API 到开发者门户](https://docs.apiseven.com/enterprise/devportal/publish-api-to-devportal)。
 

@@ -7,6 +7,9 @@ tags:
 
 本文将指导您作为 API 的生产者及管理员，如何将已经接入 API7 网关的 API 发布到与网关配套的开发者门户，搭建一个站点，允许内部或外部的开发者登录后查找到这个 API，查看都已经的 API 文档，并申请订阅 API，获得 API 管理员的同意后，自动获取访问凭证。
 
+## 背景知识
+[了解什么是开发者门户](https://docs.apiseven.com/enterprise/devportal/overview)，以及什么是开发者门户的"管理端"和“展示端”。
+
 ## 前置要求
 1. 要发布到开发者门户的 API，必须已经接入 API7 网关，可以位于任意集群。可以参考对应文档[创建 API](https://docs.apiseven.com/enterprise/cluster/api-list#新增API)。
 2. 准备好 OpenAPI Spec 文件。
