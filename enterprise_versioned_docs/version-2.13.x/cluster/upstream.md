@@ -17,7 +17,7 @@ tags:
 对上游的进一步说明，通常包括用途定位、使用注意事项等。
 
 ### 负载均衡算法
-[参考文档](https://apisix.apache.org/zh/docs/apisix/admin-api/#upstream-body-request-methods)，了解不同负载均衡算法的区别。
+[参考 Apache APISIX 文档](https://apisix.apache.org/zh/docs/apisix/admin-api/#upstream-body-request-methods)，了解不同负载均衡算法的区别。
 
 ### 目标节点
 
