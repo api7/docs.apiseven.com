@@ -1,6 +1,6 @@
 ---
 title: 发布 API 到开发者门户
-slug: /devportal/publish-api-to-devportal
+slug: /get-started/publish-api-to-devportal
 tags:
 - API7 Enterprise
 ---

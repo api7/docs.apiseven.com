@@ -1,6 +1,6 @@
 ---
 title: 通过开发者门户订阅 API
-slug: /devportal/subscribe-api-in-devportal
+slug: /get-started/subscribe-api-in-devportal
 tags:
 - API7 Enterprise
 ---
