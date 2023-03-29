@@ -31,7 +31,7 @@ tags:
 选择目标应用，发起 API 订阅申请，并等待 API 的管理员审批。
 
 ## 管理员在开发者门户管理端同意申请
-[参阅“ API 管理”文档](https://docs.apiseven.com/enterprise/devportal/api#同意API订阅申请)。
+[如何同意 API 申请](https://docs.apiseven.com/enterprise/devportal/api#同意API订阅申请)。
 
 ## 在应用中查找 API key
 订阅申请被管理员通过后，在应用详情中找到对应的 API 订阅记录，查看访问凭证，并按照 API 文档中的使用说明调用 API。对于同一个应用，如果订阅了多个使用同样认证方式（例如 key-auth）的 API，则对应的访问凭证是一样的。
