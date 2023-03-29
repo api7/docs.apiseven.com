@@ -44,6 +44,14 @@
     },
     {
       "type": "category",
+      "label": "入门指南",
+      "items": [
+        "get-started/publish-api-to-devportal",
+        "get-started/subscribe-api-in-devportal"
+      ]
+    },
+    {
+      "type": "category",
       "label": "集群管理",
       "items": [
         "cluster/list",
@@ -56,6 +64,7 @@
       "label": "开发者门户",
       "items": [
         "devportal/overview",
+        "devportal/api",
         "devportal/application",
         "devportal/developer",
         "devportal/settings"
