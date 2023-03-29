@@ -1,6 +1,6 @@
 ---
 title: 高可用
-slug: /生产实践/高可用
+slug: /ready-for-production/high-availability
 tags:
   - API7 Enterprise
 ---
