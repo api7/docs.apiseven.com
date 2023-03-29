@@ -52,7 +52,7 @@ API 的关联路由上如果开启了认证类插件，则需要开发者需要�
 ### 应用名称
 [什么是应用名称](https://docs.apiseven.com/enterprise/devportal/developer#组织)。
 
-### 新增 API
+## 新增 API
 #### 使用场景
 将一个新的 API 发布到开发者门户，让开发者可以查看 API 介绍与文档，并订阅 API。
 
