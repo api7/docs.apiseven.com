@@ -165,13 +165,13 @@ export const ZH_CN_Links: Link[] = [
     children: [
       {
         label: "技术文章",
-        href: "/blog",
+        href: "https://www.apiseven.com/blog",
         description: "阅读技术文章，了解前沿技术",
         icon: <AiOutlineRead />,
       },
       {
         label: "用户案例",
-        href: "/usercases",
+        href: "https://www.apiseven.com/usercases",
         description: "全球领先企业在 Apache APISIX 上的成功实践",
         icon: <IoGrid />,
       },
@@ -208,7 +208,7 @@ export const ZH_CN_Links: Link[] = [
       {
         label: "ApacheCon Asia",
         description: "观看 ApacheCon Asia 2021 大会录像",
-        href: "/resources/acasia2021",
+        href: "https://www.apiseven.com/resources/acasia2021",
         icon: <SiMeetup />,
       },
       {
@@ -226,7 +226,7 @@ export const ZH_CN_Links: Link[] = [
       {
         label: "贡献者趋势",
         description: "获取开源项目贡献者趋势图",
-        href: "/contributor-graph",
+        href: "https://www.apiseven.com/contributor-graph",
         icon: <AiOutlineProject />,
       },
     ],
@@ -242,13 +242,13 @@ export const ZH_CN_Links: Link[] = [
       },
       {
         label: "Apache APISIX vs API7",
-        href: "/apisix-vs-api7",
+        href: "https://www.apiseven.com/apisix-vs-api7",
         description: "产品能力、商业支持对比",
         icon: <MdCompare />,
       },
       {
         label: "产品特性",
-        href: "/products/api7/features",
+        href: "https://www.apiseven.com/products/api7/features",
         description: "查看 API7 产品功能特性",
         icon: <IoListSharp />,
       },
@@ -260,19 +260,19 @@ export const ZH_CN_Links: Link[] = [
       {
         label: "关于我们",
         description: "关于 API7.ai",
-        href: "/about",
+        href: "https://www.apiseven.com/about",
         icon: <MdWeb />,
       },
       {
         label: "新闻报道",
         description: "获取 API7.ai 相关新闻",
-        href: "/news",
+        href: "https://www.apiseven.com/news",
         icon: <TiNews />,
       },
       {
         label: "工作机会",
         description: "与我们一起构建安全、可靠的 API 连接",
-        href: "/careers",
+        href: "https://www.apiseven.com/careers",
         icon: <IoPeople />,
       },
       {
