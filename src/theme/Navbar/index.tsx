@@ -4,7 +4,7 @@ import NavbarContent from '@theme/Navbar/Content';
 import {
   Container,
 } from '@chakra-ui/react';
-import HeaderComponent from '../../components/Header';
+import HeaderComponent from '../../components/HeaderNew';
 
 export default function Navbar(): JSX.Element {
   return (
