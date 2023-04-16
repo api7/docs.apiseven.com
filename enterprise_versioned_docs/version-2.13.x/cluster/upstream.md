@@ -1,6 +1,6 @@
 ---
 title: 上游管理
-slug: /集群管理/上游管理
+slug: /cluster/upstream
 tags:
   - API7 Enterprise
 ---
