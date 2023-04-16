@@ -56,7 +56,8 @@
       "items": [
         "cluster/list",
         "cluster/etcd",
-        "cluster/workspace"
+        "cluster/workspace",
+        "cluster/upstream"
       ]
     },
     {
