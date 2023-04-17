@@ -5,6 +5,8 @@ tags:
   - API7 Enterprise
 ---
 
+![API7 key concept](https://static.apiseven.com/uploads/2023/04/17/JqvOpobJ_key-concept-cn.png)
+
 ## 集群
 
 API7 Enterprise 产品中的集群概念，指的是 API7 网关的集群。每一个集群由多个互相协同工作的节点组成，包含多个数据面节点和一个控制面节点。这些节点之间可以相互通信和协调工作，以提供高可用性、高性能和高伸缩性的 API 网关服务。
