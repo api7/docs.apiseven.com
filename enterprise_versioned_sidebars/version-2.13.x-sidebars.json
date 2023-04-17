@@ -65,7 +65,8 @@
         "cluster/list",
         "cluster/etcd",
         "cluster/workspace",
-        "cluster/upstream"
+        "cluster/upstream",
+        "cluster/api"
       ]
     },
     {
