@@ -32,7 +32,8 @@
         "cluster/workspace",
         "cluster/upstream",
         "cluster/api",
-        "cluster/plugin-template"
+        "cluster/plugin-template",
+        "cluster/consumer"
       ]
     },
     {
