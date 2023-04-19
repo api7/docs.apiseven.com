@@ -31,7 +31,8 @@
         "cluster/etcd",
         "cluster/workspace",
         "cluster/upstream",
-        "cluster/api"
+        "cluster/api",
+        "cluster/plugin-template"
       ]
     },
     {
