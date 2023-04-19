@@ -27,7 +27,48 @@ etcd 是 API7 网关存储配置数据的组件，一条 etcd 资源指的就是
 
 ## 上游
 
-API7 中的上游概念，与 Apache APISIX 保持一致。
+API7 中的上游概念，与 Apache APISIX 中的上游概念保持一致。
 [了解什么是上游](https://docs.api7.ai/apisix/key-concepts/upstreams).
+
+## 路由/API
+
+API7 中的路由/ API 概念，与 Apache APISIX 中的路由概念保持一致。
+
+[了解什么是路由](https://docs.api7.ai/apisix/key-concepts/routes).
+
+:::info
+
+请注意 API7 网关集群中的 API 与开发者门户中 API 的概念差别。
+
+:::
+
+## 插件模板
+
+API7 中的插件模板概念，与 Apache APISIX 中的插件模板概念保持一致。
+
+[了解什么是插件模板](https://docs.api7.ai/apisix/key-concepts/plugin-configs).
+
+:::info
+
+请注意 API7 中插件不可直接配置，必须包含在某个插件模板中。插件模板中的插件数量可以为一个或多个。
+
+:::
+
+## 消费者
+
+API7 中的消费者概念，与 Apache APISIX 中的消费者概念保持一致。
+[了解什么是消费者](https://docs.api7.ai/apisix/key-concepts/consumers).
+
+## 数据面节点
+
+又称网关节点，指在网关集群中部署了 API7-Gateway 服务的节点。数据面节点是 API7 的核心组件之一，它负责实际处理所有传入的 API 请求并返回响应。
+在生产实践中，建议部署两个以上的数据面节点以防止单点故障。
+
+## 控制面节点
+
+指在网关集群中部署了 API7-Dashboard 服务的节点。主要负责接收 API7 网关的配置修改请求，管理 API7 网关节点的上下线，以及控制流量的转发规则。
+在生产实践中，数据面节点和控制面节点分开部署，每个网关集群需要至少一个控制面节点。
+
+
 
 
