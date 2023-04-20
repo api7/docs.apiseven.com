@@ -33,7 +33,8 @@
         "cluster/upstream",
         "cluster/api",
         "cluster/plugin-template",
-        "cluster/consumer"
+        "cluster/consumer",
+        "cluster/global-plugin"
       ]
     },
     {
