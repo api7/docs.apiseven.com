@@ -33,6 +33,7 @@
         "cluster/upstream",
         "cluster/api",
         "cluster/plugin-template",
+        "cluster/canary",
         "cluster/consumer",
         "cluster/global-plugin"
       ]
