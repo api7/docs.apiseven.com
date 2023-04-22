@@ -19,6 +19,7 @@
       "type": "category",
       "label": "入门指南",
       "items": [
+        "get-started/handling-cors",
         "get-started/publish-api-to-devportal",
         "get-started/subscribe-api-in-devportal"
       ]

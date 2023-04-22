@@ -11,11 +11,11 @@ tags:
 [了解什么是开发者门户](https://docs.apiseven.com/enterprise/devportal/overview)，以及什么是开发者门户的"管理端"和“展示端”。
 
 ## 前置要求
-1. 要发布到开发者门户的 API，必须已经接入 API7 网关，可以位于任意集群。可以参考对应文档[创建 API](https://docs.apiseven.com/enterprise/cluster/api-list#新增API)。
+1. 要发布到开发者门户的 API，必须已经接入 API7 网关，可以位于任意集群。可以参考对应文档[新增 API](https://docs.apiseven.com/enterprise/cluster/api-list#新建API)。
 2. 准备好 OpenAPI Spec 文件。
 
 ## 确认 API 使用限制
-1. 如果 API 需要开启身份认证，请在 API7 网关中，在对应路由/API 中启用“key-auth”插件。开发者门户将逐步支持更多身份认证方式。
+1. 请在 API7 网关中，在对应路由/API 中启用“key-auth”插件。开发者门户将逐步支持更多身份认证方式。
 2. 如果 API 需要限流限速，请在 API7 网关中，在对应路由/ API 中启用对应插件。开发者门户目前暂不支持对指定组织/应用限流限速。
 
 ## 新增 API
