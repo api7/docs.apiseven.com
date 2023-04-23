@@ -15,7 +15,7 @@ tags:
 
 ## 前置要求
 
-1. 参考对应文档[新建 API](https://docs.apiseven.com/enterprise/cluster/api#新建-api)。
+1. 参考对应文档[新建 API](https://docs.apiseven.com/enterprise/user-manual/cluster/api#新建-api)。
 
 ## 为工作分区内所有 API 启用 CORS
 
@@ -23,7 +23,7 @@ tags:
 
 为此，我们需要将 CORS 插件作为全局插件启用。
 
-参考对应文档[启用全局插件](https://docs.apiseven.com/enterprise/cluster/global-plugin#启用全局插件)。
+参考对应文档[启用全局插件](https://docs.apiseven.com/enterprise/user-manual/cluster/global-plugin#启用全局插件)。
 
 在【**步骤9**： 选择需要启用的插件，点击对应的`启用`按钮】中，选择`CORS`插件。
 在【**步骤11**： 在`配置Raw Data`中，编辑插件的参数。（可选，部分插件无需配置任何参数即可使用）】中，修改`allow_origins`字段为`cors.test.com`。
@@ -41,7 +41,7 @@ tags:
 
 ### 创建包含 CORS 插件的插件模板
 
-参考对应文档[创建插件模板](https://docs.apiseven.com/enterprise/cluster/plugin-template#新建插件模板)。
+参考对应文档[创建插件模板](https://docs.apiseven.com/enterprise/user-manual/cluster/plugin-template#新建插件模板)。
 
 在【**步骤9**： 选择需要启用的插件，点击对应的`启用`按钮】中，选择`CORS`插件。
 在【**步骤11**： 在`配置Raw Data`中，编辑插件的参数。（可选，部分插件无需配置任何参数即可使用）】中，修改`allow_origins`字段为`cors.test.com`。
@@ -54,7 +54,7 @@ tags:
 
 ### 将插件模板应用到 API
 
-参考对应文档[配置 API](https://docs.apiseven.com/enterprise/cluster/api#配置-api)。
+参考对应文档[配置 API](https://docs.apiseven.com/enterprise/user-manual/cluster/api#配置-api)。
 
 在【**步骤9**：编辑 API 的属性】中，将插件模板修改为上一步创建的包含 CORS 插件的插件模板。
 
