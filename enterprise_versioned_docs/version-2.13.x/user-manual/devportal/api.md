@@ -1,6 +1,6 @@
 ---
 title: API
-slug: //user-manualdevportal/api
+slug: //user-manual/devportal/api
 tags:
 - API7 Enterprise
 ---

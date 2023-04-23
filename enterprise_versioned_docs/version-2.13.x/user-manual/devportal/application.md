@@ -1,6 +1,6 @@
 ---
 title: 应用
-slug: //user-manual/devportal/application
+slug: /user-manual/devportal/application
 tags:
 - API7 Enterprise
 ---
