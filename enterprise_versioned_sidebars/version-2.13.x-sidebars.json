@@ -17,37 +17,43 @@
     },
     {
       "type": "category",
-      "label": "入门指南",
+      "label": "API 全生命周期管理",
       "items": [
-        "get-started/handling-cors",
-        "get-started/publish-api-to-devportal",
-        "get-started/subscribe-api-in-devportal"
+        "api-full-lifecycle/handling-cors",
+        "api-full-lifecycle/publish-api-to-devportal",
+        "api-full-lifecycle/subscribe-api-in-devportal"
       ]
     },
     {
       "type": "category",
-      "label": "集群管理",
+      "label": "操作手册",
       "items": [
-        "cluster/list",
-        "cluster/etcd",
-        "cluster/workspace",
-        "cluster/upstream",
-        "cluster/api",
-        "cluster/plugin-template",
-        "cluster/canary",
-        "cluster/consumer",
-        "cluster/global-plugin"
-      ]
-    },
-    {
-      "type": "category",
-      "label": "开发者门户",
-      "items": [
-        "devportal/overview",
-        "devportal/api",
-        "devportal/application",
-        "devportal/developer",
-        "devportal/settings"
+        {
+          "type": "category",
+          "label": "集群管理",
+          "items": [
+            "cluster/list",
+            "cluster/etcd",
+            "cluster/workspace",
+            "cluster/upstream",
+            "cluster/api",
+            "cluster/plugin-template",
+            "cluster/canary",
+            "cluster/consumer",
+            "cluster/global-plugin"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "开发者门户",
+          "items": [
+            "devportal/overview",
+            "devportal/api",
+            "devportal/application",
+            "devportal/developer",
+            "devportal/settings"
+          ]
+        }
       ]
     },
     {

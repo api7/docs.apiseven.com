@@ -1,6 +1,6 @@
 ---
 title: 处理CORS跨域
-slug: /get-started/handling-cors
+slug: /api-full-lifecycle/handling-cors
 tags:
 - API7 Enterprise
 ---

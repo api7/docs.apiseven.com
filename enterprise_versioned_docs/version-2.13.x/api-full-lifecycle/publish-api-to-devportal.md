@@ -1,6 +1,6 @@
 ---
-title: 发布 API 到开发者门户
-slug: /get-started/publish-api-to-devportal
+title: 发布 API 到开发者门户 (Beta)
+slug: /api-full-lifecycle/publish-api-to-devportal
 tags:
 - API7 Enterprise
 ---
