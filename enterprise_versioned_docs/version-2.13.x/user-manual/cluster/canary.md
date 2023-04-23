@@ -1,6 +1,6 @@
 ---
 title: 发布管理
-slug: /cluster/canary
+slug: /user-manual/cluster/canary
 tags:
   - API7 Enterprise
 ---

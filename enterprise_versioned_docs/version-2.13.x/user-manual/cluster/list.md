@@ -1,6 +1,6 @@
 ---
 title: 集群列表
-slug: /cluster/list
+slug: /user-manual/cluster/list
 tags:
   - API7 Enterprise
 ---

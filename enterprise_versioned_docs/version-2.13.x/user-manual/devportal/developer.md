@@ -1,6 +1,6 @@
 ---
 title: 开发者
-slug: /devportal/developer
+slug: /user-manual/devportal/developer
 tags:
 - API7 Enterprise
 ---

@@ -1,6 +1,6 @@
 ---
 title: 设置
-slug: /devportal/settings
+slug: /user-manual/devportal/settings
 tags:
 - API7 Enterprise
 ---

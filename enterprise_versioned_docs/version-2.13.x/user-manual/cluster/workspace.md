@@ -1,6 +1,6 @@
 ---
 title: 工作分区
-slug: /cluster/workspace
+slug: /user-manual/cluster/workspace
 tags:
   - API7 Enterprise
 ---

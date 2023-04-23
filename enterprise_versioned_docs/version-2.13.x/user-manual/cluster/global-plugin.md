@@ -1,6 +1,6 @@
 ---
 title: 全局插件
-slug: /cluster/global-plugin
+slug: /user-manual/cluster/global-plugin
 tags:
   - API7 Enterprise
 ---

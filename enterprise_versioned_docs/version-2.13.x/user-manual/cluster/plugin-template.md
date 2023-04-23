@@ -1,6 +1,6 @@
 ---
 title: 插件模板
-slug: /cluster/plugin-template
+slug: /user-manual/cluster/plugin-template
 tags:
   - API7 Enterprise
 ---

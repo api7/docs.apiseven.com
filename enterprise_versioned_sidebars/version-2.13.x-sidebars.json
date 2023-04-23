@@ -32,26 +32,26 @@
           "type": "category",
           "label": "集群管理",
           "items": [
-            "cluster/list",
-            "cluster/etcd",
-            "cluster/workspace",
-            "cluster/upstream",
-            "cluster/api",
-            "cluster/plugin-template",
-            "cluster/canary",
-            "cluster/consumer",
-            "cluster/global-plugin"
+            "user-manual/cluster/list",
+            "user-manual/cluster/etcd",
+            "user-manual/cluster/workspace",
+            "user-manual/cluster/upstream",
+            "user-manual/cluster/api",
+            "user-manual/cluster/plugin-template",
+            "user-manual/cluster/canary",
+            "user-manual/cluster/consumer",
+            "user-manual/cluster/global-plugin"
           ]
         },
         {
           "type": "category",
           "label": "开发者门户",
           "items": [
-            "devportal/overview",
-            "devportal/api",
-            "devportal/application",
-            "devportal/developer",
-            "devportal/settings"
+            "user-manual/devportal/overview",
+            "user-manual/devportal/api",
+            "user-manual/devportal/application",
+            "user-manual/devportal/developer",
+            "user-manual/devportal/settings"
           ]
         }
       ]

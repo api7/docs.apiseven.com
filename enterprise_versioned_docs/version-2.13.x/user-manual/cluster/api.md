@@ -1,6 +1,6 @@
 ---
 title: API 管理
-slug: /cluster/api
+slug: /user-manual/cluster/api
 tags:
   - API7 Enterprise
 ---

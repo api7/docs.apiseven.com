@@ -1,6 +1,6 @@
 ---
 title: 消费者管理
-slug: /cluster/consumer
+slug: /user-manual/cluster/consumer
 tags:
   - API7 Enterprise
 ---
