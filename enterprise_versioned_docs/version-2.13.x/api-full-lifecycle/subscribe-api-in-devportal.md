@@ -8,10 +8,10 @@ tags:
 本文将指导您作为一个开发者，如何登录开发者门户，申请订阅 API 以获取访问凭证，并成功调用 API。
 
 ## 背景知识
-[了解什么是开发者门户](https://docs.apiseven.com/enterprise/devportal/overview)，以及什么是开发者门户的"管理端"和“展示端”。
+[了解什么是开发者门户](https://docs.apiseven.com/enterprise/user-manual/devportal/overview)，以及什么是开发者门户的"管理端"和“展示端”。
 
 ## 前置要求
-开发者门户中已有发布的 API。可以让管理员参考对应文档[发布 API 到开发者门户](https://docs.apiseven.com/enterprise/devportal/publish-api-to-devportal)。
+开发者门户中已有发布的 API。可以让管理员参考对应文档[发布 API 到开发者门户](https://docs.apiseven.com/enterprise/user-manual/devportal/publish-api-to-devportal)。
 
 ## 登录展示端站点
 开发者不可直接登录 API7 网关，需要单独提供展示端站点供他们登录并使用。您可以根据业务需要，将同一个 API7 网关上的 API 展示在不同的展示端站点上。例如，您可以搭建一个内网开发者门户，展示并管理仅供内部业务使用的 API，同时搭建一个公开的开发者门户，展示并管理对外公开的 API，作为业务的开放平台。或者您也可以根据业务属性，为某个组织或部门的开发者搭建独立的展示端站点，展示并管理仅供指定组织或部门使用的API。
@@ -34,7 +34,7 @@ tags:
 选择目标应用，发起 API 订阅申请，并等待 API 的管理员审批。
 
 ## 管理员在开发者门户管理端同意申请
-[如何同意 API 申请](https://docs.apiseven.com/enterprise/devportal/api#同意API订阅申请)。
+[如何同意 API 申请](https://docs.apiseven.com/enterprise/user-manual/devportal/api#同意API订阅申请)。
 
 ## 在应用中查找 API key
 订阅申请被管理员通过后，在应用详情中找到对应的 API 订阅记录，查看访问凭证，并按照 API 文档中的使用说明调用 API。对于同一个应用，如果订阅了多个使用同样认证方式（例如 key-auth）的 API，则对应的访问凭证是一样的。

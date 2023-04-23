@@ -21,7 +21,7 @@ tags:
 
 **步骤1**：登录 API7 Enterprise 控制台。
 
-**步骤2**： 如果还未准备好上游，请先参考对应文档[新建上游](https://docs.apiseven.com/enterprise/cluster/upstream#新建上游)。
+**步骤2**： 如果还未准备好上游，请先参考对应文档[新建上游](https://docs.apiseven.com/enterprise/user-manual/cluster/upstream#新建上游)。
 
 **步骤3**：在顶部导航菜单，点击`集群管理`。
 

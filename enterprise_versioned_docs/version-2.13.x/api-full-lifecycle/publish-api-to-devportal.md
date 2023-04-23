@@ -11,7 +11,7 @@ tags:
 [了解什么是开发者门户](https://docs.apiseven.com/enterprise/devportal/overview)，以及什么是开发者门户的"管理端"和“展示端”。
 
 ## 前置要求
-1. 要发布到开发者门户的 API，必须已经接入 API7 网关，可以位于任意集群。可以参考对应文档[新增 API](https://docs.apiseven.com/enterprise/cluster/api-list#新建API)。
+1. 要发布到开发者门户的 API，必须已经接入 API7 网关，可以位于任意集群。可以参考对应文档[新增 API](https://docs.apiseven.com/enterprise/user-manual/cluster/api-list#新建API)。
 2. 准备好 OpenAPI Spec 文件。
 
 ## 确认 API 使用限制
@@ -19,7 +19,7 @@ tags:
 2. 如果 API 需要限流限速，请在 API7 网关中，在对应路由/ API 中启用对应插件。开发者门户目前暂不支持对指定组织/应用限流限速。
 
 ## 新增 API
-参考对应文档[新增 API](https://docs.apiseven.com/enterprise/devportal/api#新增API)。
+参考对应文档[新增 API](https://docs.apiseven.com/enterprise/user-manual/devportal/api#新增API)。
 
 ## 搭建展示端站点
 开发者不可直接登录 API7 网关，需要单独提供展示端站点供他们登录并使用。您可以根据业务需要，将同一个 API7 网关上的 API 展示在不同的展示端站点上。例如，您可以搭建一个内网开发者门户，展示并管理仅供内部业务使用的 API，同时搭建一个公开的开发者门户，展示并管理对外公开的 API，作为业务的开放平台。或者您也可以根据业务属性，为某个组织或部门的开发者搭建独立的展示端站点，展示并管理仅供指定组织或部门使用的API。
@@ -30,7 +30,7 @@ tags:
 展示端站点通过[调用API]，获取已经发布的 API 列表及信息，展示在站点中供开发者查看。
 
 ## 新增开发者
-参考对应文档[新增开发者](https://docs.apiseven.com/enterprise/devportal/developer#新增开发者)，以检验 API 的展示效果。
+参考对应文档[新增开发者](https://docs.apiseven.com/enterprise/user-manual/devportal/developer#新增开发者)，以检验 API 的展示效果。
 
 ## 登录展示端站点查看 API
 用添加的开发者账户登录您的展示端站点，查看 API 展示效果。API7 开发者门户提供了最基础的邮箱登录方式，您也可按业务需要支持更多登录方式。
