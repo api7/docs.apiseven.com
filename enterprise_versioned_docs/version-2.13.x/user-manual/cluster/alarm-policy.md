@@ -1,6 +1,6 @@
 ---
 title: 告警策略
-slug: /cluster/alarm-policy
+slug: /user-manual/cluster/alarm-policy
 tags:
   - API7 Enterprise
 ---
