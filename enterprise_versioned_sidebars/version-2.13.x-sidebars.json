@@ -45,7 +45,8 @@
             "user-manual/cluster/alarm-history",
             "user-manual/cluster/notice",
             "user-manual/cluster/audit",
-            "user-manual/cluster/plugin-metadata"
+            "user-manual/cluster/plugin-metadata",
+            "user-manual/cluster/gateway"
           ]
         },
         {

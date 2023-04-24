@@ -60,9 +60,9 @@ tags:
 
 **步骤4**：在列表中点击集群对应的「更多」按钮，在下拉菜单中，点击`复制集群信息`。
 
-**步骤5**：[参考文档]，在一个新的节点上安装数据面组件API7-Gateway。
+**步骤5**：[参考文档]，在一个新的节点上安装数据面组件 API7-Gateway。
 
-**步骤6**：成功安装API7-Gateway后，修改配置文件：
+**步骤6**：成功安装 API7-Gateway后，修改配置文件：
 
 ```sh
 cat /usr/local/apisix/conf/config.yaml
@@ -75,7 +75,7 @@ etcd:
 
 ```
 
-**步骤7**：重启API7-Gateway：
+**步骤7**：重启 API7-Gateway：
 
 ```sh
 # RPM 安装
