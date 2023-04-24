@@ -17,7 +17,7 @@
     },
     {
       "type": "category",
-      "label": "API全生命周期管理",
+      "label": "API 全生命周期管理",
       "items": [
         "api-full-lifecycle/handling-cors",
         "api-full-lifecycle/publish-api-to-devportal",
