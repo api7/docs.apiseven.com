@@ -1,5 +1,5 @@
 ---
-title: 处理CORS跨域
+title: 处理 API 跨域问题
 slug: /api-full-lifecycle/handling-cors
 tags:
 - API7 Enterprise
