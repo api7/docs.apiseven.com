@@ -40,7 +40,10 @@
             "user-manual/cluster/plugin-template",
             "user-manual/cluster/canary",
             "user-manual/cluster/consumer",
-            "user-manual/cluster/global-plugin"
+            "user-manual/cluster/global-plugin",
+            "user-manual/cluster/alarm-policy",
+            "user-manual/cluster/alarm-history",
+            "user-manual/cluster/notice"
           ]
         },
         {
