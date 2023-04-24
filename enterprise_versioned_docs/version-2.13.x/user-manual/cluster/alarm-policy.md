@@ -12,7 +12,7 @@ tags:
 
 #### 使用限制
 
-1. 需要先安装Prometheus,AlertManager,OpenSearch几个组件。
+1. 需要先安装 Prometheus,AlertManager,OpenSearch 几个组件。
 2. 建议先参考对应文档[新建通知模板](https://docs.apiseven.com/enterprise/user-manual/cluster/noticem#新建通知模板)。
 
 #### 操作步骤

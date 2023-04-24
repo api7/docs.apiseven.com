@@ -16,9 +16,7 @@ tags:
 
 #### 使用限制
 
-1. 需要先安装Prometheus,AlertManager,OpenSearch几个组件。
-
-### 操作步骤
+1. 需要先安装 Prometheus,AlertManager,OpenSearch 几个组件。
 
 #### 操作步骤
 

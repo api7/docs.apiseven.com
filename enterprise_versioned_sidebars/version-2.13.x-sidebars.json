@@ -43,7 +43,8 @@
             "user-manual/cluster/global-plugin",
             "user-manual/cluster/alarm-policy",
             "user-manual/cluster/alarm-history",
-            "user-manual/cluster/notice"
+            "user-manual/cluster/notice",
+            "user-manual/cluster/audit"
           ]
         },
         {
