@@ -51,6 +51,14 @@
         },
         {
           "type": "category",
+          "label": "访问控制",
+          "items": [
+            "user-manual/access-control/user",
+            "user-manual/access-control/role"
+          ]
+        },
+        {
+          "type": "category",
           "label": "开发者门户",
           "items": [
             "user-manual/devportal/overview",
