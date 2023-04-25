@@ -1,6 +1,6 @@
 ---
 title: CentOS
-slug: /poc/installation/centos
+slug: /installation/poc/centos
 tags:
   - API7 Enterprise
   - Installation
