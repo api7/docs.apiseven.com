@@ -19,14 +19,8 @@
       "type": "category",
       "label": "部署指南",
       "items": [
-        {
-          "type": "category",
-          "label": "PoC 功能验证",
-          "items": [
-            "installation/poc/introduction",
-            "installation/poc/docker"
-          ]
-        }
+          "installation/poc/introduction",
+          "installation/poc/docker"
       ]
     },
     {
