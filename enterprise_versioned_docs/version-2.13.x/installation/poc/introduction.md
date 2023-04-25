@@ -3,7 +3,6 @@ title: PoC 准备
 slug: /installation/poc/introduction
 tags:
   - API7 Enterprise
-  - Installation
 ---
 
 :::info

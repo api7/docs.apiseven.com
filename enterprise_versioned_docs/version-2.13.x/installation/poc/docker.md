@@ -3,7 +3,6 @@ title: Docker for PoC
 slug: /installation/poc/docker
 tags:
   - API7 Enterprise
-  - Installation
 ---
 
 本指南将指引你将 API7 Enterprise 的所有必要组件快速部署到同一个 Docker 容器中，以便进行 PoC 功能验证。你还可以额外选择安装可选组件，来开启附加功能。
