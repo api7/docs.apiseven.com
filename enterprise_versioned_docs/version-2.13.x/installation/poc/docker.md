@@ -1,6 +1,6 @@
 ---
 title: Docker for PoC
-slug: installation/poc/docker
+slug: /installation/poc/docker
 tags:
   - API7 Enterprise
   - Installation
@@ -136,5 +136,5 @@ docker run -d --name alertmanager --network=api7-ee \
   -v $(pwd)/alertmanager_conf:/etc/alertmanager \
   --restart always prom/alertmanager:latest \
   --log.level=debug --config.file=/etc/alertmanager/alertmanager.yml
-  
+
 
