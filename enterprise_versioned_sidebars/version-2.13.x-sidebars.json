@@ -17,6 +17,20 @@
     },
     {
       "type": "category",
+      "label": "部署指南",
+      "items": [
+        {
+          "type": "category",
+          "label": "PoC",
+          "items": [
+            "installation/poc/introduction",
+            "installation/poc/docker"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
       "label": "API 全生命周期管理",
       "items": [
         "api-full-lifecycle/handling-cors",
