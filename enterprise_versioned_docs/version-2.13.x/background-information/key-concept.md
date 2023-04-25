@@ -36,7 +36,7 @@ API7 中的路由/ API 概念，与 Apache APISIX 中的路由概念保持一致
 
 [了解什么是路由](https://docs.api7.ai/apisix/key-concepts/routes).
 
-:::info
+:::caution
 
 请注意 API7 网关集群中的 API 与开发者门户中 API 的概念差别。
 
@@ -48,10 +48,10 @@ API7 中的插件模板概念，与 Apache APISIX 中的插件模板概念保持
 
 [了解什么是插件模板](https://docs.api7.ai/apisix/key-concepts/plugin-configs).
 
-:::info
+:::caution
 
-请注意 API7 中插件不可直接配置在路由/API 上，必须通过插件模板才可使用。插件模板中的插件数量可以为一个或多个。
-消费者可以直接使用单个或多个插件，无需通过插件模板。
+- API7 中插件不可直接配置在路由/API 上，必须通过插件模板才可使用。插件模板中的插件数量可以为一个或多个。
+- 消费者可以直接使用单个或多个插件，无需通过插件模板。
 
 :::
 
