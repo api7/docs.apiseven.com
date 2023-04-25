@@ -172,3 +172,4 @@ kubectl delete pod ${podID} -n ${namespace}
 **步骤6**：点击`确定`按钮。
 
 **验证方式**:在集群列表中，已看不到被删除的集群。
+

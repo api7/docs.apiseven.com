@@ -75,19 +75,3 @@ tags:
 **步骤6**：将请求头中的`Origin`头更改为`cors.error.com`或其他任意来源，然后单击`Fetch`或`Submit`按钮。
 
 **步骤7**：您将能够在网页上看到相应的错误信息，如“CORS被阻止”，“从源'cors.test.com'到目标URL的XMLHttpRequest访问已被CORS策略阻止”，等等。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

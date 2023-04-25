@@ -32,5 +32,3 @@ tags:
 ## 拒绝 AP I订阅申请
 
 [如何拒绝 API 订阅申请](https://docs.apiseven.com/enterprise/devportal/api#拒绝API订阅申请)。
-
-

@@ -81,11 +81,3 @@ curl -XPUT http://127.0.0.1:9000/devportal/sign  -H "Authorization: Bearer $root
 curl http://127.0.0.1:9000/devportal/applications -H "Authorization: Bearer $access_token"
 
 ``
-
-
-
-
-
-
-
-
