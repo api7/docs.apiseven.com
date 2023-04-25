@@ -18,6 +18,10 @@ API 全生命周期管理除了要站在 API “生产者”（API 开发者、�
 
 为了优化 API “消费”这个环节，人们提出了开发者门户这个概念，借此来解决上述的问题。API7 Enterprise 推出了自己配套的开发者门户产品与网关搭配使用。
 
+## 背景知识
+
+[了解开发者门户基本概念](https://docs.apiseven.com/enterprise/background-information/key-concept#开发者门户-beta)。
+
 ## 架构设计
 
 ![API7 Devportal architecture](https://static.apiseven.com/uploads/2023/04/25/dZJ3iyLa_devportal-architecture.png)
@@ -29,7 +33,9 @@ API 全生命周期管理除了要站在 API “生产者”（API 开发者、�
 
 ## 核心功能
 
-### 
+### 开发者账户管理
+
+开发者即是 API 的消费者，他们不需要感知 API7 网关的存在，
 
 
 ## 搭建展示端站点

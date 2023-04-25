@@ -20,7 +20,7 @@
       "label": "API 全生命周期管理",
       "items": [
         "api-full-lifecycle/handling-cors",
-        "api-full-lifecycle//build-devportal-site",
+        "api-full-lifecycle/build-devportal-site",
         "api-full-lifecycle/publish-api-to-devportal",
         "api-full-lifecycle/subscribe-api-in-devportal"
       ]
