@@ -5,6 +5,10 @@ tags:
 - API7 Enterprise
 ---
 
+作为工程师，我们总是强调在编码前先进行方案的设计。API 也不例外，我们需要根据业务明确一个 API 的功能目的，
+然后结合相关技术栈，将业务语言翻译成技术语言。 通常来说，API 规划和设计是围绕着文档进行的。 
+关于如何撰写一份合理的 API 文档，人们也开展过很多的研究，目前比较流行的是按照 OpenAPI Specification V3 进行 API 文档的设计。
+
 这份指南将设计若干个 API，为后续进行 API 的发布、导入到网关、以及保护 API 做准备。
 
 ## 背景知识
@@ -74,3 +78,5 @@ curl '${BASE_URL}/orders' \
 ![Get Product By Id](https://static.apiseven.com/uploads/2023/04/25/BRBf7NeX_Screenshot%202023-04-25%20at%2016.40.57.png)
 ![Create Product](https://static.apiseven.com/uploads/2023/04/25/KETzJO92_Screenshot%202023-04-25%20at%2016.44.11.png)
 ![Create Order](https://static.apiseven.com/uploads/2023/04/25/4aXqOr3P_Screenshot%202023-04-25%20at%2016.46.13.png)
+
+至此我们已经完成了 API 的设计，接下来我们需要按照既定的 API 规范来 mock 和开发这几个 API。
