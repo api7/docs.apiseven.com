@@ -83,7 +83,7 @@ API7 开发者门户是 AP7 Enterprise 产品的子功能，它允许用户将�
 - 以应用为主体向管理员申请 API 的订阅。
 - 为已经订阅的 API 创建访问所需要的凭证信息，并通过查看 API 文档来了解如何集成。
 
-![API7 devportal concept](https://static.apiseven.com/uploads/2023/04/25/8N6AUpwP_devportal-concept.png)
+![API7 devportal concept](https://static.apiseven.com/uploads/2023/04/26/1Lv7ih05_devportal-concept.png)
 
 ### 组织
 
