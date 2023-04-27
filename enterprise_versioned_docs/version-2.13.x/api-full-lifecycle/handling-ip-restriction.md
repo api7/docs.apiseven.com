@@ -75,14 +75,21 @@ tags:
 
 ```json
 {
-  "whitelist": ["你的本地外网IP"],
+  "whitelist": ["39.174.78.78"],
   "message": "Sorry, your IP address is not allowed."
 }
 ```
 
+其中`39.174.78.78`这个 IP 地址是你本地的外网 IP，**你需要替换为你自己的地址**。
+一般情况下，如果你不知道自己的外网 IP，可以在终端运行如下命令，通过访问由`ifconfig.me`通过的在线的服务，获取当前电脑的外网 IP 地址：
+```
+curl ifconfig.me
+```
+但是在某些情况下，由于不同 ISP 策略不同，不能保证你当前的 ISP 的访问`ifconfig.me`服务的外网 IP 地址和访问你 DP 面的外网 IP 是一致的。如果存在这种情况，请通过搜索引擎或者询问专业的 IT 人员解决。
+
 ### 将插件模板应用到 API
 
-假设我们需要给创建商品（`${BASE_URL}/products`）的接口配置一个配置 IP 白名单。
+假设我们需要给创建商品（`/products`）的接口配置一个配置 IP 白名单。
 
 我们需要在`API 列表`中，找到对应的 API。参考对应文档[配置 API](https://docs.apiseven.com/enterprise/user-manual/cluster/api#配置-api)。
 
@@ -94,16 +101,16 @@ tags:
 
 **步骤1**：打开终端，使用curl命令发送 API 请求：
 ```shell
-curl -X POST -d "{xxx}" -v http://${BASE_URL}/products
+curl -X POST -d "{xxx}" -v http://test.com/products
 ```
-其中，`http://${BASE_URL}/products` 是我们创建的 API 的访问地址。
+其中，`http://test.com/products` 是我们创建的 API 的访问地址。
 
 **步骤2**：此时应该可以正常请求并获得 API 响应。这说明我们的 IP 是可以正常访问 API 的。
 
 **步骤3**：在同一终端中，使用curl命令并带上代理参数再次发送 API 请求：
 
 ```shell
-curl -x http://proxy-server:port -d "{xxx}" -X POST http://${BASE_URL}/products
+curl -x http://proxy-server:port -d "{xxx}" -X POST http://test.com/products
 ```
 
 其中，`-x http://proxy-server:port` 表示对 curl 命令启用 http 代理（当然，前提是在此步骤之前，本地需要有一个代理服务），这样访问 API 的 IP 就会发生变化。
