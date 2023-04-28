@@ -13,7 +13,35 @@ tags:
 
 ## 背景知识
 
-我们将使用 [Postman](https://www.postman.com/) 来演示如何设计 API。因此，在继续之前，请确保您已经安装了 Postman（或者使用 Postman Cloud 服务）。
+我们将使用 [Postman](https://www.postman.com/) 来演示如何设计 API。因此，在继续之前，请确保您已经安装了 Postman，需要注意的是，我们需要使用到
+Postman 提供的 [Mock Server](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/setting-up-mock/) 功能。因此，你必须
+登录 Postman 并且你的所有操作应该都在 [Workspace](https://learning.postman.com/docs/collaborating-in-postman/using-workspaces/) 中进行。
+
+### 创建 Collection
+
+在你登录 Postman 后，请创建或者选择某个已有的 Workspace，随后在该 Workspace 下创建一个名为 `shop` 的 Collection。
+
+### 创建 Mock Server
+
+随后需要为 `shop` Collection 创建一个 Mock Server，这样我们就可以在 Postman 中模拟 API 的行为。
+
+![Create Mock Server](https://static.apiseven.com/uploads/2023/04/28/fkwBwbOK_Screenshot%202023-04-28%20at%2010.35.57.png)
+
+在创建 Mock Server 后，点击 **Copy URL** 按钮复制 Mock Server 的地址，随后为你的 Workspace 创建一个环境变量 `MOCK_SERVER`，并将值设置为 Mock Server 的地址。
+
+![Create Mock Server Env](https://static.apiseven.com/uploads/2023/04/28/zhvRQhI2_mock-server-env.png)
+
+## API 介绍
+
+:::tip
+
+在这一节中，我们会使用到 `cURL` 请求所设计的 API，因此需要创建 `MOCK_SERVER` 变量，并设置为 Mock Server 的地址。
+
+```shell
+export MOCK_SERVER=<MOCK_SERVER_ADDR>
+```
+
+:::
 
 我们在这份指南中使用了一个商城服务的例子，该商城服务提供了两个核心概念：
 
@@ -25,7 +53,7 @@ tags:
 * 获取商品详情（`GetProductById`）
 
 ```shell
-curl '${BASE_URL}/products/1' 
+curl '${MOCK_SERVER}/products/1' 
 
 {
     "id": 1,
@@ -39,7 +67,7 @@ curl '${BASE_URL}/products/1'
 * 创建商品（`CreateProduct`）
 
 ```shell
-curl '${BASE_URL}/products' \
+curl '${MOCK_SERVER}/products' \
 -X POST
 --header 'Authorization: HMAC <ACCESSKEY>:<HMAC>' \
 --header 'Content-Type: application/json' \
@@ -55,7 +83,7 @@ curl '${BASE_URL}/products' \
 * 创建订单（`CreateOrder`）
 
 ```shell
-curl '${BASE_URL}/orders' \
+curl '${MOCK_SERVER}/orders' \
 -X POST
 --header 'Content-Type: application/json' \
 --header 'apikey: xxxxx' \
@@ -75,8 +103,8 @@ curl '${BASE_URL}/orders' \
 
 接下来，我们在 Postman 上创建一个名为 `shop` 的 Collection，然后在该 Collection 下依次创建三个 API，分别是 `GetProductById`、`CreateProduct`、`CreateOrder`。
 
-![Get Product By Id](https://static.apiseven.com/uploads/2023/04/25/BRBf7NeX_Screenshot%202023-04-25%20at%2016.40.57.png)
-![Create Product](https://static.apiseven.com/uploads/2023/04/25/KETzJO92_Screenshot%202023-04-25%20at%2016.44.11.png)
-![Create Order](https://static.apiseven.com/uploads/2023/04/25/4aXqOr3P_Screenshot%202023-04-25%20at%2016.46.13.png)
+![Get Product By Id](https://static.apiseven.com/uploads/2023/04/28/5cfdjUO4_GetProductById.png)
+![Create Product](https://static.apiseven.com/uploads/2023/04/28/MFDN1LWS_Screenshot%202023-04-28%20at%2010.57.02.png)
+![Create Order](https://static.apiseven.com/uploads/2023/04/28/Kcxszff1_CreateOrder.png)
 
-至此我们已经完成了 API 的设计，接下来我们需要按照既定的 API 规范来 mock 和开发这几个 API。
+至此我们已经完成了 API 的设计，接下来我们需要按照既定的 API 规范来开发这几个 API。
