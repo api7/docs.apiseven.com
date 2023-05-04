@@ -66,11 +66,11 @@ EE 中的 API 存在于具体的集群和工作分区中，因此在导入 API �
 2. 点击 `高级特性` 中的 `导入 OpenAPI`。
 3. 在弹出的窗口中 `导入任务名称` 填写 `shop`，点击 `请选择上传文件` 并选择 `shop.yaml` 文件。
 4. 点击`提交`后可以看到导入成功的提示。
-![Import OpenAPI Success](https://static.apiseven.com/uploads/2023/05/04/mdCzTsAg_import-success.png)
+![Import OpenAPI Success](https://static.apiseven.com/uploads/2023/05/04/RGYpIkQR_import-success.png)
 
 导入成功后可以在 API 列表中看到导入的三个 API。
 
-![API 列表](https://static.apiseven.com/uploads/2023/05/04/C1Y34AJ6_api-list.png)
+![API 列表](https://static.apiseven.com/uploads/2023/05/04/XvUSWq1Q_api-list.png)
 
 EE 会默认为 API 添加一个默认的上游配置，地址为 `0.0.0.0:80`，可以根据业务实际需要在 `上游管理` 中修改配置。
 
