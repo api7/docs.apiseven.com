@@ -1,5 +1,5 @@
 ---
-title: 如何开发 API
+title: 开发 API
 slug: /api-full-lifecycle/create-apis
 tags:
 - API7 Enterprise
