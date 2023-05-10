@@ -34,6 +34,7 @@
       "label": "API 全生命周期管理",
       "items": [
         "api-full-lifecycle/design-apis",
+        "api-full-lifecycle/create-apis",
         "api-full-lifecycle/handling-cors",
         "api-full-lifecycle/build-devportal-site",
         "api-full-lifecycle/publish-api-to-devportal",
