@@ -29,7 +29,7 @@ tags:
 
 **步骤6：** 点击`新建`按钮。
 
-**步骤7：** 根据[名词解释](https://docs.apiseven.com/enterprise/background-information/glossary#%E5%B7%A5%E4%BD%9C%E5%88%86%E5%8C%BA)，填写表单；
+**步骤7：** 填写表单；
 
 **步骤8：** 点击`提交`按钮。
 

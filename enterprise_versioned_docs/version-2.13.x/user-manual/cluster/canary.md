@@ -39,7 +39,7 @@ API 的后端服务更新时，在调用方无需调整配合的情况下，先�
 
 **步骤8：**  点击`新建`按钮。
 
- **步骤9：** 根据[名词解释](https://docs.apiseven.com/enterprise/background-information/glossary#%E4%B8%8A%E6%B8%B8)，填写表单。
+ **步骤9：** 填写表单。
 
 **步骤10：**  点击`提交`按钮。
 

@@ -14,6 +14,7 @@ tags:
 
 - API 必须关联 API7 网关中已有的路由，且路由上已配置好必须的插件。
 - 新增 API 需要提前准备好 OpenAPI Spec 文档。
+- 将 API 发布到开发者门户，可以给 API 更换名称，不一定需要和网关中关联的 API 保持一致。
 
 #### 操作步骤
 
@@ -25,7 +26,7 @@ tags:
 
 **步骤4：** 点击`新增 API`按钮。
 
-**步骤5：** 根据[名词解释](https://docs.apiseven.com/enterprise/background-information/glossary#%E5%BC%80%E5%8F%91%E8%80%85%E9%97%A8%E6%88%B7)填写表单。
+**步骤5：** 填写表单。
 
 **步骤6：** 点击`提交`按钮。
 
