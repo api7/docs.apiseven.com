@@ -86,13 +86,6 @@
           ]
         }
       ]
-    },
-    {
-      "type": "category",
-      "label": "生产实践",
-      "items": [
-        "ready-for-production/high-availability"
-      ]
     }
   ]
 }
