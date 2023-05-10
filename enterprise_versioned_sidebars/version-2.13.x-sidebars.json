@@ -33,6 +33,7 @@
       "type": "category",
       "label": "API 全生命周期管理",
       "items": [
+        "api-full-lifecycle/design-apis",
         "api-full-lifecycle/create-apis",
         "api-full-lifecycle/handling-cors",
         "api-full-lifecycle/build-devportal-site",
@@ -62,7 +63,8 @@
             "user-manual/cluster/notice",
             "user-manual/cluster/audit",
             "user-manual/cluster/plugin-metadata",
-            "user-manual/cluster/gateway"
+            "user-manual/cluster/gateway",
+            "user-manual/cluster/ssl"
           ]
         },
         {
