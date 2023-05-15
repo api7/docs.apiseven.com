@@ -20,7 +20,7 @@ API 全生命周期管理除了要站在 API “生产者”（API 开发者、�
 
 ## 背景知识
 
-[了解开发者门户基本概念](https://docs.apiseven.com/enterprise/background-information/key-concept#开发者门户-beta)。
+[了解开发者门户基本概念](https://docs.apiseven.com/enterprise/background-information/key-concept#开发者门户)。
 
 ## 架构设计
 
