@@ -75,8 +75,15 @@ curl '${BASE_URL}/orders' \
 
 接下来，我们在 Postman 上创建一个名为 `shop` 的 Collection，然后在该 Collection 下依次创建三个 API，分别是 `GetProductById`、`CreateProduct`、`CreateOrder`。
 
+**/product/{$product_id}**:
+
 ![Get Product By Id](https://static.apiseven.com/uploads/2023/04/25/BRBf7NeX_Screenshot%202023-04-25%20at%2016.40.57.png)
+
+**/products**:
+
 ![Create Product](https://static.apiseven.com/uploads/2023/04/25/KETzJO92_Screenshot%202023-04-25%20at%2016.44.11.png)
+
+**/orders**:
 ![Create Order](https://static.apiseven.com/uploads/2023/04/25/4aXqOr3P_Screenshot%202023-04-25%20at%2016.46.13.png)
 
 至此我们已经完成了 API 的设计，接下来我们需要按照既定的 API 规范来 mock 和开发这几个 API。
