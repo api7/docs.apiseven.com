@@ -1,5 +1,5 @@
 ---
-title: 搭建开发者门户站点 (Beta)
+title: 搭建开发者门户站点
 slug: /api-full-lifecycle/build-devportal-site
 tags:
 - API7 Enterprise
