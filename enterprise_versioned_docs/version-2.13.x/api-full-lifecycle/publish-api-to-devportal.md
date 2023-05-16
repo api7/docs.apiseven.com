@@ -13,12 +13,13 @@ tags:
 
 1. 已经搭建好供开发者登录使用的站点。
 2. 准备好 OpenAPI Spec 文件，包括详细的 API 使用方式和说明。
+3. 参考文档 [发布 API 到网关]， 然后 [开启 API 身份认证]。
 
 ## 新增 API
 
-参考对应文档[新增 API](https://docs.apiseven.com/enterprise/user-manual/devportal/api#新增API)。
+参考文档 [新增 API](https://docs.apiseven.com/enterprise/user-manual/devportal/api#新增API)。
 
-在【5. 填写表单】中，关联路由选择创建好的`CreateOrders`。因为路由上已经启用了 key-auth 插件，开发者门户会自动识别出这一认证方式。
+在【5. 填写表单】中，关联路由选择创建好的 `CreateProduct`。因为路由上已经启用了 key-auth 插件，开发者门户会自动识别出这一认证方式。
 
 在【5. 填写表单】中，上传对应的 OpenAPI Spec 文件。
 
@@ -26,8 +27,8 @@ tags:
 
 ### 后端 API 验证
 
-调用`获取所有已发布 API 列表`的 API，其中可以看到包含了`CreateOrders`。
+调用`获取所有已发布 API 列表`的 API，其中可以看到包含了 `CreateProduct`。
 
 ### 控制台展示验证
 
-登录搭建好的业务开放平台站点，可以查找到`CreateOrders`。
+登录搭建好的业务开放平台站点，可以查找到 `CreateProduct`。

@@ -70,8 +70,6 @@ curl '${MOCK_SERVER}/products/1'
 
 curl '${MOCK_SERVER}/products' \
 -X POST
---header 'Authorization: HMAC <ACCESSKEY>:<HMAC>' \
---header 'Content-Type: application/json' \
 --data '{
   "name": "iPhone 13 Pro",
   "price": 999.99

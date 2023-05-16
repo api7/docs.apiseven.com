@@ -14,7 +14,7 @@ tags:
 
 ## 创建包含 key-auth 插件的消费者
 
-参考对应文档[新建消费者](https://docs.apiseven.com/enterprise/user-manual/cluster/consumer#新建消费者)。
+参考文档 [新建消费者](https://docs.apiseven.com/enterprise/user-manual/cluster/consumer#新建消费者)。
 
 在【9. 选择需要启用的插件，点击对应的 **启用** 按钮】中，选择 `key-auth` 插件。
 
@@ -31,7 +31,7 @@ tags:
 
 ## 创建包含 key-auth 插件的插件模板
 
-参考对应文档[新建插件模板](https://docs.apiseven.com/enterprise/user-manual/cluster/plugin-template#新建插件模板)。
+参考文档 [新建插件模板](https://docs.apiseven.com/enterprise/user-manual/cluster/plugin-template#新建插件模板)。
 
 在【9. 选择需要启用的插件，点击对应的 **启用** 按钮】中，选择 `key-auth` 插件。
 在【11. 在 **配置Raw Data** 中，编辑插件的参数】中，填入如下配置：
@@ -47,7 +47,7 @@ tags:
 
 ## 将插件模板应用到 API
 
-以 `CreateProduct` 为例，参考对应文档[配置 API](https://docs.apiseven.com/enterprise/user-manual/cluster/api#配置-api)。
+以 `CreateProduct` 为例，参考文档 [配置 API](https://docs.apiseven.com/enterprise/user-manual/cluster/api#配置-api)。
 
 在【9. 编辑 API 的属性】中，将插件模板修改为上一步创建的包含 key-auth 插件的插件模板。
 
