@@ -9,7 +9,7 @@ tags:
 
 ## 前置要求
 
-开发者门户中已有发布的 API。可以让管理员参考对应文档[发布 API 到开发者门户](https://docs.apiseven.com/enterprise/user-manual/devportal/publish-api-to-devportal)。
+开发者门户中已有发布的 API。可以让管理员参考文档 [发布 API 到开发者门户](https://docs.apiseven.com/enterprise/user-manual/devportal/publish-api-to-devportal)。
 
 ## 查找 API
 登录业务开放平台，可以根据目录，API 名称，API 描述等，定位到自己实际需要的 API。
