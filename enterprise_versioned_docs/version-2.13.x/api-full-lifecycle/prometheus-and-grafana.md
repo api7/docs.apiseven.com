@@ -25,8 +25,8 @@ tags:
 
 参考对应文档[启用全局插件](https://docs.apiseven.com/enterprise/user-manual/cluster/global-plugin#启用全局插件)。
 
-在【**步骤9：**  选择需要启用的插件，点击对应的`启用`按钮】中，选择`CORS`插件。
-在【**步骤11：**  在`配置Raw Data`中，编辑插件的参数。（可选，部分插件无需配置任何参数即可使用）】中，修改`allow_origins`字段为`cors.test.com`。
+在【9. 选择需要启用的插件，点击对应的`启用`按钮】中，选择`CORS`插件。
+在【11. 在`配置Raw Data`中，编辑插件的参数。（可选，部分插件无需配置任何参数即可使用）】中，修改`allow_origins`字段为`cors.test.com`。
 
 :::info
 
@@ -43,8 +43,8 @@ tags:
 
 参考对应文档[创建插件模板](https://docs.apiseven.com/enterprise/user-manual/cluster/plugin-template#新建插件模板)。
 
-在【**步骤9：**  选择需要启用的插件，点击对应的`启用`按钮】中，选择`CORS`插件。
-在【**步骤11：**  在`配置Raw Data`中，编辑插件的参数。（可选，部分插件无需配置任何参数即可使用）】中，修改`allow_origins`字段为`cors.test.com`。
+在【9. 选择需要启用的插件，点击对应的`启用`按钮】中，选择`CORS`插件。
+在【11. 在`配置Raw Data`中，编辑插件的参数。（可选，部分插件无需配置任何参数即可使用）】中，修改`allow_origins`字段为`cors.test.com`。
 
 :::info
 
@@ -62,7 +62,7 @@ tags:
 
 借用test-cors网站进行模拟验证。
 
-**步骤1：** 在网络浏览器中访问https://test-cors.org/。
+1.  在网络浏览器中访问https://test-cors.org/。
 
 **步骤2：** 在test-cors.org网站界面上，您将看到设置请求参数的选项，如URL、HTTP方法、请求头、请求体等。根据您的要求，将目标URL设置为您的`CreateOrders`这个 API。
 

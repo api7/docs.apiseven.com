@@ -17,7 +17,7 @@ tags:
 
 
 
-**步骤1：** 登录 API7 Enterprise 控制台。
+1.  登录 API7 Enterprise 控制台。
 
 **步骤2：** 在顶部导航菜单，点击`开发者门户`。
 
