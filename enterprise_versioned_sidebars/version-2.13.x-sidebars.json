@@ -22,7 +22,7 @@
         "api-full-lifecycle/design-apis",
         "api-full-lifecycle/create-apis",
         "api-full-lifecycle/publish-apis",
-        "api-full-lifecycle/handling-cors",
+        "api-full-lifecycle/api-authentication",
         "api-full-lifecycle/build-devportal-site",
         "api-full-lifecycle/publish-api-to-devportal",
         "api-full-lifecycle/subscribe-api-in-devportal"
