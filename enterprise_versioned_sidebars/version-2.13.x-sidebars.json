@@ -73,6 +73,11 @@
           ]
         }
       ]
+    },
+    {
+      "type": "link",
+      "label": "OpenAPI Reference",
+      "href": "/enterprise/openapi"
     }
   ]
 }
