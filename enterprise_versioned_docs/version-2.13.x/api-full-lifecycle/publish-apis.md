@@ -11,7 +11,7 @@ API 开发完毕后，需要发布到 API7 网关中，以获得 API7 带来的�
 
 :::info
 
-本文将使用根据[设计 API](https://docs.apiseven.com/enterprise/api-full-lifecycle/design-apis)，在 Postman 上创建的 Mock API进行演示。
+本文将使用根据 [设计 API](https://docs.apiseven.com/enterprise/api-full-lifecycle/design-apis)，在 Postman 上创建的 Mock API进行演示。
 
 :::
 
@@ -25,7 +25,7 @@ API 开发完毕后，需要发布到 API7 网关中，以获得 API7 带来的�
 
 将 Postman 上的 Mock Server 设置为上游。
 
-参考文档[新建上游](https://docs.apiseven.com/enterprise/user-manual/cluster/upstream#%E6%96%B0%E5%BB%BA%E4%B8%8A%E6%B8%B8)。
+参考文档 [新建上游](https://docs.apiseven.com/enterprise/user-manual/cluster/upstream#%E6%96%B0%E5%BB%BA%E4%B8%8A%E6%B8%B8)。
 
 在【**步骤9**: 填写表单】中，使用如下配置：
 
@@ -44,7 +44,7 @@ API 开发完毕后，需要发布到 API7 网关中，以获得 API7 带来的�
 ### 新建 API 并发布
 
 根据设计，我们总共需要创建三个 API。以`CreateProduct`为例。
-参考[新建 API](https://docs.apiseven.com/enterprise/user-manual/cluster/api#%E6%96%B0%E5%BB%BA-api)。
+参考文档 [新建 API](https://docs.apiseven.com/enterprise/user-manual/cluster/api#%E6%96%B0%E5%BB%BA-api)。
 
 在【**步骤10**: 填写表单】中，使用如下配置：
 
@@ -66,7 +66,7 @@ API 开发完毕后，需要发布到 API7 网关中，以获得 API7 带来的�
 
 ### 从 Postman 导出 API
 
-打开 Postman，选择我们在[设计 API](https://docs.apiseven.com/enterprise/api-full-lifecycle/design-apis) 中创建的 Collection，即 `Shop`。
+打开 Postman，选择我们在 [设计 API](https://docs.apiseven.com/enterprise/api-full-lifecycle/design-apis) 中创建的 Collection，即 `Shop`。
 
 点击 Collection 旁边的省略号，在弹出的菜单中点击 **Export** 选项：
 ![Click Export](https://static.apiseven.com/uploads/2023/05/04/soQWbadx_export-button.png)
@@ -106,7 +106,7 @@ p2o ./Shop.postman_collection.json -f ./shop.yaml
 
 ### 导入 OpenAPI
 
-参考[导入 OpenAPI](https://docs.apiseven.com/enterprise/user-manual/cluster/api#%E6%96%B0%E5%BB%BA-api)。
+参考文档 [导入 OpenAPI](https://docs.apiseven.com/enterprise/user-manual/cluster/api#%E6%96%B0%E5%BB%BA-api)。
 
 在【**步骤10**: 填写表单】中，使用如下配置：
 
@@ -117,7 +117,7 @@ p2o ./Shop.postman_collection.json -f ./shop.yaml
 
 ### 配置上游
 
-参考文档[配置上游](https://docs.apiseven.com/enterprise/user-manual/cluster/upstream#%E9%85%8D%E7%BD%AE%E4%B8%8A%E6%B8%B8)， 修改为正确的目标节点。
+参考文档 [配置上游](https://docs.apiseven.com/enterprise/user-manual/cluster/upstream#%E9%85%8D%E7%BD%AE%E4%B8%8A%E6%B8%B8)， 修改为正确的目标节点。
 在【8. 点击对应上游的 **配置** 按钮】中，选择刚才导入 OpenAPI 时自动生成的`shop_server` 上游。
 
 在【9. 编辑上游的属性】中，编辑以下属性：
@@ -134,7 +134,7 @@ p2o ./Shop.postman_collection.json -f ./shop.yaml
 
 ### API 上线
 
-参考文档[API 上线](https://docs.apiseven.com/enterprise/user-manual/cluster/upstream#%E9%85%8D%E7%BD%AE%E4%B8%8A%E6%B8%B8)， 将刚才导入的 API 变为发布状态。
+参考文档 [API 上线](https://docs.apiseven.com/enterprise/user-manual/cluster/upstream#%E9%85%8D%E7%BD%AE%E4%B8%8A%E6%B8%B8)， 将刚才导入的 API 变为发布状态。
 
 ## 验证
 
