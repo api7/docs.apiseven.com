@@ -30,9 +30,13 @@ API 开发完毕后，需要发布到 API7 网关中，以获得 API7 带来的�
 在【**步骤9**: 填写表单】中，使用如下配置：
 
 **名称**：shop_server
+
 **目标节点**: Mock Server 的地址
+
 **端口**： 443
+
 **协议**： HTTPs
+
 **权重**： 1
 
 ![Create Upstream shopserver](https://static.apiseven.com/uploads/2023/05/16/DxrmrWmF_createupstream-shop_server.png)
@@ -45,9 +49,13 @@ API 开发完毕后，需要发布到 API7 网关中，以获得 API7 带来的�
 在【**步骤10**: 填写表单】中，使用如下配置：
 
 **名称**： shop_server_CreateProduct
+
 **上游服务**： 选择上一步中创建的 `shop_server`
+
 **路径**:  /products
+
 **HTTP 方法**：GET
+
 **API 上线**：开启
 
 ![Create API - CreateProduct](https://static.apiseven.com/uploads/2023/05/16/ItYstSl6_createapi-createproduct.png)
@@ -103,6 +111,7 @@ p2o ./Shop.postman_collection.json -f ./shop.yaml
 在【**步骤10**: 填写表单】中，使用如下配置：
 
 **导入任务名称**： shop_server
+
 **上传文件**：shop.yaml
 
 ![Import OpenAPI]](https://static.apiseven.com/uploads/2023/05/16/ItYstSl6_createapi-createproduct.png)
@@ -115,8 +124,11 @@ p2o ./Shop.postman_collection.json -f ./shop.yaml
 在【**步骤9：** 编辑上游的属性】中，编辑以下属性：
 
 **目标节点**: Mock Server 的地址
+
 **端口**： 443
+
 **协议**： HTTPs
+
 **权重**： 1
 
 ![Configure Upstream](https://static.apiseven.com/uploads/2023/05/16/P3IRzYFZ_configureupstream.png)
