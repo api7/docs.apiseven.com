@@ -101,10 +101,10 @@ curl '${MOCK_SERVER}/orders' \
 
 ## 设计 API
 
-接下来，我们在 Postman 上创建一个名为 `shop` 的 Collection，然后在该 Collection 下依次创建三个 API，分别是 `GetProductById`、`CreateProduct`、`CreateOrder`。
+接下来，我们将在 `shop` Collection 下依次创建三个 API，分别是 `GetProductById`、`CreateProduct`、`CreateOrder`。
 
 ![Get Product By Id](https://static.apiseven.com/uploads/2023/04/28/5cfdjUO4_GetProductById.png)
 ![Create Product](https://static.apiseven.com/uploads/2023/04/28/MFDN1LWS_Screenshot%202023-04-28%20at%2010.57.02.png)
-![Create Order](https://static.apiseven.com/uploads/2023/04/28/Kcxszff1_CreateOrder.png)
+![Create Order](https://static.apiseven.com/uploads/2023/05/16/Fvoyqm04_CreateOrder.png)
 
 至此我们已经完成了 API 的设计，接下来我们需要按照既定的 API 规范来开发这几个 API。
