@@ -21,6 +21,7 @@ tags:
 参考对应文档[新建消费者](https://docs.apiseven.com/enterprise/user-manual/cluster/consumer#新建消费者)。
 
 在【9. 选择需要启用的插件，点击对应的 **启用** 按钮】中，选择 `key-auth` 插件。
+
 在【11. 在 **配置Raw Data** 中，编辑插件的参数】中，填入如下配置：
 
 ```json
