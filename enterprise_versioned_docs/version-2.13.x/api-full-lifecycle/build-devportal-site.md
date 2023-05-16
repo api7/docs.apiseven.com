@@ -40,7 +40,7 @@ API 全生命周期管理除了要站在 API “生产者”（API 开发者、�
 
 调用展示端的后端 API 需要鉴权以保证安全性。API7 开发者门户使用的是jwt鉴权方式，鉴权流程主要分为两部分，获取 access_token 和携带 token。
 
-**步骤1：** 获取 access_token。
+1.  获取 access_token。
 
 - 第一种方式是通过特定的代码片段来生成 access_token, 需要传入`组织 ID` 信息。
 其中`secret`需要和 API7-Devportal 中保持一致。 
@@ -73,7 +73,7 @@ curl -XPUT http://127.0.0.1:9000/devportal/sign  -H "Authorization: Bearer $root
 
 ``
 
-**步骤2：** 将 access_token 携带于 Authorization 头中访问.
+2.  将 access_token 携带于 Authorization 头中访问.
 例如：
 
 ``shell
