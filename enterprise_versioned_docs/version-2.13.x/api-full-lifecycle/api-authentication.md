@@ -45,15 +45,15 @@ tags:
 ```
 以上配置表示 key-auth 插件将会尝试从 HTTP Request 的 `Authorization` Header 中获取访问凭证，如果获取失败或者凭证无法对应到真实存在的消费者，则认证失败，反之则会认证成功。
 
-### 将插件模板应用到 API
+## 将插件模板应用到 API
 
 以 `CreateProduct` 为例，参考对应文档[配置 API](https://docs.apiseven.com/enterprise/user-manual/cluster/api#配置-api)。
 
 在【9. 编辑 API 的属性】中，将插件模板修改为上一步创建的包含 key-auth 插件的插件模板。
 
-### 验证身份认证效果
+## 验证
 
-1. 不带 API Key 发送 API 请求：
+### 不带 API Key 发送 API 请求：
 
 ```shell
 
@@ -62,7 +62,7 @@ curl -X POST -d '{"name": "iPhone 13 Pro", "price": 999.99}' -H 'HOST: test.com'
 ```
 该请求会返回一个 HTTP 401 `{"message":"Invalid API key in request"}` 的错误，因为请求中没有携带合法的 API Key。
 
-2. 携带正确的 API Key 发起请求：
+### 携带正确的 API Key 发起请求：
 
 ```shell
 
