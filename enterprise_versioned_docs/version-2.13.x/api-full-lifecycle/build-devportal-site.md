@@ -73,7 +73,7 @@ curl -XPUT http://127.0.0.1:9000/devportal/sign  -H "Authorization: Bearer $root
 
 ``
 
-**步骤2：** 将 access_token 携带于 Authorization 头中访问.
+2.  将 access_token 携带于 Authorization 头中访问.
 例如：
 
 ``shell

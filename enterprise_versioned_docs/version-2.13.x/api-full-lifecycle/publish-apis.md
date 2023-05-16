@@ -118,9 +118,9 @@ p2o ./Shop.postman_collection.json -f ./shop.yaml
 ### 配置上游
 
 参考文档[配置上游](https://docs.apiseven.com/enterprise/user-manual/cluster/upstream#%E9%85%8D%E7%BD%AE%E4%B8%8A%E6%B8%B8)， 修改为正确的目标节点。
-在【**步骤8：** 点击对应上游的 **配置** 按钮】中，选择刚才导入 OpenAPI 时自动生成的`shop_server` 上游。
+在【8. 点击对应上游的 **配置** 按钮】中，选择刚才导入 OpenAPI 时自动生成的`shop_server` 上游。
 
-在【**步骤9：** 编辑上游的属性】中，编辑以下属性：
+在【9. 编辑上游的属性】中，编辑以下属性：
 
 **目标节点**: Mock Server 的地址
 

@@ -54,11 +54,11 @@ EE 中的 API 存在于具体的集群和工作分区中，因此在导入 API �
 
 ### 在 EE 中新建集群
 
-登录控制台，在 `集群列表` 中选择目标集群点击访问，或者[新建集群](https://docs.apiseven.com/enterprise/user-manual/cluster/list#%E6%96%B0%E5%BB%BA%E9%9B%86%E7%BE%A4)后点击访问。
+登录控制台，在  **集群列表**  中选择目标集群点击访问，或者[新建集群](https://docs.apiseven.com/enterprise/user-manual/cluster/list#%E6%96%B0%E5%BB%BA%E9%9B%86%E7%BE%A4)后点击访问。
 
 ### 在 EE 中新建工作分区
 
-在集群中的 `工作分区` 部分选择目标工作分区点击访问，或者[新建工作分区](https://docs.apiseven.com/enterprise/user-manual/cluster/workspace#%E6%96%B0%E5%BB%BA%E5%B7%A5%E4%BD%9C%E5%88%86%E5%8C%BA)后点击访问。
+在集群中的  **工作分区**  部分选择目标工作分区点击访问，或者[新建工作分区](https://docs.apiseven.com/enterprise/user-manual/cluster/workspace#%E6%96%B0%E5%BB%BA%E5%B7%A5%E4%BD%9C%E5%88%86%E5%8C%BA)后点击访问。
 
 ### 导入 OpenAPI 文件
 
@@ -74,4 +74,4 @@ EE 中的 API 存在于具体的集群和工作分区中，因此在导入 API �
 
 EE 会默认为 API 添加一个默认的上游配置，地址为 `0.0.0.0:80`，可以根据业务实际需要在 `上游管理` 中修改配置。
 
-导入的 API 默认是 `未上线` 状态的，需要在 `API 列表` 中选择目标 API，点击 `更多` 中的 `API 上线` 按钮，将 API 上线。
+导入的 API 默认是 `未上线` 状态的，需要在 `API 列表` 中选择目标 API，点击  **更多**  中的 `API 上线` 按钮，将 API 上线。
