@@ -71,12 +71,13 @@
             "user-manual/devportal/settings"
           ]
         },
-        {
-          "type": "link",
-          "label": "OpenAPI Reference",
-          "href": "/enterprise/openapi"
-        }
+
       ]
+    },
+    {
+      "type": "link",
+      "label": "OpenAPI Reference",
+      "href": "/enterprise/openapi"
     }
   ]
 }
