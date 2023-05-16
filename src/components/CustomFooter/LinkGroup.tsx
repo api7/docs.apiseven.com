@@ -20,7 +20,9 @@ export const LinkGroup = (props: LinkGroupProps) => {
       >
         {title}
       </Text>
-      <Stack as="ul" spacing={{ base: 2, md: 4 }} listStyleType="none">
+      <Stack as="ul" spacing={{ base: 2, md: 4 }} listStyleType="none"
+        p={0}
+      >
         {links.map((link, idx) => (
           <Box as="li" key={idx}>
             {
@@ -37,7 +39,7 @@ export const LinkGroup = (props: LinkGroupProps) => {
             }
             {
               (link.href !== "#") && (
-                <Box as="a" target="_blank" href={link.href} _hover={{ textDecoration: 'underline' }}>
+                <Box as="a" target="_blank" href={link.href} _hover={{ textDecoration: 'underline', color: 'gray.800' }} color='gray.800'>
                   <span>{link.label}</span>
                   {link.badge && (
                     <Box as="span" ms="2">
