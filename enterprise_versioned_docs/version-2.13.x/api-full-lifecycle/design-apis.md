@@ -154,7 +154,7 @@ curl '${MOCK_SERVER}/orders' \
 
 ```
 
-![Create Product - Example](https://static.apiseven.com/uploads/2023/05/16/EGen5BRj_createproducts-example.pngg)
+![Create Product - Example](https://static.apiseven.com/uploads/2023/05/16/EGen5BRj_createproducts-example.png)
 
 ### CreateOrder
 
