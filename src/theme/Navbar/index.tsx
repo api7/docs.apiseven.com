@@ -11,7 +11,7 @@ export default function Navbar(): JSX.Element {
     <>
       <HeaderComponent />
       <NavbarLayout>
-        <Container maxW='6xl' px={{ base: '0', md: '5' }}>
+        <Container maxWidth="1256px" px={{ base: '0', md: '5' }}>
           <NavbarContent />
         </Container>
       </NavbarLayout>

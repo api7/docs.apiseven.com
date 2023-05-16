@@ -1,6 +1,5 @@
 import {
   Box,
-  ChakraProvider,
   Flex,
   HStack,
   SimpleGrid,
@@ -109,14 +108,14 @@ const App = () => {
           >
             {locale === "zh-CN" && (
               <Text>
-                <Box as="a" href="/privacy_policy">
+                <Box as="a" href="/privacy_policy" color="gray.800" _hover={{ color: "gray.800" }}>
                   隐私政策
                 </Box>
               </Text>
             )}
             {locale === "zh-CN" && (
               <Text>
-                <Box as="a" href="https://beian.miit.gov.cn/#/Integrated/index">
+                <Box as="a" href="https://beian.miit.gov.cn/#/Integrated/index" color="gray.800" _hover={{ color: "gray.800" }}>
                   粤ICP备19060840号
                 </Box>
               </Text>
