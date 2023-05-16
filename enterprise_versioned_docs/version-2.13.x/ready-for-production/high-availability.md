@@ -147,7 +147,7 @@ conf:
 docker compose up api7-dashboard -d
 ```
 
-**步骤5**: 验证 API7-Dashboard.
+5. 验证 API7-Dashboard.
 
 ```sh
 # 检查容器列表和日志。请注意替换版本号
