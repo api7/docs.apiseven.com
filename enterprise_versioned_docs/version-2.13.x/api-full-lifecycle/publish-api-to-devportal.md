@@ -18,9 +18,9 @@ tags:
 
 参考对应文档[新增 API](https://docs.apiseven.com/enterprise/user-manual/devportal/api#新增API)。
 
-在【**步骤5**: 填写表单】中，关联路由选择创建好的`CreateOrders`。因为路由上已经启用了 key-auth 插件，开发者门户会自动识别出这一认证方式。
+在【5. 填写表单】中，关联路由选择创建好的`CreateOrders`。因为路由上已经启用了 key-auth 插件，开发者门户会自动识别出这一认证方式。
 
-在【**步骤5**: 填写表单】中，上传对应的 OpenAPI Spec 文件。
+在【5. 填写表单】中，上传对应的 OpenAPI Spec 文件。
 
 ## 验证
 
