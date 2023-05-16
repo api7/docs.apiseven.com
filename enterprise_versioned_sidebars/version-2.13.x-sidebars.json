@@ -24,6 +24,7 @@
         "api-full-lifecycle/publish-apis",
         "api-full-lifecycle/api-authentication",
         "api-full-lifecycle/ip-restriction",
+        "api-full-lifecycle/limit-count",
         "api-full-lifecycle/build-devportal-site",
         "api-full-lifecycle/publish-api-to-devportal",
         "api-full-lifecycle/subscribe-api-in-devportal"
