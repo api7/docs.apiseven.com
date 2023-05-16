@@ -226,7 +226,12 @@ docker run -d --name alertmanager --network=api7-ee \
 
 ## 配置 API7 Enterprise 系统配置
 
-
 ## 验证监控报表
 
 进入集群，在左侧菜单中选择 **监控报表**。嵌入的 Grafana 面板将显示在此处：
+
+## 访问 AlertManager 控制台
+
+访问 `http://<API7_GATEWAY_ADDRESS>:9093/#/alerts` 查看 AlertManager 控制台。
+
+![AlertManager Console](https://static.apiseven.com/uploads/2023/05/16/OuGl66LF_alertmanagerconsole.png)
