@@ -52,6 +52,20 @@ const config = {
         },
       }),
     ],
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            spec: "https://devportal-test.apiseven.com/openapi/swagger.yaml",
+            route: "/enterprise/openapi",
+          }
+        ],
+        theme: {
+          primaryColor: "#e8433e",
+        },
+      }
+    ]
   ],
 
   plugins: [

@@ -70,6 +70,11 @@
             "user-manual/devportal/developer",
             "user-manual/devportal/settings"
           ]
+        },
+        {
+          "type": "link",
+          "label": "OpenAPI Reference",
+          "href": "openapi"
         }
       ]
     }
