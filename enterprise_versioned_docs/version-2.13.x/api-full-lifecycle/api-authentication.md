@@ -12,11 +12,7 @@ tags:
 1. 参考文档成功部署 API7 Enterprise，并创建好集群与工作分区。
 2. 参考文档 [发布 API 到网关](https://docs.apiseven.com/enterprise/api-full-lifecycle/publish-apis)，完成三个 API 的发布。
 
-## 配置 key-auth 插件
-
-以 `CreateProduct` 为例进行配置。
-
-### 创建包含 key-auth 插件的消费者
+## 创建包含 key-auth 插件的消费者
 
 参考对应文档[新建消费者](https://docs.apiseven.com/enterprise/user-manual/cluster/consumer#新建消费者)。
 
@@ -33,7 +29,7 @@ tags:
 ```
 以上配置表示 `auth-one` 为一个合法的 key-auth 插件访问凭证。
 
-### 创建包含 key-auth 插件的插件模板
+## 创建包含 key-auth 插件的插件模板
 
 参考对应文档[新建插件模板](https://docs.apiseven.com/enterprise/user-manual/cluster/plugin-template#新建插件模板)。
 
@@ -51,7 +47,7 @@ tags:
 
 ### 将插件模板应用到 API
 
-参考对应文档[配置 API](https://docs.apiseven.com/enterprise/user-manual/cluster/api#配置-api)。
+以 `CreateProduct` 为例，参考对应文档[配置 API](https://docs.apiseven.com/enterprise/user-manual/cluster/api#配置-api)。
 
 在【9. 编辑 API 的属性】中，将插件模板修改为上一步创建的包含 key-auth 插件的插件模板。
 
