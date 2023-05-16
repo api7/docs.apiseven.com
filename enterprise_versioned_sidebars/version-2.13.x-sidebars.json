@@ -17,23 +17,11 @@
     },
     {
       "type": "category",
-      "label": "部署指南",
-      "items": [
-        {
-          "type": "category",
-          "label": "PoC",
-          "items": [
-            "installation/poc/introduction",
-            "installation/poc/docker"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "category",
       "label": "API 全生命周期管理",
       "items": [
         "api-full-lifecycle/design-apis",
+        "api-full-lifecycle/create-apis",
+        "api-full-lifecycle/publish-apis",
         "api-full-lifecycle/handling-cors",
         "api-full-lifecycle/api-authentication",
         "api-full-lifecycle/build-devportal-site",
@@ -88,11 +76,9 @@
       ]
     },
     {
-      "type": "category",
-      "label": "生产实践",
-      "items": [
-        "ready-for-production/high-availability"
-      ]
+      "type": "link",
+      "label": "OpenAPI Reference",
+      "href": "/enterprise/openapi"
     }
   ]
 }
