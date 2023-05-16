@@ -14,17 +14,19 @@ tags:
 1. 登录 API7 Enterprise 控制台。
 2. 在顶部导航菜单，点击 **集群管理** 。
 3. 在左侧菜单，点击 **集群列表** 。
-4. 在列表中点击集群对应的「更多」按钮，在下拉菜单中，点击 **复制集群信息**。
-5. [参考文档]，在一个新的节点上安装数据面组件 API7-Gateway。
+4. 在列表中点击集群对应的 **更多** 按钮，在下拉菜单中，点击 **复制集群信息**。
+5. 在一个新的节点上安装数据面组件 API7-Gateway。
 6. 成功安装 API7-Gateway 后，修改配置文件：
 
 ```sh
-cat /usr/local/apisix/conf/config.yaml
 
+vim /usr/local/apisix/conf/config.yaml
+
+# paste the etcd cluster info
 etcd:
   host:
-    - "http://api7-dashboard-etcd.api7.svc.cluster.local:2379"
-  prefix: "/api7/452869103972058061"
+    - "http://127.0.0.1:2379"
+  prefix: "/api7/xxxxxxxx"
   timeout: 30
 
 ```

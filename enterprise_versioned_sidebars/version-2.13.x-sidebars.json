@@ -17,6 +17,14 @@
     },
     {
       "type": "category",
+      "label": "部署指南",
+      "items": [
+        "installation/docker",
+        "installation/activate-license"
+      ]
+    },
+    {
+      "type": "category",
       "label": "API 全生命周期管理",
       "items": [
         "api-full-lifecycle/design-apis",
