@@ -114,7 +114,7 @@ p2o ./Shop.postman_collection.json -f ./shop.yaml
 
 **上传文件**：shop.yaml
 
-![Import OpenAPI]](https://static.apiseven.com/uploads/2023/05/16/ItYstSl6_createapi-createproduct.png)
+![Import OpenAPI](https://static.apiseven.com/uploads/2023/05/16/ItYstSl6_createapi-createproduct.png)
 
 ### 配置上游
 
