@@ -32,7 +32,7 @@ tags:
 
 **步骤4：** 点击`新增开发者`按钮。
 
-**步骤5：** 根据[名词解释](https://docs.apiseven.com/enterprise/background-information/glossary#%E5%BC%80%E5%8F%91%E8%80%85%E9%97%A8%E6%88%B7) 填写表单。
+**步骤5：** 填写表单。
 
 **步骤6：** 点击`提交`按钮。
 

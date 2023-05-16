@@ -5,7 +5,7 @@ tags:
   - API7 Enterprise
 ---
 
-![API7 key concept](https://static.apiseven.com/uploads/2023/04/17/JqvOpobJ_key-concept-cn.png)
+![API7 key concept](https://static.apiseven.com/uploads/2023/04/28/y55wAby6_keyconcept-zh.png)
 
 ## 集群
 
@@ -65,7 +65,7 @@ API7 中的消费者概念，与 Apache APISIX 中的消费者概念保持一致
 在生产实践中，数据面节点和控制面节点分开部署，每个网关集群需要至少一个控制面节点。
 
 
-## 开发者门户 （Beta）
+## 开发者门户
 
 API7 开发者门户是 AP7 Enterprise 产品的子功能，它允许用户将配置在 API7 Enterprise 之上的 API，发布到开发者门户上，让对这些 API 有需要的外部开发者可以方便地订阅和使用 API。并且利用 API7 Enterprise 提供的鉴权、限流等能力，很好地对 API 进行保护，保证 API 的安全性。
 
@@ -75,7 +75,7 @@ API7 开发者门户是 AP7 Enterprise 产品的子功能，它允许用户将�
 
 - 控制 API 在展示端的发布和下线，仅发布后的 API 在展示端站点可见。
 - 为发布的 API 添加一些策略，例如限制访问 QPS、要求鉴权等来保护发布的 API。
-- 对来自展示端站点的请求进行审批，包括开发者账号注册、应用希望订阅某个 API 等。
+- 对来自展示端站点的请求进行审批。
 
 展示端核心功能：
 

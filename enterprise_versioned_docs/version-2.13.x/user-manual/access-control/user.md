@@ -25,7 +25,7 @@ tags:
 
 **步骤4：**  点击`新建`按钮。
 
-**步骤5：**  根据[名词解释](https://docs.apiseven.com/enterprise/background-information/glossary#%E4%B8%8A%E6%B8%B8)，填写表单。
+**步骤5：**  填写表单。
 
 **步骤6：**  点击`提交`按钮。
 
