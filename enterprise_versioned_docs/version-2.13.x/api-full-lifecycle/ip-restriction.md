@@ -1,6 +1,6 @@
 ---
 title: 阻止特定 ip 访问 API
-slug: /api-full-lifecycle/handling-ip-restriction
+slug: /api-full-lifecycle/ip-restriction
 tags:
 - API7 Enterprise
 ---
