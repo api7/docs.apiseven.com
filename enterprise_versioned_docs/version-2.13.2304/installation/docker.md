@@ -73,6 +73,14 @@ docker run -d --name api7-ee -p 80:80 -p 443:443 -p 9000:9000 --network=api7-ee 
 
 ## 启动控制面依赖组件
 
+控制面依赖组件包含:
+- OpenSearch 1.3.7
+- Grafana 7.3.7
+- Prometheus 2.25.0
+- confd 0.16.0
+- AlertManager 0.22.2
+
+
 ### 启动 confd
 
 ```shell
