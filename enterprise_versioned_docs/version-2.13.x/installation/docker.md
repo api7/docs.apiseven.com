@@ -36,7 +36,6 @@ tags:
 ```shell
 
 docker network create api7-ee
-docker network connect api7-ee api7-ee
 
 ```
 
@@ -44,7 +43,7 @@ docker network connect api7-ee api7-ee
 
 ```shell
 
-docker pull api7/api7-ee:2.13.2302
+docker pull api7/api7-ee:2.13.2304
 
 ```
 
