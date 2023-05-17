@@ -1,6 +1,6 @@
 ---
 title: 获取许可证
-slug: /installation/activate-license
+slug: /installation/get-license
 tags:
   - API7 Enterprise
 ---
