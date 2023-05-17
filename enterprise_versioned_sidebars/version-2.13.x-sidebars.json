@@ -20,7 +20,7 @@
       "label": "部署指南",
       "items": [
         "installation/docker",
-        "installation/activate-license"
+        "installation/get-license"
       ]
     },
     {

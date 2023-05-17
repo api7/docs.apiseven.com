@@ -1,11 +1,11 @@
 ---
-title: 激活许可证
+title: 获取许可证
 slug: /installation/activate-license
 tags:
   - API7 Enterprise
 ---
 
-在安装 API7 Enterprise 后，您需要激活许可证。
+在安装 API7 Enterprise 后，您需要获取许可证并在控制台中上传激活。
 
 ## PoC 使用的 30 天免费许可证
 
