@@ -85,9 +85,7 @@ curl '${MOCK_SERVER}/products' \
 ```shell
 
 curl '${MOCK_SERVER}/orders' \
--X POST
---header 'Content-Type: application/json' \
---header 'apikey: xxxxx' \
+-X POST \
 --data '{
     "customer_id":"user_ascx8e21nsd", 
     "product_id": 1,
