@@ -286,7 +286,7 @@ docker ps | grep grafana
 
 点击分享图标, 关闭所有选项的开关, 然后点击 **Copy**， 获得 Grafana 面板地址:
 
-![图片](https://static.apiseven.com/uploads/2023/05/16/f7nU2UQ5_grafanacopylink.png)
+![Grafana Copy](https://static.apiseven.com/uploads/2023/05/17/2Fh6PE1t_grafanacopy.png)
 
 ## API7 Enterprise 系统设置
 
