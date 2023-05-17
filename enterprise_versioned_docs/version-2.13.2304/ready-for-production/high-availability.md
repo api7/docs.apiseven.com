@@ -109,13 +109,13 @@ $ docker exec etcd bash -c "etcdctl --endpoints $ha_ip1:2379,$ha_ip2:2379,$ha_ip
 
 **步骤1**:在两个控制面节点上安装 Docker：api7-highhavailability1、api7-highhavailability2。
 
-**步骤2**:将 api7-2.13.x-cp.tar.gz（多版本适用，以实际获取的版本为准）复制到两个控制面节点并解压。
+**步骤2**:将 api7-2.13.2304-cp.tar.gz（多版本适用，以实际获取的版本为准）复制到两个控制面节点并解压。
 
 ```sh
 # 解压,请注意替换版本号
-tar -zxvf api7-2.13.x-cp.tar.gz
+tar -zxvf api7-2.13.2304-cp.tar.gz
 # 加载Docker镜像,请注意替换版本号
-docker load < images/api7-dashboard-2.13.x.tar.gz
+docker load < images/api7-dashboard-2.13.2304.tar.gz
 ```
 
 **步骤3**:部署 API7-Dashboard.
@@ -153,12 +153,12 @@ docker compose up api7-dashboard -d
 # 检查容器列表和日志。请注意替换版本号
 $ docker ps 
 CONTAINER ID   IMAGE                                          COMMAND                  CREATED         STATUS        PORTS                                       NAMES
-17a250b6f6d5   api7ee.azurecr.io/api7-dashboard:2.13.x  "/usr/local/apisix-d…"   2 seconds ago   Up 1 second   0.0.0.0:9000->9000/tcp, :::9000->9000/tcp   api7-21322091-cp-api7-dashboard-1
+17a250b6f6d5   api7ee.azurecr.io/api7-dashboard:2.13.2304  "/usr/local/apisix-d…"   2 seconds ago   Up 1 second   0.0.0.0:9000->9000/tcp, :::9000->9000/tcp   api7-21322091-cp-api7-dashboard-1
 2166063e6f7e   bitnami/etcd:3.4.13                            "/entrypoint.sh etcd"    6 hours ago     Up 6 hours                                                etcd
-[xxx@api7-highavailability1 api7-2.13.x-cp]$ docker logs -f 17a250b6f6d5
+[xxx@api7-highavailability1 api7-2.13.2304-cp]$ docker logs -f 17a250b6f6d5
 The manager-api is running successfully!
 
-Version : 2.13.x
+Version : 2.13.2304
 GitHash : f2c8f46
 Listen  : 0.0.0.0:9000
 Loglevel: warn
@@ -171,13 +171,13 @@ Logfile : /usr/local/apisix-dashboard/logs/error.log
 
 **步骤1**:在两个数据面节点上安装 Docker:api7-highavailability4、api7-highavailability5
 
-**步骤2**:将-2.13.x-dp.tar.gz（多版本适用，以实际获取的版本为准）复制到两个数据面节点并解压。
+**步骤2**:将-2.13.2304-dp.tar.gz（多版本适用，以实际获取的版本为准）复制到两个数据面节点并解压。
 
 ```sh
 # 解压,请注意替换版本号
-tar -zxvf api7-2.13.x-dp.tar.gz
+tar -zxvf api7-2.13.2304-dp.tar.gz
 # 加载 Docker 镜像,请注意替换版本号
-docker load < images/api7-gateway-2.13.x.tar.gz
+docker load < images/api7-gateway-2.13.2304.tar.gz
 ```
 
 **步骤3**:部署 API7-Gateway.
@@ -228,14 +228,14 @@ $ curl 172.28.0.17:80/get -H "Host: test.com"
 ```sh
 # 请注意替换版本号
 
-[xxx@api7-highavailability4 ~]$ cd api7-2.13.x-dp/
-[xxx@api7-highavailability4 api7-2.13.x-dp]$ ls
+[xxx@api7-highavailability4 ~]$ cd api7-2.13.2304-dp/
+[xxx@api7-highavailability4 api7-2.13.2304-dp]$ ls
 cli.sh  docker-compose.yaml  gateway_conf  gateway_logs  images
-[xxx@api7-highavailability4 api7-2.13.x-dp]$ docker compose down 
+[xxx@api7-highavailability4 api7-2.13.2304-dp]$ docker compose down 
 [+] Running 2/2
  ⠿ Container api7-21322091-dp-api7-gateway-1  Removed                                                                                                                       10.2s
  ⠿ Network api7-21322091-dp_api7              Removed                                                                                                                        0.0s
-[xxx@api7-highavailability4 api7-2.13.x-dp]$ docker ps 
+[xxx@api7-highavailability4 api7-2.13.2304-dp]$ docker ps 
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
 
@@ -244,7 +244,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 #### 手动停止一个节点上的 API7-Dashboard 服务
 ```sh
 # 请注意替换版本号
-$ cd api7-2.13.x-cp/
+$ cd api7-2.13.2304-cp/
 $ docker compose down
 ```
 
@@ -254,13 +254,13 @@ $ docker compose down
 
 ```sh
 # 请注意替换版本号
-[xxx@api7-highavailability1 api7-2.13.x-cp]$ docker ps 
+[xxx@api7-highavailability1 api7-2.13.2304-cp]$ docker ps 
 CONTAINER ID   IMAGE                                          COMMAND                  CREATED         STATUS         PORTS                                       NAMES
 d3b572696f50   api7ee.azurecr.io/api7-dashboard:2.13.2209.1   "/usr/local/apisix-d…"   4 minutes ago   Up 4 minutes   0.0.0.0:9000->9000/tcp, :::9000->9000/tcp   api7-21322091-cp-api7-dashboard-1
 2166063e6f7e   bitnami/etcd:3.4.13                            "/entrypoint.sh etcd"    24 hours ago    Up 24 hours                                                etcd
-[xxx@api7-highavailability1 api7-2.13.x-cp]$ docker stop 2166063e6f7e
+[xxx@api7-highavailability1 api7-2.13.2304-cp]$ docker stop 2166063e6f7e
 2166063e6f7e
-[xxx@api7-highavailability1 api7-2.13.x-cp]$ docker ps 
+[xxx@api7-highavailability1 api7-2.13.2304-cp]$ docker ps 
 CONTAINER ID   IMAGE                                          COMMAND                  CREATED         STATUS         PORTS                                       NAMES
 d3b572696f50   api7ee.azurecr.io/api7-dashboard:2.13.2209.1   "/usr/local/apisix-d…"   4 minutes ago   Up 4 minutes   0.0.0.0:9000->9000/tcp, :::9000->9000/tcp   api7-21322091-cp-api7-dashboard-1
 ```
