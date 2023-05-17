@@ -266,6 +266,8 @@ docker ps | grep grafana
 
 将 **HTTP** > **URL** 修改为 Prometheus 地址 `http://prometheus:9090` 然后点击 **Save** & **Test**。
 
+![Grafana Docker](https://static.apiseven.com/uploads/2023/05/17/e0w7wMRK_grafana-docker.png)
+
 在左侧菜单, 选择 **Create** > **Import**:
 
 ![Import Grafana Dashboard](https://static.apiseven.com/uploads/2023/05/16/yI80cNID_grafanaimport.png)
