@@ -51,7 +51,7 @@ docker pull api7/api7-ee:2.13.2304
 
 ```shell
 
-docker run -d -p 80:80 -p 443:443 -p 9000:9000 api7/api7-ee:2.13.2302
+docker run -d -p 80:80 -p 443:443 -p 9000:9000 --network=api7-ee api7/api7-ee:2.13.2304
 
 ```
 
@@ -59,22 +59,7 @@ docker run -d -p 80:80 -p 443:443 -p 9000:9000 api7/api7-ee:2.13.2302
 
 访问 `http://<API7_GATEWAY_ADDRESS>:9000` 登录 API7 Enterprise 控制台。默认用户名和密码都是 `admin`。
 
-## 新建集群
-
-参考文档 [新建集群](https://docs.apiseven.com/enterprise/user-manual/cluster/list#%E6%96%B0%E5%BB%BA%E9%9B%86%E7%BE%A4)
-
-在【5. 填写表单】中，使用如下配置：
-
-**集群名称** ： poc
-
-**etcd 资源**： 选择部署过程中自动创建的 `default` etcd 资源
-
-## 新增网关节点
-
-参考文档 [新增网关节点](https://docs.apiseven.com/enterprise/user-manual/cluster/gateway#%E6%96%B0%E5%A2%9E%E7%BD%91%E5%85%B3%E8%8A%82%E7%82%B9)。
-
-访问 API7 Enterprise 控制台，进入创建好的集群 `poc`，在左侧菜单选择 **网关节点**， 在列表中可以看到添加成功的网关节点。
-
+poc集群已经建好，default etcd资源有，网关节点有。
 
 ## 启动控制面依赖组件
 
@@ -99,6 +84,8 @@ docker run -d --network=api7-ee --name confd \
   api7/api7-confd:0.16.0
 ```
 
+docker ps | grep confd
+
 ### 启动 Prometheus
 
 ```shell
@@ -111,6 +98,8 @@ docker run -d --name prometheus --network api7-ee \
   --config.file=/etc/prometheus/prometheus.yml --web.enable-lifecycle
 
 ```
+
+docker ps | grep prometheus
 
 ### 启动 AlertManager
 
@@ -128,11 +117,15 @@ docker run -d --name alertmanager --network=api7-ee \
 
 ```shell
 
-docker run -d --name alertmanager --network=api7-ee \
-  -p 9093:9093 \
-  -v $(pwd)/alertmanager_conf:/etc/alertmanager \
-  --restart always prom/alertmanager:latest \
-  --log.level=debug --config.file=/etc/alertmanager/alertmanager.yml
+docker run -d --name opensearch --network api7-ee \
+  -p 9200:9200 \
+  --hostname opensearch \
+  --restart always \
+  --env discovery.type=single-node \
+  --env plugins.security.disabled=true \
+  --env cluster.routing.allocation.disk.threshold_enabled=true \
+  --env ES_JAVA_OPTS="-Xmx4g -Xms4g" \
+  opensearchproject/opensearch:2.3.0
 
 ```
 
@@ -155,18 +148,6 @@ docker run -d --name grafana --network api7-ee \
   --hostname grafana \
   --restart always \
   grafana/grafana:7.3.7
-
-```
-
-### 启动 OpenSearch
-
-```shell
-
-docker run -d --name alertmanager --network=api7-ee \
-  -p 9093:9093 \
-  -v $(pwd)/alertmanager_conf:/etc/alertmanager \
-  --restart always prom/alertmanager:latest \
-  --log.level=debug --config.file=/etc/alertmanager/alertmanager.yml
 
 ```
 
