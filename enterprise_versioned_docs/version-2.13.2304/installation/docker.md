@@ -300,3 +300,8 @@ docker ps | grep grafana
 
 ![Metrics](https://static.apiseven.com/uploads/2023/05/17/XaK20dw3_metrics.png)
 
+## 验证网关节点
+
+进入 `poc` 集群，在左侧菜单中选择 **网关节点**，确认有一个节点且状态为正常。
+
+![Gateway Node](https://static.apiseven.com/uploads/2023/05/17/fO4diKu0_gatewaynode.png)
