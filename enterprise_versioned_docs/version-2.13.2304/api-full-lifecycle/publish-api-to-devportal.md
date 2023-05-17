@@ -7,13 +7,13 @@ tags:
 
 本文将指导您作为 API 的生产者及管理员，如何将已经接入 API7 网关的 API 发布到与网关配套的开发者门户，允许内部或外部的开发者登录后查找到这个 API，查看都已经的 API 文档，并申请订阅 API，获得 API 管理员的同意后，自动获取访问凭证。
 
-现在我们希望将前文创建的其中一个接口：用户下单（CreateOrders）发布到开发者门户，允许自行申请访问所需的 API key。
+现在我们希望将前文创建的其中一个接口： `CreateProduct` 发布到开发者门户，允许自行申请访问所需的 API key。
 
 ## 前置要求
 
 1. 已经搭建好供开发者登录使用的站点。
 2. 准备好 OpenAPI Spec 文件，包括详细的 API 使用方式和说明。
-3. 参考文档 [发布 API 到网关]， 然后 [开启 API 身份认证]。
+3. 参考文档 [发布 API 到网关](https://docs.apiseven.com/enterprise/api-full-lifecycle/publish-apis)， 然后 [开启 API 身份认证](https://docs.apiseven.com/enterprise/api-full-lifecycle/api-authentication)。
 
 ## 新增 API
 
