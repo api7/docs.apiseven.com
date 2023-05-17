@@ -17,7 +17,7 @@ API 开发完毕后，需要发布到 API7 网关中，以获得 API7 带来的�
 
 ## 前置要求
 
-参考文档成功部署 API7 Enterprise，并创建好集群与工作分区。
+参考部署指南完成安装 API7 Enterprise，并创建好集群与工作分区。
 
 ## 手动录入 API
 
@@ -33,13 +33,15 @@ API 开发完毕后，需要发布到 API7 网关中，以获得 API7 带来的�
 
 **目标节点**: Mock Server 的地址
 
+**Host 请求头**：使用目标节点列表中的主机名或 IP.
+
 **端口**： 443
 
 **协议**： HTTPs
 
 **权重**： 1
 
-![Create Upstream shopserver](https://static.apiseven.com/uploads/2023/05/16/DxrmrWmF_createupstream-shop_server.png)
+![Create Upstream shopserver](https://static.apiseven.com/uploads/2023/05/17/JLzjpLXG_createupstream.png)
 
 ### 新建 API 并发布
 
