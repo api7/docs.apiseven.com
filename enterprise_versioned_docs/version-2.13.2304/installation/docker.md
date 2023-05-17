@@ -63,6 +63,8 @@ docker run -d --name api7-ee -p 80:80 -p 443:443 -p 9000:9000 --network=api7-ee 
 
 安装过程中会自动创建好首个集群`poc`，首个 etcd 资源 `default`，设置集群 `poc` 使用 etcd 资源 `default`，并在集群 `poc` 中添加好首个网关节点（数据面节点）。
 
+![poc Cluster](https://static.apiseven.com/uploads/2023/05/17/3WvpiA9d_poccluster.png)
+
 ## 激活许可证
 
 参考文档 [获取许可证](https://docs.apiseven.com/enterprise/installation/get-license)，然后上传并激活。
