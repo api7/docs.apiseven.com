@@ -1,6 +1,6 @@
 ---
 title: 开发 API
-slug: /api-full-lifecycle/create-apis
+slug: /api-full-lifecycle/develope-apis
 tags:
 - API7 Enterprise
 ---
