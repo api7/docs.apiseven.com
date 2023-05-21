@@ -41,7 +41,7 @@ API 开发完毕后，需要发布到 API7 网关中，以获得 API7 带来的�
 
 **权重**： 1
 
-![Create Upstream shopserver](https://static.apiseven.com/uploads/2023/05/17/JLzjpLXG_createupstream.png)
+![Create Upstream shopserver](https://static.apiseven.com/uploads/2023/05/21/dGEOu1vU_createshopserver.png)
 
 ### 新建 API 并发布
 
