@@ -33,7 +33,7 @@ tags:
 
 登录 Postman，进入 [设计 API](https://docs.apiseven.com/enterprise/api-full-lifecycle/design-apis) 中创建好的 `shop` API，选择从 API definition 创建 Collection:
 
-![Postman Create Collection](https://static.apiseven.com/uploads/2023/05/21/mkQupP9U_postmancreatecollection.png)
+![Postman Create Collection](https://static.apiseven.com/uploads/2023/05/21/xnPCw9kd_postmancreatecollection.png)
 
 选择 **Copy to collections** ：
 
