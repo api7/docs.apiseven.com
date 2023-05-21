@@ -60,6 +60,7 @@ tags:
 curl -X POST -d '{"name": "iPhone 13 Pro", "price": 999.99}' -H 'HOST: test.com' -v http://${API7_GATEWAY_ADDRESS}/products
 
 ```
+
 该请求会返回一个 HTTP 401 `{"message":"Invalid API key in request"}` 的错误，因为请求中没有携带合法的 API Key。
 
 ### 携带正确的 API Key 发起请求：
@@ -69,4 +70,5 @@ curl -X POST -d '{"name": "iPhone 13 Pro", "price": 999.99}' -H 'HOST: test.com'
 curl -X POST -d '{"name": "iPhone 13 Pro", "price": 999.99}' -H 'HOST: test.com' -H "Authorization: auth-one" -v http://${API7_GATEWAY_ADDRESS}/products
 
 ```
+
 该请求会返回一个 HTTP 200，表示请求被网关正常放行。
