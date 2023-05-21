@@ -55,7 +55,7 @@ tags:
 
 在 `shop collection` 中，为三个请求分别添加 Example 并保存.
 
-### GetProductById
+#### GetProductById
 
 在 **Path Variables** 中，为 `id` 设置 Value 为 `1`，然后设置 Response:
 
@@ -73,7 +73,7 @@ tags:
 
 ![Get Product By Id - Example](https://static.apiseven.com/uploads/2023/05/21/DOTSGNqy_postmangetproduct.png)
 
-### CreateProduct
+#### CreateProduct
 
 设置请求 Body 为:
 
@@ -96,7 +96,7 @@ tags:
 
 ```
 
-### CreateOrder
+#### CreateOrder
 
 设置请求 Body 为:
 
