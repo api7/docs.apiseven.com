@@ -94,7 +94,7 @@ API 开发完毕后，需要发布到 API7 网关中，以获得 API7 带来的�
 
 **权重**： 1
 
-![Configure Upstream](https://static.apiseven.com/uploads/2023/05/16/P3IRzYFZ_configureupstream.png)
+![Configure Upstream](https://static.apiseven.com/uploads/2023/05/21/3XnULFjr_configshopserver.png)
 
 ### API 上线
 
