@@ -21,7 +21,11 @@ tags:
 
 ```shell
 
-curl '${baseUrl}/products/1' 
+Request:
+
+ '${baseUrl}/products/1' 
+
+Response:
 
 {
     "id": 1,
@@ -37,12 +41,16 @@ curl '${baseUrl}/products/1'
 
 ```shell
 
+Request:
+
 curl '${baseUrl}/products' \
 -X POST
 --data '{
   "name": "iPhone 13 Pro",
   "price": 999.99
 }'
+
+Response:
 
 {
   "id": 1
@@ -53,6 +61,8 @@ curl '${baseUrl}/products' \
 
 ```shell
 
+Request:
+
 curl '${baseUrl}/orders' \
 -X POST \
 --data '{
@@ -61,6 +71,7 @@ curl '${baseUrl}/orders' \
     "quantity": 1
 }'
 
+Response:
 
 {
   "order_id": 123
