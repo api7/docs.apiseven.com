@@ -28,7 +28,7 @@
       "label": "API 全生命周期管理",
       "items": [
         "api-full-lifecycle/design-apis",
-        "api-full-lifecycle/develope-apis",
+        "api-full-lifecycle/develop-apis",
         "api-full-lifecycle/publish-apis",
         "api-full-lifecycle/api-authentication",
         "api-full-lifecycle/ip-restriction",
