@@ -225,4 +225,6 @@ paths:
 
 ![Postman Create API](https://static.apiseven.com/uploads/2023/05/21/tmcGd9HG_postmancreateapi.png)
 
-选择 **Import files** 方式，导入写好的 API 文档 `Shop.yaml`。
+选择 **Import files** 方式，导入写好的 API 文档 `Shop.yaml`:
+
+![Postman API Doc](https://static.apiseven.com/uploads/2023/05/21/GEEOLj6A_postmanapidoc.png)
