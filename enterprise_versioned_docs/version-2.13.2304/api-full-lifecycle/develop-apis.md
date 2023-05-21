@@ -27,7 +27,7 @@ tags:
 
 ## 模拟 API
 
-我们将使用 Postman 的 Mock Server[https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/setting-up-mock/] 和 Example[https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/mocking-with-examples/] 来模拟商城服务的三个 API 的行为，后续将模拟的 API 发布到网关上。在真实的业务中，你需要替换成真实的已开发好的 API。
+我们将使用 Postman 的 [Mock Server](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/setting-up-mock/) 和 [Example](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/mocking-with-examples/) 来模拟商城服务的三个 API 的行为，后续将模拟的 API 发布到网关上。在真实的业务中，你需要替换成真实的已开发好的 API。
 
 ### 创建 Collection
 
