@@ -13,7 +13,7 @@ tags:
 
 1. 已经搭建好供开发者登录使用的站点。
 2. 准备好 OpenAPI Spec 文件，包括详细的 API 使用方式和说明。
-3. 参考文档 [发布 API 到网关](https://docs.apiseven.com/enterprise/api-full-lifecycle/publish-apis)， 然后 [开启 API 身份认证](https://docs.apiseven.com/enterprise/api-full-lifecycle/api-authentication)。
+3. [设计 API](https://docs.apiseven.com/enterprise/api-full-lifecycle/design-apis) 并 [发布 API 到网关](https://docs.apiseven.com/enterprise/api-full-lifecycle/publish-apis)， 然后 [开启 API 身份认证](https://docs.apiseven.com/enterprise/api-full-lifecycle/api-authentication)。
 
 ## 新增 API
 

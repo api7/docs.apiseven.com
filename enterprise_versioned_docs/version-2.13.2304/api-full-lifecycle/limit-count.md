@@ -59,4 +59,12 @@ curl -X POST -d '{"name": "iPhone 13 Pro", "price": 999.99}' -H 'HOST: test.com'
 curl -X POST -d '{"name": "iPhone 13 Pro", "price": 999.99}' -H 'HOST: test.com' -v http://${API7_GATEWAY_ADDRESS}/products
 
 ```
-等待60秒后，请求可以正常响应。
+请求可以正常响应：
+
+```json
+
+{
+    "id":1
+}
+
+```
