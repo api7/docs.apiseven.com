@@ -76,6 +76,8 @@ API 开发完毕后，需要发布到 API7 网关中，以获得 API7 带来的�
 
 **上传文件**：shop.yaml
 
+![Import API](https://static.apiseven.com/uploads/2023/05/21/8TSqA4BE_importapi.png)
+
 
 ### 配置上游
 
