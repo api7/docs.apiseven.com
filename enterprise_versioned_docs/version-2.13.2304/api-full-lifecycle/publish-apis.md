@@ -1,5 +1,5 @@
 ---
-title: 发布 API 到网关
+title: 发布 API 到 API7 网关
 slug: /api-full-lifecycle/publish-apis
 tags:
 - API7 Enterprise
