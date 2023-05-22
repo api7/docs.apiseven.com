@@ -28,7 +28,6 @@ API 开发完毕后，需要发布到 API7 网关中，以获得 API7 带来的�
 将 Postman 上的 Mock Server 设置为上游。
 
 参考文档 [新建上游](https://docs.apiseven.com/enterprise/user-manual/cluster/upstream#%E6%96%B0%E5%BB%BA%E4%B8%8A%E6%B8%B8)。
-
 在【**步骤9**: 填写表单】中，使用如下配置：
 
 **名称**：shop_server
@@ -49,7 +48,6 @@ API 开发完毕后，需要发布到 API7 网关中，以获得 API7 带来的�
 
 根据设计，我们总共需要创建三个 API。以`CreateProduct`为例。
 参考文档 [新建 API](https://docs.apiseven.com/enterprise/user-manual/cluster/api#%E6%96%B0%E5%BB%BA-api)。
-
 在【**步骤10**: 填写表单】中，使用如下配置：
 
 **名称**： shop_server_CreateProduct
