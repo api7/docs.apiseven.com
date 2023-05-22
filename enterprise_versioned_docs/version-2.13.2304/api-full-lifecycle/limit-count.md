@@ -50,7 +50,7 @@ tags:
 
 curl -X POST -d '{"name": "iPhone 13 Pro", "price": 999.99}' -H 'HOST: test.com' -v http://${API7_GATEWAY_ADDRESS}/products
 ```
-前三次请求正常响应，第四次请求会返回 429 状态码，响应体为 `Too many request`。
+前三次请求正常响应，第四次请求会返回 503 状态码，响应体为 `Too many request`。
 
 等待 60 秒，再次使用 curl 命令发送 API 请求：
 
