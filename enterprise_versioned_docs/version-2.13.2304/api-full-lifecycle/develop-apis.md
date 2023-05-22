@@ -71,7 +71,7 @@ tags:
 
 ```
 
-![Get Product By Id - Example](https://static.apiseven.com/uploads/2023/05/21/DOTSGNqy_postmangetproduct.png)
+![Get Product By Id - Example](https://static.apiseven.com/uploads/2023/05/22/nv0LynuU_postmanaddexample.png)
 
 #### CreateProduct
 
