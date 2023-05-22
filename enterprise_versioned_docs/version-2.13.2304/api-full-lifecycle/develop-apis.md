@@ -49,7 +49,7 @@ tags:
 
 创建成功后，点击 **Copy URL** 按钮复制 Mock Server 的地址，在 `shop collection` 的 **Variables** 中将 `baseUrl` 的值设置为 Mock Server 的地址，然后保存：
 
-![Postman Baseurl](https://static.apiseven.com/uploads/2023/05/21/rQy8GCaM_postmanbaseurl.png)
+![Postman Baseurl](https://static.apiseven.com/uploads/2023/05/22/uN1Kepbx_postmanvariables.png)
 
 ### 添加 Example
 
