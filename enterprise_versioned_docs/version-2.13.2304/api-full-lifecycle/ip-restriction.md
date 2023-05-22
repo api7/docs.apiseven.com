@@ -10,9 +10,9 @@ tags:
 ## 前置要求
 
 1. [部署 API7 Enterprise](https://docs.apiseven.com/enterprise/installation/docker)。
-2. [创建工作分区](https://docs.apiseven.com/enterprise/user-manual/cluster/workspace#create-workspace)。
+2. [创建工作分区](hhttps://docs.apiseven.com/enterprise/user-manual/cluster/workspace#%E6%96%B0%E5%BB%BA%E5%B7%A5%E4%BD%9C%E5%88%86%E5%8C%BA)。
 3. [设计 API](https://docs.apiseven.com/enterprise/api-full-lifecycle/design-apis)。
-4. [发布 API 到网关](https://docs.apiseven.com/enterprise/api-full-lifecycle/publish-apis)。
+4. [发布 API 到 API7 网关](https://docs.apiseven.com/enterprise/api-full-lifecycle/publish-apis)。
 
 ## 配置 API IP 白名单
 
