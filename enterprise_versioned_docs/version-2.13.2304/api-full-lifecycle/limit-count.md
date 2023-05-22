@@ -9,8 +9,10 @@ tags:
 
 ## 前置要求
 
-1. 参考文档成功部署 API7 Enterprise，并创建好集群与工作分区。
-2. 参考文档 [发布 API 到网关](https://docs.apiseven.com/enterprise/api-full-lifecycle/publish-apis)，完成三个 API 的发布。
+1. [部署 API7 Enterprise](https://docs.apiseven.com/enterprise/installation/docker)。
+2. [创建工作分区](https://docs.apiseven.com/enterprise/user-manual/cluster/workspace#create-workspace)。
+3. [设计 API](https://docs.apiseven.com/enterprise/api-full-lifecycle/design-apis)。
+4. [发布 API 到网关](https://docs.apiseven.com/enterprise/api-full-lifecycle/publish-apis)。
 
 ## 创建包含 limit-count 插件的插件模板
 

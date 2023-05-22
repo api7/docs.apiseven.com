@@ -17,9 +17,9 @@ API 开发完毕后，需要发布到 API7 网关中，以获得 API7 带来的�
 
 ## 前置要求
 
-1. [部署 API7 Enterprise](https://docs.apiseven.com/enterprise/installation/docker).
-2. [Create a workspace](https://docs.apiseven.com/enterprise/user-manual/cluster/workspace#create-workspace).
-3. [Designing APIs](https://docs.apiseven.com/enterprise/api-full-lifecycle/design-apis).
+1. [部署 API7 Enterprise](https://docs.apiseven.com/enterprise/installation/docker)。
+2. [创建工作分区](https://docs.apiseven.com/enterprise/user-manual/cluster/workspace#create-workspace)。
+3. [设计 API](https://docs.apiseven.com/enterprise/api-full-lifecycle/design-apis)。
 
 ## 手动录入 API
 
