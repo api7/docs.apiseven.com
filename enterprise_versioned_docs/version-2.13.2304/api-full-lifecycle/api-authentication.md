@@ -34,15 +34,7 @@ tags:
 参考文档 [新建插件模板](https://docs.apiseven.com/enterprise/user-manual/cluster/plugin-template#新建插件模板)。
 
 在【9. 选择需要启用的插件，点击对应的 **启用** 按钮】中，选择 `key-auth` 插件。
-在【11. 在 **配置Raw Data** 中，编辑插件的参数】中，填入如下配置：
 
-```json
-
-{
-  "header": "Authorization"
-}
-
-```
 以上配置表示 key-auth 插件将会尝试从 HTTP Request 的 `Authorization` Header 中获取访问凭证，如果获取失败或者凭证无法对应到真实存在的消费者，则认证失败，反之则会认证成功。
 
 ## 将插件模板应用到 API
@@ -61,14 +53,14 @@ curl -X POST -d '{"name": "iPhone 13 Pro", "price": 999.99}' -H 'HOST: test.com'
 
 ```
 
-该请求会返回一个 HTTP 401 `{"message":"Invalid API key in request"}` 的错误，因为请求中没有携带合法的 API Key。
+该请求会返回一个 HTTP 401 `{"message":"Missing API key found in request"}` 的错误，因为请求中没有携带合法的 API Key。
 
 ### 携带正确的 API Key 发起请求：
 
 ```shell
 
-curl -X POST -d '{"name": "iPhone 13 Pro", "price": 999.99}' -H 'HOST: test.com' -H "Authorization: auth-one" -v http://${API7_GATEWAY_ADDRESS}/products
+curl -X POST -d '{"name": "iPhone 13 Pro", "price": 999.99}' -H 'HOST: test.com' -H "apikey: auth-one" -v http://${API7_GATEWAY_ADDRESS}/products
 
 ```
 
-该请求会返回一个 HTTP 200，表示请求被网关正常放行。
+该请求会正常返回。
