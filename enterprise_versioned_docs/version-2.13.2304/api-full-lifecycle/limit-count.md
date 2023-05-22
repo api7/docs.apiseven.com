@@ -23,14 +23,14 @@ tags:
 ```json
 
 {
-  "count": "3",
-  "time_window": "60",
+  "count": 3,
+  "time_window": 60,
   "key_type": "var",
-  "rejected_code": "429",
+  "rejected_code": 503,
   "rejected_msg": "Too many request",
   "policy": "local",
   "allow_degradation": false,
-  "show_limit_quota_header": true,
+  "show_limit_quota_header": true
 }
 
 ```
