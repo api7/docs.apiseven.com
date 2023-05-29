@@ -90,6 +90,7 @@ const App = () => {
           >
             <Logo />
             <HStack spacing="2" mt={{ lg: "8" }} as="ul" listStyleType="none"
+            pl='0'
             >
               {socialLinks.map((link, idx) => (
                 <Box as="li" key={idx}>
@@ -108,7 +109,7 @@ const App = () => {
           >
             {locale === "zh-CN" && (
               <Text>
-                <Box as="a" href="/privacy_policy" color="gray.800" _hover={{ color: "gray.800" }}>
+                <Box as="a" href="https://www.apiseven.com/privacy_policy" color="gray.800" _hover={{ color: "gray.800" }}>
                   隐私政策
                 </Box>
               </Text>

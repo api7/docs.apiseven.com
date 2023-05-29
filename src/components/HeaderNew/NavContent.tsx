@@ -68,7 +68,7 @@ const DesktopNavContent = ({ links, language, ...props }: Props) => {
         <VisuallyHidden>API7</VisuallyHidden>
         <Logo />
       </Box>
-      <HStack as="ul" id="nav__primary-menu" aria-label="Main Menu" listStyleType="none">
+      <HStack as="ul" id="nav__primary-menu" aria-label="Main Menu" listStyleType="none" py='16px' mb='0px'>
         {links.map((link, idx) => (
           <Box as="li" key={idx} id={`nav__menuitem-${idx}`}>
             {link.children ? (
@@ -81,7 +81,7 @@ const DesktopNavContent = ({ links, language, ...props }: Props) => {
       </HStack>
       <HStack spacing="8" minW="240px" flexDirection='row-reverse'>
         <Button as="a" href={getRequestDemoLink(language)} target="_blank" colorScheme="blue" fontWeight="bold" _hover={{ color: "var(--chakra-colors-white)", background: "var(--chakra-colors-blue-600)", textDecoration: "none" }}>
-          {language === 'zh-CN' ? '申请试用' : 'Request Demo'}
+          申请试用
         </Button>
       </HStack>
     </Flex>

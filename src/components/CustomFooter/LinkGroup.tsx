@@ -22,6 +22,7 @@ export const LinkGroup = (props: LinkGroupProps) => {
       </Text>
       <Stack as="ul" spacing={{ base: 2, md: 4 }} listStyleType="none"
         p={0}
+        m='0'
       >
         {links.map((link, idx) => (
           <Box as="li" key={idx}>
