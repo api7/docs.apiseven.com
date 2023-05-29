@@ -4,7 +4,7 @@
     flex-direction: column;
     max-height: 100vh;
     position: sticky;
-    top: 70px;
+    top:104px;
     padding-top: var(--ifm-navbar-height);
     width: var(--doc-sidebar-width);
     transition: opacity 50ms ease;
@@ -34,6 +34,19 @@
   .sidebarLogo img {
     margin-right: 0.5rem;
     height: 2rem;
+  }
+}
+
+@media (max-width: 990px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    position: sticky;
+    top:56px;
+    padding-top: var(--ifm-navbar-height);
+    width: var(--doc-sidebar-width);
+    transition: opacity 50ms ease;
   }
 }
 

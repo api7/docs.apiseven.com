@@ -54,7 +54,7 @@
 
 .navbar--fixed-top {
   background-color: #f7faff;
-  top: 70px;
+  top: 104px;
   align-items: center;
 }
 
@@ -107,6 +107,18 @@
   /* Desktop Style */
   :root {
     --ifm-menu-color-background-active: #FFFFFF;
+  }
+}
+
+@media (max-width: 990px) {
+  .navbar--fixed-top {
+    background-color: #f7faff;
+    top: 56px;
+    align-items: center;
+  }
+
+  .navbar-sidebar {
+    top: 56px;
   }
 }
 

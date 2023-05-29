@@ -4,14 +4,14 @@ import NavbarContent from '@theme/Navbar/Content';
 import {
   Container,
 } from '@chakra-ui/react';
-import HeaderComponent from '../../components/Header';
+import HeaderComponent from '../../components/HeaderNew';
 
 export default function Navbar(): JSX.Element {
   return (
     <>
       <HeaderComponent />
       <NavbarLayout>
-        <Container maxW='6xl' px={{ base: '0', md: '5' }}>
+        <Container maxWidth="1256px" px={{ base: '0', md: '5' }}>
           <NavbarContent />
         </Container>
       </NavbarLayout>
