@@ -98,12 +98,30 @@ const config = {
       }
     ],
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'portal',
+        path: 'docs/portal',
+        routeBasePath: '/portal',
+        sidebarPath: require.resolve('./docs/portal/sidebars.js'),
+        editUrl: (props) =>
+          getEditUrl({
+            ...props,
+            projectName: 'portal_versioned_docs',
+          }),
+      }
+    ],
+    [
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [
           {
             from: "/enterprise",
             to: "/enterprise/introduction",
+          },
+          {
+            from: "/portal",
+            to: "/portal/introduction",
           }
         ]
       }
