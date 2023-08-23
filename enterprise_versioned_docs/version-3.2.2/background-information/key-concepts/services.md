@@ -3,37 +3,36 @@ title: Services
 slug: /key-concepts/services
 ---
 
-In this document, you will learn the basic concept of _services_ in APISIX and the advantages of using services.
+在本文档中，您将了解 API7 企业版中 _服务（services）_ 的基本概念以及使用服务的优势。
 
-Explore additional resources at the end for more information on related topics.
+您可以在本文档的末尾查看更多关于相关主题的资源，以获取更多信息。
 
 ## Overview
 
-A _service_ object in APISIX is an abstraction of a backend application providing logically related functionalities. The relationship between a service and routes is usually one-to-many (1:N).
+在 API7 企业版中，_服务（service）_ 对象是一个抽象概念，表示提供逻辑相关功能的后端应用程序。在企业版中，服务与路由之间的关系通常是包含关系。
 
-The following diagram illustrates an example of a service object used in architecting a data analytics (`da`) backend at Foodbar Company (a fictional company), where there are two routes with distinctive configurations - one for getting data ([HTTP GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)) and the other one for uploading data ([HTTP POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)):
+以下示意图演示了在构建 Foodbar 公司（一个虚构公司）的仓储（`da`）后端服务时使用的服务对象示例，其中有两个具有不同配置的路由 - 一个用于获取数据（[HTTP GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)），另一个用于获取库存：
 
 <br />
 
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/02/28/7Iudl0X8_services.svg" alt="Services Diagram" width="95%" />
+<img src="https://static.apiseven.com/uploads/2023/08/23/BtX31kfX_be8c83b88e0a194951a91fe91942fe1.png" alt="Services Diagram" width="95%" />
 </div>
 
 <br /><br />
 
-Note that the [rate-limiting](../../getting-started/rate-limiting.md) plugin `limit-count` is configured once on the service object, regulating incoming client requests from the two routes. Similarly, the upstream address is also configured only once on the [upstream](./upstreams.md) object. While plugins and upstreams can also be configured in routes individually (and repetitively) to serve the same purpose, it is advised against adopting this approach, as things quickly become hard to manage when the system grows. Using upstreams and services help reduce the risk of data anomalies and minimize operational costs.
+请注意，[速率限制](../../getting-started/rate-limiting.md)插件 `limit-count` 仅在服务对象上配置一次，用于控制来自两个路由的客户端请求。同样，上游服务地址也仅在 [上游（upstream）](./upstreams.md) 对象上配置一次。尽管插件和上游服务也可以在服务路由中单独（且重复地）进行配置，以达到相同的目的，但不建议采用这种方法，因为随着系统的增长，管理变得困难。使用上游服务有助于减少数据异常的风险并降低运营成本。
 
-For simplicity, the example above only pointed the traffic to one upstream node. You can add more upstream nodes, when needed, to [enable load balancing](../../getting-started/load-balancing.md), maintaining a smooth operation and response for users and avoiding a single point of failure in the architecture.
+为简单起见，上面的示例仅将流量指向一个上游服务节点。当需要时，您可以添加更多的上游服务节点，以[启用负载均衡](../../getting-started/load-balancing.md)，保持用户的平稳操作和响应，并避免架构中的单点故障。
 
-## Additional Resource(s)
+## 其他参考资源
+- 入门指南
+  - [配置路由](../../getting-started/configure-routes.md)
+  - [负载均衡](../../getting-started/load-balancing.md)
+- 关键概念
+  - [路由](./routes.md)
+  - [上游](./upstreams.md)
+  - [插件](./plugins.md)
 
-* Getting Started
-  * [Configure Routes](../../getting-started/configure-routes.md)
-  * [Load Balancing](../../getting-started/load-balancing.md)
-* Key Concepts
-  * [Routes](./routes.md)
-  * [Upstreams](./upstreams.md)
-  * [Plugins](./plugins.md)
-
-[//]: <TODO: Configure Services via APISIX Admin API>
-[//]: <TODO: Configure Services via APISIX Dashbaord>
+[//]: <TODO: Configure Services via API7 Enterprise Edition API>
+[//]: <TODO: Configure Services via API7 Enterprise Edition Dashbaord>
