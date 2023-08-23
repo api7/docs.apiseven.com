@@ -3,89 +3,91 @@ title: SSL Certificates
 slug: /key-concepts/ssl-certificates
 ---
 
-In this document, you will learn the basic concept of SSL certificate objects in APISIX and scenarios where you may need them, including configuring TLS or mTLS between client applications, APISIX, and upstream servers. You will go over the basics of SSL/TLS at the beginning to help further understanding when to use SSL certificate objects in APISIX. 
+在本文档中，您将学习 API7 企业版中 SSL Certificates 对象的基本概念，以及为什么需要使用他们，包括在客户端应用程序、API7 企业版和上游服务器之间配置 TLS 或 mTLS。您将在开始时了解 SSL/TLS 的基础知识，以更好地理解何时在 API7 企业版中使用 SSL Certificates 对象。
 
-Explore additional resources at the end of the document for more information on related topics. 
+In this document, you will learn the basic concept of SSL certificate objects in API7 Enterprise Edition and scenarios where you may need them, including configuring TLS or mTLS between client applications, API7 Enterprise Edition, and upstream servers. You will go over the basics of SSL/TLS at the beginning to help further understanding when to use SSL certificate objects in API7 Enterprise Edition. 
 
-## Overview
+您可以在本文档的末尾查看更多关于相关主题的资源，以获取更多信息。
 
-_TLS (Transport Layer Security)_, being the successor to SSL (Secure Sockets Layer) protocol, is a cryptographic protocol designed to secure communication between two parties, such as a web browser and a web server. It is implemented on top of an existing protocol, such as HTTP or TCP, to provide an additional layer of security by establishing a connection through a TLS handshake and encrypting data transmission. 
+## 预览
+_TLS（Transport Layer Security）_ 作为 SSL（Secure Sockets Layer）协议的继任者，是一种用于在两个参与方之间（例如 Web 浏览器和 Web 服务器）保护通信数据的加密协议。它在现有协议（如 HTTP 或 TCP）之上实现，通过建立 TLS 握手连接并加密数据来提供额外的安全保护。
 
-The following is a high-level overview of the **one-way TLS handshake** in [TLS v1.2](https://www.rfc-editor.org/rfc/rfc5246) and [TLS v1.3](https://www.rfc-editor.org/rfc/rfc8446)—the two most commonly used TLS versions:
+以下是 [TLS v1.2](https://www.rfc-editor.org/rfc/rfc5246) 和 [TLS v1.3](https://www.rfc-editor.org/rfc/rfc8446)（两个最常用的 TLS 版本）中**单向 TLS 握手**的高级概述：
 
 <div style={{textAlign: 'center'}}>
 <img
-    src="https://static.apiseven.com/uploads/2023/04/03/acvck7tc_handshake.svg"
+    src="https://static.apiseven.com/uploads/2023/08/22/8PNEGiO7_acvck7tc_handshake.svg"
     alt="TLS Handshake for TLS v1.2 and TLS v1.3"
     width="75%" />
 </div>
 
-During this process, the server authenticates itself to the client by presenting its certificate. The client verifies the certificate to ensure that it is valid and issued by a trusted authority. Once the certificate has been verified, the client and server agree on a shared secret, which is used to encrypt and decrypt the application data. 
 
-APISIX also supports _mutual TLS_, or _mTLS_, where client also authenticates itself to the server by presenting its certificate, effectively creating a two-way TLS connection. This ensures that both parties are authenticated and helps prevent network attacks like [man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack). 
+在此过程中，服务器通过向客户端发送证书进行自身的身份验证。客户端验证证书以确保其有效，并确保证书由受信任的机构签发。一旦证书经过验证，客户端和服务器将会就一个共享密钥达成一致，该密钥用于加密和解密应用数据。
 
-To enable TLS or mTLS in your system with APISIX, you should generate and configure certificates in the appropriate places, such as on client applications, APISIX, and/or upstream servers. For configuration on the APISIX side, an SSL certificate object may be required, depending on the segment of communication you want to secure:
+API7 企业版还支持 _双向 TLS_, 或称为 _mTLS_，客户端也通过同样的方式进行身份验证，有效地创建了一个双向的 TLS 连接。这确保了双方都经过了身份验证，并有助于防止诸如 [中间人攻击](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) 等网络攻击。
 
-<div align="center">
+要在 API7 企业版中启用 TLS 或 mTLS，您应在适当的位置生成和配置证书，例如在客户端应用程序、API7 企业版或上游服务器上。对于 API7 企业版方面的配置，根据您要保护的通信段，可能需要一个 SSL 证书对象：
 
-|                                  | **TLS**       | **mTLS** |
-|----------------------------------|---------------|----------|
-| **Client Application –– APISIX** | Required      | Required |
-| **APISIX –– Upstream**           | Not Required  | Optional |
+<div style={{textAlign: 'center', margin: 'auto'}}>
+
+|                                   | **TLS (单向 TLS)**    | **mTLS (双向 TLS)** |
+|-----------------------------------|-----------------------|-----------------|
+| **客户端应用程序 -- API7 企业版**   |    必需               | 必需            |
+| **API7 企业版 -- 服务上游**         |   不必需              | 可选            |
 
 </div>
 
-You will learn about use cases and non-use cases of SSL objects for those scenarios. 
+您将了解这些场景下的 SSL Certificates 对象的使用。
 
-## TLS Between Client Applications and APISIX
+## 客户端应用程序与 API7 企业版之间的 TLS
 
-It is common practice to enforce TLS between client applications and APISIX as data transmission in this segment is typically over the public internet and therefore, is at a higher risk of being eavesdropped. 
+在客户端应用程序与 API7 企业版之间强制使用 TLS 是一种常见做法，因为在这个通信段中，数据传输通常通过公网进行，因此更容易遭到窃听。
 
-The following diagram illustrates the usage of an SSL object in implementing TLS over HTTP (also known as HTTPS) between client applications and APISIX, where APISIX is deployed at an arbitrary IP address `132.69.xxx.xxx` behind the domain name `foodservice.com` and acts as a gatekeeper between public traffic and internal services: 
+以下示意图说明了在客户端应用程序与 API7 企业版之间实现 TLS（也称为 HTTPS）的 SSL Certificates 对象的使用情况。在该示例中，API7 企业版部署在一个任意的 IP 地址 `132.69.xxx.xxx` 后面的域名 `foodservice.com` 上，并充当公共流量与内部服务之间的守卫：
 
 <br />
 
 <div style={{textAlign: 'center'}}>
 <img
-    src="https://static.apiseven.com/uploads/2023/04/03/KwdECkCm_mTLS-downstream.svg"
-    alt="Example of TLS between Client Applications and APISIX"
+    src="https://static.apiseven.com/uploads/2023/08/23/qi2BmwgB_c11effce8e076fa32df80ece67e2e8a.png"
+    alt="Example of TLS between Client Applications and API7 Enterprise Edition"
     width="95%" />
 </div>
 
 <br /><br />
 
-Here are the key steps that took place in the illustration: 
+以下是示意图中的关键步骤：
 
-1. The client application initiates a request to `https://foodservice.com`.
+1. 客户端应用程序发起对 `https://foodservice.com` 的请求。
 
-2. The request first goes through a DNS server, which resolves the domain name to an IP address and returns the IP address to the client application.
+2. 请求首先经过 DNS 服务器，该服务器将域名解析为 IP 地址，并将 IP 地址返回给客户端应用程序。
 
-3. The client application sends the request for `foodservice.com` to its resolved IP address, during which process, client application performs a [TLS handshake](#overview) with APISIX, where APISIX sends its certificate `server.crt` to client for authentication.
+3. 客户端应用程序将请求发送到其已解析的 IP 地址，过程中客户端应用程序与 API7 企业版进行了 [TLS 握手](#overview)，在此过程中，API7 企业版向客户端发送其证书 `server.crt` 进行身份验证。
 
-4. As `foodservice.com` is included in the SNI list of the APISIX SSL object, the TLS handshake shall succeed. The communication between the client application and APISIX is now encrypted with TLS. 
+4. 由于 `foodservice.com` 被包括在 API7 企业版 SSL 证书对象的 SNI 列表中，TLS 握手将成功。客户端应用程序与 API7 企业版之间的通信现在已使用 TLS 进行了加密。
 
-5. APISIX routes and forwards the request to the corresponding upstream services over HTTP. Note that the upstream services are exposed on the default port 80 and TLS is terminated at APISIX in this example.
+5. API7 企业版将请求路由转发到相应的上游服务上。请注意，在这个示例中，上游服务在默认的 80 端口上公开，而 TLS 在 API7 企业版上终止。
 
 [//]:<TODO: multi-tanancy?>
 [//]:<TODO: SNI radix tree?>
 
-For detailed instructions on how to configure HTTPS between client and APISIX, please refer to the [how-to guide](../how-to-guide/traffic-management/tls-and-mtls/configure-https-between-client-and-apisix).
+有关如何在客户端和 API7 企业版之间配置 HTTPS 的详细说明，请参阅[操作指南](../how-to-guide/traffic-management/tls-and-mtls/configure-https-between-client-and-apisix)。
 
-## TLS Between APISIX and Upstreams
+## API7 企业版与上游之间的 TLS
 
-Upstream services may require TLS in cases where the traffic between the API gateway and upstreams is not secure or private. In a one-way TLS setup between APISIX and upstreams, upstream servers are responsible for presenting the certificate and key. On the APISIX side, you only need to configure [upstreams](./upstreams.md) to use HTTPS scheme and port 443 (or other designated port).
+在 API 网关和上游之间的流量不安全或不私密时，上游服务可能需要使用 TLS。在 API7 企业版和上游之间进行单向 TLS 设置时，上游服务器负责呈现证书和密钥。在 API7 企业版方面，您只需配置上游（[upstreams](./upstreams.md)）以使用 HTTPS 协议和端口 443（或其他指定端口）。
 
-For detailed instructions on how to configure TLS between APISIX and upstreams, please refer to the [how-to guide](../how-to-guide/traffic-management/tls-and-mtls/configure-upstream-https).
+有关如何在 API7 企业版与上游之间配置 TLS 的详细说明，请参阅[操作指南](../how-to-guide/traffic-management/tls-and-mtls/configure-upstream-https)。
 
-## mTLS Between Client Applications and APISIX
+## 客户端应用程序与 API7 企业版之间的双向 TLS（mTLS）
 
-In closed systems where general access to back-end services is restricted, it is important for the server to verify the identity of the client to ensure that only authenticated and authorized clients are allowed to access the back-end services. One way to achieve this is to configure mTLS between the client and server. With mTLS, the client presents a certificate to the server during the TLS handshake process, and the server uses the certificate to verify the identity of the client. If the client is not authenticated, the server will reject the request.
+在仅限特定服务访问的封闭系统中，服务器验证客户端的身份是非常重要的，确保只有经过身份验证和授权的客户端可以访问后端服务。实现这一点的方法之一是在客户端和服务器之间配置双向 TLS（mTLS）。通过 mTLS，客户端在 TLS 握手过程中向服务器发送证书，服务器使用证书来验证客户端的身份。如果客户端未经过身份验证，服务器将拒绝请求。
 
-To configure mTLS between client applications and APISIX, in addition to the configuration required for TLS, you should also:
+要在客户端应用程序和 API7 企业版之间配置双向 TLS（mTLS），除了所需的 TLS 配置外，您还应该：
 
-1. Generate and configure certificates and keys on the client applications.
+1. 在客户端应用程序上生成和配置证书和密钥。
 
-2. Add the [Certificate Authority (CA)](https://en.wikipedia.org/wiki/Certificate_authority) certificate to the `client.ca` field in APISIX's SSL object, such as the following: 
+2. 将 [Certificate Authority (CA)](https://en.wikipedia.org/wiki/Certificate_authority) 证书添加到 API7 企业版的 SSL 证书对象的 `client.ca` 字段中，如下所示：
 
     ```json
     {   
@@ -100,54 +102,54 @@ To configure mTLS between client applications and APISIX, in addition to the con
       # highlight-end
     }
     ```
+    其中 CA 证书用于验证由 CA 颁发的客户端证书上的数字签名，从而验证客户端应用程序的身份。
+    
 
-    where the CA certificate is used to verify the digital signatures on client certificates issued by the CA, thereby verifying the identity of client applications.
-
-For detailed instructions on how to configure mTLS between client and APISIX, please refer to the [how-to guide](../how-to-guide/traffic-management/tls-and-mtls/configure-mtls-between-client-and-apisix).
+有关如何在客户端和 API7 企业版之间配置双向 TLS（mTLS）的详细说明，请参阅[操作指南](../how-to-guide/traffic-management/tls-and-mtls/configure-mtls-between-client-and-apisix)。
 
 [//]:<NOTE: API7 Cloud uses mTLS between DP and CP>
 [//]:<TODO: Add route-level mTLS once implemented, to protect certain endpoints with sensitive data. Currently mTLS is global.>
 
-## mTLS Between APISIX and Upstreams
+## API7 企业版与上游之间的双向 TLS（mTLS）
 
-mTLS between an API gateway and its upstream services is typically implemented in high-security environments by organizations, such as financial institutions, who need to stay compliant with relevant security standards and regulations. 
+在高度安全的环境中，诸如金融机构之类的组织通常会在 API 网关与其上游服务之间实现双向 TLS（mTLS），以确保他们符合相关的安全标准和法规。
 
-In APISIX, whether to use an SSL object in configuring mTLS between APISIX and its upstream services is determined by whether the configuration will be repetitive. 
+在 API7 企业版中，是否使用 SSL 证书对象在配置 API7 企业版与其上游服务之间的双向 TLS（mTLS）时取决于配置是否会重复。
 
-If the certificate is valid for only one domain, you can choose to directly configure the certificate and key in the upstream object: 
+如果证书仅对一个域名有效，您可以选择直接在上游对象中配置证书和密钥：
 
 <div style={{textAlign: 'center'}}>
 <img
-    src="https://static.apiseven.com/uploads/2023/04/03/bsORjkQO_TLS-upstream-1.svg"
-    alt="Example of mTLS between APISIX and Upstreams without SSL object"
+    src="https://static.apiseven.com/uploads/2023/08/23/nrCJe7g7_adbb5ac3634fd32a61e92f686fb4ed9.png"
+    alt="Example of mTLS between API7 Enterprise Edition and Upstreams without SSL object"
     width="95%" />
 </div>
 
 <br />
 
-When a certificate, such as a wildcard certificate, is valid for multiple domains, it is recommended to create a single SSL object to store the certificate and key and avoid the repetitive TLS configurations on upstreams:
+当一个证书（例如通配符证书）对多个域名有效时，建议创建一个单独的 SSL 证书对象来存储证书和密钥，以避免在上游中重复进行 TLS 配置：
 
 <br />
 
 <div style={{textAlign: 'center'}}>
 <img
-    src="https://static.apiseven.com/uploads/2023/04/03/DPFJmx4E_TLS-upstream-2.svg"
-    alt="Example of mTLS between APISIX and Upstreams with SSL object"
+    src="https://static.apiseven.com/uploads/2023/08/23/buGRXBh5_2424c6fbb291ae3d19fd10349fea153.png"
+    alt="Example of mTLS between API7 Enterprise Edition and Upstreams with SSL object"
     width="95%" />
 </div>
 
 <br />
 
-For detailed instructions on how to configure mTLS between APISIX and upstreams, please refer to the how-to guide (coming soon). 
+有关如何在 API7 企业版和上游之间配置双向 TLS（mTLS）的详细说明，请参阅操作指南（即将推出）。
 
 ## Additional Resource(s)
 
-* Key Concepts
+关键概念
 
-  * [Routes](./routes.md)
-  * [Upstreams](./upstreams.md)
+  * 路由（[Routes](./routes.md)）
+  * 上游（[Upstreams](./upstreams.md)）
 
 [//]: <TODO: TLS, mTLS how-to Guide>
-[//]: <TODO: Admin API, SSL>
+[//]: <TODO: API, SSL>
 [//]: <TODO: How to enable SSL in standalone deployment mode>
 [//]: <TODO: how-to guide about L4 TLS Over TCP>
