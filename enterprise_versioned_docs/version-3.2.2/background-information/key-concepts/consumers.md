@@ -3,35 +3,35 @@ title: Consumers
 slug: /key-concepts/consumers
 ---
 
-In this document, you will learn the basic concepts of consumers in APISIX and why you need them. You will be introduced to a few relevant concepts, including how to pass consumer information to upstream, consumer access restriction, as well as consumer authentication and authorization.
+在本文档中，您将学习 API7 企业版中消费者的基本概念以及为何需要它们。您将了解一些相关的概念，包括如何将消费者信息传递给服务上游、消费者访问限制，以及消费者身份验证和授权。
 
-Explore additional resources at the end of the document for more information on related topics.
+您可以在本文档的末尾查看更多关于相关主题的资源，以获取更多信息。
 
-## Overview
+## 概述
 
-In APISIX, a _consumer_ object represents a user, application, or host that sends requests to the API gateway and consumes backend services. It is used in conjunction with the authentication system; that is, every consumer should be configured with at least one authentication plugin.
+在 API7 企业版中，_消费者（consumer）_ 对象代表发送请求到 API 网关并使用后端服务的用户、应用程序或主机。它与身份验证系统一起使用；也就是说，每个消费者应至少配置一个身份验证插件。
 
-Consumer objects come in handy if you have different consumers sending requests to your system, and you need APISIX to perform certain functions, such as rate limiting, based on consumers. These functionalities are provided by APISIX plugins configured in consumers.
+消费者对象在以下情况场景中非常有用：如果您有不同的消费者向您的系统发送请求，并且您需要 API7 企业版根据消费者执行某些功能，例如基于消费者的速率限制。这些功能是通过在消费者中配置的 API7 企业版插件提供的。
 
-The following diagram illustrates an example of APISIX with one route and two consumers, where one consumer, `FetchBot`, is a data fetching bot,  and the other consumer, `JohnDoe`, is a human end user. Plugin `key-auth` is configured on route and consumers, so that requests will be authenticated with API keys. To access the internal service, `FetchBot` would send its requests with `bot-key` and `JohnDoe` would send his request with `john-key`.
+以下示意图演示了一个 API7 企业版的示例，其中有一个路由和两个消费者。其中一个消费者是机器人 `FetchBot`，另一个是人类终端用户 `JohnDoe`。路由和消费者都配置了插件 `key-auth`，以便通过 API 密钥对请求进行身份验证。要访问内部服务，`FetchBot` 将使用 `bot-key` 发送其请求，而 `JohnDoe` 将使用 `john-key` 发送请求。
 
 <br />
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/03/17/YrMYOGVo_Consumers.svg" alt="consumers diagram example" width="95%"/>
+<img src="https://static.apiseven.com/uploads/2023/08/23/DssdTBuA_29ddc334cc6f872c71bbe04fe5319d4.png" alt="consumers diagram example" width="95%"/>
 </div>
 <br />
 
-This configuration ensures that only authenticated requests can interact with the internal service exposed on `/internal`. If a request is sent to APISIX:
+这个配置确保只有经过身份验证的请求可以与暴露在 `internal` 上的内部服务进行交互。如果将请求发送到 API7 企业版：
 
-* without any key or with a wrong key, the request is rejected.
-* with `bot-key`, the request is authenticated and seen as sent by `FetchBot` to fetch data from the internal service. The rate limiting plugin `limit-count` on the consumer takes effect, limiting the number of requests within a 5-second window to 2. If the rate limiting threshold has not been met, the request is forwarded to the upstream service; otherwise, it is rejected.
-* with `john-key`, the request is authenticated and seen as sent by `JohnDoe`, subsequently being forwarded to the upstream service.
+* 没有任何密钥或使用错误的密钥，请求将被拒绝。
+* 使用 `bot-key`，请求将进行身份验证，并被视为由 `FetchBot` 发送以从内部服务获取数据。消费者上的速率限制插件 `limit-count` 生效，限制在 5 秒窗口内的请求次数为 2 次。如果速率限制阈值尚未达到，请求将被转发到上游服务；否则，请求将被拒绝。
+* 使用 `john-key`，请求将进行身份验证，并被视为由 `JohnDoe` 发送，随后被转发到上游服务。
 
-Note that the authentication plugin is executed before the rate limiting plugin in this scenario, in accordance with the [plugins execution phases](./plugins.md#plugins-execution-lifecycle).
+请注意，在这种情况下，身份验证插件在速率限制插件之前执行，符合[插件执行阶段](./plugins.md#plugins-execution-lifecycle)的规定。
 
-## Passing Consumer Information to Upstream
+## 将消费者信息传递给服务上游
 
-For certain use cases, such as logging, analytics, and auditing, you might want to pass consumer information to upstream services. Consumer information, by default, is not exposed to upstream; however, you can use `proxy-rewrite` plugin to include the needed information in the header:
+对于某些用例，例如日志记录、分析和审计，您可能希望将消费者信息传递给上游服务。默认情况下，消费者信息不会暴露给上游服务；但是，您可以使用 `proxy-rewrite` 插件将所需信息包含在标头中：
 
 ```json
 {
@@ -48,11 +48,11 @@ For certain use cases, such as logging, analytics, and auditing, you might want 
 }
 ```
 
-## Consumer Access Restriction
+## 消费者访问限制
 
-You can control request access to your API by imposing restrictions based on consumer name, HTTP methods, or other parameters in the `consumer-restriction` plugin.
+您可以通过在 `consumer-restriction` 插件中基于消费者名称、HTTP 方法或其他参数施加限制，来控制对您的 API 的请求访问。
 
-For example, if you want to blacklist `FetchBot` from accessing your internal service without changing any consumers configuration in the example from [overview](#overview), you can update the plugin's configuration in route to the following:
+例如，如果您希望在不更改[概述](#overview)示例中的任何消费者配置的情况下，将 `FetchBot` 列入黑名单，以阻止其访问您的内部服务，您可以更新路由中插件的配置如下：
 
 ```json
 {
@@ -65,7 +65,7 @@ For example, if you want to blacklist `FetchBot` from accessing your internal se
 }
 ```
 
-Or, if you want to strictly allow `FetchBot`'s access by HTTP GET method, you can update the plugin's configuration (in either the route or the consumer) to the following:
+或者，如果您希望严格限制 `FetchBot` 只能通过 HTTP GET 方法进行访问，您可以更新插件的配置（无论是在路由还是消费者中），如下所示：
 
 ```json
 {
@@ -83,36 +83,36 @@ Or, if you want to strictly allow `FetchBot`'s access by HTTP GET method, you ca
 }
 ```
 
-The `consumer-restriction` plugin can also be used with [routes](./routes.md), [services](./services.md), and [plugin global rules](./plugin-global-rules.md). For more details on the plugin usage, please refer to the plugin reference guide (coming soon).
+`consumer-restriction` 插件也可以与 [服务（services）](./services.md) 和 [插件全局规则（plugin global rules）](./plugin-global-rules.md) 一起使用。有关插件使用的更多详细信息，请参阅插件参考指南（即将推出）。
 
 [//]: <TODO: Point to the consumer-restriction reference doc>
 
-## Authentication & Authorization
+## 身份验证与授权
 
-There are two main design patterns for building authentication and authorization in an APISIX-based architecture.
+在基于 API7 企业版的架构中，有两种主要的身份验证和授权设计模式。
 
-The first and most commonly adopted approach is to authenticate and authorize requests through a third-party [identity provider (IdP)](https://en.wikipedia.org/wiki/Identity_provider), such as [Keycloak](https://www.keycloak.org):
+第一种，也是最常采用的方法是通过第三方[身份提供者（IdP）](https://en.wikipedia.org/wiki/Identity_provider)，如[Keycloak](https://www.keycloak.org)来对请求进行身份验证和授权：
 
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/03/16/N8W31TWC_consumers-auth1.svg" alt="APISIX integration with an IdP" width="60%"/>
+<img src="https://static.apiseven.com/uploads/2023/08/23/0jjIIcpU_973af4aae16e6f046ea53a1e2d57560.png" alt="API7 Enterprise Edition integration with an IdP" width="60%"/>
 </div>
 <br />
 
-In some environments, a request might need to go through more than one IdP before it can be forwarded to the upstream service. In such cases, you can configure multiple authentication plugins, each corresponding to an IdP, on one consumer; only when all IdPs have granted access to a request will APISIX show success response.
+在某些环境中，一个请求可能需要经过一个以上的 IdP 才能被转发到上游服务。在这种情况下，您可以在一个消费者上配置多个身份验证插件，每个插件对应一个 IdP；只有当所有的 IdP 都同意授权一个请求时，API7 企业版才会显示成功响应。
 
-With multiple authentication plugins in place, the [plugins order of execution](./plugins.md#plugins-execution-order) is determined by the plugin's priority, which can be overridden with `_meta.priority`.
+有了多个身份验证插件，[插件执行顺序](./plugins.md#plugins-execution-order)由插件的优先级决定，可以使用 `_meta.priority` 来覆盖优先级。
 
-The second and a more basic approach is to perform authentication and authorization on the API gateway itself, using `key-auth`, `basic-auth`, `jwt-auth`, `hmac-auth` plugins:
+第二种更基本的方法是在 API 网关本身上执行身份验证和授权，使用 `key-auth`、`basic-auth`、`jwt-auth`、`hmac-auth` 插件：
 
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/03/16/UGxTDGut_consumers-auth2.svg" alt="APISIX performs auth without IdP" width="59%"/>
+<img src="https://static.apiseven.com/uploads/2023/08/23/YZGWXwhV_425f15685d20cf6de50c23de747c53b.png" alt="API7 Enterprise Edition performs auth without IdP" width="59%"/>
 </div>
 <br />
 
-For details about how to configure authentication and authorization for your specific needs, please refer to the authentication chapter in How-To Guides (coming soon).
+有关如何根据您的具体需求配置身份验证和授权的详细信息，请参阅操作指南中的身份验证章节（即将推出）。
 
-## Additional Resource(s)
+## 其他参考资源
 
-* Getting Started - [Configure Key Authentication](../../getting-started/key-authentication.md)
+* 入门指南 - [配置密钥身份验证](../../getting-started/key-authentication.md)
 [//]: <TODO: consumer-restriction plugin>
-[//]: <TODO: Admin API - Consumers>
+[//]: <TODO: API - Consumers>
