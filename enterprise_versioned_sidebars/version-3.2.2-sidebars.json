@@ -86,9 +86,7 @@
             "background-information/key-concepts/plugin-global-rules",
             "background-information/key-concepts/plugin-metadata",
             "background-information/key-concepts/consumers",
-            "background-information/key-concepts/ssl-certificates",
-            "background-information/key-concepts/secrets",
-            "background-information/key-concepts/protos"
+            "background-information/key-concepts/ssl-certificates"
           ]
         }
       ]
