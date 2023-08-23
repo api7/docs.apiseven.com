@@ -16,7 +16,7 @@ slug: /key-concepts/upstreams
 <br />
 
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/08/21/wRbqorQB_2d02abd2b60371240f518b943a54f30.png"
+<img src="https://static.apiseven.com/uploads/2023/08/23/kBSIyUso_5c889ef9393915b0c04742a35c0eceb.png"
     alt="图中展示了三条不同的请求指向相同的上游对象并且具有所需上游地址的服务路由。"
     width="95%" />
 </div>
