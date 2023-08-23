@@ -5,7 +5,10 @@ slug: /how-to-guide/transformation/transcode-http-to-grpc
 
 [gRPC](https://grpc.io/) is an open-source high performance Remote Procedure Call (RPC) framework based on HTTP/2 protocol. It uses [protocol buffers (protobuf)](https://protobuf.dev/) as the interface description language (IDL).
 
-APISIX provides the capability to transform between HTTP and gRPC requests and responses, using the plugin `grpc-transcode` and [proto objects](../../background-information/key-concepts/protos.md). 
+<!-- 
+TBD:
+APISIX provides the capability to transform between HTTP and gRPC requests and responses, using the plugin `grpc-transcode` and [proto objects](../../background-information/key-concepts/protos.md).  
+-->
 
 This guide will show you how to use the plugin `grpc-transcode` to transform RESTful HTTP requests to gRPC requests.
 
