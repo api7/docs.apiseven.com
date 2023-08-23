@@ -3,70 +3,70 @@ title: Upstreams
 slug: /key-concepts/upstreams
 ---
 
-In this document, you will learn the basic concept of an upstream object in API7 Enterprise Edition and why you would want to use it. You will be introduced to a few relevant features, including load balancing, service discovery, and upstream health checking.
+在本文档中，您将学习有关 API7 企业版中 `upstream` 的基本概念，以及为何需要使用它。我们将为您介绍一些相关的功能，包括负载均衡、服务发现和上游服务的健康检查。
 
-Explore additional resources at the end for more information on related topics.
+您可以在本文档的末尾查看更多关于相关主题的资源，以获取更多信息。
 
-## Overview
+## 预览
 
-An _upstream_ object in API7 Enterprise Edition is a logical abstraction of a set containing one or more upstream addresses. It is required in [services](../key-concepts/services.md) to specify **where** requests flow to and **how** they are distributed.
+在 API7 企业版中，_upstream_ 对象是对包含一个或多个上游地址的一组内容的逻辑抽象。在 [`service`](../key-concepts/services.md) 中需要它来指定请求流向的**位置**以及**如何**分发请求流量。
 
-Here is an example of such a configuration in service routes, where the same upstream address is repeated across three different service routes:
+以下是在服务路由中的配置示例，其中相同的 `upstream` 地址将在三个不同的服务路由中被重复使用：
 
 <br />
 
 <div style={{textAlign: 'center'}}>
 <img src="https://static.apiseven.com/uploads/2023/08/21/wRbqorQB_2d02abd2b60371240f518b943a54f30.png"
-    alt="Upstreams Diagram show three routes with different plugins pointing to the same upstream object with the desired upstream address"
+    alt="图中展示了三条不同的请求指向相同的上游对象并且具有所需上游地址的服务路由。"
     width="95%" />
 </div>
 
 <br />
 
-As you can probably see, large-scale systems with many services would benefit significantly from configuring identical groups of upstream addresses in upstream objects, reducing redundant information and operational costs.
+正如您已经看到的，具有许多服务的大规模系统将会在同一个 `upstream` 中获取上游服务地址，从而减少了冗余信息，降低运营成本。
 
-## Load Balancing
+## 负载均衡
 
-An important use case of upstreams is to help [enable load balancing](../../getting-started/load-balancing.md) - that is, outlining where client requests are forwarded to and how they are distributed among back-end replicas.
+_upstream_ 的一个重要用途是帮助实现[负载均衡](../../getting-started/load-balancing.md)，即确定客户端请求转发的位置以及如何在多个后端服务之间进行请求流量的分发。
 
-In upstreams, there are four load-balancing algorithms available to choose from:
+在 `upstream` 中，有四种可供选择的负载均衡算法：
 
 * `Round Robin` - weighted round robin
 * `Consistent Hash` - consistent hashing
 * `Exponentially Weighted Moving Average(EWMA)` - exponentially weighted moving average
 * `Least Connection` - least connections
 
-For detailed instructions and explanation about load balancing in API7 Enterprise Edition, please refer to the load balancing how-to guide and API Reference (coming soon).
+更多有关 API7 企业版中负载均衡的详细说明，请参阅负载均衡操作指南和 API 文档（即将推出）。
 
 [//]: <TODO: link to Load Balancing article under How-To>
 [//]: <TODO: refer to API for more upstream load balancing config>
 
-## Service Discovery
+## 服务发现
 
-While it is straightforward to figure upstream addresses statically, in microservice-based architectures, upstream addresses are often dynamically assigned and therefore, changed, during autoscaling, failures, and updates. Static configurations are less than ideal in this case.  
+虽然通过静态确定上游地址的方式最简单直接，但是在基于微服务的架构体系中，上游地址通常是动态分配的，因此在自动扩展、发生故障和服务更新期间可能会发生变化。在这种情况下，静态配置并不适用。
 
-Service discovery comes to rescue. It describes the process of automatically detecting the available upstream services, keeping their addresses in a database (called a service registry) for others to reference. That way, an API gateway can always fetch the latest list of upstream addresses through the registry, ensuring all requests are forwarded to healthy upstream nodes.
+此时就需要使用到服务发现。通过将上游服务地址保存在一个数据库中（称为服务注册表）的方式，其他服务从中获取并发起请求调用。通过这种方式，API 网关可以通过服务注册表获取最新的上游地址列表，确保所有请求都被转发到健康的上游节点。
 
-API7 Enterprise Edition supports integrations with many service registries, such as Consul, Eureka, Nacos, Kubernetes service discovery, and more.
+API7 企业版支持许多服务发现组件，例如 `Consul`、`Eureka`、`Nacos`、`Kubernetes` 等等。
 
-For more details about how to integrate with third-party service registries, please see Service Discovery (coming soon).
+有关如何与第三方服务发现组件集成的详细说明，请参阅服务发现（即将推出）。
 
 [//]: <TODO: for more details about the integration, see Service Discovery in How-To Guide>
 
-## Upstream Health Checking
+## 上游服务健康检查
 
-API7 Enterprise Edition provides active and passive health checking options to probe if upstream nodes are online (a.k.a. healthy). Unhealthy upstream nodes will be ignored until they recover and are deemed healthy again.
+API7 企业版提供主动和被动健康检查两种方式，用来探测上游节点是否在线（即健康状态）。不健康的上游节点将被忽略，直到它们恢复健康状态为止。
 
-Upstream health checking can be configured in the `checks` parameter in an upstream object.
+上游健康检查可以在 `upstream` 的 `checks` 参数中进行配置。
 
-More details about how to configure upstream health checking will be provided in Active and Passive Health Checking (coming soon).
+关于如何配置上游健康检查的更多信息将在主动和被动健康检查文档中说明（即将推出）。
 
 [//]: <TODO: for all health checking parameter options, see API>
 [//]: <TODO: How-To Guide - Health Checking>
 
-## Additional Resource(s)
+## 其他参考资源
 
-* Getting Started - [Load Balancing](../../getting-started/load-balancing.md)
+* 入门指南 - [负载均衡](../../getting-started/load-balancing.md)
 [//]: <TODO: Configure Upstreams via API7 Enterprise Edition API>
 [//]: <TODO: Configure Upstreams via API7 Enterprise EditionSIX Dashbaord>
 [//]: <TODO: Upstream Health Checks>
