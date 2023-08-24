@@ -17,7 +17,7 @@ slug: /key-concepts/consumers
 
 <br />
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/08/23/DssdTBuA_29ddc334cc6f872c71bbe04fe5319d4.png" alt="consumers diagram example" width="95%"/>
+<img src="https://static.apiseven.com/uploads/2023/08/24/4kyB5fZV_5200b104fbfc104258c4ed97610f7e9.png" alt="consumers diagram example" width="95%"/>
 </div>
 <br />
 
