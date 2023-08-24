@@ -30,7 +30,7 @@ title: API7 Portal Architecture
 2. 可扩展性，线上环境的部署需要考虑未来随着用户数量逐渐增多之后如何进行扩容；
 3. 可维护性，相关组件需要有能力进行运维，如果没有则采用 SaaS 服务来降低运维人力。
 
-因此，针对以下组件 API7 Portal 选择了 Saas 服务来保证系统的高可用能力：SendGrid（提供邮件发送能力）；Postgresql；Elastcisearch。
+因此，针对以下组件 API7 Portal 选择了 Saas 服务来保证系统的高可用能力：SendGrid（提供邮件发送能力）、Postgresql、Elastcisearch。
 所以， API7 Portal 整体系统的高可用体现在各个需要我们自己部署的组件的高可用上，有 provider-portal、developer- portal、provider-portal-ui 、developer-portal-ui、 Keycloak、etcd、FileBeat、Logstash、APISIX、APISIX-Ingress、API7-Gateway。
 
 1. provider-portal、developer-portal、provider-portal-ui 、developer-portal-ui 这四个组件属于无状态的组件、可通过多节点部署来保证节点的高可用；此外，在流量入口处有网关层，可以在网关层添加 LB、限流等机制来增加系统的稳定性；
