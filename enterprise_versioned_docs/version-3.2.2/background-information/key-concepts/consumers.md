@@ -29,6 +29,10 @@ slug: /key-concepts/consumers
 
 请注意，在这种情况下，身份验证插件在速率限制插件之前执行，符合[插件执行阶段](./plugins.md#plugins-execution-lifecycle)的规定。
 
+<!-- 
+
+TODO: move to getting started
+
 ## 将消费者信息传递给服务上游
 
 对于某些用例，例如日志记录、分析和审计，您可能希望将消费者信息传递给上游服务。默认情况下，消费者信息不会暴露给上游服务；但是，您可以使用 `proxy-rewrite` 插件将所需信息包含在标头中：
@@ -47,6 +51,11 @@ slug: /key-concepts/consumers
   }
 }
 ```
+-->
+
+<!-- 
+
+TODO: move to getting started
 
 ## 消费者访问限制
 
@@ -85,7 +94,8 @@ slug: /key-concepts/consumers
 
 `consumer-restriction` 插件也可以与 [服务（services）](./services.md) 和 [插件全局规则（plugin global rules）](./plugin-global-rules.md) 一起使用。有关插件使用的更多详细信息，请参阅插件参考指南（即将推出）。
 
-[//]: <TODO: Point to the consumer-restriction reference doc>
+[//]: <TODO: Point to the consumer-restriction reference doc> 
+-->
 
 ## 身份验证与授权
 
