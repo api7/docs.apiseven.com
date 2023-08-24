@@ -16,7 +16,7 @@ _TLS（Transport Layer Security）_ 作为 SSL（Secure Sockets Layer）协议�
 
 <div style={{textAlign: 'center'}}>
 <img
-    src="https://static.apiseven.com/uploads/2023/08/22/8PNEGiO7_acvck7tc_handshake.svg"
+    src="https://static.apiseven.com/uploads/2023/08/24/OtRgQadG_acvck7tc_handshake.svg"
     alt="TLS Handshake for TLS v1.2 and TLS v1.3"
     width="75%" />
 </div>
@@ -49,7 +49,7 @@ API7 企业版还支持 _双向 TLS_, 或称为 _mTLS_，客户端也通过同�
 
 <div style={{textAlign: 'center'}}>
 <img
-    src="https://static.apiseven.com/uploads/2023/08/23/qi2BmwgB_c11effce8e076fa32df80ece67e2e8a.png"
+    src="https://static.apiseven.com/uploads/2023/08/24/OvydMCGv_ef5f7d88bca825481c09e5567b33d6f.png"
     alt="Example of TLS between Client Applications and API7 Enterprise Edition"
     width="95%" />
 </div>
@@ -120,7 +120,7 @@ API7 企业版还支持 _双向 TLS_, 或称为 _mTLS_，客户端也通过同�
 
 <div style={{textAlign: 'center'}}>
 <img
-    src="https://static.apiseven.com/uploads/2023/08/23/nrCJe7g7_adbb5ac3634fd32a61e92f686fb4ed9.png"
+    src="https://static.apiseven.com/uploads/2023/08/24/E5UnC1Yo_e73e8c3fe1c2919b3b14720a12e2df5.png"
     alt="Example of mTLS between API7 Enterprise Edition and Upstreams without SSL object"
     width="95%" />
 </div>
@@ -133,7 +133,7 @@ API7 企业版还支持 _双向 TLS_, 或称为 _mTLS_，客户端也通过同�
 
 <div style={{textAlign: 'center'}}>
 <img
-    src="https://static.apiseven.com/uploads/2023/08/23/buGRXBh5_2424c6fbb291ae3d19fd10349fea153.png"
+    src="https://static.apiseven.com/uploads/2023/08/24/kQAU4XqM_07820eb7c469b28fabeb3213629fa8e.png"
     alt="Example of mTLS between API7 Enterprise Edition and Upstreams with SSL object"
     width="95%" />
 </div>
