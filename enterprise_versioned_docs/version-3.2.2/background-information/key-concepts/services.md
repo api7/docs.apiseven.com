@@ -16,7 +16,7 @@ slug: /key-concepts/services
 <br />
 
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/08/23/BtX31kfX_be8c83b88e0a194951a91fe91942fe1.png" alt="Services Diagram" width="95%" />
+<img src="https://static.apiseven.com/uploads/2023/08/24/gzxVkR2V_762c5b5183b3dad7749f42b73f4be01.png" alt="Services Diagram" width="95%" />
 </div>
 
 <br /><br />
