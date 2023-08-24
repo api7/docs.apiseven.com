@@ -11,12 +11,12 @@ slug: /key-concepts/services
 
 在 API7 企业版中，_服务（service）_ 对象是一个抽象概念，表示提供逻辑相关功能的后端应用程序。在企业版中，服务与路由之间的关系通常是包含关系。
 
-以下示意图演示了在构建 Foodbar 公司（一个虚构公司）的仓储（`da`）后端服务时使用的服务对象示例，其中有两个具有不同配置的路由 - 一个用于获取数据（[HTTP GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)），另一个用于获取库存：
+以下示意图演示了在构建 Foodbar 公司（一个虚构公司）的 `Swagger Petstore` 后端服务时使用的服务对象示例，其中有两个具有不同配置的路由 - 一个用于获取数据（[HTTP GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)），另一个用于获取库存：
 
 <br />
 
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/08/24/gzxVkR2V_762c5b5183b3dad7749f42b73f4be01.png" alt="Services Diagram" width="95%" />
+<img src="https://static.apiseven.com/uploads/2023/08/24/BcuGGD1s_762c5b5183b3dad7749f42b73f4be02.png" alt="Services Diagram" width="95%" />
 </div>
 
 <br /><br />
