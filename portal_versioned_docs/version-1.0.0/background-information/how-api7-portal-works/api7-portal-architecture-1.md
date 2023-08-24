@@ -14,7 +14,7 @@ title: API7 Portal Architecture
 
 ### 组件说明
 
-如上图所示，是整体系统架构图，从上到下可以分为 UI 展示层、API7 portal 网关层、API7 portal dashboard 层、API7 portal 数据面层：
+如上图所示，是整体系统架构图，从上到下可以分为 UI 展示层、API7 Portal 网关层、API7 Portal Dashboard 层、API7 Portal 数据面层：
 1. Provider 通过 apisix 和 apisix-ingress-controller 进入  Provider Portal Dashboard；
 2. 同理 Developer 通过 apisix 和 apisix-ingress-controller 进入  Developer Portal Dashboard；
 3. 整个 PAI7 Portal Dashboard 包含的组件有：provider-portal-ui、provider-portal、developer-portal、developer-portal-ui、PostgreSQL、ETCD、keycloak、ES、Logstash 、Filebeat、API7-Gateway；
@@ -33,7 +33,7 @@ title: API7 Portal Architecture
 因此，针对以下组件 API7 Portal 选择了 Saas 服务来保证系统的高可用能力：SendGrid（提供邮件发送能力）；Postgresql；Elastcisearch。
 所以， API7 Portal 整体系统的高可用体现在各个需要我们自己部署的组件的高可用上，有 provider-portal、developer- portal、provider-portal-ui 、developer-portal-ui、 Keycloak、ETCD、FileBeat、Logstash、APISIX、APISIX-Ingress、API7-Gateway。
 
-1. provider-portal、developer- portal、provider-portal-ui 、developer-portal-ui 这四个组件属于无状态的组件、可通过多节点部署来保证节点的高可用；此外，在流量入口处有网关层，可以在网关层添加 LB、限流等机制来增加系统的稳定性；
+1. provider-portal、developer-portal、provider-portal-ui 、developer-portal-ui 这四个组件属于无状态的组件、可通过多节点部署来保证节点的高可用；此外，在流量入口处有网关层，可以在网关层添加 LB、限流等机制来增加系统的稳定性；
 2. APISIX、APISIX-Ingress、API7-Gateway、keycloak 这几个组件也属于无状态组件，也可通过多节点部署来保证节点的高可用；
 3. ETCD 、FileBeat、Logstash 属于有状态节点，可采用集群模式管理实现节点高可用；
 4. ETCD 借助 Raft 协议 ，通过数据复制方案，可以提高服务可用性，避免单点故障，提升读吞吐量，降低访问延迟；
@@ -45,11 +45,11 @@ title: API7 Portal Architecture
 
 #### 业务数据
 
-业务数据指的是用户在 API7 portal dashboard 的各个组件内产生或者查询的数据，比如：
+业务数据指的是用户在 API7 Portal Dashboard 的各个组件内产生的数据，比如：
 1. 用户管理相关的数据，会使用 PostgreSQL 和 Keycloak 进行存储；
-2. 一般的业务数据，比如 API source 的创建、产品的发布和订阅、API7 key 的管理等需要借助 PostgreSQL 存储业务数据，同时也需将生产的 API 行为数据写入 ETCD，从而与数据面进行交互。
+2. 一般的业务数据，比如 API Source 的创建、产品的发布和订阅、API7 Key 的管理等需要借助 PostgreSQL 存储业务数据，同时也需将生产的 API 行为数据写入 ETCD，从而与数据面进行交互。
 
 #### API 行为数据
 
-1. API 行为数据指的是用户在 API7 portal Portal Dashboard 的一些操作在数据面 APISIX 产生的数据。API7 Portal  提供了丰富的 API 运营分析能力，因此，需要追踪用户的一些 API 行为数据，用以统计展示。以 Developer 的 user 访问了 Developer 订阅的一个 API 为例；
-2. User 首先经过 API7 Portal  提供的中间层网关 APISIX，再到 Provider 的一个上游服务。在这一过程中，Filebeat 组件会采集 user 的 API 行为数据发送给 Logstash，由 Logstash 最终写入 ES，最后由 API7 Portal Dashboard 提供的 API 运行分析服务查询 ES 中 user 关于 API 行为的指标数据，再进行聚合展示。
+1. API 行为数据指的是用户在 API7 Portal Dashboard 的一些操作在数据面 API7-Gateway 产生的数据。API7 Portal 提供了丰富的 API 运营分析能力，因此，需要追踪用户的一些 API 行为数据，用以统计展示。
+2. 以 Developer 的 user 访问了 Developer 订阅的一个 API 为例； user 首先经过 API7 Portal  提供的中间层网关 API7-Gateway，再到 Provider 的一个上游服务。在这一过程中，Filebeat 组件会采集 user 的 API 行为数据发送给 Logstash，由 Logstash 最终写入 ES，最后由 API7 Portal Dashboard 提供的 API 运行分析服务查询 ES 中 user 关于 API 行为的指标数据，再进行聚合展示。
