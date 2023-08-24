@@ -5,8 +5,7 @@ title: API7 Portal Architecture
 
 ## 架构图
 
-![Portal Architecture](https://static.apiseven.com/uploads/2023/08/24/TYB3EsnP_portal%20%E6%9E%B6%E6%9E%84%E5%95%8A.jpg
-)
+![Portal Architecture](https://static.apiseven.com/uploads/2023/08/24/TYB3EsnP_portal%20%E6%9E%B6%E6%9E%84%E5%95%8A.jpg)
 
 
 ## 架构介绍
