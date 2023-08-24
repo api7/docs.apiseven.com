@@ -14,7 +14,7 @@ title: API7 Portal Architecture
 
 ### 组件说明
 
-如上图所示，是c整体系统架构图，从上到下可以分为 UI 展示层、API7 portal 网关层、API7 portal dashboard 层、API7 portal 数据面层：
+如上图所示，是整体系统架构图，从上到下可以分为 UI 展示层、API7 portal 网关层、API7 portal dashboard 层、API7 portal 数据面层：
 1. Provider 通过 apisix 和 apisix-ingress-controller 进入  Provider Portal Dashboard；
 2. 同理 Developer 通过 apisix 和 apisix-ingress-controller 进入  Developer Portal Dashboard；
 3. 整个 PAI7 Portal Dashboard 包含的组件有：provider-portal-ui、provider-portal、developer-portal、developer-portal-ui、PostgreSQL、ETCD、keycloak、ES、Logstash 、Filebeat、API7-Gateway；
