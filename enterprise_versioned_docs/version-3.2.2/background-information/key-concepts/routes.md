@@ -16,7 +16,7 @@ _服务路由（Service routes）_ 定义了到上游服务的路径。在 API7 
 <br />
 
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/08/23/3XtbHx5I_f00aa3697af09d185e4553ba1b16020.png" alt="路由图" width="90%" />
+<img src="https://static.apiseven.com/uploads/2023/08/24/WSfd0sRz_f5d0972d0f349dffbbb69b68bdc7345.png" alt="路由图" width="90%" />
 </div>
 
 <br /><br />
