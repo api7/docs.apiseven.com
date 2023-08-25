@@ -13,9 +13,9 @@ title: API7 Portal Architecture
 
 ### 组件说明
 
-如上图所示，是整体系统架构图，从上到下可以分为 UI 展示层、API7 Portal 网关层、API7 Portal Dashboard 层、API7 Portal 数据面层：
+上图展示了 API7 portal 的整体系统架构图，从上到下可以分为 UI 展示层、API7 Portal 网关层、API7 Portal Dashboard 层、API7 Portal 数据面层：
 1. Provider 和 Developer 通过网关层进入 Provider Portal Dashboard； 
-2. API7 Portal Dashboard 包含的组件主要包含：provider-portal-ui、provider-portal、developer-portal、developer-portal-ui、API7-Gateway； 
+2. API7 Portal Dashboard 包含的组件主要有：provider-portal-ui、provider-portal、developer-portal、developer-portal-ui、API7-Gateway；
 3. provider-portal、developer-portal 组件与数据面网关 API7-Gateway 通过 etcd 进行连接； 
 4. 如最后一层显示，Developer 的 user，在访问 Provider 提供的上游服务时，首先会经历 API7-Gateway 这个前置网关，该中间层可以实现访问控制、限流限速等功能，然后才进入 provider 的网关（如果存在），再到 provider 的后端服务。
 
@@ -34,16 +34,16 @@ title: API7 Portal Architecture
 1. 比如对于无状态的组件可通过多节点部署来保证节点的高可用；此外，在流量入口处有网关层，可以在网关层添加 LB、限流等机制来增加系统的稳定性；
 2. 对于有状态的组件，根据各个组件的自身的特性，可采用集群模式管理实现节点高可用，比如：
    a. etcd 借助 Raft 协议，通过数据复制方案，可以提高服务可用性，避免单点故障，提升读吞吐量，降低访问延迟；
-   b. 关于 Filebeat 和 Logstash 聚合的高可用方案，单个 logstash 的聚合处理能力有限，logstash 将成为整个系统的瓶颈；另一方面，一旦这个 logstash 崩溃退出，整个系统就将无法正常运行，同时 Filebeat 采集的数据得不到及时消费，造成数据丢失。为了解决当 logstash 宕机时，数据丢失的问题，在 Filebeat 与 logstash 中间加入 kafka 做为消息中间件。
+   b. 关于 Filebeat 和 Logstash 聚合的高可用方案，单个 Logstash 的聚合处理能力有限，Logstash 将成为整个系统的瓶颈；另一方面，一旦 Logstash 崩溃退出，整个系统就将无法正常运行，同时 Filebeat 采集的数据得不到及时消费，造成数据丢失。为了解决当 Logstash 宕机时，数据丢失的问题，在 Filebeat 与 Logstash 中间加入 Kafka 做为消息中间件。
 
 ### 数据存储说明
 
-数据存储介绍分为两个模块介绍：业务数据和 API 行为数据。
+数据存储介为两个模块介绍：业务数据和 API 行为数据。
 
 #### 业务数据
 
 1. 业务数据指的是用户在 API7 Portal Dashboard 的各个组件内产生的数据； 
-2. 一般的业务数据，比如 API Source 的创建、产品的发布和订阅、API7 Key 的管理等需要借助 关系型数据库存储业务数据，同时也需将生产的 API 行为数据写入 etcd，从而与数据面进行交互。
+2. 一般的业务数据，比如 API Source 的创建、产品的发布和订阅、API7 Key 的管理等需要借助关系型数据库存储业务数据，同时也需将生产的 API 行为数据写入 etcd，从而与数据面进行交互。
 
 #### API 行为数据
 
