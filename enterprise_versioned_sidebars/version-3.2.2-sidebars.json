@@ -11,7 +11,7 @@
     },
     {
       "type": "category",
-      "label": "关键概念",
+      "label": "概念",
       "items": [
         "key-concepts/routes",
         "key-concepts/upstreams",
@@ -24,7 +24,7 @@
     },
     {
       "type": "category",
-      "label": "快速开始",
+      "label": "快速入门",
       "items": [
         "getting-started/install-api7-ee",
         "getting-started/set-up-and-launch-init-api"
@@ -55,7 +55,7 @@
         },  
         {
           "type": "category",
-          "label": "API Consumption",
+          "label": "API 消费",
           "items": [
             "api-full-lifecycle-management/api-consumption/allow-list-based-accesss-control-of-consumers",
             "api-full-lifecycle-management/api-consumption/manage-api-consumer-credentials",
@@ -86,7 +86,7 @@
     },
     {
       "type": "category",
-      "label": "Administration",
+      "label": "管理",
       "items": [
         "administration/active-and-renew-license",
         "administration/manage-token-2-use-api7-ee-api",
@@ -103,7 +103,7 @@
     },
     {
       "type": "category",
-      "label": "API 参考",
+      "label": "参考",
       "items": [
         "reference/reference"
       ]
