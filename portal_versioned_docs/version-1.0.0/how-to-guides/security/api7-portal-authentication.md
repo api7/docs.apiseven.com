@@ -12,7 +12,7 @@ title: Portal文档：API7 Authentication
 
 图一 传统认证方案：Developer 直接认证于 API Endpoints
 
-![Protocol Conversion](https://static.apiseven.com/uploads/2023/08/22/d9Hy1vyM_api7%20%E8%AE%A4%E8%AF%81.jpg)
+![Protocol Conversion](https://static.apiseven.com/uploads/2023/08/28/0yNTAy0Z_api7%20%E8%AE%A4%E8%AF%81%20%281%29.jpg)
                                                 
 图二 API7 认证
 
