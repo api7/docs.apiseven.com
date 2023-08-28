@@ -5,7 +5,7 @@ title: API7 Portal Architecture
 
 ## 架构图
 
-![Portal Architecture](https://static.apiseven.com/uploads/2023/08/25/uhobaQ1Y_api7%20portal%20%E6%9E%B6%E6%9E%84%20%281%29.jpg)
+![Portal Architecture](https://static.apiseven.com/uploads/2023/08/28/8zy4tNFV_api7%20portal%20%E6%9E%B6%E6%9E%84%20%282%29.jpg)
 
 
 ## 架构介绍
@@ -13,7 +13,7 @@ title: API7 Portal Architecture
 
 ### 组件说明
 
-上图展示了 API7 portal 的整体系统架构图，从上到下可以分为 UI 展示层、API7 Portal 网关层、API7 Portal Dashboard 层、API7 Portal 数据面层：
+上图展示了 API7 portal 的整体系统架构图，从上到下可以分为 API7 Portal 网关层、API7 Portal Dashboard 层、API7 Portal 数据面层：
 1. Provider 和 Developer 通过网关层进入 Provider Portal Dashboard； 
 2. API7 Portal Dashboard 包含的组件主要有：provider-portal-ui、provider-portal、developer-portal、developer-portal-ui、API7-Gateway；
 3. provider-portal、developer-portal 组件与数据面网关 API7-Gateway 通过 etcd 进行连接； 
