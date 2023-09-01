@@ -136,7 +136,7 @@ const config = {
         items: [
           {
             position: "left",
-            label: "Enterprise",
+            label: "API7 Enterprise Edition",
             to: '/enterprise/introduction',
           },
         ],
