@@ -95,6 +95,7 @@ const config = {
             ...props,
             projectName: 'enterprise_versioned_docs',
           }),
+        includeCurrentVersion: false,
       }
     ],
     [

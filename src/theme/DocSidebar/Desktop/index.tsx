@@ -7,6 +7,7 @@ import Content from '@theme/DocSidebar/Desktop/Content';
 import type {Props} from '@theme/DocSidebar/Desktop';
 
 import styles from './styles.module.css';
+import DocVersionWrapper from '../DocVersionWrapper';
 
 function DocSidebarDesktop({path, sidebar, onCollapse, isHidden}: Props) {
   const {
@@ -24,6 +25,7 @@ function DocSidebarDesktop({path, sidebar, onCollapse, isHidden}: Props) {
         isHidden && styles.sidebarHidden,
       )}>
       {hideOnScroll && <Logo tabIndex={-1} className={styles.sidebarLogo} />}
+      {path.includes('enterprise') && <DocVersionWrapper docsPluginId='enterprise' />}
       <Content path={path} sidebar={sidebar} />
       {hideable && <CollapseButton onClick={onCollapse} />}
     </div>
