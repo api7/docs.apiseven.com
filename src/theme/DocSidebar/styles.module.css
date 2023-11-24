@@ -21,6 +21,10 @@
 .sidebarVersionSwitch a {
   display: inline-block;
   width: 100%;
+  /* 放开多版本后移除下方样式 */
+  border: none;
+  color: inherit;
+  font-weight: inherit;
 }
 
 .sidebarVersionSwitch div {
@@ -30,6 +34,10 @@
 .sidebarVersionSwitchMobile a {
   display: inline-block;
   width: 100%;
+  /* 放开多版本后移除下方样式 */
+  border: none;
+  color: inherit;
+  font-weight: inherit;
 }
 
 .sidebarVersionSwitchMobile div {

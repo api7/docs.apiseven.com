@@ -96,6 +96,8 @@ const config = {
             projectName: 'enterprise_versioned_docs',
           }),
         includeCurrentVersion: false,
+        // 放开多版本后移除该配置
+        onlyIncludeVersions: ['2.13.2304'],
       }
     ],
     [
