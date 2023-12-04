@@ -1,5 +1,5 @@
 ---
-title: 产品概述
+title: 概览
 slug: /introduction
 ---
 

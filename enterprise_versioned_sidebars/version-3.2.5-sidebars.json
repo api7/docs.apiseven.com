@@ -2,14 +2,14 @@
   "docs": [
     {
       "type": "doc",
-      "label": "简介",
+      "label": "产品介绍",
       "items": [
         "introduction"
       ]
     },
     {
       "type": "category",
-      "label": "主要概念",
+      "label": "核心概念",
       "items": [
         "key-concepts/services",
         "key-concepts/routes",
