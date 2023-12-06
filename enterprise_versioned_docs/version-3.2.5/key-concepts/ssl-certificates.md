@@ -12,7 +12,7 @@ slug: /key-concepts/ssl-certificates
 以下是 [TLS v1.2](https://www.rfc-editor.org/rfc/rfc5246) 和 [TLS v1.3] 两个个最常用的 TLS 版本中**单向 TLS 握手**的高级概述(https://www.rfc-editor.org/rfc/rfc8446)：
 
 <div style={{textAlign: 'center'}}>
-<图片
+<img
   src="https://static.apiseven.com/uploads/2023/08/24/OtRgQadG_acvck7tc_handshake.svg"
   alt="TLS v1.2 和 TLS v1.3 的 TLS 握手"
   宽度="75%"/>
