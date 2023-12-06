@@ -1,7 +1,7 @@
 {
   "docs": [
     {
-      "type": "doc",
+      "type": "category",
       "label": "产品介绍",
       "items": [
         "introduction"
