@@ -3,8 +3,6 @@ title: 服务
 slug: /key-concepts/services
 ---
 
-## 简介
-
 服务代表一个后端应用程序，包含该应用程序提供的所有应用程序接口。一般来说，服务与[路由](routes.md)是一对多的关系，与[上游](upstreams.md)是一对一的关系。唯一的例外是在流量金丝雀过程中，服务会暂时有两个上游。
 
 下图展示了一个已发布的服务，该服务架构了 Foodbar Company（一家虚构的公司）的宠物店（`store`）后台。在获取数据（[HTTP GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)）时，有两个配置不同的路由。

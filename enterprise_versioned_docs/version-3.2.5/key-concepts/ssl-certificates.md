@@ -5,8 +5,6 @@ slug: /key-concepts/ssl-certificates
 
 在本文档中，你将了解 SSL 证书对象的基本概念以及可能需要它们的场景。
 
-## 概述
-
 传输层安全（Transport Layer Security，TLS）是安全套接字层（Secure Socket Layer，SSL）协议的后继者，是一种加密协议，旨在保护两方（例如 Web 浏览器和 Web 服务器）之间的通信安全。它是在现有协议（例如 HTTP 或 TCP）之上实现的，通过 TLS 握手建立连接并加密数据传输来提供额外的安全层。
 
 以下是 [TLS v1.2](https://www.rfc-editor.org/rfc/rfc5246) 和 [TLS v1.3] 两个个最常用的 TLS 版本中**单向 TLS 握手**的高级概述(https://www.rfc-editor.org/rfc/rfc8446)：
