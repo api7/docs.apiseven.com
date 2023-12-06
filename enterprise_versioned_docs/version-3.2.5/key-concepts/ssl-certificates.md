@@ -15,7 +15,7 @@ slug: /key-concepts/ssl-certificates
 <图片
   src="https://static.apiseven.com/uploads/2023/08/24/OtRgQadG_acvck7tc_handshake.svg"
   alt="TLS v1.2 和 TLS v1.3 的 TLS 握手"
-  宽度=“75%”/>
+  宽度="75%"/>
 </div>
 
 在此过程中，服务器通过提供其证书向客户端验证自身身份。客户端验证证书以确保其有效并且由受信任的机构颁发。验证证书后，客户端和服务器就共享密钥达成一致，该密钥用于加密和解密应用程序数据。
