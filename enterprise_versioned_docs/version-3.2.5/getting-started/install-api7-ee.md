@@ -35,7 +35,7 @@ curl -sL "https://run.api7.ai/api7/quickstart" | bash
 
 1. 访问API7 控制面板 `http://{本机地址}:7080`。使用默认用户名 `admin` 和密码 `admin` 登录。
 
-2. 选择要上传的许可证，然后点击 **上传** 激活 API7 企业版。
+2. 选择要上传的许可证，然后单击**上传**激活 API7 企业版。
 
 ## 下一步
 

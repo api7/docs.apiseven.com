@@ -40,7 +40,7 @@
       "type": "category",
       "label": "管理",
       "items": [
-        "administration/active-and-renew-license",
+        "administration/renew-license",
         "administration/role-based-access-control"
       ]
     }
