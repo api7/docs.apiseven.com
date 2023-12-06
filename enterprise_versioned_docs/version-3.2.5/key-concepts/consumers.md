@@ -96,7 +96,7 @@ TODO：合并到快安手册
 
 在基于 API7 企业版的架构中构建身份验证和授权主要分为两种设计模式。
 
-第一种也是最常用的方法是通过第三方[身份提供商(Identity Provider，IdP)](https://en.wikipedia.org/wiki/Identity_provider)，例如 [Keycloak](https:// /www.keycloak.org)， 对请求进行身份验证和授权：
+第一种也是最常用的方法是通过第三方[身份提供商（Identity Provider，IdP）](https://en.wikipedia.org/wiki/Identity_provider)，例如 [Keycloak](https://www.keycloak.org)， 对请求进行身份验证和授权：
 
 <div style={{textAlign: 'center'}}>
 <img src="https://static.apiseven.com/uploads/2023/08/23/0jjIIcpU_973af4aae16e6f046ea53a1e2d57560.png" alt="API7 企业版与 IdP 集成" width="60%"/>

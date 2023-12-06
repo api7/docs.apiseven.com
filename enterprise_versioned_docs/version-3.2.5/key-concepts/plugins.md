@@ -21,7 +21,7 @@ API7 企业版提供了许多插件，可以根据你的需求进行定制和编
 
 然后根据定义的 [JSON 架构](https://json-schema.org) 检查插件的配置，以确保插件配置架构正确。
 
-当发送请求到 API7 企业版时，会在以下一个或多个阶段执行插件相应的方法：“rewrite”、“access”、“before_proxy”、“header_filter”、“body_filter” 和 “log”。这些阶段很大程度上受到 [OpenResty 指令](https://openresty-reference.readthedocs.io/en/latest/Directives/) 的影响。
+当发送请求到 API7 企业版时，会在以下一个或多个阶段执行插件相应的方法：“rewrite”、“access”、“before_proxy”、“header_filter”、“body_filter” 和 “log”。这些阶段很大程度上受到 [OpenResty 指令](https://openresty-reference.readthedocs.io/en/latest/Directives/)的影响。
 
 <br/>
 <div style={{textAlign: 'center'}}>
@@ -49,7 +49,7 @@ API7 企业版提供了许多插件，可以根据你的需求进行定制和编
 
 当同一个插件在全局规则中全局配置和在对象（例如路由）中本地配置时，两个插件实例都会按顺序执行。
 
-但是，如果在多个对象上本地配置同一个插件，例如在[路由](routes.md)、[服务](services.md)或[消费者](consumers.md) 上配置同一个插件，则只有一份配置副本可用。这是因为在执行期间，这些对象中配置的插件会按照特定的优先顺序进行合并：
+但是，如果在多个对象上本地配置同一个插件，例如在[路由](routes.md)、[服务](services.md)或[消费者](consumers.md)上配置同一个插件，则只有一份配置副本可用。这是因为在执行期间，这些对象中配置的插件会按照特定的优先顺序进行合并：
 
 `消费者` > `路由` > `服务`
 
@@ -65,7 +65,7 @@ API7 企业版允许通过将 “_meta.filter” 配置应用于插件来动态�
 
 全局规则对象用于创建在每个传入请求上触发的[插件](./plugins.md)。全局规则将在本地绑定到对象的其他插件之前执行，例如[路由](routes.md)、[服务](services.md)和[消费者](consumers.md)。某些插件（例如 `rate limiting`和 `observability` 插件）经常在全局范围内启用，为 API 提供一致且全面的保护。
 
-下图说明了为所有传入请求全局启用 `key-auth` 插件。其中在全局规则和消费者中配置 `key-auth`插件。在路由上配置 `proxy-rewrite` 插件，用于修改请求的 [HTTP 标头](https://developer.mozilla.org/en-US/docs/Glossary/HTTP_header)，用于演示 [插件执行顺序](#插件执行顺序)：
+下图说明了为所有传入请求全局启用 `key-auth` 插件。其中在全局规则和消费者中配置 `key-auth` 插件。在路由上配置 `proxy-rewrite` 插件，用于修改请求的 [HTTP 标头](https://developer.mozilla.org/en-US/docs/Glossary/HTTP_header)，用于演示[插件执行顺序](#插件执行顺序)：
 
 <br/>
 <div style={{textAlign: 'center'}}>
@@ -95,7 +95,7 @@ API7 企业版允许通过将 “_meta.filter” 配置应用于插件来动态�
 
 <br/>
 
-如果没有另外指定，插件元数据对象上的 “log_format” 应将相同的日志格式统一应用于两个 `syslog` 插件。但是，由于 `/order` 路由上的`syslog`插件具有不同的 “log_format”，因此对该路由的请求将按照路由中插件指定的 “log_format” 生成日志。
+如果没有另外指定，插件元数据对象上的 “log_format” 应将相同的日志格式统一应用于两个 `syslog` 插件。但是，由于 `/order` 路由上的 `syslog` 插件具有不同的 “log_format”，因此对该路由的请求将按照路由中插件指定的 “log_format” 生成日志。
 
 如果在插件元数据和另一个对象中都定义了插件字段，则对象上的定义**优先于**插件元数据中的定义。
 
