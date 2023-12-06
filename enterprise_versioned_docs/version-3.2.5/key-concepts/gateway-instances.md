@@ -1,5 +1,5 @@
 ---
-标题: 网关实例
+title: 网关实例
 slug: /key-concepts/gateway-instances
 ---
 
