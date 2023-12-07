@@ -25,7 +25,8 @@
       "type": "category",
       "label": "快速入门",
       "items": [
-        "getting-started/install-api7-ee"
+        "getting-started/install-api7-ee",
+        "getting-started/launch-your-first-api"
       ]
     },
     {
