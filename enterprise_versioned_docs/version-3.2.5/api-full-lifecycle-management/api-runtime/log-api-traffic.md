@@ -19,8 +19,6 @@ API7 企业版支持收集路由访问信息并记录为日志，如主机、客
 - 腾讯云 CLS
 - Grafana Loki
 
-## 先决条件
-
 ## 前提条件
 
 1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#super-admin)或 [API 提供者](../../administration/role-based-access-control.md#api-provider)角色的用户账户。
@@ -103,7 +101,7 @@ API7 企业版支持收集路由访问信息并记录为日志，如主机、客
 1. 向路由发送请求，生成访问日志条目：
 
     ```bash
-    curl -i "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为你的 Test Group 的地址。
+    curl -i "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为 Test Group 的地址。
     ```
 
 2. 使用 Docker 中的命令行工具 `clickhouse-client` 连接到 ClickHouse 实例：

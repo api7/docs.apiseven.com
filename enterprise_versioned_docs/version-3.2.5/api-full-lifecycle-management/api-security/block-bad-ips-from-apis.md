@@ -21,7 +21,7 @@ slug: /api-full-lifecycle-management/api-security/block-bad-ips-from-apis
 1. 从左侧导航栏中选择**网关组**，然后选择 **Test Group**。
 2. 从左侧导航栏中选择**全局插件**。
 2. 在**插件**字段中，搜索 `ip-restriction` 插件。
-3. 单击**加号**图标 (+)，将出现一个对话框。
+3. 单击**加号**图标 (+)，弹出对话框。
 
     ![启用插件](https://static.apiseven.com/uploads/2023/12/08/HdYGTNCQ_ip-restriction_plugin.png)
 
@@ -41,7 +41,7 @@ slug: /api-full-lifecycle-management/api-security/block-bad-ips-from-apis
 发送 API 请求：
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为你的 Test Group 的地址。
+curl -i "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为 Test Group 的地址。
 ```
 
 由于IP地址受到黑名单的限制，此时，你将看到以下输出：

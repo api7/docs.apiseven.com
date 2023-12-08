@@ -53,7 +53,7 @@ slug: /api-full-lifecycle-management/api-consumption/apply-list-based-accesss-co
 2. 使用 `Alice` 的密钥发送 API 请求：
 
     ```bash
-    curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: Secret-key" # 将 127.0.0.1 替换为你的 Test Group 的地址。
+    curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: Secret-key" # 将 127.0.0.1 替换为 Test Group 的地址。
     ```
 
     你应该看到以下输出：
@@ -102,7 +102,7 @@ slug: /api-full-lifecycle-management/api-consumption/apply-list-based-accesss-co
 3. 使用 `Lisa` 的密钥发送 API 请求：
 
     ```bash
-    curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: Secret-key2" # 将 127.0.0.1 替换为你的 Test Group 的地址。
+    curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: Secret-key2" # 将 127.0.0.1 替换为 Test Group 的地址。
     ```
 
     你应该看到以下输出：
