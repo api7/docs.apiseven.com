@@ -41,7 +41,7 @@
           "items": [
             "api-full-lifecycle-management/api-publishing/api-version-control",
             "api-full-lifecycle-management/api-publishing/publish-apis-by-service",
-            "/api-full-lifecycle-management/api-publishing/ensure-upstream-high-availability"
+            "api-full-lifecycle-management/api-publishing/ensure-upstream-high-availability"
           ]
         }
       ]
