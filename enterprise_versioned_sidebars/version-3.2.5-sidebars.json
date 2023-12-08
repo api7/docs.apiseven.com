@@ -42,7 +42,9 @@
             "api-full-lifecycle-management/api-publishing/api-version-control",
             "api-full-lifecycle-management/api-publishing/publish-apis-by-service",
             "api-full-lifecycle-management/api-publishing/ensure-upstream-high-availability",
-            "api-full-lifecycle-management/api-publishing/sync-apis-betweenn-gateway-groups"
+            "api-full-lifecycle-management/api-publishing/sync-apis-betweenn-gateway-groups",
+            "api-full-lifecycle-management/api-publishing/rollback-apis",
+            "api-full-lifecycle-management/api-publishing/canary-traffic-shifting"
           ]
         }
       ]

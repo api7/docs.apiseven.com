@@ -63,9 +63,9 @@ slug: /getting-started/launch-your-first-api
     ![添加节点](https://static.apiseven.com/uploads/2023/12/07/dXEfZ4gS_add-node_zh.png)
 
 6. 在**添加节点** 对话框中执行以下操作：
-    - 在**** 字段中，输入 `httpbin.org`。
-    - 在**** 字段中，输入 `80`。
-    - 在**** 字段中，使用默认值 `100`。
+    - 在**主机** 字段中，输入 `httpbin.org`。
+    - 在**端口** 字段中，输入 `80`。
+    - 在**权重** 字段中，使用默认值 `100`。
 4. 单击**添加**。
 7. 确认服务信息，然后单击**发布**。
 
