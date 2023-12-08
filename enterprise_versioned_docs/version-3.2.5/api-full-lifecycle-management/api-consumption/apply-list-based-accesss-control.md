@@ -18,7 +18,7 @@ slug: /api-full-lifecycle-management/api-consumption/apply-list-based-accesss-co
 
 当收到 API 请求时，API7 企业版会提取凭据并查找消费者的姓名。因此，路由不需要直接识别凭证。它使用消费者的名字，更加人性化。
 
-由于插件配置不属于[服务运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后向网关组发布新版本。
+由于插件配置不属于[运行时配置](../../key-concepts/services.md)，因此应在服务模板中进行修改，然后向网关组发布新版本。
 
 1. 从左侧导航栏中选择**服务**，然后选择 **Swagger Petstore**。
 2. 从左侧导航栏中选择**插件**。
@@ -42,7 +42,7 @@ slug: /api-full-lifecycle-management/api-consumption/apply-list-based-accesss-co
 
 ## 验证
 
-1. 添加一个新的消费者 `Lisa` 并使用以下配置启用 `key-auth` 插件。有关详细信息，参见[管理消费者凭证](/api-full-lifecycle-management/api-consumation/manage-consumer-credentials.md)。
+1. 添加一个新的消费者 `Lisa` 并使用以下配置启用 `key-auth` 插件。有关详细信息，参见[管理消费者凭证](../api-consumption/manage-consumer-credentials.md)。
 
     ```json
     {
