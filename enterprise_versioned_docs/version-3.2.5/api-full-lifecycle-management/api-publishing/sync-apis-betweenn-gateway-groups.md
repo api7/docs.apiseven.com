@@ -15,8 +15,8 @@ slug: /api-full-lifecycle-management/api-publishing/sync-apis-betweenn-gateway-g
 ## 前提条件
 
 1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#API提供者)角色的用户账户。
-2. [按服务发布 API](../api-full-lifecycle-management/api-publishing/publish-apis-by-service)。
-3. [添加网关组](.../api-runtime/add-gateway-groups)并将其命名为 `Production Group`。使该网关组作为生产环境的 API 网关。
+2. [按服务发布 API](../api-publishing/publish-apis-by-service.md)。
+3. [添加网关组](../api-runtime/add-gateway-groups)并将其命名为 `Production Group`。使该网关组作为生产环境的 API 网关。
 
 ## 将服务版本同步到生产组
 

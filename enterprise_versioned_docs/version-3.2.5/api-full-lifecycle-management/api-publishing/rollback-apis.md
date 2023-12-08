@@ -16,7 +16,7 @@ slug: /api-full-lifecycle-management/api-publishing/rollback-apis
 ## 前提条件
 
 1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#API提供者)角色的用户账户。
-2. [按服务发布 API](../api-full-lifecycle-management/api-publishing/publish-apis-by-service)。
+2. [按服务发布 API](../api-publishing/publish-apis-by-service.md)。
 
 ## 作为 API 提供者回滚服务
 

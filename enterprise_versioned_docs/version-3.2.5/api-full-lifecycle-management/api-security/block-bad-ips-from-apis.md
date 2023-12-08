@@ -10,7 +10,7 @@ slug: /api-full-lifecycle-management/api-security/block-bad-ips-from-apis
 ## 前提条件
 
 1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#super-admin)或 [API 提供者](../../administration/role-based-access-control.md#api-provider)角色的用户账户。
-2. [按服务发布 API](../api-full-lifecycle-management/api-publishing/publish-apis-by-service)。
+2. [按服务发布 API](../api-publishing/publish-apis-by-service.md)。
 
 ## 为所有 API 设置共享 IP 地址黑名单
 
