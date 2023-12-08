@@ -39,7 +39,7 @@ slug: /api-full-lifecycle-management/api-runtime/add-gateway-groups
 
 ## 前提条件
 
-1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#super-admin)或 [API 提供者](../../administration/role-based-access-control.md#api-provider)角色的用户账户。
+1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
 
 ## 创建网关组
 

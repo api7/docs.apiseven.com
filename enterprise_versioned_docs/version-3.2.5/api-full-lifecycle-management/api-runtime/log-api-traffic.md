@@ -21,7 +21,7 @@ API7 企业版支持收集路由访问信息并记录为日志，如主机、客
 
 ## 前提条件
 
-1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#super-admin)或 [API 提供者](../../administration/role-based-access-control.md#api-provider)角色的用户账户。
+1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
 2. [按服务发布 API](../api-publishing/publish-apis-by-service.md)。
 3. 获取自己的 ClickHouse 数据库的主机地址。
 4. 安装 [Docker](https://docs.docker.com/get-docker/)。

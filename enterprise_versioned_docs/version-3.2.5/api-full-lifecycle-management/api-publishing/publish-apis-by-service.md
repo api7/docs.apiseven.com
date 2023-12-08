@@ -9,11 +9,11 @@ slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
 
 ## 前提条件
 
-1. 安装 [API7 企业版](./install-api7-ee.md)。
-2. [设计 API](./design-apis.md)。
-3. 在你的测试环境中[构建 API 端点](./build-api-endpoints.md)。
-4. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#super-admin)或 [API 提供者](../../administration/role-based-access-control.md#api-provider)角色的用户账户。
-4. 将默认网关组重命名为 `Test Group`（测试组）并配置网络。该网关组将作为测试环境的 API 网关。
+1. 安装 [API7 企业版](../../getting-started/install-api7-ee.md)。
+2. [设计 API](../design-apis.md)。
+3. 在你的测试环境中[构建 API 端点](../build-api-endpoints.md)。
+4. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
+5. 将默认网关组重命名为 `Test Group`（测试组）并配置网络。该网关组将作为测试环境的 API 网关。
 
 ## 通过导入 OpenAPI 规范添加服务
 

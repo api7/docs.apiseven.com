@@ -5,7 +5,7 @@ slug: /api-full-lifecycle-management/api-publishing/rollback-apis
 
 当变更带来问题时，回滚 API 可以将其恢复到已知的良好版本。由于按服务发布 API，也是按服务回滚 API。
 
-注意，历史版本不包含[运行时配置](../../key-concepts/services.md)。它们的当前值将保持不变。
+注意，历史版本不包含[运行时配置](../../key-concepts/services.md#运行时配置)。它们的当前值将保持不变。
 
 :::info
 

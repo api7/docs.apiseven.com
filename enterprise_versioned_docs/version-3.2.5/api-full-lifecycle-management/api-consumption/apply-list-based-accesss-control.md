@@ -9,7 +9,7 @@ slug: /api-full-lifecycle-management/api-consumption/apply-list-based-accesss-co
 
 ## 前提条件
 
-1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#super-admin)或 [API 提供者](../../administration/role-based-access-control.md#api-provider)角色的用户账户。
+1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
 2. [按服务发布 API](../api-publishing/publish-apis-by-service.md)。
 3. [配置 API 认证](../api-security/set-up-api-authentication.md)。
 4. [管理消费者凭证](../api-consumption/manage-consumer-credentials.md)。
@@ -18,7 +18,7 @@ slug: /api-full-lifecycle-management/api-consumption/apply-list-based-accesss-co
 
 当收到 API 请求时，API7 企业版会提取凭据并查找消费者的姓名。因此，路由不需要直接识别凭证。它使用消费者的名字，更加人性化。
 
-由于插件配置不属于[运行时配置](../../key-concepts/services.md)，因此应在服务模板中进行修改，然后向网关组发布新版本。
+由于插件配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后向网关组发布新版本。
 
 1. 从左侧导航栏中选择**服务**，然后选择 **Swagger Petstore**。
 2. 从左侧导航栏中选择**插件**。

@@ -11,7 +11,7 @@ API7 企业版提供速率限制功能，通过限制给定时间段内发送到
 
 ## 前提条件
 
-1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#super-admin)或 [API 提供者](../../administration/role-based-access-control.md#api-provider)角色的用户账户。
+1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
 2. [按服务发布 API](../api-publishing/publish-apis-by-service.md)。
 
 ## 对所有服务应用速率限制（不推荐）
@@ -22,7 +22,7 @@ API7 企业版提供速率限制功能，通过限制给定时间段内发送到
 
 在本章节中，限制该路由在 60 秒内只能访问 3 次。如果超出限制，则返回 `503`。
 
-由于插件配置不被视为[运行时配置](../../key-concepts/services.md#runtime-configurations)，因此你应该在服务模板中对其进行修改，然后将新版本发布到网关组。
+由于插件配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后向网关组发布新版本。
 
 1. 从左侧面导航栏中选择**服务**，然后选择 **Swagger Petstore**。
 2. 从左侧面导航栏中选择**插件**。
@@ -127,7 +127,7 @@ Server: APISIX/dev
 
 在本教程中，路由限制为每秒 1 个请求。如果请求数量在 1 到 3 之间，则会引入延迟。如果每秒请求数超过 3 个，则会被拒绝，状态码为 `503`。
 
-由于插件配置不被视为[运行时配置](../../key-concepts/services.md#runtime-configurations)，因此你应该在服务模板中对其进行修改，然后将新版本发布到网关组。
+由于插件配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后向网关组发布新版本。
 
 1. 从左侧面导航栏中选择**服务**，然后选择 **Swagger Petstore**。
 2. 从左侧面导航栏中选择**插件**。

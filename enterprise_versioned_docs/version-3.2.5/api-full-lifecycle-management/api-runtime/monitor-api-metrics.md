@@ -9,7 +9,7 @@ API7 企业版支持以最小的延迟向监控系统公开一组全面的指标
 
 ## 前提条件
 
-1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#super-admin)或 [API 提供者](../../administration/role-based-access-control.md#api-provider)角色的用户账户。
+1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
 2. [按服务发布 API](../api-publishing/publish-apis-by-service.md)。
 
 ## 监控所有服务

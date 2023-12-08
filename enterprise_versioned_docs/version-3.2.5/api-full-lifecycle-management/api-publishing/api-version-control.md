@@ -31,7 +31,7 @@ API 发布从服务模板开始，因此每次都会生成新版本。每个版�
 5. 再次向 Test Group 发布服务版本 `1.0.1`，修复错误。
 6. [将 API 同步到生产组](../api-publishing/sync-apis-betweenn-gateway-groups.md)，服务版本为 `1.0.1`。
 
-    请注意，[运行时配置](../key-concepts/services.md)可能因网关组不同而不同，但它们不会影响版本号。
+    请注意，[运行时配置](../../key-concepts/services.md#运行时配置)可能因网关组不同而不同，但它们不会影响版本号。
 
     :::info
 
