@@ -30,9 +30,7 @@ slug: /api-full-lifecycle-management/api-publishing/sync-apis-betweenn-gateway-g
 ## 在生产环境中验证 API
 
 ```bash
-
 curl "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为 Production Group 的地址。
-
 ```
 
 你应该会看到以下输出：

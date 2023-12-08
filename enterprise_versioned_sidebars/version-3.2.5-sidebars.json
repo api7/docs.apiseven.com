@@ -46,6 +46,34 @@
             "api-full-lifecycle-management/api-publishing/rollback-apis",
             "api-full-lifecycle-management/api-publishing/canary-traffic-shifting"
           ]
+        },
+        {
+          "type": "category",
+          "label": "API 消费",
+          "items": [
+            "api-full-lifecycle-management/api-consumption/manage-consumer-credentials",
+            "api-full-lifecycle-management/api-consumption/apply-list-based-accesss-control"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "API 运行时",
+          "items": [
+            "api-full-lifecycle-management/api-runtime/add-gateway-groups",
+            "api-full-lifecycle-management/api-runtime/monitor-api-metrics",
+            "api-full-lifecycle-management/api-runtime/log-api-traffic",
+            "api-full-lifecycle-management/api-runtime/trigger-alerts",
+            "api-full-lifecycle-management/api-runtime/track-gateway-instance-status"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "API 安全",
+          "items": [
+            "api-full-lifecycle-management/api-security/set-up-api-authentication",
+            "api-full-lifecycle-management/api-security/apply-rate-limiting-to-apis",
+            "api-full-lifecycle-management/api-security/block-bad-ips-from-apis"
+          ]
         }
       ]
     },

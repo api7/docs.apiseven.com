@@ -3,7 +3,7 @@ title: 按服务发布 API
 slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
 ---
 
-设计、开发和部署 API 后，你可以在 API7 企业版中发布这些 API，以便进行访问。你可以将其发布到测试、暂存和生产环境，或多个区域。
+设计、开发和部署 API 后，你可以在 API7 企业版中发布这些 API，以便进行访问。你可以将其发布到测试、预生产和生产环境，或多个区域。
 
 本教程以 `Swagger Petstore` 为例，介绍如何将 API 发布到测试环境。由于 API 通常是按后端服务组织的，因此在 API7 中它们是按服务管理的。特定后端的 API 共享配置，并在后端发生变化时一起更新。
 
@@ -23,7 +23,7 @@ slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
 
 :::
 
-如需通过导入 OpenAPI 规范添加服务，请遵循以下步骤：
+如需通过导入 OpenAPI 规范添加服务，遵循以下步骤：
 
 1. 从左侧导航栏中选择**服务**，然后单击**添加服务**。
 2. 选择**导入 OpenAPI**。
