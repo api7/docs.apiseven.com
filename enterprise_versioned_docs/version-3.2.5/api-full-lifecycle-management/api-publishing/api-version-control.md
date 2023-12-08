@@ -24,14 +24,14 @@ API 发布从服务模板开始，因此每次都会生成新版本。每个版�
 
 ## 典型的版本控制工作流程
 
-1. [为测试和生产环境添加两个网关组](../api-runtime/add-gateway-groups.md)。
-2. [将 API 发布到测试组](publish-apis-by-service.md)，服务版本为 `1.0.0`。
+1. [为测试和生产环境添加两个网关组](../api-runtime/add-gateway-groups)。
+2. [将 API 发布到测试组](../api-full-lifecycle-management/api-publishing/publish-apis-by-service)，服务版本为 `1.0.0`。
 3. 在测试环境中验证 API。
 4. 更新服务模板中的 API 配置。
 5. 再次向测试组发布服务版本 `1.0.1`，修复错误。
-6. [将 API 同步到生产组](sync-apis-between-gateway-groups.md)，服务版本为 `1.0.1`。
+6. [将 API 同步到生产组](../api-full-lifecycle-management/api-publishing/sync-apis-betweenn-gateway-groups)，服务版本为 `1.0.1`。
 
-    请注意，[服务运行时配置](.../.../key-concepts/services.md#运行时配置)可能因网关组不同而不同，但它们不会影响版本号。
+    请注意，[服务运行时配置](../key-concepts/services.md#运行时配置)可能因网关组不同而不同，但它们不会影响版本号。
 
     :::info
 
@@ -43,6 +43,6 @@ API 发布从服务模板开始，因此每次都会生成新版本。每个版�
     :::
 
 7. 对于新的迭代阶段，编辑服务模板，添加更多路由。
-8. [将 API 发布到测试组](publish-apis-by-service.md)，服务版本为 `1.1.0`。
+8. [将 API 发布到测试组](sync-apis-between-gateway-groups)，服务版本为 `1.1.0`。
 9. 在测试环境中验证 API，发生紧急情况。
 10. [回滚版本](rollback-apis.md)至 `1.0.0`，恢复 API。
