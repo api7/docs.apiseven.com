@@ -19,9 +19,9 @@ API7 企业版提供了许多插件，可以根据你的需求进行定制和编
 
 ## 插件执行生命周期
 
-然后根据定义的 [JSON 架构](https://json-schema.org) 检查插件的配置，以确保插件配置架构正确。
+然后根据定义的 [JSON 架构](https://json-schema.org)检查插件的配置，以确保插件配置架构正确。
 
-当发送请求到 API7 企业版时，会在以下一个或多个阶段执行插件相应的方法：“rewrite”、“access”、“before_proxy”、“header_filter”、“body_filter” 和 “log”。这些阶段很大程度上受到 [OpenResty 指令](https://openresty-reference.readthedocs.io/en/latest/Directives/)的影响。
+当发送请求到 API7 企业版时，会在以下一个或多个阶段执行插件相应的方法：`rewrite`、`access`、`before_proxy`、`header_filter`、`body_filter` 和 `log`。这些阶段很大程度上受到 [OpenResty 指令](https://openresty-reference.readthedocs.io/en/latest/Directives/)的影响。
 
 <br/>
 <div style={{textAlign: 'center'}}>
@@ -43,7 +43,7 @@ API7 企业版提供了许多插件，可以根据你的需求进行定制和编
    1. 重写阶段的插件
    2. 接入阶段的插件
 
-在每个[阶段](#插件执行生命周期)中，你可以选择在插件的 “_meta.priority” 属性中定义一个新的优先级值，该值在执行期间优先于默认的插件优先级。具有较高优先级值的插件将首先执行。有关示例，请参阅插件通用配置。
+在每个[阶段](#插件执行生命周期)中，你可以选择在插件的 `_meta.priority` 属性中定义一个新的优先级值，该值在执行期间优先于默认的插件优先级。具有较高优先级值的插件将首先执行。有关示例，请参阅插件通用配置。
 
 ## 插件合并优先级
 
@@ -59,11 +59,11 @@ API7 企业版提供了许多插件，可以根据你的需求进行定制和编
 
 默认情况下，所有插件均由与路由中配置的规则匹配的传入请求触发。有时你可能需要更精细地控制插件的执行，即有条件地确定请求触发哪些插件。
 
-API7 企业版允许通过将 “_meta.filter” 配置应用于插件来动态控制插件执行。该配置支持评估各种内置变量和 API7 企业版表达式。
+API7 企业版允许通过将 `_meta.filter` 配置应用于插件来动态控制插件执行。该配置支持评估各种内置变量和 API7 企业版表达式。
 
 ## 插件全局规则
 
-全局规则对象用于创建在每个传入请求上触发的[插件](./plugins.md)。全局规则将在本地绑定到对象的其他插件之前执行，例如[路由](routes.md)、[服务](services.md)和[消费者](consumers.md)。某些插件（例如 `rate limiting`和 `observability` 插件）经常在全局范围内启用，为 API 提供一致且全面的保护。
+全局规则对象用于创建在每个传入请求上触发的[插件](./plugins.md)。全局规则将在本地绑定到对象的其他插件之前执行，例如[路由](routes.md)、[服务](services.md)和[消费者](consumers.md)。某些插件（例如 `rate limiting` 和 `observability` 插件）经常在全局范围内启用，为 API 提供一致且全面的保护。
 
 下图说明了为所有传入请求全局启用 `key-auth` 插件。其中在全局规则和消费者中配置 `key-auth` 插件。在路由上配置 `proxy-rewrite` 插件，用于修改请求的 [HTTP 标头](https://developer.mozilla.org/en-US/docs/Glossary/HTTP_header)，用于演示[插件执行顺序](#插件执行顺序)：
 
@@ -95,7 +95,7 @@ API7 企业版允许通过将 “_meta.filter” 配置应用于插件来动态�
 
 <br/>
 
-如果没有另外指定，插件元数据对象上的 “log_format” 应将相同的日志格式统一应用于两个 `syslog` 插件。但是，由于 `/order` 路由上的 `syslog` 插件具有不同的 “log_format”，因此对该路由的请求将按照路由中插件指定的 “log_format” 生成日志。
+如果没有另外指定，插件元数据对象上的 `log_format` 应将相同的日志格式统一应用于两个 `syslog` 插件。但是，由于 `/order` 路由上的 `syslog` 插件具有不同的 `log_format`，因此对该路由的请求将按照路由中插件指定的 `log_format` 生成日志。
 
 如果在插件元数据和另一个对象中都定义了插件字段，则对象上的定义**优先于**插件元数据中的定义。
 

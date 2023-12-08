@@ -5,7 +5,7 @@ slug: /api-full-lifecycle-management/api-security/block-bad-ips-from-apis
 
 为了保护 API 免受来自被禁止的 IP 地址的攻击，你可以配置 IP 地址黑名单来阻止来自这些特定 IP 地址的请求。
 
-本文档介绍如何启用 `ip-restriction` 插件作为全局规则，建立共享 IP 地址黑名单。如果 IP 地址在黑名单中，则请求会被拒绝，并返回 `403`。根据列表检查的 IP 地址可能是发起请求的客户端的 IP 地址或基于代理的 X-Forwarded-For （XFF）地址。
+本文档介绍如何启用 `ip-restriction` 插件作为全局规则，建立共享 IP 地址黑名单。如果 IP 地址在黑名单中，则请求会被拒绝，并返回 `403`。根据列表检查的 IP 地址可能是发起请求的客户端的 IP 地址或基于代理的 X-Forwarded-For（XFF）地址。
 
 ## 前提条件
 

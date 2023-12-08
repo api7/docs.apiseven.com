@@ -3,7 +3,7 @@ title: 创建网关组
 slug: /api-full-lifecycle-management/api-runtime/add-gateway-groups
 ---
 
-[网关组](../../key-concepts/gateway-groups.md) 用于分段。以下是网关组其他的应用场景：
+[网关组](../../key-concepts/gateway-groups.md)用于分段。以下是网关组其他的应用场景：
 
 **根据开发环境**：
 
