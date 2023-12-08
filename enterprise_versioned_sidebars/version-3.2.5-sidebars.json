@@ -34,7 +34,15 @@
       "label": "API 全生命周期管理",
       "items": [
         "api-full-lifecycle-management/design-apis",
-        "api-full-lifecycle-management/build-api-endpoints"
+        "api-full-lifecycle-management/build-api-endpoints",
+        {
+          "type": "category",
+          "label": "API 发布",
+          "items": [
+            "api-full-lifecycle-management/api-publishing/api-version-control",
+            "api-full-lifecycle-management/api-publishing/publish-apis-by-service"
+          ]
+        }
       ]
     },
     {
