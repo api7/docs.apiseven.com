@@ -24,7 +24,7 @@ slug: /getting-started/launch-your-first-api
 
     ![新增服务](https://static.apiseven.com/uploads/2023/12/07/0JZ2RX5E_add-service_zh.png)
 
-3. 在**新增服务**对话框中执行以下操作：
+3. 在**新增服务**对话框中，执行以下操作：
     - 在**名称**字段中，输入 `httpbin`。
     - 在**上游 Scheme** 字段中，选择 `HTTP`。
 4. 单击**添加**。
@@ -62,7 +62,7 @@ slug: /getting-started/launch-your-first-api
 
     ![添加节点](https://static.apiseven.com/uploads/2023/12/07/dXEfZ4gS_add-node_zh.png)
 
-6. 在**添加节点** 对话框中执行以下操作：
+6. 在**添加节点** 对话框中，执行以下操作：
     - 在**主机** 字段中，输入 `httpbin.org`。
     - 在**端口** 字段中，输入 `80`。
     - 在**权重** 字段中，使用默认值 `100`。

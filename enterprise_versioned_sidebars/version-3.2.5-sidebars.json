@@ -71,7 +71,8 @@
           "label": "API 安全",
           "items": [
             "api-full-lifecycle-management/api-security/apply-rate-limiting-to-apis",
-            "api-full-lifecycle-management/api-security/block-bad-ips-from-apis"
+            "api-full-lifecycle-management/api-security/block-bad-ips-from-apis",
+            "api-full-lifecycle-management/api-security/set-up-api-authentication"
           ]
         }
       ]

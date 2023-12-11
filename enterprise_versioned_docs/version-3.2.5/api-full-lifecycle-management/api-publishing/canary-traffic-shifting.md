@@ -116,7 +116,7 @@ slug: /api-full-lifecycle-management/api-publishing/canary-traffic-shifting
     - 在对话框中，将权重调整为 50%。
     - 单击**编辑**。
 8. 发送更多 API 请求，测试上游灰度。
-9. 在**灰度规则**字段中，单击**结束**。在对话框中执行以下操作：
+9. 在**灰度规则**字段中，单击**结束**。在对话框中，执行以下操作：
 
     - 在**基准上游**字段中，选择 `灰度上游：newupstream`。
     - 在**删除未选择的上游**字段中，打开开关。
@@ -247,7 +247,7 @@ slug: /api-full-lifecycle-management/api-publishing/canary-traffic-shifting
     }
     ```
 
-6. 在**灰度规则**字段中，单击**结束**。在对话框中执行以下操作：
+6. 在**灰度规则**字段中，单击**结束**。在对话框中，执行以下操作：
 
     - 在**基准上游**字段中，选择 `灰度上游：newupstream`。
     - 在**删除未选择的上游**字段中，打开开关。

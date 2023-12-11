@@ -17,9 +17,9 @@ slug: /api-full-lifecycle-management/api-publishing/ensure-upstream-high-availab
 1. 从左侧导航栏中选择**服务**，然后选择 **Swagger Petstore** > **1.0.0**。
 2. 从左侧导航栏中选择**上游**，然后单击**节点** > **添加节点**。
 
-    ![添加节点](https://static.apiseven.com/uploads/2023/12/08/VZHR4eft_add-node-test_zh.png)
+    ![添加节点](https://static.apiseven.com/uploads/2023/12/11/dnaJfqUd_add-node-test_zh.png)
 
-3. 在对话框中执行以下操作：
+3. 在对话框中，执行以下操作：
     - 在**主机**和**端口**字段中，输入另一个 API 端点。
     - 在**权重**字段中，输入与第一个节点相同的 `100`。
 3. 单击**添加**。
@@ -53,7 +53,7 @@ API7 企业版支持多种负载均衡算法：
 
     ![添加服务模板](https://static.apiseven.com/uploads/2023/12/08/toQcHh3H_add_service_template_zh.png)
 
-9. 在对话框中执行以下操作：
+9. 在对话框中，执行以下操作：
     - 在**服务**字段中，选择 `Swagger Petstore`。
     - 在**新版本**字段中，输入 `1.0.1`。
     - 单击**添加**。
@@ -84,7 +84,7 @@ API7 企业版支持多种负载均衡算法：
 
     ![启用主动健康检查](https://static.apiseven.com/uploads/2023/12/08/Zif9cVSi_enable_active_health_check_zh.png)
 
-4. 在对话框中执行以下操作：
+4. 在对话框中，执行以下操作：
     - 在**协议**字段中，选择 `HTTP`。
     - 在 **HTTP 探测路径**字段中，输入 `/health`。
     - 其余字段使用默认值。
@@ -94,13 +94,13 @@ API7 企业版支持多种负载均衡算法：
 
     ![启用被动健康检查](https://static.apiseven.com/uploads/2023/12/08/ShccfdnL_enable_passive_health_check_zh.png)
 
-6. 在对话框中执行以下操作：
+6. 在对话框中，执行以下操作：
     - 在**协议**字段中，选择 `HTTP`。
     - 其余字段使用默认值。
     - 单击**启用**。
 7. 从左侧导航栏中选择**服务**，然后单击**发布服务**。
 8. 在**网关组**字段中，选择 `Test Group`，然后单击**下一步**。
-9. 单击**添加服务**。在对话框中执行以下操作：
+9. 单击**添加服务**。在对话框中，执行以下操作：
     - 在**服务**字段中，选择 `Swagger Petstore`。
     - 在**新版本**字段中，输入 `1.0.1`。
     - 单击**添加**。

@@ -42,7 +42,7 @@ slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
 
 1. 从左侧导航栏中选择**服务**，然后单击**发布服务**。
 2. 在**网关组**字段中，选择 `Test Group`，然后单击**下一步**。
-3. 单击**添加服务**。在对话框中执行以下操作：
+3. 单击**添加服务**。在对话框中，执行以下操作：
     - 在**服务**字段中，选择 `Swagger Petstore`。
     - 在**新版本**字段中，输入 `1.0.0`。
     - 单击**添加**。
@@ -51,7 +51,7 @@ slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
 
 4. 确认服务信息，然后单击**下一步**。
 5. 在**如何查找上游**字段中，选择`使用节点`。
-7. 单击**添加节点**。在对话框中执行以下操作：
+7. 单击**添加节点**。在对话框中，执行以下操作：
     - 在**主机**和**端口**字段中，输入测试环境中的后端节点地址或模拟服务器地址。
     - 在**权重**字段中，使用默认值 `100`。
     - 单击**添加**。
@@ -72,7 +72,7 @@ Consul、Eureka、Nacos 或 Kubernetes Service Discovery 等服务发现机制�
 
     ![连接服务注册表](https://static.apiseven.com/uploads/2023/12/08/8VSvYX9n_connect-service-registry_zh.png)
 
-3. 在**连接服务注册中心**对话框中执行以下操作：
+3. 在**连接服务注册中心**对话框中，执行以下操作：
     - 在**名称**字段中，输入 `Registry for Test`。
     - 填写 **API 服务器地址**和**令牌**字段。
     - 单击**连接**。
@@ -83,7 +83,7 @@ Consul、Eureka、Nacos 或 Kubernetes Service Discovery 等服务发现机制�
 
     ![由 OpenAI 发布服务](https://static.apiseven.com/uploads/2023/12/08/aLEbM09O_publish-service-openAI_zh.png)
 
-8. 在对话框中执行以下操作：
+8. 在对话框中，执行以下操作：
     - 在**服务**字段中，选择 `Swagger Petstore`。
     - 在**新版本**字段中，输入 `1.0.0`。
     - 单击**添加**。

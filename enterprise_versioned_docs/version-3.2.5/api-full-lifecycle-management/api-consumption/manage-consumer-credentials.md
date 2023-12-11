@@ -28,7 +28,7 @@ slug: /api-full-lifecycle-management/api-consumption/manage-consumer-credentials
     </div>
     <br />
 
-3. 在**新增消费者**对话框中执行以下操作：
+3. 在**新增消费者**对话框中，执行以下操作：
 
     - 在**网关组**字段中，选择 `Test Group`。
     - 在**名称**字段中，输入 `Alice`。
