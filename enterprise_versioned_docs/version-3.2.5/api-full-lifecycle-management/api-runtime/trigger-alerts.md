@@ -20,7 +20,7 @@ Webhook 指不同应用程序或服务在发生某些事件时通过向预定义
 
 1. 从左侧导航栏中选择**告警** > **Webhook 模板**，然后单击**新增模板**。在对话框中，执行以下操作：
     - 在**名称**字段中，输入 `Email-notice`。
-    - 在 `URL`字段中，输入 webhook URL。本教程使用 `webhook.site` URL 作为示例。
+    - 在 **URL** 字段中，输入 webhook URL。本教程使用 `webhook.site` URL 作为示例。
     - 在**通知模板**字段中（Webhook 的请求正文）中，应用以下配置。 `Title`、`Severity` 和 `Detail` 字段来自告警策略：
 
     ```bash

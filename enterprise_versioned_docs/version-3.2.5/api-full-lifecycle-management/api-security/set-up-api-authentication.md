@@ -33,14 +33,14 @@ slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
 由于插件配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后向网关组发布新版本。
 
 1. 从左侧导航栏中选择**服务**，然后选择 **Swagger Petstore**。
-2. 从左侧导航栏中选择 **插件**。
+2. 从左侧导航栏中选择**插件**。
 3. 在**插件**字段中，搜索 `key-auth` 插件。
 4. 单击**加号**图标 (+)，弹出对话框。
 5. 单击**启用**。
 6. 从左侧导航栏中选择**服务**，然后单击**发布服务**。
-7. 在**网关组**字段中，选择 "测试组"，然后单击**下一步**。
+7. 在**网关组**字段中，选择 `Test Group`，然后单击**下一步**。
 8. 单击**添加服务**。在对话框中，执行以下操作：
-    - 在**服务**字段中，选择 "Swagger Petstore"。
+    - 在**服务**字段中，选择 `Swagger Petstore`。
     - 在**新版本**字段中，输入 `1.0.1`。
     - 单击 **添加**。
 
@@ -55,8 +55,8 @@ slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
 
 由于插件配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后向网关组发布新版本。
 
-1. 从左侧导航栏中选择 **服务**，然后选择 **Swagger Petstore**。
-2. 从左侧导航栏中选择**Routes**，然后选择**getPetById**。
+1. 从左侧导航栏中选择**服务**，然后选择 **Swagger Petstore**。
+2. 从左侧导航栏中选择 **Routes**，然后选择 **getPetById**。
 3. 在**插件**字段中，搜索 `key-auth` 插件。
 4. 单击**加号**图标 (+)，弹出对话框。
 5. 单击**启用**。
@@ -74,7 +74,7 @@ slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
 
 ## 验证
 
-本章介绍如何为[服务](../../key-concepts/services.md)和[消费者](../../key-concepts/consumers.md)上配置认证。
+本章介绍如何为[服务](../../key-concepts/services.md)和[消费者](../../key-concepts/consumers.md)配置认证。
 
 ### 添加消费者
 
