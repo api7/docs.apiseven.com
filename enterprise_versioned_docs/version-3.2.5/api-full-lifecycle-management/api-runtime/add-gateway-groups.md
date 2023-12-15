@@ -3,11 +3,11 @@ title: 创建网关组
 slug: /api-full-lifecycle-management/api-runtime/add-gateway-groups
 ---
 
-[网关组](../../key-concepts/gateway-groups.md)用于分段。以下是网关组其他的应用场景：
+[网关组](../../key-concepts/gateway-groups.md)用于划分 API。以下是网关组其他的应用场景：
 
-**根据开发环境**：
+**根据环境**：
 
-为每个开发环境创建单独的网关组：测试、预生产和生产环境
+为每个环境创建单独的网关组：测试环境、预生产环境和生产环境
 
 - 测试环境：供 API 提供者在发布之前验证 API
 - 预生产环境：正式发布前，验证 API
@@ -23,7 +23,7 @@ slug: /api-full-lifecycle-management/api-runtime/add-gateway-groups
 
 **根据地区**：
 
-根据地理区域创建 API：
+根据地理区域创建网关组类别：
 
 - `USA-East API`：面向美国东海岸地区
 - `欧盟 API`：欧洲组
@@ -47,10 +47,10 @@ slug: /api-full-lifecycle-management/api-runtime/add-gateway-groups
 
 1. 从左侧导航栏中选择**网关组**，然后单击**添加网关组**。
 
-    ![添加网关组](https://static.apiseven.com/uploads/2023/12/08/zTO9siFR_add_gateway_group_zh.png)
+    ![添加网关组](https://static.apiseven.com/uploads/2023/12/15/VbhPqcTS_add_gateway_group_zh.png)
 
-2. 在**名称**字段中，输入 `Production`。
+2. 在**名称**字段中，输入`生产网关组`。
 3. 单击**添加**。
-4. 单击新创建的 `Production` 网关组，然后单击**添加网关实例**。
+4. 单击新创建的`生产网关组`，然后单击**添加网关实例**。
 5. 按照页面上的说明进行操作。
 6. 完成[跟踪网关实例状态](track-gateway-instance-status.md)。

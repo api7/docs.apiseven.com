@@ -3,16 +3,16 @@ title: 管理消费者凭证
 slug: /api-full-lifecycle-management/api-consumption/manage-consumer-credentials
 ---
 
-消费者指使用 API 的应用程序或开发人员。路由上启用的身份认证插件会锁定访问权限，要求消费者获得凭据才能访问 API。
+消费者指使用 API 的应用程序或开发人员。路由上启用的身份认证插件会锁定访问权限，要求消费者获得凭证才能访问 API。
 
-通常情况下，发布 API 之后再创建消费者，而开发者则申请凭证。创建消费者需要一个唯一的用户名。作为身份认证配置的一部分，你还需要将上述列表中的身份认证插件添加到消费者的`插件`字段中。
+通常情况下，发布 API 之后再创建消费者。而开发人员为消费者申请凭证。创建消费者需要一个唯一的用户名。作为身份认证配置的一部分，你还需要将上述列表中的身份认证插件添加到消费者的`插件`字段中。
 
 在本教程中，你将创建一个使用密钥身份认证的消费者，然后使用密钥身份认证访问 API。
 
 ## 前提条件
 
 1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
-2. [按服务发布 API](../api-publishing/publish-apis-by-service.md)。
+2. [以服务维度发布 API](../api-publishing/publish-apis-by-service.md)。
 3. [配置 API 认证](../api-security/set-up-api-authentication.md)。
 
 ## 创建消费者
@@ -24,13 +24,13 @@ slug: /api-full-lifecycle-management/api-consumption/manage-consumer-credentials
 
     <br />
     <div style={{textAlign: 'center'}}>
-    <img src="https://static.apiseven.com/uploads/2023/12/08/RxIDvUNJ_add_consumer_zh.png" alt="Add Consumer" width="95%" />
+    <img src="https://static.apiseven.com/uploads/2023/12/15/nqzPdK8E_add_consumer_zh.png" alt="创建消费者" width="95%" />
     </div>
     <br />
 
 3. 在**新增消费者**对话框中，执行以下操作：
 
-    - 在**网关组**字段中，选择 `Test Group`。
+    - 在**网关组**字段中，选择`测试网关组`。
     - 在**名称**字段中，输入 `Alice`。
 
 4. 单击**新增**。
@@ -59,7 +59,7 @@ slug: /api-full-lifecycle-management/api-consumption/manage-consumer-credentials
 ### 未使用密钥发送请求
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为 Test Group 的地址。
+curl -i "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为测试网关组的地址。
 ```
 
 你应该看到以下输出：
@@ -78,7 +78,7 @@ Server: APISIX/dev
 ### 使用错误的密钥发送请求
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: wrongkey" # 将 127.0.0.1 替换为 Test Group 的地址。
+curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: wrongkey" # 将 127.0.0.1 替换为测试网关组的地址。
 ```
 
 你应该看到以下输出：
@@ -97,7 +97,7 @@ Server: APISIX/dev
 ### 使用正确的密钥发送请求
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: secret-key" # 将 127.0.0.1 替换为 Test Group 的地址。
+curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: secret-key" # 将 127.0.0.1 替换为测试网关组的地址。
 ```
 
 你应该看到以下输出：

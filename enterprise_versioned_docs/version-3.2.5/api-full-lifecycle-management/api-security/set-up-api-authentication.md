@@ -24,13 +24,13 @@ slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
 ## 前提条件
 
 1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
-2. [按服务发布 API](../api-publishing/publish-apis-by-service.md)。
+2. [以服务维度发布 API](../api-publishing/publish-apis-by-service.md)。
 
-## 为单一服务设置密钥认证
+## 为单个服务设置密钥认证
 
-如果要为单个服务的所有现有和未来路由启用密钥认证，请在服务级别启用 `key-auth` 插件。这样就不会在路由级别启用其他认证插件。
+如果要为单个服务的所有现有和未来路由启用密钥认证，请在服务级别启用 `key-auth` 插件。这样就禁止在路由级别启用其他认证插件。
 
-由于插件配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后向网关组发布新版本。
+由于插件配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后将新版本发布到网关组。
 
 1. 从左侧导航栏中选择**服务**，然后选择 **Swagger Petstore**。
 2. 从左侧导航栏中选择**插件**。
@@ -38,22 +38,22 @@ slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
 4. 单击**加号**图标 (+)，弹出对话框。
 5. 单击**启用**。
 6. 从左侧导航栏中选择**服务**，然后单击**发布服务**。
-7. 在**网关组**字段中，选择 `Test Group`，然后单击**下一步**。
+7. 在**网关组**字段中，选择`测试网关组`，然后单击**下一步**。
 8. 单击**添加服务**。在对话框中，执行以下操作：
     - 在**服务**字段中，选择 `Swagger Petstore`。
     - 在**新版本**字段中，输入 `1.0.1`。
     - 单击 **添加**。
 
-    ![发布服务](https://static.apiseven.com/uploads/2023/12/07/85b5kKOE_publish-service-1.0.1.png)
+    ![发布服务](https://static.apiseven.com/uploads/2023/12/11/t03uxF0A_publish-service-1.0.1_zh.png)
 
 9. 确认服务信息，然后单击 **下一步**。
 10. 保持节点不变，然后单击 **发布**。
 
-## 为单一路由设置密钥认证
+## 为单个路由设置密钥认证
 
 如果要为单个路由启用密钥认证，请尝试在路由级别启用 `key-auth` 插件。
 
-由于插件配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后向网关组发布新版本。
+由于插件配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后将新版本发布到网关组。
 
 1. 从左侧导航栏中选择**服务**，然后选择 **Swagger Petstore**。
 2. 从左侧导航栏中选择 **Routes**，然后选择 **getPetById**。
@@ -61,7 +61,7 @@ slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
 4. 单击**加号**图标 (+)，弹出对话框。
 5. 单击**启用**。
 7. 从左侧导航栏中选择**服务**，然后单击**发布服务**。
-8. 在**网关组**字段中，选择 `Test Group`，然后单击**下一步**。
+8. 在**网关组**字段中，选择`测试网关组`，然后单击**下一步**。
 9. 单击**添加服务**。在对话框中，执行以下操作：
     - 在**服务**字段中，选择 `Swagger Petstore`。
     - 在**新版本**字段中，输入 `1.0.1`。
@@ -82,13 +82,13 @@ slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
 
     <br />
     <div style={{textAlign: 'center'}}>
-    <img src="https://static.apiseven.com/uploads/2023/12/08/RxIDvUNJ_add_consumer_zh.png" alt="Add Consumer" width="95%" />
+    <img src="https://static.apiseven.com/uploads/2023/12/15/nqzPdK8E_add_consumer_zh.png" alt="新增消费者" width="95%" />
     </div>
     <br />
 
 2. 在**新增消费者**对话框中，执行以下操作：
 
-    - 在**网关组**字段中，选择 `Test Group`。
+    - 在**网关组**字段中，选择`测试网关组`。
     - 在**名称**字段中，输入 `Alice`。
 
 3. 单击**新增**。
@@ -115,7 +115,7 @@ slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
 ### 未使用密钥发送请求
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为 Test Group 的地址。
+curl -i "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为测试网关组的地址。
 ```
 
 你应该看到以下输出：
@@ -134,7 +134,7 @@ Server: APISIX/dev
 ### 使用错误的密钥发送请求
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: wrongkey" # 将 127.0.0.1 替换为 Test Group 的地址。
+curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: wrongkey" # 将 127.0.0.1 替换为测试网关组的地址。
 ```
 
 你应该看到以下输出：
@@ -153,7 +153,7 @@ Server: APISIX/dev
 ### 使用正确的密钥发送请求
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: secret-key" # 将 127.0.0.1 替换为 Test Group 的地址。
+curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: secret-key" # 将 127.0.0.1 替换为测试网关组的地址。
 ```
 
 你应该看到以下输出：

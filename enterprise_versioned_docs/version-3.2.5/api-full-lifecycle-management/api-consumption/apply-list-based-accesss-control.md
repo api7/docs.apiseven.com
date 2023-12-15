@@ -10,15 +10,15 @@ slug: /api-full-lifecycle-management/api-consumption/apply-list-based-accesss-co
 ## 前提条件
 
 1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
-2. [按服务发布 API](../api-publishing/publish-apis-by-service.md)。
+2. [以服务维度发布 API](../api-publishing/publish-apis-by-service.md)。
 3. [配置 API 认证](../api-security/set-up-api-authentication.md)。
 4. [管理消费者凭证](../api-consumption/manage-consumer-credentials.md)。
 
-## 给予消费者名称的访问控制
+## 基于消费者姓名的访问控制
 
-当收到 API 请求时，API7 企业版会提取凭据并查找消费者的姓名。因此，路由不需要直接识别凭证。它使用消费者的名字，更加人性化。
+当收到 API 请求时，API7 企业版会提取凭据并查找消费者的姓名。因此，路由无需直接识别凭证，只需识别消费者的姓名即可。这种方式更加人性化。
 
-由于插件配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后向网关组发布新版本。
+由于插件配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后将新版本发布到网关组。
 
 1. 从左侧导航栏中选择**服务**，然后选择 **Swagger Petstore**。
 2. 从左侧导航栏中选择**插件**。
@@ -53,7 +53,7 @@ slug: /api-full-lifecycle-management/api-consumption/apply-list-based-accesss-co
 2. 使用 `Alice` 的密钥发送 API 请求：
 
     ```bash
-    curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: Secret-key" # 将 127.0.0.1 替换为 Test Group 的地址。
+    curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: Secret-key" # 将 127.0.0.1 替换为测试网关组的地址。
     ```
 
     你应该看到以下输出：
@@ -102,7 +102,7 @@ slug: /api-full-lifecycle-management/api-consumption/apply-list-based-accesss-co
 3. 使用 `Lisa` 的密钥发送 API 请求：
 
     ```bash
-    curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: Secret-key2" # 将 127.0.0.1 替换为 Test Group 的地址。
+    curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: Secret-key2" # 将 127.0.0.1 替换为测试网关组的地址。
     ```
 
     你应该看到以下输出：

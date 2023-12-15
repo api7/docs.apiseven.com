@@ -8,7 +8,7 @@ slug: /api-full-lifecycle-management/api-publishing/ensure-upstream-high-availab
 ## 前提条件
 
 1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
-2. [按服务发布 API](../api-publishing/publish-apis-by-service.md)。
+2. [以服务维度发布 API](../api-publishing/publish-apis-by-service.md)。
 
 ## 添加多个上游节点
 
@@ -30,14 +30,14 @@ slug: /api-full-lifecycle-management/api-publishing/ensure-upstream-high-availab
 
 API7 企业版支持多种负载均衡算法：
 
-- 轮循
+- 加权轮循
 - 一致散列
 - 指数加权移动平均法（Exponentially Weighted Moving Average，EWMA）
 - 最少连接
 
 默认值是加权轮循算法。该算法根据节点的权重以循环模式将收到的请求分配给一组节点。
 
-由于负载均衡类型不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后向网关组发布新版本。**已发布的版本中**，无法修改负载均衡类型。
+由于负载均衡类型不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后将新版本发布到网关组。**已发布的版本中**，无法修改负载均衡类型。
 
 1. 从左侧导航栏中选择**服务**，然后选择 **Swagger Petstore**。
 2. 从左侧导航栏中选择**上游**。
@@ -48,7 +48,7 @@ API7 企业版支持多种负载均衡算法：
 4. 在对话框中，将**负载均衡类型**更改为 `Least Connection`。
 5. 单击**编辑**。
 6. 从左侧导航栏中选择**服务**，然后单击**发布服务**。
-7. 在**网关组**字段中，选择 `Test Group`，然后单击**下一步**。
+7. 在**网关组**字段中，选择`测试网关组`，然后单击**下一步**。
 8. 单击**添加服务**。
 
     ![添加服务模板](https://static.apiseven.com/uploads/2023/12/08/toQcHh3H_add_service_template_zh.png)
@@ -69,7 +69,7 @@ API7 企业版支持多种负载均衡算法：
 - 主动健康检查：通过主动探测节点来确定上游节点的健康状况。
 - 被动健康检查：根据节点对用户请求的响应情况确定上游节点的健康状况，而不启动额外的探测。被动检查必须与主动检查一起使用。它们不能单独使用。
 
-由于健康检查配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后向网关组发布新版本。**已发布的版本中**，无法更改健康检查配置。
+由于健康检查配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后将新版本发布到网关组。**已发布的版本中**，无法更改健康检查配置。
 
 :::info
 
@@ -80,7 +80,6 @@ API7 企业版支持多种负载均衡算法：
 1. 从左侧导航栏中选择**服务**，然后选择 **Swagger Petstore**。
 2. 从左侧导航栏中选择**上游**。
 3. 在**主动健康检查**字段中，单击**启用**。
-
 
     ![启用主动健康检查](https://static.apiseven.com/uploads/2023/12/08/Zif9cVSi_enable_active_health_check_zh.png)
 
@@ -99,7 +98,7 @@ API7 企业版支持多种负载均衡算法：
     - 其余字段使用默认值。
     - 单击**启用**。
 7. 从左侧导航栏中选择**服务**，然后单击**发布服务**。
-8. 在**网关组**字段中，选择 `Test Group`，然后单击**下一步**。
+8. 在**网关组**字段中，选择`测试网关组`，然后单击**下一步**。
 9. 单击**添加服务**。在对话框中，执行以下操作：
     - 在**服务**字段中，选择 `Swagger Petstore`。
     - 在**新版本**字段中，输入 `1.0.1`。

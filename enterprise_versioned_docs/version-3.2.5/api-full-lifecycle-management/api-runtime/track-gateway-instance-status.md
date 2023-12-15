@@ -19,4 +19,4 @@ slug: /api-full-lifecycle-management/api-runtime/track-gateway-instance-status
 
 ## 离线状态
 
-此状态表明 API7 企业版已超过 2 小时未检测到网关实例。在这种情况下，如果网关实例仍然无法连接到 API7 企业版，则该实例条目将在 7 天后被删除。
+此状态表明 API7 企业版已超过 2 小时未检测到网关实例。在这种情况下，如果网关实例仍然无法连接到 API7 企业版，则该网关实例将在 7 天后被删除。

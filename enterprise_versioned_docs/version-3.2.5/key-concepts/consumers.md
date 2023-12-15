@@ -9,7 +9,7 @@ slug: /key-concepts/consumers
 
 消费者对象指向 API 网关发送请求并使用后端服务的用户、应用程序或主机。与认证系统配合使用；也就是说，每个消费者都应该配置至少一个认证插件。
 
-在下图中，API7 企业版配置了一条路由和两个消费者。消费者 `FetchBot` 是数据获取机器人，消费者 `JohnDoe` 是人类最终用户。路由和消费者使用 `key-auth` 插件进行配置。因此，消费使用 API 密钥进行认证并发送请求。为了访问内部服务，`FetchBot` 使用 `bot-key` 发送其请求，JohnDoe` 使用 `john-key` 发送其请求。
+在下图中，API7 企业版配置了一条路由和两个消费者。消费者 `FetchBot` 是数据获取机器人，消费者 `JohnDoe` 是人类最终用户。路由和消费者使用 `key-auth` 插件进行配置。因此，消费使用 API 密钥进行认证并发送请求。为了访问内部服务，`FetchBot` 使用 `bot-key` 发送其请求，`JohnDoe` 使用 `john-key` 发送其请求。
 
 <br/>
 <div style={{textAlign: 'center'}}>

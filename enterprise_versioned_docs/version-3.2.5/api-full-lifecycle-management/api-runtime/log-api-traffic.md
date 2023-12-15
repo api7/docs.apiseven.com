@@ -22,7 +22,7 @@ API7 企业版支持收集路由访问信息并记录为日志，如主机、客
 ## 前提条件
 
 1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
-2. [按服务发布 API](../api-publishing/publish-apis-by-service.md)。
+2. [以服务维度发布 API](../api-publishing/publish-apis-by-service.md)。
 3. 获取自己的 ClickHouse 数据库的主机地址。
 4. 安装 [Docker](https://docs.docker.com/get-docker/)。
 
@@ -70,7 +70,7 @@ API7 企业版支持收集路由访问信息并记录为日志，如主机、客
 
 为了实现最佳监控和跟踪，强烈建议启用日志记录插件作为全局规则，以确保所有服务和路由得到一致跟踪。
 
-1. 从左侧导航栏中选择**网关组**，然后选择 **Test Group**。
+1. 从左侧导航栏中选择**网关组**，然后选择**测试网关组**。
 2. 从左侧导航栏中选择**全局插件**。
 3. 在**插件**字段中，搜索 `clickhouse-logger` 插件。
 4. 单击**加号**图标 (+)，弹出对话框。
@@ -101,7 +101,7 @@ API7 企业版支持收集路由访问信息并记录为日志，如主机、客
 1. 向路由发送请求，生成访问日志条目：
 
     ```bash
-    curl -i "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为 Test Group 的地址。
+    curl -i "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为测试网关组的地址。
     ```
 
 2. 使用 Docker 中的命令行工具 `clickhouse-client` 连接到 ClickHouse 实例：

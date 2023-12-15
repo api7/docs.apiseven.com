@@ -8,7 +8,7 @@ slug: /api-full-lifecycle-management/api-runtime/trigger-alerts
 ## 前提条件
 
 1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
-2. [按服务发布 API](../api-publishing/publish-apis-by-service.md)。
+2. [以服务维度发布 API](../api-publishing/publish-apis-by-service.md)。
 3. 获取通知系统的 Webhook。
 
 ## 创建 Webhook 模板
@@ -19,7 +19,7 @@ Webhook 指不同应用程序或服务在发生某些事件时通过向预定义
 如需创建 Webhook 模板，遵循以下步骤：
 
 1. 从左侧导航栏中选择**告警** > **Webhook 模板**，然后单击**新增模板**。在对话框中，执行以下操作：
-    - 在**名称**字段中，输入 `Email-notice`。
+    - 在**名称**字段中，输入`邮件通知`。
     - 在 **URL** 字段中，输入 webhook URL。本教程使用 `webhook.site` URL 作为示例。
     - 在**通知模板**字段中（Webhook 的请求正文）中，应用以下配置。 `Title`、`Severity` 和 `Detail` 字段来自告警策略：
 
@@ -31,7 +31,7 @@ Webhook 指不同应用程序或服务在发生某些事件时通过向预定义
     Detail: {{.Detail}}
     ```
 
-    ![添加 Webhook 模板](https://static.apiseven.com/uploads/2023/12/08/G8WZTwvR_add-webhook-template_zh.png)
+    ![添加 Webhook 模板](https://static.apiseven.com/uploads/2023/12/14/nAFnhFBh_add-webhook-template_zh.png)
 
 2. 单击**新增**。
 
@@ -42,7 +42,7 @@ Webhook 指不同应用程序或服务在发生某些事件时通过向预定义
 
 1. 选择**告警** > **策略**，然后单击 **新增告警策略**。在对话框中，执行以下操作：
     - 选择告警策略的生效范围。
-    - 输入策略名称。本示例将使用 `gateway-instance-offline` 作为示例。
+    - 输入策略名称。本示例将使用`网关实例离线`作为示例。
     - 单击**新增**。
 2. 单击新创建的告警策略。
 3. 在**触发条件**区域，单击**更新**。
@@ -59,7 +59,7 @@ Webhook 指不同应用程序或服务在发生某些事件时通过向预定义
     ![更新告警基本信息](https://static.apiseven.com/uploads/2023/12/08/cguym8cq_update-alarm-policy-basic_zh.png)
 
 8. 单击**更新**。
-9. 在 **Webhook 通知**区域，单击**开启**，启用 `Email-notice` 模板。
+9. 在 **Webhook 通知**区域，单击**开启**，启用`邮件通知`模板。
 
 ## 验证
 

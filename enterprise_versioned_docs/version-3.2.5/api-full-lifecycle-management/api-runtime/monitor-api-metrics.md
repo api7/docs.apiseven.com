@@ -10,7 +10,7 @@ API7 企业版支持以最小的延迟向监控系统公开一组全面的指标
 ## 前提条件
 
 1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
-2. [按服务发布 API](../api-publishing/publish-apis-by-service.md)。
+2. [以服务维度发布 API](../api-publishing/publish-apis-by-service.md)。
 
 ## 监控所有服务
 
@@ -18,7 +18,7 @@ API7 企业版支持以最小的延迟向监控系统公开一组全面的指标
 
 如需监控所有服务，遵循以下步骤：
 
-1. 从左侧导航栏中选择**网关组**，然后选择 **Test Group**。
+1. 从左侧导航栏中选择**网关组**，然后选择**测试网关组**。
 2. 从左侧导航栏中选择**全局插件**。
 3. 在**插件**字段中，搜索 `prometheus` 插件。
 4. 单击**加号**图标 (+)，弹出对话框。

@@ -1,11 +1,11 @@
 ---
-title: 启动你的 API
+title: 创建一个简单的 API
 slug: /getting-started/launch-your-first-api
 ---
 
 本教程介绍如何创建一个简单的 API 并对其进行验证。你将完成以下步骤：
 
-1. 在[路由](../key-concepts/routes)和[上游](../key-concepts/upstreams)中创建指向 `httpbin.org` 的[服务](../key-concepts/services)。
+1. 创建指向 `httpbin.org` 的[服务](../key-concepts/services)，并为其添加[路由](../key-concepts/routes)和[上游](../key-concepts/upstreams)中。
 2. 将服务发布到默认的[网关组](../key-concepts/gateway-groups)。
 3. 使用 `cURL` 向代理发送 API 请求，并将请求转发到上游。
 
