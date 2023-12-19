@@ -63,13 +63,13 @@ API7 企业版允许通过将 `_meta.filter` 配置应用于插件来动态控�
 
 ## 插件全局规则
 
-全局规则对象用于创建在每个传入请求上触发的[插件](./plugins.md)。全局规则将在本地绑定到对象的其他插件之前执行，例如[路由](routes.md)、[服务](services.md)和[消费者](consumers.md)。某些插件（例如 `rate limiting` 和 `observability` 插件）经常在全局范围内启用，为 API 提供一致且全面的保护。
+全局规则对象用来启用每个传入请求上的[插件](./plugins.md)。在其他插件本地绑定到[路由](routes.md)、[服务](services.md)和[消费者](consumers.md)等其他对象之前，就会执行全局规则。某些插件（例如 `rate limiting` 和 `observability` 插件）经常在全局范围内启用，为 API 提供一致且全面的保护。
 
-下图说明了为所有传入请求全局启用 `key-auth` 插件。其中在全局规则和消费者中配置 `key-auth` 插件。在路由上配置 `proxy-rewrite` 插件，用于修改请求的 [HTTP 标头](https://developer.mozilla.org/en-US/docs/Glossary/HTTP_header)，用于演示[插件执行顺序](#插件执行顺序)：
+下图说明了为所有传入请求全局启用 `key-auth` 插件，其中在全局规则和消费者中配置 `key-auth` 插件。在路由上配置 `proxy-rewrite` 插件，用于修改请求的 [HTTP 标头](https://developer.mozilla.org/en-US/docs/Glossary/HTTP_header)，用于演示[插件执行顺序](#插件执行顺序)：
 
 <br/>
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/08/28/mFUX70sm_b11fd18b93350454e0da95e97813e51.png" alt="带有全局规则、消费者和路由的图表" width="95%"/ >
+<img src="https://static.apiseven.com/uploads/2023/08/28/mFUX70sm_b11fd18b93350454e0da95e97813e51.png" alt="带有全局规则、消费者和路由的图表" width="95%"/>
 </div>
 <br/>
 
@@ -90,7 +90,7 @@ API7 企业版允许通过将 `_meta.filter` 配置应用于插件来动态控�
 <br/>
 
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/08/28/0xdOrAJw_2071aee7bb807b4e1d6f5da3f1698fa.png" alt="具有两条路由和一个插件元数据的插件元数据图" width="95%" />
+<img src="https://static.apiseven.com/uploads/2023/08/28/0xdOrAJw_2071aee7bb807b4e1d6f5da3f1698fa.png" alt="具有两条路由和一个插件元数据的插件元数据图" width="95%"/>
 </div>
 
 <br/>

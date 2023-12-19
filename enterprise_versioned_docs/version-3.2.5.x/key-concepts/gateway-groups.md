@@ -3,8 +3,6 @@ title: 网关组
 slug: /key-concepts/gateway-groups
 ---
 
-## 概述
-
 网关组是一组共享相同配置和行为的[网关实例](./gateway-instances.md)。每个网关组都独立管理其配置。因此，如果一个网关组出现故障，其他网关组不会受到影响。
 
 ## 网关组的优势

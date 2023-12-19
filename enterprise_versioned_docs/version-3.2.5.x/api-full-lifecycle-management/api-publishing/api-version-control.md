@@ -22,7 +22,7 @@ API7 企业版提供强大的版本控制功能，可在服务级别发布和管
 
 API 发布从服务模板开始，因此每次都会生成新版本。每个版本在投入生产前都应在测试环境中进行全面测试，不给他人留下更改配置的机会。
 
-## 典型的版本控制工作流程
+## 版本控制工作流程最佳实践
 
 1. [为测试和生产环境添加两个网关组](../api-runtime/add-gateway-groups.md)。
 2. [将 API 发布到测试网关组](../api-publishing/publish-apis-by-service.md)，服务版本为 `1.0.0`。
@@ -37,8 +37,8 @@ API 发布从服务模板开始，因此每次都会生成新版本。每个版�
 
     例如
 
-    - 测试环境中的 API URL 是 https://api7-test.ai/v1/pet，而端点地址是 127.0.0.1:80。
-    - 生产环境中的 API URL 是 https://api7.ai/petstore/pet，而端点地址是 192.168.0.1:80。
+    - 测试环境中的 API URL 是 `https://api7-test.ai/v1/pet`，而端点地址是 `127.0.0.1:80`。
+    - 生产环境中的 API URL 是 `https://api7.ai/petstore/pet`，而端点地址是 `192.168.0.1:80`。
 
     :::
 

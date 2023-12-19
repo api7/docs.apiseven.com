@@ -1,5 +1,5 @@
 ---
-title: 应用基于列表的访问控制
+title: 应用基于黑白名单的访问控制
 slug: /api-full-lifecycle-management/api-consumption/apply-list-based-accesss-control
 ---
 

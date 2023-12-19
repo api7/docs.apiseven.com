@@ -33,11 +33,11 @@ curl -sL "https://run.api7.ai/api7/quickstart" | bash
 
 ## 激活 API7 企业版
 
-1. 访问API7 控制台 `http://{本机地址}:7080`。使用默认用户名 `admin` 和密码 `admin` 登录。
+1. 访问 API7 控制台 `http://localhost:7080/login`。使用默认用户名 `admin` 和密码 `admin` 登录。
 
 2. 选择要上传的许可证，然后单击**上传**激活 API7 企业版。
 
 ## 下一步
 
-如果您对 API7 企业版感兴趣，请与我们的专家[预约会面](https://api7.ai/contact)。
+如果你对 API7 企业版感兴趣，请与我们的专家[预约会面](https://api7.ai/contact)。
 
