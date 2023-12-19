@@ -53,4 +53,4 @@ slug: /api-full-lifecycle-management/api-runtime/add-gateway-groups
 3. 单击**添加**。
 4. 单击新创建的`生产网关组`，然后单击**添加网关实例**。
 5. 按照页面上的说明进行操作。
-6. 完成[跟踪网关实例状态](track-gateway-instance-status.md)。
+6. 完成[追踪网关实例状态](track-gateway-instance-status.md)。

@@ -3,9 +3,9 @@ title: 以服务维度发布 API
 slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
 ---
 
-设计、开发和部署 API 后，你可以在 API7 企业版中发布这些 API，以便进行访问。你可以将其发布到测试、预生产和生产环境，或多个区域。
+设计、开发和部署 API 后，你可以在 API7 企业版中发布这些 API，以便进行访问。你可以将其发布到测试环境、预生产环境、生产环境，或多个区域。
 
-本教程以 `Swagger Petstore` 为例，介绍如何将 API 发布到测试环境。由于通常是以后端服务组织API，因此 API7 以服务维度管理 API。特定后端的 API 共享配置，并在后端发生变化时一起更新。
+本教程以 `Swagger Petstore` 为例，介绍如何将 API 发布到测试环境。通常情况下，开发人员根据后端服务组织 API，因此 API7 以服务维度管理 API。特定后端的 API 共享配置，并在后端发生变化时一起更新。
 
 ## 前提条件
 
@@ -13,7 +13,7 @@ slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
 2. [设计 API](../design-apis.md)。
 3. 在你的测试环境中[构建 API 端点](../build-api-endpoints.md)。
 4. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
-5. 将默认网关组重命名为`测试网关组`并配置网络。该网关组将作为测试环境的 API 网关。
+5. 将缺省网关组重命名为`测试网关组`并配置网络。该网关组将作为测试环境的 API 网关。
 
 ## 通过导入 OpenAPI 规范添加服务
 
@@ -36,7 +36,7 @@ slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
     - **描述**：OpenAPI 规范中的 `Description` 字段
     - **路由**：OpenAPI 规范中的 `Paths` 字段
 
-6. 单击**添加**.
+6. 单击**添加**。
 
 ## 向测试网关组发布服务
 
@@ -59,7 +59,7 @@ slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
 
 ## 使用服务发现发布服务
 
-Consul、Eureka、Nacos 或 Kubernetes Service Discovery 等服务发现机制可用于动态检测后端节点。因此，你无需手动输入多个上游节点。
+Consul、Eureka、Nacos 或 Kubernetes Service Discovery 等服务发现机制可以动态检测后端节点。因此，用户无需手动输入多个上游节点。
 
 :::info
 

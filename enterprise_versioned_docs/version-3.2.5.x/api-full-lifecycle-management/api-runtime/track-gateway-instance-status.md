@@ -1,5 +1,5 @@
 ---
-title: 跟踪网关实例状态
+title: 追踪网关实例状态
 slug: /api-full-lifecycle-management/api-runtime/track-gateway-instance-status
 ---
 
