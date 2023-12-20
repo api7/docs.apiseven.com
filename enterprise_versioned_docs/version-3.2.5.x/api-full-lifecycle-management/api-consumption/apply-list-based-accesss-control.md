@@ -1,5 +1,5 @@
 ---
-title: 应用基于黑白名单的访问控制
+title: 基于黑白名单的访问控制
 slug: /api-full-lifecycle-management/api-consumption/apply-list-based-accesss-control
 ---
 
@@ -14,9 +14,9 @@ slug: /api-full-lifecycle-management/api-consumption/apply-list-based-accesss-co
 3. [配置 API 认证](../api-security/set-up-api-authentication.md)。
 4. [管理消费者凭证](../api-consumption/manage-consumer-credentials.md)。
 
-## 基于消费者姓名的访问控制
+## 用消费者名称配置黑白名单
 
-当收到 API 请求时，API7 企业版会提取凭据并查找消费者的姓名。因此，路由无需直接识别凭证，只需识别消费者的姓名即可。这种方式更加人性化。
+当收到 API 请求时，API7 企业版会提取凭据并查找消费者的名称。因此，路由无需直接识别凭证，只需识别消费者的名称即可。这种方式更加人性化。
 
 由于插件配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后将新版本发布到网关组。
 
