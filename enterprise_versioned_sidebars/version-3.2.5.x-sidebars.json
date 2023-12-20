@@ -1,0 +1,89 @@
+{
+  "docs": [
+    {
+      "type": "category",
+      "label": "产品介绍",
+      "items": [
+        "introduction/introduction"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "核心概念",
+      "items": [
+        "key-concepts/services",
+        "key-concepts/routes",
+        "key-concepts/upstreams",
+        "key-concepts/gateway-groups",
+        "key-concepts/gateway-instances",
+        "key-concepts/consumers",
+        "key-concepts/plugins",
+        "key-concepts/ssl-certificates"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "快速入门",
+      "items": [
+        "getting-started/install-api7-ee",
+        "getting-started/launch-your-first-api"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "API 全生命周期管理",
+      "items": [
+        "api-full-lifecycle-management/design-apis",
+        "api-full-lifecycle-management/build-api-endpoints",
+        {
+          "type": "category",
+          "label": "API 发布",
+          "items": [
+            "api-full-lifecycle-management/api-publishing/api-version-control",
+            "api-full-lifecycle-management/api-publishing/publish-apis-by-service",
+            "api-full-lifecycle-management/api-publishing/ensure-upstream-high-availability",
+            "api-full-lifecycle-management/api-publishing/sync-apis-betweenn-gateway-groups",
+            "api-full-lifecycle-management/api-publishing/rollback-apis",
+            "api-full-lifecycle-management/api-publishing/canary-traffic-shifting"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "API 消费",
+          "items": [
+            "api-full-lifecycle-management/api-consumption/manage-consumer-credentials",
+            "api-full-lifecycle-management/api-consumption/apply-list-based-accesss-control"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "API 运行时",
+          "items": [
+            "api-full-lifecycle-management/api-runtime/add-gateway-groups",
+            "api-full-lifecycle-management/api-runtime/monitor-api-metrics",
+            "api-full-lifecycle-management/api-runtime/log-api-traffic",
+            "api-full-lifecycle-management/api-runtime/trigger-alerts",
+            "api-full-lifecycle-management/api-runtime/track-gateway-instance-status"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "API 安全",
+          "items": [
+            "api-full-lifecycle-management/api-security/set-up-api-authentication",
+            "api-full-lifecycle-management/api-security/apply-rate-limiting-to-apis",
+            "api-full-lifecycle-management/api-security/block-bad-ips-from-apis"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "管理",
+      "items": [
+        "administration/renew-license",
+        "administration/role-based-access-control"
+      ]
+    }
+  ]
+}
