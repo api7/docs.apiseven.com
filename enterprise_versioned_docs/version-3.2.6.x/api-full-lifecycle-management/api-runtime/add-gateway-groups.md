@@ -54,7 +54,7 @@ slug: /api-full-lifecycle-management/api-runtime/add-gateway-groups
 
 ## 创建网关实例
 
-如需创建网关组，遵循以下步骤：
+如需创建网关实例，遵循以下步骤：
 
 1. 单击新创建的`生产网关组`，然后单击**添加网关实例**。
 2. 按照页面上的说明进行操作。
