@@ -92,7 +92,7 @@
         {
           "type": "link",
           "label": "Admin API 参考文档",
-          "href": "reference/admin-api"
+          "href": "/enterprise/reference/admin-api"
         }
       ]
     }
