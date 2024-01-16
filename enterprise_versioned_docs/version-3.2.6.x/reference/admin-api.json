@@ -134,7 +134,7 @@
         "tags": [
           "服务"
         ],
-        "summary": "创建服务。",
+        "summary": "创建服务",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1243,7 +1243,7 @@
         "tags": [
           "服务"
         ],
-        "summary": "获取所有服务。",
+        "summary": "获取所有服务",
         "parameters": [
           {
             "name": "page",
@@ -1978,7 +1978,7 @@
         "tags": [
           "服务"
         ],
-        "summary": "获取特定服务。",
+        "summary": "获取特定服务",
         "parameters": [
           {
             "name": "service_id",
@@ -2599,7 +2599,7 @@
         "tags": [
           "服务"
         ],
-        "summary": "更新特定服务。",
+        "summary": "更新特定服务",
         "parameters": [
           {
             "name": "service_id",
@@ -3720,7 +3720,7 @@
         "tags": [
           "服务"
         ],
-        "summary": "更新特定服务。",
+        "summary": "更新特定服务",
         "parameters": [
           {
             "name": "service_id",
@@ -4848,7 +4848,7 @@
         "tags": [
           "服务"
         ],
-        "summary": "删除特定服务。",
+        "summary": "删除特定服务",
         "parameters": [
           {
             "name": "service_id",
@@ -4936,7 +4936,7 @@
         "tags": [
           "Secret"
         ],
-        "summary": "获取所有 Secret。",
+        "summary": "获取所有 Secret",
         "parameters": [
           {
             "name": "page",
@@ -5132,7 +5132,7 @@
         "tags": [
           "Secret"
         ],
-        "summary": "获取特定 Secret。",
+        "summary": "获取特定 Secret",
         "parameters": [
           {
             "name": "secret_manager",
@@ -5281,7 +5281,7 @@
         "tags": [
           "Secret"
         ],
-        "summary": "创建或更新特定 Secret。",
+        "summary": "创建或更新特定 Secret",
         "parameters": [
           {
             "name": "secret_manager",
@@ -5457,7 +5457,7 @@
         "tags": [
           "Secret"
         ],
-        "summary": "删除特定 Secret。",
+        "summary": "删除特定 Secret",
         "parameters": [
           {
             "name": "secret_manager",
@@ -5554,7 +5554,7 @@
         "tags": [
           "OpenAPI"
         ],
-        "summary": "生成 OpenAPI 规范，导出服务。",
+        "summary": "生成 OpenAPI 规范，导出服务",
         "parameters": [
           {
             "name": "scope",
@@ -5818,7 +5818,7 @@
         "tags": [
           "OpenAPI"
         ],
-        "summary": "基于 OpenAPI 规范导入服务。",
+        "summary": "基于 OpenAPI 规范导入服务",
         "requestBody": {
           "content": {
             "application/json": {
@@ -7117,7 +7117,7 @@
         "tags": [
           "OpenAPI"
         ],
-        "summary": "将 OpenAPI 规范转换为服务和路由资源。",
+        "summary": "将 OpenAPI 规范转换为服务和路由资源",
         "requestBody": {
           "content": {
             "application/json": {
@@ -7795,7 +7795,7 @@
         "tags": [
           "许可证"
         ],
-        "summary": "获取 API7 企业版许可证。",
+        "summary": "获取 API7 企业版许可证",
         "responses": {
           "200": {
             "description": "",
@@ -7959,7 +7959,7 @@
         "tags": [
           "许可证"
         ],
-        "summary": "导入或更新 API7 企业版许可证。",
+        "summary": "导入或更新 API7 企业版许可证",
         "parameters": [
           {
             "in": "query",
@@ -8105,7 +8105,7 @@
         "tags": [
           "路由"
         ],
-        "summary": "创建路由。",
+        "summary": "创建路由",
         "requestBody": {
           "content": {
             "application/json": {
@@ -8373,7 +8373,7 @@
         "tags": [
           "路由"
         ],
-        "summary": "获取所有路由。",
+        "summary": "获取所有路由",
         "parameters": [
           {
             "name": "service_id",
@@ -8656,7 +8656,7 @@
         "tags": [
           "路由"
         ],
-        "summary": "获取特定路由。",
+        "summary": "获取特定路由",
         "parameters": [
           {
             "name": "route_id",
@@ -8858,7 +8858,7 @@
         "tags": [
           "路由"
         ],
-        "summary": "更新特定路由。",
+        "summary": "更新特定路由",
         "parameters": [
           {
             "name": "route_id",
@@ -9121,7 +9121,7 @@
         "tags": [
           "路由"
         ],
-        "summary": "更新特定路由。",
+        "summary": "更新特定路由",
         "parameters": [
           {
             "name": "route_id",
@@ -9379,7 +9379,7 @@
         "tags": [
           "路由"
         ],
-        "summary": "删除特定路由。",
+        "summary": "删除特定路由",
         "parameters": [
           {
             "name": "route_id",
@@ -9467,7 +9467,7 @@
         "tags": [
           "SSL"
         ],
-        "summary": "创建 SSL 证书。",
+        "summary": "创建 SSL 证书",
         "parameters": [
           {
             "name": "gateway_group_id",
@@ -9739,7 +9739,7 @@
         "tags": [
           "SSL"
         ],
-        "summary": "获取所有 SSL 证书。",
+        "summary": "获取所有 SSL 证书",
         "parameters": [
           {
             "name": "gateway_group_id",
@@ -10010,7 +10010,7 @@
         "tags": [
           "SSL"
         ],
-        "summary": "获取特定 SSL 证书。",
+        "summary": "获取特定 SSL 证书",
         "parameters": [
           {
             "name": "ssl_id",
@@ -10213,7 +10213,7 @@
         "tags": [
           "SSL"
         ],
-        "summary": "更新特定 SSL 证书。",
+        "summary": "更新特定 SSL 证书",
         "parameters": [
           {
             "name": "ssl_id",
@@ -10527,7 +10527,7 @@
         "tags": [
           "SSL"
         ],
-        "summary": "删除特定 SSL 证书。",
+        "summary": "删除特定 SSL 证书",
         "parameters": [
           {
             "name": "ssl_id",
@@ -10615,7 +10615,7 @@
         "tags": [
           "消费者"
         ],
-        "summary": "创建消费者。",
+        "summary": "创建消费者",
         "parameters": [
           {
             "name": "gateway_group_id",
@@ -10797,7 +10797,7 @@
         "tags": [
           "消费者"
         ],
-        "summary": "获取所有消费者。",
+        "summary": "获取所有消费者",
         "parameters": [
           {
             "name": "gateway_group_id",
@@ -11013,7 +11013,7 @@
         "tags": [
           "消费者"
         ],
-        "summary": "获取特定消费者。",
+        "summary": "获取特定消费者",
         "parameters": [
           {
             "name": "consumer_id",
@@ -11161,7 +11161,7 @@
         "tags": [
           "消费者"
         ],
-        "summary": "更新特定消费者。",
+        "summary": "更新特定消费者",
         "parameters": [
           {
             "name": "consumer_id",
@@ -11344,7 +11344,7 @@
         "tags": [
           "消费者"
         ],
-        "summary": "删除特定消费者。",
+        "summary": "删除特定消费者",
         "parameters": [
           {
             "name": "consumer_id",
@@ -11430,7 +11430,7 @@
         "tags": [
           "消费者"
         ],
-        "summary": "更新特定消费者。",
+        "summary": "更新特定消费者",
         "parameters": [
           {
             "name": "consumer_id",
@@ -11653,7 +11653,7 @@
         "tags": [
           "全局规则"
         ],
-        "summary": "创建全局规则。",
+        "summary": "创建全局规则",
         "parameters": [
           {
             "name": "gateway_group_id",
@@ -11803,7 +11803,7 @@
         "tags": [
           "全局规则"
         ],
-        "summary": "获取所有全局规则。",
+        "summary": "获取所有全局规则",
         "parameters": [
           {
             "name": "gateway_group_id",
@@ -11991,7 +11991,7 @@
         "tags": [
           "全局规则"
         ],
-        "summary": "获取特定全局规则。",
+        "summary": "获取特定全局规则",
         "parameters": [
           {
             "name": "gateway_group_id",
@@ -12132,7 +12132,7 @@
         "tags": [
           "全局规则"
         ],
-        "summary": "更新特定全局规则。",
+        "summary": "更新特定全局规则",
         "parameters": [
           {
             "name": "gateway_group_id",
@@ -12292,7 +12292,7 @@
         "tags": [
           "全局规则"
         ],
-        "summary": "删除特定全局规则。",
+        "summary": "删除特定全局规则",
         "parameters": [
           {
             "name": "gateway_group_id",
@@ -12389,7 +12389,7 @@
         "tags": [
           "插件元数据"
         ],
-        "summary": "获取所有插件元数据。",
+        "summary": "获取所有插件元数据",
         "parameters": [
           {
             "name": "gateway_group_id",
@@ -12497,7 +12497,7 @@
         "tags": [
           "插件元数据"
         ],
-        "summary": "更新插件元数据。",
+        "summary": "更新插件元数据",
         "parameters": [
           {
             "name": "gateway_group_id",
@@ -12617,7 +12617,7 @@
         "tags": [
           "插件元数据"
         ],
-        "summary": "获取插件元数据的默认值。",
+        "summary": "获取插件元数据的默认值",
         "parameters": [
           {
             "name": "plugin_name",
@@ -12719,7 +12719,7 @@
         "tags": [
           "插件"
         ],
-        "summary": "获取所有插件。",
+        "summary": "获取所有插件",
         "parameters": [
           {
             "name": "has_metadata",
@@ -12756,7 +12756,7 @@
         "tags": [
           "插件"
         ],
-        "summary": "获取所有插件的模式定义。",
+        "summary": "获取所有插件的模式定义",
         "parameters": [
           {
             "name": "plugin_name",
@@ -12853,7 +12853,7 @@
         "tags": [
           "变量"
         ],
-        "summary": "获取所有变量。",
+        "summary": "获取所有变量",
         "responses": {
           "200": {
             "description": "",
@@ -13051,7 +13051,7 @@
         "tags": [
           "网关实例"
         ],
-        "summary": "获取所有网关实例。",
+        "summary": "获取所有网关实例",
         "operationId": "listInstances",
         "parameters": [
           {
@@ -13280,7 +13280,7 @@
         "tags": [
           "网关实例"
         ],
-        "summary": "计算不同状态下的网关实例数量。",
+        "summary": "统计不同状态下的网关实例数量",
         "operationId": "countInstancesStatus",
         "parameters": [
           {
@@ -13395,7 +13395,7 @@
         "tags": [
           "网关实例"
         ],
-        "summary": "获取所有网关实例内核。",
+        "summary": "获取所有网关实例内核",
         "operationId": "listInstancesCores",
         "responses": {
           "200": {
@@ -13475,7 +13475,7 @@
         "tags": [
           "网关实例"
         ],
-        "summary": "导出网关实例内核使用量。",
+        "summary": "导出网关实例内核使用量",
         "operationId": "exportInstancesCoresUsage",
         "parameters": [
           {
@@ -13544,7 +13544,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "获取所有用户。",
+        "summary": "获取所有用户",
         "operationId": "listUsers",
         "parameters": [
           {
@@ -13971,7 +13971,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "删除特定用户。",
+        "summary": "删除特定用户",
         "operationId": "deleteUser",
         "parameters": [
           {
@@ -14053,7 +14053,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "将密码重置为默认值。",
+        "summary": "将密码重置为默认值",
         "operationId": "passwordResetToDefault",
         "parameters": [
           {
@@ -14132,7 +14132,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "获取用户的详细信息。",
+        "summary": "获取用户的详细信息",
         "operationId": "getUserDetails",
         "responses": {
           "200": {
@@ -14308,7 +14308,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "更新用户。",
+        "summary": "更新用户",
         "operationId": "updateUserMe",
         "requestBody": {
           "content": {
@@ -14622,7 +14622,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "更新用户密码。",
+        "summary": "更新用户密码",
         "operationId": "updateUserPassword",
         "requestBody": {
           "content": {
@@ -14692,7 +14692,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "使用用户名和密码作为凭证登录 API7 控制台。",
+        "summary": "使用用户名和密码作为凭证登录 API7 控制台",
         "operationId": "userLogin",
         "requestBody": {
           "content": {
@@ -14788,7 +14788,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "使用用户名和密码作为凭证退出 API7 控制台。",
+        "summary": "使用用户名和密码作为凭证退出 API7 控制台",
         "operationId": "UserLogout",
         "responses": {
           "200": {
@@ -14853,7 +14853,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "更新特定用户的指定角色。",
+        "summary": "更新特定用户的指定角色",
         "operationId": "addAssignedRole",
         "parameters": [
           {
@@ -14971,7 +14971,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "使用 OIDC (OpenID Connect) 协议登录 API7 控制台。",
+        "summary": "使用 OIDC (OpenID Connect) 协议登录 API7 控制台",
         "operationId": "userOIDCLogin",
         "responses": {
           "307": {
@@ -15015,7 +15015,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "使用 OIDC (OpenID Connect) 协议退出 API7 控制台。",
+        "summary": "使用 OIDC (OpenID Connect) 协议退出 API7 控制台",
         "operationId": "userOIDCLogout",
         "responses": {
           "307": {
@@ -15059,7 +15059,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "从身份服务器回滚 API。",
+        "summary": "从身份服务器回滚 API",
         "operationId": "userCallback",
         "parameters": [
           {
@@ -15127,7 +15127,7 @@
         "tags": [
           "RBAC"
         ],
-        "summary": "获取所有角色。",
+        "summary": "获取所有角色",
         "operationId": "getAllRoles",
         "parameters": [
           {
@@ -15306,7 +15306,7 @@
         "tags": [
           "RBAC"
         ],
-        "summary": "获取特定角色的详细信息。",
+        "summary": "获取特定角色的详细信息",
         "operationId": "getRoleDetail",
         "parameters": [
           {
@@ -15451,7 +15451,7 @@
         "tags": [
           "Prometheus Proxy"
         ],
-        "summary": "从 Prometheus 获取数据。",
+        "summary": "从 Prometheus 获取数据",
         "responses": {
           "200": {
             "description": "Prometheus Proxy 响应",
@@ -15546,7 +15546,7 @@
         "tags": [
           "Prometheus Proxy"
         ],
-        "summary": "从 Prometheus 获取打上 POST 标签的数据。",
+        "summary": "从 Prometheus 获取打上 POST 标签的数据",
         "requestBody": {
           "content": {
             "application/x-www-form-urlencoded": {
@@ -15653,7 +15653,7 @@
         "tags": [
           "数据平面心跳"
         ],
-        "summary": "向数据平面发送心跳探查。",
+        "summary": "向数据平面发送心跳探查",
         "operationId": "DataplaneHeartbeat",
         "requestBody": {
           "content": {
@@ -15741,7 +15741,7 @@
         "tags": [
           "数据平面指标"
         ],
-        "summary": "生成数据平面指标。",
+        "summary": "生成数据平面指标",
         "operationId": "DataplaneMetrics",
         "requestBody": {
           "content": {
@@ -15804,7 +15804,7 @@
         "tags": [
           "告警策略"
         ],
-        "summary": "获取所有告警策略。",
+        "summary": "获取所有告警策略",
         "parameters": [
           {
             "name": "order_by",
@@ -16185,7 +16185,7 @@
         "tags": [
           "告警策略"
         ],
-        "summary": "创建告警策略。",
+        "summary": "创建告警策略",
         "requestBody": {
           "content": {
             "application/json": {
@@ -16334,7 +16334,7 @@
         "tags": [
           "告警策略"
         ],
-        "summary": "获取特定告警策略。",
+        "summary": "获取特定告警策略",
         "responses": {
           "200": {
             "description": "",
@@ -16674,7 +16674,7 @@
         "tags": [
           "告警策略"
         ],
-        "summary": "删除特定告警策略。",
+        "summary": "删除特定告警策略",
         "responses": {
           "200": {
             "description": "",
@@ -16748,7 +16748,7 @@
         "tags": [
           "告警策略"
         ],
-        "summary": "更新特定告警策略。",
+        "summary": "更新特定告警策略",
         "requestBody": {
           "content": {
             "application/json": {
@@ -16895,7 +16895,7 @@
         "tags": [
           "告警策略"
         ],
-        "summary": "更新特定告警策略。",
+        "summary": "更新特定告警策略",
         "requestBody": {
           "content": {
             "application/json": {
@@ -17054,7 +17054,7 @@
         "tags": [
           "告警策略"
         ],
-        "summary": "更新特定告警策略的触发条件。",
+        "summary": "更新特定告警策略的触发条件",
         "requestBody": {
           "content": {
             "application/json": {
@@ -17299,7 +17299,7 @@
         "tags": [
           "告警 Webhook 模版"
         ],
-        "summary": "获取所有告警 Webhook 模版。",
+        "summary": "获取所有告警 Webhook 模版",
         "parameters": [
           {
             "name": "order_by",
@@ -17522,7 +17522,7 @@
         "tags": [
           "告警 Webhook 模版"
         ],
-        "summary": "创建告警 Webhook 模版。",
+        "summary": "创建告警 Webhook 模版",
         "requestBody": {
           "content": {
             "application/json": {
@@ -17703,7 +17703,7 @@
         "tags": [
           "告警 Webhook 模版"
         ],
-        "summary": "获取特定告警 Webhook 模版。",
+        "summary": "获取特定告警 Webhook 模版",
         "responses": {
           "200": {
             "description": "",
@@ -17869,7 +17869,7 @@
         "tags": [
           "告警 Webhook 模版"
         ],
-        "summary": "更新特定告警 Webhook 模版。",
+        "summary": "更新特定告警 Webhook 模版",
         "requestBody": {
           "content": {
             "application/json": {
@@ -18019,7 +18019,7 @@
         "tags": [
           "告警 Webhook 模版"
         ],
-        "summary": "删除特定告警 Webhook 模版。",
+        "summary": "删除特定告警 Webhook 模版",
         "responses": {
           "200": {
             "description": "",
@@ -18105,7 +18105,7 @@
         "tags": [
           "告警 Webhook 模版"
         ],
-        "summary": "获取所有告警 Webhook 模版钩子。",
+        "summary": "获取所有告警 Webhook 模版钩子",
         "responses": {
           "200": {
             "description": "",
@@ -18433,7 +18433,7 @@
         "tags": [
           "告警历史"
         ],
-        "summary": "获取所有告警历史。",
+        "summary": "获取所有告警历史",
         "parameters": [
           {
             "name": "order_by",
@@ -18638,7 +18638,7 @@
         "tags": [
           "审计日志"
         ],
-        "summary": "获取所有审计日志。",
+        "summary": "获取所有审计日志",
         "operationId": "listAuditLogs",
         "parameters": [
           {
@@ -18853,7 +18853,7 @@
         "tags": [
           "审计日志"
         ],
-        "summary": "获取审计日志的所有事件类型。",
+        "summary": "获取审计日志的所有事件类型",
         "operationId": "listAuditLogEventTypes",
         "responses": {
           "200": {
@@ -18913,7 +18913,7 @@
         "tags": [
           "审计日志"
         ],
-        "summary": "导出所有审计日志。",
+        "summary": "导出所有审计日志",
         "operationId": "exportAuditLogs",
         "parameters": [
           {
@@ -18981,12 +18981,12 @@
         "tags": [
           "令牌"
         ],
-        "summary": "创建令牌。",
+        "summary": "创建令牌",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "description": "创建令牌。",
+                "description": "创建令牌",
                 "type": "object",
                 "required": [
                   "name",
@@ -19143,7 +19143,7 @@
         "tags": [
           "令牌"
         ],
-        "summary": "获取所有令牌。",
+        "summary": "获取所有令牌",
         "parameters": [
           {
             "name": "order_by",
@@ -19327,7 +19327,7 @@
         "tags": [
           "令牌"
         ],
-        "summary": "获取所有令牌名称。",
+        "summary": "获取所有令牌名称",
         "parameters": [
           {
             "in": "query",
@@ -19443,7 +19443,7 @@
         "tags": [
           "令牌"
         ],
-        "summary": "获取特定令牌。",
+        "summary": "获取特定令牌",
         "responses": {
           "200": {
             "description": "",
@@ -19567,7 +19567,7 @@
         "tags": [
           "令牌"
         ],
-        "summary": "更新特定令牌。",
+        "summary": "更新特定令牌",
         "requestBody": {
           "content": {
             "application/json": {
@@ -19711,7 +19711,7 @@
         "tags": [
           "令牌"
         ],
-        "summary": "删除特定令牌。",
+        "summary": "删除特定令牌",
         "responses": {
           "200": {
             "description": "",
@@ -19799,12 +19799,12 @@
         "tags": [
           "令牌"
         ],
-        "summary": "重新生成令牌。",
+        "summary": "重新生成令牌",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "description": "重新生成令牌。",
+                "description": "重新生成令牌",
                 "type": "object",
                 "required": [
                   "expires_at"
@@ -19957,7 +19957,7 @@
         "tags": [
           "网关组"
         ],
-        "summary": "获取所有网关组。",
+        "summary": "获取所有网关组",
         "operationId": "listGatewayGroup",
         "parameters": [
           {
@@ -20171,7 +20171,7 @@
         "tags": [
           "网关组"
         ],
-        "summary": "创建网关组。",
+        "summary": "创建网关组",
         "operationId": "createGatewayGroup",
         "requestBody": {
           "content": {
@@ -20337,7 +20337,7 @@
         "tags": [
           "网关组"
         ],
-        "summary": "统计网关组的资源。",
+        "summary": "统计网关组的资源",
         "operationId": "CountResourceByGatewayGroup",
         "parameters": [
           {
@@ -20495,7 +20495,7 @@
         "tags": [
           "网关组"
         ],
-        "summary": "删除特定网关组。",
+        "summary": "删除特定网关组",
         "operationId": "deleteGatewayGroup",
         "parameters": [
           {
@@ -20574,7 +20574,7 @@
         "tags": [
           "网关组"
         ],
-        "summary": "更新特定网关组。",
+        "summary": "更新特定网关组",
         "operationId": "updateGatewayGroup",
         "parameters": [
           {
@@ -20752,7 +20752,7 @@
         "tags": [
           "网关组"
         ],
-        "summary": "获取特定网关组。",
+        "summary": "获取特定网关组",
         "operationId": "getGatewayGroup",
         "parameters": [
           {
@@ -20902,7 +20902,7 @@
         "tags": [
           "数据平面证书"
         ],
-        "summary": "签发数据平面证书。",
+        "summary": "签发数据平面证书",
         "operationId": "issueDataplaneCertificate",
         "parameters": [
           {
@@ -21008,7 +21008,7 @@
         "tags": [
           "网关组"
         ],
-        "summary": "获取特定网关组的所有已发布服务。",
+        "summary": "获取特定网关组的所有已发布服务",
         "operationId": "listPublishedService",
         "parameters": [
           {
@@ -21706,7 +21706,7 @@
         "tags": [
           "网关组"
         ],
-        "summary": "Get a published service by ID.",
+        "summary": "获取特定网关组的已发布服务",
         "operationId": "getPublishedService",
         "parameters": [
           {
@@ -22345,7 +22345,7 @@
         "tags": [
           "网关组"
         ],
-        "summary": "删除特定网关组的已发布服务。",
+        "summary": "删除特定网关组的已发布服务",
         "operationId": "deletePublishedService",
         "parameters": [
           {
@@ -22436,7 +22436,7 @@
         "tags": [
           "网关组"
         ],
-        "summary": "获取特定网关组所有已发布服务的版本。",
+        "summary": "获取特定网关组所有已发布服务的版本",
         "operationId": "listPublishedServiceVersions",
         "parameters": [
           {
@@ -23090,7 +23090,7 @@
         "tags": [
           "网关组"
         ],
-        "summary": "获取特定网关组所有的服务运行时配置。",
+        "summary": "获取特定网关组所有的服务运行时配置",
         "operationId": "getServiceRuntimeConfiguration",
         "parameters": [
           {
@@ -23288,7 +23288,7 @@
         "tags": [
           "网关组"
         ],
-        "summary": "更新特定网关组的服务运行时配置。",
+        "summary": "更新特定网关组的服务运行时配置",
         "operationId": "changeServiceRuntimeConfiguration",
         "parameters": [
           {
@@ -23605,7 +23605,7 @@
         "tags": [
           "网关组"
         ],
-        "summary": "获取特定网关组的所有授权用户。",
+        "summary": "获取特定网关组的所有授权用户",
         "operationId": "getGatewayGroupPermittedUsers",
         "parameters": [
           {
@@ -23853,7 +23853,7 @@
         "tags": [
           "服务注册中心"
         ],
-        "summary": "获取所有服务注册中心。",
+        "summary": "获取所有服务注册中心",
         "operationId": "listServiceRegistry",
         "parameters": [
           {
@@ -24219,7 +24219,7 @@
         "tags": [
           "服务注册中心"
         ],
-        "summary": "创建服务注册中心。",
+        "summary": "创建服务注册中心",
         "operationId": "createServiceRegistry",
         "parameters": [
           {
@@ -24698,7 +24698,7 @@
         "tags": [
           "网关实例"
         ],
-        "summary": "为特定网关组的网关实例创建令牌。",
+        "summary": "为特定网关组的网关实例创建令牌",
         "operationId": "CreateGatewayInstanceToken",
         "parameters": [
           {
@@ -24818,7 +24818,7 @@
         "tags": [
           "服务注册中心"
         ],
-        "summary": "获取特定服务注册中心的详细信息。",
+        "summary": "获取特定服务注册中心的详细信息",
         "operationId": "getServiceRegistry",
         "parameters": [
           {
@@ -25133,7 +25133,7 @@
         "tags": [
           "服务注册中心"
         ],
-        "summary": "更新特定服务注册中心。",
+        "summary": "更新特定服务注册中心",
         "operationId": "updateServiceRegistry",
         "parameters": [
           {
@@ -25395,7 +25395,7 @@
         "tags": [
           "服务注册中心"
         ],
-        "summary": "删除特定服务注册中心。",
+        "summary": "删除特定服务注册中心",
         "operationId": "deleteServiceRegistry",
         "parameters": [
           {
@@ -25486,7 +25486,7 @@
         "tags": [
           "服务注册中心"
         ],
-        "summary": "获取特定服务注册中心关联的所有服务。",
+        "summary": "获取特定服务注册中心关联的所有服务",
         "parameters": [
           {
             "name": "page",
@@ -26175,7 +26175,7 @@
         "tags": [
           "服务注册中心"
         ],
-        "summary": "获取特定服务注册中心的所有内部服务。",
+        "summary": "获取特定服务注册中心的所有内部服务",
         "parameters": [
           {
             "name": "service_registry_id",
@@ -26315,7 +26315,7 @@
         "tags": [
           "服务注册中心"
         ],
-        "summary": "获取特定服务注册中心的健康检查历史记录。",
+        "summary": "获取特定服务注册中心的健康检查历史记录",
         "parameters": [
           {
             "name": "service_registry_id",
@@ -26515,7 +26515,7 @@
         "tags": [
           "服务版本"
         ],
-        "summary": "获取所有服务版本。",
+        "summary": "获取所有服务版本",
         "operationId": "getServiceVersion",
         "parameters": [
           {
@@ -27120,7 +27120,7 @@
         "tags": [
           "服务版本"
         ],
-        "summary": "获取所有路由的服务版本。",
+        "summary": "获取所有路由的服务版本",
         "operationId": "listRoutesOfServiceVersion",
         "parameters": [
           {
@@ -27340,7 +27340,7 @@
         "tags": [
           "服务版本"
         ],
-        "summary": "获取特定路由的服务版本。",
+        "summary": "获取特定路由的服务版本",
         "operationId": "getRouteOfServiceVersion",
         "parameters": [
           {
@@ -27523,7 +27523,7 @@
         "tags": [
           "服务"
         ],
-        "summary": "发布服务。",
+        "summary": "发布服务",
         "requestBody": {
           "content": {
             "application/json": {
@@ -28149,7 +28149,7 @@
         "tags": [
           "服务"
         ],
-        "summary": "检查服务冲突。",
+        "summary": "检查服务冲突",
         "requestBody": {
           "content": {
             "application/json": {
@@ -28388,7 +28388,7 @@
         "tags": [
           "服务"
         ],
-        "summary": "获取所有授权用户。",
+        "summary": "获取所有授权用户",
         "operationId": "getServicePermittedUsers",
         "parameters": [
           {
@@ -28636,7 +28636,7 @@
         "tags": [
           "服务"
         ],
-        "summary": "获取特定的已发布服务。",
+        "summary": "获取特定的已发布服务",
         "parameters": [
           {
             "name": "service_id",
@@ -29276,7 +29276,7 @@
         "tags": [
           "服务版本"
         ],
-        "summary": "获取服务版本名称。",
+        "summary": "获取服务版本名称",
         "operationId": "getServiceVersionByVersionName",
         "parameters": [
           {
@@ -29889,7 +29889,7 @@
         "tags": [
           "插件"
         ],
-        "summary": "根据插件名称和类型获取插件。",
+        "summary": "根据插件名称和类型获取插件",
         "responses": {
           "200": {
             "description": "插件响应",
@@ -29991,7 +29991,7 @@
         "tags": [
           "标签"
         ],
-        "summary": "获取所有标签。",
+        "summary": "获取所有标签",
         "operationId": "ListLabels",
         "parameters": [
           {
@@ -30095,7 +30095,7 @@
         "tags": [
           "系统设置"
         ],
-        "summary": "更新系统设置。",
+        "summary": "更新系统设置",
         "operationId": "updateSystemSettings",
         "requestBody": {
           "content": {
@@ -30215,7 +30215,7 @@
         "tags": [
           "系统设置"
         ],
-        "summary": "获取所有系统设置。",
+        "summary": "获取所有系统设置",
         "responses": {
           "200": {
             "description": "",
@@ -30315,7 +30315,7 @@
         "tags": [
           "RBAC"
         ],
-        "summary": "获取所有权限。",
+        "summary": "获取所有权限",
         "operationId": "listPermissions",
         "responses": {
           "200": {
