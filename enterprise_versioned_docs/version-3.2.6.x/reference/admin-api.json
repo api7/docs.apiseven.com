@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Admin API 参考文档",
+    "title": "API7 企业版 Admin API 参考文档",
     "description": "使用 API7 企业版 Admin API 创建和管理 API7 资源。",
     "version": "0.11.0"
   },
@@ -652,7 +652,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -1226,7 +1226,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -1959,7 +1959,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -2008,7 +2008,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -2582,7 +2582,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -3129,7 +3129,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -3703,7 +3703,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -4257,7 +4257,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -4831,7 +4831,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -4876,7 +4876,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -4917,7 +4917,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -5113,7 +5113,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -5171,7 +5171,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -5264,7 +5264,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -5347,7 +5347,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -5440,7 +5440,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -5494,7 +5494,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -5535,7 +5535,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -5640,7 +5640,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -5799,7 +5799,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -6415,7 +6415,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -7098,7 +7098,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -7153,7 +7153,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -7776,7 +7776,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -7813,7 +7813,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -7942,7 +7942,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -8010,7 +8010,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -8086,7 +8086,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -8213,7 +8213,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -8356,7 +8356,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -8637,7 +8637,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -8698,7 +8698,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -8841,7 +8841,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -8961,7 +8961,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -9104,7 +9104,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -9219,7 +9219,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -9362,7 +9362,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -9407,7 +9407,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -9448,7 +9448,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -9607,7 +9607,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -9991,7 +9991,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -10040,7 +10040,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -10196,7 +10196,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -10354,7 +10354,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -10510,7 +10510,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -10555,7 +10555,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -10596,7 +10596,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -10679,7 +10679,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -10780,7 +10780,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -10994,7 +10994,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -11043,7 +11043,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -11144,7 +11144,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -11226,7 +11226,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -11327,7 +11327,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -11372,7 +11372,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -11413,7 +11413,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -11491,7 +11491,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -11634,7 +11634,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -11701,7 +11701,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -11786,7 +11786,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -11972,7 +11972,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -12030,7 +12030,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -12115,7 +12115,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -12190,7 +12190,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -12275,7 +12275,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -12329,7 +12329,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -12370,7 +12370,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -12428,7 +12428,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -12480,7 +12480,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -12546,7 +12546,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -12598,7 +12598,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -12648,7 +12648,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -12700,7 +12700,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -12798,7 +12798,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -12834,7 +12834,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -12871,7 +12871,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -13032,7 +13032,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -13261,7 +13261,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -13329,7 +13329,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -13376,7 +13376,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -13414,7 +13414,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -13456,7 +13456,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -13763,7 +13763,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -13814,7 +13814,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -13954,7 +13954,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14001,7 +14001,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14034,7 +14034,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14105,7 +14105,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14151,7 +14151,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -14291,7 +14291,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14352,7 +14352,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14385,7 +14385,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14450,7 +14450,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -14603,7 +14603,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14665,7 +14665,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14736,7 +14736,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14769,7 +14769,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14805,7 +14805,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14834,7 +14834,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14919,7 +14919,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14952,7 +14952,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -14996,7 +14996,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -15040,7 +15040,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -15108,7 +15108,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -15287,7 +15287,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -15336,7 +15336,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -15420,7 +15420,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -15469,7 +15469,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -15529,7 +15529,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -15574,7 +15574,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -15634,7 +15634,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -15722,7 +15722,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -15785,7 +15785,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -16168,7 +16168,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -16247,7 +16247,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -16305,7 +16305,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -16352,7 +16352,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -16657,7 +16657,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -16690,7 +16690,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -16731,7 +16731,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -16837,7 +16837,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -16878,7 +16878,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -16984,7 +16984,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -17025,7 +17025,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -17239,7 +17239,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -17280,7 +17280,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -17505,7 +17505,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -17616,7 +17616,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -17674,7 +17674,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -17721,7 +17721,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -17852,7 +17852,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -17961,7 +17961,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -18002,7 +18002,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -18035,7 +18035,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -18076,7 +18076,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -18414,7 +18414,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -18619,7 +18619,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -19025,7 +19025,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -19126,7 +19126,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -19308,7 +19308,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -19356,7 +19356,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -19412,7 +19412,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -19461,7 +19461,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -19550,7 +19550,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -19605,7 +19605,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -19694,7 +19694,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -19727,7 +19727,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -19768,7 +19768,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -19837,7 +19837,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -19938,7 +19938,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -20154,7 +20154,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -20218,7 +20218,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -20318,7 +20318,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -20476,7 +20476,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -20524,7 +20524,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -20557,7 +20557,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -20635,7 +20635,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -20735,7 +20735,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -20783,7 +20783,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -20883,7 +20883,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -20933,7 +20933,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -20989,7 +20989,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -21687,7 +21687,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -21747,7 +21747,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -22328,7 +22328,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -22384,7 +22384,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -22417,7 +22417,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -23071,7 +23071,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -23131,7 +23131,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -23271,7 +23271,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -23446,7 +23446,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -23586,7 +23586,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -23834,7 +23834,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -23884,7 +23884,7 @@
                 "asc",
                 "desc"
               ],
-              "default": "desc"
+              "默认值": "desc"
             },
             "description": "按升序或降序排列（不区分大小写）。默认情况下，按降序排列。",
             "in": "query"
@@ -24188,7 +24188,7 @@
             "description": "内部服务器错误。",
             "content": {}
           },
-          "default": {
+          "默认响应": {
             "description": "",
             "content": {
               "application/json": {
@@ -24202,7 +24202,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -24422,7 +24422,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -24679,7 +24679,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -24737,7 +24737,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -24799,7 +24799,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -24859,7 +24859,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -25116,7 +25116,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -25345,7 +25345,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -25378,7 +25378,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -25434,7 +25434,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -25467,7 +25467,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -26156,7 +26156,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -26216,7 +26216,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -26296,7 +26296,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -26496,7 +26496,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -26546,7 +26546,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -27101,7 +27101,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -27321,7 +27321,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -27381,7 +27381,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -27504,7 +27504,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -28089,7 +28089,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -28130,7 +28130,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -28252,7 +28252,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -28369,7 +28369,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -28617,7 +28617,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -29257,7 +29257,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -29315,7 +29315,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -29870,7 +29870,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -29907,7 +29907,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -29972,7 +29972,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -30027,7 +30027,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -30076,7 +30076,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -30135,7 +30135,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -30198,7 +30198,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -30233,7 +30233,7 @@
                         },
                         "key": {
                           "type": "string",
-                          "description": "APISIX 配置中心中资源的键。"
+                          "description": "APISIX 配置中心中资源的关键字。"
                         },
                         "warning_msg": {
                           "type": "string",
@@ -30296,7 +30296,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -30398,7 +30398,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -31226,7 +31226,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -31786,7 +31786,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -32346,7 +32346,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -33486,7 +33486,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -33746,7 +33746,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -33875,7 +33875,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -34004,7 +34004,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -34146,7 +34146,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -34377,7 +34377,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -34519,7 +34519,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -34750,7 +34750,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -34837,7 +34837,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -34924,7 +34924,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -35068,7 +35068,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -35139,7 +35139,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -35225,7 +35225,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -35263,7 +35263,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -35301,7 +35301,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -35448,7 +35448,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -35510,7 +35510,7 @@
                     },
                     "key": {
                       "type": "string",
-                      "description": "APISIX 配置中心中资源的键。"
+                      "description": "APISIX 配置中心中资源的关键字。"
                     },
                     "warning_msg": {
                       "type": "string",
@@ -35623,7 +35623,7 @@
                 },
                 "key": {
                   "type": "string",
-                  "description": "APISIX 配置中心中资源的键。"
+                  "description": "APISIX 配置中心中资源的关键字。"
                 },
                 "warning_msg": {
                   "type": "string",
