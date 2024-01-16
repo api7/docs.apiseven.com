@@ -5554,7 +5554,7 @@
         "tags": [
           "OpenAPI"
         ],
-        "summary": "Generate an OpenAPI specification to export services.",
+        "summary": "生成 OpenAPI 规范，导出服务。",
         "parameters": [
           {
             "name": "scope",
@@ -5580,7 +5580,7 @@
                 "properties": {
                   "service_ids": {
                     "type": "array",
-                    "description": "The service ID list.",
+                    "description": "服务 ID 列表",
                     "items": {
                       "description": "对象 ID",
                       "type": "string"
@@ -7795,7 +7795,7 @@
         "tags": [
           "许可证"
         ],
-        "summary": "Get the API7 Enterprise license.",
+        "summary": "获取 API7 企业版许可证。",
         "responses": {
           "200": {
             "description": "",
