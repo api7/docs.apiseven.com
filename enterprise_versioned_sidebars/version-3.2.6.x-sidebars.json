@@ -91,7 +91,7 @@
       "items": [
         {
           "type": "link",
-          "label": "Admin API 参考文档",
+          "label": "Admin API",
           "href": "/enterprise/reference/admin-api"
         }
       ]
