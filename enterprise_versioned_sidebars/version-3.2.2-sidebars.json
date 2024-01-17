@@ -1,136 +1,111 @@
 {
   "docs": [
     {
-      "type": "doc",
-      "id": "introduction"
-    },
-    {
       "type": "category",
-      "label": "入门",
+      "label": "概述",
       "items": [
-        "getting-started/get-apisix",
-        "getting-started/configure-routes",
-        "getting-started/load-balancing",
-        "getting-started/key-authentication",
-        "getting-started/rate-limiting"
+        "introduction/what-is-api7-ee",
+        "introduction/api7-ee-architecture",
+        "introduction/api7-ee-vs-api7-cloud-apisix"
       ]
     },
     {
       "type": "category",
-      "label": "操作指南",
+      "label": "概念",
+      "items": [
+        "key-concepts/routes",
+        "key-concepts/upstreams",
+        "key-concepts/services",
+        "key-concepts/plugins",
+        "key-concepts/consumers",
+        "key-concepts/ssl-certificates",
+        "key-concepts/gateway-instance"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "快速入门",
+      "items": [
+        "getting-started/install-api7-ee",
+        "getting-started/set-up-and-launch-init-api"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "API 生命周期管理",
       "items": [
         {
           "type": "category",
-          "label": "可观测",
+          "label": "API 设计",
           "items": [
-            "how-to-guide/observability/monitor-apisix-with-prometheus",
-            "how-to-guide/observability/log-with-clickhouse"
+            "api-full-lifecycle-management/api-design/export-openapi-sepc",
+            "api-full-lifecycle-management/api-design/plan-api-endpoints"
           ]
         },
         {
           "type": "category",
-          "label": "安全",
+          "label": "API 发布",
           "items": [
-            {
-              "type": "category",
-              "label": "密钥管理",
-              "items": [
-                "how-to-guide/security/secrets-management/manage-secrets-in-hashicorp-vault"
-              ]
-            }
+            "api-full-lifecycle-management/api-publish/apply-api-rate-limit-policies",
+            "api-full-lifecycle-management/api-publish/configure-api-upstream",
+            "api-full-lifecycle-management/api-publish/import-api-define-of-service",
+            "api-full-lifecycle-management/api-publish/set-up-api-auth",
+            "api-full-lifecycle-management/api-publish/transform-api-req-2-simplify-integration"
           ]
-        },
+        },  
         {
           "type": "category",
-          "label": "权限验证",
+          "label": "API 消费",
           "items": [
-            "how-to-guide/authentication/set-up-sso-with-oidc-and-keycloak"
+            "api-full-lifecycle-management/api-consumption/allow-list-based-accesss-control-of-consumers",
+            "api-full-lifecycle-management/api-consumption/manage-api-consumer-credentials",
+            "api-full-lifecycle-management/api-consumption/publish-api-4-discovery-and-integration"
           ]
-        },
+        },     
         {
           "type": "category",
-          "label": "请求转换",
+          "label": "API 运行时",
           "items": [
-            "how-to-guide/transformation/transcode-http-to-grpc"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "流量管理",
-          "items": [
-            {
-              "type": "category",
-              "label": "TLS and mTLS",
-              "items": [
-                "how-to-guide/traffic-management/tls-and-mtls/configure-upstream-https",
-                "how-to-guide/traffic-management/tls-and-mtls/configure-https-between-client-and-apisix",
-                "how-to-guide/traffic-management/tls-and-mtls/configure-mtls-between-client-and-apisix"
-              ]
-            }
+            "api-full-lifecycle-management/api-runtime/log-api-traffic",
+            "api-full-lifecycle-management/api-runtime/monitor-api-metrics",
+            "api-full-lifecycle-management/api-runtime/trigger-alerts-of-unusual-api-activities"
           ]
         }
       ]
     },
     {
       "type": "category",
-      "label": "背景信息",
+      "label": "安全",
       "items": [
-        {
-          "type": "category",
-          "label": "主要概念",
-          "items": [
-            "background-information/key-concepts/routes",
-            "background-information/key-concepts/upstreams",
-            "background-information/key-concepts/services",
-            "background-information/key-concepts/plugins",
-            "background-information/key-concepts/plugin-global-rules",
-            "background-information/key-concepts/plugin-metadata",
-            "background-information/key-concepts/consumers",
-            "background-information/key-concepts/ssl-certificates",
-            "background-information/key-concepts/secrets",
-            "background-information/key-concepts/protos"
-          ]
-        }
+        "security/block-sepc-ip-from-accessing-api",
+        "security/enable-https-4-secure-client-api7-communication",
+        "security/fips-support",
+        "security/manage-crossorigin-api-acces--with-cors",
+        "security/manage-crossorigin-api-acces--with-cors"
       ]
     },
     {
       "type": "category",
-      "label": "企业版",
+      "label": "管理",
       "items": [
-        "enterprise-edition/install-enterprise-trial",
-        {
-          "type": "category",
-          "label": "功能",
-          "items": [
-            "enterprise-edition/features/rbac",
-            "enterprise-edition/features/audit"
-          ]
-        }
+        "administration/active-and-renew-license",
+        "administration/manage-token-2-use-api7-ee-api",
+        "administration/track-user-actions-for-security-audition"
       ]
     },
     {
       "type": "category",
-      "label": "插件",
+      "label": "工具",
       "items": [
-        {
-          "type": "category",
-          "label": "流量管理",
-         "items": [
-            "plugins/traffic-management/traffic-label",
-            "plugins/traffic-management/graphql-proxy-cache",
-            "plugins/traffic-management/graphql-limit-count"
-          ]
-        }
+        "tools/cli-tools",
+        "tools/declaractive-api"
       ]
     },
     {
       "type": "category",
-      "label": "参考文档",
+      "label": "参考",
       "items": [
-        "reference/built-in-variables",
-        "reference/apisix-expressions",
-        "reference/configuration-files",
-        "reference/apisix-cli"
+        "reference/reference"
       ]
     }
   ]
