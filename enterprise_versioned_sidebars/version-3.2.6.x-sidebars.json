@@ -84,6 +84,17 @@
         "administration/renew-license",
         "administration/role-based-access-control"
       ]
+    },
+    {
+      "type": "category",
+      "label": "参考文档 ",
+      "items": [
+        {
+          "type": "link",
+          "label": "Admin API",
+          "href": "/enterprise/reference/admin-api"
+        }
+      ]
     }
   ]
 }
