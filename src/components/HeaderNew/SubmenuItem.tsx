@@ -30,7 +30,7 @@ export const SubmenuItem = (props: SubmenuItemProps) => {
       transition="all 0.2s"
       rounded="lg"
       target={href.startsWith('/') ? '_self' : '_blank'}
-      _hover={{ bg: mode('gray.50', 'gray.600') }}
+      _hover={{ bg: mode('gray.50', 'gray.600'), textDecoration: 'none' }}
       _focus={{ shadow: 'outline' }}
       {...rest}
     >
