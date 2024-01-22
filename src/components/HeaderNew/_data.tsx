@@ -4,12 +4,15 @@ import {
   AiOutlineRead,
   AiFillGithub,
   AiOutlineProject,
+  AiOutlineAppstore,
 } from "react-icons/ai";
-import { MdWeb } from "react-icons/md";
 import { CgReadme } from "react-icons/cg";
-import { SiMeetup } from "react-icons/si";
-import { MdCompare, MdBook } from "react-icons/md";
+import { SiMeetup, SiKubernetes } from "react-icons/si";
+import { MdCompare, MdBook, MdWeb, MdOutlineMiscellaneousServices } from "react-icons/md";
 import { TiNews } from "react-icons/ti";
+import { TbApiApp, TbHeartRateMonitor } from "react-icons/tb";
+import { BsClouds } from "react-icons/bs";
+import { RiShieldUserLine } from "react-icons/ri";
 import { getRequestDemoLink } from "./helper";
 
 export interface Link {
@@ -157,25 +160,72 @@ export const EN_US_Links: Link[] = [
 
 export const ZH_CN_Links: Link[] = [
   {
-    label: "API7 Cloud",
-    href: "https://www.api7.cloud/",
-  },
-  {
-    label: "技术博客",
+    label: "产品",
     children: [
       {
-        label: "技术文章",
-        href: "https://www.apiseven.com/blog",
-        description: "阅读技术文章，了解前沿技术",
-        icon: <AiOutlineRead />,
+        label: "API7 EE",
+        href: "https://www.apiseven.com/enterprise",
+        description: "可部署于任何系统和云平台的 API 管理平台",
+        icon: <TbApiApp />,
       },
       {
-        label: "用户案例",
-        href: "https://www.apiseven.com/usercases",
-        description: "全球领先企业在 Apache APISIX 上的成功实践",
-        icon: <IoGrid />,
+        label: "Apache APISIX vs API7",
+        href: "https://www.apiseven.com/apisix-vs-enterprise",
+        description: "产品能力、商业支持对比",
+        icon: <MdCompare />,
+      },
+      {
+        label: "API7 Cloud",
+        description: "联系我们，抢先体验 API7 Cloud",
+        href: 'https://www.api7.cloud/',
+        icon: <IoCloudOutline />,
+      },
+      {
+        label: "API7 Portal",
+        href: "https://www.apiseven.com/portal",
+        description: "以安全便捷的方式对内外部开放 API ，管控并可视化分析 API 的调用关系和调用量",
+        icon: <AiOutlineAppstore />,
       },
     ],
+  },
+  {
+    label: "解决方案",
+    children: [
+      {
+        label: "本地部署升级混合云部署",
+        href: "https://www.apiseven.com/solutions/on-prem-to-hybrid-cloud",
+        description: "高效管理和保护多云、混合云环境中的 API",
+        icon: <BsClouds />,
+      },
+      {
+        label: "单体架构升级微服务架构",
+        href: "https://www.apiseven.com/solutions/monolith-to-microservices",
+        description: "提高业务服务可扩展性、弹性，降低风险和故障范围，实现团队效率提升",
+        icon: <MdOutlineMiscellaneousServices />,
+      },
+      {
+        label: "可观测性",
+        href: "https://www.apiseven.com/solutions/observability",
+        description: "通过可视化监控和异常检测提高系统可用性和性能",
+        icon: <TbHeartRateMonitor />,
+      },
+      {
+        label: "零信任安全",
+        href: "https://www.apiseven.com/solutions/zero-trust-security",
+        description: "在所有服务中实施零信任安全以简化安全防护",
+        icon: <RiShieldUserLine />,
+      },
+      {
+        label: "虚拟机升级 Kubernetes",
+        href: "https://www.apiseven.com/solutions/vm-to-kubernetes",
+        description: "降低运营成本并轻松管理数千服务",
+        icon: <SiKubernetes />,
+      },
+    ],
+  },
+  {
+    label: "客户案例",
+    href: "https://www.apiseven.com/customers",
   },
   {
     label: "开源项目",
@@ -229,58 +279,22 @@ export const ZH_CN_Links: Link[] = [
         href: "https://www.apiseven.com/contributor-graph",
         icon: <AiOutlineProject />,
       },
-    ],
-  },
-  {
-    label: "商业产品",
-    children: [
       {
-        label: "API7 Cloud",
-        description: "联系我们，抢先体验 API7 Cloud",
-        href: 'https://www.api7.cloud/',
-        icon: <IoCloudOutline />,
-      },
-      {
-        label: "Apache APISIX vs API7",
-        href: "https://www.apiseven.com/apisix-vs-api7",
-        description: "产品能力、商业支持对比",
+        label: "Apache APISIX vs Kong",
+        description: "极致性能、高可用、稳定、开发者友好",
+        href: "https://www.apiseven.com/apisix-vs-kong",
         icon: <MdCompare />,
       },
       {
-        label: "产品特性",
-        href: "https://www.apiseven.com/products/api7/features",
-        description: "查看 API7 产品功能特性",
-        icon: <IoListSharp />,
+        label: "Apache APISIX vs NGINX",
+        description: "动态配置、多环境管理、全生命周期 API 管理",
+        href: "https://www.apiseven.com/apisix-vs-nginx",
+        icon: <MdCompare />,
       },
     ],
   },
   {
-    label: "API7.ai",
-    children: [
-      {
-        label: "关于我们",
-        description: "关于 API7.ai",
-        href: "https://www.apiseven.com/about",
-        icon: <MdWeb />,
-      },
-      {
-        label: "新闻报道",
-        description: "获取 API7.ai 相关新闻",
-        href: "https://www.apiseven.com/news",
-        icon: <TiNews />,
-      },
-      {
-        label: "工作机会",
-        description: "与我们一起构建安全、可靠的 API 连接",
-        href: "https://www.apiseven.com/careers",
-        icon: <IoPeople />,
-      },
-      {
-        label: "公司手册",
-        description: "故事、文化、价值观等",
-        href: "https://handbook.api7.ai/",
-        icon: <MdBook />,
-      },
-    ],
+    label: "技术博客",
+    href: "https://www.apiseven.com/blog",
   },
 ];
