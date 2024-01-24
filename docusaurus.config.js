@@ -61,7 +61,7 @@ const config = {
             route: "/enterprise/openapi",
           },
           {
-            spec: "enterprise_versioned_docs/version-3.2.6.x/reference/admin-api.json",
+            spec: "enterprise_versioned_docs/version-3.2.7.1/reference/admin-api.json",
             route: "/enterprise/reference/admin-api"
           }
         ],
