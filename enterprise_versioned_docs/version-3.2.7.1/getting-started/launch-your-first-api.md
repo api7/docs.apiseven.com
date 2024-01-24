@@ -20,14 +20,14 @@ slug: /getting-started/launch-your-first-api
 如需创建服务，遵循以下步骤：
 
 1. 从左侧导航栏中选择**服务**，然后单击**新增服务**。
-2. 选择**手动添加**，弹出**新增服务**对话框，如下所示：
+2. 选择**手动新增**，弹出**新增服务**对话框，如下所示：
 
-    ![新增服务](https://static.apiseven.com/uploads/2023/12/07/0JZ2RX5E_add-service_zh.png)
+    ![新增服务](https://static.apiseven.com/uploads/2024/01/24/GWwILuaG_add-service_zh.png)
 
 3. 在**新增服务**对话框中，执行以下操作：
     - 在**名称**字段中，输入 `httpbin`。
     - 在**上游 Scheme** 字段中，选择 `HTTP`。
-4. 单击**添加**。
+4. 单击**新增**。
 
 ## 步骤 2：创建路由
 
