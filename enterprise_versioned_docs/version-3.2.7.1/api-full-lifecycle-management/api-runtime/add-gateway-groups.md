@@ -45,12 +45,12 @@ slug: /api-full-lifecycle-management/api-runtime/add-gateway-groups
 
 如需创建网关组，遵循以下步骤：
 
-1. 从左侧导航栏中选择**网关组**，然后单击**添加网关组**。
+1. 从左侧导航栏中选择**网关组**，然后单击**新增网关组**。
 
     ![添加网关组](https://static.apiseven.com/uploads/2023/12/15/VbhPqcTS_add_gateway_group_zh.png)
 
 2. 在**名称**字段中，输入`生产网关组`。
-3. 单击**添加**。
+3. 单击**新增**。
 
 ## 创建网关实例
 

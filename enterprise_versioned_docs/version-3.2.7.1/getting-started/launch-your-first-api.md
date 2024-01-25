@@ -20,14 +20,14 @@ slug: /getting-started/launch-your-first-api
 如需创建服务，遵循以下步骤：
 
 1. 从左侧导航栏中选择**服务**，然后单击**新增服务**。
-2. 选择**手动添加**，弹出**新增服务**对话框，如下所示：
+2. 选择**手动新增**，弹出**新增服务**对话框，如下所示：
 
-    ![新增服务](https://static.apiseven.com/uploads/2023/12/07/0JZ2RX5E_add-service_zh.png)
+    ![新增服务](https://static.apiseven.com/uploads/2024/01/24/GWwILuaG_add-service_zh.png)
 
 3. 在**新增服务**对话框中，执行以下操作：
     - 在**名称**字段中，输入 `httpbin`。
     - 在**上游 Scheme** 字段中，选择 `HTTP`。
-4. 单击**添加**。
+4. 单击**新增**。
 
 ## 步骤 2：创建路由
 
@@ -47,26 +47,25 @@ slug: /getting-started/launch-your-first-api
 
 如需发布服务，遵循以下步骤：
 
-1. 从左侧导航栏中选择**服务**，然后单击**发布服务**。
-2. 在**网关组**字段中，选择 `缺省网关组`。
-3. 单击**添加服务模板**，弹出**添加服务**对话框，如下所示：
-
-    ![添加服务模板](https://static.apiseven.com/uploads/2023/12/07/SqTtXOFa_publish-service_zh.png)
-    
-4. 在**添加服务**对话框中，执行以下操作：
-    - 在**服务模板**字段中，选择 `httpbin`。
+1. 从左侧导航栏中选择**服务**，然后选择 `httpbin` 服务并单击**立即发布**。
+2. 选择 `缺省网关组`，然后单击**下一步**。
+3. 在弹出的对话框中，执行以下操作：
     - 在**新版本**字段中，输入 `1.0.0`。
-3. 单击**添加**。
-4. 确认服务信息，然后单击**下一步**。
-5. 单击**添加节点**，弹出**添加节点**对话框，如下所示：
+    - 在**如何找到上游**字段中，选择`使用节点`。
+    <br />
+    <div style={{textAlign: 'center'}}>
+    <img src="https://static.apiseven.com/uploads/2024/01/24/7UoIuF7k_publish-service-httpbin-1.0.0_zh.png" alt="发布服务" width="95%" />
+    </div>
+    <br /><br />
+4. 单击**新增节点**，弹出**新增节点**对话框，如下所示：
 
-    ![添加节点](https://static.apiseven.com/uploads/2023/12/07/dXEfZ4gS_add-node_zh.png)
+    ![添加节点](https://static.apiseven.com/uploads/2024/01/24/UdGAuSQv_add_node_httpbbin_zh.png)
 
-6. 在**添加节点** 对话框中，执行以下操作：
+5. 在**新增节点** 对话框中，执行以下操作：
     - 在**主机** 字段中，输入 `httpbin.org`。
     - 在**端口** 字段中，输入 `80`。
     - 在**权重** 字段中，使用默认值 `100`。
-4. 单击**添加**。
+6. 单击**新增**。
 7. 确认服务信息，然后单击**发布**。
 
 ## 步骤 4：验证 API
