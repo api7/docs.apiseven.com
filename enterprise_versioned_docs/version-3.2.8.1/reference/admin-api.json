@@ -27772,7 +27772,7 @@
         "tags": [
           "服务注册中心"
         ],
-        "summary": "获取特定 Nacos 命名空间下的所有组。",
+        "summary": "获取特定 Nacos 命名空间下的所有组",
         "parameters": [
           {
             "name": "service_registry_id",
@@ -27887,7 +27887,7 @@
         "tags": [
           "服务注册中心"
         ],
-        "summary": "获取特定 Nacos 组内的所有服务。",
+        "summary": "获取特定 Nacos 组内的所有服务",
         "parameters": [
           {
             "name": "service_registry_id",
