@@ -51,19 +51,3 @@ slug: /api-full-lifecycle-management/api-runtime/add-gateway-groups
 
 2. 在**名称**字段中，输入`生产网关组`。
 3. 单击**新增**。
-
-## 创建网关实例
-
-如需创建网关实例，遵循以下步骤：
-
-1. 单击新创建的`生产网关组`，然后单击**添加网关实例**。
-2. 按照页面上的说明进行操作。
-
-    - 将 HTTP 端口 ID 和 HTTPS 端口 ID 分别设置为 `9080` 和 `9443`。
-    -（可选）将网关实例名称设置为 `test` 。
-    
-    ![添加网关实例](https://static.apiseven.com/uploads/2023/12/26/ysDpa4Pp_add-gateway-instance_zh.png)
-
-3. 单击**生成**， 获取用于将网关实例添加到`生产网关组`的命令。
-4. 打开终端并运行生成的命令。
-5. 完成[追踪网关实例状态](track-gateway-instance-status.md)。
