@@ -32706,8 +32706,8 @@
         "tags": [
           "登录选项"
         ],
-        "summary": "Update a login option by ID.",
-        "description": "Update a login option by ID.",
+        "summary": "更新特定登录选项",
+        "description": "更新特定登录选项",
         "operationId": "update_login_option",
         "parameters": [
           {
@@ -33247,8 +33247,8 @@
         "tags": [
           "登录选项"
         ],
-        "summary": "Update a login option by ID.",
-        "description": "Update a login option by ID.",
+        "summary": "更新特定登录选项",
+        "description": "更新特定登录选项",
         "operationId": "patch_login_option",
         "parameters": [
           {
@@ -34236,8 +34236,8 @@
         "tags": [
           "登录选项"
         ],
-        "summary": "Create a login option.",
-        "description": "Create a login option.",
+        "summary": "创建登录选项",
+        "description": "创建登录选项",
         "operationId": "create_login_option",
         "requestBody": {
           "content": {
