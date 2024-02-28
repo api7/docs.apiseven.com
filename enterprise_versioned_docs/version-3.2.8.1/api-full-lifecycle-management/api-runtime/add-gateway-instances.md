@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
         </ul>
       <li>单击<strong>生成</strong>，获取用于将网关实例添加到<strong>生产网关组</strong>的命令。</li>
       <li>打开终端并运行生成的命令。</li>
-      <li>（可选）<a href="/enterprise/api-full-lifecycle-management/api-runtime/track-gateway-instance-status">追踪网关实例状态</a>。</li>
+      <li>（可选）<a href="https://docs.apiseven.com/enterprise/api-full-lifecycle-management/api-runtime/track-gateway-instance-status">追踪网关实例状态</a>。</li>
     </ol>
   </TabItem>
   <TabItem value="k8s" label="Kubernetes">
@@ -48,7 +48,7 @@ import TabItem from '@theme/TabItem';
       <li>单击<strong>生成</strong>，获取用于将网关实例添加到 <strong>生产网关组</strong>的命令或 YAML 配置。</li>
       <li>对于 CLI 命令行用户，打开终端并运行生成的命令。</li>
       <li>对于 YAML 文件用户，更新并应用新的 YAML 配置文件。</li>
-      <li>（可选）<a href="/enterprise/api-full-lifecycle-management/api-runtime/track-gateway-instance-status">追踪网关实例状态</a>。</li>
+      <li>（可选）<a href="https://docs.apiseven.com/enterprise/api-full-lifecycle-management/api-runtime/track-gateway-instance-status">追踪网关实例状态</a>。</li>
     </ol>
   </TabItem>
 </Tabs>
