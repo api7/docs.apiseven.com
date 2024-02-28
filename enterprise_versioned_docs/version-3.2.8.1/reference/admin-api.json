@@ -34771,7 +34771,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "使用用户名和密码登录 API7 控制台",
+        "summary": "使用 LDAP 用户名和密码登录 API7 控制台",
         "operationId": "LDAPLogin",
         "parameters": [
           {
@@ -34877,7 +34877,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "使用用户名和密码退出 API7 控制台",
+        "summary": "使用 LDAP 用户名和密码退出 API7 控制台",
         "operationId": "LDAPLogout",
         "parameters": [
           {
@@ -34952,7 +34952,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "使用 OpenID Connect（OIDC）协议登录 API7 控制台",
+        "summary": "使用 OIDC Provider 登录 API7 控制台",
         "operationId": "OIDCLogin",
         "parameters": [
           {
@@ -35010,7 +35010,7 @@
         "tags": [
           "用户"
         ],
-        "summary": "使用 OpenID Connect（OIDC）协议退出 API7 控制台",
+        "summary": "使用 OIDC Provider 退出 API7 控制台",
         "operationId": "OIDCLogout",
         "parameters": [
           {
