@@ -32394,7 +32394,7 @@
           "登录选项"
         ],
         "summary": "获取特定登录选项",
-        "description": "获取特定登录选项",
+        "description": "获取特定登录选项。",
         "operationId": "get_login_option",
         "parameters": [
           {
@@ -32707,7 +32707,7 @@
           "登录选项"
         ],
         "summary": "更新特定登录选项",
-        "description": "更新特定登录选项",
+        "description": "更新特定登录选项。",
         "operationId": "update_login_option",
         "parameters": [
           {
@@ -33248,7 +33248,7 @@
           "登录选项"
         ],
         "summary": "更新特定登录选项",
-        "description": "更新特定登录选项",
+        "description": "更新特定登录选项。",
         "operationId": "patch_login_option",
         "parameters": [
           {
@@ -33789,7 +33789,7 @@
           "登录选项"
         ],
         "summary": "删除特定登录选项",
-        "description": "删除特定登录选项",
+        "description": "删除特定登录选项。",
         "operationId": "delete_login_option",
         "parameters": [
           {
@@ -33869,7 +33869,7 @@
           "登录选项"
         ],
         "summary": "获取所有登陆选项",
-        "description": "获取所有登陆选项",
+        "description": "获取所有登陆选项。",
         "operationId": "list_login_options",
         "parameters": [
           {
@@ -34237,7 +34237,7 @@
           "登录选项"
         ],
         "summary": "创建登录选项",
-        "description": "创建登录选项",
+        "description": "创建登录选项。",
         "operationId": "create_login_option",
         "requestBody": {
           "content": {
