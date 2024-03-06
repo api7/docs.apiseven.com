@@ -36,7 +36,7 @@ API7 企业版 支持 LDAP 单点登录（Single Sign-On，SSO）。将 API7 企
 
     ![添加 LDAP 登录方式](https://static.apiseven.com/uploads/2024/02/27/2HuQL2Fg_add-login-method_zh.png)
 
-3. 在**添加登录选项**对话框，哦诶之以下属性。
+3. 在**添加登录选项**对话框，配置以下属性。
 
     - **名字**：LDAP 登录名称，例如 `LDAP`。登录名称必须唯一。
     - **主机名**：LDAP 服务器的 IP 地址，例如 `ldap.example.com`。
