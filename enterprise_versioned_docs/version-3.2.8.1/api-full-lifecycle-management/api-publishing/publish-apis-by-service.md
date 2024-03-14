@@ -15,7 +15,7 @@ slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
 4. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
 5. 将缺省网关组重命名为`测试网关组`并配置网络。该网关组将作为测试环境的 API 网关。
 
-## 通过导入 OpenAPI 规范添加服务
+## 添加服务
 
 :::info
 
@@ -25,7 +25,7 @@ slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
 
 如需通过导入 OpenAPI 规范添加服务，遵循以下步骤：
 
-1. 从左侧导航栏中选择**服务**，然后单击**添加服务**。
+1. 从左侧导航栏中选择**服务**，然后单击**新增服务**。
 2. 选择**导入 OpenAPI**。
 3. 上传 YAML/JSON 文件，并选择 `HTTP` 作为上游 Scheme。
 4. 单击**下一步**。
@@ -36,9 +36,9 @@ slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
     - **描述**：OpenAPI 规范中的 `Description` 字段
     - **路由**：OpenAPI 规范中的 `Paths` 字段
 
-6. 单击**添加**。
+6. 单击**新增**。
 
-## 向测试网关组发布服务
+## 使用上游节点发布服务
 
 ### 发布单个服务
 
@@ -77,7 +77,6 @@ slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
     - 单击**新增**。
 6. 确认服务信息，然后单击**发布**。
 
-
 ## 使用服务发现发布服务
 
 Consul、Eureka、Nacos 或 Kubernetes Service Discovery 等服务发现机制可以动态检测后端节点。因此，用户无需手动输入多个上游节点。
@@ -88,15 +87,20 @@ Consul、Eureka、Nacos 或 Kubernetes Service Discovery 等服务发现机制�
 
 :::
 
+### 使用 Kubernetes 服务发现发布服务
+
+如需使用 Kubernetes 服务发现发布服务，遵循以下步骤：
+
 1. 从左侧导航栏中选择**网关组**，然后单击**测试网关组**。
-2. 从左侧导航栏中选择**服务注册中心**，然后单击**连接服务注册中心**。
+2. 从左侧导航栏中选择**服务注册中心**，然后单击**新增服务注册中心连接**。
 
-    ![连接服务注册中心](https://static.apiseven.com/uploads/2023/12/15/j6jTU5Vb_connect-service-registry_zh.png)
+    ![连接服务注册中心-k8s](https://static.apiseven.com/uploads/2024/02/27/UmflegZA_k8s-service-registry_zh.png)
 
-3. 在**连接服务注册中心**对话框中，执行以下操作：
+3. 在**新增服务注册中心连接**对话框中，执行以下操作：
     - 在**名称**字段中，输入`测试服务注册中心`。
+    - 在**发现类型**字段中，选择 `Kubernetes`。
     - 填写 **API 服务器地址**和**令牌**字段。
-    - 单击**连接**。
+    - 单击**新增**。
 4. 等待以确保服务注册中心的状态为健康。
 5. 从左侧导航栏中选择**服务**，然后选择 `Swagger Petstore` 服务并单击**立即发布**。
 6. 选择 `测试网关组`，然后单击**下一步**。
@@ -109,11 +113,39 @@ Consul、Eureka、Nacos 或 Kubernetes Service Discovery 等服务发现机制�
     </div>
     <br /><br />
 
-    - 在**服务注册中心**字段中，选择`测试服务注册中心`。
-    - 填写**注册中心中的名称空间**和**注册中心中的服务名称**字段。
+    - 在**服务注册中心**字段中，选择`测试服务注册中心`，服务注册中心中的命名空间和服务名称字段。
 8. 确认服务信息，然后单击**发布**。
 
-## 在测试环境中验证 API
+### 使用 Nacos 服务发现发布服务
+
+如需使用 Nacos 服务发现发布服务，遵循以下步骤：
+
+1. 从左侧导航栏中选择**网关组**，然后单击**测试网关组**。
+2. 从左侧导航栏中选择**服务注册中心**，然后单击**新增服务注册中心连接**。
+
+    ![连接服务注册中心-Nacos](https://static.apiseven.com/uploads/2024/02/27/suxN3J35_nacos-service-registry_zh.png)
+
+3. 在**新增服务注册中心连接**对话框中，执行以下操作：
+    - 在**名称**字段中，输入`测试服务注册中心`。
+    - 在**发现类型**字段中，选择 `Nacos`。
+    - 填写 Nacos 服务器**主机地址**和**端口号**字段。
+    - 单击**新增**。
+4. 等待以确保服务注册中心的状态为健康。
+5. 从左侧导航栏中选择**服务**，然后选择 `Swagger Petstore` 服务并单击**立即发布**。
+6. 选择 `测试网关组`，然后单击**下一步**。
+7. 在弹出的对话框中，执行以下操作：
+    - 在**新版本**字段中，输入 `1.0.0`。
+    - 在**如何找到上游**字段中，选择`使用服务发现`。
+    <br />
+    <div style={{textAlign: 'center'}}>
+    <img src="https://static.apiseven.com/uploads/2024/01/24/01dfz0H0_publish-service-openAI_zh.png" alt="发布服务" width="95%" />
+    </div>
+    <br /><br />
+
+    - 在**服务注册中心**字段中，选择`测试服务注册中心`，服务注册中心中的命名空间、组和服务名称字段。
+8. 确认服务信息，然后单击**发布**。
+
+## 验证 API
 
 ```bash
 curl "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为测试网关组的地址。

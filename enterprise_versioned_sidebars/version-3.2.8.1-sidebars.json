@@ -60,6 +60,7 @@
           "label": "API 运行时",
           "items": [
             "api-full-lifecycle-management/api-runtime/add-gateway-groups",
+            "api-full-lifecycle-management/api-runtime/add-gateway-instances",
             "api-full-lifecycle-management/api-runtime/monitor-api-metrics",
             "api-full-lifecycle-management/api-runtime/log-api-traffic",
             "api-full-lifecycle-management/api-runtime/trigger-alerts",
@@ -81,6 +82,7 @@
       "type": "category",
       "label": "管理",
       "items": [
+        "administration/configure-login-methods",
         "administration/renew-license",
         "administration/role-based-access-control"
       ]
@@ -91,6 +93,11 @@
       "items": [
         "best-practices/configure-grpc"
       ]
+    },
+    {
+      "type": "doc",
+      "label": "版本说明",
+      "id": "release-notes"
     },
     {
       "type": "category",
