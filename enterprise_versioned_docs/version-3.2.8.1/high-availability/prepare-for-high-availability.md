@@ -3,7 +3,7 @@ title: 高可用配置准备
 slug: /high-availability/prepare-for-high-availability
 ---
 
-本文档介绍了高可用性的推荐配置。
+本文档介绍了推荐的、最低限度要求的高可用配置。
 
 ## 获取安装包
 
