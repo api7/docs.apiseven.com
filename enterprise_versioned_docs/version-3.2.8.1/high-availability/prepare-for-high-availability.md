@@ -17,7 +17,7 @@ slug: /high-availability/prepare-for-high-availability
 
 Prometheus 是一个可选组件，仅当您希望使用 API7 企业版自带的监控功能时才使用。如果您不需要此功能（已经自建监控系统），则 Prometheus 不是部署必需的。有关如何为 Prometheus 配置高可用的详细信息，请参阅 [Prometheus 文档](https://prometheus.io/docs/introduction/faq/#can-prometheus-be-made-highly-available).
 
-在实际场景中，高可用性架构可能会因具体情况而异。请[联系API7专家](https://api7.ai/contact)，我们将很高兴为您量身定制满足您需求的高可用解决方案。
+在实际场景中，高可用架构可能会因具体情况而异。请[联系API7专家](https://api7.ai/contact)，我们将很高兴为您量身定制满足您需求的高可用解决方案。
 
 ## 最低硬件要求
 
