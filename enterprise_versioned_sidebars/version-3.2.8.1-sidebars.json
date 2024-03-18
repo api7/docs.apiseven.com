@@ -89,6 +89,15 @@
     },
     {
       "type": "category",
+      "label": "高可用",
+      "items": [
+        "high-availability/overview",
+        "high-availability/prepare-for-high-availability",
+        "high-availability/high-availability-installation"
+      ]
+    },
+    {
+      "type": "category",
       "label": "最佳实践",
       "items": [
         "best-practices/configure-grpc"
