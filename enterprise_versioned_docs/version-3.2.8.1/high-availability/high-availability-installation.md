@@ -85,4 +85,4 @@ docker run -d -p 17900:17900 -v ./dp-manager-config.yaml:/usr/local/api7/conf/co
 
 **3. 点击 `新增网关实例`**
 
-参考 [新增网关实例](../api-full-lifecycle-management/api-runtime/add-gateway-instances.md) 完成操作.
+参考 [添加网关实例](../api-full-lifecycle-management/api-runtime/add-gateway-instances.md) 完成操作.
