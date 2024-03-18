@@ -23,7 +23,7 @@ slug: /high-availability/high-availability-installation
 
 ## 控制面部署步骤
 
-API7 Dashboard 是控制平面的一个逻辑组件，它是一个 Web GUI 并处理业务逻辑。API7 Dashboard 是一个无状态服务，所有数据信息都存储在PostgreSQL 中。
+API7 Dashboard 是控制面的一个逻辑组件，它是一个 Web GUI 并处理业务逻辑。API7 Dashboard 是一个无状态服务，所有数据信息都存储在PostgreSQL 中。
 
 此外，您可以在所有 API7 Dashboard 节点之前部署一个负载均衡。
 
