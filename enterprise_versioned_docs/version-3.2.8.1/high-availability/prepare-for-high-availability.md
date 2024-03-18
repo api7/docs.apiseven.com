@@ -11,7 +11,7 @@ slug: /high-availability/prepare-for-high-availability
 
 ## 准备主机
 
-要部署 API7企业版高可用性架构，至少需要4台主机（2台用于控制面高可用，2台用于数据面高可用）。
+要部署 API7 企业版高可用性架构，至少需要4台主机（2台用于控制面高可用，2台用于数据面高可用）。
 
 请注意，虽然数据库高可用也是一个需要考虑的重要方面，但本文档并未涵盖。建议您单独处理这个问题，以确保数据存储系统的弹性和容错性。有关如何为PostgreSQL 配置高可用的详细信息，请参阅[PostgreSQL 文档](https://www.postgresql.org/docs/current/high-availability.html)。
 
