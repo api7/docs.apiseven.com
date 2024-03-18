@@ -18,8 +18,8 @@ slug: /high-availability/high-availability-installation
 
 ### 前提条件
 
-- 完成 [高可用配置准备](./prepare-for-high-availability.md).
-- Install PostgreSQL and Prometheus (optional).
+- 完成 [高可用配置准备](./prepare-for-high-availability.md)。
+- 自行另外安装 PostgreSQL 和 Prometheus (可选)。
 
 ## 控制面部署步骤
 
