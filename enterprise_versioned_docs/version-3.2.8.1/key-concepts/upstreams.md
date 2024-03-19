@@ -6,11 +6,11 @@ slug: /key-concepts/upstreams
 API7 企业版中的上游对象是一组包含一个或多个上游节点地址的逻辑抽象。[服务](./services.md)中需要使用它来指定请求的流向和分发方式。
 服务与上游之间通常是一对多（1:N）的关系。
 
-下面是路由中上游配置的一个示例，其中三个不同的路由共享同一个上游节点地址：
+下面是路由中上游配置的一个示例：
 
 <br />
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/08/28/PvcCbptb_ec8ef4d8ab047e05e480f6f061d5348.png"
+<img src="https://static.apiseven.com/uploads/2024/03/19/l41chml4_%E4%B8%8A%E6%B8%B8%E6%A6%82%E5%BF%B5.png"
     alt="Upstreams Diagram show three routes with different plugins pointing to the same upstream object with the desired upstream address"
     width="95%" />
 </div>
