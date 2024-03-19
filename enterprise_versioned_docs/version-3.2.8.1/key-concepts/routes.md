@@ -9,7 +9,7 @@ slug: /key-concepts/routes
 
 <br />
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/08/28/OjhsQvuK_ce57b0d7d4608a6edb50e3eb61767f3.png" alt="Routes Diagram" width="90%" />
+<img src="https://static.apiseven.com/uploads/2024/03/19/Gyk46ZXd_%E8%B7%AF%E7%94%B1%E6%A6%82%E5%BF%B5.png" alt="Routes Diagram" width="90%" />
 </div>
 <br /><br />
 

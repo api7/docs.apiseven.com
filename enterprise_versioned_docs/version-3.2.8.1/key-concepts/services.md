@@ -5,11 +5,11 @@ slug: /key-concepts/services
 
 服务代表一个后端应用程序，包含该应用程序提供的所有 API。一般来说，服务与[路由](routes.md)是一对多的关系，与[上游](upstreams.md)是一对一的关系。唯一的例外是在流量灰度过程中，服务会暂时有两个上游。
 
-下图展示了一个已发布的服务，该服务架构了 Foodbar Company（一家虚构的公司）的宠物店（`store`）后台。在获取数据（[HTTP GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)）时，有两个配置不同的路由。
+下图展示了一个已发布的服务，该服务架构了一个宠物店（`Petstore`）后台。
 
 <br />
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/08/28/tfuuyRoQ_978a5a1ba0be7a427a8506fb42bb404.png" alt="Services Diagram" width=" 95%" />
+<img src="https://static.apiseven.com/uploads/2024/03/19/5xIGO6Nu_%E6%9C%8D%E5%8A%A1%E6%A6%82%E5%BF%B5.png" alt="Services Diagram" width=" 95%" />
 </div>
 <br /><br />
 
@@ -19,13 +19,11 @@ slug: /key-concepts/services
 
 :::
 
-## 将插件应用于服务
-
-请注意，`limit-count` 插件只能在服务对象上配置一次，以管理来自两个路径的传入客户端请求。
-
 ## 高可用性
 
-为简单起见，上述示例只将流量导向一个上游节点。不过，你可以根据需要添加更多上游节点，以保持运行顺畅并对用户做出响应，同时避免单点故障。你还可以使用服务发现功能动态获取最新的上游节点。
+为简单起见，上述示例只将流量导向唯一的上游节点。不过，你可以根据需要添加更多上游节点，以保持运行顺畅并对用户做出响应，同时避免单点故障。你还可以使用服务发现功能动态获取最新的上游节点。
+参考阅读：
+- [确保上游高可用性](../api-full-lifecycle-management/api-publishing/ensure-upstream-high-availability.md)
 
 ## 服务状态
 
