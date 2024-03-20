@@ -31,8 +31,6 @@ Webhook 指不同应用程序或服务在发生某些事件时通过向预定义
     Detail: {{.Detail}}
     ```
 
-    ![添加 Webhook 模板](https://static.apiseven.com/uploads/2023/12/14/nAFnhFBh_add-webhook-template_zh.png)
-
 2. 单击**新增**。
 
 ## 设置告警策略
@@ -47,17 +45,11 @@ Webhook 指不同应用程序或服务在发生某些事件时通过向预定义
 2. 单击新创建的告警策略。
 3. 在**触发条件**区域，单击**更新**。
 4. 选择`网关实例离线`作为类型 1，然后选择 `5 分钟`。
-
-    ![更新告警条件](https://static.apiseven.com/uploads/2023/12/08/oyy7C8tg_update-alrm-policy_zh.png)
-
 5. 单击**更新**。
 6. 在**基本信息**区域，单击**更新**。在对话框中，执行以下操作：
 
     - **告警标题**：`API7 Gateway Instance Offline`
     - **告警详细信息**：`Please check the instance and recover immediately`
-
-    ![更新告警基本信息](https://static.apiseven.com/uploads/2023/12/08/cguym8cq_update-alarm-policy-basic_zh.png)
-
 8. 单击**更新**。
 9. 在 **Webhook 通知**区域，单击**开启**，启用`邮件通知`模板。
 

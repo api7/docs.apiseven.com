@@ -25,9 +25,6 @@ slug: /api-full-lifecycle-management/api-publishing/rollback-apis
 2. 选择 `Swagger Petstore` 服务，单击**查看历史版本**。
 
 3. 选择版本 `1.0.0`，然后单击**回滚**。
-
-    ![回滚服务-API Provider](https://static.apiseven.com/uploads/2023/12/15/owgP2und_rollback-service-as-api-provider_zh.png)
-
 4. 输入服务名称，然后单击**回滚**。
 
 ## 作为运行时管理员回滚服务
@@ -36,7 +33,4 @@ slug: /api-full-lifecycle-management/api-publishing/rollback-apis
 2. 从左侧导航栏中选择**已发布服务**。
 3. 展开服务 `Swagger Petstore` 的历史版本。
 4. 选择版本 `1.0.0`，然后单击**回滚**。
-
-    ![回滚服务-Runtime Admin](https://static.apiseven.com/uploads/2023/12/08/gCeuIm1f_rollback-service-runtime-admin_zh.png)
-
 5. 输入服务名称，然后单击**回滚**。

@@ -74,9 +74,6 @@ API7 企业版支持收集路由访问信息并记录为日志，如主机、客
 2. 从左侧导航栏中选择**插件设置**。
 3. 选择**插件全局规则**页签，在**插件**字段中，搜索 `clickhouse-logger` 插件。
 4. 单击**加号**图标 (+)，弹出对话框。
-
-    ![启用插件](https://static.apiseven.com/uploads/2023/12/08/S6JiAqNg_clickhouse-logger_plugin.png)
-
 5. 应用以下配置：
 
     ```json

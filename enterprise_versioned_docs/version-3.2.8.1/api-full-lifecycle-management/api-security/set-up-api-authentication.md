@@ -65,13 +65,6 @@ slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
 ### 添加消费者
 
 1. 从左侧导航栏中选择**消费者**，然后单击**新增消费者**。
-
-    <br />
-    <div style={{textAlign: 'center'}}>
-    <img src="https://static.apiseven.com/uploads/2023/12/15/nqzPdK8E_add_consumer_zh.png" alt="新增消费者" width="95%" />
-    </div>
-    <br />
-
 2. 在**新增消费者**对话框中，执行以下操作：
 
     - 在**网关组**字段中，选择`测试网关组`。
@@ -85,9 +78,6 @@ slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
 1. 从左侧导航栏中选择**消费者**，然后选择 **Alice**。
 2. 在**插件**字段中，搜索 `key-auth` 插件。
 3. 单击**加号**图标 (+)，弹出对话框。
-
-    ![Enable key-auth](https://static.apiseven.com/uploads/2023/12/08/kTLnhWaM_enable-key-auth_zh.png)
-
 4. 应用以下配置：
 
     ```json

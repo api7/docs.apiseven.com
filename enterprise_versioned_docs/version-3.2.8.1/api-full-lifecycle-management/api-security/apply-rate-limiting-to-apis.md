@@ -28,9 +28,6 @@ API7 企业版提供速率限制功能，通过限制给定时间段内发送到
 2. 从左侧导航栏中选择**插件**。
 3. 在**插件**字段中，搜索 `limit-count` 插件。
 4. 单击**加号**图标 (+)，弹出对话框。
-
-    ![启用插件](https://static.apiseven.com/uploads/2023/12/08/1wM3wLm6_limit-count_plugin_zh.png)
-
 5. 应用以下配置：
 
     ```json
@@ -129,9 +126,6 @@ Server: APISIX/dev
 2. 从左侧导航栏中选择**插件**。
 3. 在**插件**字段中，搜索 `limit-req` 插件。
 4. 单击**加号**图标 (+)，弹出对话框。
-
-    ![启用插件](https://static.apiseven.com/uploads/2023/12/08/YHaTF3s1_limit-req_zh.png)
-
 5. 应用以下配置：
 
     ```json

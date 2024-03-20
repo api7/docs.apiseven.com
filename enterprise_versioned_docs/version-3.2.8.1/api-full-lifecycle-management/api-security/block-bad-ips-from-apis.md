@@ -22,9 +22,6 @@ slug: /api-full-lifecycle-management/api-security/block-bad-ips-from-apis
 2. 从左侧导航栏中选择**插件设置**。
 3. 选择**插件全局规则**页签，在**插件**字段中，搜索 `ip-restriction` 插件。
 4. 单击**加号**图标 (+)，弹出对话框。
-
-    ![启用插件](https://static.apiseven.com/uploads/2023/12/08/HdYGTNCQ_ip-restriction_plugin.png)
-
 5. 应用以下配置，将 IP 地址 `127.0.0.1` 添加到黑名单：
 
     ```json
