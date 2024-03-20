@@ -21,9 +21,6 @@ slug: /getting-started/launch-your-first-api
 
 1. 从左侧导航栏中选择**服务**，然后单击**新增服务**。
 2. 选择**手动新增**，弹出**新增服务**对话框，如下所示：
-
-    ![新增服务](https://static.apiseven.com/uploads/2024/01/24/GWwILuaG_add-service_zh.png)
-
 3. 在**新增服务**对话框中，执行以下操作：
     - 在**名称**字段中，输入 `httpbin`。
     - 在**上游 Scheme** 字段中，选择 `HTTP`。
@@ -34,9 +31,6 @@ slug: /getting-started/launch-your-first-api
 如需创建路由，遵循以下步骤：
 
 1. 单击上一步中创建的服务，然后单击**添加路由**。弹出**新增路由**对话框，如下所示：
-
-    ![新增路由](https://static.apiseven.com/uploads/2023/12/07/KI3qHN3j_add-route_zh.png)
-
 2. 在**新增路由**对话框中，执行以下操作：
     - 在**路由名称**字段中，输入 `getting-started-ip`。
     - 在**路径**字段中，输入 `/ip`。
@@ -52,15 +46,7 @@ slug: /getting-started/launch-your-first-api
 3. 在弹出的对话框中，执行以下操作：
     - 在**新版本**字段中，输入 `1.0.0`。
     - 在**如何找到上游**字段中，选择`使用节点`。
-    <br />
-    <div style={{textAlign: 'center'}}>
-    <img src="https://static.apiseven.com/uploads/2024/01/24/7UoIuF7k_publish-service-httpbin-1.0.0_zh.png" alt="发布服务" width="95%" />
-    </div>
-    <br /><br />
 4. 单击**新增节点**，弹出**新增节点**对话框，如下所示：
-
-    ![添加节点](https://static.apiseven.com/uploads/2024/01/24/UdGAuSQv_add_node_httpbbin_zh.png)
-
 5. 在**新增节点** 对话框中，执行以下操作：
     - 在**主机** 字段中，输入 `httpbin.org`。
     - 在**端口** 字段中，输入 `80`。
@@ -83,5 +69,3 @@ curl "http://127.0.0.1:9080/ip" # 将 127.0.0.1 替换为缺省网关组的地�
   "origin": "127.0.0.1"
 }
 ```
-
-恭喜你。你的第一个 API 可以正常运行。
