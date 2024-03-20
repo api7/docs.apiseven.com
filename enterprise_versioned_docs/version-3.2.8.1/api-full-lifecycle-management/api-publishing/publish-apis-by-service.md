@@ -105,9 +105,6 @@ Consul、Eureka、Nacos 或 Kubernetes Service Discovery 等服务发现机制�
 
 1. 从左侧导航栏中选择**网关组**，然后单击**测试网关组**。
 2. 从左侧导航栏中选择**服务注册中心**，然后单击**新增服务注册中心连接**。
-
-    ![连接服务注册中心-Nacos](https://static.apiseven.com/uploads/2024/02/27/suxN3J35_nacos-service-registry_zh.png)
-
 3. 在**新增服务注册中心连接**对话框中，执行以下操作：
     - 在**名称**字段中，输入`测试服务注册中心`。
     - 在**发现类型**字段中，选择 `Nacos`。
