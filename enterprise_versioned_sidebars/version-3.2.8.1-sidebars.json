@@ -18,7 +18,6 @@
         "key-concepts/gateway-instances",
         "key-concepts/consumers",
         "key-concepts/plugins",
-        "key-concepts/service-discovery",
         {
           "type": "category",
           "label": "身份认证",
