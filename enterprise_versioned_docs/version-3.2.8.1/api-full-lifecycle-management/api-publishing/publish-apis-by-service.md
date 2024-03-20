@@ -47,11 +47,6 @@ slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
 3. 在弹出的对话框中，执行以下操作：
     - 在**新版本**字段中，输入 `1.0.0`。
     - 在**如何找到上游**字段中，选择`使用节点`。
-    <br />
-    <div style={{textAlign: 'center'}}>
-    <img src="https://static.apiseven.com/uploads/2024/01/24/Tkc4kaLa_publish-service-openAI_node_zh.png" alt="发布服务" width="95%" />
-    </div>
-    <br /><br />
 5. 单击**新增节点**。在对话框中，执行以下操作：
     - 在**主机**和**端口**字段中，输入测试环境中的后端节点地址或模拟服务器地址。
     - 在**权重**字段中，使用默认值 `100`。
@@ -66,9 +61,6 @@ slug: /api-full-lifecycle-management/api-publishing/publish-apis-by-service
     - 在**服务**字段中，选择 `Swagger Petstore`。
     - 在**新版本**字段中，输入 `1.0.0`。
     - 单击**新增**。
-
-    ![由 OpenAI 发布服务](https://static.apiseven.com/uploads/2024/01/24/Tkc4kaLa_publish-service-openAI_node_zh.png)
-
 4. 确认服务信息，然后单击**下一步**。
 5. 在**如何查找上游**字段中，选择`使用节点`。
 7. 单击**新增节点**。在对话框中，执行以下操作：
@@ -93,9 +85,6 @@ Consul、Eureka、Nacos 或 Kubernetes Service Discovery 等服务发现机制�
 
 1. 从左侧导航栏中选择**网关组**，然后单击**测试网关组**。
 2. 从左侧导航栏中选择**服务注册中心**，然后单击**新增服务注册中心连接**。
-
-    ![连接服务注册中心-k8s](https://static.apiseven.com/uploads/2024/02/27/UmflegZA_k8s-service-registry_zh.png)
-
 3. 在**新增服务注册中心连接**对话框中，执行以下操作：
     - 在**名称**字段中，输入`测试服务注册中心`。
     - 在**发现类型**字段中，选择 `Kubernetes`。
@@ -107,12 +96,6 @@ Consul、Eureka、Nacos 或 Kubernetes Service Discovery 等服务发现机制�
 7. 在弹出的对话框中，执行以下操作：
     - 在**新版本**字段中，输入 `1.0.0`。
     - 在**如何找到上游**字段中，选择`使用服务发现`。
-    <br />
-    <div style={{textAlign: 'center'}}>
-    <img src="https://static.apiseven.com/uploads/2024/01/24/01dfz0H0_publish-service-openAI_zh.png" alt="发布服务" width="95%" />
-    </div>
-    <br /><br />
-
     - 在**服务注册中心**字段中，选择`测试服务注册中心`，服务注册中心中的命名空间和服务名称字段。
 8. 确认服务信息，然后单击**发布**。
 
@@ -136,12 +119,6 @@ Consul、Eureka、Nacos 或 Kubernetes Service Discovery 等服务发现机制�
 7. 在弹出的对话框中，执行以下操作：
     - 在**新版本**字段中，输入 `1.0.0`。
     - 在**如何找到上游**字段中，选择`使用服务发现`。
-    <br />
-    <div style={{textAlign: 'center'}}>
-    <img src="https://static.apiseven.com/uploads/2024/01/24/01dfz0H0_publish-service-openAI_zh.png" alt="发布服务" width="95%" />
-    </div>
-    <br /><br />
-
     - 在**服务注册中心**字段中，选择`测试服务注册中心`，服务注册中心中的命名空间、组和服务名称字段。
 8. 确认服务信息，然后单击**发布**。
 
