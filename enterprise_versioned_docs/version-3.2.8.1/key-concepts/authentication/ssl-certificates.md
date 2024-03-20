@@ -1,6 +1,6 @@
 ---
 title: SSL 证书
-slug: /key-concepts/ssl-certificates
+slug: /key-concepts/authentication/ssl-certificates
 ---
 
 在本文档中，你将了解 SSL 证书对象的基本概念以及可能需要它们的场景。
