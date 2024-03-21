@@ -55,7 +55,7 @@
       "label": "API 消费",
       "items": [
         "api-consumption/manage-consumer-credentials",
-        "api-consumption/consumer-restirction"
+        "api-consumption/consumer-restriction"
       ]
     },
     {
