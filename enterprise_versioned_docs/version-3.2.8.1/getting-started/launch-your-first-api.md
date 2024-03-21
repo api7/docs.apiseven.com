@@ -12,12 +12,10 @@ slug: /getting-started/launch-your-first-api
 ## 前提条件
 
 1. 安装 [API7 企业版](./install-api7-ee.md)。
-2. 获取具有[超级管理员](../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../administration/role-based-access-control.md#api-提供者)角色的用户账户。
+2. 获取一个具有**超级管理员** 或 **API 提供者** 角色的用户账户。
 3. 确保缺省网关组中至少有一个[网关实例](../key-concepts/gateway-instances)。
 
 ## 步骤 1：创建服务
-
-如需创建服务，遵循以下步骤：
 
 1. 从左侧导航栏中选择**服务**，然后单击**新增服务**。
 2. 选择**手动新增**，弹出**新增服务**对话框，如下所示：
@@ -28,8 +26,6 @@ slug: /getting-started/launch-your-first-api
 
 ## 步骤 2：创建路由
 
-如需创建路由，遵循以下步骤：
-
 1. 单击上一步中创建的服务，然后单击**添加路由**。弹出**新增路由**对话框，如下所示：
 2. 在**新增路由**对话框中，执行以下操作：
     - 在**路由名称**字段中，输入 `getting-started-ip`。
@@ -38,8 +34,6 @@ slug: /getting-started/launch-your-first-api
 3. 单击**新增**。
 
 ## 步骤 3：发布服务
-
-如需发布服务，遵循以下步骤：
 
 1. 从左侧导航栏中选择**服务**，然后选择 `httpbin` 服务并单击**立即发布**。
 2. 选择 `缺省网关组`，然后单击**下一步**。
@@ -59,7 +53,7 @@ slug: /getting-started/launch-your-first-api
 发送 API 请求：
 
 ```bash
-curl "http://127.0.0.1:9080/ip" # 将 127.0.0.1 替换为缺省网关组的地址。
+curl "http://127.0.0.1:9080/ip" 
 ```
 
 你应该会看到以下输出：

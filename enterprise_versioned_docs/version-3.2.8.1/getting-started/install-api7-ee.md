@@ -26,8 +26,6 @@ curl -sL "https://run.api7.ai/api7/quickstart" | bash
 ```bash
 ✔ Container api7-ee-postgresql
 ✔ Container api7-ee-prometheus
-✔ Container api7-ee-etcd
-✔ Container api7-ee-keycloak
 ✔ Container api7-ee-api7-ee-dashboard
 ✔ Container api7-ee-api7-ee-dp-manager
 ✔ Container api7-ee-api7-ee-gateway

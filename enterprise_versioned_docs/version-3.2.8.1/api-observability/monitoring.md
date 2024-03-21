@@ -1,6 +1,6 @@
 ---
-title: 监控 API 指标
-slug: /api-full-lifecycle-management/api-runtime/monitor-api-metrics
+title: API 指标监控
+slug: /api-observability/monitoring
 ---
 
 API7 企业版支持以最小的延迟向监控系统公开一组全面的指标，从而促进持续的监控和诊断。API7 企业版的监控和报警框架基于广泛使用的系统监控和报警工具包 Prometheus 进行构建。Prometheus 收集并存储多维时间序列数据，包括用键值标签注释的指标。
@@ -9,14 +9,18 @@ API7 企业版支持以最小的延迟向监控系统公开一组全面的指标
 
 ## 前提条件
 
-1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
-2. [以服务维度发布 API](../api-publishing/publish-apis-by-service.md)。
+1. 获取一个具有**超级管理员** 或 **运行时管理员** 角色的用户账户。
+2. [发布一个服务](../getting-started/publish-service.md)，其中会包含至少一个 API。
 
 ## 监控所有服务
 
 建议启用 `prometheus` 插件作为全局规则，确保所有服务和路线都得到一致的监控和跟踪。
 
-如需监控所有服务，遵循以下步骤：
+:::info
+
+所有网关组在创建时都默认开启了`prometheus` 插件作为全局规则，如需取消后重新开启，或关闭此插件，请查看以下说明。
+
+::::
 
 1. 从左侧导航栏中选择**网关组**，然后选择**测试网关组**。
 2. 从左侧导航栏中选择**插件设置**。

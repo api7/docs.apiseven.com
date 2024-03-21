@@ -1,6 +1,6 @@
 ---
-title: 阻止 API 中的恶意 IP 地址
-slug: /api-full-lifecycle-management/api-security/block-bad-ips-from-apis
+title: 屏蔽恶意 IP 地址
+slug: /api-security/block-ip
 ---
 
 为了保护 API 免受来自恶意 IP 地址的攻击，你可以配置 IP 地址黑名单来阻止来自这些特定 IP 地址的请求。
@@ -9,14 +9,12 @@ slug: /api-full-lifecycle-management/api-security/block-bad-ips-from-apis
 
 ## 前提条件
 
-1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
-2. [以服务维度发布 API](../api-publishing/publish-apis-by-service.md)。
+1. 获取一个具有**超级管理员** 或 **运行时管理员** 角色的用户账户。
+2. [发布一个服务](../getting-started/publish-service.md)，其中会包含至少一个 API。
 
-## 为所有 API 设置共享 IP 地址黑名单
+## 为网关组内所有 API 设置共享 IP 地址黑名单
 
 一旦发现恶意 IP 地址正在攻击 API，最好将该 IP 地址添加到共享黑名单中以保护其他 API。
-
-如需设置共享 IP 地址黑名单，遵循以下步骤：
 
 1. 从左侧导航栏中选择**网关组**，然后选择**测试网关组**。
 2. 从左侧导航栏中选择**插件设置**。
@@ -38,7 +36,7 @@ slug: /api-full-lifecycle-management/api-security/block-bad-ips-from-apis
 发送 API 请求：
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为测试网关组的地址。
+curl -i "http://127.0.0.1:9080/pet/1" 
 ```
 
 由于IP地址受到黑名单的限制，此时，你将看到以下输出：

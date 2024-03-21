@@ -1,22 +1,20 @@
 ---
-title: 触发告警
-slug: /api-full-lifecycle-management/api-runtime/trigger-alerts
+title: 告警通知
+slug: /api-observability/alert
 ---
 
-异常流量模式或 API 使用错误可能表明存在问题或恶意攻击。设置告警有助于快速检测此类异常活动。通过为某些阈值和活动设置告警，你可以深入了解表示安全漏洞、滥用或异常使用的模式。
+异常流量的出现或频繁的 API 报错可能表明 API 本身存在问题，或遭到了恶意攻击。设置告警有助于快速检测此类异常活动。通过为某些关键指标和活动设置告警，你可以深入了解并及时识别安全漏洞、API 滥用或异常使用。
 
 ## 前提条件
 
-1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
-2. [以服务维度发布 API](../api-publishing/publish-apis-by-service.md)。
+1. 获取一个具有**超级管理员** 或 **运行时管理员** 角色的用户账户。
+2. [发布一个服务](../getting-started/publish-service.md)，其中会包含至少一个 API。
 3. 获取通知系统的 Webhook。
 
 ## 创建 Webhook 模板
 
 每个告警策略至少需要一个用于通知的 Webhook 模板。 Webhook 模板定义事件发生时通过 Webhook 发送的数据的内容和结构。多个策略可以共享相同的 Webhook 模板。
 Webhook 指不同应用程序或服务在发生某些事件时通过向预定义的 URL 发送 HTTP 请求来实时相互通信的一种方式。
-
-如需创建 Webhook 模板，遵循以下步骤：
 
 1. 从左侧导航栏中选择**告警** > **Webhook 模板**，然后单击**新增模板**。在对话框中，执行以下操作：
     - 在**名称**字段中，输入`邮件通知`。
@@ -35,8 +33,8 @@ Webhook 指不同应用程序或服务在发生某些事件时通过向预定义
 
 ## 设置告警策略
 
-告警策略是一组预定义的条件和规则，用于在发生某些事件或条件时触发特定操作或通知。
-本节介绍如何为网关实例离线通知配置告警策略。如果网关实例在过去 10 分钟内离线，该策略将调用 Webhook 通知相关人员。
+告警策略是一组预定义的条件和规则，用于在发生某些事件或条件时通过触发 Webhook 发送通知。
+本节将举例介绍如何为网关实例离线通知配置告警策略。如果网关实例在过去 10 分钟内离线，该策略将调用 Webhook 通知相关人员。
 
 1. 选择**告警** > **策略**，然后单击 **新增告警策略**。在对话框中，执行以下操作：
     - 选择告警策略的生效范围。
@@ -48,8 +46,8 @@ Webhook 指不同应用程序或服务在发生某些事件时通过向预定义
 5. 单击**更新**。
 6. 在**基本信息**区域，单击**更新**。在对话框中，执行以下操作：
 
-    - **告警标题**：`API7 Gateway Instance Offline`
-    - **告警详细信息**：`Please check the instance and recover immediately`
+    - **告警标题**：`API7 网关实例离线`
+    - **告警详细信息**：`请检查网关实例运行状况并尽快修复。`
 8. 单击**更新**。
 9. 在 **Webhook 通知**区域，单击**开启**，启用`邮件通知`模板。
 
@@ -59,9 +57,8 @@ Webhook 指不同应用程序或服务在发生某些事件时通过向预定义
 
 ```bash
 hello, here is an alert example. 
-Title: API7 Gateway Instance Offline 
+Title: API7 网关实例离线 
 AlertTime: 2006 Jan 02 15:04:05"
 Severity: Medium 
-Detail: Please check the instance and recover immediately
+Detail: 请检查网关实例运行状况并尽快修复。
 ```
-
