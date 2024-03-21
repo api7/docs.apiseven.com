@@ -69,7 +69,7 @@ API7 企业版允许通过将 `_meta.filter` 配置应用于插件来动态控�
 
 <br/>
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/08/28/mFUX70sm_b11fd18b93350454e0da95e97813e51.png" alt="带有全局规则、消费者和路由的图表" width="95%"/>
+<img src="https://static.apiseven.com/uploads/2024/03/20/RdbVhNmP_%E5%85%A8%E5%B1%80%E6%8F%92%E4%BB%B6%E8%A7%84%E5%88%99%E6%A6%82%E5%BF%B5.png" alt="带有全局规则、消费者和路由的图表" width="95%"/>
 </div>
 <br/>
 
