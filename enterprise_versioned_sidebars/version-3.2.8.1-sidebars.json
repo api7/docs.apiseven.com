@@ -104,8 +104,8 @@
           "type": "category",
           "label": "API 管理",
           "items": [
-            "reference/api-management/build-api-endpoints",
-            "reference/api-management/design-apis"
+            "reference/build-api-endpoints",
+            "reference/design-apis"
           ]
         }
       ]
