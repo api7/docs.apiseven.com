@@ -1,6 +1,6 @@
 ---
 title: 设计 API
-slug: "/api-full-lifecycle-management/design-apis"
+slug: "/reference/design-apis"
 ---
 
 工程师总是强调在编码前设计计划的重要性。你需要根据业务需求明确 API 的功能目的，然后将业务语言转化为技术语言。通常，API 的设计围绕文档展开。

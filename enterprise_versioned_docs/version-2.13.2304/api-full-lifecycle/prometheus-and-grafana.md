@@ -7,7 +7,7 @@ tags:
 
 为了让 Web 应用程序跨不同的源发出请求（即向不同于请求页面的方案、主机名或端口的 URL 发出请求），实现了一组名为跨源资源共享 (CORS) 的规则。每当进行跨源请求时，浏览器都会发送一个 Origin 请求头，服务器必须以匹配的 Access-Control-Allow-Origin (ACAO) 响应头进行响应。如果这两个头不匹配，浏览器将拒绝响应，导致任何依赖于该数据的应用程序组件失效。
 
-这份指南将帮助您启用API的CORS插件，以便您的应用程序能够无缝地在跨域请求之间通信。通过使用CORS插件，您可以轻松地解决由于跨域请求导致的浏览器拒绝响应的问题，确保您的应用程序组件能够正常工作，为您的用户提供更加流畅的体验。
+这份指南将帮助你启用API的CORS插件，以便你的应用程序能够无缝地在跨域请求之间通信。通过使用CORS插件，你可以轻松地解决由于跨域请求导致的浏览器拒绝响应的问题，确保你的应用程序组件能够正常工作，为你的用户提供更加流畅的体验。
 
 ## 背景知识
 
@@ -64,17 +64,17 @@ tags:
 
 1.  在网络浏览器中访问https://test-cors.org/。
 
-2.  在test-cors.org网站界面上，您将看到设置请求参数的选项，如URL、HTTP方法、请求头、请求体等。根据您的要求，将目标URL设置为您的`CreateOrders`这个 API。
+2.  在test-cors.org网站界面上，你将看到设置请求参数的选项，如URL、HTTP方法、请求头、请求体等。根据你的要求，将目标URL设置为你的`CreateOrders`这个 API。
 
 3. 在请求头中将`Origin`头设置为`cors.test.com`，表示请求来自“cors.test.com”。
 
 4. 点击`Fetch`或`Submit`按钮，将 CORS 请求发送到目标 URL。
 
-5. test-cors.org将模拟 Web 浏览器的 CORS 行为，并在网页上显示来自目标服务器的响应。您不应该收到 CORS 错误。
+5. test-cors.org将模拟 Web 浏览器的 CORS 行为，并在网页上显示来自目标服务器的响应。你不应该收到 CORS 错误。
 
 6. 将请求头中的`Origin`头更改为`cors.error.com`或其他任意来源，然后单击`Fetch`或`Submit`按钮。
 
-7. 您将能够在网页上看到相应的错误信息，如“CORS被阻止”，“从源'cors.test.com'到目标URL的XMLHttpRequest访问已被CORS策略阻止”，等等。
+7. 你将能够在网页上看到相应的错误信息，如“CORS被阻止”，“从源'cors.test.com'到目标URL的XMLHttpRequest访问已被CORS策略阻止”，等等。
 
 
 

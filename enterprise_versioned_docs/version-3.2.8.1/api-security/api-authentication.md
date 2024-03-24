@@ -1,36 +1,18 @@
 ---
-title: 配置 API 认证
-slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
+title: 开启 API 身份认证
+slug: /api-security/api-authentication
 ---
-
-出于安全考虑，API7 企业版应在消费者访问内部资源前对其进行认证和授权。API7 企业版提供了灵活的插件扩展系统和大量插件，用于用户认证和授权。例如：
-
-- 密钥认证
-- 基本认证
-- JWT 认证
-- Keycloak
-- Casdoor
-- Wolf RBAC
-- OpenID Connect
-- 中央认证服务（Central Authentication Service，CAS）
-- HMAC
-- Casbin
-- LDAP
-- 开放策略代理（Open Policy Agent，OPA）
-- 转发认证
-
-每个路由可以选择的一种认证机制。不同路由可以使用不同的认证。但是，请勿在单个路由上启用多个认证插件，或者将认证插件作为全局规则启用。
 
 ## 前提条件
 
-1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
-2. [以服务维度发布 API](../api-publishing/publish-apis-by-service.md)。
+1. 获取一个具有**超级管理员** 或 **API 提供者** 角色的用户账户。
+2. [发布一个服务](../getting-started/publish-service.md)，其中会包含至少一个 API。
 
 ## 为单个服务设置密钥认证
 
 如果要为单个服务的所有现有和未来路由启用密钥认证，请在服务级别启用 `key-auth` 插件。这样就禁止在路由级别启用其他认证插件。
 
-由于插件配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后将新版本发布到网关组。
+由于插件配置不属于[运行时配置](../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后将新版本发布到网关组。
 
 1. 从左侧导航栏中选择**服务**，然后选择 **Swagger Petstore**。
 2. 从左侧导航栏中选择**插件**。
@@ -46,7 +28,7 @@ slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
 
 如果要为单个路由启用密钥认证，请尝试在路由级别启用 `key-auth` 插件。
 
-由于插件配置不属于[运行时配置](../../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后将新版本发布到网关组。
+由于插件配置不属于[运行时配置](../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后将新版本发布到网关组。
 
 1. 从左侧导航栏中选择**服务**，然后选择 **Swagger Petstore**。
 2. 从左侧导航栏中选择 **Routes**，然后选择 **getPetById**。
@@ -60,7 +42,7 @@ slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
 
 ## 验证
 
-本章介绍如何为[服务](../../key-concepts/services.md)和[消费者](../../key-concepts/consumers.md)配置认证。
+要验证 API 身份认证的效果，需要创建一个[消费者](../key-concepts/consumers.md)，并在消费者中也启用身份认证，并配置相应的访问凭证。
 
 ### 添加消费者
 
@@ -73,7 +55,6 @@ slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
 3. 单击**新增**。
 
 ### 为消费者启用密钥认证
-
 
 1. 从左侧导航栏中选择**消费者**，然后选择 **Alice**。
 2. 在**插件**字段中，搜索 `key-auth` 插件。
@@ -91,7 +72,7 @@ slug: /api-full-lifecycle-management/api-security/set-up-api-authentication
 ### 未使用密钥发送请求
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为测试网关组的地址。
+curl -i "http://127.0.0.1:9080/pet/1" 
 ```
 
 你应该看到以下输出：
@@ -110,7 +91,7 @@ Server: APISIX/dev
 ### 使用错误的密钥发送请求
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: wrongkey" # 将 127.0.0.1 替换为测试网关组的地址。
+curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: wrongkey" 
 ```
 
 你应该看到以下输出：
@@ -129,7 +110,7 @@ Server: APISIX/dev
 ### 使用正确的密钥发送请求
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: secret-key" # 将 127.0.0.1 替换为测试网关组的地址。
+curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: secret-key" 
 ```
 
 你应该看到以下输出：
