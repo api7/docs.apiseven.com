@@ -23,7 +23,7 @@ slug: /key-concepts/services
 
 为简单起见，上述示例只将流量导向唯一的上游节点。不过，你可以根据需要添加更多上游节点，以保持运行顺畅并对用户做出响应，同时避免单点故障。你还可以使用服务发现功能动态获取最新的上游节点。
 参考阅读：
-- [确保上游高可用性](../api-full-lifecycle-management/api-publishing/ensure-upstream-high-availability.md)
+- [确保上游高可用性](../best-practices/upstream-ha.md)
 
 ## 服务状态
 
