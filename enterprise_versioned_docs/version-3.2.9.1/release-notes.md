@@ -13,7 +13,7 @@ slug: /release-notes
 
 #### 支持自定义插件管理
 
-API7 企业版支持上传你自行编写的自定义插件，以扩展 API 管理的功能。详情见[新增自定义插件](./best-practices/custom-plugin.md)
+API7 企业版支持上传你自行编写的自定义插件，以扩展 API 管理的功能。详情见[新增自定义插件](./best-practices/custom-plugin.md).
 
 #### 支持 OIDC 第三方登录
 
