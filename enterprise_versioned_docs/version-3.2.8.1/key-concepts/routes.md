@@ -13,7 +13,7 @@ slug: /key-concepts/routes
 </div>
 <br /><br />
 
-:::info
+:::warning
 
 如果你熟悉 Apache APISIX，请注意路由和服务之间的关系与 API7 企业版中的不同。
 
