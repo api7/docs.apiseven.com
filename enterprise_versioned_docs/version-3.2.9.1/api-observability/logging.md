@@ -1,9 +1,9 @@
 ---
-title: 记录 API 流量
-slug: /api-full-lifecycle-management/api-runtime/log-api-traffic
+title: API 日志管理
+slug: /api-observability/logging
 ---
 
-API7 企业版支持收集路由访问信息并记录为日志，如主机、客户端IP地址、请求时间戳等。这些信息有助于解决问题。API7 企业版提供了灵活的插件扩展系统和日志记录插件。例如：
+API7 企业版支持收集 API 的访问信息并记录为日志，如主机、客户端IP地址、请求时间戳等。这些信息有助于解决问题。API7 企业版提供了灵活的插件扩展系统和日志记录插件。例如：
 
 - 推送到 HTTP/TCP/UDP 日志服务器
 - SkyWalking
@@ -21,8 +21,8 @@ API7 企业版支持收集路由访问信息并记录为日志，如主机、客
 
 ## 前提条件
 
-1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
-2. [以服务维度发布 API](../api-publishing/publish-apis-by-service.md)。
+1. 获取一个具有**超级管理员** 或 **运行时管理员** 角色的用户账户。
+2. [发布一个服务](../getting-started/publish-service.md)，其中会包含至少一个 API。
 3. 获取自己的 ClickHouse 数据库的主机地址。
 4. 安装 [Docker](https://docs.docker.com/get-docker/)。
 
@@ -66,9 +66,9 @@ API7 企业版支持收集路由访问信息并记录为日志，如主机、客
 
 4. 输入`exit`命令，退出 Docker 命令行界面。
 
-## 配置所有服务的日志记录
+## 为所有服务开启日志记录
 
-为了实现最佳监控和跟踪，强烈建议启用日志记录插件作为全局规则，以确保所有服务和路由得到一致跟踪。
+为了实现最佳监控和跟踪，强烈建议启用日志记录插件作为全局规则，以确保所有服务和路由都得到跟踪记录。
 
 1. 从左侧导航栏中选择**网关组**，然后选择**测试网关组**。
 2. 从左侧导航栏中选择**插件设置**。
@@ -98,7 +98,7 @@ API7 企业版支持收集路由访问信息并记录为日志，如主机、客
 1. 向路由发送请求，生成访问日志条目：
 
     ```bash
-    curl -i "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为测试网关组的地址。
+    curl -i "http://127.0.0.1:9080/pet/1" 
     ```
 
 2. 使用 Docker 中的命令行工具 `clickhouse-client` 连接到 ClickHouse 实例：

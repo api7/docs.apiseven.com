@@ -4,13 +4,15 @@
       "type": "category",
       "label": "产品介绍",
       "items": [
-        "introduction/introduction"
+        "introduction/what-is-api7-ee",
+        "introduction/api7-ee-architecture"
       ]
     },
     {
       "type": "category",
       "label": "核心概念",
       "items": [
+        "key-concepts/overview",
         "key-concepts/services",
         "key-concepts/routes",
         "key-concepts/upstreams",
@@ -18,13 +20,9 @@
         "key-concepts/gateway-instances",
         "key-concepts/consumers",
         "key-concepts/plugins",
-        {
-          "type": "category",
-          "label": "身份认证",
-          "items": [
-            "key-concepts/authentication/ssl-certificates"
-          ]
-        }
+        "key-concepts/roles",
+        "key-concepts/authentication",
+        "key-concepts/ssl-certificates"
       ]
     },
     {
@@ -32,65 +30,41 @@
       "label": "快速入门",
       "items": [
         "getting-started/install-api7-ee",
-        "getting-started/launch-your-first-api"
+        "getting-started/launch-your-first-api",
+        "getting-started/publish-service",
+        "getting-started/canary-upstream",
+        "getting-started/sync-service",
+        "getting-started/rollback-service",
+        "getting-started/add-gateway-group",
+        "getting-started/add-gateway-instance",
+        "getting-started/rbac",
+        "getting-started/license"
       ]
     },
     {
       "type": "category",
-      "label": "API 全生命周期管理",
+      "label": "API 安全",
       "items": [
-        "api-full-lifecycle-management/design-apis",
-        "api-full-lifecycle-management/build-api-endpoints",
-        {
-          "type": "category",
-          "label": "API 发布",
-          "items": [
-            "api-full-lifecycle-management/api-publishing/api-version-control",
-            "api-full-lifecycle-management/api-publishing/publish-apis-by-service",
-            "api-full-lifecycle-management/api-publishing/ensure-upstream-high-availability",
-            "api-full-lifecycle-management/api-publishing/sync-apis-betweenn-gateway-groups",
-            "api-full-lifecycle-management/api-publishing/rollback-apis",
-            "api-full-lifecycle-management/api-publishing/canary-traffic-shifting"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "API 消费",
-          "items": [
-            "api-full-lifecycle-management/api-consumption/manage-consumer-credentials",
-            "api-full-lifecycle-management/api-consumption/apply-list-based-accesss-control"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "API 运行时",
-          "items": [
-            "api-full-lifecycle-management/api-runtime/add-gateway-groups",
-            "api-full-lifecycle-management/api-runtime/add-gateway-instances",
-            "api-full-lifecycle-management/api-runtime/monitor-api-metrics",
-            "api-full-lifecycle-management/api-runtime/log-api-traffic",
-            "api-full-lifecycle-management/api-runtime/trigger-alerts",
-            "api-full-lifecycle-management/api-runtime/track-gateway-instance-status"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "API 安全",
-          "items": [
-            "api-full-lifecycle-management/api-security/set-up-api-authentication",
-            "api-full-lifecycle-management/api-security/apply-rate-limiting-to-apis",
-            "api-full-lifecycle-management/api-security/block-bad-ips-from-apis"
-          ]
-        }
+        "api-security/api-authentication",
+        "api-security/rate-limiting",
+        "api-security/block-ip"
       ]
     },
     {
       "type": "category",
-      "label": "管理",
+      "label": "API 消费",
       "items": [
-        "administration/configure-login-methods",
-        "administration/renew-license",
-        "administration/role-based-access-control"
+        "api-consumption/manage-consumer-credentials",
+        "api-consumption/consumer-restriction"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "API 可观测性",
+      "items": [
+        "api-observability/monitoring",
+        "api-observability/logging",
+        "api-observability/alert"
       ]
     },
     {
@@ -106,22 +80,34 @@
       "type": "category",
       "label": "最佳实践",
       "items": [
-        "best-practices/configure-grpc"
+        "best-practices/api-version-control",
+        "best-practices/custom-plugin",
+        "best-practices/configure-grpc",
+        "best-practices/upstream-ha",
+        "best-practices/sso"
       ]
     },
     {
       "type": "doc",
-      "label": "版本说明",
+      "label": "更新日志",
       "id": "release-notes"
     },
     {
       "type": "category",
-      "label": "参考文档 ",
+      "label": "开发参考",
       "items": [
         {
           "type": "link",
-          "label": "Admin API",
+          "label": "Admin APIs",
           "href": "/enterprise/reference/admin-api"
+        },
+        {
+          "type": "category",
+          "label": "API 管理",
+          "items": [
+            "reference/build-api-endpoints",
+            "reference/design-apis"
+          ]
         }
       ]
     }

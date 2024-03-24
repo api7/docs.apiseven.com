@@ -1,6 +1,6 @@
 ---
 title: 灰度流量
-slug: /api-full-lifecycle-management/api-publishing/canary-traffic-shifting
+slug: /getting-started/canary-upstream
 ---
 
 通过使用灰度流量，你可以在新上游测试部分 API 流量，而之前的上游则继续处理其余流量。这一测试阶段可作为在将所有流量转移到新功能之前对其进行确认的安全措施。
@@ -13,8 +13,8 @@ slug: /api-full-lifecycle-management/api-publishing/canary-traffic-shifting
 
 ## 前提条件
 
-1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#API提供者)角色的用户账户。
-2. [以服务维度发布 API](../api-publishing/publish-apis-by-service.md)。
+1. 获取一个具有**超级管理员** 或 **API 提供者** 角色的用户账户。
+2. [发布一个服务](../getting-started/publish-service.md)，其中会包含至少一个 API。
 
 ## 按百分比将流量转移到新的灰度上游
 
@@ -34,22 +34,16 @@ slug: /api-full-lifecycle-management/api-publishing/canary-traffic-shifting
 3. 在**设置灰度规则**字段中，执行以下操作：
     - 在**条件**字段中，关闭开关。
     - 在**权重**字段中，输入 `10%`。
-
-    ![设置灰度规则](https://static.apiseven.com/uploads/2023/12/08/2D5zRl07_setup-canary-rules_zh.png)
-
 4. 单击**下一步**。
 5. 在**选择或创建灰度上游**字段中，选择**创建一个新的上游**。
     - 将新上游的名称设置为`新上游`。
     - 调整节点的主机，使其指向新的后端。
     - 其余属性将与基线上游保持一致。
-    
-    ![创建灰度上游](https://static.apiseven.com/uploads/2023/12/15/Tp0GYV7Z_createcanaryupstream_zh.png)
-
 6. 确认信息，然后单击**开始**。该灰度规则将立即生效。
 7. 发送 API 请求进行测试，然后循环请求 10 次 API：
 
     ```bash
-    for i in {1..5}; do curl 127.0.0.1:9080/pet/1; done # 将 127.0.0.1 替换为测试网关组的地址。
+    for i in {1..5}; do curl 127.0.0.1:9080/pet/1; done 
     ```
 
     其中 9 次响应结果：
@@ -120,9 +114,6 @@ slug: /api-full-lifecycle-management/api-publishing/canary-traffic-shifting
 
     - 在**基准上游**字段中，选择 `灰度上游：新上游`。
     - 在**删除未选择的上游**字段中，打开开关。
-
-    ![完成灰度](https://static.apiseven.com/uploads/2023/12/15/1d49RMzT_finishcanary_zh.png)
-
 11. 单击**完成**。
 
 ## 根据请求标头将流量转移到新的灰度上游
@@ -139,16 +130,13 @@ slug: /api-full-lifecycle-management/api-publishing/canary-traffic-shifting
         - API 请求关键字为 `version = test`。
     - 在**权重**字段中，输入 `100%`。
     - 单击**下一步**。
-  
-    ![设置灰度规则](https://static.apiseven.com/uploads/2023/12/08/O4WBQ1Fu_createcanaryupstream-con_zh.png)
-
 4. 确认信息，然后单击**开始**。该灰度规则将立即生效。
 5. 发送 API 请求进行测试：
 
     使用正确的标头发送 API 请求：
 
     ```bash
-    curl 127.0.0.1:9080/pet/1 -H "version:test" # 将 127.0.0.1 替换为测试网关组的地址。
+    curl 127.0.0.1:9080/pet/1 -H "version:test" 
     ```
 
     ```bash
@@ -182,7 +170,7 @@ slug: /api-full-lifecycle-management/api-publishing/canary-traffic-shifting
     使用错误的标头发送 API 请求：
 
     ```bash
-    curl 127.0.0.1:9080/pet/1 -H "version:new" # 将 127.0.0.1 替换为测试网关组的地址。
+    curl 127.0.0.1:9080/pet/1 -H "version:new" 
     ```
 
     ```bash
@@ -216,7 +204,7 @@ slug: /api-full-lifecycle-management/api-publishing/canary-traffic-shifting
     未使用标头发送 API 请求：
 
     ```bash
-    curl 127.0.0.1:9080/pet/1 # 将 127.0.0.1 替换为测试网关组的地址。
+    curl 127.0.0.1:9080/pet/1 
     ```
 
     ```bash
@@ -251,7 +239,4 @@ slug: /api-full-lifecycle-management/api-publishing/canary-traffic-shifting
 
     - 在**基准上游**字段中，选择 `灰度上游：新上游`。
     - 在**删除未选择的上游**字段中，打开开关。
-
-    ![完成灰度](https://static.apiseven.com/uploads/2023/12/15/1d49RMzT_finishcanary_zh.png)
-
 7. 单击**完成**。

@@ -1,12 +1,12 @@
 ---
-title: 在网关组之间同步 API
-slug: /api-full-lifecycle-management/api-publishing/sync-apis-betweenn-gateway-groups
+title: 将已发布的服务版本同步到其他网关组
+slug: /getting-started/sync-service
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-在网关组之间同步 API 有助于跨环境推广 API，尤其是从低阶环境到高阶环境，如从测试环境到生产环境。如果使用多个网关组来划分区域或团队，同步 API 将有助于在全球范围内分发 API。
+在网关组之间同步 API 有助于跨环境复制 API，尤其是从低阶环境到高阶环境，如从测试环境到生产环境。如果使用多个网关组来划分区域或团队，同步 API 将有助于在全球范围内分发 API。
 
 :::info
 
@@ -17,9 +17,9 @@ import TabItem from '@theme/TabItem';
 
 ## 前提条件
 
-1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#API提供者)角色的用户账户。
-2. [以服务维度发布 API](../api-publishing/publish-apis-by-service.md)。
-3. [添加网关组](../api-runtime/add-gateway-groups)并将其命名为`生产网关组`。使该网关组作为生产环境的 API 网关。
+1. 获取一个具有**超级管理员** 或**API 提供者**或**运行时管理员**角色的用户账户。
+2. [发布一个服务](publish-service.md)，其中会包含至少一个 API。
+3. [添加第二个网关组](add-gateway-group.md)并将其命名为`生产网关组`。使该网关组作为生产环境的 API 网关。
 
 ## 将服务版本同步到生产网关组
 
@@ -45,37 +45,3 @@ import TabItem from '@theme/TabItem';
     </ol>
   </TabItem>
 </Tabs>
-
-## 验证 API
-
-```bash
-curl "http://127.0.0.1:9080/pet/1" # 将 127.0.0.1 替换为生产网关组的地址。
-```
-
-你应该会看到以下输出：
-
-```bash
-{
-  "name": "Dog",
-  "photoUrls": [
-    "https://example.com/dog-1.jpg",
-    "https://example.com/dog-2.jpg"
-  ],
-  "id": 1,
-  "category": {
-    "id": 1,
-    "name": "pets"
-  },
-  "tags": [
-    {
-      "id": 1,
-      "name": "friendly"
-    },
-    {
-      "id": 2,
-      "name": "smart"
-    }
-  ],
-  "status": "available"
-}
-```

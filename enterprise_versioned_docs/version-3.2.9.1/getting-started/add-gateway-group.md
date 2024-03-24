@@ -1,9 +1,9 @@
 ---
-title: 创建网关组
-slug: /api-full-lifecycle-management/api-runtime/add-gateway-groups
+title: 新增网关组
+slug: /getting-started/add-gateway-group
 ---
 
-[网关组](../../key-concepts/gateway-groups.md)用于划分 API。以下是网关组其他的应用场景：
+[网关组](../key-concepts/gateway-groups.md)用于划分 API。以下是网关组其他的应用场景：
 
 **根据环境**：
 
@@ -39,7 +39,7 @@ slug: /api-full-lifecycle-management/api-runtime/add-gateway-groups
 
 ## 前提条件
 
-1. 获取一个具有[超级管理员](../../administration/role-based-access-control.md#超级管理员)或 [API 提供者](../../administration/role-based-access-control.md#api提供者)角色的用户账户。
+1. 获取一个具有**超级管理员** 或 **运行时管理员** 角色的用户账户。
 
 ## 创建网关组
 
@@ -48,3 +48,4 @@ slug: /api-full-lifecycle-management/api-runtime/add-gateway-groups
 1. 从左侧导航栏中选择**网关组**，然后单击**新增网关组**。
 2. 在**名称**字段中，输入`生产网关组`。
 3. 单击**新增**。
+4. [添加至少一个网关实例](../getting-started/add-gateway-instance.md)。

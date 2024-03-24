@@ -1,6 +1,6 @@
 ---
 title: 构建 API 端点
-slug: "/api-full-lifecycle-management/build-api-endpoints"
+slug: "/reference/build-api-endpoints"
 ---
 
 API 端点为 API 提供实际的业务逻辑和数据。在与 API7 企业版集成之前，需要对其进行开发和部署。
