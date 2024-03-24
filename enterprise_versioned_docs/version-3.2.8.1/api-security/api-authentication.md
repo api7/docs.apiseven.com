@@ -3,24 +3,6 @@ title: 开启 API 身份认证
 slug: /api-security/api-authentication
 ---
 
-出于安全考虑，API7 企业版应在消费者访问内部资源前对其进行认证和授权。API7 企业版提供了灵活的插件扩展系统和大量插件，用于用户认证和授权。例如：
-
-- 密钥认证
-- 基本认证
-- JWT 认证
-- Keycloak
-- Casdoor
-- Wolf RBAC
-- OpenID Connect
-- 中央认证服务（Central Authentication Service，CAS）
-- HMAC
-- Casbin
-- LDAP
-- 开放策略代理（Open Policy Agent，OPA）
-- 转发认证
-
-每个路由可以选择的一种认证机制。不同路由可以使用不同的认证。但是，请勿在单个路由上启用多个认证插件，或者将认证插件作为全局规则启用。
-
 ## 前提条件
 
 1. 获取一个具有**超级管理员** 或 **API 提供者** 角色的用户账户。
