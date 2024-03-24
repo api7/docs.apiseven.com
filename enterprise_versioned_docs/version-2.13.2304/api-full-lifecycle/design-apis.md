@@ -83,7 +83,7 @@ Response:
 
 ### Postman
 
-我们将使用 [Postman](https://www.postman.com/) 来演示如何设计 API。因此，在继续之前，请确保您已经安装了 Postman，需要注意的是，我们需要使用到
+我们将使用 [Postman](https://www.postman.com/) 来演示如何设计 API。因此，在继续之前，请确保你已经安装了 Postman，需要注意的是，我们需要使用到
 Postman 提供的 [Mock Server](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/setting-up-mock/) 功能。因此，你必须登录 Postman 并且你的所有操作应该都在 [Workspace](https://learning.postman.com/docs/collaborating-in-postman/using-workspaces/) 中进行。
 
 ### RESTful API
