@@ -5,7 +5,7 @@ tags:
 - API7 Enterprise
 ---
 
-本文将指导您如何在 API7 控制台中使用 limit-count 插件对 API 进行限流限速配置，以及如何验证结果。
+本文将指导你如何在 API7 控制台中使用 limit-count 插件对 API 进行限流限速配置，以及如何验证结果。
 
 ## 前置要求
 

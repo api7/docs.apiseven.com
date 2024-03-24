@@ -20,7 +20,7 @@ export const SubscribeForm: React.FC<Props> = ({ language }) => (
           mb={{ base: '2', lg: '0' }}
           flex="1"
           bg={mode('white', 'gray.900')}
-          placeholder={language === 'zh-CN' ? '请输入您的邮箱' : 'Work email'}
+          placeholder={language === 'zh-CN' ? '请输入你的邮箱' : 'Work email'}
           type="email"
           id="email"
           name="email"

@@ -3,11 +3,9 @@ title: 安装指南
 slug: /getting-started/install-api7-ee
 ---
 
-:::note
-本安装指南适用于概念验证（Proof of Concept，PoC）测试。如需在生产环境中部署 API7 企业版，实现高可用性和可扩展性，请[联系](https://api7.ai/contact) API7 专家。
+:::info
+本安装指南适用于概念验证（Proof of Concept，PoC）测试。如需在生产环境中部署 API7 企业版，实现高可用性和可扩展性，请[联系](https://api7.ai/contact) API7 专家获取定制化部署方案。
 :::
-
-本文档介绍如何安装 API7 企业版。
 
 ## 前提条件
 
@@ -26,8 +24,6 @@ curl -sL "https://run.api7.ai/api7/quickstart" | bash
 ```bash
 ✔ Container api7-ee-postgresql
 ✔ Container api7-ee-prometheus
-✔ Container api7-ee-etcd
-✔ Container api7-ee-keycloak
 ✔ Container api7-ee-api7-ee-dashboard
 ✔ Container api7-ee-api7-ee-dp-manager
 ✔ Container api7-ee-api7-ee-gateway

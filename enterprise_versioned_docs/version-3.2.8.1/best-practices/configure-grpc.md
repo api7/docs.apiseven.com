@@ -9,8 +9,8 @@ Google Remote Procedure Call（gRPC）是基于 HTTP/2 协议的开源高性能�
 
 ## 前提条件
 
-- [安装 API7 企业版](../getting-started/install-api7-ee.md)。
-- [安装 gRPCurl](https://github.com/fullstorydev/grpcurl)，将请求发送到 gRPC 服务器进行验证。
+1. [安装 API7 企业版](../getting-started/install-api7-ee.md)。
+2. [安装 gRPCurl](https://github.com/fullstorydev/grpcurl)，将请求发送到 gRPC 服务器进行验证。
 
 ## 部署示例 gRPC 服务器
 

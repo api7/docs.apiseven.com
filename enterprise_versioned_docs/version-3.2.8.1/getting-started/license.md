@@ -1,6 +1,6 @@
 ---
-title: 更新许可证
-slug: /administration/renew-license
+title: 许可证管理
+slug: /getting-started/license
 ---
 
 API7 企业版提供 [30 天免费试用许可证](https://api7.ai/try?product=enterprise)。你可以使用该许可证配置 API 管理平台的功能、容量限制和支持条款。
@@ -13,8 +13,5 @@ API7 企业版提供 [30 天免费试用许可证](https://api7.ai/try?product=e
 
 1. 从顶部导航栏选择**组织**，然后选择**许可证**。
 2. 单击**编辑**图标。
-
-    ![更新许可证](https://static.apiseven.com/uploads/2023/12/06/qqV3KXlH_update-license_zh.png)
-
 3. 选择要上传的许可证，然后单击**上传**。
 4. 确认新的有效期，然后单击**更新**。
