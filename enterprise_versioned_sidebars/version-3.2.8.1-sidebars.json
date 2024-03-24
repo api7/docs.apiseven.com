@@ -12,6 +12,7 @@
       "type": "category",
       "label": "核心概念",
       "items": [
+        "key-concepts/overview",
         "key-concepts/services",
         "key-concepts/routes",
         "key-concepts/upstreams",
