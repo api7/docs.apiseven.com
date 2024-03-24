@@ -20,7 +20,6 @@
         "key-concepts/gateway-instances",
         "key-concepts/consumers",
         "key-concepts/plugins",
-        "key-concepts/service-discovery",
         "key-concepts/roles",
         "key-concepts/key-auth",
         "key-concepts/ssl-certificates"

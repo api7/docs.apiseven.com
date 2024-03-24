@@ -64,3 +64,5 @@ slug: /key-concepts/services
 ## 相关阅读
 
 - [API 版本控制最佳实践](../best-practices/api-version-control.md)
+- [发布服务](../getting-started/publish-service.md)
+- [回滚服务](../getting-started/rollback-service.md)
