@@ -60,3 +60,7 @@ slug: /key-concepts/services
 - 生产环境中的 API URL 是 `https://api7.ai/petstore/pet`，节点地址是 `192.168.0.1:80`。
 
 :::
+
+## 相关阅读
+
+- [API 版本控制最佳实践](../best-practices/api-version-control.md)
