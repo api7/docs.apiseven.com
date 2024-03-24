@@ -35,6 +35,17 @@ slug: /api-consumption/consumer-restriction
     ```
 5. 单击**启用**。
 6. 你还可以在服务级别启用 `consumer-restriction` 插件，当服务下所有路由都共享一份白名单配置时。
+7. 如果你想进一步严格限制 `Alice` 只能通过 HTTP GET 方法进行访问，你可以将插件的配置（在路由或消费者中）更新为以下内容：
+
+```json
+{
+      "allowed_by_methods":[
+        {
+          "user":"Alice",
+          "methods":["GET"]
+        }
+}
+```
 
 ## 验证
 
