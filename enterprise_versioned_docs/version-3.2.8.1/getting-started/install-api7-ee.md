@@ -4,7 +4,7 @@ slug: /getting-started/install-api7-ee
 ---
 
 :::info
-本安装指南适用于概念验证（Proof of Concept，PoC）测试。如需在生产环境中部署 API7 企业版，实现高可用性和可扩展性，请[联系](https://api7.ai/contact) API7 专家。
+本安装指南适用于概念验证（Proof of Concept，PoC）测试。如需在生产环境中部署 API7 企业版，实现高可用性和可扩展性，请[联系](https://api7.ai/contact) API7 专家获取定制化部署方案。
 :::
 
 ## 前提条件
