@@ -7,7 +7,7 @@ slug: /introduction/architecture
 
 API7 企业版作为基于 Apache APISIX 构建的高性能云原生 API 网关，其具有的可灵活扩展架构可以满足企业级 API 管理的需求。这个基础架构能够处理大规模的流量控制，并保证安全性和弹性。
 
-![how api7 works](https://static.apiseven.com/uploads/2024/03/21/EtSJpdEN_%E6%9E%B6%E6%9E%84%E5%9B%BE-%E4%B8%AD%E6%96%87.jpg)
+![how api7 works](https://static.apiseven.com/uploads/2024/03/24/b4cGaMuC_%E6%9E%B6%E6%9E%84%E5%9B%BE-%E4%B8%AD%E6%96%87.jpg)
 
 API7 企业版的架构可以大致分为数据面和控制面两部分。
 
