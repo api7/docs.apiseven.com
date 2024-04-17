@@ -25,7 +25,7 @@ export default function NavbarNavLink({
   const isExternalLink = label && href && !isInternalUrl(href);
   const ProjectName = {
     cloud: 'Cloud',
-    enterprise: 'API7 Enterprise Edition',
+    enterprise: 'API7 企业版',
     apisix: 'Apache APISIX'
   };
 
