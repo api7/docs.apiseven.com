@@ -1,5 +1,5 @@
 ---
-title: 版本说明
+title: 更新日志
 slug: /release-notes
 ---
 
