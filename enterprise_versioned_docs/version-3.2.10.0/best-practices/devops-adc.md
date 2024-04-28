@@ -5,7 +5,7 @@ slug: /best-practices/devops-adc
 
 ## 引言
 
-本文档指导您如何使用声明式配置工具（ADC，APISIX/API7声明式配置 CLI）设置 API7 企业版。为了自动化这个过程，使用 `adc.yaml` 文件作为唯一的真实来源，以利用 GitOps。
+本文档指导您如何使用声明式配置工具（ADC，APISIX/API7 声明式配置 CLI）设置 API7 企业版。为了自动化这个过程，使用 `adc.yaml` 文件作为唯一的真实来源，以利用 GitOps。
 
 ### ADC 简介
 
