@@ -25,8 +25,8 @@ ADC 将 `adc.yaml` 文件作为唯一的来源，并自动将配置同步至 API
 
 ## 前提条件
 
-- API7 企业版：3.2.10.0
-- ADC：0.7.3
+- API7 企业版：3.2.10.1
+- ADC：0.8.0
 
 ### 部署 API7 企业版
 
@@ -42,9 +42,9 @@ API7 企业版支持 Docker 和 [Kubernetes](https://docs.api7.ai/enterprise/dep
 
 ### 下载 ADC
 
-- <https://run.api7.ai/adc/release/adc_0.7.3_linux_amd64.tar.gz>
-- <https://run.api7.ai/adc/release/adc_0.7.3_linux_arm64.tar.gz>
-- <https://run.api7.ai/adc/release/adc_0.7.3_darwin_arm64.tar.gz>
+- <https://run.api7.ai/adc/release/adc_0.8.0_linux_amd64.tar.gz>
+- <https://run.api7.ai/adc/release/adc_0.8.0_linux_arm64.tar.gz>
+- <https://run.api7.ai/adc/release/adc_0.8.0_darwin_arm64.tar.gz>
 
 ```bash
 $ ./adc -h
