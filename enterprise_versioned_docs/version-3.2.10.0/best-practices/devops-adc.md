@@ -30,7 +30,7 @@ ADC 将 `adc.yaml` 文件作为唯一的来源，并自动将配置同步至 API
 
 ### 部署 API7 企业版
 
-API7 企业版支持 Docker 和 [Kubernetes](../deployment/kubernetes.md)。请结合自身的业务需求和技术栈选择合适的部署方法。
+API7 企业版支持 Docker 和 [Kubernetes](https://docs.api7.ai/enterprise/deployment/kubernetes)。请结合自身的业务需求和技术栈选择合适的部署方法。
 
 部署 API7 企业版后，您应该具有以下组件和信息：
 
