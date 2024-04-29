@@ -393,7 +393,7 @@ global_rules: {}
 2. 确定本地配置和远程配置之间的差异。
 
 :::info
-ADC is in actively development, and the diff algorithm will be improved and optimized.
+ADC 仍在开发中，差异算法将会优化。
 :::
 
 ```bash
