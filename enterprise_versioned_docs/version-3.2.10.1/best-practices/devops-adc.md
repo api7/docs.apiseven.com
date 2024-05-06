@@ -7,7 +7,7 @@ slug: /best-practices/devops-adc
 
 ### ADC 简介
 
-ADC 将 `adc.yaml` 文件作为唯一的来源，并自动将配置同步至 API 网关，从而确保网关的实时状态与 adc.yaml 中定义的配置状态保持一致。
+ADC 将 `adc.yaml` 文件作为唯一的来源，并自动将配置同步至 API 网关，从而确保网关的实时状态与 `adc.yaml` 中定义的配置状态保持一致。
 
 ### 步骤
 
@@ -17,11 +17,11 @@ ADC 将 `adc.yaml` 文件作为唯一的来源，并自动将配置同步至 API
 
 ### 注意事项
 
-1. 本文档以 API7 企业版网关 v3.2.10.0 为例，该版本基于 Apache APISIX 3.2，尚不支持配置验证 API。因此，您无法使用 ADC 的验证命令进行配置验证。该功能将从 Apache APISIX 的 v3.5 版本以后开始提供。
+1. 本文档以 API7 企业版网关 v3.2.10.0 为例，该版本基于 Apache APISIX 3.2，尚不支持配置验证 API。因此，你不能使用 ADC 的验证命令进行配置验证。该功能将从 Apache APISIX 的 v3.5 版本以后开始提供。
 
-2. ADC 支持加载 OpenAPI 3.0 规范文件，及将其转换为 `adc.yaml` 格式。但转换后的文件需要你手动进行调整，例如添加身份验证策略或绑定服务 ID。为提供更加流畅的用户体验，这些功能正在计划中。
+2. ADC 支持加载 OpenAPI 3.0 规范文件，也支持将其转换为 `adc.yaml` 格式。但转换后的文件需要你手动进行调整，例如添加身份验证策略及绑定服务 ID。为提供更加流畅的用户体验，这些功能正在计划中。
 
-3. 企业可能采用不同的 Git/SVN 版本控制服务和防火墙策略。只要 ADC 工具能够通过网络访问到网关的管理 API，它就能够正常工作。本文档中的示例操作将在本地计算机上进行演示。
+3. 企业可能采用不同的 Git/SVN 版本控制服务和防火墙策略。只要 ADC 工具能够通过网络访问到网关的 Admin API，它就能够正常工作。本文档中的示例操作将在本地计算机上进行演示。
 
 ## 前提条件
 
@@ -30,9 +30,9 @@ ADC 将 `adc.yaml` 文件作为唯一的来源，并自动将配置同步至 API
 
 ### 部署 API7 企业版
 
-API7 企业版支持 Docker 和 [Kubernetes](https://docs.api7.ai/enterprise/deployment/kubernetes)。请结合自身的业务需求和技术栈选择合适的部署方法。
+API7 企业版支持 Docker 和 [Kubernetes](https://docs.api7.ai/enterprise/deployment/kubernetes) 两种部署方式。请结合自身的业务需求和技术栈选择合适的部署方法。
 
-部署 API7 企业版后，您应该具有以下组件和信息：
+部署 API7 企业版后，你应该可以看到以下组件和信息：
 
 - Dashboard 组件：`7443/7080 端口`
 - API7 Gateway 组件：`http://152.42.234.39:9080`
@@ -69,7 +69,7 @@ Commands:
 
 ### 生成 API 令牌
 
-ADC 需要一个 API 令牌来访问管理 API。您可以通过 Dashboard 或 Admin API 生成 API 令牌。
+ADC 需要一个 API 令牌来访问 Admin API，你可以通过 Dashboard 或 Admin API 生成 API 令牌。
 
 - 从 Dashboard 生成 API 令牌：登录 -> 组织 -> 令牌 -> 生成新令牌
 - 在 [Admin API](https://docs.api7.ai/enterprise/reference/admin-api#tag/Tokens) 中生成 API 令牌
@@ -78,7 +78,7 @@ ADC 需要一个 API 令牌来访问管理 API。您可以通过 Dashboard 或 A
 
 1. 在与 ADC 二进制文件相同的目录中创建一个 `.env` 文件。
 
-本文档创建了一个 `.env` 文件来存储 API 令牌和 Admin API 端点。您还可以将这些值作为标志传递或存储在 GitHub Action、Jenkins 或 GitLab 中。
+本文档创建了一个 `.env` 文件来存储 API 令牌和 Admin API 端点。你还可以将这些值作为标志传递或存储在 GitHub Action、Jenkins 或 GitLab 中。
 
 ```bash
 ADC_BACKEND=api7ee
@@ -97,10 +97,6 @@ Connected to backend successfully!
 ### 发布配置
 
 1. 创建 `adc.yaml` 文件：
-
-## 服务配置
-
-本文档提供了一组服务配置，用于配置 API7 企业版网关。这些配置定义了不同服务的行为和属性，包括其上游节点、路由规则以及与消费者之间的关联。
 
 ```yaml
 services:
@@ -415,7 +411,7 @@ $ ./adc diff -f ./adc.yaml
 ✔ Write detail diff result to file
 ```
 
-这个命令还生成了一个 `diff.yaml` 文件，其中详细列出了差异。
+此命令还会生成一个带有详细差异的 `diff.yaml` 文件。
 
 ```yaml
 - resourceType: consumer
@@ -673,7 +669,7 @@ $ ./adc sync -f ./adc.yaml
 
 4. 验证
 
-注意：由于为 httpbin 服务添加了一个新路由 `/headers`，你可以访问新路由，并且应该返回请求头信息。
+注意：由于你为 httpbin 服务添加了一个新路由 `/headers`，你可以访问新路由，并且它应该返回请求头信息。
 
 ```bash
 $ curl 152.42.234.39:9080/headers
@@ -691,6 +687,6 @@ $ curl 152.42.234.39:9080/headers
 
 ## 结论
 
-本文演示了如何使用 ADC 工具发布配置、代理请求，以及为消费者启用密钥验证。你还可以修改配置并将更改应用到网关实例。ADC 工具是一个强大的工具，可以帮助你有效地管理 API 网关配置。
+本文档演示了如何使用 ADC 工具发布配置、代理请求，以及为消费者启用密钥验证。你还可以修改配置并将更改应用到网关实例。ADC 工具是一个强大的工具，可以帮助你有效地管理 API 网关配置。
 
-将 ADC 与你的 CI/CD 管道集成后，你可以自动化发布配置和验证过程。这能帮助确保你配置的正确性和 API 的安全性。
+将 ADC 与你的 CI/CD 管道集成后，你可以进行自动化的配置发布和验证，这有助于确保你配置的正确性和 API 的安全性。
