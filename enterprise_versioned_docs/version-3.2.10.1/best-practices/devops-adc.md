@@ -86,7 +86,7 @@ ADC_SERVER=https://152.42.234.39:7443
 ADC_TOKEN=a7ee-6baF8488i8wJ5aj7mEo3BT705573eC8GH905qGrdn889zUWcR37df66a34e9954b61918c5dfd13abce3e
 ```
 
-2. 验证管理 API 是否可访问。
+2. 验证 Admin API 是否可访问。
 
 ```bash
 $ ./adc ping
@@ -669,7 +669,7 @@ $ ./adc sync -f ./adc.yaml
 
 4. 验证
 
-注意：由于你为 httpbin 服务添加了一个新路由 `/headers`，你可以访问新路由，并且它应该返回请求头信息。
+注意：由于已经为 httpbin 服务添加了一个新路由 `/headers`，你可以访问新路由，并且它应该返回请求头信息。
 
 ```bash
 $ curl 152.42.234.39:9080/headers
