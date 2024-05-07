@@ -78,6 +78,15 @@
     },
     {
       "type": "category",
+      "label": "性能测试",
+      "items": [
+        "performance/performance-testing",
+        "performance/benchmark",
+        "performance/aws-eks"
+      ]
+    },
+    {
+      "type": "category",
       "label": "最佳实践",
       "items": [
         "best-practices/api-version-control",
