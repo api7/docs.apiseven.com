@@ -3,7 +3,7 @@ title: DevOps 声明式配置和 CI/CD 管道
 slug: /best-practices/devops-adc
 ---
 
-本文档将引导你使用声明式配置工具 ADC（ADC, APISIX/API7 Declarative Configuration CLI）来设置 API7 企业版。为实现配置的自动化 GitOps 管理，我们将 `adc.yaml` 文件作为配置的唯一真实来源。
+本文档将引导你使用声明式配置工具 ADC（APISIX/API7 Declarative Configuration CLI）来设置 API7 企业版。为实现配置的自动化 GitOps 管理，我们将 `adc.yaml` 文件作为配置的唯一真实来源。
 
 ### ADC 简介
 
