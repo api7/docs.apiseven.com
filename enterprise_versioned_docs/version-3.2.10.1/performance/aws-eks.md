@@ -92,7 +92,7 @@ NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
 kubernetes   ClusterIP   10.100.0.1   <none>        443/TCP   39m
 ```
 
-#### 为 Node_ _打 label
+#### 为 Node 打 label
 
 我们分别为 4 个不同的 Node 打上对应的 label，方便之后的部署
 
@@ -103,12 +103,11 @@ kubectl label nodes <your-node-name> <label_key=label_value>
 kubectl label nodes <your-node1-name> nodeName=api7ee
 kubectl label nodes <your-node2-name> nodeName=upstream
 kubectl label nodes <your-node3-name> nodeName=wrk2
-kubectl label nodes <your-node3-name> nodeName=gateway
 ```
 
 ## 安装过程
 
-### 安装 API7 EE v3.2.8.1
+### 安装 API7 EE
 
 #### 控制面安装
 
@@ -125,7 +124,7 @@ helm repo add api7 https://charts.api7.ai
 helm repo add apisix https://charts.apiseven.com
 helm repo update
 # 为安装 api7ee 指定 Node (之前我们为 Node 设置的 label)
-helm install api7ee3 api7/api7ee3 --version 0.10.0  --set dashboard.image.tag=v3.2.8.1-0307 --set dp_manager.image.tag=v3.2.8.1 --set nodeSelector."nodeName"=api7ee --set postgresql.primary.nodeSelector."nodeName"=api7ee --set prometheus.server.nodeSelector."nodeName"=api7ee --set postgresql.primary.persistence.enabled=false --set prometheus.server.persistence.enabled=false -n api7
+helm install api7ee3 api7/api7ee3 --set nodeSelector."nodeName"=api7ee --set postgresql.primary.nodeSelector."nodeName"=api7ee --set prometheus.server.nodeSelector."nodeName"=api7ee --set postgresql.primary.persistence.enabled=false --set prometheus.server.persistence.enabled=false -n api7
 ```
 
 1. 检查部署情况
@@ -141,7 +140,7 @@ api7ee3-dp-manager   ClusterIP   10.100.239.32   <none>        7900/TCP,7943/TCP
 1. 将端口转发到本机，登陆控制台并上传 license
 
 ```shell
-kubectl -n api7 port-forward svc/api7ee3-dashboard 7080:7080
+kubectl -n api7 port-forward svc/api7ee3-dashboard 7443:7443
 ```
 
 License 试用申请地址：https://api7.ai/try?product=enterprise
@@ -181,7 +180,9 @@ helm install -n api7 --create-namespace api7-ee-3-gateway api7/gateway \
   --set "etcd.host[0]=http://api7ee3-dp-manager:7900" \
   --set "apisix.replicaCount=1" \
   --set "nginx.workerProcesses"=1 \
-  --set apisix.nodeSelector.nodeName=gateway
+  --set apisix.securityContext.runAsNonRoot=false \
+  --set apisix.securityContext.runAsUser=0 \
+  --set apisix.nodeSelector.nodeName=api7ee
 ```
 
 ### 安装 NGINX 上游
@@ -190,21 +191,17 @@ helm install -n api7 --create-namespace api7-ee-3-gateway api7/gateway \
 
 ```yaml
 ---
-_# nginx conf configmap_
+# nginx conf configmap
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: nginx-config
   namespace: api7
 data:
-  nginx.conf: _|_
+  nginx.conf: |
     master_process on;
 
     worker_processes 1;
-
-    error_log logs/error.log warn;
-    pid logs/nginx.pid;
-
     events {
         worker_connections 4096;
     }
@@ -228,7 +225,7 @@ data:
         }
     }
 ---
-_# nginx deployment_
+# nginx deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -271,28 +268,27 @@ kubectl apply -f nginx-upstream.yaml
 创建 wrk2.yaml 文件，并运行 kubectl apply -f wrk2.yaml
 
 ```yaml
-# wrk2 deployment_
-_apiVersion: apps/v1_
-_kind: Deployment_
-_metadata:_
-_  name: wrk2-deployment_
-_  namespace: api7_
-_spec:_
-_  replicas: 1_
-_  selector:_
-_    matchLabels:_
-_      app: wrk2_
-_  template:_
-_    metadata:_
-_      labels:_
-_        app: wrk2_
-_    spec:_
-_      containers:_
-_      - name: wrk2_
-_        image: bootjp/wrk2_
-_      nodeSelector:_
-_        nodeName: wrk2_
-_
+# wrk2 deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wrk2-deployment
+  namespace: api7
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wrk2
+  template:
+    metadata:
+      labels:
+        app: wrk2
+    spec:
+      containers:
+      - name: wrk2
+        image: bootjp/wrk2
+      nodeSelector:
+        nodeName: wrk2
 ```
 
 ## 测试过程
