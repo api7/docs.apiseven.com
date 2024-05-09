@@ -3,6 +3,9 @@ title: 性能测试报告
 slug: /performance/performance-testing
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## 测试方法
 
 - **环境**：AWS 基础设施上的 Kubernetes 环境。
@@ -19,8 +22,11 @@ slug: /performance/performance-testing
 
 ## 性能基准测试结果
 
+<Tabs>
+  <TabItem value="AWS" label="AWS EKS" default>
+
 |     测试案例                              | 路由/消费者数量| **QPS**    | **Latency（ms）** | 
-| --------------------------------- | -------------------------------- | ----------------------------- | ----------------------------- |
+| :--------------------------------- | :-------------------------------- | :----------------------------- | :----------------------------- |
 | 无插件                        | 1 条路由，0 个消费者 | 167019.37                         | 5.84                      | 
 | 无插件                        | 100 条路由，0 个消费者 | 162753.17                         | 5.99                      |
 | 启用 limit-count 插件           | 1 条路由，0 个消费者 | 145370.10                         | 6.65                      | 
@@ -30,11 +36,15 @@ slug: /performance/performance-testing
 | 启用 key-auth 和 limit count 插件 | 1 条路由，1 个消费者 | 136725.47                          | 7.23                      | 
 | 启用 key-auth 和 limit count 插件 | 100 条路由，100 个消费者 | 133782.95                          | 7.31                      |
 
+  </TabItem>
+</Tabs>
+
+
 ## 测试环境
 
-我们在 AWS EKS 中搭建环境来运行这些测试，确保 API7 Gateway、NGINX Upstream 和 wrk2 分别位于自己的节点上，并统一使用 c5.4xlarge 的 EC2 实例来进行安装，避免产生资源争夺的情况。
+我们在 AWS EKS 中搭建环境来运行这些测试，确保 API7 Gateway、NGINX Upstream 和 [wrk2](https://github.com/giltene/wrk2) 分别位于自己的节点上，并统一使用 `c5.4xlarge` 的 EC2 实例来进行安装，避免产生资源争夺的情况。
 
-压测过程可以使用 top 命令观察 API7 Gateway 和 NGINX Upstream 服务器的进程资源占用状况，确保每次压测达到了 Gateway 的瓶颈。以下是用到的主要服务的详细信息：
+压测过程可以使用 `top` 命令观察 API7 Gateway 和 NGINX Upstream 服务器的进程资源占用状况，确保每次压测达到了 Gateway 的瓶颈。以下是用到的主要服务的详细信息：
 
 | 对象         | 详细信息                  |
 | ------------ | ------------------------- |
@@ -44,21 +54,16 @@ slug: /performance/performance-testing
 | 上游服务     | nginx/1.25.4              |
 | 压测工具     | wrk2                      |
 
-| 服务            | 规格                             | 端口 |
-| --------------- | -------------------------------- | ---- |
-| API7 Gateway    | c5.4xlarge (16 vcpu，32 GiB 内存) | 9080 |
-| upstream        | c5.4xlarge (16 vcpu，32 GiB 内存) | 1980 |
-| wrk2            | c5.4xlarge (16 vcpu，32 GiB 内存) |      |
-
-## 测试配置
-
-对于这些测试，我们更改了工作进程的数量，以匹配运行 API7 Gateway 的节点的可用核心数量（16 个 vCPU）。除此更改外，没有进行其他调整。
-
 ## 部署拓扑
 
 ![deploy](static/deploy.png)
 
+## 测试配置
+
+对于这些测试，我们更改了工作进程的数量，以匹配运行 API7 Gateway 的节点的可用核心数量（16 个 **vCPU**）。除此更改外，没有进行其他调整。
+
 ## 更多信息
 
-详细的测试步骤以及安装指南参考 [在 AWS EKS 性能测试指南](./aws-eks.md)
+- [建立性能基准测试报告](./benchmark.md)：了解如何优化 API7 Gateway 性能。
+- [在 AWS EKS 性能测试指南](./aws-eks.md)：查看如何在 AWS EKS 上建立性能基准测试报告。
 
