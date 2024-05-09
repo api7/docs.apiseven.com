@@ -82,7 +82,13 @@
       "items": [
         "performance/performance-testing",
         "performance/benchmark",
-        "performance/aws-eks"
+        {
+          "type": "category",
+          "label": "Kubernetes 环境测试指南",
+          "items": [
+            "performance/aws-eks"
+          ]
+        }
       ]
     },
     {
