@@ -40,9 +40,9 @@ import TabItem from '@theme/TabItem';
 
 ## 测试环境
 
-本测试报告在 AWS EKS 中搭建环境来运行这些测试，请确保 API7 Gateway、NGINX Upstream 和 [wrk2](https://github.com/giltene/wrk2) 分别位于自己的节点上，并统一使用 `c5.4xlarge` 的 EC2 实例来进行安装，避免产生资源争夺的情况。
+本测试报告通过 AWS EKS 环境来执行性能测试。在搭建测试环境时，请确保 API7 Gateway、NGINX Upstream 及性能测试工具 [wrk2](https://github.com/giltene/wrk2) 分别部署于独立的节点上，并且所有节点均应采用 `c5.4xlarge` 型号的 EC2 实例进行安装，以确保资源分配合理，避免资源竞争现象的发生。
 
-压测过程推荐使用 `top` 命令观察 API7 Gateway 和 NGINX Upstream 服务器的进程资源占用状况，确保每次压测达到了 Gateway 的瓶颈。以下是用到的主要服务的详细信息：
+在进行压力测试时，推荐使用 `top` 命令或其他系统监控工具来实时监测 API7 Gateway 和 NGINX Upstream 服务器的进程资源占用情况，以确保每次测试都能充分达到 API7 Gateway 的性能瓶颈，从而获取准确且可靠的性能测试结果。以下是参与本次测试的主要服务及其相关详细信息的概述：
 
 | 对象         | 详细信息                  |
 | ------------ | ------------------------- |
@@ -54,14 +54,14 @@ import TabItem from '@theme/TabItem';
 
 ## 部署拓扑
 
-1. 使用 wrk2 直接测试上游的目的是获取一个基线值，一方面确保 Upstream 性能是否是极限值，另一方面是为了给之后测试 API7 Gateway 做数据准确性对比。
-2. 其余的场景我们均通过 API7 Gateway 代理来测试。
+1. 使用 `wrk2` 直接对上游服务进行压测的目的在于确立一个性能基线值。这一步骤旨在确保上游服务的性能是否已经达到其极限，同时也为后续测试 API7 Gateway 提供数据准确性的对比基准。
+2. 对于其他测试场景统一通过 API7 Gateway 进行代理转发来进行测试，以确保能够全面评估 API7 Gateway 在真实环境中的性能表现。
 
 ![deploy](static/deploy.png)
 
 ## 测试配置
 
-对于这些测试，我们更改了工作进程的数量，以匹配运行 API7 Gateway 的节点的可用核心数量（16 个 **vCPU**）。除此更改外，没有进行其他调整。
+对于本次测试，我们调整了工作进程的数量，使其与运行 API7 Gateway 的节点上的可用核心数量（即 16 个 **vCPU**）相匹配。除此之外，我们并未对系统配置进行其他调整。
 
 ## 更多信息
 
