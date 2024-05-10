@@ -54,6 +54,9 @@ import TabItem from '@theme/TabItem';
 
 ## 部署拓扑
 
+1. 使用 wrk2 直接测试上游的目的是获取一个基线值，一方面确保 Upstream 性能是否是极限值，另一方面是为了给之后测试 API7 Gateway 做数据准确性对比。
+2. 其余的场景我们均通过 API7 Gateway 代理来测试。
+
 ![deploy](static/deploy.png)
 
 ## 测试配置
