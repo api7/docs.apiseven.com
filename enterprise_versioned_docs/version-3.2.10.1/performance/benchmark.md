@@ -56,10 +56,6 @@ vim /etc/security/limits.conf
 * soft nofile 1024000
 ```
 
-### 有效利用 CUP 核心数
-
-通常设置 `worker_processes` 数应比当前部署的服务器的 CPU **少 2 个**。比如：在 8C 16G 的机器上，我们设置 API7 Gateway 的 `worker_processes` 为 6。确保不会有一些其它进程来和 API7 Gateway 争夺资源。
-
 ### 避免资源争夺
 
 确保 wrk2、API7 Gateway、上游服务分别位于不同的机器上，并在同一本地网络上进行测试，降低网络延迟带来的开销。
