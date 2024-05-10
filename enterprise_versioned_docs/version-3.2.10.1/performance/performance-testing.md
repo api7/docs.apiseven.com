@@ -39,7 +39,6 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-
 ## 测试环境
 
 我们在 AWS EKS 中搭建环境来运行这些测试，确保 API7 Gateway、NGINX Upstream 和 [wrk2](https://github.com/giltene/wrk2) 分别位于自己的节点上，并统一使用 `c5.4xlarge` 的 EC2 实例来进行安装，避免产生资源争夺的情况。
