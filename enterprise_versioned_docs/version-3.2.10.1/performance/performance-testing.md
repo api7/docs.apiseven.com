@@ -11,8 +11,8 @@ import TabItem from '@theme/TabItem';
 - **环境**：AWS 基础设施上的 Kubernetes 环境。
 - **测试场景**：
   1. 未启用任何插件；
-  2. 只启用 key-auth 身份认证插件；
-  3. 只启用 limit-count 限流限速插件；
+  2. 只启用 limit-count 限流限速插件；
+  3. 只启用 key-auth 身份认证插件；
   4. 同时启用 key-auth 和 limit-count 插件；
 - **路由和消费者**：
   1. 单条路由和单个消费者；
