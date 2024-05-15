@@ -99,7 +99,8 @@
         "best-practices/custom-plugin",
         "best-practices/configure-grpc",
         "best-practices/upstream-ha",
-        "best-practices/sso"
+        "best-practices/sso",
+        "best-practices/devops-adc"
       ]
     },
     {
