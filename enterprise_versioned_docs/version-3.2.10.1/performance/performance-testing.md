@@ -6,6 +6,8 @@ slug: /performance/performance-testing
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+<!-- TODO Add example config info -->
+
 ## 测试方法
 
 - **环境**：AWS 基础设施上的 Kubernetes 环境。
