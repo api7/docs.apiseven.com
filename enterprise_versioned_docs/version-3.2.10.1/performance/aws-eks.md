@@ -9,27 +9,27 @@ slug: /performance/aws-eks
 
 1. 在 AWS EKS 中添加一个新的测试集群
 
-![](static/IRXNbRcFao0LmNx5wMbcV0C6nm0.png)
+![](https://static.apiseven.com/uploads/2024/05/13/AcXSkWUI_create-cluster.png)
 
-1. 配置测试集群，如果之前没有使用过 EKS 服务配置过集群服务角色，可以根据文档创建一个 EKS 集群角色：[https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html#create-service-role](https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html#create-service-role)
+2. 配置测试集群，如果之前没有使用过 EKS 服务配置过集群服务角色，可以根据文档创建一个 EKS 集群角色：[https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html#create-service-role](https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html#create-service-role)
 
-![](static/Los0bt8JSodbFdxaQjhcbADlnAb.png)
+![](https://static.apiseven.com/uploads/2024/05/13/BYWC128m_config-cluster.png)
 
-1. 点击下一步配置网络设置
+3. 点击下一步配置网络设置
 
-![](static/S8zPbLHVaoImZYxpZGVcUZHsnPg.png)
+![](https://static.apiseven.com/uploads/2024/05/13/E2595vPU_cluster-network.png)
 
-1. 配置可观测性
+4. 配置可观测性
 
-![](static/VVGsbikJroBXeexN9WxcymTgn8h.png)
+![](https://static.apiseven.com/uploads/2024/05/13/gqpKSq4K_cluster-observability.png)
 
-1. 选择插件（默认配置），点击下一步
+5. 选择插件（默认配置），点击下一步
 
-![](static/BDSIbN8OOoVihbxkxEvcx3AUnLc.png)
+![](https://static.apiseven.com/uploads/2024/05/13/EsY6qevQ_cluster-plugin.png)
 
-1. 点击创建集群，等待 EKS 创建
+6. 点击创建集群，等待 EKS 创建
 
-![](static/FzTcboN84oF3AyxSFIfc2G5VnNd.png)
+![](https://static.apiseven.com/uploads/2024/05/13/RYL1q741_create-success.png)
 
 ### 添加 Node
 
