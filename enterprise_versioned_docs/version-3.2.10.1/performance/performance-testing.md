@@ -6,16 +6,19 @@ slug: /performance/performance-testing
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<!-- TODO Add example config info -->
+除了查阅我们的性能测试报告外，您也可以访问我们公开的[性能基准测试仓库](https://github.com/api7/api7-gateway-performance-benchmark)。该仓库详细记录了所有用于测试的资源部署配置以及各测试场景的具体配置信息。借此，您可以对您自行部署的 API7 Gateway 进行性能基准测试。
+
+以下将详细阐述我们的测试场景、测试方法、测试结果以及相关的配置细节。
 
 ## 测试方法
 
 - **环境**：AWS 基础设施上的 Kubernetes 环境。
 - **测试场景**：
-  1. 未启用任何插件；
-  2. 只启用 limit-count 限流限速插件；
-  3. 只启用 key-auth 身份认证插件；
-  4. 同时启用 key-auth 和 limit-count 插件；
+  1. 只启用 [mocking](https://apisix.apache.org/docs/apisix/plugins/mocking/) 插件获取 API7 Gateway 的性能基准值，这种情况下它以指定的格式返回模拟数据，并且请求不会转发到上游；
+  2. 未启用任何插件；
+  3. 只启用 [limit-count](https://apisix.apache.org/docs/apisix/plugins/limit-count/) 限流限速插件；
+  4. 只启用 [key-auth](https://apisix.apache.org/docs/apisix/plugins/key-auth/) 身份认证插件；
+  5. 同时启用 key-auth 和 limit-count 插件；
 - **路由和消费者**：
   1. 单条路由和单个消费者；
   2. 100 条路由和 100 个消费者；
@@ -28,6 +31,7 @@ import TabItem from '@theme/TabItem';
 
 |     测试案例                              | 路由/消费者数量| **QPS**    | **P99 (MS)** | **P95 (MS)** |
 | :--------------------------------- | :-------------------------------- | :----------------------------- | :----------------------------- | :----------------------------- |
+| 只启用 mocking 插件                        | 1 条路由，0 个消费者 | 310,392.07                         | 1.16                      |  1.08   | 
 | 未启用任何插件                        | 1 条路由，0 个消费者 | 167,019.37                         | 2.30                      |  2.16   | 
 | 未启用任何插件                        | 100 条路由，0 个消费者 | 162,753.17                         | 2.31                      | 2.16 |
 | 只启用 limit-count 限流限速插件           | 1 条路由，0 个消费者 | 145,370.10                         | 2.43                      | 2.24  | 

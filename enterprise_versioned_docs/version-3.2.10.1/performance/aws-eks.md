@@ -291,31 +291,14 @@ spec:
         nodeName: wrk2
 ```
 
-## 测试过程
+## 测试配置
 
-### 场景 1：单路由无插件
-
-![](static/MZQZbR4IhoVNdOxU5Pdc7p09nQb.png)
-
-![](static/S3eQbVHWBox3PTxmDaycLvgJnlc.png)
-
-### 场景 2：单路由开启 limit-count
-
-![](static/I0ZhbOfRzoNdzMxEoumc5URCnEh.png)
-
-### 场景 3：单路由同时开启 key-auth 和 limit-count
-
-#### Consumer 配置
-
-![](static/EtiabfVqboh43jxfvJJcvSX5n8z.png)
-
-#### 路由配置
-
-![](static/ZzKnbjroxoeED1xKbyxcWTxYnwg.png)
-
-### 场景 4：单路由开启 key-auth
-
-移除 limit-count 插件。
-
-![](static/NtHobFNxKoj0NkxbHvbc6CILn7c.png)
+- [1 条路由且未启用任何插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/1-one-route-without-plugin.yaml)
+- [1 条路由只启用 limit-count 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/2-one-route-with-limit-count.yaml)
+- [1 条路由同时启用 limit-count 和 key-auth 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/3-one-route-with-key-auth-and-limit-count.yaml)
+- [1 条路由和 1 个消费者只启用 key-auth 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/4-one-route-with-key-auth.yaml)
+- [100 条路由且未启用任何插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/5-100-route-without-plugin.yaml)
+- [100 条路由只启用 limit-count 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/6-100-route-with-limit-count.yaml)
+- [100 条路由和 100 个消费者同时启用 key-auth 和 limit-count 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/7-100-route-and-consumer-with-key-auth-limit-count.yaml)
+- [100 条路由和 100 个消费者只启用 key-auth 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/8-100-route-and-consumer-with-key-auth.yaml)
 

@@ -13,6 +13,8 @@ slug: /performance/benchmark
 - **逐步增加工作进程**：
   1. 初始测试时，配置 1 个 `worker_processes` 以获取单核心的性能基线。
   2. 在确认单核心性能无误后，逐步增加 `worker_processes` 的数量，以评估多核心下的性能表现。
+- **排除上游网络等干扰**：
+  1. 只启用 [mocking](https://apisix.apache.org/docs/apisix/plugins/mocking/) 插件获取 API7 Gateway 的性能基准值，这种情况下它以指定的格式返回模拟数据，并且请求不会转发到上游；
 - **确保上游服务器性能**：
   1. 在测试过程中，密切观测 API7 Gateway 代理和上游服务器的性能表现，确保上游服务器不是性能瓶颈。
 - **收集并分析测试结果**：
