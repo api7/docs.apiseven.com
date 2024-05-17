@@ -57,10 +57,6 @@ const config = {
       {
         specs: [
           {
-            spec: "https://devportal-test.apiseven.com/openapi/swagger.yaml",
-            route: "/enterprise/openapi",
-          },
-          {
             spec: "enterprise_versioned_docs/version-3.2.8.1/reference/admin-api.json",
             route: "/enterprise/reference/admin-api"
           }
