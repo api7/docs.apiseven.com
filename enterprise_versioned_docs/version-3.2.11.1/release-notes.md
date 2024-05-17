@@ -11,7 +11,7 @@ slug: /release-notes
 
 #### SSO 角色映射
 
-设置自动角色映射，可以避免超级管理员需要频繁为 SSO 登陆的用户分配角色。 满足预先设置的硬色号条件的用户，在登陆 API7 企业版时会自动获得相应的角色权限。详情参阅[设置角色映射](./best-practices/sso.md#set-role-mapping)。
+设置自动角色映射，可以避免超级管理员需要频繁为 SSO 登陆的用户分配角色。 满足预先设置的映射条件的用户，在登陆 API7 企业版时会自动获得相应的角色权限。详情参阅[设置角色映射](./best-practices/sso.md#set-role-mapping)。
 
 #### SCIM 用户同步
 
