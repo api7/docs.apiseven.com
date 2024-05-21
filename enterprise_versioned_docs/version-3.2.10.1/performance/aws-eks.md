@@ -41,11 +41,11 @@ slug: /performance/aws-eks
 
 ![create key](https://static.apiseven.com/uploads/2024/05/21/1HYzAM9f_create-key.png)
 
-1. 添加名称
+2. 添加名称
 
 ![update key name](https://static.apiseven.com/uploads/2024/05/21/kCRyzjj0_update-key-name.png)
 
-1. 创建密钥对，这时浏览器会自动下载 key pair，这个要保存好，方便之后使用命令登陆 node
+3. 创建密钥对，这时浏览器会自动下载 key pair，这个要保存好，方便之后使用命令登陆 node
 
 ![create key success](https://static.apiseven.com/uploads/2024/05/21/Xy1gFW8N_create-key-success.png)
 
