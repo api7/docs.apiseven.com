@@ -9,27 +9,27 @@ slug: /performance/aws-eks
 
 1. 在 AWS EKS 中添加一个新的测试集群
 
-![](https://static.apiseven.com/uploads/2024/05/13/AcXSkWUI_create-cluster.png)
+![create cluster](https://static.apiseven.com/uploads/2024/05/13/AcXSkWUI_create-cluster.png)
 
 2. 配置测试集群，如果之前没有使用过 EKS 服务配置过集群服务角色，可以根据文档创建一个 EKS 集群角色：[https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html#create-service-role](https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html#create-service-role)
 
-![](https://static.apiseven.com/uploads/2024/05/13/BYWC128m_config-cluster.png)
+![config cluster](https://static.apiseven.com/uploads/2024/05/13/BYWC128m_config-cluster.png)
 
 3. 点击下一步配置网络设置
 
-![](https://static.apiseven.com/uploads/2024/05/13/E2595vPU_cluster-network.png)
+![cluster network](https://static.apiseven.com/uploads/2024/05/13/E2595vPU_cluster-network.png)
 
 4. 配置可观测性
 
-![](https://static.apiseven.com/uploads/2024/05/13/gqpKSq4K_cluster-observability.png)
+![cluster observability](https://static.apiseven.com/uploads/2024/05/13/gqpKSq4K_cluster-observability.png)
 
 5. 选择插件（默认配置），点击下一步
 
-![](https://static.apiseven.com/uploads/2024/05/13/EsY6qevQ_cluster-plugin.png)
+![cluster plugin](https://static.apiseven.com/uploads/2024/05/13/EsY6qevQ_cluster-plugin.png)
 
 6. 点击创建集群，等待 EKS 创建
 
-![](https://static.apiseven.com/uploads/2024/05/13/RYL1q741_create-success.png)
+![create success](https://static.apiseven.com/uploads/2024/05/13/RYL1q741_create-success.png)
 
 ### 添加 Node
 
@@ -39,15 +39,15 @@ slug: /performance/aws-eks
 
 1. 在 AWS 中控台选择“EC2”，进入 EC2 界面，点击左边的“Key Pairs”，在右边点击“Create key pair”
 
-![](static/ETuHbUmBNoQ1XExDlNRcTU9xnwc.png)
+![create key](https://static.apiseven.com/uploads/2024/05/21/1HYzAM9f_create-key.png)
 
 1. 添加名称
 
-![](static/JnHjboNYto2Xuux3xFlc7bLynEg.png)
+![update key name](https://static.apiseven.com/uploads/2024/05/21/kCRyzjj0_update-key-name.png)
 
 1. 创建密钥对，这时浏览器会自动下载 key pair，这个要保存好，方便之后使用命令登陆 node
 
-![](static/OBD8bgciZoVEBJxBWwHcuTrnnlg.png)
+![create key success](https://static.apiseven.com/uploads/2024/05/21/Xy1gFW8N_create-key-success.png)
 
 #### 创建 Node group
 
@@ -57,23 +57,23 @@ slug: /performance/aws-eks
 
 1. 选择“计算”，点击添加“节点组”
 
-![](static/Ink1bDTVUoqZMXxYtZ6c8P6HnYg.png)
+![add node](https://static.apiseven.com/uploads/2024/05/21/pbvC0F5t_add-node.png)
 
-1. 配置节点组
+2. 配置节点组
 
-![](static/CRPYbjRM5oMkhCxv0txcWQXXnGg.png)
+![config node](https://static.apiseven.com/uploads/2024/05/21/JLqesDKU_config-node.png)
 
-1. 这里我们选择 c5.2xlarge 进行测试，测试过程使用单节点。
+3. 这里我们选择 c5.2xlarge 进行测试，测试过程使用单节点。
 
-![](static/Ri7Vb2xVLolih8xqyBXctD7vncd.png)
+![config ec2](https://static.apiseven.com/uploads/2024/05/21/eYMlTdkU_config-ec2.png)
 
-1. 配置网络，这里我们为了方便登陆到 node 中，开启了节点远程访问控制权限，不需要可以不开启。
+4. 配置网络，这里我们为了方便登陆到 node 中，开启了节点远程访问控制权限，不需要可以不开启。
 
-![](static/MjHsbBjJxo2COtxoRPUcmdAWnvh.png)
+![config node network](https://static.apiseven.com/uploads/2024/05/21/nL7hwmk2_config-node-network.png)
 
-1. 根据上面的步骤，我们需要创建 3 个节点，名字分别为 api7ee，upstream，wrk2 等待创建完成。
+5. 根据上面的步骤，我们需要创建 3 个节点，名字分别为 api7ee，upstream，wrk2 等待创建完成。
 
-![](static/S4y0byNuZomkVNxMKQNcBaIYnSh.png)
+![create 3 node](https://static.apiseven.com/uploads/2024/05/21/Fcta9TjI_create-3-node.png)
 
 #### 使用 aws cli 配置 kubectl config
 
@@ -85,7 +85,7 @@ slug: /performance/aws-eks
 aws eks update-kubeconfig --region region-code --name my-cluster
 ```
 
-1. 执行 `kubectl get svc` 验证成功与集群的通信，输出如下
+2. 执行 `kubectl get svc` 验证成功与集群的通信，输出如下
 
 ```shell
 NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
@@ -117,7 +117,7 @@ kubectl label nodes <your-node3-name> nodeName=wrk2
 kubectl create namespace api7
 ```
 
-1. 使用 helm 安装 API7 EE CP
+2. 使用 helm 安装 API7 EE CP
 
 ```shell
 helm repo add api7 https://charts.api7.ai            
@@ -127,7 +127,7 @@ helm repo update
 helm install api7ee3 api7/api7ee3 --set nodeSelector."nodeName"=api7ee --set postgresql.primary.nodeSelector."nodeName"=api7ee --set prometheus.server.nodeSelector."nodeName"=api7ee --set postgresql.primary.persistence.enabled=false --set prometheus.server.persistence.enabled=false -n api7
 ```
 
-1. 检查部署情况
+3. 检查部署情况
 
 ```shell
 kubectl get svc -owide -l app.kubernetes.io/name=api7ee3 -n api7
@@ -137,7 +137,7 @@ api7ee3-dashboard    ClusterIP   10.100.25.236   <none>        7080/TCP         
 api7ee3-dp-manager   ClusterIP   10.100.239.32   <none>        7900/TCP,7943/TCP   18s   app.kubernetes.io/component=dp-manager,app.kubernetes.io/instance=api7ee3,app.kubernetes.io/name=api7ee3
 ```
 
-1. 将端口转发到本机，登陆控制台并上传 license
+4. 将端口转发到本机，登陆控制台并上传 license
 
 ```shell
 kubectl -n api7 port-forward svc/api7ee3-dashboard 7443:7443
@@ -145,29 +145,29 @@ kubectl -n api7 port-forward svc/api7ee3-dashboard 7443:7443
 
 License 试用申请地址：https://api7.ai/try?product=enterprise
 
-1. 在控制台配置控制面地址：http://api7ee3-dp-manager:7900
+5. 在控制台配置控制面地址：http://api7ee3-dp-manager:7900
 
-![](static/J0qJbrzYVo8aQKx3hRCcbuJXnmd.png)
+![config dp address](https://static.apiseven.com/uploads/2024/05/21/oaqJxisN_config-dp-address.png)
 
 #### 禁用 prometheus 插件
 
-控制面默认会为网关组启用 prometheus 插件，进行性能测试时，我们需要将它禁用掉。
+控制面默认会为网关组启用全局的 prometheus 插件，进行性能测试时，我们需要将它禁用掉。
 
-![](static/FImzbJhNhojol3xL34VcMnp8nne.png)
+![disable prometheus](https://static.apiseven.com/uploads/2024/05/21/gvIqecLX_disable-prometheus.png)
 
 #### 数据面安装
 
 1. 点击进入网关组中
 
-![](static/LXnRbhwQyo1CSoxbcuxco8eHnoY.png)
+![access gateway group](https://static.apiseven.com/uploads/2024/05/21/yK4njyFR_access-gateway-group.png)
 
-1. 点击新增网关实例按钮
+2. 点击新增网关实例按钮
 
-![](static/WKhAbMFs0oCxz1xVRXlcVIo5nNg.png)
+![add gateway](https://static.apiseven.com/uploads/2024/05/21/Vy0lCBvY_add-gateway.png)
 
-1. 选择 Kubernetes 方式添加，配置命名空间，生成安装脚本并运行
+3. 选择 Kubernetes 方式添加，配置命名空间，生成安装脚本并运行
 
-![](static/UXGib4OZJoj6FrxGQafcvql6n0e.png)
+![get scripts](https://static.apiseven.com/uploads/2024/05/21/l8dnlT3Z_get-scripts.png)
 
 注意我们先修改 API7 Gateway 的 worker_process 数为 1，并指定安装的 Node
 
