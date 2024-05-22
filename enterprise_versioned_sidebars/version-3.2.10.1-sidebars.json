@@ -78,21 +78,6 @@
     },
     {
       "type": "category",
-      "label": "性能测试",
-      "items": [
-        "performance/performance-testing",
-        "performance/benchmark",
-        {
-          "type": "category",
-          "label": "Kubernetes 环境测试指南",
-          "items": [
-            "performance/aws-eks"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "category",
       "label": "最佳实践",
       "items": [
         "best-practices/api-version-control",

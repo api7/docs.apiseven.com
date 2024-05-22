@@ -54,7 +54,7 @@ import TabItem from '@theme/TabItem';
 | ------------ | ------------------------- |
 | Node 配置    | Amazon Linux2(AL2_x86_64) |
 | Kubernetes   | 1.29                      |
-| API7 Gateway | 3.2.11.0                   |
+| API7 Gateway | 3.2.11.1                   |
 | 上游服务     | nginx/1.25.4              |
 | 压测工具     | wrk2                      |
 
