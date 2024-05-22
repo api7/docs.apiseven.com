@@ -115,17 +115,8 @@ export const ZH_CN_links: LinkGroupData[] = [
     title: "产品",
     links: [
       {
-        label: "API7 Cloud",
-        href: "https://www.api7.cloud/",
-        badge: (
-          <Badge colorScheme="blue" variant="solid" fontSize="0.625rem">
-            New
-          </Badge>
-        ),
-      },
-      {
-        label: "API 网关",
-        href: "http://apisix.apache.org/",
+        label: "API7 企业版",
+        href: "https://www.apiseven.com/enterprise",
         badge: (
           <Badge colorScheme="blue" variant="solid" fontSize="0.625rem">
             Hot
@@ -133,11 +124,33 @@ export const ZH_CN_links: LinkGroupData[] = [
         ),
       },
       {
-        label: "k8s Ingress Controller",
+        label: "API7 Portal",
+        href: "https://www.apiseven.com/portal",
+        badge: (
+          <Badge colorScheme="blue" variant="solid" fontSize="0.625rem">
+            New
+          </Badge>
+        ),
+      },
+      {
+        label: "API7 Cloud",
+        href: "https://www.api7.cloud/",
+      },
+    ],
+  },
+  {
+    title: "开源项目",
+    links: [
+      {
+        label: "Apache APISIX",
+        href: "http://apisix.apache.org/",
+      },
+      {
+        label: "Apache APISIX Ingress Controller",
         href: "https://github.com/apache/apisix-ingress-controller",
       },
       {
-        label: "服务网格",
+        label: "Amesh",
         href: "https://github.com/api7/amesh",
       },
     ],
@@ -154,6 +167,10 @@ export const ZH_CN_links: LinkGroupData[] = [
         href: "https://www.apiseven.com/blog",
       },
       {
+        label: "API7 企业版文档",
+        href: "/enterprise/introduction",
+      },
+      {
         label: "开发者大会",
         href: "https://www.apiseven.com/resources/apisix-devcon-2020",
       },
@@ -168,7 +185,7 @@ export const ZH_CN_links: LinkGroupData[] = [
     ],
   },
   {
-    title: "API7.ai",
+    title: "支流科技",
     links: [
       {
         label: "关于我们",
@@ -177,6 +194,10 @@ export const ZH_CN_links: LinkGroupData[] = [
       {
         label: "工作机会",
         href: "https://www.apiseven.com/careers",
+      },
+      {
+        label: "合作伙伴",
+        href: "https://www.apiseven.com/partners",
       },
       {
         label: "新闻报道",
@@ -198,19 +219,6 @@ export const ZH_CN_links: LinkGroupData[] = [
       {
         label: "Apifox",
         href: "https://www.apifox.cn/",
-      },
-    ],
-  },
-  {
-    title: "联系我们",
-    links: [
-      {
-        label: "杭州财富金融中心 2 幢",
-        href: "#",
-      },
-      {
-        label: "support@api7.ai",
-        href: "mailto:support@api7.ai",
       },
     ],
   },

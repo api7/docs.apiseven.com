@@ -7,7 +7,7 @@ import {
   AiOutlineAppstore,
 } from "react-icons/ai";
 import { CgReadme } from "react-icons/cg";
-import { SiMeetup, SiKubernetes } from "react-icons/si";
+import { SiMeetup, SiKubernetes, SiGoogledocs } from "react-icons/si";
 import { MdCompare, MdBook, MdWeb, MdOutlineMiscellaneousServices } from "react-icons/md";
 import { TiNews } from "react-icons/ti";
 import { TbApiApp, TbHeartRateMonitor } from "react-icons/tb";
@@ -256,10 +256,10 @@ export const ZH_CN_Links: Link[] = [
     label: "相关资源",
     children: [
       {
-        label: "ApacheCon Asia",
-        description: "观看 ApacheCon Asia 2021 大会录像",
-        href: "https://www.apiseven.com/resources/acasia2021",
-        icon: <SiMeetup />,
+        label: "API7 企业版文档",
+        description: "查看 API7 企业版详细指南，助力企业高效集成与管理 API",
+        href: "/enterprise/introduction",
+        icon: <SiGoogledocs />,
       },
       {
         label: "Apache APISIX Summit 2022",
