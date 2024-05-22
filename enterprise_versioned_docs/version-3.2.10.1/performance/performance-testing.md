@@ -14,10 +14,10 @@ import TabItem from '@theme/TabItem';
 
 - **环境**：AWS 基础设施上的 Kubernetes 环境。
 - **测试场景**：
-  1. 只启用 [mocking](https://apisix.apache.org/docs/apisix/plugins/mocking/) 插件获取 API7 Gateway 的性能基准值，该插件将按照指定的格式返回模拟数据，并且**请求不会被转发**到上游服务器；
+  1. 只启用 [mocking](https://apisix.apache.org/docs/apisix/3.2/plugins/mocking/) 插件获取 API7 Gateway 的性能基准值，该插件将按照指定的格式返回模拟数据，并且**请求不会被转发**到上游服务器；
   2. 未启用任何插件；
-  3. 只启用 [limit-count](https://apisix.apache.org/docs/apisix/plugins/limit-count/) 限流限速插件；
-  4. 只启用 [key-auth](https://apisix.apache.org/docs/apisix/plugins/key-auth/) 身份认证插件；
+  3. 只启用 [limit-count](https://docs.api7.ai/hub/limit-count) 限流限速插件；
+  4. 只启用 [key-auth](https://docs.api7.ai/hub/key-auth) 身份认证插件；
   5. 同时启用 key-auth 和 limit-count 插件；
 - **路由和消费者**：
   1. 单条路由和单个消费者；
