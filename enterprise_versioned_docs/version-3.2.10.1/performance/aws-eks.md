@@ -37,7 +37,7 @@ slug: /performance/aws-eks
 
 在 node 中配置了 Key Pair 就可以直接登录 node。如果已经有 Key Pair 的话，可以跳过创建 Key pair 这一步。
 
-1. 在 AWS 中控台选择“EC2”，进入 EC2 界面，点击左边的“Key Pairs”，在右边点击“Create key pair”
+1. 在 AWS 中控台选择 “EC2”，进入 EC2 界面，点击左边的 “Key Pairs”，在右边点击 “Create key pair”
 
 ![create key](https://static.apiseven.com/uploads/2024/05/21/1HYzAM9f_create-key.png)
 
@@ -63,7 +63,7 @@ slug: /performance/aws-eks
 
 ![config node](https://static.apiseven.com/uploads/2024/05/21/JLqesDKU_config-node.png)
 
-3. 这里我们选择 c5.2xlarge 进行测试，测试过程使用单节点。
+3. 这里我们选择 `c5.2xlarge` 进行测试，测试过程使用单节点。
 
 ![config ec2](https://static.apiseven.com/uploads/2024/05/21/eYMlTdkU_config-ec2.png)
 
@@ -301,4 +301,3 @@ spec:
 - [100 条路由只启用 limit-count 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/6-100-route-with-limit-count.yaml)
 - [100 条路由和 100 个消费者同时启用 key-auth 和 limit-count 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/7-100-route-and-consumer-with-key-auth-limit-count.yaml)
 - [100 条路由和 100 个消费者只启用 key-auth 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/8-100-route-and-consumer-with-key-auth.yaml)
-
