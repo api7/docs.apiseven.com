@@ -6,7 +6,7 @@ slug: /performance/performance-testing
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-除了参考我们的性能测试报告外，您也可以访问我们公开的[性能基准测试仓库](https://github.com/api7/api7-gateway-performance-benchmark)。该仓库详细记录了所有用于测试的资源部署配置以及各个测试场景的具体配置信息。通过此仓库，您可以根据提供的指南对您自行部署的 API7 Gateway 进行性能基准测试。在开始测试之前，请确保您所测试的**[性能基线与我们的测试结果保持大致一致](./benchmark#性能基线测试结果)**。
+除了参考我们的性能测试报告外，您也可以访问我们公开的[性能基准测试仓库](https://github.com/api7/api7-gateway-performance-benchmark)。该仓库详细记录了所有用于测试的资源部署配置以及各个测试场景的具体配置信息。通过此仓库，您可以根据提供的指南对您自行部署的 API7 Gateway 进行性能基准测试。在开始测试之前，请确保您所测试的**[性能基线](./benchmark#性能基线测试结果)**与我们的测试结果保持大致一致。
 
 接下来，我们将详细阐述我们的测试场景、测试方法、测试结果以及相关配置的具体细节。
 
