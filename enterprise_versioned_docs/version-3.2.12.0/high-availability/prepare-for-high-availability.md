@@ -51,4 +51,4 @@ Prometheus 是一个可选组件，仅当你希望使用 API7 企业版自带的
 | API7 Dashboard | 7080  | 管理员入口 |
 | DP Manager     | 7900  | 管理数据面节点，包括配置下发、心跳检查，上报监控指标等|
 | Prometheus     | 9090  | 收集并展示监控指标  |
-| PostgreSQL     | 5432  | 存储网关配置数据，可以替换为其他关系型数据库|
+| PostgreSQL     | 5432  | Version 15, 存储网关配置数据，可以替换为其他关系型数据库如 MySQL 5.7 或 OceanBase 4.2.2 |

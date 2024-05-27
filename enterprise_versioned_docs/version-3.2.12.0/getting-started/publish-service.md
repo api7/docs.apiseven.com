@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 设计、开发和部署 API 后，你可以在 API7 企业版中发布这些 API，以便进行访问。你可以将其发布到测试环境、预生产环境、生产环境，或多个区域。
 
-本教程以 `Swagger Petstore` 为例，介绍如何将 API 发布到测试环境。通常情况下，开发人员根据后端服务组织 API，因此 API7 以服务维度管理 API。特定后端的 API 共享配置，并在后端发生变化时一起更新。
+API7 企业版中的服务，默认是七层服务。每个服务都可以管理若干路由，且上游可以是 HTTP/HTTPs/gRPC/gRPcs 几种类型。本教程以 `Swagger Petstore` 为例，介绍如何将 API 发布到测试环境。通常情况下，开发人员根据后端服务组织 API，因此 API7 以服务维度管理 API。特定后端的 API 共享配置，并在后端发生变化时一起更新。
 
 ## 前提条件
 
@@ -30,6 +30,7 @@ import TabItem from '@theme/TabItem';
       <li> 从左侧导航栏中选择 <strong>服务</strong>， 然后单击<strong>新增服务</strong>。</li>
       <li> 选择 <strong>手动新增</strong>。</li>
       <li> <strong>名称</strong>填写<code>Swagger Petstore</code>。</li>
+      <li> <strong>服务类型</strong>使用默认值<code>HTTP(七层代理)</code>, <strong>上游 Scheme</strong>使用默认值<code>HTTP</code>。</li>
       <li> 单击<strong>新增</strong>。</li>
       <li> 在服务详情页面中，单击<strong>新增路由</strong>。</li>
       <li> 在<strong>新增路由</strong> 对话框中, 执行以下操作:

@@ -11,32 +11,48 @@ slug: /release-notes
 
 #### 四层路由（Stream Route）
 
-API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连接。 添加一个四层类型的服务，并在Add a stream service and several stream routes to [Proxy Transport Layer (L4) Traffic](./getting-started/proxy-l4-traffic.md).
+API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连接。 添加一个四层类型的服务，并在其中添加若干个四层路由（Stream Route，即可[转发四层流量](./getting-started/proxy-l4-traffic.md).
 
-#### Custom Role (UI Support)
+#### 自定义角色 (控制台支持)
 
-Design your own custom roles with granular permission control.
+当默认提供的角色无法满足需求时，你可以自行设计自定义角色，实现精细化权限控制。可参阅[添加自定义角色](./getting-started/rbac.md)
 
-#### Ingress Controller (Beta, API Support Only)
+#### Ingress 控制器(Beta 测试版, 仅 API 支持)
 
-Integrate with Ingress Controller.
+集成 Ingress 控制器.
 
-### Improvement
+### 功能优化
 
-#### Optimize Left Navigation Menu
+#### 优化左侧导航菜单
 
-- Users will now see the gateway group menu as the primary landing page.
-- Change **Service** menu item to **Service Hub**.
+- 用户登录后落地页改为网关组菜单中已发布服务。
+- **服务** 菜单项改名为 **服务中心**。
 
-### Bug Fix
+### 缺陷修复
 
-- Avoid duplicate API Key when using [key-auth](https://docs.api7.ai/hub/key-auth) plugin.
-- Enalbe allowlist and denylist at the same time in [ua-restriction](https://docs.api7.ai/hub/ua-restriction) plugin.
-- Reset password without expiring the access token. 
-- Labels can be up to 64 characters long and include spaces.
-- Validate configuration of [loggly](https://apisix.apache.org/zh/docs/apisix/plugins/loggly/) plugin successfully.
-- Force configuration synchronization to the data plane, even with schema validation errors. This prevents data loss and ensures uninterrupted workflow.
-- The meaning of API7 Gateway service status consistent with the corresponding field in Apache APISIX.
+- 使用 [key-auth](https://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
+- 使用 [ua-restriction](https://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
+- 重置用户密码时不会引起访问令牌失效。
+- 使用 [loggly](https://apisix.apache.org/zh/docs/apisix/plugins/loggly/) 插件时配置能校验成功。
+- API7 网关中的状态字段取值含义和 Apache APISIX 保持一致。
+
+## 版本 3.2.11.3
+
+**发布日期: 2024-05-20
+
+### 缺陷修复
+
+- etcd watch 可以正确地传递 SNI。
+- API7 企业版在安装时会先尝试创建新的数据库。如果没有对应权限导致失败，会使用预先指定的已有数据库，避免安装失败。
+
+## 版本 3.2.11.2
+
+**发布日期**: 2024-05-20
+
+### 缺陷修复
+
+- 标签支持最长 64 个字符，且可以包含空格。
+- 即使包含 schema 校验错误，也可以正常完成与数据面的配置同步，避免数据丢失或工作流中断。
 
 ## 版本 3.2.11.1
 
