@@ -1,0 +1,203 @@
+---
+title: 更新日志
+slug: /release-notes
+---
+
+## 版本 3.2.12.0
+
+**发布日期**: 2024-05-24
+
+### 新增功能
+
+#### 四层路由（Stream Route）
+
+API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连接。 添加一个四层类型的服务，并在Add a stream service and several stream routes to [Proxy Transport Layer (L4) Traffic](./getting-started/proxy-l4-traffic.md).
+
+#### Custom Role (UI Support)
+
+Design your own custom roles with granular permission control.
+
+#### Ingress Controller (Beta, API Support Only)
+
+Integrate with Ingress Controller.
+
+### Improvement
+
+#### Optimize Left Navigation Menu
+
+- Users will now see the gateway group menu as the primary landing page.
+- Change **Service** menu item to **Service Hub**.
+
+### Bug Fix
+
+- Avoid duplicate API Key when using [key-auth](https://docs.api7.ai/hub/key-auth) plugin.
+- Enalbe allowlist and denylist at the same time in [ua-restriction](https://docs.api7.ai/hub/ua-restriction) plugin.
+- Reset password without expiring the access token. 
+- Labels can be up to 64 characters long and include spaces.
+- Validate configuration of [loggly](https://apisix.apache.org/zh/docs/apisix/plugins/loggly/) plugin successfully.
+- Force configuration synchronization to the data plane, even with schema validation errors. This prevents data loss and ensures uninterrupted workflow.
+- The meaning of API7 Gateway service status consistent with the corresponding field in Apache APISIX.
+
+## 版本 3.2.11.1
+
+**发布日期**: 2024-05-08
+
+### 新增功能
+
+#### SSO 角色映射
+
+设置自动角色映射，可以避免超级管理员需要频繁为 SSO 登陆的用户分配角色。 满足预先设置的映射条件的用户，在登陆 API7 企业版时会自动获得相应的角色权限。详情参阅[设置角色映射](./best-practices/sso.md#设置角色映射)。
+
+#### SCIM 用户同步
+
+使用 SCIM 用户同步协议简化 SSO 用户管理。它可以自动从所有支持了 SCIM 协议的、已经添加了登陆选项的身份提供商同步用户数据，确保用户信息一致性。新用户在身份提供商注册，或用户在身份提供商注销，API7 企业版即可得到及时通知，避免新用户无法登陆或已注销用户非法登陆。详情参阅[Sync User Data from IdP](./best-practices/sso.md#从身份提供商同步用户数据)。
+
+#### 自定义角色 (Beta, 仅 API 支持)
+
+如默认角色不满足业务需求，现在你可以设计自定义角色，自由组合权限，进行细粒度权限控制。
+该功能即将在后续版本支持控制台配置。
+
+### 功能优化
+
+#### 升级到 OpenSSL 3
+
+提升安全性，性能，和可靠性。
+
+#### 全局插件执行顺序优化
+
+为了简化全局插件的管理，API7 企业版 会将多个全局插件配置整合到一起，确保插件配置和执行顺序不会产生冲突。
+
+### 缺陷修复
+
+#### 前端补全 HTTP 协议检测
+
+生成的网关实例部署脚本有时无法正确检测是否需要 HTTP 或 HTTPS 协议，这可能会导致部署时出现错误。
+
+#### 上传 SSL 证书错误
+
+为网关组 A 上传的 SSL 证书可能会意外分配给网关组 B。
+
+#### 支持主机级动态设置 TLS 协议版本
+
+同步集成了在 Apache APISIX 中已解决的问题。
+
+## 版本 3.2.10.1
+
+**发布日期**：2024-04-28
+
+### 新增功能
+
+#### 支持 MySQL 5.7
+
+现在起 API7 企业版支持使用 MySQL 5.7 作为持久化数据存储。
+
+## 版本 3.2.10.0
+
+**发布日期**: 2024-04-22
+
+### 不兼容变更
+
+#### 令牌绑定用户
+
+令牌改为和具体用户绑定，且和用户享有相同的角色权限。如果用户被删除，绑定的令牌也将立刻失效被删除。
+
+## 版本 3.2.9.5
+
+**发布日期**：2024-04-16
+
+### 新增功能
+
+#### 上游 mTLS（仅 API 支持）
+
+支持在 API7 网关和上游服务之间配置 mTLS 认证。 mTLS 是一种通信安全形式，要求双方彼此展示证书。这确保了双方都是其声称的身份，并且在它们之间传输的数据是加密的。
+该功能即将在后续版本支持控制台配置。
+
+## 版本 3.2.9.4
+
+**发布日期**: 2024-04-07
+
+### 缺陷修复
+
+#### CPU 核心数判断
+
+修复了当 CPU 核心数达到最大限制时出现的问题。
+
+## 版本 3.2.9.3
+
+**发布日期**: 2024-04-03
+
+### 新增功能
+
+#### 集成 Vault(Beta)
+
+将敏感信息存储到 Vault中。仅支持通过 Admin API 使用，UI 使用即将推出。
+
+## 版本 3.2.9.2
+
+**发布日期**: 2024-04-01
+
+### 新增功能
+
+#### 支持 SAML 第三方登录
+
+API7 企业版新增支持对接 SAML 第三方登录。详情见[如何设置第三方登录](./best-practices/sso.md)。
+
+#### 新插件： Data Mask
+
+Data-mask 插件提供了在请求头、请求体和URL查询中移除或替换敏感信息的能力。了解更多： [Data Mask](https://docs.api7.ai/hub/data-mask)。
+
+### 功能优化
+
+#### 忽略路径前缀
+
+你可以选择在向上游发送请求时跳过路径前缀。这种调整对用户来说是不感知的，并且在使用不同的路径前缀来识别发送到不同网关组的 API 时可能很有用。
+
+#### 优化健康检查配置 UI
+
+提供一个更直观友好的健康检查配置交互界面。
+
+#### 升级加密算法
+
+从 AES128 升级到 AES 256。
+
+#### 性能提升
+
+消除了禁用插件后带来的性能损耗。
+
+## 版本 3.2.9.1
+
+**发布日期*: 2024-03-19
+
+### 新增功能
+
+#### 支持自定义插件管理
+
+API7 企业版支持上传你自行编写的自定义插件，以扩展 API 管理的功能。详情见[新增自定义插件](./best-practices/custom-plugin.md).
+
+#### 支持 OIDC 第三方登录
+
+API7 企业版即 LDAP 之后，新增支持对接 OIDC 第三方登录。详情见[如何设置第三方登录](./best-practices/sso.md).
+
+#### 将服务标签作为 API 提供者授权范围
+
+通过将服务标签作为为API提供者的范围，你可以授予他们访问带有特定标签的所有服务的权限。这将有助于减轻超级管理员的工作负担。通常，可以使用“部门”标签对服务进行分组。此后该部门的用户将能够访问属于该部门的所有服务。
+
+## 版本 3.2.8.1
+
+**发布日期**： 2024-02-08
+
+### 新增功能
+
+#### 支持 Nacos 服务发现
+
+API7 企业版利用服务发现功能自动检测可用的上游服务，并将其地址保存在数据库（也被称之为服务注册中心）中。因此，API 网关能够通过服务注册中心获取最新的上游地址列表，确保所有请求都被转发到健康的上游节点。
+
+在本版本中，API7 企业版支持与 Nacos 服务发现集成。用户可以使用 Nacos 服务发现来[发布服务](./getting-started/publish-service.md)和[在网关组之间同步服务](./getting-started/sync-service.md)。
+
+#### 支持 LDAP SSO 登录
+
+API7 企业版支持 LDAP 单点登录（Single Sign-On，SSO）。将 API7 企业版与 LDAP 集成后，用户可以直接使用 LDAP 用户名和密码登录 API7 控制台，创建和管理 API7 网关资源。有关如何配置 LDAP SSO 登录方法的具体信息，参见[配置 LDAP 单点登录](./best-practices/sso.md)。
+
+#### 支持使用 Kubernetes 添加网关实例
+
+用户使用[网关实例](/key-concepts/gateway-instances.md)来处理流量。在本版本中，API7 企业版支持使用 Kubernetes 向网关组添加网关实例。有关如何通过 Kubernetes 添加网关实例的具体信息，参见[添加网关实例](./getting-started/add-gateway-instance.md)。

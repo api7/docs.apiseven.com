@@ -1,0 +1,131 @@
+{
+  "docs": [
+    {
+      "type": "category",
+      "label": "产品介绍",
+      "items": [
+        "introduction/what-is-api7-ee",
+        "introduction/api7-ee-architecture"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "核心概念",
+      "items": [
+        "key-concepts/overview",
+        "key-concepts/services",
+        "key-concepts/routes",
+        "key-concepts/upstreams",
+        "key-concepts/gateway-groups",
+        "key-concepts/gateway-instances",
+        "key-concepts/consumers",
+        "key-concepts/plugins",
+        "key-concepts/roles",
+        "key-concepts/authentication",
+        "key-concepts/ssl-certificates"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "快速入门",
+      "items": [
+        "getting-started/install-api7-ee",
+        "getting-started/launch-your-first-api",
+        "getting-started/publish-service",
+        "getting-started/canary-upstream",
+        "getting-started/sync-service",
+        "getting-started/rollback-service",
+        "getting-started/add-gateway-group",
+        "getting-started/add-gateway-instance",
+        "getting-started/rbac",
+        "getting-started/license"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "API 安全",
+      "items": [
+        "api-security/api-authentication",
+        "api-security/rate-limiting",
+        "api-security/block-ip"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "API 消费",
+      "items": [
+        "api-consumption/manage-consumer-credentials",
+        "api-consumption/consumer-restriction"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "API 可观测性",
+      "items": [
+        "api-observability/monitoring",
+        "api-observability/logging",
+        "api-observability/alert"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "高可用",
+      "items": [
+        "high-availability/overview",
+        "high-availability/prepare-for-high-availability",
+        "high-availability/high-availability-installation"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "性能测试",
+      "items": [
+        "performance/performance-testing",
+        "performance/benchmark",
+        {
+          "type": "category",
+          "label": "Kubernetes 环境测试指南",
+          "items": [
+            "performance/aws-eks"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "最佳实践",
+      "items": [
+        "best-practices/api-version-control",
+        "best-practices/custom-plugin",
+        "best-practices/configure-grpc",
+        "best-practices/upstream-ha",
+        "best-practices/sso",
+        "best-practices/devops-adc"
+      ]
+    },
+    {
+      "type": "doc",
+      "label": "更新日志",
+      "id": "release-notes"
+    },
+    {
+      "type": "category",
+      "label": "开发参考",
+      "items": [
+        {
+          "type": "link",
+          "label": "Admin APIs",
+          "href": "/enterprise/reference/admin-api"
+        },
+        {
+          "type": "category",
+          "label": "API 管理",
+          "items": [
+            "reference/build-api-endpoints",
+            "reference/design-apis"
+          ]
+        }
+      ]
+    }
+  ]
+}
