@@ -1,5 +1,5 @@
 ---
-title: 四层路由（Stream Routes）
+title: 四层路由
 slug: /key-concepts/stream-routes
 ---
 
