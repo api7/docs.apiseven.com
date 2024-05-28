@@ -7,6 +7,22 @@ slug: /release-notes
 
 **发布日期**: 2024-05-24
 
+### Admin API 不兼容变更
+
+1. service status 字段从 0: 启用，1: 禁用 变更为 0:禁用，1: 启用
+
+- [Publish a service](https://docs.api7.ai/enterprise/reference/admin-api#tag/Services/paths/~1api~1services~1publish/post)
+- [Update service runtime configurations by ID](https://docs.api7.ai/enterprise/reference/admin-api#tag/Gateway-Groups/operation/changeServiceRuntimeConfiguration)
+- [Get all published services in Gateway Group](https://docs.api7.ai/enterprise/reference/admin-api#tag/Gateway-Groups/operation/listPublishedService)
+
+2. consumer api 移除 id 字段，使用 gateway group id & username 做查询、删除
+
+- [Consumers APIs](https://docs.api7.ai/enterprise/reference/admin-api#tag/Consumers)
+
+3. ssl 相关 api 强制 gateway group id 参数
+
+- [SSL APIs](https://docs.api7.ai/enterprise/reference/admin-api#tag/SSLs)
+
 ### 新增功能
 
 #### 四层路由（Stream Route）
