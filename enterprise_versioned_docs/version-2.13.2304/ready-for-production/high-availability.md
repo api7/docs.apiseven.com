@@ -62,7 +62,7 @@ yum update -y kernel
 [Docker-compose 安装](https://docs.docker.com/desktop/install/linux-install/)
 
 ## 下载 API7 Enterprise 生产安装包
-[联系我们](https://meetings.hubspot.com/zhiyuan/team) 以获取可用于企业级生产场景的安装包。
+[联系我们](https://api7.ai/contact) 以获取可用于企业级生产场景的安装包。
 
 仅供 PoC 使用的一体化安装包，无法用于高可用部署，也不适用本篇文档。
 
