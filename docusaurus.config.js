@@ -57,7 +57,7 @@ const config = {
       {
         specs: [
           {
-            spec: "enterprise_versioned_docs/version-3.2.11.3/reference/admin-api.json",
+            spec: "enterprise_versioned_docs/version-3.2.11.4/reference/admin-api.json",
             route: "/enterprise/reference/admin-api"
           }
         ],
