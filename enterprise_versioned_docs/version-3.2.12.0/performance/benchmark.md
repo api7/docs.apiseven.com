@@ -1,5 +1,5 @@
 ---
-title: 建立 API7 Gateway 性能基准
+title: 建立 API7 Gateway 性能测试报告
 slug: /performance/benchmark
 ---
 
@@ -14,7 +14,7 @@ slug: /performance/benchmark
   1. 初始测试时，配置 1 个 `worker_processes` 以获取单核心的性能基线。
   2. 在确认单核心性能无误后，逐步增加 `worker_processes` 的数量，以评估多核心下的性能表现。
 - **排除上游网络等干扰**：
-  1. 仅启用 [mocking](https://apisix.apache.org/docs/apisix/3.2/plugins/mocking/) 插件获取 API7 Gateway 的性能基准值，此插件将以指定的格式返回模拟数据，且请求不会转发到上游服务器；
+  1. 仅启用 [mocking](https://apisix.apache.org/docs/apisix/3.2/plugins/mocking/) 插件获取 API7 Gateway 的性能测试结果，此插件将以指定的格式返回模拟数据，且请求不会转发到上游服务器；
 - **确保上游服务器性能**：
   1. 在测试过程中，密切监控 API7 Gateway 和上游服务器的性能表现，确保上游服务器不是性能瓶颈。
 - **收集基线值**：
@@ -97,7 +97,7 @@ vim /etc/security/limits.conf
 
 ### 阻止访问日志 `I/O`
 
-在进行性能基准测试时，我们应该尽量减少访问日志对性能的影响，尤其是高流量场景下的大量日志写入操作，我们可以禁用 `access_log` 减轻对磁盘 `I/O` 的压力。
+在进行性能测试时，我们应该尽量减少访问日志对性能的影响，尤其是高流量场景下的大量日志写入操作，我们可以禁用 `access_log` 减轻对磁盘 `I/O` 的压力。
 
 ### 云供应商的性能问题
 
@@ -109,7 +109,7 @@ vim /etc/security/limits.conf
 
 ### API7 Gateway 中的内部错误
 
-将 API7 Gateway 错误日志调整成 `error` 级别，确保错误日志中不存在内部错误后再开始进行性能基准测试。
+将 API7 Gateway 错误日志调整成 `error` 级别，确保错误日志中不存在内部错误后再开始进行性能测试。
 
 ### 使用 c1000k 检查并发连接
 
