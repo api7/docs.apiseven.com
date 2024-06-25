@@ -6,7 +6,7 @@ slug: /performance/performance-testing
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-除了参考我们的性能测试报告外，您也可以访问我们公开的[性能基准测试仓库](https://github.com/api7/api7-gateway-performance-benchmark)。该仓库详细记录了所有用于测试的资源部署配置以及各个测试场景的具体配置信息。通过此仓库，您可以根据提供的指南对您自行部署的 API7 Gateway 进行性能基准测试。在开始测试之前，请确保您所测试的**[性能基线](./benchmark#性能基线测试结果)**与我们的测试结果保持大致一致。
+除了参考我们的性能测试报告外，您也可以访问我们公开的[性能测试仓库](https://github.com/api7/api7-gateway-performance-benchmark)。该仓库详细记录了所有用于测试的资源部署配置以及各个测试场景的具体配置信息。通过此仓库，您可以根据提供的指南对您自行部署的 API7 Gateway 进行性能测试。在开始测试之前，请确保您所测试的**[性能基线](./benchmark#性能基线测试结果)**与我们的测试结果保持大致一致。
 
 接下来，我们将详细阐述我们的测试场景、测试方法、测试结果以及相关配置的具体细节。
 
@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 - **环境**：AWS 基础设施上的 Kubernetes 环境。
 - **测试场景**：
-  1. 只启用 [mocking](https://apisix.apache.org/docs/apisix/3.2/plugins/mocking/) 插件获取 API7 Gateway 的性能基准值，该插件将按照指定的格式返回模拟数据，并且**请求不会被转发**到上游服务器；
+  1. 只启用 [mocking](https://apisix.apache.org/docs/apisix/3.2/plugins/mocking/) 插件获取 API7 Gateway 的性能测试结果，该插件将按照指定的格式返回模拟数据，并且**请求不会被转发**到上游服务器；
   2. 未启用任何插件；
   3. 只启用 [limit-count](https://docs.api7.ai/hub/limit-count) 限流限速插件；
   4. 只启用 [key-auth](https://docs.api7.ai/hub/key-auth) 身份认证插件；
@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
   2. 100 条路由和 100 个消费者；
 - **测试数据收集方式**：每个测试用例运行 5 次，每次持续 2 分钟。统计的结果为 5 次测试结果的平均值。
 
-## 性能基准测试结果
+## 性能测试结果
 
 <Tabs>
   <TabItem value="AWS" label="AWS EKS" default>
@@ -68,5 +68,5 @@ import TabItem from '@theme/TabItem';
 
 ## 更多信息
 
-- [建立性能基准测试报告](./benchmark.md)：查看如何优化 API7 Gateway 性能。
-- [在 AWS EKS 性能测试指南](./aws-eks.md)：查看如何在 AWS EKS 上建立性能基准测试报告的详细步骤和指南。
+- [建立性能测试报告](./benchmark.md)：查看如何优化 API7 Gateway 性能。
+- [在 AWS EKS 对 API7 Gateway 进行性能测试指南](./aws-eks.md)：查看如何在 AWS EKS 上建立性能测试报告的详细步骤和指南。

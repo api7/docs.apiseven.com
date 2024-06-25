@@ -1,5 +1,5 @@
 ---
-title: AWS EKS 性能测试指南
+title: 准备性能测试环境（AWS EKS）
 slug: /performance/aws-eks
 ---
 
