@@ -68,7 +68,7 @@ slug: /key-concepts/services
 
 ## 相关阅读
 
-- 核心概念 - [路由](./routes.md), [上游](./upstreams.md), [四层路由](./stream-routes.md), [服务发现](./service-discovery.md)
+- 核心概念 - [路由](routes.md), [上游](upstreams.md), [四层路由](stream-routes.md), [服务发现](service-discovery.md)
 - 快速入门
   - [发布服务](../getting-started/publish-service.md)
   - [在不同网关组之间同步服务版本](/enterprise/getting-started/sync-service)
