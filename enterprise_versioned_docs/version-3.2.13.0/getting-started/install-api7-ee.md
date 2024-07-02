@@ -9,7 +9,7 @@ slug: /getting-started/install-api7-ee
 
 :::tip
 
-本教程提供了一个包含 PostgreSQL 和 Prometheus 的容器化一体式解决方案，用于概念验证 (PoC) 测试。这省去了手动数据库和监控设置的需要，简化了你的 PoC 流程。
+本教程提供了一个包含 PostgreSQL 和 Prometheus 的容器化一体式解决方案，用于概念验证 (PoC) 测试。你无需提前准备好数据库与监控，从而简化了你的 PoC 流程。
 
 对于生产环境部署，API7 企业版还支持 MySQL 和 OceanBase 来代替 PostgreSQL。请[联系 API7 专家](https://api7.ai/contact)获取高可用性和可扩展性解决方案。
 
