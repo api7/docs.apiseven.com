@@ -50,7 +50,7 @@ If you want to access Dashboard with HTTP Endpoint(:7080), you can turn server.l
 
 :::info
 
-你也可以通过 `https://localhost:7443/login` 访问控制台。然而，控制台中后续生成的部署脚本将默认使用 `localhost` 作为 IP 地址，这可能导致连接问题，例如在 Kubernetes 上部署 API7 网关和 Ingress Controller 时。
+你也可以通过 `https://localhost:7443/login` 访问控制台。然而，控制台中后续生成的部署脚本将默认使用 `localhost` 作为 IP 地址，这可能导致在 Kubernetes 上部署 API7 网关和 Ingress Controller 时产生网络连接问题。
 
 :::
 
