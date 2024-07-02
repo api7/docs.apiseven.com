@@ -38,6 +38,7 @@
         "getting-started/rollback-service",
         "getting-started/add-gateway-group",
         "getting-started/add-gateway-instance",
+        "getting-started/kubernetes-api7-ingress-controller",
         "getting-started/proxy-l4-traffic",
         "getting-started/rbac",
         "getting-started/license"
