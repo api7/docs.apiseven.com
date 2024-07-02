@@ -26,7 +26,7 @@ import TabItem from '@theme/TabItem';
 kubectl run httpbin --image kennethreitz/httpbin --port 80
 ```
 
-你应该能收到一个响应： 
+你应该会看到类似以下内容的响应：
 
 ```shell
 pod/httpbin created`
@@ -38,7 +38,7 @@ pod/httpbin created`
 kubectl expose pod httpbin --port 80
 ```
 
-你应该能收到一个响应：
+你应该会看到类似以下内容的响应：
 
 ```shell
  `service/httpbin exposed`
@@ -141,7 +141,7 @@ spec:
 kubectl apply -f httpbin-route.yaml
 ```
 
-你应该收到类似以下的响应：
+你应该会看到类似以下内容的响应：
 
 ```text
 apisixroute.apisix.apache.org/httpbin-route created
@@ -170,7 +170,7 @@ values={[
 curl "http://127.0.0.1:9080/ip"
 ```
 
-你应该能看到以下类似的响应：
+你应该会看到类似以下内容的响应：
 
 ```text
 {
@@ -188,7 +188,7 @@ curl "http://127.0.0.1:9080/ip"
 curl "http://127.0.0.1:9080/ip"
 ```
 
-你应该能看到以下类似的响应：
+你应该会看到类似以下内容的响应：
 
 ```text
 {
@@ -217,7 +217,7 @@ kubectl port-forward svc/api7-ingress-api7-ingress-controller-apisix-gateway 908
 curl "http://127.0.0.1:9080/ip"
 ```
 
-你应该能看到以下类似的响应：
+你应该会看到类似以下内容的响应：
 
 ```text
 {
