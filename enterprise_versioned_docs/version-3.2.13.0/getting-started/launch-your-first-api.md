@@ -153,16 +153,87 @@ apisixroute.apisix.apache.org/httpbin-route created
 
 ## 验证 API
 
-发送 API 请求：
+<Tabs
+groupId="api"
+defaultValue="dashboard"
+values={[
+{label: '控制台', value: 'dashboard'},
+{label: 'ADC', value: 'adc'},
+{label: 'Ingress Controller', value: 'ingress'},
+]}>
+
+<TabItem value="dashboard">
+
+向刚才创建好的路由发送 API 请求：
 
 ```bash
-curl "http://127.0.0.1:9080/ip" 
+curl "http://127.0.0.1:9080/ip"
 ```
 
-你应该会看到以下输出：
+你应该能看到以下类似的响应：
 
-```bash
+```text
 {
   "origin": "127.0.0.1"
 }
 ```
+
+</TabItem>
+
+<TabItem value="adc">
+
+向刚才创建好的路由发送 API 请求：
+
+```bash
+curl "http://127.0.0.1:9080/ip"
+```
+
+你应该能看到以下类似的响应：
+
+```text
+{
+  "origin": "127.0.0.1"
+}
+```
+
+</TabItem>
+
+<TabItem value="ingress">
+
+1. 打开控制台，在默认网关组的 **已发布服务** 菜单中，你应该能看到一个叫做 `api7_httpbin_80` 的服务。
+
+2. 将这个服务的端口通过端口转发的方式在你的本地机器上暴露：
+
+
+```shell
+kubectl port-forward svc/api7-ingress-api7-ingress-controller-apisix-gateway 9080:80 &
+```
+
+上述命令会在后台运行，将 `api7-ingress-api7-ingress-controller-apisix-gateway`  服务的 `80` 端口 映射到本地机器的 `9080` 端口。
+
+3. 向刚才创建好的路由发送 API 请求：
+
+```shell
+curl "http://127.0.0.1:9080/ip"
+```
+
+你应该能看到以下类似的响应：
+
+```text
+{
+  "origin": "127.0.0.1"
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+恭喜你，现在你的第一个 API 已经成功运行。
+
+## 相关阅读
+
+- 快速入门
+  - [发布服务版本](publish-service.md)
+- 最佳实践
+  - [API 版本控制](../best-practices/api-version-control.md)
