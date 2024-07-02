@@ -3,6 +3,9 @@ title: 创建一个简单的 API
 slug: /getting-started/launch-your-first-api
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 本教程介绍如何创建一个简单的 API 并对其进行验证。你将完成以下步骤：
 
 1. 创建指向 `httpbin.org` 的[服务](../key-concepts/services)，并为其创建[路由](../key-concepts/routes)和[上游](../key-concepts/upstreams)。
@@ -25,7 +28,7 @@ kubectl run httpbin --image kennethreitz/httpbin --port 80
 
 你应该能收到一个响应： `pod/httpbin created`。
 
-将`httpbin` 应用的 `80` 通过服务暴露：
+将 `httpbin` 应用的 `80` 端口通过服务暴露：
 
 ```shell
 kubectl expose pod httpbin --port 80
