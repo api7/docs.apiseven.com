@@ -26,7 +26,11 @@ import TabItem from '@theme/TabItem';
 kubectl run httpbin --image kennethreitz/httpbin --port 80
 ```
 
-你应该能收到一个响应： `pod/httpbin created`。
+你应该能收到一个响应： 
+
+```shell
+pod/httpbin created`
+```
 
 将 `httpbin` 应用的 `80` 端口通过服务暴露：
 
@@ -34,7 +38,11 @@ kubectl run httpbin --image kennethreitz/httpbin --port 80
 kubectl expose pod httpbin --port 80
 ```
 
-你应该能收到一个响应： `service/httpbin exposed`。
+你应该能收到一个响应：
+
+```shell
+ `service/httpbin exposed`
+```
 
 ## 创建服务与路由
 
@@ -78,7 +86,7 @@ values={[
 
 <TabItem value="adc">
 
-Create the following configuration file:
+创建如下的配置文件：
 
 ```yaml title="adc.yaml"
 services:
@@ -98,7 +106,7 @@ services:
           - GET
 ```
 
-Synchronize the configuration to API7 Enterprise:
+将配置同步到 API7 企业版：
 
 ```shell
 adc sync -f adc.yaml
@@ -108,7 +116,7 @@ adc sync -f adc.yaml
 
 <TabItem value="ingress">
 
-Create a configuration file containing the API7 Ingress Controller custom resource of a route:
+创建一个包含了 API7 Ingress Controller 路由自定义资源的配置文件：
 
 ```yaml
 apiVersion: apisix.apache.org/v2
@@ -127,13 +135,13 @@ spec:
           servicePort: 80
 ```
 
-Apply the configuration to your cluster:
+将配置应用到你的集群：
 
 ```shell
 kubectl apply -f httpbin-route.yaml
 ```
 
-You should see a response of the following:
+你应该收到类似以下的响应：
 
 ```text
 apisixroute.apisix.apache.org/httpbin-route created
@@ -143,39 +151,7 @@ apisixroute.apisix.apache.org/httpbin-route created
 
 </Tabs>
 
-
-1. 从左侧导航栏中选择**服务**，然后单击**新增服务**。
-2. 选择**手动新增**，弹出**新增服务**对话框，如下所示：
-3. 在**新增服务**对话框中，执行以下操作：
-    - 在**名称**字段中，输入 `httpbin`。
-    - 在**上游 Scheme** 字段中，选择 `HTTP`。
-4. 单击**新增**。
-
-## 步骤 2：创建路由
-
-1. 单击上一步中创建的服务，然后单击**添加路由**。弹出**新增路由**对话框，如下所示：
-2. 在**新增路由**对话框中，执行以下操作：
-    - 在**路由名称**字段中，输入 `getting-started-ip`。
-    - 在**路径**字段中，输入 `/ip`。
-    - 在 **HTTP 方法**字段中，选择 `GET`。
-3. 单击**新增**。
-
-## 步骤 3：发布服务
-
-1. 从左侧导航栏中选择**服务**，然后选择 `httpbin` 服务并单击**立即发布**。
-2. 选择 `缺省网关组`，然后单击**下一步**。
-3. 在弹出的对话框中，执行以下操作：
-    - 在**新版本**字段中，输入 `1.0.0`。
-    - 在**如何找到上游**字段中，选择`使用节点`。
-4. 单击**新增节点**，弹出**新增节点**对话框，如下所示：
-5. 在**新增节点** 对话框中，执行以下操作：
-    - 在**主机** 字段中，输入 `httpbin.org`。
-    - 在**端口** 字段中，输入 `80`。
-    - 在**权重** 字段中，使用默认值 `100`。
-6. 单击**新增**。
-7. 确认服务信息，然后单击**发布**。
-
-## 步骤 4：验证 API
+## 验证 API
 
 发送 API 请求：
 
