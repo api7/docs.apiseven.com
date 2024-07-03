@@ -5,7 +5,7 @@ slug: /getting-started/kubernetes-api7-ingress-controller
 
 本教程将向你展示如何在 Kubernetes 上部署 API7 网关和 Ingress Controller。API7 Ingress Controller 允许你在 Kubernetes 中以声明方式配置 API7 网关。
 
-如果你不希望使用 Kubernetes 和 API7 Ingress Controller，你可以跳过本教程，开始[创建一个简单的 API](./launch-your-first-api.md).
+如果你不希望使用 Kubernetes 和 API7 Ingress Controller，你可以跳过本教程，开始[创建一个简单的 API](./launch-your-first-api.md)。
 
 ## 前提条件
 
