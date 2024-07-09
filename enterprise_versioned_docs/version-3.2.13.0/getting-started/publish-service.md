@@ -1,5 +1,5 @@
 ---
-title: 以服务维度发布 API
+title: 发布服务版本
 slug: /getting-started/publish-service
 ---
 
