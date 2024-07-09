@@ -33,15 +33,15 @@
         "getting-started/install-api7-ee",
         "getting-started/deploy-resources-on-k8s",
         "getting-started/launch-your-first-api",
-        "getting-started/publish-service",
-        "getting-started/canary-upstream",
-        "getting-started/sync-service",
-        "getting-started/rollback-service",
         "getting-started/add-gateway-group",
         "getting-started/add-gateway-instance",
         "getting-started/proxy-l4-traffic",
         "getting-started/rbac",
-        "getting-started/license"
+        "getting-started/license",
+        "getting-started/canary-upstream",
+        "getting-started/publish-service",
+        "getting-started/sync-service",
+        "getting-started/rollback-service"
       ]
     },
     {
