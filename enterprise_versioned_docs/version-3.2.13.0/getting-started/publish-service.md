@@ -96,9 +96,9 @@ tags:
 
 ### 使用上游节点发布服务
 
-1. Select **Service Hub** from the side navigation bar and then select `httpbin API`.
-2. Click **Publish Now**.
-3. Select `Test Group` and then click **Next**.
+1. 在左侧导航栏中选择 **服务中心**， 然后选择之前创建的 `httpbin API` 服务。
+2. 点击 **立即发布**。
+3. 在对话框中选择目标网关组，例如 `默认网关组`， 然后点击 **下一步**。
 4. From the dialog box, do the following:
    - In the **New Version** field, enter `1.0.0`.
    - In the **How to find the upstream** field, choose `Use Nodes`.
