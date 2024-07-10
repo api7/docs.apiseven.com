@@ -36,7 +36,7 @@ API7 企业版默认配置了一个锁定的、内置的 `超级管理员` 角�
             "statement": [
                 {
                     "resources": [
-                        "arn:api7:gateway:gatewaygroup/{gateway group id}" // 使用网关组 id 来匹配资源
+                        "arn:api7:gateway:gatewaygroup/{gateway group id}" // 使用网关组 ID 来匹配资源
                     ],
                     "actions": [ // 列出所有查看类权限
                         "gateway:GetGatewayGroup",
@@ -70,7 +70,7 @@ API7 企业版默认配置了一个锁定的、内置的 `超级管理员` 角�
             "statement": [
                 {
                     "resources": [
-                        "arn:api7:gateway:gatewaygroup/{gateway group id}" // 使用网关组 id 来匹配资源
+                        "arn:api7:gateway:gatewaygroup/{gateway group ID}" // 使用网关组 id 来匹配资源
                     ],
                     "actions": [ // 匹配所有包含 "Get" 的权限
                         "<.*>Get<.*>"
@@ -105,7 +105,7 @@ API7 企业版默认配置了一个锁定的、内置的 `超级管理员` 角�
             "statement": [
                 {
                     "resources": [
-                        "arn:api7:gateway:gatewaygroup/{gateway group id}}" // 使用网关组 id 来匹配资源
+                        "arn:api7:gateway:gatewaygroup/{gateway group id}}" // 使用网关组 ID 来匹配资源
                     ],
                     "actions": [ // 包含所有网关组相关权限
                         "<.*>"
