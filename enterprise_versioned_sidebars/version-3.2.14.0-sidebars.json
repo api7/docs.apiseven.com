@@ -117,13 +117,6 @@
       "label": "开发参考",
       "items": [
         {
-          "type": "category",
-          "label": "部署",
-          "items": [
-            "deployment/kubernetes"
-          ]
-        },
-        {
           "type": "link",
           "label": "Admin APIs",
           "href": "/enterprise/reference/admin-api"
