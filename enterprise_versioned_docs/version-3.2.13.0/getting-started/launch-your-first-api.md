@@ -201,9 +201,7 @@ curl "http://127.0.0.1:9080/ip"
 <TabItem value="ingress">
 
 1. 打开控制台，在默认网关组的 **已发布服务** 菜单中，你应该能看到一个叫做 `api7_httpbin_80` 的服务。
-
 2. 将这个服务的端口通过端口转发的方式在你的本地机器上暴露：
-
 
 ```shell
 kubectl port-forward svc/api7-ingress-api7-ingress-controller-apisix-gateway 9080:80 &
