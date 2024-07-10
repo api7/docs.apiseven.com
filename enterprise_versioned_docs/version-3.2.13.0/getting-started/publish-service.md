@@ -19,6 +19,7 @@ import TabItem from '@theme/TabItem';
 2. 确保网关组中至少有一个[网关实例](../key-concepts/gateway-instances.md)。
 
 ## 新增服务模板并添加路由
+
 <Tabs
 defaultValue="manually"
 values={[
@@ -151,61 +152,95 @@ values={[
 </TabItem>
 <TabItem value="Nacos">
 
-1. Select **Gateway Groups** from the side navigation bar, then choose `Test Group`.
-2. Select **Service Registries** from the side navigation bar and then click **Add Service Registry Connection**.
-3. From the **Add Route** dialog box, do the following:
-   1. In the **Name** field, enter `Registry for Test`.
-   2. In the **Discovery Type** field, choose `Nacos`.
-   3. In the **Hosts** field, fill in the host address and port.
-   4. In the **How to Get Token** field, choose a way to get the token and configure related parameters.
-   5. Click **Add**.
-4. Wait to make sure the status of the service registry is `Healthy`.
-5. Select **Services** from the side navigation bar, then click **Publish Now** for the `httpbin API` service.
-6. Choose the `Test Group` gateway group and then click **Next**.
-7. From the **Publish** dialog box, do the following:
-   1. In the **New Version** field, enter `1.0.0`.
-   2. In the **How to find the upstream** field, choose `Use Service Discovery`.
-   3. In the **Service Registry** field, choose `Registry for Test`, then choose the **Namespace**, **Group** and **Service Name**.
-   4. Confirm the service information, then click **Publish**.
+1. 在左侧导航栏选择 **网关组**，然后选择你的目标网关组，例如 `默认网关组`。
+2. 在左侧子菜单选择 **服务注册中心**，然后点击 **新增服务注册中心连接**。
+3. 在表单中执行以下操作：
+  1. **名称** 填写 `测试用注册中心`。
+  2. **发现类型** 选择 `Nacos`。
+  3. **主机名** 填写注册中心的主机名和端口。
+  4. **如何找到令牌** 选择获取令牌和配置其他必要参数的方式。
+  5. 点击 **新增**。
+4. 等待注册中心的状态变为 `健康`。
+5. 在左侧导航栏选择 **服务中心**，然后点击 `httpbin API` 服务下面的 **发布新版本**。
+6. 选择你的目标网关组，例如 `默认网关组`，然后点击 **下一步**。
+7. 在表单中执行以下操作：
+   1. **新版本** 填写 `1.0.0`。
+   2. **如何找到上游** 选择 `使用服务发现`。
+   3. **服务注册中心** 选择 `测试用注册中心`，然后选择对应的 **命名空间** ， **分组** 和 **服务名称**。
+   4. 确认服务信息，然后点击 **发布**。
 
-Below is an interactive demo that provides a hands-on introduction to connecting Nacos service discovery. You will gain a better understanding of how to use it in API7 Enterprise by clicking and following the steps.
+下面是一个互动演示，提供连接 N啊从事 服务发现的实践入门。通过点击并按照步骤操作，你将更好地了解如何在 API7 网关中使用它：
 
 <StorylaneEmbed src='https://app.storylane.io/demo/9qhfqjk2mnxn' />
 
 </TabItem>
 </Tabs>
 
+## 使用 ADC 发布服务
+
+你还可以使用 ADC 来声明式配置 API7 企业版。完整的配置如下：
+
+```yaml title="adc.yaml"
+services:
+  - name: httpbin API
+    upstream:
+      name: default
+      scheme: http
+      nodes:
+        - host: httpbin.org
+          port: 80
+          weight: 100
+    routes:
+      - uris:
+          - /anything/*
+        name: getting-started-anything
+        description: Return anything that is passed in on the request.
+        methods:
+          - GET
+```
+
+将配置同步到 API7 企业版：
+
+```shell
+adc sync -f adc.yaml
+```
+
+[//]: <TODO: document adc convert openapi>
 
 ## 验证 API
 
 ```bash
-curl "http://127.0.0.1:9080/pet/1" 
+curl "http://127.0.0.1:9080/anything/publish"
 ```
 
 你应该会看到以下输出：
 
-```bash
+```json
 {
-  "name": "Dog",
-  "photoUrls": [
-    "https://example.com/dog-1.jpg",
-    "https://example.com/dog-2.jpg"
-  ],
-  "id": 1,
-  "category": {
-    "id": 1,
-    "name": "pets"
+  "args": {},
+  "data": "",
+  "files": {},
+  "form": {},
+  "headers": {
+    "Accept": "*/*",
+    "Host": "localhost",
+    "User-Agent": "curl/7.88.1",
+    "X-Amzn-Trace-Id": "Root=1-664cc6d6-10fe9f740ab1629e19cf85a2",
+    "X-Forwarded-Host": "localhost"
   },
-  "tags": [
-    {
-      "id": 1,
-      "name": "friendly"
-    },
-    {
-      "id": 2,
-      "name": "smart"
-    }
-  ],
-  "status": "available"
+  "json": null,
+  "method": "GET",
+  "origin": "152.15.0.1, 116.212.249.196",
+  "url": "http://localhost/anything/publish"
 }
 ```
+
+## 相关阅读
+
+- Key Concepts
+  - [Services](../key-concepts/services.md)
+- Getting Started
+  - [Synchronize Published Service Version between Gateway Groups](sync-service.md)
+  - [Rollback a Published Service](rollback-service.md)
+- Best Practices
+  - [API Version Control](../best-practices/api-version-control.md)
