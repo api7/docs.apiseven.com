@@ -1,57 +1,59 @@
 ---
-title: Security Hardening Reference
+title: 安全加固参考
 slug: /reference/hardening
 ---
 
-Infrastructure security is an important topic that organizations scrutinize to stay compliant with the latest regulatory and legal requirements. Understanding where and how sensitive information is stored is of paramount importance to implement robust security measures and safeguard against unauthorized access, data breaches, or malicious attacks in your organization.
+# 基础设施安全
+
+基础设施安全是组织为了遵守最新的监管和法律要求而仔细审查的一个重要议题。了解敏感信息存储的位置和方式对于实施强有力的安全措施、防止未经授权的访问、数据泄露或恶意攻击至关重要。
 
 ![ee-component-diagram](https://static.apiseven.com/uploads/2024/04/11/5ZUDl6rt_ee-sec-0411.png)
 
-This document provides a reference detailing where sensitive information in API7 Enterprise is, how they are stored, and how they are protected.
+本文档提供了 API7 企业版中敏感信息存储位置、存储方式和保护方式的详细参考。
 
-## Between Data Plane (DP) and Control Plane (CP)
+## 数据面 (DP) 和控制面 (CP) 之间
 
-The communication between DP and CP can be secured with tokens or mTLS.
+DP 和 CP 之间的通信可以通过令牌或 mTLS 来保护。
 
-* When using tokens, tokens are PBKDF2 encrypted and saved to the database.
-* When using mTLS, CP only stores the server and CA certificates. It does not store the client certificate.
+* 使用令牌时，令牌经过 PBKDF2 加密并保存到数据库中。
+* 使用 mTLS 时，CP 只存储服务器和 CA 证书。它不存储客户端证书。
 
-## Control Plane (CP)
+## 控制面 (CP)
 
-### Database Connection Credentials
+### 数据库连接凭证
 
-Database connection credentials are stored in the control plane's configuration files. They can also be stored in environment variables and injected into the configuration files.
+数据库连接凭证存储在控制面的配置文件中。它们也可以存储在环境变量中并注入到配置文件中。
 
-### Plugin Resources
+### 插件资源
 
-Sensitive [plugin](../key-concepts/plugins.md) fields in plugin configurations are specified in `encrypted_fields` in the plugin schema. Information in these fields is encrypted with AES256 and saved to the database.
+插件配置中的敏感[插件](../key-concepts/plugins.md)字段在插件模式中指定为 `encrypted_fields`。这些字段中的信息使用 AES256 加密并保存到数据库中。
 
-The keyring used to encrypt sensitive information differs by gateway group and they are also encrypted before being saved to the database.
+用于加密敏感信息的密钥环因网关组而异，它们在保存到数据库之前也会被加密。
 
-### SSL Resources
+### SSL 资源
 
-For [SSL resources](../key-concepts/ssl-certificates.md), metadata are saved in plaintext while certificates are AES encrypted and saved to the database.
+对于 [SSL 资源](../key-concepts/ssl-certificates.md)，元数据以明文保存，而证书则经过 AES 加密并保存到数据库中。
 
-When viewing SSL resources using API or a dashboard, you can only see the metadata.
+使用 API 或控制台查看 SSL 资源时，你只能看到元数据。
 
-### Dashboard and DP Manager Connections
+### 控制台和 DP 管理器连接
 
-The communication between the dashboard and the DP manager uses HTTPS by default. If no certificates are configured, API7 will use self-signed certificates.
+控制台和 DP 管理器之间的通信默认使用 HTTPS。如果未配置证书，API7 将使用自签名证书。
 
-### Audit
+### 审计
 
-Sensitive information, such as passwords, is masked in audit logs before the logs are saved to the database. Any additional alteration to audit logs is forbidden.
+敏感信息（例如密码）在审计日志保存到数据库之前会被屏蔽。禁止对审计日志进行任何其他修改。
 
-### User Credentials
+### 用户凭证
 
-User credentials, including username and password, as well as an access token, are salted and PBKDF2 encrypted before being saved to the database.
+用户凭证，包括用户名和密码以及访问令牌，在保存到数据库之前都会经过加盐和 PBKDF2 加密。
 
-### Encryption Algorithms
+### 加密算法
 
-In cases where the field should not be reversible, the encryption algorithm would be PBKDF2 with salt.
+在字段不应可逆的情况下，加密算法将是带有盐的 PBKDF2。
 
-In cases where the field should be reversible, the encryption algorithm would be AES.
+在字段应可逆的情况下，加密算法将是 AES。
 
-## Data Plane (DP)
+## 数据面 (DP)
 
-Between clients and API7 Enterprise, as well as API7 Enterprise and upstream services, you can optionally configure TLS or mTLS to secure the communication.
+在客户端和 API7 企业版之间，以及 API7 企业版和上游服务之间，你可以选择配置 TLS 或 mTLS 来保护通信。
