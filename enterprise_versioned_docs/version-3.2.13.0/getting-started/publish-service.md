@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 本教程将指导你将 [httpbin](https://httpbin.org/) 服务发布到一个网关组。你将学习如何：
 
-1. 手动创建服务以及通过 OpenAPI 文件创建服务。
+1. 手动创建服务模板以及通过 OpenAPI 文件创建服务模板。
 2. 通过配置上游节点和使用服务发现机制来发布服务。
 
 ## 前提条件
