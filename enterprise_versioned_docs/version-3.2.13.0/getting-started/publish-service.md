@@ -33,13 +33,13 @@ values={[
   1. **名称** 填写 `httpbin API`。
   2. **服务类型** 选择 `HTTP （七层代理）`。
   3. **上游 Scheme** 选择 `HTTP`。
-4. 点击 **新增**。
-5. 进入服务内, 点击 **新增路由**。
-6. 在表单中，执行以下操作：
+  4. 点击 **新增**。
+4. 进入服务内, 点击 **新增路由**。
+5. 在表单中，执行以下操作：
    1. **名称** 填写 `getting-started-anything`.
    2. **路径** 填写 `/anything/*`。
    3. **HTTP 方法** 选择 `GET`。
-7. 点击 **新增**。
+6. 点击 **新增**。
 
 </TabItem>
 
@@ -79,13 +79,13 @@ tags:
 3. 在表单中执行以下操作：
   1. 上传你的 YAML/JSON 文件。
   2. **上游 Scheme** 选择 `HTTP`。
-4. 点击 **下一步**。
-5. 确认以下信息：
+  3. 点击 **下一步**。
+4. 确认以下信息：
    1. **名称**：来自 OpenAPI 文件的 `title`。
    2. **标签**：来自 OpenAPI 文件的 `tag`。
    3. **描述**：来自 OpenAPI 文件的 `description`。
    4. **路由**: 来自 OpenAPI 文件的 `Paths`。
-6. 点击 **新增**。
+5. 点击 **新增**。
 
 </TabItem>
 </Tabs>
@@ -103,41 +103,12 @@ tags:
   1. **新版本** 填写 `1.0.0`。
   2. **如何找到上游** 选择 `使用节点`。
   3. 点击 **新增节点**。在表单中执行以下操作：
-    1. **主机** 和 **端口** 填写你的后端节点地址。 your backend node address in the test environment. For this tutorial, use `httpbin.org` as the host and `80` as the port.
-    2. In the **Weight** field, use the default value `100`.
-     - Click **Add**.
-5. Confirm the service information and then click **Publish**.
+    1. **主机** 和 **端口** 填写 `httpbin.org` 和 `80`。
+    2. **权重** 使用默认值 `100`。
+  4. 点击 **新增**。
+5. 确认服务信息，然后点击 **发布**。
 
-For publishing multiple services at the same time, select **Service Hub** from the side navigation bar and then click **Batch Publish Services**.
-
-1. 从左侧导航栏中选择**服务中心**， 然后选择<code>Swagger Petstore</code>，然后单击<strong>立刻发布</strong>。</li>
-      <li> 选择<code>测试网关组</code>，然后单击<strong>下一步</strong>。</li>
-      <li> 在<strong>服务发布</strong> 对话框中, 执行以下操作:
-        <ol>
-          <li><strong>新版本</strong>填写<code>1.0.0</code>。</li>
-          <li><strong>如何找到上游</strong>选择<code>使用节点</code>。</li>
-        </ol>
-      </li>
-      <li> 单击<strong>新增节点</strong>，在对话框中, 执行以下操作:
-        <ol>
-          <li><strong>主机</strong>和<strong>端口</strong>，填写 API 在测试环境的后端服务地址。</li>
-          <li><strong>权重</strong>使用默认值<code>100</code>。</li>
-          <li>单击<strong>新增</strong>。</li>
-        </ol>
-      </li>
-      <li> 确认信息都无误后，单击<strong>发布</strong>。</li>
-    </ol>
-  </TabItem>
-  <TabItem value="openapi">
-    <ol>
-      <li> 从左侧导航栏中选择 <strong>服务</strong>， 单击<strong>批量发布服务</strong>。</li>
-      <li> 选择<code>测试网关组</code>，然后单击<strong>下一步</strong>。</li>
-      <li> 按照发布单个服务的类似步骤，添加多个待发布的服务。</li>
-      <li> 批量发布服务要求操作者同时具有所选的所有服务的操作权限（API Provider授权范围），且多个服务之间不可以有重复路径的路由，以免发布后引起冲突。</li>
-      <li> 确认信息都无误后，单击<strong>发布</strong>。</li>
-    </ol>
-  </TabItem>
-</Tabs>
+如需同时批量发布多个服务，在左侧导航栏中选择 **服务中心**， 然后点击 **批量发布服务**。
 
 ## 使用服务发现发布服务
 
@@ -150,58 +121,60 @@ Consul、Eureka、Nacos 或 Kubernetes Service Discovery 等服务发现机制�
 :::
 
 <Tabs
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes', value: 'k8s'},
-    {label: 'Nacos', value: 'Nacos'},
-  ]}>
-  <TabItem value="k8s">
-    <ol>
-      <li> 从左侧导航栏中选择 <strong>网关组</strong>， 然后选择<code>测试网关组</code>。</li>
-      <li> 从左侧导航栏中选择<code>服务注册中心</code>，然后单击<strong>新增服务注册中心连接</strong>。</li>
-      <li> 在<strong>新增服务注册中心连接</strong> 对话框中, 执行以下操作:
-        <ol>
-          <li><strong>名称</strong>填写<code>测试 Kubernetes 注册中心</code>。</li>
-          <li><strong>发现类型</strong>选择<code>Kubernetes</code>。</li>
-          <li>填写<strong>API 服务器地址</strong>和<strong>令牌</strong>。</li>
-        </ol>
-      </li>
-      <li> 等待连接，确保注册中心连接状态为<code>健康</code>。</li>
-      <li> 从左侧导航栏中选择 <strong>服务</strong>， 然后选择目标服务<code>Swagger Petstore</code>，然后单击<strong>立刻发布</strong>。</li>
-      <li> 选择<code>测试网关组</code>，然后单击<strong>下一步</strong>。</li>
-      <li> 在<strong>服务发布</strong> 对话框中, 执行以下操作:
-        <ol>
-          <li><strong>新版本</strong>填写<code>1.0.0</code>。</li>
-          <li><strong>如何找到上游</strong>选择<code>使用服务发现</code>。</li>
-          <li><strong>服务注册中心</strong>选择<code>测试 Kubernetes 注册中心</code>，并选择好对应的命名空间和服务名称。</li>
-        </ol>
-      </li>
-    </ol>
-  </TabItem>
-  <TabItem value="Nacos">
-    <ol>
-      <li> 从左侧导航栏中选择 <strong>网关组</strong>， 然后选择<code>测试网关组</code>。</li>
-      <li> 从左侧导航栏中选择<code>服务注册中心</code>，然后单击<strong>新增服务注册中心连接</strong>。</li>
-      <li> 在<strong>新增服务注册中心连接</strong> 对话框中, 执行以下操作:
-        <ol>
-          <li><strong>名称</strong>填写<code>测试 Nacos 注册中心</code>。</li>
-          <li><strong>发现类型</strong>选择<code>Nacos</code>。</li>
-          <li>填写<strong>主机地址</strong>和<strong>端口号</strong>。</li>
-        </ol>
-      </li>
-      <li> 等待连接，确保注册中心连接状态为<code>健康</code>。</li>
-      <li> 从左侧导航栏中选择 <strong>服务</strong>， 然后选择目标服务<code>Swagger Petstore</code>，然后单击<strong>立刻发布</strong>。</li>
-      <li> 选择<code>测试网关组</code>，然后单击<strong>下一步</strong>。</li>
-      <li> 在<strong>服务发布</strong> 对话框中, 执行以下操作:
-        <ol>
-          <li><strong>新版本</strong>填写<code>1.0.0</code>。</li>
-          <li><strong>如何找到上游</strong>选择<code>使用服务发现</code>。</li>
-          <li><strong>服务注册中心</strong>选择<code>测试 Nacos 注册中心</code>，并选择好对应的命名空间、分组和服务名称。</li>
-        </ol>
-      </li>
-    </ol>
-  </TabItem>
+defaultValue="kubernetess"
+values={[
+{label: 'Kubernetes', value: 'kubernetess'},
+{label: 'Nacos', value: 'Nacos'},
+]}>
+<TabItem value="kubernetess">
+
+1. 在左侧导航栏选择 **网关组**，然后选择你的目标网关组，例如 `默认网关组`。
+2. 在左侧子菜单选择 **服务注册中心**，然后点击 **新增服务注册中心连接**。
+3. 在表单中执行以下操作：
+  1. **名称** 填写 `测试用注册中心`。
+  2. **发现类型** 选择 `Kubernetes`。
+  3. 填写注册中心的 **API 服务器地址** 和 **令牌**。
+  4. 点击 **新增**。
+4. 等待注册中心的状态变为 `健康`。
+5. 在左侧导航栏选择 **服务中心**，然后点击 `httpbin API` 服务下面的 **发布新版本**。
+6. 选择你的目标网关组，例如 `默认网关组`，然后点击 **下一步**。
+7. 在表单中执行以下操作：
+   1. **新版本** 填写 `1.0.0`。
+   2. **如何找到上游** 选择 `使用服务发现`。
+   3. **服务注册中心** 选择 `测试用注册中心`，然后选择对应的 **命名空间** 和 **服务名称**。
+   4. 确认服务信息，然后点击 **发布**。
+
+下面是一个互动演示，提供连接 Kubernetes 服务发现的实践入门。通过点击并按照步骤操作，你将更好地了解如何在 API7 网关中使用它：
+
+<StorylaneEmbed src='https://app.storylane.io/demo/wf6vrqlk9knc' />
+
+</TabItem>
+<TabItem value="Nacos">
+
+1. Select **Gateway Groups** from the side navigation bar, then choose `Test Group`.
+2. Select **Service Registries** from the side navigation bar and then click **Add Service Registry Connection**.
+3. From the **Add Route** dialog box, do the following:
+   1. In the **Name** field, enter `Registry for Test`.
+   2. In the **Discovery Type** field, choose `Nacos`.
+   3. In the **Hosts** field, fill in the host address and port.
+   4. In the **How to Get Token** field, choose a way to get the token and configure related parameters.
+   5. Click **Add**.
+4. Wait to make sure the status of the service registry is `Healthy`.
+5. Select **Services** from the side navigation bar, then click **Publish Now** for the `httpbin API` service.
+6. Choose the `Test Group` gateway group and then click **Next**.
+7. From the **Publish** dialog box, do the following:
+   1. In the **New Version** field, enter `1.0.0`.
+   2. In the **How to find the upstream** field, choose `Use Service Discovery`.
+   3. In the **Service Registry** field, choose `Registry for Test`, then choose the **Namespace**, **Group** and **Service Name**.
+   4. Confirm the service information, then click **Publish**.
+
+Below is an interactive demo that provides a hands-on introduction to connecting Nacos service discovery. You will gain a better understanding of how to use it in API7 Enterprise by clicking and following the steps.
+
+<StorylaneEmbed src='https://app.storylane.io/demo/9qhfqjk2mnxn' />
+
+</TabItem>
 </Tabs>
+
 
 ## 验证 API
 
