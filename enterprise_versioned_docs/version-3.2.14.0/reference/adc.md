@@ -79,7 +79,7 @@ adc ping --backend api7ee --server https://localhost:7443
 
 ### `adc lint`
 
-Validate the provided configuration files locally.
+在本地验证提供的配置文件。
 
 | Option                               | Default Value           | Description                                                      | Valid Values         | Env Variable     |
 |--------------------------------------|-------------------------|------------------------------------------------------------------|----------------------|-------------------|
@@ -93,7 +93,7 @@ adc lint -f service-a.yaml -f service-b.yaml
 
 ### `adc sync`
 
-Synchronize the local configuration to the connected backend.
+将本地配置同步到连接的后端。
 
 | Option                              | Default Value           | Description                                                      | Valid Values         | Env Variable     |
 |--------------------------------------|-------------------------|------------------------------------------------------------------|----------------------|-------------------|
@@ -120,7 +120,7 @@ adc sync -f service-a.yaml -f service-b.yaml --backend api7ee --server https://l
 
 ### `adc dump`
 
-Save backend configuration to a local file.
+将后端配置保存到本地文件。
 
 | Option                              | Default Value           | Description                                                      | Valid Values         | Env Variable     |
 |--------------------------------------|-------------------------|------------------------------------------------------------------|----------------------|-------------------|
@@ -147,7 +147,7 @@ adc dump -o apisix-dump.yaml --backend api7ee --server https://localhost:7443
 
 ### `adc diff`
 
-Show differences in the configuration between the local file and the backend.
+显示本地文件和后端配置之间的差异。
 
 | Option                              | Default Value           | Description                                                      | Valid Values         | Env Variable     |
 |--------------------------------------|-------------------------|------------------------------------------------------------------|----------------------|-------------------|
@@ -174,7 +174,7 @@ adc diff -f service-a.yaml -f service-b.yaml --backend api7ee --server https://l
 
 ### `adc convert`
 
-Convert API specification to ADC configuration.
+将 API 规范转换为 ADC 配置。
 
 | Option                               | Default Value           | Description                                                      | Valid Values         | Env Variable     |
 |--------------------------------------|-------------------------|------------------------------------------------------------------|----------------------|-------------------|
@@ -188,7 +188,7 @@ adc convert openapi -f open-api-spec.yaml -o adc.yaml
 
 ### `adc help`
 
-Print the general help menu or the help menu for the specified command.
+打印通用帮助菜单或指定命令的帮助菜单。
 
 #### 使用示例
 
