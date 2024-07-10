@@ -3,56 +3,57 @@ title: APISIX Declarative CLI (ADC)
 slug: /reference/adc
 ---
 
-APISIX Declarative CLI (ADC) is a command-line tool for managing both APISIX and API7 Enterprise declaratively. It offers simplicity and clarity in defining the desired state of the gateway, allowing developers and administrators to focus on the result rather than the steps.
+APISIX Declarative CLI (ADC) 是一个命令行工具，用于声明式地管理 APISIX 和 API7 企业版。它提供了简单明了的方式来定义网关的期望状态，让开发人员和管理员专注于结果而非步骤。
 
-The declarative configurations serves as the single source of truth that developers can manage through their existing version control systems.
+声明式配置作为单一事实来源，开发人员可以通过他们现有的版本控制系统进行管理。
 
-ADC has the following general syntax:
+ADC 具有以下通用语法：
+
 
 ```shell
 adc [command] [options]
 ```
 
-with global options:
+以及全局选项：
 
 * `-V, --version` to check the version
 * `-h, --help` to print the help menu of the command
 
-## Configuring ADC
+## 配置 ADC
 
-ADC needs to be configured before it can be used to manage the gateway. You can configure ADC using environment variables or command-line flags.
+在使用 ADC 管理网关之前，需要先进行配置。你可以使用环境变量或命令行参数来配置 ADC。
 
-### Using Environment Variables
+### 使用环境变量
 
-ADC exposes all configuration options as environment variables. For example, you can configure the backend type and address using the `ADC_BACKEND` and `ADC_SERVER` environment variables, respectively.
+ADC 将所有配置选项暴露为环境变量。例如，你可以分别使用 `ADC_BACKEND` 和 `ADC_SERVER` 环境变量来配置后端类型和地址。
 
 ```shell
 export ADC_BACKEND=api7ee
 export ADC_SERVER=https://localhost:7443
 ```
 
-A better way is to configure these options in a `.env` file:
+更好的方式是在 `.env` 文件中配置这些选项：
 
 ```text title=".env"
 ADC_BACKEND=api7ee
 ADC_SERVER=https://localhost:7443
 ```
 
-### Using Command-Line Flags
+### 使用命令行参数
 
-You can also configure ADC or overwrite the configuration in the environment variables using the command-line flags. For example, to configure/overwrite the backend type and address for the `ping` command:
+你也可以使用命令行参数来配置 ADC 或覆盖环境变量中的配置。例如，为 `ping` 命令配置/覆盖后端类型和地址：
 
 ```shell
 adc ping --backend api7ee --server "https://localhost:7443"
 ```
 
-Run `adc help [command]` to see the available configuration options for a command.
+运行 `adc help [command]` 以查看命令的可用配置选项。
 
-## Commands
+## 命令
 
 ### `adc ping`
 
-Ping the configured backend to verify connectivity.
+Ping 已配置的后端以验证连接性。
 
 | Option                              | Default Value           | Description                                                      | Valid Values         | Env Variable     |
 |--------------------------------------|-------------------------|------------------------------------------------------------------|----------------------|-------------------|
@@ -70,7 +71,7 @@ Ping the configured backend to verify connectivity.
 | `--tls-client-key-file <string>`        |                         | Path to mutual TLS client key for verifying the backend Admin API.                           |        `ADC_TLS_CLIENT_KEY_FILE`              |                   |
 | `--tls-skip-verify`        |        `false`                 | Whether to verify the TLS certificate when connecting to the backend Admin API.                           |           `ADC_TLS_SKIP_VERIFY`           |                   |
 
-#### Sample Usage
+#### 使用示例
 
 ```shell
 adc ping --backend api7ee --server https://localhost:7443
@@ -84,7 +85,7 @@ Validate the provided configuration files locally.
 |--------------------------------------|-------------------------|------------------------------------------------------------------|----------------------|-------------------|
 | `-f, --file <file-path>`             |                 | Files to lint.                                          |  |        |
 
-#### Sample Usage
+#### 使用示例
 
 ```shell
 adc lint -f service-a.yaml -f service-b.yaml
@@ -111,7 +112,7 @@ Synchronize the local configuration to the connected backend.
 | `--tls-client-key-file <string>`        |                         | Path to mutual TLS client key for verifying the backend Admin API.                           |        `ADC_TLS_CLIENT_KEY_FILE`              |                   |
 | `--tls-skip-verify`        |        `false`                 | Whether to verify the TLS certificate when connecting to the backend Admin API.                           |           `ADC_TLS_SKIP_VERIFY`           |                   |
 
-#### Sample Usage
+#### 使用示例
 
 ```shell
 adc sync -f service-a.yaml -f service-b.yaml --backend api7ee --server https://localhost:7443
@@ -138,7 +139,7 @@ Save backend configuration to a local file.
 | `--tls-client-key-file <string>`        |                         | Path to mutual TLS client key for verifying the backend Admin API.                           |        `ADC_TLS_CLIENT_KEY_FILE`              |                   |
 | `--tls-skip-verify`        |        `false`                 | Whether to verify the TLS certificate when connecting to the backend Admin API.                           |           `ADC_TLS_SKIP_VERIFY`           |                   |
 
-#### Sample Usage
+#### 使用示例
 
 ```shell
 adc dump -o apisix-dump.yaml --backend api7ee --server https://localhost:7443
@@ -165,7 +166,7 @@ Show differences in the configuration between the local file and the backend.
 | `--tls-client-key-file <string>`        |                         | Path to mutual TLS client key for verifying the backend Admin API.                           |        `ADC_TLS_CLIENT_KEY_FILE`              |                   |
 | `--tls-skip-verify`        |        `false`                 | Whether to verify the TLS certificate when connecting to the backend Admin API.                           |           `ADC_TLS_SKIP_VERIFY`           |                   |
 
-#### Sample Usage
+#### 使用示例
 
 ```shell
 adc diff -f service-a.yaml -f service-b.yaml --backend api7ee --server https://localhost:7443
@@ -179,7 +180,7 @@ Convert API specification to ADC configuration.
 |--------------------------------------|-------------------------|------------------------------------------------------------------|----------------------|-------------------|
 | `openapi`             |                 | Convert an OpenAPI specification to ADC configuration.                                          |  |        |
 
-#### Sample Usage
+#### 使用示例
 
 ```shell
 adc convert openapi -f open-api-spec.yaml -o adc.yaml
@@ -189,7 +190,7 @@ adc convert openapi -f open-api-spec.yaml -o adc.yaml
 
 Print the general help menu or the help menu for the specified command.
 
-#### Sample Usage
+#### 使用示例
 
 ```shell
 adc help [command]
