@@ -3,73 +3,240 @@ title: 转发四层流量
 slug: /getting-started/proxy-l4-traffic
 ---
 
-API7 网关同时支持处理传输层（四层）流量，通常是 TCP 或者 UDP 流量。可用于纯四层流量转发，或同时转发四层及七层流量。
+API7 网关 除了处理应用层（L7）流量外，还可以处理传输层（L4）TCP 和 UDP 流量。
 
-这篇操作指南以和 MySQL 服务器建立连接为例，描述了如何配置[四层路由（Stream Route）](../key-concepts/stream-routes.md)来进行四层流量的转发。
+本教程将演示如何配置 [四层路由](../key-concepts/stream-routes.md) 在客户端和 MySQL 服务器之间代理 L4 流量。
 
 ## 前提条件
 
-1. [安装 API7 企业版](./install-api7-ee.md)。
-2. 获取一个拥有**超级管理员**或者**API 提供者**角色的用户账号。
-3. 将默认网关组重命名为`测试网关组`并配置网络。该网关组将作为测试环境的 API 网关。
-4. [在网关组中至少新增一个网关实例](add-gateway-instance.md)。
-5. 准备好 MySQL 服务器。
+1. [安装 API7 Enterprise](./install-api7-ee.md)。
+2. 您的网关组中至少有一个 [网关实例](./add-gateway-instance.md)。
+3. 安装 [MySQL 客户端](https://dev.mysql.com/doc/refman/8.4/en/installing.html) 以验证四层路由。
 
 ## 启动 MySQL 服务器
 
-启动一个 MySQL 实例作为上游服务的样例，并配置好根密码。例如：
+<Tabs
+groupId="api"
+defaultValue="docker"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Kubernetes', value: 'k8s'},
+]}>
+
+<TabItem value="docker">
+
+如果你在 Docker 中安装了网关实例并使用 Dashboard 或 ADC 进行配置，请在默认的 API7 Enterprise 网络 `api7-ee_api7` 中启动 MySQL 服务器：
 
 ```shell
 docker run -d \
   --name mysql \
-  --network=apisix-quickstart-net \
-  -e MYSQL_ROOT_PASSWORD=my-secret-pw \
-  mysql \
-  mysqld --default-authentication-plugin=mysql_native_password
+  --network=api7-ee_api7 \
+  -p 3306:3306 \
+  -e MYSQL_ROOT_PASSWORD=password \
+  mysql:8.4 \
+  mysqld --mysql-native-password=ON
 ```
 
-## 新增服务和四层路由
+</TabItem>
 
-1. 从左侧导航栏选择**服务中心**，然后点击 **新增服务**。
-2. 选择**手动新增**。
-3. 在**新增服务**对话框中, 执行以下操作：
-    - **名称**填写 `MySQL`。
-    - **服务类型**选择`Stream(四层代理)`。
-    - **上游 Scheme**使用默认值 `TCP`。
-4. 点击**新增**。
-5. 在服务详情页面中，点击**新增四层路由**。
-6. 在**新增四层路由**对话框中，执行以下操作：
-    - **路由名称**填写 `stream-route-mysql`。
-    - **服务器地址**填写 `127.0.0.111`。
-    - **服务器端口**填写 `2000`。 
-7. 点击 **新增**。
+<TabItem value="k8s">
 
-## 使用上游节点发布服务
-
-1. 从左侧导航栏中选择**服务中心**，然后选择 `MySQL` 服务。
-2. 点击**立即发布**。
-3. 选择 `测试网关组` 然后点击**下一步**。
-4. 在**服务发布**对话框中，执行以下操作：
-    - **新版本**填写 `1.0.0`。
-    - **如何找到上游** 保持默认值 `使用上游节点`.
-    - 点击**新增节点**。在对话框中，执行以下操作：
-        - **主机**和**端口**填写你的 MySQL 服务器 IP 地址及`3306`。
-        - **权重**使用默认值 `100`。
-    - 点击**新增**。
-5. 确认服务信息后，点击**发布**。
-
-## 验证 MySQL 连接
-
-连接 MySQL 服务器并使用 root 用户登录，根据提示输入密码：
+如果你在 Kubernetes 上安装了网关实例并使用 Ingress Controller 进行配置，请在 Kubernetes 上启动 MySQL 服务器：
 
 ```shell
-mysql --host=127.0.0.1 --port=9100 -u root -p
+kubectl run mysql --image mysql:8.4 --port 3306 --env="MYSQL_ROOT_PASSWORD=password"
 ```
 
-你可以看到，请求被拒绝了：
+通过服务暴露服务器端口：
+
+```shell
+kubectl expose pod mysql --port 3306
+```
+
+</TabItem>
+</Tabs>
+
+## 添加具有四层路由的服务
+
+<Tabs
+groupId="config"
+defaultValue="dashboard"
+values={[
+{label: '控制台', value: 'dashboard'},
+{label: 'ADC', value: 'adc'},
+{label: 'Ingress Controller', value: 'ingress'},
+]}>
+<TabItem value="dashboard">
+
+1. 从侧导航栏中选择网关组的 **已发布服务**，然后点击 **新增服务**。
+2. 选择 **手动新增**。
+3. 在表单中执行以下操作：
+    * **名称** 填写 `MySQL`。
+    * **服务类型** 选择 `Stream(四层代理)`。
+    * **上游 Scheme** 选择`TCP`。
+    * **如何找到上游** 选择`使用节点`。
+    * 点击**新增节点**。
+    * 在表单中执行以下操作：
+        * **主机** 填写 `127.0.0.1`。
+        * **端口** 填写 `3306`。
+        * **权重** 使用默认值 `100`。
+        * 点击 **新增**。这将新建一个 “无版本” 状态的新服务。
+5. 在服务内，点击 **新增四层路由**。
+6. 在表单中执行以下操作：
+    * **名称** 填写 `stream-route-mysql`。
+    * **服务器地址** 填写 `127.0.0.1`。
+    * 在**服务器端口** 填写 `2000`。 
+    * 点击 **新增**。
+
+</TabItem>
+
+<TabItem value="adc">
+
+要使用 AD C创建四层路由，请使用以下配置：
+
+```yaml title="adc.yaml"
+services:
+  - name: MySQL
+    upstream:
+      name: default
+      scheme: tcp
+      nodes:
+        - host: 127.0.0.1
+          port: 3306
+          weight: 100
+    stream_routes:
+      - name: stream-route-mysql
+        server_addr: 127.0.0.1
+        server_port: 2000
+```
+
+将配置同步到 API7 企业版：
+
+```shell
+adc sync -f adc.yaml
+```
+
+</TabItem>
+
+
+<TabItem value="ingress">
+
+创建一个 Kubernetes 清单文件，使用 ApisixRoute 自定义资源来配置一个四层路由：
+
+```yaml title="stream-route.yaml"
+apiVersion: apisix.apache.org/v2
+kind: ApisixRoute
+metadata:
+  name: stream-route-mysql
+  namespace: api7
+spec:
+  stream:
+    - name: stream-route-mysql
+      protocol: TCP
+      match:
+        ingressPort: 2000
+      backend:
+        serviceName: mysql
+        servicePort: 3306
+```
+
+将配置应用到你的集群：
+
+```shell
+kubectl apply -f stream-route.yaml
+```
+
+你应该能看到类似如下的响应：
 
 ```text
-ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initial communication packet', system error: 0
+apisixroute.apisix.apache.org/stream-route-mysql created
 ```
 
-只有把四层路由中的匹配规则，改为`服务器地址` 和 `服务器端口` 分别为 `127.0.0.1` 和 `9100`，才能成功建立连接。
+</TabItem>
+
+</Tabs>
+
+## 验证四层路由
+
+<Tabs
+groupId="api"
+defaultValue="docker"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Kubernetes', value: 'k8s'},
+]}>
+
+<TabItem value="docker">
+
+如果你在 Docker 中安装了网关实例并使用控制台或 ADC 进行配置，在继续验证步骤之前，请确保将服务器端口 2000 暴露给宿主机(`-p2000:2000`)。
+
+</TabItem>
+
+<TabItem value="k8s">
+
+如果你已经在 Kubernetes 上安装了网关实例，并使用 Ingress Controller 进行配置，那么要添加服务端口，你需要编辑对应的 Service。
+
+```shell
+kubectl edit svc/api7-ee-3-gateway-gateway
+```
+
+为 MySQL 添加服务端口：
+
+```yaml
+spec:
+  ports:
+    ...
+    # highlight-start
+    - name: apisix-gateway-mysql
+      port: 2000
+      protocol: TCP
+      targetPort: 2000
+    # highlight-end
+    ...
+```
+
+为服务转发端口 `2000` ：
+
+```shell
+kubectl port-forward svc/api7-ee-3-gateway-gateway 2000:2000 &
+```
+
+</TabItem>
+
+</Tabs>
+
+使用 MySQL 客户端通过 API7 Gateway 与 MySQL 服务器建立连接。以 root 身份连接，并使用之前配置的密码。
+
+```shell
+mysql --host=127.0.0.1 --port=2000 -u root -p
+```
+
+你应该会看到如下的 MySQL 提示符：
+
+```text
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.4.0 MySQL Community Server - GPL
+ 
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+ 
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+ 
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+ 
+mysql>
+```
+
+## 相关阅读
+
+- 核心概念
+  - [服务](../key-concepts/services.md)
+  - [路由](../key-concepts/routes.md)
+  - [上游](../key-concepts/upstreams.md)
+- 快速入门
+  - [发布服务版本](publish-service.md)
+- 最佳实践
+  - [API 版本控制](../best-practices/api-version-control.md)
+  
