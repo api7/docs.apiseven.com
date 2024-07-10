@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
 
 ## 前提条件
 
-1. 有两个[网关组](./add-gateway-group.md)用于测试和生产环境，每个组中至少有一个网关实例。
+1. 有两个[网关组](./add-gateway-group.md)作为来源网关组和目的地网关组，例如用于测试和生产环境的亮哥网关组，每个网关组中至少有一个网关实例。
 2. 在测试环境对应的网关组中[发布一个服务版本](./publish-service.md)。
 
 ## 将服务版本同步到生产网关组
@@ -41,21 +41,71 @@ values={[
 
 ### 使用上游节点
 
-1. 从侧边栏选择 **网关组**，然后选择你的网关组的 **已发布服务**。
-2. 然后点击服务 `httpbin API` 下的版本 `1.0.0`。
-2. 从 **Actions** 列表中点击 `Sync to Other Gateway Group`。
-3. 在 **Gateway Group** 字段中，选择 `Production Group`，然后点击 **Next**。
-4. 在 **How to find the upstream** 字段中，选择 `Use Nodes`。
-5. 从 **Nodes** 表格中，编辑 **Host** 和 **Port** 字段，输入生产环境中的后端节点地址或模拟服务器地址。
-6. 点击 **Sync**。
+1. 从侧边栏选择服务来源网关组的 **已发布服务**，然后点击你要同步的服务版本，例如版本为 `1.0.0` 的服务 `httpbin API`。
+2. 点击页面标题中 **启用/禁用** 旁边的按钮，然后选择 `同步到其他网关组`。
+3. 在表单中执行以下操作：
+   * **网关组** 选择要同步去的目的地网关组，例如 `生产网关组`，然后单击**下一步**。
+4. 在表单中执行以下操作：
+   * **如何查找上游** 选择`使用节点`。
+   * 点击**添加节点**。在表单中执行以下操作：
+      * **主机**和**端口** 填写 `httpbin.org` 作为主机，`80` 作为端口。
+      * **权重**使用默认值 `100`。
+      * 点击**添加**。
+   * 确认服务信息，然后点击**同步**。
 
-### Using Service Discovery
+### 使用服务发现
 
-1. 从侧边栏选择 **Services**，然后点击服务 `httpbin API` 下的版本 `1.0.0`。
-2. 从 **Actions** 列表中点击 `Sync to Other Gateway Group`。
-3. 在 **Gateway Group** 字段中，选择 `Production Group`，然后点击 **Next**。
-4. 在 **How to find the upstream** 字段中，选择 `Use Service Discovery`。
-5. 在 **Service Registry** 字段中，选择 `Registry for Test`，以及 Registry 中的 Namespace 和服务名称。
-6. 点击 **Sync**。
+1. 从侧边栏选择服务来源网关组的 **已发布服务**，然后点击你要同步的服务版本，例如版本为 `1.0.0` 的服务 `httpbin API`。
+2. 点击页面标题中 **启用/禁用** 旁边的按钮，然后选择 `同步到其他网关组`。
+3. 在表单中执行以下操作：
+   * **网关组** 选择要同步去的目的地网关组，例如 `生产网关组`，然后单击**下一步**。
+4. 在表单中执行以下操作：
+   * **如何查找上游**，选择 `使用服务发现`。
+   * **服务注册表** 选择 `生产用注册中心`，以及注册表中的命名空间和服务名称。
+   * 确认服务信息，然后点击**同步**。
 
 </TabItem>
+
+<TabItem value="adc">
+
+为了通过 ADC 将 [对应的配置](./publish-service.md#use-adc-to-publish-the-api) 同步到 `Production Group`，需要运行：  
+
+```shell
+adc sync -f adc.yaml --gateway-group "Production Group"
+```
+
+</TabItem>
+</Tabs>
+
+## 验证同步之后的 API
+
+发送一个请求来验证同步到 `生产网关组` 上的 API：
+
+```bash
+# 替换成生产网关组对应的地址
+curl "http://127.0.0.1:9080/headers"
+```
+
+You should see the following response:
+
+```json
+{
+ "headers": {
+   "Accept": "*/*",
+   "Host": "httpbin.org",
+   "User-Agent": "curl/7.74.0",
+   "X-Amzn-Trace-Id": "Root=1-6650ab7e-32c90eba787abbeb4e3dbb0c",
+   "X-Forwarded-Host": "127.0.0.1"
+ }
+}
+```
+
+## 相关阅读
+
+- 核心概念
+  - [服务](../key-concepts/services.md)
+- 快速入门
+  - [发布服务版本](publish-service.md)
+  - [回滚已发布的服务](rollback-service.md)
+- 最佳实践
+  - [API 版本控制](../best-practices/api-version-control.md)
