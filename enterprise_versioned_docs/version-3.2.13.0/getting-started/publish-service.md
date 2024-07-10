@@ -237,10 +237,10 @@ curl "http://127.0.0.1:9080/anything/publish"
 
 ## 相关阅读
 
-- Key Concepts
-  - [Services](../key-concepts/services.md)
-- Getting Started
-  - [Synchronize Published Service Version between Gateway Groups](sync-service.md)
-  - [Rollback a Published Service](rollback-service.md)
-- Best Practices
-  - [API Version Control](../best-practices/api-version-control.md)
+- 核心概念
+  - [服务](../key-concepts/services.md)
+- 快速入门
+  - [将已发布的服务版本同步到其他网关组](sync-service.md)
+  - [回滚已发布的服务版本](rollback-service.md)
+- 最佳实践
+  - [API 版本控制](../best-practices/api-version-control.md)
