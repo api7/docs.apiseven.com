@@ -6,42 +6,55 @@ slug: /getting-started/sync-service
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-在网关组之间同步 API 有助于跨环境复制 API，尤其是从低阶环境到高阶环境，如从测试环境到生产环境。如果使用多个网关组来划分区域或团队，同步 API 将有助于在全球范围内分发 API。
+网关组之间同步已发布的服务版本是 API 版本控制的一个很有用的功能。例如：
 
-:::info
+1. 当使用网关组来分隔环境（如测试和生产）时，你可以在运行测试后将服务版本从测试同步到生产。
+2. 或者，如果你使用网关组来划分区域或团队，同步服务可以帮助在它们之间分发服务。
 
-- 同步会使网关组之间的服务版本保持一致，而发布则会为每次发布生成新的版本号。
-- 你只能同步当前运行的服务版本，不能同步历史版本。
+:::note
+
+* 同步使服务版本在网关组之间保持一致，而发布则每次创建一个新的服务版本。
+
+* 你只能同步当前运行的服务版本，不能同步旧的服务版本。
 
 :::
 
 ## 前提条件
 
-1. 获取一个具有**超级管理员** 或**API 提供者**或**运行时管理员**角色的用户账户。
-2. [发布一个服务](publish-service.md)，其中会包含至少一个 API。
-3. [添加第二个网关组](add-gateway-group.md)并将其命名为`生产网关组`。使该网关组作为生产环境的 API 网关。
+1. 有两个[网关组](./add-gateway-group.md)用于测试和生产环境，每个组中至少有一个网关实例。
+2. 在测试环境对应的网关组中[发布一个服务版本](./publish-service.md)。
 
 ## 将服务版本同步到生产网关组
 
-<Tabs>
-  <TabItem value="node" label="使用上游节点" default>
-    <ol>
-      <li> 从左侧导航栏中选择<strong>服务</strong>，然后单击 <strong>Swagger Petstore</strong>服务版本 <code>1.0.0</code>。</li>
-      <li>从<strong>操作</strong>列表中，单击<code>同步到其他网关组</code>。</li>
-      <li>在<strong>网关组</strong>字段中，选择<code>生产网关组</code>，然后单击<strong>下一步</strong>。</li>
-      <li>在<strong>如何找到上游</strong> 字段中，选择<code>使用节点</code>。</li>
-      <li>在<strong>节点</strong>列表中，编辑<strong>主机</strong>和<strong>端口</strong>字段，输入生产环境中的后端节点地址或模拟服务器地址。</li>
-      <li>单击<strong>同步</strong>。</li>
-    </ol>
-  </TabItem>
-  <TabItem value="service-discovery" label="使用服务发现">
-    <ol>
-      <li> 从左侧导航栏中选择<strong>服务</strong>，然后单击 <strong>Swagger Petstore</strong>服务版本 <code>1.0.0</code>。</li>
-      <li>从<strong>操作</strong>列表中，单击<code>同步到其他网关组</code>。</li>
-      <li>在<strong>网关组</strong>字段中，选择<code>生产网关组</code>，然后单击<strong>下一步</strong>。</li>
-      <li>在<strong>如何找到上游</strong> 字段中，选择<code>使用服务发现</code>。</li>
-      <li>在<strong>节点</strong>列表中，编辑<strong>主机</strong>和<strong>端口</strong>字段，输入生产环境中的后端节点地址或模拟服务器地址。</li>
-      <li>单击<strong>同步</strong>。</li>
-    </ol>
-  </TabItem>
-</Tabs>
+同一个服务版本发布/同步到不同网关组时，可以使用不同的上游地址对应不同环境里的后端服务。
+
+<Tabs
+groupId="api"
+defaultValue="dashboard"
+values={[
+{label: 'Dashboard', value: 'dashboard'},
+{label: 'ADC', value: 'adc'},
+]}>
+<TabItem value="dashboard">
+
+你可以通过配置上游节点或使用[服务发现](../key-concepts/service-discovery.md)机制来发布服务。
+
+### Using Upstream Nodes
+
+1. 从侧边栏选择 **Published Services**，然后点击服务 `httpbin API` 下的版本 `1.0.0`。
+2. 从 **Actions** 列表中点击 `Sync to Other Gateway Group`。
+3. 在 **Gateway Group** 字段中，选择 `Production Group`，然后点击 **Next**。
+4. 在 **How to find the upstream** 字段中，选择 `Use Nodes`。
+5. 从 **Nodes** 表格中，编辑 **Host** 和 **Port** 字段，输入生产环境中的后端节点地址或模拟服务器地址。
+6. 点击 **Sync**。
+
+### Using Service Discovery
+
+1. 从侧边栏选择 **Services**，然后点击服务 `httpbin API` 下的版本 `1.0.0`。
+2. 从 **Actions** 列表中点击 `Sync to Other Gateway Group`。
+3. 在 **Gateway Group** 字段中，选择 `Production Group`，然后点击 **Next**。
+4. 在 **How to find the upstream** 字段中，选择 `Use Service Discovery`。
+5. 在 **Service Registry** 字段中，选择 `Registry for Test`，以及 Registry 中的 Namespace 和服务名称。
+6. 点击 **Sync**。
+
+</TabItem>
