@@ -3,6 +3,9 @@ title: 灰度流量
 slug: /getting-started/canary-upstream
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 灰度流量功能可以让你使用一小部分流量安全地测试新的上游，同时将大部分流量保持在基准上游。
 
 :::note
