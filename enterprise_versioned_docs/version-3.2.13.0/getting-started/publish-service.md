@@ -29,7 +29,7 @@ values={[
 
 1. 在左侧导航栏中选择 **服务中心**， 然后点击 **新增服务**。
 2. 选择 **手动新增**。
-3. 在表单中，执行如下操作：
+3. 在表单中执行以下操作：
   1. **名称** 填写 `httpbin API`。
   2. **服务类型** 选择 `HTTP （七层代理）`。
   3. **上游 Scheme** 选择 `HTTP`。
@@ -76,7 +76,7 @@ tags:
 
 1. 在左侧导航栏中选择 **服务中心**， 然后点击 **新增服务**。
 2. 选择 **导入 OpenAPI**。
-3. 在表单中，执行以下操作：
+3. 在表单中执行以下操作：
   1. 上传你的 YAML/JSON 文件。
   2. **上游 Scheme** 选择 `HTTP`。
 4. 点击 **下一步**。
@@ -97,14 +97,14 @@ tags:
 ### 使用上游节点发布服务
 
 1. 在左侧导航栏中选择 **服务中心**， 然后选择之前创建的 `httpbin API` 服务。
-2. 点击 **立即发布**。
+2. 点击 **发布新版本**。
 3. 在对话框中选择目标网关组，例如 `默认网关组`， 然后点击 **下一步**。
-4. From the dialog box, do the following:
-   - In the **New Version** field, enter `1.0.0`.
-   - In the **How to find the upstream** field, choose `Use Nodes`.
-   - Click **Add Node**. From the dialog box, do the following:
-     - In the **Host** and **Port** fields, enter your backend node address in the test environment. For this tutorial, use `httpbin.org` as the host and `80` as the port.
-     - In the **Weight** field, use the default value `100`.
+4. 在表单中执行以下操作：
+  1. **新版本** 填写 `1.0.0`。
+  2. **如何找到上游** 选择 `使用节点`。
+  3. 点击 **新增节点**。在表单中执行以下操作：
+    1. **主机** 和 **端口** 填写你的后端节点地址。 your backend node address in the test environment. For this tutorial, use `httpbin.org` as the host and `80` as the port.
+    2. In the **Weight** field, use the default value `100`.
      - Click **Add**.
 5. Confirm the service information and then click **Publish**.
 
