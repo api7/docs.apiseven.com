@@ -12,7 +12,7 @@ API7 网关 除了处理应用层（L7）流量外，还可以处理传输层（
 
 ## 前提条件
 
-1. [安装 API7 Enterprise](./install-api7-ee.md)。
+1. [安装 API7 企业版](./install-api7-ee.md)。
 2. 网关组中至少有一个 [网关实例](./add-gateway-instance.md)。
 3. 安装 [MySQL 客户端](https://dev.mysql.com/doc/refman/8.4/en/installing.html) 以验证四层路由。
 

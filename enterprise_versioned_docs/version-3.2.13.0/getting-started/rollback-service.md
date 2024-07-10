@@ -15,7 +15,7 @@ slug: /getting-started/rollback-service
 
 ## 前提条件
 
-1. [安装 API7 Enterprise](./install-api7-ee.md)。
+1. [安装 API7 企业版](./install-api7-ee.md)。
 2. 在网关组上有一个服务的旧版本。
 
 ## 步骤
