@@ -118,7 +118,7 @@
       "items": [
         {
           "type": "category",
-          "label": "Deployment",
+          "label": "部署",
           "items": [
             "deployment/kubernetes"
           ]
@@ -130,7 +130,7 @@
         },
         {
           "type": "category",
-          "label": "API Management",
+          "label": "API 管理",
           "items": [
             "reference/api-management/build-api-endpoints",
             "reference/api-management/design-apis"
@@ -140,8 +140,6 @@
         "reference/permission-policy-action-and-resource",
         "reference/permission-policy-example",
         "reference/hardening"
-      ]
-        }
       ]
     }
   ]
