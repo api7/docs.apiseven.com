@@ -7,9 +7,9 @@ slug: /getting-started/rollback-service
 
 :::note
 
-* 旧的服务版本不包含任何[服务运行时配置](../key-concepts/services.md#service-runtime-configurations)。将使用当前服务版本的配置。
+* 旧的服务版本不包含任何[服务运行时配置](../key-concepts/services.md#service-runtime-configurations)。回滚后将继续使用同样的运行时配置。
 
-* 你只能回滚到在同一网关组上发布的服务版本。
+* 你只能回滚到在同一网关组上发布过的服务版本。
 
 :::
 
