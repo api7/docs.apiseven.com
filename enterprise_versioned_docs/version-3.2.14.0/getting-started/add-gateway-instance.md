@@ -54,7 +54,6 @@ import TabItem from '@theme/TabItem';
 ## 相关阅读
 
 - 核心概念
-  - [网关组](../key-concepts/gateway-groups.md)
-  - [网关实例](../key-concepts/gateway-instances.md)
+  - [网关组与网关实例](../key-concepts/gateway-groups.md)
 - 快速入门
   - [新增网关组](add-gateway-group.md)

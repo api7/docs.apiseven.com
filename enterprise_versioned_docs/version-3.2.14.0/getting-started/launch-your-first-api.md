@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 ## 前提条件
 
 1. [安装 API7 企业版](./install-api7-ee.md)。
-2. 确保网关组中至少有一个[网关实例](../key-concepts/gateway-instances)。
+2. 确保网关组中至少有一个网关实例。
 
 ## 启动一个示例上游服务
 

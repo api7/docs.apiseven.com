@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 ## 前提条件
 
 1. [安装API7 企业版](install-api7-ee.md)。
-2. 确保网关组中至少有一个[网关实例](../key-concepts/gateway-instances.md)。
+2. 确保网关组中至少有一个网关实例。
 
 ## 新增服务模板并添加路由
 
