@@ -74,7 +74,6 @@ API7 的网关组提供了一个解决方案，可以使用一个控制平面集
 
 ## 相关阅读
 
-- 核心概念 - [网关实例](../key-concepts/gateway-instances.md)
 - 快速入门
   - [新增网关组](../getting-started/add-gateway-group.md)
   - [将已发布的服务版本同步到其他网关组](../getting-started/sync-service.md)
