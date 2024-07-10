@@ -84,7 +84,7 @@ adc sync -f adc.yaml --gateway-group "Production Group"
 curl "http://127.0.0.1:9080/headers"
 ```
 
-You should see the following response:
+你应该能看到如下类似的响应：
 
 ```json
 {

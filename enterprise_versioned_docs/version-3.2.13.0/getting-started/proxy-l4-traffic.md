@@ -149,7 +149,7 @@ spec:
 kubectl apply -f stream-route.yaml
 ```
 
-你应该能看到类似如下的响应：
+你应该能看到如下类似的响应：
 
 ```text
 apisixroute.apisix.apache.org/stream-route-mysql created
