@@ -37,8 +37,6 @@ values={[
 ]}>
 <TabItem value="dashboard">
 
-你可以通过配置上游节点或使用[服务发现](../key-concepts/service-discovery.md)机制来发布或同步服务版本。
-
 ### 使用上游节点
 
 1. 从侧边栏选择服务来源网关组的 **已发布服务**，然后点击你要同步的服务版本，例如版本为 `1.0.0` 的服务 `httpbin API`。
