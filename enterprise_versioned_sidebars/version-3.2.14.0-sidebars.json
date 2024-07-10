@@ -128,14 +128,6 @@
           "label": "Admin APIs",
           "href": "/enterprise/reference/admin-api"
         },
-        {
-          "type": "category",
-          "label": "API 管理",
-          "items": [
-            "reference/api-management/build-api-endpoints",
-            "reference/api-management/design-apis"
-          ]
-        },
         "reference/adc",
         "reference/permission-policy-action-and-resource",
         "reference/permission-policy-example",
