@@ -32,16 +32,17 @@ import TabItem from '@theme/TabItem';
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 ]}>
 <TabItem value="dashboard">
 
-你可以通过配置上游节点或使用[服务发现](../key-concepts/service-discovery.md)机制来发布服务。
+你可以通过配置上游节点或使用[服务发现](../key-concepts/service-discovery.md)机制来发布或同步服务版本。
 
-### Using Upstream Nodes
+### 使用上游节点
 
-1. 从侧边栏选择 **Published Services**，然后点击服务 `httpbin API` 下的版本 `1.0.0`。
+1. 从侧边栏选择 **网关组**，然后选择你的网关组的 **已发布服务**。
+2. 然后点击服务 `httpbin API` 下的版本 `1.0.0`。
 2. 从 **Actions** 列表中点击 `Sync to Other Gateway Group`。
 3. 在 **Gateway Group** 字段中，选择 `Production Group`，然后点击 **Next**。
 4. 在 **How to find the upstream** 字段中，选择 `Use Nodes`。
