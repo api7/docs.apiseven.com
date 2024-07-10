@@ -17,11 +17,11 @@
         "key-concepts/routes",
         "key-concepts/upstreams",
         "key-concepts/gateway-groups",
-        "key-concepts/gateway-instances",
         "key-concepts/stream-routes",
         "key-concepts/consumers",
         "key-concepts/plugins",
-        "key-concepts/roles",
+        "key-concepts/service-discovery",
+        "key-concepts/roles-and-permission-policies",
         "key-concepts/authentication",
         "key-concepts/ssl-certificates"
       ]
@@ -36,6 +36,7 @@
         "getting-started/add-gateway-group",
         "getting-started/add-gateway-instance",
         "getting-started/proxy-l4-traffic",
+        "getting-started/create-custom-role",
         "getting-started/rbac",
         "getting-started/license",
         "getting-started/canary-upstream",
@@ -99,11 +100,11 @@
       "label": "最佳实践",
       "items": [
         "best-practices/api-version-control",
-        "best-practices/custom-plugin",
         "best-practices/configure-grpc",
         "best-practices/upstream-ha",
         "best-practices/sso",
-        "best-practices/devops-adc"
+        "best-practices/devops-adc",
+        "best-practices/design-custom-role-system"
       ]
     },
     {
@@ -116,17 +117,30 @@
       "label": "开发参考",
       "items": [
         {
+          "type": "category",
+          "label": "Deployment",
+          "items": [
+            "deployment/kubernetes"
+          ]
+        },
+        {
           "type": "link",
           "label": "Admin APIs",
           "href": "/enterprise/reference/admin-api"
         },
         {
           "type": "category",
-          "label": "API 管理",
+          "label": "API Management",
           "items": [
-            "reference/build-api-endpoints",
-            "reference/design-apis"
+            "reference/api-management/build-api-endpoints",
+            "reference/api-management/design-apis"
           ]
+        },
+        "reference/adc",
+        "reference/permission-policy-action-and-resource",
+        "reference/permission-policy-example",
+        "reference/hardening"
+      ]
         }
       ]
     }
