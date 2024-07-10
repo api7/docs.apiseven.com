@@ -311,7 +311,7 @@ slug: /reference/permission-policy-examples
       "actions": [
         "iam:UpdateLicense"
       ],
-      "effect": "deny"   // "deny" takes precedence, ultimately prohibiting access to updateLicense action.
+      "effect": "deny"   // "deny" 优先，最终禁止访问 updateLicense 操作。
     }   
   ]
 }
