@@ -31,7 +31,7 @@ slug: /release-notes
 
 #### 与 Ingress Controller 集成（UI 支持）
 
-API7 Gateway 正式推出 Ingress Controllers，这是一种新型的网关组。虽然控制台提供了方便的管理功能来创建和查看您的 Ingress Controller，但配置修改需要对任何配置更改采用声明方式。
+API7 Gateway 正式推出 Ingress Controllers 的网关组类型，这是一种新型的网关组。虽然控制台提供了方便的管理功能来创建和查看你的 Ingress Controller，但配置修改需要对任何配置更改采用声明方式。
 
 ### 功能优化
 
