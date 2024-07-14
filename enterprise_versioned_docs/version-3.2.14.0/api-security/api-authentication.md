@@ -3,10 +3,17 @@ title: 开启 API 身份认证
 slug: /api-security/api-authentication
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+为了安全起见，你应该只允许经过身份验证和授权的使用者访问你的 API。API7 网关提供了多种插件来启用身份验证和授权。
+
+本指南将引导你使用 `key-auth` 插件启用简单的基于密钥的身份验证。
+
 ## 前提条件
 
-1. 获取一个具有**超级管理员** 或 **API 提供者** 角色的用户账户。
-2. [发布一个服务](../getting-started/publish-service.md)，其中会包含至少一个 API。
+1. [安装 API7 企业版](./install-api7-ee.md)。
+2. 在网关组上有一个已发布服务。
 
 ## 为单个服务设置密钥认证
 
