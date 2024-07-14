@@ -18,201 +18,221 @@ API7 网关提供速率限制功能，通过限制给定时间段内发送到上
 
 速率限制插件通常不会设置为全局规则，因为 API 通常需要不同的速率限制配额。当同一插件在对象（例如路由）中全局和本地配置时，两个插件实例都会按顺序执行。
 
-## 限制单个路由每次的请求数量
+### 限制总请求计数
 
-在本章节中，限制该路由在 60 秒内只能访问 3 次。如果超出限制，则返回 `503`。
+本节配置一个具有速率限制的路由，在60秒内仅允许3个请求。当超出限制时，将向消费者返回 429 状态码。
 
-1. 从侧边栏选择网关组的**已发布服务**，然后点击要设置速率限制的服务版本，例如版本为 `1.2.0` 的 `httpbin API`。
-2. 从左侧导航栏中选择**插件**。
-3. 在**插件**字段中，搜索 `limit-count` 插件。
-4. 单击**加号**图标 (+)，弹出对话框。
-5. 应用以下配置：
+<Tabs
+groupId="api"
+defaultValue="dashboard"
+values={[
+{label: '控制台', value: 'dashboard'},
+{label: 'ADC', value: 'adc'},
+]}>
+<TabItem value="dashboard">
+
+1. 从侧边栏选择网关组的 **已发布服务**，然后单击要修改的服务，例如，版本为 `1.0.0` 的 `httpbin API`。
+2. 在已发布的服务下，从侧边栏选择 **路由**。
+3. 选择你的目标路由，例如，`getting-started-anything`。
+4. 搜索 `limit-count` 插件。
+5. 点击 **加号** 图标 (+)。
+6. 在出现的对话框中，将以下配置添加到**JSON 编辑器**：
 
     ```json
     {
       "count": 3,
       "time_window": 60,
       "key_type": "var",
-      "rejected_code": 503,
-      "rejected_msg": "Too many request",
+      "rejected_code": 429,
+      "rejected_msg": "Too many requests",
       "policy": "local",
       "allow_degradation": false,
       "show_limit_quota_header": true
     }
     ```
 
-6. 单击**启用**。
-7. 从左侧导航栏中选择**服务**，然后选择 `Swagger Petstore` 服务并单击**发布新版本**。
-8. 在弹出的对话框中，选择`测试网关组`，然后单击**下一步**。
-9. 在**新版本**字段中，输入 `1.0.1`。
-10. 确认服务信息，然后单击**发布**。
+7. 点击 **启用**。
 
-### 验证
+</TabItem>
 
-循环请求 API 五次：
+<TabItem value="adc">
 
-```bash
-for i in {1..5}; do curl 127.0.0.1:9080/pet/1;  done 
+要使用 ADC 配置路由，请创建以下配置：
+
+```yaml title="adc.yaml"
+services:
+  - name: httpbin API
+    upstream:
+      name: default
+      scheme: http
+      nodes:
+        - host: httpbin.org
+          port: 80
+          weight: 100
+    routes:
+      - uris:
+          - /ip
+        name: security-ip
+        methods:
+          - GET
+        plugins:
+          limit-count:
+            _meta:
+              disable: false
+            allow_degradation: false
+            count: 3
+            key: remote_addr
+            key_type: var
+            policy: local
+            rejected_code: 429
+            rejected_msg: Too many requests
+            show_limit_quota_header: true
+            time_window: 60
 ```
 
+将配置同步到 API7 网关：
+
+```shell
+adc sync -f adc.yaml
+```
+
+</TabItem>
+</Tabs>
+
+#### 验证
+
+要进行验证，请向路由发送五个连续的请求：
+
 ```bash
-# 响应第 1、2、3 次请求
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
-Content-Length: 323
-Connection: keep-alive
-X-RateLimit-Limit: 3
-X-RateLimit-Remaining: 0
-X-RateLimit-Reset: 58
-Date: Fri, 01 Sep 2023 03:48:27 GMT
-x-srv-trace: v=1;t=fa189e8ae9c6f5f0
-x-srv-span: v=1;s=fafd95fb74cd40ff
-Access-Control-Allow-Origin: *
-X-RateLimit-Limit: 120
-X-RateLimit-Remaining: 117
-X-RateLimit-Reset: 1693540165
-ETag: W/"143-JIrwO+Sx1/7FTTpJ2ljwAfgaRCY"
-Vary: Accept-Encoding
-Server: APISIX/dev
+for i in {1..5}; do curl -i '127.0.0.1:9080/ip';  done
 
-{
-  "name": "Dog",
-  "photoUrls": [
-    "https://example.com/dog-1.jpg",
-    "https://example.com/dog-2.jpg"
-  ],
-  "id": 1,
-  "category": {
-    "id": 1,
-    "name": "pets"
-  },
-  "tags": [
-    {
-      "id": 1,
-      "name": "friendly"
-    },
-    {
-      "id": 2,
-      "name": "smart"
-    }
-  ],
-  "status": "available"
-}
+```
 
-# 响应第 4 和第 5 次请求
+前三个请求将成功，后两个请求将被拒绝，并显示 `429 Too Many Requests` 状态码：
 
-HTTP/1.1 503 Service Temporarily Unavailable
-Date: Fri, 01 Sep 2023 03:48:27 GMT
+```bash
+Date: Fri, 01 Jun 2024 04:43:51 GMT
 Content-Type: text/plain; charset=utf-8
 Transfer-Encoding: chunked
 Connection: keep-alive
 X-RateLimit-Limit: 3
 X-RateLimit-Remaining: 0
 X-RateLimit-Reset: 0
-Server: APISIX/dev
+Server: API7/3.2.13.0
 
-{"error_msg":"Too many request"}
+{"error_msg":"Too many requests"}
 ```
 
-## 限制单个路由每秒的请求数量
+### 限制每秒请求速率
 
-在本教程中，路由限制为每秒 1 个请求。如果请求数量在 1 到 3 之间，则会引入延迟。如果每秒请求数超过 3 个，则会被拒绝，状态码为 `503`。
+本节配置一个具有速率限制的路由，每秒仅允许 1 个请求。当每秒请求数在 1 到 3 之间时，它们将被延迟/限制。当每秒请求数超过 3 时，将返回 429 状态码。
 
-由于插件配置不属于[运行时配置](../key-concepts/services.md#运行时配置)，因此应在服务模板中进行修改，然后将新版本发布到网关组。
+<Tabs
+groupId="api"
+defaultValue="dashboard"
+values={[
+{label: '控制台', value: 'dashboard'},
+{label: 'ADC', value: 'adc'},
+]}>
+<TabItem value="dashboard">
 
-1. 从左侧导航栏中选择**服务**，然后选择 **Swagger Petstore**。
-2. 从左侧导航栏中选择**插件**。
-3. 在**插件**字段中，搜索 `limit-req` 插件。
-4. 单击**加号**图标 (+)，弹出对话框。
-5. 应用以下配置：
+1. 从侧边栏选择网关组的 **已发布服务**，然后单击要修改的服务，例如，版本为 `1.0.0` 的 `httpbin API`。
+2. 在已发布的服务下，从侧边栏选择 **路由**。
+3. 选择你的目标路由，例如，`getting-started-anything`。
+4. 搜索 `limit-req` 插件。
+5. 点击 **加号** 图标 (+)。
+6. 在出现的对话框中，将以下配置添加到**JSON 编辑器**：
 
     ```json
     {
       "rate": 1,
       "burst": 2,
-      "rejected_code": 503,
+      "rejected_code": 429,
       "key_type": "var",
       "key": "remote_addr",
       "rejected_msg": "Requests are too frequent, please try again later."
     }
     ```
 
-6. 单击**启用**。
-7. 从左侧导航栏中选择**服务**，然后选择 `Swagger Petstore` 服务并单击**发布新版本**。
-8. 在弹出的对话框中，选择`测试网关组`，然后单击**下一步**。
-9. 在**新版本**字段中，输入 `1.0.1`。
-10. 确认服务信息，然后单击**发布**。
+7. 点击 **启用**。
 
-### 验证
+</TabItem>
 
-循环请求五次 API：
+<TabItem value="adc">
 
-```bash
-for i in {1..5}; do curl 127.0.0.1:9080/pet/1;  done 
+要使用 ADC 配置路由，请创建以下配置：
+
+```yaml title="adc.yaml"
+services:
+  - name: httpbin API
+    upstream:
+      name: default
+      scheme: http
+      nodes:
+        - host: httpbin.org
+          port: 80
+          weight: 100
+    routes:
+      - uris:
+          - /ip
+        name: security-ip
+        methods:
+          - GET
+        plugins:
+          limit-req:
+            _meta:
+              disable: false
+            burst: 2
+            key: remote_addr
+            key_type: var
+            rate: 1
+            rejected_code: 429
+            rejected_msg: Requests are too frequent, please try again later.
 ```
 
-当循环发送 API 请求时，正常响应所有请求：
+将配置同步到 API7 网关：
 
-```bash
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
-Content-Length: 323
-Connection: keep-alive
-Date: Fri, 01 Sep 2023 04:16:05 GMT
-x-srv-trace: v=1;t=620ffed95fea96cb
-x-srv-span: v=1;s=44c7c66dd6b810c8
-Access-Control-Allow-Origin: *
-X-RateLimit-Limit: 120
-X-RateLimit-Remaining: 117
-X-RateLimit-Reset: 1693541823
-ETag: W/"143-JIrwO+Sx1/7FTTpJ2ljwAfgaRCY"
-Vary: Accept-Encoding
-Server: APISIX/dev
-
-{
-  "name": "Dog",
-  "photoUrls": [
-    "https://example.com/dog-1.jpg",
-    "https://example.com/dog-2.jpg"
-  ],
-  "id": 1,
-  "category": {
-    "id": 1,
-    "name": "pets"
-  },
-  "tags": [
-    {
-      "id": 1,
-      "name": "friendly"
-    },
-    {
-      "id": 2,
-      "name": "smart"
-    }
-  ],
-  "status": "available"
-}
+```shell
+adc sync -f adc.yaml
 ```
 
-并发五次请求 API：
+</TabItem>
+</Tabs>
+
+#### 验证
+
+要进行验证，请向路由发送五个请求：
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" & \
-curl -i "http://127.0.0.1:9080/pet/1" & \
-curl -i "http://127.0.0.1:9080/pet/1" & \
-curl -i "http://127.0.0.1:9080/pet/1" & \
-curl -i "http://127.0.0.1:9080/pet/1"   
+for i in {1..5}; do curl -i '127.0.0.1:9080/ip';  done 
 ```
 
-成功响应三个请求。另外两个请求被阻止并返回以下内容：
+由于请求是按顺序发送的，你会收到所需的响应。现在向路由发送五个并发请求：
 
 ```bash
-HTTP/1.1 503 Service Temporarily Unavailable
-Date: Fri, 01 Sep 2023 04:16:02 GMT
+curl -i "http://127.0.0.1:9080/ip" & \
+curl -i "http://127.0.0.1:9080/ip" & \
+curl -i "http://127.0.0.1:9080/ip" & \
+curl -i "http://127.0.0.1:9080/ip" & \
+curl -i "http://127.0.0.1:9080/ip"   
+```
+
+三个请求会返回正常响应，另外两个请求会因为每秒请求数超过限制而被拒绝，返回如下响应：
+
+```bash
+HTTP/1.1 429 Too Many Requests
+Date: Fri, 01 Jun 2024 04:43:51 GMT
 Content-Type: text/plain; charset=utf-8
 Transfer-Encoding: chunked
 Connection: keep-alive
-Server: APISIX/dev
+Server: API7/3.2.13.0
 
 {"error_msg":"Requests are too frequent, please try again later."}
 ```
+
+## 相关阅读
+
+- 核心概念
+  - [服务](../key-concepts/services.md)
+  - [路由](../key-concepts/routes.md)
+  - [插件](../key-concepts/plugins.md)
