@@ -7,7 +7,7 @@ slug: /getting-started/add-gateway-group
 
 ## 前提条件
 
-1. 安装 [API7 Enterprise](./install-api7-ee.md)。
+1. [安装 API7 企业版](./install-api7-ee.md)。
 
 ## 步骤
 
