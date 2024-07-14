@@ -3,24 +3,36 @@ title: 屏蔽恶意 IP 地址
 slug: /api-security/block-ip
 ---
 
-为了保护 API 免受来自恶意 IP 地址的攻击，你可以配置 IP 地址黑名单来阻止来自这些特定 IP 地址的请求。
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-本文档介绍如何启用 `ip-restriction` 插件作为全局规则，建立共享 IP 地址黑名单。如果 IP 地址在黑名单中，则请求会被拒绝，并返回 `403`。根据列表检查的 IP 地址可能是发起请求的客户端的 IP 地址或基于代理的 X-Forwarded-For（XFF）地址。
+你可以基于 IP 地址配置访问控制，以防止不必要的用户访问你的 API。
+
+本指南将引导你在网关组上配置 `ip-restriction` 插件作为全局规则，以阻止黑名单中的 IP 地址。如果请求来自黑名单中的 IP 地址，API7 网关将拒绝该请求并返回 `403` 响应代码。请求的 IP 地址可以是实际的客户端 IP 地址，也可以是 `X-Forwarded-For` 地址。
 
 ## 前提条件
 
-1. 获取一个具有**超级管理员** 或 **运行时管理员** 角色的用户账户。
-2. [发布一个服务](../getting-started/publish-service.md)，其中会包含至少一个 API。
+1. [安装 API7 企业版](./install-api7-ee.md)。
+2. 在网关组上有一个已发布服务。
 
 ## 为网关组内所有 API 设置共享 IP 地址黑名单
 
 一旦发现恶意 IP 地址正在攻击 API，最好将该 IP 地址添加到共享黑名单中以保护其他 API。
 
-1. 从左侧导航栏中选择**网关组**，然后选择**测试网关组**。
-2. 从左侧导航栏中选择**插件设置**。
-3. 选择**插件全局规则**页签，在**插件**字段中，搜索 `ip-restriction` 插件。
-4. 单击**加号**图标 (+)，弹出对话框。
-5. 应用以下配置，将 IP 地址 `127.0.0.1` 添加到黑名单：
+<Tabs
+groupId="api"
+defaultValue="dashboard"
+values={[
+{label: '控制台', value: 'dashboard'},
+{label: 'ADC', value: 'adc'},
+]}>
+<TabItem value="dashboard">
+
+1. 选择你的服务所在的网关组。
+2. 从侧边栏选择**插件设置**，然后选择**插件全局规则**。
+3. 在**插件**字段中，搜索 `ip-restriction` 插件。
+4. 点击**加号**图标 (+)。
+5. 在出现的对话框中，将以下配置添加到**JSON 编辑器**中，将 IP 地址 `127.0.0.1` 添加到黑名单中：
 
     ```json
     {
@@ -29,28 +41,66 @@ slug: /api-security/block-ip
     }
     ```
 
-6. 单击**启用**。
+6. 点击 **启用**。
+
+</TabItem>
+
+<TabItem value="adc">
+
+To use ADC to configure IP restriction, create the following configuration:
+
+```yaml title="adc.yaml"
+services:
+  - name: httpbin API
+    upstream:
+      name: default
+      scheme: http
+      nodes:
+        - host: httpbin.org
+          port: 80
+          weight: 100
+    routes:
+      - uris:
+          - /ip
+        name: security-ip
+        methods:
+          - GET
+global_rules:
+  ip-restriction:
+    _meta:
+      disable: false
+    blacklist:
+      - 127.0.0.1
+    message: Sorry, your IP address is not allowed.
+```
+
+将配置同步到 API7 网关：
+
+```shell
+adc sync -f adc.yaml
+```
+
+</TabItem>
+</Tabs>
+
 
 ## 验证
 
-发送 API 请求：
+从受限的 IP 地址发送请求。在本例中，`127.0.0.1` 被配置为黑名单 IP 地址：
 
-```bash
-curl -i "http://127.0.0.1:9080/pet/1" 
+```shell
+curl -i "http://127.0.0.1:9080/ip" 
 ```
 
-由于IP地址受到黑名单的限制，此时，你将看到以下输出：
+你将收到一个 `503 Service Temporarily Unavailable` 响应，并附带以下消息：
 
-```bash
-HTTP/1.1 503 Service Temporarily Unavailable
-Date: Fri, 01 Sep 2023 03:48:27 GMT
-Content-Type: text/plain; charset=utf-8
-Transfer-Encoding: chunked
-Connection: keep-alive
-X-RateLimit-Limit: 3
-X-RateLimit-Remaining: 0
-X-RateLimit-Reset: 0
-Server: APISIX/dev
-
+```text
 {"error_msg":"Sorry, your IP address is not allowed."}
 ```
+
+## 相关阅读
+
+- 核心概念
+  - [服务](../key-concepts/services.md)
+  - [路由](../key-concepts/routes.md)
+  - [插件](../key-concepts/plugins.md)
