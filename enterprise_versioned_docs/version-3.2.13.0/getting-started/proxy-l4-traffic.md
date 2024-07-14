@@ -95,7 +95,7 @@ values={[
 
 <TabItem value="adc">
 
-要使用 AD C创建四层路由，请使用以下配置：
+要使用 ADC 创建四层路由，请使用以下配置：
 
 ```yaml title="adc.yaml"
 services:
