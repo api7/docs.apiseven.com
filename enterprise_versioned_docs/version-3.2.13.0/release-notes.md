@@ -3,6 +3,74 @@ title: 更新日志
 slug: /release-notes
 ---
 
+## 3.2.13.0 版本
+
+**发布日期：** 2024-06-19
+
+### Admin API 不兼容变更
+
+1. 服务模板 API 已迁移到 "/api/services/template" 路径前缀下。
+
+- [服务模板 API](https://docs.api7.ai/enterprise/reference/admin-api#tag/Services-Template)
+- [路由模板 API](https://docs.api7.ai/enterprise/reference/admin-api#tag/Routes-Template)
+
+2. 原始的 "/apisix/admin/services" 端点现在需要 gateway_group_id 参数。
+
+- [网关组上的服务 API](https://docs.api7.ai/enterprise/reference/admin-api#tag/Services)
+- [网关组上的路由 API](https://docs.api7.ai/enterprise/reference/admin-api#tag/Routes)
+
+### 新增功能
+
+#### 在网关组上创建/更新服务而不发布
+
+如果版本控制不是你的需求，你现在可以直接在网关组上创建服务。这些服务会立即生效，无需单独的发布步骤。这简化了部署过程并为你节省了时间。
+
+但是，需要权衡其中的利弊。绕过发布阶段，意味着你也失去了轻松回滚到之前的版本或跟踪版本变更的能力。
+
+有关详细信息，请参阅最新的入门教程：[启动您的第一个 API](./getting-started/launch-your-first-api.md)。
+
+#### 与 Ingress Controller 集成（UI 支持）
+
+API7 Gateway 正式推出 Ingress Controllers 的网关组类型，这是一种新型的网关组。虽然控制台提供了方便的管理功能来创建和查看你的 Ingress Controller，但配置修改需要对任何配置更改采用声明方式。
+
+### 功能优化
+
+#### 搜索网关组名称并按标签过滤
+
+让你在网关组列表中查找所需的特定网关组变得更加容易。
+
+#### 保护配置文件中的敏感数据
+
+数据库的 DSN 配置（包括访问地址、用户名和密码）可以通过环境变量和 Helm 图表进行配置。
+
+#### 支持 Prometheus 认证
+
+Prometheus 远程写入现在支持 Basic Auth/mTLS。
+
+#### 支持 SSL 变量的 Secret 功能
+
+使用加密的 Secret 保护 `ssl.certs` 和 `ssl.keys`。
+
+### 缺陷修复
+
+- 设置标头后，`ctx.var` 变量将立即更新。
+- 无法上传重复的 SSL 证书。
+
+## 3.2.11.5 版本
+
+**发布日期：** 2024-06-18
+
+### 缺陷修复
+
+- ssl_verify 配置现在适用于登录选项 OIDC 和 LDAP 协议。
+
+## 3.2.11.4 版本
+
+**发布日期：** 2024-06-07
+
+### 缺陷修复
+
+- 保护与 API 相关的登录选项中的敏感字段。
 
 ## 版本 3.2.12.0
 
