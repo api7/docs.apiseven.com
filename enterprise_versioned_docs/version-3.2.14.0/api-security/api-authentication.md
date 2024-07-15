@@ -15,6 +15,63 @@ import TabItem from '@theme/TabItem';
 1. [安装 API7 企业版](./install-api7-ee.md)。
 2. 在网关组上有一个已发布服务。
 
+### 添加消费者
+
+消费者是使用您的 API 的实体。本示例将创建一个名为 `Alice` 的消费者。
+
+<Tabs
+groupId="api"
+defaultValue="dashboard"
+values={[
+{label: '控制台 ', value: 'dashboard'},
+{label: 'ADC', value: 'adc'},
+]}>
+<TabItem value="dashboard">
+
+1. Select the gateway group where your service is published.
+2. Select **Consumers** from the side navigation bar.
+3. Click **Add Consumer**.
+4. From the Add Consumer dialog box, do the following:
+    - In the **Name** field, enter `Alice`.
+5. Click **Add**. 
+6. In the consumer you just created under the **Plugins** field, search for the `key-auth` plugin.
+7. Click the **Plus** icon (+).
+8. In the dialog box that appeared, add the following configuration to the **JSON Editor**:
+
+    ```json
+    {
+      "key": "secret-key"
+    }
+    ```
+
+9. Click **Enable**.
+
+</TabItem>
+
+<TabItem value="adc">
+
+To use ADC to create a consumer, create the following configuration:
+
+```yaml title="adc-consumer.yaml"
+consumers:
+  - username: Alice
+    plugins:
+      key-auth:
+        _meta:
+          disable: false
+        key: secret-key
+```
+
+Synchronize the configuration to API7 Enterprise:
+
+```shell
+adc sync -f adc-consumer.yaml
+```
+
+</TabItem>
+</Tabs>
+
+
 ## 为单个服务设置密钥认证
 
 如果要为单个服务的所有现有和未来路由启用密钥认证，请在服务级别启用 `key-auth` 插件。这样就禁止在路由级别启用其他认证插件。
@@ -50,16 +107,6 @@ import TabItem from '@theme/TabItem';
 ## 验证
 
 要验证 API 身份认证的效果，需要创建一个[消费者](../key-concepts/consumers.md)，并在消费者中也启用身份认证，并配置相应的访问凭证。
-
-### 添加消费者
-
-1. 从左侧导航栏中选择**消费者**，然后单击**新增消费者**。
-2. 在**新增消费者**对话框中，执行以下操作：
-
-    - 在**网关组**字段中，选择`测试网关组`。
-    - 在**名称**字段中，输入 `Alice`。
-
-3. 单击**新增**。
 
 ### 为消费者启用密钥认证
 
