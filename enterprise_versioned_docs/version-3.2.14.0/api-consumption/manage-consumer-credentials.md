@@ -9,26 +9,35 @@ slug: /api-consumption/manage-consumer-credentials
 
 ## 前提条件
 
-1. 获取一个具有**超级管理员** 或 **API 提供者** 角色的用户账户。
-2. [发布一个服务](../getting-started/publish-service.md)，其中会包含至少一个 API。
-3. [开启 API 身份认证](../api-security/api-authentication.md)。
+1. [安装 API7 企业版](./install-api7-ee.md)。
+2. 在网关组上有一个已发布服务。
 
-## 创建消费者
+## 添加消费者
 
-1. 从左侧导航栏中选择**消费者**，然后单击**新增消费者**。
-2. 在**新增消费者**对话框中，执行以下操作：
+<Tabs
+groupId="api"
+defaultValue="dashboard"
+values={[
+{label: '控制台', value: 'dashboard'},
+{label: 'ADC', value: 'adc'},
+]}>
 
-    - 在**网关组**字段中，选择`测试网关组`。
-    - 在**名称**字段中，输入 `Alice`。
+<TabItem value="dashboard">
 
-4. 单击**新增**。
+1. 选择你的服务发布所在的网关组。
+2. 从侧边栏选择 **消费者**。
+3. 点击 **添加消费者**。
+4. 在对话框中，执行以下操作：
+   
+* **名称** 填写 `Alice`。
+* 点击 **添加**。
 
-## 为消费者启用密钥认证
+5. 在刚刚创建的消费者下，在 **插件**字段中，搜索 `key-auth` 插件。
+6. 点击 **加号**图标 (+)。
+7. 在对话框中，执行以下操作：
 
-1. 从左侧导航栏中选择**消费者**，然后选择 **Alice**。
-2. 在**插件**字段中，搜索 `key-auth` 插件。
-3. 单击**加号**图标 (+)，弹出对话框。
-4. 应用以下配置：
+* 将以下配置添加到**JSON 编辑器**：
+
 
     ```json
     {
@@ -36,97 +45,101 @@ slug: /api-consumption/manage-consumer-credentials
     }
     ```
 
-5. 单击**启用**。
+* 点击 **启用**。
+
+</TabItem>
+
+<TabItem value="adc">
+
+要使用 ADC 创建消费者和需要访问的 API，请创建以下配置：
+
+```yaml title="adc.yaml"
+services:
+  - name: httpbin API
+    upstream:
+      name: default
+      scheme: http
+      nodes:
+        - host: httpbin.org
+          port: 80
+          weight: 100
+    routes:
+      - uris:
+          - /ip
+        name: api-consumption-ip
+        methods:
+          - GET
+# highlight-start
+consumers:
+  - username: Alice
+# highlight-end
+```
+
+将配置同步到 API7 网关：
+
+```shell
+adc sync -f adc.yaml
+```
+
+</TabItem>
+</Tabs>
 
 ## 验证
 
-### 未使用密钥发送请求
+请按照以下步骤验证密钥认证。
+
+### 发送不带密钥的请求
+
+发送不带 `apikey` 头的请求：
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" 
+curl -i "http://127.0.0.1:9080/ip"  
 ```
 
-因为 API 对应的路由上通过添加插件的方式开启了身份认证，没有自带访问凭证的 API 请求会被拒绝。所以你应该看到以下输出：
+由于未提供密钥，你将收到一个 `HTTP/1.1 401 Unauthorized` 响应，其请求正文如下：
 
-```bash
-HTTP/1.1 401 Unauthorized
-Date: Fri, 01 Sep 2023 03:06:51 GMT
-Content-Type: text/plain; charset=utf-8
-Transfer-Encoding: chunked
-Connection: keep-alive
-Server: APISIX/dev
-
+```text
 {"message":"Missing API key found in request"}
 ```
 
-### 使用错误的密钥发送请求
+### 发送带有错误密钥的请求
+
+发送带有错误密钥的 `apikey` 头的请求：
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: wrongkey" 
+curl -i "http://127.0.0.1:9080/ip" -H "apikey: secret-key" 
 ```
 
-因为此 API Key 不属于任何一个消费者，是一个错误的、不存在的密钥，API 请求会被拒绝。所以你应该看到以下输出：
+由于密钥错误，你会收到一个 `HTTP/1.1 401 Unauthorized` 响应，其请求正文如下：
 
-```bash
-HTTP/1.1 401 Unauthorized
-Date: Fri, 01 Sep 2023 03:08:00 GMT
-Content-Type: text/plain; charset=utf-8
-Transfer-Encoding: chunked
-Connection: keep-alive
-Server: APISIX/dev
+```json
+{"message": "Unauthorized"}
 
+```text
 {"message":"Invalid API key in request"}
 ```
 
-### 使用正确的密钥发送请求
+### 发送带有正确密钥的请求
+
+发送带有正确密钥的 `apikey` 头的请求：
 
 ```bash
-curl -i "http://127.0.0.1:9080/pet/1" -H "apikey: secret-key" 
+curl -i "http://127.0.0.1:9080/ip" -H "apikey: secret-key" 
 ```
 
-因为此 API Key 属于消费者`Alice`，是一个真实的密钥，所以 API 请求会被放行。所以你应该看到以下输出：
+使用正确的密钥发送请求，你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文类似：
 
-```bash
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
-Content-Length: 323
-Connection: keep-alive
-Date: Fri, 01 Sep 2023 03:09:22 GMT
-x-srv-trace: v=1;t=ada7cefb43c4848d
-x-srv-span: v=1;s=4221c976c3e1b0fe
-Access-Control-Allow-Origin: *
-X-RateLimit-Limit: 120
-X-RateLimit-Remaining: 119
-X-RateLimit-Reset: 1693537822
-ETag: W/"143-JIrwO+Sx1/7FTTpJ2ljwAfgaRCY"
-Vary: Accept-Encoding
-Server: APISIX/dev
-
+```text
 {
-  "name": "Dog",
-  "photoUrls": [
-    "https://example.com/dog-1.jpg",
-    "https://example.com/dog-2.jpg"
-  ],
-  "id": 1,
-  "category": {
-    "id": 1,
-    "name": "pets"
-  },
-  "tags": [
-    {
-      "id": 1,
-      "name": "friendly"
-    },
-    {
-      "id": 2,
-      "name": "smart"
-    }
-  ],
-  "status": "available"
+  "origin": "192.168.0.102, 35.259.159.12"
 }
 ```
 
-## 扩展阅读
+## 相关阅读
 
-- [基于黑白名单限制对 API 的访问](../api-consumption/consumer-restriction.md)
+- 核心概念
+  - [服务](../key-concepts/services.md) 
+  - [路由](../key-concepts/routes.md)
+  - [插件](../key-concepts/plugins.md)
+- API 消费
+  - [基于黑白名单限制对 API 的访问](../api-consumption/consumer-restriction.md)
