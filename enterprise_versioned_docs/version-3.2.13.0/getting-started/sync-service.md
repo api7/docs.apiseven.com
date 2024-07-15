@@ -6,7 +6,7 @@ slug: /getting-started/sync-service
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-网关组之间同步已发布的服务版本是 API 版本控制的一个很有用的功能。例如：
+在网关组之间同步已发布的服务版本是进行 API 版本控制的一项非常有效的功能。例如：
 
 1. 当使用网关组来分隔环境（如测试和生产）时，你可以在运行测试后将服务版本从测试同步到生产。
 2. 或者，如果你使用网关组来划分区域或团队，同步服务可以帮助在它们之间分发服务。
