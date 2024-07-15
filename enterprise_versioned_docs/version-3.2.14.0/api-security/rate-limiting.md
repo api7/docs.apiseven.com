@@ -31,7 +31,7 @@ values={[
 ]}>
 <TabItem value="dashboard">
 
-1. 从侧边栏选择网关组的 **已发布服务**，然后单击要修改的服务，例如，版本为 `1.0.0` 的 `httpbin API`。
+1. 从侧边栏选择网关组的 **已发布服务**，然后点击要修改的服务，例如，版本为 `1.0.0` 的 `httpbin API`。
 2. 在已发布的服务下，从侧边栏选择 **路由**。
 3. 选择你的目标路由，例如，`getting-started-anything`。
 4. 搜索 `limit-count` 插件。
@@ -136,7 +136,7 @@ values={[
 ]}>
 <TabItem value="dashboard">
 
-1. 从侧边栏选择网关组的 **已发布服务**，然后单击要修改的服务，例如，版本为 `1.0.0` 的 `httpbin API`。
+1. 从侧边栏选择网关组的 **已发布服务**，然后点击要修改的服务，例如，版本为 `1.0.0` 的 `httpbin API`。
 2. 在已发布的服务下，从侧边栏选择 **路由**。
 3. 选择你的目标路由，例如，`getting-started-anything`。
 4. 搜索 `limit-req` 插件。
