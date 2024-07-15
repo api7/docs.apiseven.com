@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 ## 前提条件
 
-1. [安装 API7 企业版](./install-api7-ee.md)。
+1. [安装 API7 企业版](../getting-started/install-api7-ee.md)。
 2. 在网关组上有一个已发布服务。
 
 ## 为网关组内所有 API 设置共享 IP 地址黑名单

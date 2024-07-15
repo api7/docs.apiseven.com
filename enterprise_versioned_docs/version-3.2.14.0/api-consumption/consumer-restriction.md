@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 ## 前提条件
 
-1. [安装 API7 企业版](./install-api7-ee.md)。
+1. [安装 API7 企业版](../getting-started/install-api7-ee.md)。
 2. 在网关组上已发布一个服务。
 3. 已有一个启用了身份验证的消费者。
 
