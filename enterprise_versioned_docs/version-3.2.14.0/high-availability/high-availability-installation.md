@@ -23,7 +23,7 @@ slug: /high-availability/high-availability-installation
 
 ## 控制面部署步骤
 
-API7 Dashboard 是控制面中的主要组件，它是一个 Web GUI 并处理业务逻辑。API7 Dashboard 是一个无状态服务，所有数据信息都存储在关系型数据库中（默认使用PostgreSQL）。
+API7 Dashboard 是控制面中的主要组件，它是一个 Web GUI 并处理业务逻辑。API7 Dashboard 是一个无状态服务，所有数据信息都存储在关系型数据库中（默认使用 PostgreSQL）。
 
 为达到高可用，需要不只一个控制面节点，而是一个包含多个节点的集群。同时，你需要在多个控制面节点之前部署一个负载均衡。通过负载均衡，可以将进入的流量均匀分配到多个控制面节点上，如果某个节点发生故障，负载均衡可以将其移除，确保流量不会被发送到不可用的节点上。
 
