@@ -1,5 +1,5 @@
 ---
-title: 开启 API 身份认证
+title: 设置 API 身份认证
 slug: /api-security/api-authentication
 ---
 
