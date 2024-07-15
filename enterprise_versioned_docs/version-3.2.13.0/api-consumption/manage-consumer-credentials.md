@@ -3,15 +3,20 @@ title: 管理消费者的访问凭证
 slug: /api-consumption/manage-consumer-credentials
 ---
 
-通常情况下，业务会先发布 API，在路由上启用的身份认证插件会锁定访问权限，要求带正确的访问凭证才能访问 API;然后创建[消费者](../key-concepts/consumers.md)，并为其分配访问凭证。每个消费者需要一个独一无二的用户名。为了实现身份认证，还需要将身份认证插件添加到消费者的`插件`字段中。
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-在本教程中，你将创建一个使用密钥身份认证（key-auth）的消费者，然后使用他的密钥访问指定的 API。
+消费者是指使用你的 API 的应用程序或开发者。在 API 中的路由上启用身份验证可以让你控制访问权限，要求消费者在访问路由之前获得凭证。
+
+消费者通常在 API 发布后创建。在 API7 网关中，创建消费者需要一个唯一的用户名并配置一个认证插件。
+
+本教程将指导你创建消费者并配置密钥认证。
 
 ## 前提条件
 
-1. 获取一个具有**超级管理员** 或 **API 提供者** 角色的用户账户。
-2. [发布一个服务](../getting-started/publish-service.md)，其中会包含至少一个 API。
-3. [开启 API 身份认证](../api-security/api-authentication.md)。
+1. [安装 API7 企业版](./install-api7-ee.md)。
+2. 在网关组上已发布一个服务。
+
 
 ## 创建消费者
 
