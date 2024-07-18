@@ -15,7 +15,7 @@ API7 网关提供速率限制功能，通过限制给定时间段内发送到上
 ## 前提条件
 
 1. [安装 API7 企业版](../getting-started/install-api7-ee.md)。
-2. [发布一个服务](../getting-started/publish-service.md)，其中会包含至少一个 API。
+2. [在网关组上有一个运行的 API](../getting-started/launch-your-first-api.md)。
 
 ## 对所有服务应用速率限制（不推荐）
 
