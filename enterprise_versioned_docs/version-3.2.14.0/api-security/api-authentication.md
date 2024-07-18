@@ -6,14 +6,14 @@ slug: /api-security/api-authentication
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-为了安全起见，你应该只允许经过身份验证和授权的使用者访问你的 API。API7 网关提供了多种插件来启用身份验证和授权。
+为了安全起见，你应该只允许经过身份验证和授权的[消费者](../key-concepts/consumers.md)访问你的 API。API7 网关提供了多种插件来启用身份验证和授权。
 
 本指南将引导你使用 `key-auth` 插件启用简单的基于密钥的身份验证。
 
 ## 前提条件
 
 1. [安装 API7 企业版](../getting-started/install-api7-ee.md)。
-2. 在网关组上有一个已发布服务。
+2. [在网关组上有一个运行的 API](../getting-started/launch-your-first-api.md)。
 
 ## 添加消费者
 
@@ -25,20 +25,21 @@ defaultValue="dashboard"
 values={[
 {label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
+{label: 'Ingress Controller', value: 'ingress'}
 ]}>
 
 <TabItem value="dashboard">
 
 1. 选择你的服务发布所在的网关组。
 2. 从侧边栏选择 **消费者**。
-3. 点击 **添加消费者**。
+3. 点击 **新增消费者**。
 4. 在对话框中，执行以下操作：
    
 * **名称** 填写 `Alice`。
-* 点击 **添加**。
+* 点击 **新增**。
 
 5. 在刚刚创建的消费者下，在 **插件**字段中，搜索 `key-auth` 插件。
-6. 点击 **加号**图标 (+)。
+6. 点击 **加号** 图标 (+)。
 7. 在对话框中，执行以下操作：
 
 * 将以下配置添加到**JSON 编辑器**：
@@ -75,6 +76,32 @@ adc sync -f adc-consumer.yaml
 ```
 
 </TabItem>
+
+<TabItem value="ingress">
+
+使用 ApisixConsumer 自定义资源创建一个 Kubernetes manifest 文件来配置消费者：
+
+```yaml title="consumer.yaml"
+apiVersion: apisix.apache.org/v2
+kind: ApisixConsumer
+metadata:
+  name: alice
+  # namespace: api7    # replace with your namespace
+spec:
+  authParameter:
+    keyAuth:
+      value:
+        key: "secret-key"
+```
+
+将配置应用到你的集群：
+
+```shell
+kubectl apply -f consumer.yaml
+```
+
+</TabItem>
+
 </Tabs>
 
 ## 启用密钥认证
@@ -95,7 +122,9 @@ defaultValue="dashboard"
 values={[
 {label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
+{label: 'Ingress Controller', value: 'ingress'}
 ]}>
+
 <TabItem value="dashboard">
 
 1. 从侧边栏选择网关组的 **已发布服务**，然后点击要启用认证的服务，例如，版本为 `1.0.0` 的 `httpbin API`。
@@ -154,6 +183,15 @@ ADC 使用配置文件作为单一事实来源。因此，请确保将消费者�
 :::
 
 </TabItem>
+
+<TabItem value="ingress">
+
+ApisixService 自定义资源尚不可用。
+
+[//]: <TODO: ApisixService 可用时更新本节>
+
+</TabItem>
+
 </Tabs>
 
 ### 针对单个路由
@@ -164,6 +202,7 @@ defaultValue="dashboard"
 values={[
 {label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
+{label: 'Ingress Controller', value: 'ingress'}
 ]}>
 <TabItem value="dashboard">
 
@@ -226,6 +265,41 @@ ADC 使用配置文件作为单一事实来源。因此，请确保将消费者�
 :::
 
 </TabItem>
+
+<TabItem value="ingress">
+
+创建一个启用了密钥认证的路由的 Kubernetes manifest 文件：
+
+```yaml title="httpbin-route.yaml"
+apiVersion: apisix.apache.org/v2
+kind: ApisixRoute
+metadata:
+  name: httpbin-route
+  # namespace: api7    # replace with your namespace
+spec:
+  http:
+    - name: httpbin-route
+      match:
+        paths:
+          - /ip
+        methods:
+          - GET
+      backends:
+        - serviceName: httpbin
+          servicePort: 80
+      authentication:
+        enable: true
+        type: keyAuth
+```
+
+将配置应用到你的集群：
+
+```shell
+kubectl apply -f httpbin-route.yaml
+```
+
+</TabItem>
+
 </Tabs>
 
 ## 验证
@@ -281,7 +355,10 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: secret-key"
 
 ## 相关阅读
 
-- 核心概念
-  - [服务](../key-concepts/services.md) 
-  - [路由](../key-concepts/routes.md)
-  - [插件](../key-concepts/plugins.md)
+* 核心概念
+  * [服务](../key-concepts/services.md) 
+  * [路由](../key-concepts/routes.md)
+  * [插件](../key-concepts/plugins.md)
+* API 消费
+  - [管理消费者访问凭证](../api-consumption/manage-consumer-credentials.md)
+  - [于黑白名单的访问控制](../api-consumption/consumer-restriction.md)
