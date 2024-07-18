@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 ## 前提条件
 
 1. [安装 API7 企业版](../getting-started/install-api7-ee.md)。
-2. 在网关组上有一个已发布服务。
+2. [在网关组上有一个运行的 API](../getting-started/launch-your-first-api.md)。
 
 ## 为网关组内所有 API 设置共享 IP 地址黑名单
 
@@ -25,14 +25,16 @@ defaultValue="dashboard"
 values={[
 {label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
+{label: 'Ingress Controller', value: 'ingress'}
 ]}>
+
 <TabItem value="dashboard">
 
 1. 选择你的服务所在的网关组。
-2. 从侧边栏选择**插件设置**，然后选择**插件全局规则**。
-3. 在**插件**字段中，搜索 `ip-restriction` 插件。
-4. 点击**加号**图标 (+)。
-5. 在出现的对话框中，将以下配置添加到**JSON 编辑器**中，将 IP 地址 `127.0.0.1` 添加到黑名单中：
+2. 从侧边栏选择 **插件设置**，然后选择 **插件全局规则**。
+3. 在 **插件** 字段中，搜索 `ip-restriction` 插件。
+4. 点击 **加号** 图标 (+)。
+5. 在出现的对话框中，将以下配置添加到 **JSON 编辑器** 中，将 IP 地址 `127.0.0.1` 添加到黑名单中：
 
     ```json
     {
@@ -47,7 +49,7 @@ values={[
 
 <TabItem value="adc">
 
-To use ADC to configure IP restriction, create the following configuration:
+要使用 ADC 配置 IP 限制，请创建以下配置：
 
 ```yaml title="adc.yaml"
 services:
@@ -81,8 +83,57 @@ adc sync -f adc.yaml
 ```
 
 </TabItem>
-</Tabs>
 
+<TabItem value="ingress">
+
+创建一个路由的 Kubernetes manifest 文件：
+
+```yaml title="httpbin-route.yaml"
+apiVersion: apisix.apache.org/v2
+kind: ApisixRoute
+metadata:
+  name: httpbin-route
+  # namespace: api7    # replace with your namespace
+spec:
+  http:
+    - name: httpbin-route
+      match:
+        paths:
+          - /ip
+        methods:
+          - GET
+      backends:
+        - serviceName: httpbin
+          servicePort: 80
+```
+
+创建另一个启用了密钥认证的路由的 manifest 文件：
+
+```yaml title="global-ip-restriction.yaml"
+apiVersion: apisix.apache.org/v2
+kind: ApisixGlobalRule
+metadata:
+  name: global-ip-restriction
+  # namespace: api7    # replace with your namespace
+spec:
+  plugins:
+    - name: ip-restriction
+      enable: true
+      config:
+        blacklist:
+          - "127.0.0.1"
+        message: Sorry, your IP address is not allowed.
+```
+
+将配置应用到你的集群：
+
+```shell
+kubectl apply -f httpbin-route.yaml -f global-ip-restriction.yaml
+```
+
+</TabItem>
+
+</Tabs>
 
 ## 验证
 
