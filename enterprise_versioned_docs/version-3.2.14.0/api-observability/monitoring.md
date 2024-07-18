@@ -9,8 +9,8 @@ API7 企业版支持以最小的延迟向监控系统公开一组全面的指标
 
 ## 前提条件
 
-1. 获取一个具有**超级管理员** 或 **运行时管理员** 角色的用户账户。
-2. [发布一个服务](../getting-started/publish-service.md)，其中会包含至少一个 API。
+1. [安装 API7 企业版](../getting-started/install-api7-ee.md)。
+2. [在网关组上有一个运行的 API](../getting-started/launch-your-first-api.md)。
 
 ## 监控所有服务
 
