@@ -3,6 +3,9 @@ title: API 限流限速
 slug: /api-security/rate-limiting
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 速率限制允许控制发送到 API 后端的请求的速率。这有助于保护后端免受过多流量和高成本的影响。API 请求还可能包括网络爬虫生成的无效数据以及网络攻击，例如 DDoS，限制请求速率也有助于降低这些恶意流量的危害，避免业务宕机。
 
 API7 网关提供速率限制功能，通过限制给定时间段内发送到上游节点的请求数量来保护 API。请求计数在内存中高效完成，具有低延迟和高性能。
@@ -28,6 +31,7 @@ defaultValue="dashboard"
 values={[
 {label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
+{label: 'Ingress Controller', value: 'ingress'}
 ]}>
 <TabItem value="dashboard">
 
@@ -36,7 +40,9 @@ values={[
 3. 选择你的目标路由，例如，`getting-started-anything`。
 4. 搜索 `limit-count` 插件。
 5. 点击 **加号** 图标 (+)。
-6. 在出现的对话框中，将以下配置添加到**JSON 编辑器**：
+6. 在出现的对话框中，执行以下操作：
+
+* 将以下配置添加到**JSON 编辑器**：
 
     ```json
     {
@@ -51,7 +57,7 @@ values={[
     }
     ```
 
-7. 点击 **启用**。
+* 点击 **启用**。
 
 </TabItem>
 
@@ -97,6 +103,45 @@ adc sync -f adc.yaml
 ```
 
 </TabItem>
+
+<TabItem value="ingress">
+
+创建一个被启用了速率限制的路由的 Kubernetes manifest 文件:
+
+```yaml title="httpbin-route.yaml"
+apiVersion: apisix.apache.org/v2
+kind: ApisixRoute
+metadata:
+  name: httpbin-route
+  # namespace: api7    # replace with your namespace
+spec:
+  http:
+    - name: httpbin-route
+      match:
+        paths:
+          - /ip
+        methods:
+          - GET
+      backends:
+        - serviceName: httpbin
+          servicePort: 80
+      plugins:
+        - name: limit-count
+          enable: true 
+          config:
+            time_window: 60
+            count: 3
+            rejected_code: 429
+```
+
+将配置应用到你的集群：
+
+```shell
+kubectl apply -f httpbin-route.yaml
+```
+
+</TabItem>
+
 </Tabs>
 
 #### 验证
@@ -141,7 +186,9 @@ values={[
 3. 选择你的目标路由，例如，`getting-started-anything`。
 4. 搜索 `limit-req` 插件。
 5. 点击 **加号** 图标 (+)。
-6. 在出现的对话框中，将以下配置添加到**JSON 编辑器**：
+6. 在出现的对话框中，执行以下操作：
+
+* 将以下配置添加到**JSON 编辑器**：
 
     ```json
     {
@@ -154,7 +201,7 @@ values={[
     }
     ```
 
-7. 点击 **启用**。
+* 点击 **启用**。
 
 </TabItem>
 
@@ -232,7 +279,7 @@ Server: API7/3.2.13.0
 
 ## 相关阅读
 
-- 核心概念
-  - [服务](../key-concepts/services.md)
-  - [路由](../key-concepts/routes.md)
-  - [插件](../key-concepts/plugins.md)
+* 核心概念
+  * [服务](../key-concepts/services.md)
+  * [路由](../key-concepts/routes.md)
+  * [插件](../key-concepts/plugins.md)
