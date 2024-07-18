@@ -21,7 +21,7 @@ slug: /getting-started/add-gateway-group
 
 ## 相关阅读
 
-- 核心概念
-  - [网关组与网关实例](../key-concepts/gateway-groups.md)
-- 快速入门
-  - [新增网关实例](add-gateway-instance.md)
+* 核心概念
+  * [网关组与网关实例](../key-concepts/gateway-groups.md)
+* 快速入门
+  * [新增网关实例](add-gateway-instance.md)
