@@ -24,7 +24,7 @@ slug: /getting-started/rbac
 
 ## 相关阅读
 
-- 核心概念
-  - [角色和权限策略](../key-concepts/roles-and-permission-policies.md)
-- 快速入门
-  - [创建自定义角色](../getting-started/create-custom-role.md)
+* 核心概念
+  * [角色和权限策略](../key-concepts/roles-and-permission-policies.md)
+* 快速入门
+  * [创建自定义角色](../getting-started/create-custom-role.md)
