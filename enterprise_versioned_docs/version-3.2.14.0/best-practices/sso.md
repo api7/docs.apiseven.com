@@ -22,59 +22,60 @@ import TabItem from '@theme/TabItem';
 4. **授权**：如果身份验证成功，LDAP 服务器将授权信息返回给 API7 企业版。系统基于这些信息授权用户访问相应的资源。这通常涉及到角色和权限的分配，确保用户只能访问他们被授权访问的资源。
 5. **访问资源**：用户以经过验证的身份访问API7 企业版，无需重新输入凭据。
 
-## 前提条件
-
-1. 获取一个具有**超级管理员**角色的用户账户。
-
 ## 集成 SSO
 
-API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与其他用户系统集成后，您可以让现有用户登录 API7 企业版，而无需注册新的 API7 帐户。
+API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与其他用户系统集成后，你可以让现有用户登录 API7 企业版，而无需注册新的 API7 帐户。
 
-<Tabs
-  defaultValue="LDAP"
-  values={[
-    {label: 'LDAP', value: 'LDAP'},
-    {label: 'OIDC', value: 'OIDC'},
-  ]}>
-  <TabItem value="LDAP">
-      <ol>
-      <li> 在顶部导航栏中，选择<strong>组织</strong>，然后选择<strong>设置</strong>。</li>
-      <li> 单击<strong>新增登录选项</strong>。</li>
-      <li> 填写<strong>新增登录选项</strong>表单：
-        <ol>
-          <li><strong>名称</strong>：唯一的登录名称，必须让用户容易识别。例如<code>员工账户</code>。</li>
-          <li><strong>提供者</strong>：选择<code>LDAP</code>。</li>
-          <li><strong>主机名</strong>：LDAP 的主机域名。例如<code>ldap.example.com</code>。</li>
-          <li><strong>端口</strong>：例如<code>1563</code>。</li>
-          <li><strong>基本专有名称</strong>：例如<code>oc=users,dc=org,dc=example</code>。</li>
-          <li><strong>绑定专有名称</strong>：LDAP 绑定的 DN，用来实现 LDAP 用户搜索。 应该被授予必要的嗖嗖权限。例如<code>cn=admin,dc=org,dc=example</code>。</li>
-          <li><strong>绑定密码</strong>：和绑定专有名称一起，用于向 LDAP 服务器进行身份认证。</li>
-          <li><strong>标识符</strong>：用在 LDAP 中识别用户的属性。例如<code>cn</code>。</li>
-          <li><strong>属性映射</strong>: 将 API7 企业版中字段映射到 LDAP 系统中用于无缝集成和同步数据。</li>
-        </ol>
-      </li>
-      <li> 单击<strong>新增</strong>。</li>
-    </ol>
-  </TabItem>
-  <TabItem value="OIDC">
-      <ol>
-      <li> 在顶部导航栏中，选择<strong>组织</strong>，然后选择<strong>设置</strong>。</li>
-      <li> 单击<strong>新增登录选项</strong>。</li>
-      <li> 填写<strong>新增登录选项</strong>表单：
-        <ol>
-          <li><strong>名称</strong>：唯一的登录名称，必须让用户容易识别。例如<code>员工账户</code>。</li>
-          <li><strong>提供者</strong>：选择<code>OIDC</code>。</li>
-          <li><strong>发行方</strong>：OpenID connect提供方的标识符。例如<code>https://accounts.example.com</code>.</li>
-          <li><strong>客户端 ID</strong>：由 OIDC 签发的，属于你的应用的唯一标识符。例如<code>API7</code>。</li>
-          <li><strong>客户端密钥</strong>：用于和 OIDC 提供者进行身份认证的密钥。</li>
-          <li><strong>请求范围</strong>：访问令牌通常受请求范围的限制。例如<code>profile,email</code>。</li>
-          <li><strong>根地址</strong>：用于访问 API7 企业版用来生成回地址。例如<code>https://auth.example.com/oidc</code>。</li>
-          <li><strong>SSL 验证</strong>：默认开启。</li>
-        </ol>
-      </li>
-      <li> 单击<strong>新增</strong>。</li>
-    </ol>
-  </TabItem>
+1. 从顶部导航栏中选择 **组织**，然后选择 **设置**。
+2. 点击 **新增登录选项**。
+3. 填写表单：
+   * **名称**：唯一的登录名称，必须与用户相同。例如：`Employee Account`。
+   * **Provider**：选择 `LDAP`。
+   * **Host**：LDAP 主机域名。例如，`ldap.example.com`。
+   * **Port**：例如，`1563`。
+   * **Base Distinguished Name**：例如，`oc=users,dc=org,dc=example`。
+   * **Bind Distinguished Name**：用于执行 LDAP 搜索用户的 LDAP Bind Distinguished Name (DN)。此 LDAP Bind DN 应具有搜索被身份验证用户的权限。例如，`cn=admin,dc=org,dc=example`。
+   * **Bind Password**：用于 LDAP 服务器身份验证的 LDAP 绑定密码。
+   * **Identifier**：用于标识 LDAP 用户的属性。例如，`cn`。
+   * **Attributes Mapping**：将 API7 内部字段映射到相关的 LDAP 属性，以无缝集成和同步数据。
+4. 点击 **新增**。
+
+</TabItem>
+  
+<TabItem value="OIDC">
+
+1. 从顶部导航栏中选择 **组织**，然后选择 **设置**。
+2. 点击 **新增登录选项**。
+3. 填写表单：
+   * **Name**：唯一的登录名称，必须与用户相同。例如：`Employee Account`。
+   * **Provider**：选择 `OIDC`。
+   * **Issuer**：OpenID connect 提供商的标识符。例如，`https://accounts.example.com`。
+   * **Client ID**：OIDC 提供商分配的应用程序唯一标识符。例如，`API7`。
+   * **Client Secret**：用于身份验证的密钥，由 OIDC 提供商分配。
+   * **Request Scope**：访问令牌通常具有不同的范围，这会限制其使用。例如，`profile,email`。
+   * **Root URL**：用于访问 API7 以生成回调 URL 的 URL。例如，`https://auth.example.com/oidc`。
+   * **SSL verify**：默认值是打开的。
+4. 点击 **新增**。
+  
+下面是一个交互式演示，提供了使用 OpenID Connect (OIDC) 协议进行单点登录 (SSO) 的实践介绍。通过点击并按照步骤操作，你将更好地了解如何在 API7 企业版中使用它。
+  
+  <StorylaneEmbed src='https://app.storylane.io/demo/qxsyxt5jhdvt' />
+  
+</TabItem>
+
+<TabItem value="SAML">
+
+1. 从顶部导航栏中选择 **组织**，然后选择 **设置**。
+2. 点击 **新增登录选项**。
+3. 填写表单：
+   * **Name**：唯一的登录名称，必须与用户相同。例如 `Employee Account`。
+   * **Provider**：选择 `SAML`。
+   * **Identity Provider Metadata URL**：用于获取有关身份提供商信息的 URL，例如其公钥、支持的 SAML 版本、签名算法等。例如，`https://idp.example.com/metadata`。
+   * **Service Provider Root URL**：从身份提供商 (IdP) 请求身份验证和授权的实体。例如，`https://sp.example.com`。
+   * **Entity ID**：服务提供商 (SP) 或身份提供商 (IdP) 实体的唯一标识符。它通常在 SAML 联合中充当实体的全局唯一标识符。例如，`https://sp.example.com/saml/metadata`。
+4. 点击 **新增**。
+
+</TabItem>
 </Tabs>
 
 ## 用 SSO 登录
@@ -90,7 +91,7 @@ API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与
 
 ## 删除导入的用户
 
-如果你在**用户**中删除了使用 SSO 登录选项的用户，这仅仅意味着该用户将失去其所有角色。但是，他们仍然可以作为新用户登录到 API7 企业版控制台。要完全阻止他们访问 API7 企业版控制台，您必须从来源的用户系统中删除他们。
+如果你在 **用户** 中删除了使用 SSO 登录选项的用户，这仅仅意味着该用户将失去其所有角色。但是，他们仍然可以作为新用户登录到 API7 企业版控制台。要完全阻止他们访问 API7 企业版控制台，您必须从来源的用户系统中删除他们。
 
 如果你希望完全阻止某个用户访问 API7 企业版，需要在身份提供系统中删除或禁用该用户的帐户。这样，当该用户尝试通过 SSO 登录 API7 企业版时，身份提供商将不会验证他们的身份，从而阻止他们访问系统。
 
@@ -100,25 +101,24 @@ SCIM（系统跨域身份管理）是一种协议，可用于将用户和组信�
 
 通过 SCIM 用户同步，只要在你的 IdP 中注册或删除新用户，API7 企业版 就会自动同步用户数据。
 
-1. 在顶部导航栏中，选择**组织**，然后选择**设置**。
-2. 点击**SCIM 配置**的**启用**按钮。
-3. 复制**API7 SCIM 端点 URL** 和 **SCIM 令牌**。
+1. 在顶部导航栏中，选择 **组织**，然后选择 **设置**。
+2. 点击 **SCIM 配置** 的 **启用** 按钮。
+3. 复制 **API7 SCIM 端点 URL** 和 **SCIM 令牌**。
 4. 到身份提供商的设置页面进行配置（如果支持 SCIM）：
   - 登录到身份提供商管理控制台。
   - 找到 SCIM 配置设置（这些可能因你的 IdP 而异）。
-  - 将复制的**API7 SCIM 端点 URL** 和 **SCIM 令牌**粘贴到相应的字段中。
+  - 将复制的 **API7 SCIM 端点 URL** 和 **SCIM 令牌**粘贴到相应的字段中。
   - 保存配置更改并在身份提供商端进行配置。
-
 
 ## 为导入的用户分配角色
 
-### 不设置角色映射
+### 手动更新角色
 
-所有被导入的新用户会默认授予**观察者**角色，直到**超级管理员** [为他们分配其他角色](../getting-started/rbac.md).
+请参阅[如何更新用户角色](../getting-started/rbac.md)。
 
 ### 设置角色映射
 
-导入的用户会根据其原始系统中的相关属性（头衔、职位、部门等）自动分配角色。这些角色会在用户登录时同步和刷新，以实现无缝访问。角色映射可以包含多个规则，这些规则共同决定用户的角色和访问权限。如果用户不满足任何规则，则将默认分配 **观察者** 角色。
+导入的用户会根据其原始系统中的相关属性（头衔、职位、部门等）自动分配角色。这些角色会在用户登录时同步和刷新，以实现无缝访问。角色映射可以包含多个规则，这些规则共同决定用户的角色和访问权限。
 
 :::info
 
@@ -126,7 +126,7 @@ SCIM（系统跨域身份管理）是一种协议，可用于将用户和组信�
 
 :::
 
-1. 在顶部导航栏中，选择**组织**，然后选择**设置**。
+1. 在顶部导航栏中，选择 **组织**，然后选择**设置**。
 2. 选择要设置的登陆选项，点击名称进入。例如，`员工账户`。
 3. 点击 **角色映射**的 **开启**按钮。
 4. 填写 **开启角色映射** 表单：
@@ -136,9 +136,9 @@ SCIM（系统跨域身份管理）是一种协议，可用于将用户和组信�
     - **角色值**: 例如，`研发组长`.
 5. 点击 **开启**.
 
-现在，通过`员工账户` 登陆，且在原始系统中职位为研发组长 (Position = 研发组长) 的所有用户将自动获得 **超级管理员** 角色，而其他用户将保持默认的 **观察者**角色，因为他们不满足分配角色的规则。
+现在，通过`员工账户` 登陆，且在原始系统中职位为研发组长 (Position = 研发组长) 的所有用户将自动获得 **超级管理员** 角色。
 
-值得注意的是，这种角色映射是动态的。如果用户的职位在身份提供商中发生变化，例如从 "研发组长" 变为 "团队成员"，那么他们下次登录 API7 企业版时，角色将自动更新为  **观察者**。
+值得注意的是，这种角色映射是动态的。如果用户的职位在身份提供商中发生变化，例如从 "研发组长" 变为 "团队成员"，那么他们下次登录 API7 企业版时，角色将自动更新。
 
 ## 删除登录选项
 
@@ -154,3 +154,12 @@ SCIM（系统跨域身份管理）是一种协议，可用于将用户和组信�
 4. 单击目标登录选项的**删除**。
 5. 二次确认。
 
+## 相关阅读
+
+* 核心概念
+  * [角色和权限策略](../key-concepts/roles-and-permission-policies.md)
+* 快速入门
+  * [创建自定义角色](../getting-started/create-custom-role.md)
+* 开发参考
+  * [权限策略操作和资源](../reference/permission-policy-action-and-resource.md)
+  * [权限策略示例](../reference/permission-policy-example.md)
