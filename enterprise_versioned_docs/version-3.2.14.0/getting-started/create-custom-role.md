@@ -144,14 +144,14 @@ API7 企业版默认配置了一个锁定的、内置的 `超级管理员` 角�
 1. 按照教程 [更新用户角色](rbac.md) 将 `开发团队成员` 分配给另一个用户，例如 `Tom`。
 2. 让 Tom 登录并验证他的权限。
 
-## 更多资源
+## 相关阅读
 
-- 核心概念
-  - [角色和权限策略](../key-concepts/roles-and-permission-policies.md)
-- 快速入门
-  - [更新用户角色](../getting-started/rbac.md)
-- 最佳实践
-  - [设计自定义角色系统](../best-practices/design-custom-role-system.md)
-- 开发参考
-  - [权限策略操作和资源](../reference/permission-policy-action-and-resource.md)
-  - [权限策略示例](../reference/permission-policy-example.md)
+* 核心概念
+  * [角色和权限策略](../key-concepts/roles-and-permission-policies.md)
+* 快速入门
+  * [更新用户角色](../getting-started/rbac.md)
+* 最佳实践
+  * [设计自定义角色系统](../best-practices/design-custom-role-system.md)
+* 开发参考
+  * [权限策略操作和资源](../reference/permission-policy-action-and-resource.md)
+  * [权限策略示例](../reference/permission-policy-example.md)
