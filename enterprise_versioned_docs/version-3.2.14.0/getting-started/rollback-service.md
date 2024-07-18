@@ -26,11 +26,11 @@ slug: /getting-started/rollback-service
 
 ## 相关阅读
 
-- 核心概念
-  - [服务](../key-concepts/services.md)
-  - [网关组](../key-concepts/gateway-groups.md)
-- 快速入门
-  - [发布服务版本](publish-service.md)
-  - [在网关组之间同步已发布的服务版本](sync-service.md)
-- 最佳实践
-  - [API 版本控制](../best-practices/api-version-control.md)
+* 核心概念
+  * [服务](../key-concepts/services.md)
+  * [网关组](../key-concepts/gateway-groups.md)
+* 快速入门
+  * [发布服务版本](publish-service.md)
+  * [在网关组之间同步已发布的服务版本](sync-service.md)
+* 最佳实践
+  * [API 版本控制](../best-practices/api-version-control.md)
