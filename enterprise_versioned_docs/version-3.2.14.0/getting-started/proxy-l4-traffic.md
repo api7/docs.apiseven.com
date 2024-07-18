@@ -74,22 +74,25 @@ values={[
 1. 从侧导航栏中选择网关组的 **已发布服务**，然后点击 **新增服务**。
 2. 选择 **手动新增**。
 3. 在表单中执行以下操作：
-    * **名称** 填写 `MySQL`。
-    * **服务类型** 选择 `Stream(四层代理)`。
-    * **上游 Scheme** 选择`TCP`。
-    * **如何找到上游** 选择`使用节点`。
-    * 点击**新增节点**。
-    * 在表单中执行以下操作：
-        * **主机** 填写 `127.0.0.1`。
-        * **端口** 填写 `3306`。
-        * **权重** 使用默认值 `100`。
-        * 点击 **新增**。这将新建一个 “无版本” 状态的新服务。
+
+* **名称** 填写 `MySQL`。
+* **服务类型** 选择 `Stream(四层代理)`。
+* **上游 Scheme** 选择`TCP`。
+* **如何找到上游** 选择`使用节点`。
+* 点击**新增节点**。
+* 在表单中执行以下操作：
+  * **主机** 填写 `127.0.0.1`。
+  * **端口** 填写 `3306`。
+  * **权重** 使用默认值 `100`。
+  * 点击 **新增**。这将新建一个 “无版本” 状态的新服务。
+
 5. 在服务内，点击 **新增四层路由**。
 6. 在表单中执行以下操作：
-    * **名称** 填写 `stream-route-mysql`。
-    * **服务器地址** 填写 `127.0.0.1`。
-    * 在**服务器端口** 填写 `2000`。 
-    * 点击 **新增**。
+
+* **名称** 填写 `stream-route-mysql`。
+* **服务器地址** 填写 `127.0.0.1`。
+* 在**服务器端口** 填写 `2000`。 
+* 点击 **新增**。
 
 </TabItem>
 
@@ -124,7 +127,7 @@ adc sync -f adc.yaml
 
 <TabItem value="ingress">
 
-创建一个 Kubernetes 清单文件，使用 ApisixRoute 自定义资源来配置一个四层路由：
+创建一个 Kubernetes manifest 文件，使用 ApisixRoute 自定义资源来配置一个四层路由：
 
 ```yaml title="stream-route.yaml"
 apiVersion: apisix.apache.org/v2
@@ -234,11 +237,11 @@ mysql>
 
 ## 相关阅读
 
-- 核心概念
-  - [服务](../key-concepts/services.md)
-  - [路由](../key-concepts/routes.md)
-  - [上游](../key-concepts/upstreams.md)
-- 快速入门
-  - [发布服务版本](publish-service.md)
-- 最佳实践
-  - [API 版本控制](../best-practices/api-version-control.md)
+* 核心概念
+  * [服务](../key-concepts/services.md)
+  * [路由](../key-concepts/routes.md)
+  * [上游](../key-concepts/upstreams.md)
+* 快速入门
+  * [发布服务版本](publish-service.md)
+* 最佳实践
+  * [API 版本控制](../best-practices/api-version-control.md)
