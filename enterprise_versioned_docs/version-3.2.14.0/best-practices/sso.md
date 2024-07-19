@@ -41,15 +41,15 @@ API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与
 2. 点击 **新增登录选项**。
 3. 填写表单：
 
-   * **名称**：唯一的登录名称，必须与用户相同。例如：`Employee Account`。
-   * **Provider**：选择 `LDAP`。
-   * **Host**：LDAP 主机域名。例如，`ldap.example.com`。
-   * **Port**：例如，`1563`。
-   * **Base Distinguished Name**：例如，`oc=users,dc=org,dc=example`。
-   * **Bind Distinguished Name**：用于执行 LDAP 搜索用户的 LDAP Bind Distinguished Name (DN)。此 LDAP Bind DN 应具有搜索被身份验证用户的权限。例如，`cn=admin,dc=org,dc=example`。
-   * **Bind Password**：用于 LDAP 服务器身份验证的 LDAP 绑定密码。
-   * **Identifier**：用于标识 LDAP 用户的属性。例如，`cn`。
-   * **Attributes Mapping**：将 API7 内部字段映射到相关的 LDAP 属性，以无缝集成和同步数据。
+* **名称**：唯一的登录名称，必须与用户相同。例如：`Employee Account`。
+* **Provider**：选择 `LDAP`。
+* **Host**：LDAP 主机域名。例如，`ldap.example.com`。
+* **Port**：例如，`1563`。
+* **Base Distinguished Name**：例如，`oc=users,dc=org,dc=example`。
+* **Bind Distinguished Name**：用于执行 LDAP 搜索用户的 LDAP Bind Distinguished Name (DN)。此 LDAP Bind DN 应具有搜索被身份验证用户的权限。例如，`cn=admin,dc=org,dc=example`。
+* **Bind Password**：用于 LDAP 服务器身份验证的 LDAP 绑定密码。
+* **Identifier**：用于标识 LDAP 用户的属性。例如，`cn`。
+* **Attributes Mapping**：将 API7 内部字段映射到相关的 LDAP 属性，以无缝集成和同步数据。
 
 4. 点击 **新增**。
   
