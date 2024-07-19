@@ -5,6 +5,7 @@ slug: /best-practices/sso
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 单点登录（SSO）允许用户一次登录即可访问多个系统，而无需重新输入凭据。它通过消除对多个密码的需求，提高了效率，增强了用户体验，并加强了安全性。
 
@@ -51,7 +52,7 @@ API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与
 4. 点击 **新增**。
   
   </TabItem>
-  
+
 <TabItem value="OIDC">
 
 1. 从顶部导航栏中选择 **组织**，然后选择 **设置**。
