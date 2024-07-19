@@ -35,7 +35,7 @@ API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与
     {label: 'SAML', value: 'SAML'},
   ]}>
 
-   <TabItem value="LDAP">
+<TabItem value="LDAP">
 
 1. 从顶部导航栏中选择 **组织**，然后选择 **设置**。
 2. 点击 **新增登录选项**。
@@ -53,7 +53,7 @@ API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与
 
 4. 点击 **新增**。
   
-  </TabItem>
+</TabItem>
 
 <TabItem value="OIDC">
 
