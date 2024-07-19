@@ -26,6 +26,16 @@ import TabItem from '@theme/TabItem';
 
 API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与其他用户系统集成后，你可以让现有用户登录 API7 企业版，而无需注册新的 API7 帐户。
 
+<Tabs
+  defaultValue="LDAP"
+  values={[
+    {label: 'LDAP', value: 'LDAP'},
+    {label: 'OIDC', value: 'OIDC'},
+    {label: 'SAML', value: 'SAML'},
+  ]}>
+
+   <TabItem value="LDAP">
+
 1. 从顶部导航栏中选择 **组织**，然后选择 **设置**。
 2. 点击 **新增登录选项**。
 3. 填写表单：
@@ -39,6 +49,8 @@ API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与
    * **Identifier**：用于标识 LDAP 用户的属性。例如，`cn`。
    * **Attributes Mapping**：将 API7 内部字段映射到相关的 LDAP 属性，以无缝集成和同步数据。
 4. 点击 **新增**。
+  
+  </TabItem>
   
 <TabItem value="OIDC">
 
