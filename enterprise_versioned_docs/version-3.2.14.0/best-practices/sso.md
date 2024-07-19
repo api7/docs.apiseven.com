@@ -79,11 +79,11 @@ API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与
 2. 点击 **新增登录选项**。
 3. 填写表单：
 
-   * **Name**：唯一的登录名称，必须与用户相同。例如 `Employee Account`。
-   * **Provider**：选择 `SAML`。
-   * **Identity Provider Metadata URL**：用于获取有关身份提供商信息的 URL，例如其公钥、支持的 SAML 版本、签名算法等。例如，`https://idp.example.com/metadata`。
-   * **Service Provider Root URL**：从身份提供商 (IdP) 请求身份验证和授权的实体。例如，`https://sp.example.com`。
-   * **Entity ID**：服务提供商 (SP) 或身份提供商 (IdP) 实体的唯一标识符。它通常在 SAML 联合中充当实体的全局唯一标识符。例如，`https://sp.example.com/saml/metadata`。
+* **Name**：唯一的登录名称，必须与用户相同。例如 `Employee Account`。
+* **Provider**：选择 `SAML`。
+* **Identity Provider Metadata URL**：用于获取有关身份提供商信息的 URL，例如其公钥、支持的 SAML 版本、签名算法等。例如，`https://idp.example.com/metadata`。
+* **Service Provider Root URL**：从身份提供商 (IdP) 请求身份验证和授权的实体。例如，`https://sp.example.com`。
+* **Entity ID**：服务提供商 (SP) 或身份提供商 (IdP) 实体的唯一标识符。它通常在 SAML 联合中充当实体的全局唯一标识符。例如，`https://sp.example.com/saml/metadata`。
 
 4. 点击 **新增**。
 
