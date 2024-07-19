@@ -60,14 +60,16 @@ API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与
 1. 从顶部导航栏中选择 **组织**，然后选择 **设置**。
 2. 点击 **新增登录选项**。
 3. 填写表单：
-   * **Name**：唯一的登录名称，必须与用户相同。例如：`Employee Account`。
-   * **Provider**：选择 `OIDC`。
-   * **Issuer**：OpenID connect 提供商的标识符。例如，`https://accounts.example.com`。
-   * **Client ID**：OIDC 提供商分配的应用程序唯一标识符。例如，`API7`。
-   * **Client Secret**：用于身份验证的密钥，由 OIDC 提供商分配。
-   * **Request Scope**：访问令牌通常具有不同的范围，这会限制其使用。例如，`profile,email`。
-   * **Root URL**：用于访问 API7 以生成回调 URL 的 URL。例如，`https://auth.example.com/oidc`。
-   * **SSL verify**：默认值是打开的。
+
+* **Name**：唯一的登录名称，必须与用户相同。例如：`Employee Account`。
+* **Provider**：选择 `OIDC`。
+* **Issuer**：OpenID connect 提供商的标识符。例如，`https://accounts.example.com`。
+* **Client ID**：OIDC 提供商分配的应用程序唯一标识符。例如，`API7`。
+* **Client Secret**：用于身份验证的密钥，由 OIDC 提供商分配。
+* **Request Scope**：访问令牌通常具有不同的范围，这会限制其使用。例如，`profile,email`。
+* **Root URL**：用于访问 API7 以生成回调 URL 的 URL。例如，`https://auth.example.com/oidc`。
+* **SSL verify**：默认值是打开的。
+
 4. 点击 **新增**。
   
 下面是一个交互式演示，提供了使用 OpenID Connect (OIDC) 协议进行单点登录 (SSO) 的实践介绍。通过点击并按照步骤操作，你将更好地了解如何在 API7 企业版中使用它。
