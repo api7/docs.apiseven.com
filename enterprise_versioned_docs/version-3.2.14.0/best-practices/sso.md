@@ -39,8 +39,6 @@ API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与
    * **Identifier**：用于标识 LDAP 用户的属性。例如，`cn`。
    * **Attributes Mapping**：将 API7 内部字段映射到相关的 LDAP 属性，以无缝集成和同步数据。
 4. 点击 **新增**。
-
-</TabItem>
   
 <TabItem value="OIDC">
 
