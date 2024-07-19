@@ -5,7 +5,6 @@ slug: /best-practices/sso
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 单点登录（SSO）允许用户一次登录即可访问多个系统，而无需重新输入凭据。它通过消除对多个密码的需求，提高了效率，增强了用户体验，并加强了安全性。
 
@@ -71,10 +70,6 @@ API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与
 * **SSL verify**：默认值是打开的。
 
 4. 点击 **新增**。
-  
-下面是一个交互式演示，提供了使用 OpenID Connect (OIDC) 协议进行单点登录 (SSO) 的实践介绍。通过点击并按照步骤操作，你将更好地了解如何在 API7 企业版中使用它。
-  
-  <StorylaneEmbed src='https://app.storylane.io/demo/qxsyxt5jhdvt' />
   
 </TabItem>
 
