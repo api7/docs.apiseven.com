@@ -6,7 +6,7 @@ slug: /getting-started/proxy-l4-traffic
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-API7 网关 除了处理应用层（L7）流量外，还可以处理传输层（L4）TCP 和 UDP 流量。
+API7 网关除了处理应用层（L7）流量外，还可以处理传输层（L4）TCP 和 UDP 流量。
 
 本教程将演示如何配置 [四层路由](../key-concepts/stream-routes.md) 在客户端和 MySQL 服务器之间代理 L4 流量。
 
