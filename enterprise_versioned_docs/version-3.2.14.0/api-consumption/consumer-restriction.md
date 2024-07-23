@@ -195,12 +195,12 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: secret-key2"
 
 ## 相关阅读
 
-- 核心概念
-  - [服务](../key-concepts/services.md)
-  - [路由](../key-concepts/routes.md)
-  - [插件](../key-concepts/plugins.md)
-  - [消费者](../key-concepts/consumers.md)
-- API 安全
-  - [设置 API 身份验证](../api-security/api-authentication.md)
-- API 消费
-  - [管理消费者的访问凭证](../api-consumption/manage-consumer-credentials.md)
+* 核心概念
+  * [服务](../key-concepts/services.md)
+  * [路由](../key-concepts/routes.md)
+  * [插件](../key-concepts/plugins.md)
+  * [消费者](../key-concepts/consumers.md)
+* API 安全
+  * [设置 API 身份验证](../api-security/api-authentication.md)
+* API 消费
+  * [管理消费者的访问凭证](../api-consumption/manage-consumer-credentials.md)
