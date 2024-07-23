@@ -131,7 +131,7 @@ spec:
         key: "secret-key2"
 ```
 
-对于消费者限制，由于 ApisixService 自定义资源尚不可用，您可以在 ApisixRoute 上配置 `consumer-restriction` 插件：
+对于消费者限制，由于 ApisixService 自定义资源尚不可用，你可以在 ApisixRoute 上配置 `consumer-restriction` 插件：
 
 [//]: <TODO: ApisixService 可用时更新本节>
 

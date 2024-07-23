@@ -27,7 +27,7 @@ slug: /release-notes
 
 但是，需要权衡其中的利弊。绕过发布阶段，意味着你也失去了轻松回滚到之前的版本或跟踪版本变更的能力。
 
-有关详细信息，请参阅最新的入门教程：[启动您的第一个 API](./getting-started/launch-your-first-api.md)。
+有关详细信息，请参阅最新的入门教程：[启动你的第一个 API](./getting-started/launch-your-first-api.md)。
 
 #### 与 Ingress Controller 集成（UI 支持）
 
