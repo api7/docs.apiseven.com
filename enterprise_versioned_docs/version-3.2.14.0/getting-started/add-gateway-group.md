@@ -17,7 +17,7 @@ slug: /getting-started/add-gateway-group
    * **名称** 填写 `生产网关组`。
    * 点击 **添加**。
 
-继续去 [新增网关实例](./add-gateway-instance.md) 保证你新添加的网关组可以正常使用。
+继续 [新增网关实例](./add-gateway-instance.md) 保证你新添加的网关组可以正常使用。
 
 ## 相关阅读
 
