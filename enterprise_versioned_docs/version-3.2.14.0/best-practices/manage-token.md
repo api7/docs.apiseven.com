@@ -17,7 +17,7 @@ slug: /best-practices/manage-token
 
 ## 实施步骤
 
-![How Does Token Work in API7 Enterprise](https://static.apiseven.com/uploads/2024/07/29/3i42PYQ2_token-image.jpeg)
+![How Does Token Work in API7 Enterprise](https://static.apiseven.com/uploads/2024/07/30/qjh8vCQB_img_v3_02d9_52472ff9-521b-4ffb-acc5-352b100940bg.jpg)
 
 ### 1. 注册账号
 
@@ -47,8 +47,8 @@ slug: /best-practices/manage-token
 调用 API7 企业版的 API 有两种方式：一是获取所有 API 数据，并将 token 添加到请求头中进行鉴权和认证。
 
 ```
-curl \
--X GET http://api.example.com/api7ee/admin/services \
+curl -k \
+-X GET "http://api.example.com/api7ee/admin/services" \
 -H "X-API-KEY: $API_KEY"
 ```
 
@@ -58,7 +58,7 @@ curl \
 
 ```
 curl -k \
--X GET http://api.example.com/api7ee/admin/services \
+-X GET "http://api.example.com/api7ee/admin/services" \
 -H "Cookie: X-API-KEY=$API_KEY"
 ```
 
