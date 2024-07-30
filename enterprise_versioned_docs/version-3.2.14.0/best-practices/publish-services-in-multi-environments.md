@@ -1,5 +1,5 @@
 ---
-title: 使用网关组在多环境中发布服务
+title: 使用网关组在多环境中管理服务
 slug: /best-practices/publish-services-in-multi-environments
 ---
 
@@ -7,11 +7,11 @@ slug: /best-practices/publish-services-in-multi-environments
 
 API7 企业版支持 API 网关和 Ingress Controller 两种类型的网关组管理，能帮助企业进行环境和集群的隔离，多区域多集群管理，以及根据业务线实现服务级别目标管理。
 
-这篇指南将向您展示如何通过网关组实现发布服务在 Test、UAT、 Prod 三个环境中的迁移。
+这篇指南将向你展示如何通过网关组实现在 Test、UAT、 Prod 三个环境中的服务管理。
 
 ## 背景介绍
 
-为确保服务稳定、合规及数据安全，服务的上线经历多个环境，包括测试环境、UAT 环境和生产环境。研发人员需要部署 3 套独立的 API7 企业版，开发工程师、QA 工程师和运维工程师需要分别登录不同域名下的 API7 企业版控制台，对同一个 API 进行开发、测试和上线，在业务线非常多的情况下，会浪费大量机器和管理资源。
+为确保服务稳定、合规及数据安全，服务的上线经历多个环境，包括测试环境、UAT 环境和生产环境。在没有多环境管理功能的情况下，研发人员需要部署 3 套独立的 API7 企业版，开发工程师、QA 工程师和运维工程师需要分别登录不同域名下的 API7 企业版控制台，对同一个 API 进行开发、测试和上线，在业务线非常多的情况下，会浪费大量机器和管理资源。
 
 API7 企业版的网关组功能为研发人员提供了一个统一的入口，避免在多控制台中切换，可以实现简单便捷的发布操作，从而提高工作效率并减少操作错误。
 
@@ -57,9 +57,9 @@ API7 企业版的网关组功能为研发人员提供了一个统一的入口，
 
 1. 确保生产环境已准备好， upstream 地址配置为生产环境的虚拟 IP 地址 `http://prod-backend-vip`，背后是高性能的服务器集群。
 
-2. UserService 服务调试完成后[将当前版本同步到 Prod 网关组](../getting-started/sync-service.md)，同时变更域名为：`prod.acme.com`。
+2. UserService 服务在 UAT 环境调试完成后[将当前版本同步到 Prod 网关组](../getting-started/sync-service.md)，同时变更域名为：`prod.acme.com`。
 
-3. 在 Prod 网关组中，启用 `prometheus` 插件作为全局规则，进行 [API 指标监控](../api-observability/logging.md)，确保所有服务和路线都得到一致的监控和跟踪，实时跟踪 UserService 的性能和稳定性。
+3. 在 Prod 网关组中，启用 `prometheus` 插件作为全局规则，进行 [API 指标监控](../api-observability/logging.md)，确保所有服务和都得到一致的监控和跟踪，实时跟踪 UserService 的性能和稳定性。
 
 4. 制定详细的回滚计划，包括回滚步骤、所需时间、责任人等，在必要进行回滚的时候，回滚已发布的服务版本。
 
