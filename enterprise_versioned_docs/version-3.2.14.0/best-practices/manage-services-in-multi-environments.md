@@ -1,6 +1,6 @@
 ---
 title: 使用网关组在多环境中管理服务
-slug: /best-practices/publish-services-in-multi-environments
+slug: /best-practices/manage-services-in-multi-environments
 ---
 
 [网关组](../key-concepts/gateway-groups.md)是一个由一个或多个共享相同配置的网关实例组成的逻辑分组，这些网关实例在处理 API 请求时表现一致。用户可以为网关组命名，并为其添加标签，以此来区分和管理不同的环境和集群。
