@@ -3,7 +3,7 @@ title: 使用网关组在多环境中发布服务
 slug: /best-practices/publish-services-in-multi-environments
 ---
 
-[网关组]((../key-concepts/gateway-groups.md))是一个由一个或多个共享相同配置的网关实例组成的逻辑分组，这些网关实例在处理 API 请求时表现一致。用户可以为网关组命名，并为其添加标签，以此来区分和管理不同的环境和集群。
+[网关组](../key-concepts/gateway-groups.md)是一个由一个或多个共享相同配置的网关实例组成的逻辑分组，这些网关实例在处理 API 请求时表现一致。用户可以为网关组命名，并为其添加标签，以此来区分和管理不同的环境和集群。
 
 API7 企业版支持 API 网关和 Ingress Controller 两种类型的网关组管理，能帮助企业进行环境和集群的隔离，多区域多集群管理，以及根据业务线实现服务级别目标管理。
 
@@ -59,7 +59,7 @@ API7 企业版的网关组功能为研发人员提供了一个统一的入口，
 
 2. UserService 服务调试完成后[将当前版本同步到 Prod 网关组](../getting-started/sync-service.md)，同时变更域名为：`prod.acme.com`。
 
-3. 在 Prod 网关组中，启用 `prometheus` 插件作为全局规则，进行 [API 指标监控]((../api-observability/logging.md))，确保所有服务和路线都得到一致的监控和跟踪，实时跟踪 UserService 的性能和稳定性。
+3. 在 Prod 网关组中，启用 `prometheus` 插件作为全局规则，进行 [API 指标监控](../api-observability/logging.md)，确保所有服务和路线都得到一致的监控和跟踪，实时跟踪 UserService 的性能和稳定性。
 
 4. 制定详细的回滚计划，包括回滚步骤、所需时间、责任人等，在必要进行回滚的时候，回滚已发布的服务版本。
 
