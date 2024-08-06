@@ -51,7 +51,8 @@
       "items": [
         "api-security/api-authentication",
         "api-security/rate-limiting",
-        "api-security/block-ip"
+        "api-security/block-ip",
+        "api-security/configure-mtls"
       ]
     },
     {

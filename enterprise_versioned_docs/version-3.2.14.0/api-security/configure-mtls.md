@@ -5,11 +5,11 @@ slug: /api-security/configure-mtls
 
 import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
-双向 TLS（mTLS）是传输层安全性（TLS）的增强形式，用于客户端和服务器之间的双向身份验证。这是通过握手的过程实现的，双方交换并验证证书以确认彼此的身份。
+双向传输层安全性（mTLS），作为 TLS（传输层安全性）的一种高级应用，旨在通过客户端与服务器之间的双向身份验证机制，显著提升通信安全性。这一过程依赖于精心设计的握手流程，双方不仅交换加密密钥，还相互验证对方的数字证书，从而确保通信双方身份的准确无误。
 
-本指南将向您展示如何在下游客户端应用程序和 API7 企业版之间配置 mTLS，以防止未经授权的访问并加强安全性。
+本指南将阐述如何在下游客户端应用程序和 API7 企业版之间配置 mTLS，以有效阻止未经授权的访问并加固整体安全防线。
 
-下面是一个互动演示，提供了动手操作的介绍。通过点击并遵循步骤，你将更好地了解如何在 API7 企业版中使用它。
+下面是一个互动演示，提供配置 mTLS 的实践入门。通过点击并按照步骤操作，你将更好地了解如何在 API7 企业版中使用。
 
 <StorylaneEmbed src='https://app.storylane.io/demo/id1jfgxj5rgz' />
 
@@ -19,13 +19,19 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 ## 创建服务和路由
 
-1. 按照[启动您的第一个API](../getting-started/launch-your-first-api.md)教程创建一个名为`httpbin`的服务。
+接下来，我们需要在 API7 企业版中创建服务和路由，以支持后续的 mTLS 配置。
 
-2. 添加一条路由，将所有请求转发到上游的 `httpbin.org` 的`/ip`，使用 `GET` HTTP 方法。
+创建服务：遵循启动您的第一个API教程，创建一个名为httpbin的服务。此服务将作为示例，用于演示如何通过mTLS保护的路由转发请求。
+配置路由：在API7企业版中，添加一条新的路由规则，指定所有针对特定路径（如/ip）的GET请求应被转发至上游的httpbin.org服务。通过精确配置路由，您可以确保只有符合特定条件的请求才会通过mTLS通道进行传输。
+请注意，上述步骤仅为mTLS配置的基础准备。在实际部署时，您还需根据具体的业务需求和安全要求，进一步调整服务、路由以及mTLS相关的安全策略。
+
+1. 按照[创建一个简单的 API](../getting-started/launch-your-first-api.md) 文档创建一个名为 `httpbin` 的服务。
+
+2. 在 `httpbin` 服务上添加一条路由规则，GET `/ip`，将所有请求转发到上游的 `httpbin.org`。
 
 ## 生成证书和密钥
 
-1. 生成证书颁发机构（CA）密钥和证书。
+1. 生成证书颁发机构（CA）的密钥和证书。
 
     ```
     openssl genrsa -out ca.key 2048 && \
@@ -33,7 +39,7 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
       openssl x509 -req -days 36500 -sha256 -extensions v3_ca -signkey ca.key -in ca.csr -out ca.crt
     ```
 
-2. 为 API7 企业版 生成公用名为 `test.com` 的密钥和证书，并使用 CA 证书签名。
+2. 为 API7 企业版生成一个公用名为 `test.com` 的密钥和证书，并使用 CA 证书签名。
 
     ```
     openssl genrsa -out server.key 2048 && \
@@ -43,7 +49,7 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
       -in server.csr -out server.crt
     ```
 
-3. 为客户端生成公用名为 `CLIENT` 的密钥和证书，并使用 CA 证书签名。
+3. 为客户端生成一个公用名为 `CLIENT` 的密钥和证书，并使用 CA 证书签名。
 
     ```
     openssl genrsa -out client.key 2048 && \
@@ -53,44 +59,44 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
       -in client.csr -out client.crt
     ```
 
-4. 生成证书和密钥后，检查您的本地设备以找到这些文件。
+4. 生成证书和密钥后，检查并确保以下文件已保存至你的本地设备。
 
-    ❶ `server.crt`: 服务器证书 
-    
-    ❷ `server.key`: 服务器证书密钥 
-    
-    ❸ `ca.crt`: CA证书 
+    ❶ `server.crt`: 服务器证书
+
+    ❷ `server.key`: 服务器证书的密钥
+
+    ❸ `ca.crt`: CA 证书
 
 ## 为 API7 企业版配置 mTLS
 
-1. 进入 API7 企业版控制台，从侧导航栏中点击 **SSL Certificates**，然后点击 **+ Add SSL Certificate**。
+1. 进入 API7 企业版控制台，从侧导航栏中点击 **SSL 证书**，然后点击 **+ 新增 SSL 证书**。
 
-2. 在 **+ Add SSL Certificate** 对话框中，执行以下操作：
+2. 在 **+ 新增 SSL 证书** 对话框中，执行以下操作：
 
-     - 在 **Type** 字段中选择 `Server`。
-     - 选择 **Upload** 作为方法。
-     - 在 **Certificate** 字段中上传 `server.crt` 文件。
-     - 在 **Private Key** 字段中上传 `server.key` 文件。
-     - 打开 **Peer Authentication** 按钮。
-     - 在 **CA Certificate (Optional)** 字段中上传 `ca.crt` 文件。
-     - 点击 **Add**。
+     - 在 **类型** 字段中选择 `服务器`。
+     - 选择 **上传** 方法。
+     - 在 **证书** 字段中上传 `server.crt` 文件。
+     - 在 **私钥** 字段中上传 `server.key` 文件。
+     - 打开 **对等验证** 按钮。
+     - 在 **CA 证书（可选）** 字段中上传 `ca.crt` 文件。
+     - 点击 **新增**。
 
-3. 一个具有 ID 和 `test.com` 作为 SNIS 的 SSL 证书已成功添加。
+3. 添加完成后，可以在 SSL 证书列表中看到一个新条目，包含一个唯一的 ID 和 `test.com` 作为其服务名称指示符（SNIS）。
 
-## 验证客户端与 API7 企业版之间的 mTLS
+## 验证客户端与 API7 企业版之间的 mTLS 连接
 
-### 使用客户端证书
+### 使用客户端证书进行请求
 
-由于证书仅对 CN `test.com` 有效，您应使用 `test.com` 作为 API7 企业版托管的域名。
+由于已配置的 SSL 证书针对公用名（CN）`test.com`，因此请确保在测试或生产环境中，使用 `test.com` 作为 API7 企业版服务的访问域名。
 
-使用客户端证书发送请求到 `https://test.com:9443/ip`，并将 `test.com` 解析为 `127.0.0.1`。
+使用客户端证书发送请求至 `https://test.com:9443/ip`，并将 `test.com` 解析为 `127.0.0.1`。
 
 ```
 curl -ikv --resolve "test.com:9443:127.0.0.1" "https://test.com:9443/ip" \
   --cert client.crt --key client.key
 ```
 
-类似以下的 mTLS 握手验证了客户端与 API7 企业版之间已启用 mTLS。
+可以看到类似以下内容的响应，说明客户端与 API7 企业版之间已启用 mTLS。
 
 ```
 * Added test.com:9443:127.0.0.1 to DNS cache
@@ -138,17 +144,17 @@ HTTP/2 200
 ...
 ```
 
-注意，在握手期间，API7 企业版和客户端成功验证了彼此的证书并建立了连接。
+> 注意，在握手期间，API7 企业版和客户端成功验证了彼此的证书并建立了连接。
 
-### 没有客户端证书
+### 无客户端证书情况下进行请求
 
-发送请求到 `https://test.com:9443/ip`，但不使用客户端证书。
+在无客户端证书的情况下，发送请求到 `https://test.com:9443/ip`。
 
 ```
 curl -ikv --resolve "test.com:9443:127.0.0.1" "https://test.com:9443/ip"
 ```
 
-失败的 mTLS 握手类似于以下内容。
+可以看到类似以下内容的响应，说明客户端与 API7 企业版之间 mTLS 握手失败。
 
 ```
 * Added test.com:9443:127.0.0.1 to DNS cache
@@ -183,7 +189,7 @@ curl -ikv --resolve "test.com:9443:127.0.0.1" "https://test.com:9443/ip"
 
 ## 相关阅读
 
-* 核心概念
-  * [SSL 证书](../key-concepts/services.md)
-* 快速入门
-  * [创建一个简单的 API](../getting-started/launch-your-first-api.md)
+- 核心概念
+  - [SSL 证书](../key-concepts/services.md)
+- 快速入门
+  - [创建一个简单的 API](../getting-started/launch-your-first-api.md)
