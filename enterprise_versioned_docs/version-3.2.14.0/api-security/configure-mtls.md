@@ -7,7 +7,7 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 双向传输层安全性（mTLS），作为 TLS（传输层安全性）的一种高级应用，旨在通过客户端与服务器之间的双向身份验证机制，显著提升通信安全性。这一过程依赖于精心设计的握手流程，双方不仅交换加密密钥，还相互验证对方的数字证书，从而确保通信双方身份的准确无误。
 
-本指南将阐述如何在下游客户端应用程序和 API7 企业版之间配置 mTLS，以有效阻止未经授权的访问并加固整体安全防线。
+本指南将阐述如何在客户端应用程序和 API7 企业版之间配置 mTLS，以有效阻止未经授权的访问并加固整体安全防线。
 
 下面是一个互动演示，提供配置 mTLS 的实践入门。通过点击并按照步骤操作，你将更好地了解如何在 API7 企业版中使用。
 
@@ -20,10 +20,6 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 ## 创建服务和路由
 
 接下来，我们需要在 API7 企业版中创建服务和路由，以支持后续的 mTLS 配置。
-
-创建服务：遵循启动您的第一个API教程，创建一个名为httpbin的服务。此服务将作为示例，用于演示如何通过mTLS保护的路由转发请求。
-配置路由：在API7企业版中，添加一条新的路由规则，指定所有针对特定路径（如/ip）的GET请求应被转发至上游的httpbin.org服务。通过精确配置路由，您可以确保只有符合特定条件的请求才会通过mTLS通道进行传输。
-请注意，上述步骤仅为mTLS配置的基础准备。在实际部署时，您还需根据具体的业务需求和安全要求，进一步调整服务、路由以及mTLS相关的安全策略。
 
 1. 按照[创建一个简单的 API](../getting-started/launch-your-first-api.md) 文档创建一个名为 `httpbin` 的服务。
 
@@ -69,7 +65,7 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 ## 为 API7 企业版配置 mTLS
 
-1. 进入 API7 企业版控制台，从侧导航栏中点击 **SSL 证书**，然后点击 **+ 新增 SSL 证书**。
+1. 进入 API7 企业版控制台，选择 `default` 网关组，从侧导航栏中点击 **SSL 证书**，然后点击 **+ 新增 SSL 证书**。
 
 2. 在 **+ 新增 SSL 证书** 对话框中，执行以下操作：
 
