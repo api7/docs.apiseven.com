@@ -102,7 +102,7 @@
       "items": [
         "best-practices/api-version-control",
         "best-practices/configure-grpc",
-        "best-practices/audit-logging",
+        "best-practices/manage-token",
         "best-practices/upstream-ha",
         "best-practices/sso",
         "best-practices/devops-adc",
