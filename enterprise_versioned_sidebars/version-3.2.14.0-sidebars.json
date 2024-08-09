@@ -42,7 +42,8 @@
         "getting-started/canary-upstream",
         "getting-started/publish-service",
         "getting-started/sync-service",
-        "getting-started/rollback-service"
+        "getting-started/rollback-service",
+        "getting-started/audit-logging"
       ]
     },
     {
