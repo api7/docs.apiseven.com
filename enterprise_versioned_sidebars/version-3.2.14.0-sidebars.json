@@ -52,7 +52,8 @@
       "items": [
         "api-security/api-authentication",
         "api-security/rate-limiting",
-        "api-security/block-ip"
+        "api-security/block-ip",
+        "api-security/configure-mtls"
       ]
     },
     {
@@ -104,6 +105,7 @@
         "best-practices/configure-grpc",
         "best-practices/manage-token",
         "best-practices/upstream-ha",
+        "best-practices/manage-services-in-multi-environments",
         "best-practices/sso",
         "best-practices/devops-adc",
         "best-practices/design-custom-role-system"
