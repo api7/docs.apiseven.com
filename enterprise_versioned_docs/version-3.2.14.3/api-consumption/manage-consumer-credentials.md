@@ -244,4 +244,15 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: secret-key"
   "origin": "192.168.0.102, 35.259.159.12"
 }
 ```
-  
+
+## 相关阅读
+
+* 核心概念
+  * [服务](../key-concepts/services.md) 
+  * [路由](../key-concepts/routes.md)
+  * [插件](../key-concepts/plugins.md)
+  * [消费者](../key-concepts/consumers.md)
+* API 安全
+  * [设置 API 身份验证](../api-security/api-authentication.md)
+* API 消费
+  * [基于黑白名单的访问控制](./consumer-restriction.md) 
