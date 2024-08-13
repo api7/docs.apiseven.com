@@ -186,7 +186,7 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: secret-key"
 curl -i "http://127.0.0.1:9080/ip" -H "apikey: secret-key2" 
 ```
 
-你将收到 403 Forbidden 响应，并附带以下请求正文，因为消费者 Lisa 未添加到白名单中：
+你将收到 `403 Forbidden` 响应，并附带以下请求正文，因为消费者 Lisa 未添加到白名单中：
 
 ```text
 {"message":"The consumer_name is forbidden."}
