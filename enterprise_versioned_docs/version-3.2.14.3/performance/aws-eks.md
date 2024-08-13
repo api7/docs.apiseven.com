@@ -49,7 +49,7 @@ slug: /performance/aws-eks
 
 ![create key success](https://static.apiseven.com/uploads/2024/05/21/Xy1gFW8N_create-key-success.png)
 
-#### 创建 Node group
+#### 创建节点组
 
 我们需要添加 3 个节点组，分别在不同的节点组部署 API7 EE，NGINX 上游，wrk2。
 
@@ -107,7 +107,7 @@ kubectl label nodes <your-node3-name> nodeName=wrk2
 
 ## 安装过程
 
-### 安装 API7 EE
+### 安装 API7 企业版
 
 #### 控制面安装
 
