@@ -107,7 +107,7 @@ kubectl label nodes <your-node3-name> nodeName=wrk2
 
 ## 安装过程
 
-### 安装 API7 EE
+### 安装 API7 企业版
 
 #### 控制面安装
 
