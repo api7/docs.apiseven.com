@@ -54,7 +54,7 @@ If you want to access Dashboard with HTTP Endpoint(:7080), you can turn server.l
 
 :::
 
-2. 选择要上传的许可证，然后单击**上传**激活 API7 企业版。
+2. 选择要上传的许可证，然后单击 **上传** 激活 API7 企业版。
 
 ## 终止 API7 企业版
 
