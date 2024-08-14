@@ -37,7 +37,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="k8s" label="Kubernetes">
 
-1. 从侧边栏导航选择你的目标网关组下的 **网关实例**（网关实例），然后点击 **新增网关实例**。
+1. 从侧边栏导航选择你的目标网关组下的 **网关实例**，然后点击 **新增网关实例**。
 2. 按页面说明进行以下操作：
 
 * 设置 **Helm 发布名称** 为 `api7-ee-3-gateway`。
