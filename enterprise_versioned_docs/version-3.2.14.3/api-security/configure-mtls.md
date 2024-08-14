@@ -58,7 +58,7 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 ## 为 API7 企业版配置 mTLS
 
-1. 从侧边栏选择网关组的**SSL 证书**，然后点击 **+ 新增 SSL 证书**。
+1. 从侧边栏选择网关组的 **SSL 证书**，然后点击 **+ 新增 SSL 证书**。
 
 2. 在对话框中，执行以下操作：
 
