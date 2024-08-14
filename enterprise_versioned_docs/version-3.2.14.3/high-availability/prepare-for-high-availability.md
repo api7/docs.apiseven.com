@@ -13,7 +13,7 @@ slug: /high-availability/prepare-for-high-availability
 
 要部署 API7 企业版高可用性架构，至少需要 4 台主机（2 台用于控制面高可用，2 台用于数据面高可用）。
 
-请注意，虽然数据库高可用也是一个需要考虑的重要方面，但本文档并未涵盖。建议你根据自己实际使用的关系型数据库单独处理这个问题，以确保数据存储系统的弹性和容错性。有关如何为PostgreSQL 配置高可用的详细信息，请参阅 [PostgreSQL 文档](https://www.postgresql.org/docs/current/high-availability.html)。
+请注意，虽然数据库高可用也是一个需要考虑的重要方面，但本文档并未涵盖。建议你根据自己实际使用的关系型数据库单独处理这个问题，以确保数据存储系统的弹性和容错性。有关如何为 PostgreSQL 配置高可用的详细信息，请参阅 [PostgreSQL 文档](https://www.postgresql.org/docs/current/high-availability.html)。
 
 Prometheus 是一个可选组件，仅当你希望使用 API7 企业版自带的监控功能时才使用。如果你不需要此功能（已经自建监控系统），则 Prometheus 不是部署必需的。有关如何为 Prometheus 配置高可用的详细信息，请参阅 [Prometheus 文档](https://prometheus.io/docs/introduction/faq/#can-prometheus-be-made-highly-available).
 
