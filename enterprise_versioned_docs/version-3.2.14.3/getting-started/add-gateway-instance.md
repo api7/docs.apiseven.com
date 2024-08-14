@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
 <Tabs>
 <TabItem value="docker" label="Docker" default>
 
-1. 从侧边栏导航选择你的目标网关组下的 **网关实例**（网关实例），然后点击 **新增网关实例**。
+1. 从侧边栏导航选择你的目标网关组下的 **网关实例**，然后点击 **新增网关实例**。
 2. 按页面说明进行以下操作：
 
 * 分别设置 HTTP 端口 ID 和 HTTPS 端口 ID 为 `9080` 和 `9443`。
