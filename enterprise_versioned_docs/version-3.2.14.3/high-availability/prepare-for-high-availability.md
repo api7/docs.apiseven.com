@@ -7,7 +7,7 @@ slug: /high-availability/prepare-for-high-availability
 
 ## 获取安装包
 
-请[联系API7专家](https://api7.ai/contact)，以获取适合你的安装包。
+请[联系 API7 专家](https://api7.ai/contact)，以获取适合你的安装包。
 
 ## 准备主机
 
