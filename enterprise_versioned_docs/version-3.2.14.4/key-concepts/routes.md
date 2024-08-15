@@ -33,6 +33,7 @@ API7 网关有两种主要的工作模式：
 ## 相关阅读
 
 - 核心概念
- - [服务](services.md), [上游](upstreams.md)
+ - [服务](services.md)
+ - [上游](upstreams.md)
 - 快速入门
   - [创建一个简单的 API](../getting-started/launch-your-first-api.md)
