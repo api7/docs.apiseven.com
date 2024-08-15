@@ -44,6 +44,11 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
    * **服务注册中心** 选择 `测试环境注册中心`，然后选择 **命名空间** 和 **服务名称**。
 4. 点击 **新增**。这将创建一个“无版本”的新服务。
 
+下面是一个互动演示，提供连接 Kubernetes 服务发现的实践入门。通过点击并按照步骤操作，你将更好地了解如何在 API7 网关中使用它：
+
+<StorylaneEmbed src='https://app.storylane.io/demo/wf6vrqlk9knc' />
+
+
 ## Nacos
 
 ### 添加服务注册中心连接
@@ -68,6 +73,10 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
    * **如何查找上游** 选择 `使用服务发现`。
    * **服务注册中心** 选择 `测试环境注册中心`，然后选择 **命名空间**、**组**和**服务名称**。
 4. 点击 **新增**。这将创建一个“无版本”的新服务。
+
+下面是一个互动演示，提供连接 Nacos 服务发现的实践入门。通过点击并按照步骤操作，你将更好地了解如何在 API7 网关中使用它：
+
+<StorylaneEmbed src='https://app.storylane.io/demo/9qhfqjk2mnxn' />
 
 ## 相关阅读
 
