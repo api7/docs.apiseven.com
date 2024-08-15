@@ -3,8 +3,6 @@ title: 网关组与网关实例
 slug: /key-concepts/gateway-groups
 ---
 
-# 网关组与网关实例
-
 本文将介绍 API7 网关中的高级功能：网关组与网关实例的概念及用法。
 
 ## 概述
