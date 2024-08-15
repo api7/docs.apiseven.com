@@ -20,7 +20,7 @@ slug: /getting-started/rbac
 
 ## 设置角色映射（需要 SSO）
 
-满足定义的键值映射规则的用户将在登录时自动分配相应的角色。有关详细信息，请参阅[设置角色映射](../best-practices/sso.md#set-role-mapping)。
+满足定义的键值映射规则的用户将在登录时自动分配相应的角色。有关详细信息，请参阅[设置角色映射](../best-practices/sso.md#设置角色映射)。
 
 :::note
 
@@ -46,7 +46,7 @@ slug: /getting-started/rbac
 
 ## 设置权限边界映射（需要 SSO）
 
-满足定义的键值映射规则的用户将在登录时自动分配相应的权限边界。有关详细信息，请参阅[设置权限边界映射](../best-practices/sso.md#set-permission-boundary-mapping)。
+满足定义的键值映射规则的用户将在登录时自动分配相应的权限边界。有关详细信息，请参阅[设置权限边界映射](../best-practices/sso.md#设置权限边界映射)。
 
 :::note
 
@@ -61,3 +61,5 @@ slug: /getting-started/rbac
   * [角色和权限策略](../key-concepts/roles-and-permission-policies.md)
 * 快速入门
   * [创建自定义角色](../getting-started/create-custom-role.md)
+* 最佳实践
+  * [SSO 第三方登录](../best-practices/sso.md)
