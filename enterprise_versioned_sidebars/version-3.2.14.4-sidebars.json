@@ -104,6 +104,7 @@
         "best-practices/configure-grpc",
         "best-practices/manage-token",
         "best-practices/upstream-ha",
+        "best-practices/service-discovery",
         "best-practices/manage-services-in-multi-environments",
         "best-practices/sso",
         "best-practices/devops-adc",
