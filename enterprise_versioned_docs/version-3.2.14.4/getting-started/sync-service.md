@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
 ## 前提条件
 
 1. [安装 API7 企业版](./install-api7-ee.md)。
-2. 配置两个网关组 - 一个用于初始测试环境，另一个作为最终目的地（例如生产环境）- [每个网关组至少包含一个网关实例](./add-gateway-instance.md)。
+2. 配置两个网关组 - 一个用于初始测试环境，另一个作为最终目的环境（例如生产环境）- [每个网关组至少包含一个网关实例](./add-gateway-instance.md)。
 3. 在初始测试环境的网关组中[发布一个服务版本](./publish-service.md)。
 
 ## 步骤
