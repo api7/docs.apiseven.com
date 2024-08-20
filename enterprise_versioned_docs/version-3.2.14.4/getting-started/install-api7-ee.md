@@ -17,7 +17,7 @@ slug: /getting-started/install-api7-ee
 
 ## 前提条件
 
-- 安装 [Docker](https://docs.docker.com/get-docker/) 和 [Docker Compose](https://docs.docker.com/compose/install) 。建议使用3.10.0-927或更高版本。已知3.10.0-327或更早版本不兼容。
+- 安装 [Docker](https://docs.docker.com/get-docker/) 和 [Docker Compose](https://docs.docker.com/compose/install) 。3.10.0-327 或更早版本不兼容，建议使用 3.10.0-927 或更高版本。
 - 安装 [cURL](https://curl.se/)。
 - 获取为期 30 天的[免费试用许可证](https://api7.ai/try?product=enterprise)。
 - 操作系统：建议使用 Linux CentOS 7.6 或更高版本。已知 Linux CentOS 7.2 或更早版本不兼容。
