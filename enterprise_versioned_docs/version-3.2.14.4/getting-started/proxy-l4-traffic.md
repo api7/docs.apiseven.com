@@ -28,7 +28,7 @@ values={[
 
 <TabItem value="docker">
 
-如果你在 Docker 中安装了网关实例并使用 Dashboard 或 ADC 进行配置，请在默认的 API7 Enterprise 网络 `api7-ee_api7` 中启动 MySQL 服务器：
+如果你在 Docker 中安装了网关实例并使用 Dashboard 或 ADC 进行配置，请在默认的 API7 企业版网络 `api7-ee_api7` 中启动 MySQL 服务器：
 
 ```shell
 docker run -d \
