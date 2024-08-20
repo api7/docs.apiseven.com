@@ -69,4 +69,4 @@ bash run.sh stop
 1. 如果你想在 Kubernetes 上部署 API7 网关并使用 Ingress Controller，请参阅[在 Kubernetes 上部署网关和 Ingress Controller](./deploy-resources-on-k8s.md)。
 2. 按照“快速入门”了解更多关于使用 API7 企业版的信息。
 3. 了解 API7 企业版[高可用部署](../high-availability/overview.md)。
-4. [预约与 API7 专家会面](https://api7.ai/contact)，开始在生产环境中使用 API7 企业版。
+4. [联系 API7 专家](https://api7.ai/contact)，开始在生产环境中使用 API7 企业版。
