@@ -248,11 +248,11 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: secret-key"
 ## 相关阅读
 
 * 核心概念
-  * [服务](../key-concepts/services.md) 
-  * [路由](../key-concepts/routes.md)
-  * [插件](../key-concepts/plugins.md)
-  * [消费者](../key-concepts/consumers.md)
+  * [服务](../key-concepts/services)
+  * [路由](../key-concepts/routes)
+  * [插件](../key-concepts/plugins)
+  * [消费者](../key-concepts/consumers)
 * API 安全
-  * [设置 API 身份验证](../api-security/api-authentication.md)
+  * [设置 API 身份验证](../api-security/api-authentication)
 * API 消费
-  * [基于黑白名单的访问控制](./consumer-restriction.md) 
+  * [管理消费者的访问凭证](../api-consumption/manage-consumer-credentials)
