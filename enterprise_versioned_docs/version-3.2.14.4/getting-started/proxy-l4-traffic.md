@@ -180,7 +180,7 @@ values={[
 
 <TabItem value="k8s">
 
-如果你已经在 Kubernetes 上安装了网关实例，并使用 Ingress Controller 进行配置，那么要添加服务端口，你需要编辑对应的 Service。
+如果你已经在 Kubernetes 上安装了网关实例，并使用 Ingress Controller 进行配置，那么要添加服务端口，你需要编辑对应的服务。
 
 ```shell
 kubectl edit svc/api7-ee-3-gateway-gateway
