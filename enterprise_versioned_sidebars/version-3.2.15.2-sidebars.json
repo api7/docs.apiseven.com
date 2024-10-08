@@ -21,7 +21,6 @@
         "key-concepts/consumers",
         "key-concepts/plugins",
         "key-concepts/roles-and-permission-policies",
-        "key-concepts/authentication",
         "key-concepts/ssl-certificates"
       ]
     },
