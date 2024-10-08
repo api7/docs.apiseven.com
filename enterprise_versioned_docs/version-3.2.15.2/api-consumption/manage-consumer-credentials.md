@@ -202,7 +202,7 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: invalidkey"
 curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-primary-key" 
 ```
 
-使用正确的 **Key** 发送请求，你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
+你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
 
 ```text
 {
@@ -215,7 +215,7 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-primary-key"
 curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-backup-key" 
 ```
 
-使用正确的 **Key** 发送请求，你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
+你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
 
 ```text
 {
