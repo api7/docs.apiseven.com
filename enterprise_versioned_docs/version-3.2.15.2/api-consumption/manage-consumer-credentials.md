@@ -270,7 +270,7 @@ values={[
 
 ### 为已发布的服务启用 Basic Authentication
 
-要在已发布服务中的所有路由上使用密钥认证，请在服务级别启用 `basic-auth` 插件。
+要在已发布服务中的所有路由上使用 Basic Authentication，请在服务级别启用 `basic-auth` 插件。
 
 <Tabs
 groupId="api"
@@ -333,7 +333,7 @@ curl -i "http://127.0.0.1:9080/ip"
 
 #### 发送携带不合法用户名和密码的请求
 
-发送一个请求头中携带不合法（用户名密码不匹配，或用户名不存在）的用户名和密码的请求：
+发送一个请求头中携带不合法（用户名密码不匹配，或用户名不存在）的认证凭据的请求：
 
 ```bash
 curl -i "http://127.0.0.1:9080/ip" -u alice:wrong-password
@@ -345,17 +345,17 @@ curl -i "http://127.0.0.1:9080/ip" -u alice:wrong-password
 {"message":"Invalid API key in request"}
 ```
 
-#### 发送携带正确 Key 的请求
+#### 发送携带正确用户名和密码的请求
 
-所有 Key Authentication 凭据都被视为平等的，可以在你的 API 请求中使用，多个凭据之间没有优先级之分，使用效果都完全相同。
+所有 Basic Authentication 凭据都被视为平等的，可以在你的 API 请求中使用，多个凭据之间没有优先级之分，使用效果都完全相同。
 
-使用正确的 **Key** 发送请求，你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
+使用正确的用户名和密码发送请求，你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
 
 ```bash
 curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-primary-key" 
 ```
 
-使用正确的 **Key** 发送请求，你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
+你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
 
 ```text
 {
@@ -368,7 +368,7 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-primary-key"
 curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-backup-key" 
 ```
 
-使用正确的 **Key** 发送请求，你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
+你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
 
 ```text
 {
