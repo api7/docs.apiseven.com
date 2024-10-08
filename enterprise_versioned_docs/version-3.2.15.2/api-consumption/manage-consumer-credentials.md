@@ -222,3 +222,74 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-backup-key"
   "origin": "192.168.0.102, 35.259.159.12"
 }
 ```
+
+## 基本认证
+
+### 添加具有基本认证凭据的消费者
+
+<Tabs
+groupId="api"
+defaultValue="dashboard"
+values={[
+{label: 'Dashboard', value: 'dashboard'},
+{label: 'ADC', value: 'adc'},
+{label: 'Ingress Controller', value: 'ingress'},
+]}>
+
+<TabItem value="dashboard">
+
+1. 从侧边栏选择网关组的**消费者**。
+2. 点击**添加消费者**。
+3. 在对话框中，执行以下操作：
+   * 在**名称**字段中，输入 `Alice`。
+   * 点击**添加**。
+4. 在**凭据**选项卡下，点击**基本认证**选项卡，然后点击**添加基本认证凭据**。
+5. 在对话框中，执行以下操作：
+   * 在**名称**字段中，输入 `primary-basic`。
+   * 在**用户名**字段中，输入 `Alice`。
+   * 在**密码**字段中，选择**手动输入**，然后输入 `alice-password`。
+   * 点击**添加**。
+
+6. 再次尝试添加另一个名为 `backup-basic` 的密钥认证凭据，用户名为 `Alice-backup`，密码为 `alice-backup-password`。
+
+</TabItem>
+
+<TabItem value="adc">
+
+即将推出。
+
+</TabItem>
+
+<TabItem value="ingress">
+
+即将推出。
+
+</TabItem>
+
+</Tabs>
+
+### 为已发布的服务启用基本认证
+
+要在已发布服务中的所有路由上使用密钥认证，请在服务级别启用 `basic-auth` 插件。
+
+<Tabs
+groupId="api"
+defaultValue="dashboard"
+values={[
+{label: 'Dashboard', value: 'dashboard'},
+{label: 'ADC', value: 'adc'},
+{label: 'Ingress Controller', value: 'ingress'}
+]}>
+
+<TabItem value="dashboard">
+
+1. 从侧边栏选择网关组的**已发布服务**，然后选择要修改的服务，例如，版本为 `1.0.0` 的 `httpbin`。
+2. 从侧边栏选择**插件**，然后点击**启用插件**。
+3. 搜索 `basic-auth` 插件，然后点击**启用**。
+4. 在对话框中执行以下操作：
+   * 将以下配置添加到**JSON 编辑器**：
+
+    ```json
+    {
+    }
+    ```
