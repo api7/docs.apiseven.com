@@ -215,7 +215,7 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-primary-key"
 curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-backup-key" 
 ```
 
-你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
+使用正确的 **Key** 发送请求，你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
 
 ```text
 {
@@ -352,7 +352,7 @@ curl -i "http://127.0.0.1:9080/ip" -u alice:wrong-password
 使用正确的用户名和密码发送请求，你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
 
 ```bash
-curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-primary-key" 
+curl -i "http://127.0.0.1:9080/ip" -u alice:alice-password 
 ```
 
 你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
@@ -365,7 +365,7 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-primary-key"
 使用另一个凭据发送请求：
 
 ```bash
-curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-backup-key" 
+curl -i "http://127.0.0.1:9080/ip" -u alice-backup:alice-backup-password
 ```
 
 你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
