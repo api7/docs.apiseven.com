@@ -250,7 +250,7 @@ values={[
    * 在**密码**字段中，选择**手动输入**，然后输入 `alice-password`。
    * 点击**新增**。
 
-6. 再次尝试添加另一个名为 `backup-basic` 的密钥认证凭据，用户名为 `Alice-backup`，密码为 `alice-backup-password`。
+6. 再次尝试添加另一个名为 `backup-basic` 的 Basic Authentication 凭据，用户名为 `Alice-backup`，密码为 `alice-backup-password`。
 
 </TabItem>
 
@@ -268,7 +268,7 @@ values={[
 
 </Tabs>
 
-### 为已发布的服务启用基本认证
+### 为已发布的服务启用 Basic Authentication
 
 要在已发布服务中的所有路由上使用密钥认证，请在服务级别启用 `basic-auth` 插件。
 
@@ -276,7 +276,7 @@ values={[
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'}
 ]}>
@@ -293,3 +293,85 @@ values={[
     {
     }
     ```
+* 点击**启用**。
+
+</TabItem>
+
+<TabItem value="adc">
+
+即将推出。
+
+</TabItem>
+
+<TabItem value="ingress">
+
+ApisixService 自定义资源尚不可用。
+
+[//]: <TODO: ApisixService 可用时更新本节>
+
+</TabItem>
+
+</Tabs>
+
+### 验证
+
+请按照以下步骤验证 Basic Authentication。
+
+#### 发送不带用户名和密码的请求
+
+发送不带 Basic Authentication 凭据的请求：
+ 
+```bash
+curl -i "http://127.0.0.1:9080/ip"  
+```
+
+由于未提供 Basic Authentication 凭据，你将收到一个 `HTTP/1.1 401 Unauthorized` 响应，其请求正文如下：
+
+```text
+{"message":"Missing authorization in request"}
+```
+
+#### 发送携带不合法用户名和密码的请求
+
+发送一个请求头中携带不合法（用户名密码不匹配，或用户名不存在）的用户名和密码的请求：
+
+```bash
+curl -i "http://127.0.0.1:9080/ip" -u alice:wrong-password
+```
+
+由于用户名和密码不匹配，你将收到一个 `HTTP/1.1 401 Unauthorized` 响应，其请求正文如下：
+
+```text
+{"message":"Invalid API key in request"}
+```
+
+#### 发送携带正确 Key 的请求
+
+所有 Key Authentication 凭据都被视为平等的，可以在你的 API 请求中使用，多个凭据之间没有优先级之分，使用效果都完全相同。
+
+使用正确的 **Key** 发送请求，你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
+
+```bash
+curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-primary-key" 
+```
+
+使用正确的 **Key** 发送请求，你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
+
+```text
+{
+  "origin": "192.168.0.102, 35.259.159.12"
+}
+```
+使用另一个凭据发送请求：
+
+```bash
+curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-backup-key" 
+```
+
+使用正确的 **Key** 发送请求，你将收到一个 `HTTP/1.1 200 OK` 响应，其请求正文如下：
+
+```text
+{
+  "origin": "192.168.0.102, 35.259.159.12"
+}
+```
