@@ -81,7 +81,7 @@ adc sync -f adc-consumer.yaml
 
 </Tabs>
 
-### 为已发布的服务启用密钥认证（Key Authentication）
+### 为已发布的服务启用 Key Authentication
 
 要在已发布服务中的所有路由上使用密钥认证，请在服务级别启用 `key-auth` 插件。
 
