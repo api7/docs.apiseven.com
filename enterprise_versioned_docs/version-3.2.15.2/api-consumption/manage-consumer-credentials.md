@@ -19,15 +19,15 @@ import TabItem from '@theme/TabItem';
 1. [安装 API7 企业版](../getting-started/install-api7-ee.md)。
 2. [在网关组上有一个运行的 API](../getting-started/launch-your-first-api.md)。
 
-## 密钥认证（Key Authentication）
+## Key Authentication
 
-### 添加具有密钥认证凭据的消费者
+### 添加具有 Key Authentication 凭据的消费者
 
 <Tabs
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'},
 ]}>
@@ -89,7 +89,7 @@ adc sync -f adc-consumer.yaml
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'}
 ]}>
@@ -113,7 +113,7 @@ values={[
 
 <TabItem value="adc">
 
-更新服务配置以使用密钥认证：
+更新服务配置以使用 Key Authentication
 
 ```yaml title="adc-service.yaml"
 services:
@@ -162,11 +162,11 @@ ApisixService 自定义资源尚不可用。
 
 ### 验证
 
-请按照以下步骤验证密钥认证（Key Authentication）。
+请按照以下步骤验证 Key Authentication。
 
 #### 发送不带 Key 的请求
 
-发送不带 `apikey` 请求头的请求：
+发送不带 `apikey` 的请求：
  
 ```bash
 curl -i "http://127.0.0.1:9080/ip"  
@@ -223,15 +223,15 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-backup-key"
 }
 ```
 
-## 基本认证
+## Basic Authentication
 
-### 添加具有基本认证凭据的消费者
+### 添加具有 Basic Authentication 凭据的消费者
 
 <Tabs
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'},
 ]}>
@@ -239,16 +239,16 @@ values={[
 <TabItem value="dashboard">
 
 1. 从侧边栏选择网关组的**消费者**。
-2. 点击**添加消费者**。
+2. 点击**新增消费者**。
 3. 在对话框中，执行以下操作：
    * 在**名称**字段中，输入 `Alice`。
-   * 点击**添加**。
-4. 在**凭据**选项卡下，点击**基本认证**选项卡，然后点击**添加基本认证凭据**。
+   * 点击**新增**。
+4. 在**认证凭据**选项卡下，点击**Basic Authentication**选项卡，然后点击**添加 Basic Authentication 凭据**。
 5. 在对话框中，执行以下操作：
    * 在**名称**字段中，输入 `primary-basic`。
    * 在**用户名**字段中，输入 `Alice`。
    * 在**密码**字段中，选择**手动输入**，然后输入 `alice-password`。
-   * 点击**添加**。
+   * 点击**新增**。
 
 6. 再次尝试添加另一个名为 `backup-basic` 的密钥认证凭据，用户名为 `Alice-backup`，密码为 `alice-backup-password`。
 
