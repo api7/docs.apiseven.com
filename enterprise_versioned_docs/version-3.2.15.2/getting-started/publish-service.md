@@ -228,6 +228,10 @@ values={[
 
 8. 确认信息，然后点击**发布**。
 
+下面是一个交互式演示，提供了发布版本化服务的实践介绍。跟随演示，你将直观了解如何在 API7 企业版中使用这个功能。
+
+<StorylaneEmbed src='https://app.storylane.io/demo/wqs2feuaqbyw' />
+
 </TabItem>
 
 <TabItem value="adc">
