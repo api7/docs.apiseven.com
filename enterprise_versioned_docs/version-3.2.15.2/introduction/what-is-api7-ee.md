@@ -3,7 +3,7 @@ title: 概览
 slug: /introduction
 ---
 
-**API7 企业版扩展了 [Apache APISIX](https://github.com/apache/apisix) 的核心开源功能，为企业提供定制化、全生命周期的API管理。** 这是一个全面的 API 管理解决方案，包括 API7 网关和全新推出的 API7 门户（内测中，欢迎联系我们试用）。它将提供企业级全天候支持、高级功能、系统集成和SLA保证，以充分释放 APISIX 驱动的 API 管理的潜力。
+**API7 企业版扩展了 [Apache APISIX](https://github.com/apache/apisix) 的核心开源功能，为企业提供定制化、全生命周期的 API 管理。** 这是一个全面的 API 管理解决方案，包括 API7 网关和全新推出的 API7 门户（内测中，欢迎联系我们试用）。它将提供全天候企业级支持、高级功能、系统集成和 SLA 服务，以充分释放 APISIX 驱动的 API 管理的潜力。
 
 **API7 企业版包含最受欢迎的企业级功能。**凭借对安全、流量管理和分析的强大支持，以及友好的开发人员体验，API7 企业版可满足大多数行业企业对 API 管理的需求和应用场景。
 
