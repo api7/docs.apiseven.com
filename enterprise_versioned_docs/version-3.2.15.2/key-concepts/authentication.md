@@ -19,7 +19,7 @@ slug: /key-concepts/authentication
 - [Open Policy Agent (OPA)](https://apisix.apache.org/docs/apisix/plugins/opa/)
 - [Forward Authentication](https://apisix.apache.org/docs/apisix/plugins/forward-auth/)
 
-其中，密钥认证（Key Authentcation, 简称 key-auth）是一种相对简单但广泛使用的认证方法。理想情况下，它的工作原理如下：
+其中，密钥认证（Key Authentcation，简称 key-auth）是一种相对简单但广泛使用的认证方法。理想情况下，它的工作原理如下：
 
 1. 在路由中通过启用 key-auth 插件添加一个认证密钥机制。
 2. API 消费者在发送请求时，将密钥添加到查询字符串或请求头中以进行认证。
