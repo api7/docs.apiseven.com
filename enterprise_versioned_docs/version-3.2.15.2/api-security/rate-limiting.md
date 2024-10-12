@@ -59,6 +59,10 @@ values={[
 
 * 点击 **启用**。
 
+下面是一个交互式演示，它介绍了如何使用 limit-count 插件限制请求数量。跟随演示，你将直观了解如何在 API7 企业版中使用这个功能。
+
+<StorylaneEmbed src='https://app.storylane.io/demo/no7b8hvogdkv' />
+
 </TabItem>
 
 <TabItem value="adc">
