@@ -5,6 +5,7 @@ slug: /api-security/rate-limiting
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 速率限制允许控制发送到 API 后端的请求的速率。这有助于保护后端免受过多流量和高成本的影响。API 请求还可能包括网络爬虫生成的无效数据以及网络攻击，例如 DDoS，限制请求速率也有助于降低这些恶意流量的危害，避免业务宕机。
 
