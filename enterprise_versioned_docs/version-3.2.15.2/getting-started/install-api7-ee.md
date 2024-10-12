@@ -46,7 +46,7 @@ If you want to access Dashboard with HTTP Endpoint(:7080), you can turn server.l
 
 ## 激活 API7 企业版
 
-1. 访问 API7 企业版控制台`https://{your_inet_ip_addr}:7443`，使用默认用户名 `admin` 和密码 `admin` 登录。
+1. 访问 API7 企业版控制台 `https://{your_inet_ip_addr}:7443`，使用默认用户名 `admin` 和密码 `admin` 登录。
 
 :::info
 
