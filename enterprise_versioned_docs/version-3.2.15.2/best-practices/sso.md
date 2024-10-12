@@ -71,6 +71,10 @@ API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与
 
 4. 点击 **新增**。
   
+下面是一个交互式演示，它介绍了如何使用 OpenID Connect (OIDC) 协议实现单点登录。跟随演示，你将直观了解如何在 API7 企业版中使用这个功能。
+
+<StorylaneEmbed src='https://app.storylane.io/demo/qxsyxt5jhdvt' />
+ 
 </TabItem>
 
 <TabItem value="SAML">
