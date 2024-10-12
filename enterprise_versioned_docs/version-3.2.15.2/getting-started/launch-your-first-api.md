@@ -32,7 +32,7 @@ kubectl run httpbin --image kennethreitz/httpbin --port 80
 pod/httpbin created`
 ```
 
-将 `httpbin` 应用的 `80` 端口通过服务暴露：
+通过服务暴露 `httpbin` 应用的 `80` 端口：
 
 ```shell
 kubectl expose pod httpbin --port 80
