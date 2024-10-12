@@ -5,6 +5,7 @@ slug: /getting-started/publish-service
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 当你的 API 设计、开发和部署完成后，如果有版本管理的场景和需求，可以使用 API7 网关将服务发布到不同的网关组，而非直接在网关组上对配置进行修改。 通常，API 会先发布到测试环境，然后再发布到生产环境。API7 企业版通过网关组来隔离不同的环境，在各个环境中，API 从属于一个服务（Service），服务内所有 API 拥有共享的上游 (Upstream)。 
 
