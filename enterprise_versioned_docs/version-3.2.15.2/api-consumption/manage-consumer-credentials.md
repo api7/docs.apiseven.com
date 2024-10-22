@@ -91,7 +91,7 @@ defaultValue="dashboard"
 values={[
 {label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
-{label: 'Ingress Controller', value: 'ingress'}
+{label: 'Ingress Controller', value: 'ingress'},
 ]}>
 
 <TabItem value="dashboard">
