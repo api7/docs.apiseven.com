@@ -291,7 +291,7 @@ docker run -d -e API7_CONTROL_PLANE_ENDPOINTS='["https://<YOUR_IP_ADDR>:7943"]' 
 
 网关运行后，更新网关配置以允许 `9081` 端口上的 HTTP/2：
 
-``shell
+```shell
 docker exec <api7-ee-gateway-container-name> /bin/sh -c "echo '
 nginx_config:
   error_log_level: warn
