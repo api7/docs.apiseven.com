@@ -400,6 +400,10 @@ kubectl port-forward svc/api7-ee-3-gateway-gateway 9081:9081 &
 
 向路由发送请求：
 
+</TabItem>
+
+</Tabs>
+
 ```shell
 grpcurl -plaintext \
   -proto helloworld.proto \
