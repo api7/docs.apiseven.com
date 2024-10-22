@@ -371,7 +371,6 @@ spec:
 
 ## 验证 gRPC 服务
 
-
 [下载 `helloworld.proto` 文件](https://github.com/api7/grpc_server_example/blob/master/proto/helloworld.proto) 。
 
 此示例使用 `helloworld.proto` 文件来确保 gRPCurl CLI 工具使请求和响应格式与 gRPC 服务定义一致。
