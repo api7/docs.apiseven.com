@@ -7,10 +7,6 @@ Google Remote Procedure Call（gRPC）是基于 HTTP/2 协议的开源高性能�
 
 本指南介绍如何使用 API7 企业版代理 gRPC 服务。
 
-下面是一个交互式演示，提供了使用 API7 企业版代理 gRPC 流量的实践介绍。
-
-<StorylaneEmbed src='https://app.storylane.io/demo/2gwjmvomkqbf' />
-
 ## 前提条件
 
 1. [安装 API7 企业版](../getting-started/install-api7-ee.md)。
