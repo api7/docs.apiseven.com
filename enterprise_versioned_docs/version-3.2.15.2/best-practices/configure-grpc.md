@@ -53,7 +53,7 @@ kubectl run grpc-service \
 
 </Tabs>
   
-### 验证 gRPC 服务器是否启动成功
+### 验证 gRPC 服务器启动成功
 
 <Tabs
 groupId="platform"
@@ -91,7 +91,7 @@ kubectl port-forward svc/grpc-service 50051:50051 &
 
 通过列出所有可用的 gRPC 服务和方法来验证 gRPC 服务器是否成功启动：
 
-```bash
+```shell
 grpcurl -plaintext 127.0.0.1:50051 list
 ```
 
@@ -106,7 +106,7 @@ helloworld.TestImport
 列出所有 `helloworld.Greeter` 服务可用的方法:
 
 
-```bash
+```shell
 grpcurl -plaintext 127.0.0.1:50051 list helloworld.Greeter
 ```
 
@@ -121,6 +121,7 @@ helloworld.Greeter.SayHelloBidirectionalStream
 helloworld.Greeter.SayHelloClientStream
 helloworld.Greeter.SayHelloServerStream
 ```
+
 ## 创建服务和路由
 
 本示例创建一个名为 `grpc-example` 的服务和一个名为 `helloworld.Greeter` 的路由，将请求转发到上面的示例 gRPC 服务。
