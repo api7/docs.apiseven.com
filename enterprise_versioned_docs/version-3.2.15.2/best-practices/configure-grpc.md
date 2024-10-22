@@ -144,58 +144,285 @@ values={[
 
 1. 在左侧菜单选择目标网关组下的 **已发布服务** 菜单，然后点击 **新增服务**。 
 2. 选择 **手动新增**。
+3. 在对话框中执行以下操作：
 
 * **名称** 填写 `grpc-example`。
-* **服务类型** 选择 `HTTP （七层代理）`。 
+* **服务类型** 选择 `HTTP （七层）`。 
 * **上游 Scheme** 选择 `gRPC`。
 * **如何找到上游** 选择 `使用节点`。
 * 点击 **新增节点**。
 * 在新增节点对话框中，执行以下操作：
-  * **主机** 填写 `127.0.0.1`。
+  * **主机** 填写你的私有 IP 地址，例如`192.168.2.103`。
   * **端口** 填写 `50051`。
   * **权重** 填写 `100`。
-* 点击 **新增**。 此时创建出的新服务处于“无版本”状态。
+
+4. 点击 **新增**。 
 
 <h3>创建一条路由</h3>
 
 1. 进入刚才创建好的服务，然后点击 **新增路由**。
-2. 在新增路由对话框中，执行以下操作：
+2. 在对话框中，执行以下操作：
 
-* **名称** 填写 `ghelloworld.Greeter`。
-* **路径** 填写 `/helloworld.Greeter/SayHello`。
+* **名称** 填写 `helloworld.Greeter`。
+* **路径** 填写 `helloworld.Greeter/SayHello`。
 * **HTTP 方法** 选择 `GET` 和 `POST`。
 * 点击 **新增**。
 
-## 更新 API7 网关实例
+</TabItem>
+
+<TabItem value="adc">
+
+创建一个 ADC 配置文件:
+
+```yaml title="adc.yaml"
+services:
+  - name: grpc-example
+    upstream:
+      name: gRPC Upstream
+      scheme: grpc
+      type: roundrobin
+      nodes:
+        - host: 192.168.2.103
+          port: 50051
+          weight: 100
+    routes:
+      - uris:
+          - /helloworld.Greeter/SayHello
+        name: helloworld.Greeter
+        methods:
+          - GET
+          - POST
+```
+
+将配置同步到 API7 网关：
+
+```shell
+adc sync -f adc.yaml
+```
+
+</TabItem>
+
+<TabItem value="ingress">
+
+使用 ApisixRoute 自定义资源创建一个 Kubernetes mainfest 文件来配置到 gRPC 服务的路由：
+
+```yaml title="grpc-route.yaml"
+apiVersion: apisix.apache.org/v2
+kind: ApisixRoute
+metadata:
+  name: grpc-route
+  # namespace: api7    # replace with your namespace
+spec:
+  http:
+    - name: helloworld-greeter
+      match:
+        paths:
+          - /helloworld.Greeter/SayHello
+        methods:
+          - GET
+          - POST
+      backends:
+        - serviceName: grpc-service
+          servicePort: 50051
+```
+
+使用 ApisixUpstream 自定义资源创建另一个 Kubernetes mainfest 文件，将上游配置为 `grpc`：
+
+```yaml title="grpc-upstream.yaml"
+apiVersion: apisix.apache.org/v2
+kind: ApisixUpstream
+metadata:
+  name: grpc-service
+# namespace: api7    # replace with your namespace
+spec:
+  scheme: grpc
+```
+
+将配置应用到你的集群：
+
+```shell
+kubectl apply -f grpc-route.yaml -f grpc-upstream.yaml
+```
+
+</TabItem>
+
+</Tabs>
+
+## 更新 API7 网关实例以支持 HTTP/2
 
 默认情况下，API7 网关实例在端口 `9443` 上支持 TLS 加密的 HTTP/2。在本教程中，你可以添加端口 `9081`，支持不加密的 HTTP/2，然后将端口 `9081` 映射到主机上的同一端口。
 
-```yaml title="config.yaml"
+在本节中，你将更新 API7 网关配置和部署以支持 `9081` 端口上的非加密 HTTP/2。
+
+<Tabs
+groupId="platform"
+defaultValue="docker"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Kubernetes', value: 'k8s'},
+]}>
+
+<TabItem value="docker">
+
+由于 Docker 不支持在容器运行时更新端口映射，因此首先请移除 `api7-ee-gateway-1` 网关容器（[随安装一起启动](../getting-started/install-api7-ee.md#install-api7-enterprise)）。
+
+接下来，[在 Docker 中启动一个新的网关实例](../getting-started/add-gateway-instance.md)。在运行生成的部署命令之前，添加 `-p 9081:9081` 标志。修改后的命令应类似于：
+
+```shell
+docker run -d -e API7_CONTROL_PLANE_ENDPOINTS='["https://<YOUR_IP_ADDR>:7943"]' \
+  -e API7_GATEWAY_GROUP_SHORT_ID=default \
+  -e API7_CONTROL_PLANE_CERT="-----BEGIN CERTIFICATE-----
+  <CERT_CONTENT>
+  -----END CERTIFICATE-----
+  " \
+  -e API7_CONTROL_PLANE_KEY="-----BEGIN PRIVATE KEY-----
+  <PRIVATE_KEY_VALUE>
+  -----END PRIVATE KEY-----
+  " \
+  -e API7_CONTROL_PLANE_CA="-----BEGIN CERTIFICATE-----
+  <CERT_CONTENT>
+  -----END CERTIFICATE-----
+  " \
+  -e API7_CONTROL_PLANE_SNI="api7ee3-dp-manager" \
+  -p 9080:9080 \
+  # highlight-next-line
+  -p 9081:9081 \
+  -p 9443:9443 \
+  api7/api7-ee-3-gateway:<VERSION>
+```
+
+运行命令启动网关。
+
+网关运行后，更新网关配置以允许 `9081` 端口上的 HTTP/2：
+
+``shell
+docker exec <api7-ee-gateway-container-name> /bin/sh -c "echo '
+nginx_config:
+  error_log_level: warn
+
+apisix:
+  node_listen:
+    - port: 9080
+      enable_http2: true
+# highlight-start
+    - port: 9081
+      enable_http2: true
+# highlight-end
+' > /usr/local/apisix/conf/config.yaml"
+```
+
+重新加载容器以使配置更改生效：
+
+```shell
+docker exec <api7-ee-gateway-container-name> apisix reload
+```
+
+</TabItem>
+
+<TabItem value="k8s">
+
+编辑网关 ConfigMap：
+
+```shell
+kubectl edit cm api7-ee-3-gateway
+```
+
+在 ConfigMap 中添加允许 `9081` 端口上 HTTP/2 的配置：
+
+```yaml
 apisix:
   node_listen:
     - port: 9080
       enable_http2: false
+# highlight-start
     - port: 9081
       enable_http2: true
+# highlight-end
 ```
 
-在 `api7-ee` 目录下重新运行 `docker-compose up -d` 命令，更新 API7 网关配置。
+保存 ConfigMap 并重新启动部署：
 
+```shell
+kubectl rollout restart deployment api7-ee-3-gateway
+```
 
+要将 `9081` 添加为服务端口，请编辑服务：
 
+```shell
+kubectl edit svc/api7-ee-3-gateway-gateway
+```
+
+将以下配置添加到 `ports`：
+
+```yaml
+spec:
+  ports:
+    ...
+    # highlight-start
+    - name: http2-non-tls
+      port: 9081
+      protocol: TCP
+      targetPort: 9081
+    # highlight-end
+    ...
+```
+
+保存服务 mainifest 以使更改生效。
+
+</TabItem>
+
+</Tabs>
 
 ## 验证 gRPC 服务
 
-本示例通过 `helloworld.proto` 文件确保 `gRPCurl` CLI 工具将请求和响应格式与 gRPC 服务定义保持一致。你可以在[此处](https://github.com/api7/grpc_server_example/blob/master/proto/helloworld.proto)找到 `helloworld.proto` 示例文件。
 
-```bash
-grpcurl -plaintext -proto helloworld.proto -d '{"name":"apisix"}' 127.0.0.1:9081 helloworld.Greeter.SayHello  # Replace 127.0.0.1 to your local host IP address
+[下载 `helloworld.proto` 文件](https://github.com/api7/grpc_server_example/blob/master/proto/helloworld.proto) 。
+
+此示例使用 `helloworld.proto` 文件来确保 gRPCurl CLI 工具使请求和响应格式与 gRPC 服务定义一致。
+
+<Tabs
+groupId="api"
+defaultValue="docker"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Kubernetes', value: 'k8s'},
+]}>
+
+<TabItem value="docker">
+
+如果你在 Docker 中安装了网关实例并使用控制台或 ADC 进行配置，请向路由发送请求：
+
+</TabItem>
+
+<TabItem value="k8s">
+
+如果你在 Kubernetes 上安装了网关实例并使用 Ingress Controller 进行配置，请先通过端口转发将服务端口暴露给你的本地机器：
+
+```shell
+kubectl port-forward svc/api7-ee-3-gateway-gateway 9081:9081 &
 ```
 
-你应该看到以下输出：
+向路由发送请求：
+
+```shell
+grpcurl -plaintext \
+  -proto helloworld.proto \
+  -d '{"name":"API7"}' \
+  "127.0.0.1:9081" \
+  "helloworld.Greeter.SayHello"
+```
+
+你应该能看到如下类似的响应：
 
 ```text
 {
-  "message": "Hello apisix"
+  "message": "Hello API7"
 }
 ```
+
+## 相关阅读
+
+* Key Concepts
+  * [Services](../key-concepts/services.md)
+  * [Routes](../key-concepts/routes.md)
+  * [Plugins](../key-concepts/plugins.md)
