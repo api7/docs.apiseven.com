@@ -7,6 +7,10 @@ Google Remote Procedure Call（gRPC）是基于 HTTP/2 协议的开源高性能�
 
 本指南介绍如何使用 API7 企业版代理 gRPC 服务。
 
+下面是一个交互式演示，提供了使用 API7 企业版代理 gRPC 流量的实践介绍。
+
+<StorylaneEmbed src='https://app.storylane.io/demo/2gwjmvomkqbf' />
+
 ## 前提条件
 
 1. [安装 API7 企业版](../getting-started/install-api7-ee.md)。
@@ -14,68 +18,129 @@ Google Remote Procedure Call（gRPC）是基于 HTTP/2 协议的开源高性能�
 
 ## 部署示例 gRPC 服务器
 
-1. 启动示例 gRPC 服务器。
+<Tabs
+groupId="platform"
+defaultValue="docker"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Kubernetes', value: 'k8s'},
+]}>
 
-    API7 提供了一个 gRPC 服务示例，用于测试。你可以使用以下命令在端口 `50051` 上启动示例 gRPC 服务器的 Docker 实例 `grpc-service`：
+<TabItem value="docker">
 
-    ```bash
-    docker run -d --name grpc-service -p 50051:50051 --restart always api7/grpc-server-example:1.0.0
-    ```
-  
-2. 列出可用的 gRPC 服务和方法，验证 gRPC 服务器是否启动成功：
+API7 提供了一个 gRPC 服务示例，用于测试。你可以使用以下命令在端口 `50051` 上启动示例 gRPC 服务器的 Docker 实例 `grpc-service`：
 
-    - gRPC 服务
-
-        ```bash
-        grpcurl -plaintext 127.0.0.1:50051 list
-        ```
-
-        你应该看到以下输出：
-
-        ```bash
-        grpc.reflection.v1alpha.ServerReflection
-        helloworld.Greeter
-        helloworld.TestImport
-        ```
-
-    - gRPC 方法
-
-        ```bash
-        grpcurl -plaintext 127.0.0.1:50051 list helloworld.Greeter
-        ```
-
-        你应该看到以下输出：
-
-        ```bash
-        helloworld.Greeter.GetErrResp
-        helloworld.Greeter.Plus
-        helloworld.Greeter.SayHello
-        helloworld.Greeter.SayHelloAfterDelay
-        helloworld.Greeter.SayHelloBidirectionalStream
-        helloworld.Greeter.SayHelloClientStream
-        helloworld.Greeter.SayHelloServerStream
-        ```
-
-## 更新 API7 网关实例
-
-默认情况下，API7 网关实例在端口 `9443` 上支持 TLS 加密的 HTTP/2。在本教程中，你可以添加端口 `9081`，支持不加密的 HTTP/2，然后将端口 `9081` 映射到主机上的同一端口。
-
-```yaml title="config.yaml"
-apisix:
-  node_listen:
-    - port: 9080
-      enable_http2: false
-    - port: 9081
-      enable_http2: true
+```shell
+docker run -d \
+  --name grpc-service \
+  --network=api7-ee_api7 \
+  -p 50051:50051 \
+  --restart always api7/grpc-server-example:1.0.0
 ```
 
-在 `api7-ee` 目录下重新运行 `docker-compose up -d` 命令，更新 API7 网关配置。
+</TabItem>
 
+<TabItem value="k8s">
+
+Start an example gRPC server listening on port `50051`:
+
+```shell
+kubectl run grpc-service \
+  --image=api7/grpc-server-example:1.0.0 \
+  --port=50051 \
+  --restart=Always
+```
+
+你应该能看到类似 `pod/grpc-service created` 的响应。
+
+</TabItem>
+
+</Tabs>
+  
+### 验证 gRPC 服务器是否启动成功
+
+<Tabs
+groupId="platform"
+defaultValue="docker"
+values={[
+{label: 'Docker', value: 'docker'},
+{label: 'Kubernetes', value: 'k8s'},
+]}>
+
+<TabItem value="docker">
+
+<!-- leave this section empty -->
+
+</TabItem>
+
+<TabItem value="k8s">
+
+暴露应用的 `50051` 端口：
+
+```shell
+kubectl expose pod grpc-service --port 50051
+```
+
+你应该看到类似 `service/grpc-service exposed` 的响应。
+
+将端口`50051` 转发到 localhost：
+
+```shell
+kubectl port-forward svc/grpc-service 50051:50051 &
+```
+
+</TabItem>
+
+</Tabs>
+
+通过列出所有可用的 gRPC 服务和方法来验证 gRPC 服务器是否成功启动：
+
+```bash
+grpcurl -plaintext 127.0.0.1:50051 list
+```
+
+你应该能看到以下输出：
+
+```text
+grpc.reflection.v1alpha.ServerReflection
+helloworld.Greeter
+helloworld.TestImport
+```
+
+列出所有 `helloworld.Greeter` 服务可用的方法:
+
+
+```bash
+grpcurl -plaintext 127.0.0.1:50051 list helloworld.Greeter
+```
+
+你应该能看到以下输出：
+
+```text
+helloworld.Greeter.GetErrResp
+helloworld.Greeter.Plus
+helloworld.Greeter.SayHello
+helloworld.Greeter.SayHelloAfterDelay
+helloworld.Greeter.SayHelloBidirectionalStream
+helloworld.Greeter.SayHelloClientStream
+helloworld.Greeter.SayHelloServerStream
+```
 ## 创建服务和路由
 
-本示例创建一个名为 `grpc-example` 的服务和一个名为 `helloworld.Greeter` 的路由。
+本示例创建一个名为 `grpc-example` 的服务和一个名为 `helloworld.Greeter` 的路由，将请求转发到上面的示例 gRPC 服务。
 
-<h3>创建服务</h3>
+<Tabs
+groupId="api"
+defaultValue="dashboard"
+values={[
+{label: '控制台', value: 'dashboard'},
+{label: 'ADC', value: 'adc'},
+{label: 'Ingress Controller', value: 'ingress'},
+]}>
+
+<TabItem value="dashboard">
+
+<h3>新增服务</h3>
 
 1. 在左侧菜单选择目标网关组下的 **已发布服务** 菜单，然后点击 **新增服务**。 
 2. 选择 **手动新增**。
@@ -100,6 +165,24 @@ apisix:
 * **路径** 填写 `/helloworld.Greeter/SayHello`。
 * **HTTP 方法** 选择 `GET` 和 `POST`。
 * 点击 **新增**。
+
+## 更新 API7 网关实例
+
+默认情况下，API7 网关实例在端口 `9443` 上支持 TLS 加密的 HTTP/2。在本教程中，你可以添加端口 `9081`，支持不加密的 HTTP/2，然后将端口 `9081` 映射到主机上的同一端口。
+
+```yaml title="config.yaml"
+apisix:
+  node_listen:
+    - port: 9080
+      enable_http2: false
+    - port: 9081
+      enable_http2: true
+```
+
+在 `api7-ee` 目录下重新运行 `docker-compose up -d` 命令，更新 API7 网关配置。
+
+
+
 
 ## 验证 gRPC 服务
 
