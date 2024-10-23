@@ -18,6 +18,10 @@ slug: /getting-started/rbac
 
 :::
 
+结合角色和权限策略能有效控制访问权限。以下是使用自定义角色和权限策略隔离环境访问的示例。
+
+<StorylaneEmbed src='https://app.storylane.io/demo/v7ectknqihj4' />
+
 ### 定义权限策略
 
 1. 创建三个网关组：`测试`、`UAT` 和 `生产`。
