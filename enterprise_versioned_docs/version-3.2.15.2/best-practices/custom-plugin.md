@@ -3,6 +3,8 @@ title: 新增自定义插件
 slug: /best-practices/custom-plugin
 ---
 
+import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
+
 API7 网关的一个关键特性是其通过插件的可扩展性。除了各种现有的插件之外，API7 网关还允许你构建自定义插件，以添加额外的功能并通过自定义流程管理 API 流量。通常，你可以使用 Lua 编程语言来实现新的插件。API7 网关分阶段处理请求，相关的插件逻辑会在请求路由过程中的每个阶段执行。
 
 ## 前提条件
