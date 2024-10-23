@@ -3,9 +3,15 @@ title: 使用 API7 企业版代理 gRPC 服务
 slug: /best-practices/configure-grpc
 ---
 
+import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
+
 Google Remote Procedure Call（gRPC）是基于 HTTP/2 协议的开源高性能远程过程调用（Remote Procedure Call，RPC）框架。gRPC 使用 Protocol Buffers（protobuf）作为接口描述语言（Interface Description Language，IDL）。API7 企业版提供协议转换、负载均衡、身份验证和授权等关键功能，增强了 gRPC 的潜力。
 
 本指南介绍如何使用 API7 企业版代理 gRPC 服务。
+
+下面是一个互动演示，介绍了如何使用 API7 企业版代理 gRPC 流量。
+
+<StorylaneEmbed src='https://app.storylane.io/demo/2gwjmvomkqbf' />
 
 ## 前提条件
 
