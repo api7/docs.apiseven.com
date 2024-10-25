@@ -90,14 +90,14 @@ values={[
 
 <TabItem value="dashboard">
 
-1. 从侧边栏选择网关组的** Secret 提供商**，然后点击**新增 Secret 提供商**。
+1. 从侧边栏选择网关组的**Secret 提供商**，然后点击**新增 Secret 提供商**。
 2. 在对话框中，执行以下操作：
-   * 在** Secret 提供商 ID** 字段中，输入 `my-vault`。
-   * 在**密钥管理器**字段中，选择 `HashiCorp Vault`。
-   * 在**KV 版本**字段中，选择 `KV version 1`。
-   * 填写**Vault 服务器 URL** 字段。例如，`127.0.0.1`。
-   * 填写**密钥前缀**字段。例如，`secret/api7`。
-   * 在**身份验证方法**字段中，选择 `Token`。
+   * **Secret 提供商 ID**，输入 `my-vault`。
+   * **Secret 管理服务**，选择 `HashiCorp Vault`。
+   * **KV 版本**，选择 `KV version 1`。
+   * 填写**Vault 服务器 URL**字段。例如，`127.0.0.1`。
+   * 填写**Secret 前缀**字段。例如，`secret/api7`。
+   * **身份验证方法**，选择 `Token`。
    * 填写**令牌**字段。
    * 点击**新增**。
 
@@ -105,13 +105,13 @@ values={[
 
 <TabItem value="adc">
 
-即将推出。
+暂不支持。
 
 </TabItem>
 
 <TabItem value="ingress">
 
-即将推出。
+暂不支持。
 
 </TabItem>
 
@@ -119,10 +119,10 @@ values={[
 
 ## 引用密钥以创建消费者凭据
 
-消费者凭据中的以下敏感字段可以存储在外部密钥管理器（HashiCorp Vault、AWS Secret Manager 等）中，并在 API7 网关中引用：
+消费者凭据中的以下敏感字段可以存储在外部Secret 管理服务（HashiCorp Vault、AWS Secret Manager 等）中，并在 API7 网关中引用：
 
-* 密钥认证凭据中的 `key`
-* 基本认证凭据中的 `password`
+* Key Authentication 凭据中的 `key`
+* Basic Authentication 凭据中的 `password`
 * JWT 认证凭据中的 `secret`、`public key`
 * HMAC 认证凭据中的 `secret key`
 
@@ -142,20 +142,20 @@ values={[
 1. 从侧边栏选择网关组的**消费者**。
 2. 点击**新增消费者**。
 3. 在对话框中，执行以下操作：
-   * 在**名称**字段中，输入 `Alice`。
+   * **名称**，输入 `Alice`。
    * 点击**新增**。
 
 </TabItem>
 
 <TabItem value="adc">
 
-即将推出。
+暂不支持。
 
 </TabItem>
 
 <TabItem value="ingress">
 
-即将推出。
+暂不支持。
 
 </TabItem>
 
@@ -163,7 +163,7 @@ values={[
 
 ### 存储密钥
 
-为密钥认证凭据创建一个密钥 `key=alice-primary-key`，并将其存储在 Vault 的路径 `secret/api7/consumer/alice` 中。**确保路径与你配置的密钥前缀一致**：
+为 Key Authentication 凭据创建一个密钥 `key=alice-primary-key`，并将其存储在 Vault 的路径 `secret/api7/consumer/alice` 中。**确保路径与你配置的Secret 前缀一致**：
 
 ```shell
 docker exec api7-quickstart-vault vault kv put secret/api7/consumer/alice key=alice-primary-key
@@ -187,7 +187,7 @@ version            1
 
 重复创建其他消费者凭据的更多密钥，所有密钥都在同一路径下：
 
-* 对于基本认证凭据：
+* 对于Basic Authentication 凭据：
 
 ```shell
 docker exec api7-quickstart-vault vault kv put secret/api7/consumer/alice password=alice-password
@@ -205,7 +205,7 @@ docker exec api7-quickstart-vault vault kv put secret/api7/consumer/alice secret
 docker exec api7-quickstart-vault vault kv put secret/api7/consumer/alice secret-key=alice-secret-key
 ```
 
-### 新增密钥认证凭据
+### 新增Key Authentication 凭据
 
 <Tabs
 groupId="api"
@@ -220,14 +220,15 @@ values={[
 
 1. 从侧边栏选择网关组的**消费者**。
 2. 选择你的目标消费者，例如，`Alice`。
-3. 在**凭据**选项卡下，点击**新增密钥认证凭据**。
+3. **凭据**选项卡下，点击**新增Key Authentication 凭据**。
 4. 在对话框中，执行以下操作：
-   * 在**名称**字段中，输入 `primary-key`。
-   * 在**密钥**字段中，选择**从 Secret 提供商引用**，然后输入 `$secret://vault/my-vault/consumer/alice/key`。
-   * 点击**新增**。```markdown
+   * **名称**，输入 `primary-key`。
+   * **密钥**，选择**引用 Secret 提供商**，然后输入 `$secret://vault/my-vault/consumer/alice/key`。
+   * 点击**新增**。
+
 :::note
 
- 所有密钥引用都以 `$secret://` 开头。`vault` 是 Secret 提供商的**密钥管理器**，`my-vault` 是** Secret 提供商 ID**。连接到 HashiCorp Vault 时，`$secret://vault/my-vault` 将替换为 Secret 提供商的实际**密钥前缀**。最后，发送到 HashiCorp Vault 的路径将是 `secret/api7/consumer/alice/key`。
+ 所有密钥引用都以 `$secret://` 开头。`vault` 是 Secret 提供商的**Secret 管理服务**，`my-vault` 是**Secret 提供商 ID**。连接到 HashiCorp Vault 时，`$secret://vault/my-vault` 将替换为 Secret 提供商的实际**Secret 前缀**。最后，发送到 HashiCorp Vault 的路径将是 `secret/api7/consumer/alice/key`。
 
 :::
 
@@ -235,19 +236,19 @@ values={[
 
 <TabItem value="adc">
 
-即将推出。
+暂不支持。
 
 </TabItem>
 
 <TabItem value="ingress">
 
-即将推出。
+暂不支持。
 
 </TabItem>
 
 </Tabs>
 
-### 新增基本认证凭据
+### 新增Basic Authentication 凭据
 
 <Tabs
 groupId="api"
@@ -262,16 +263,16 @@ values={[
 
 1. 从侧边栏选择网关组的**消费者**。
 2. 选择你的目标消费者，例如，`Alice`。
-3. 在**凭据**选项卡下，点击**基本认证**选项卡，然后点击**新增基本认证凭据**。
+3. **凭据**选项卡下，点击**基本认证**选项卡，然后点击**新增Basic Authentication 凭据**。
 4. 在对话框中，执行以下操作：
-   * 在**名称**字段中，输入 `primary-basic`。
-   * 在**用户名**字段中，输入 `Alice`。
-   * 在**密码**字段中，选择**从 Secret 提供商引用**，然后输入 `$secret://vault/my-vault/consumer/alice/password`。
+   * **名称**，输入 `primary-basic`。
+   * **用户名**，输入 `Alice`。
+   * **密码**，选择**引用 Secret 提供商**，然后输入 `$secret://vault/my-vault/consumer/alice/password`。
    * 点击**新增**。
 
 :::note
 
- 所有密钥引用都以 `$secret://` 开头。`vault` 是 Secret 提供商的**密钥管理器**，`my-vault` 是** Secret 提供商 ID**。连接到 HashiCorp Vault 时，`$secret://vault/my-vault` 将替换为 Secret 提供商的实际**密钥前缀**。最后，发送到 HashiCorp Vault 的路径将是 `secret/api7/consumer/alice/password`。
+ 所有密钥引用都以 `$secret://` 开头。`vault` 是 Secret 提供商的**Secret 管理服务**，`my-vault` 是**Secret 提供商 ID**。连接到 HashiCorp Vault 时，`$secret://vault/my-vault` 将替换为 Secret 提供商的实际**Secret 前缀**。最后，发送到 HashiCorp Vault 的路径将是 `secret/api7/consumer/alice/password`。
 
 :::
 
@@ -279,13 +280,13 @@ values={[
 
 <TabItem value="adc">
 
-即将推出。
+暂不支持。
 
 </TabItem>
 
 <TabItem value="ingress">
 
-即将推出。
+暂不支持。
 
 </TabItem>
 
@@ -306,17 +307,17 @@ values={[
 
 1. 从侧边栏选择网关组的**消费者**。
 2. 选择你的目标消费者，例如，`Alice`。
-3. 在**凭据**选项卡下，点击**JWT**选项卡，然后点击**新增 JWT 凭据**。
+3. **凭据**选项卡下，点击**JWT**选项卡，然后点击**新增 JWT 凭据**。
 4. 在对话框中，执行以下操作：
-   * 在**名称**字段中，输入 `primary-jwt`。
-   * 在**密钥**字段中，输入 `alice-key`。
-   * 在**算法**字段中，选择 `HS256`。
-   * 在**密钥**字段中，选择**从 Secret 提供商引用**，然后输入 `$secret://vault/my-vault/consumer/alice/secret`。
+   * **名称**，输入 `primary-jwt`。
+   * **Key**，输入 `alice-key`。
+   * **算法**，选择 `HS256`。
+   * **密钥**，选择**引用 Secret 提供商**，然后输入 `$secret://vault/my-vault/consumer/alice/secret`。
    * 点击**新增**。
 
 :::note
 
- 所有密钥引用都以 `$secret://` 开头。`vault` 是 Secret 提供商的**密钥管理器**，`my-vault` 是** Secret 提供商 ID**。连接到 HashiCorp Vault 时，`$secret://vault/my-vault` 将替换为 Secret 提供商的实际**密钥前缀**。最后，发送到 HashiCorp Vault 的路径将是 `secret/api7/consumer/alice/secret`。
+ 所有密钥引用都以 `$secret://` 开头。`vault` 是 Secret 提供商的**Secret 管理服务**，`my-vault` 是**Secret 提供商 ID**。连接到 HashiCorp Vault 时，`$secret://vault/my-vault` 将替换为 Secret 提供商的实际**Secret 前缀**。最后，发送到 HashiCorp Vault 的路径将是 `secret/api7/consumer/alice/secret`。
 
 :::
 
@@ -324,13 +325,13 @@ values={[
 
 <TabItem value="adc">
 
-即将推出。
+暂不支持。
 
 </TabItem>
 
 <TabItem value="ingress">
 
-即将推出。
+暂不支持。
 
 </TabItem>
 
@@ -351,16 +352,16 @@ values={[
 
 1. 从侧边栏选择网关组的**消费者**。
 2. 选择你的目标消费者，例如，`Alice`。
-3. 在**凭据**选项卡下，点击**HMAC 认证**选项卡，然后点击**新增 HMAC 认证凭据**。
+3. **凭据**选项卡下，点击**HMAC 认证**选项卡，然后点击**新增 HMAC 认证凭据**。
 4. 在对话框中，执行以下操作：
-   * 在**名称**字段中，输入 `primary-hmac`。
-   * 在**密钥 ID** 字段中，输入 `alice-keyid`。
-   * 在**密钥**字段中，选择**从 Secret 提供商引用**，然后输入 `$secret://vault/my-vault/consumer/alice/secret-key`。
+   * **名称**，输入 `primary-hmac`。
+   * **Key ID**，输入 `alice-keyid`。
+   * **Secret Key**，选择**引用 Secret 提供商**，然后输入 `$secret://vault/my-vault/consumer/alice/secret-key`。
    * 点击**新增**。
 
 :::note
 
- 所有密钥引用都以 `$secret://` 开头。`vault` 是 Secret 提供商的**密钥管理器**，`my-vault` 是** Secret 提供商 ID**。连接到 HashiCorp Vault 时，`$secret://vault/my-vault` 将替换为 Secret 提供商的实际**密钥前缀**。最后，发送到 HashiCorp Vault 的路径将是 `secret/api7/consumer/alice/secret-key`。
+ 所有密钥引用都以 `$secret://` 开头。`vault` 是 Secret 提供商的**Secret 管理服务**，`my-vault` 是**Secret 提供商 ID**。连接到 HashiCorp Vault 时，`$secret://vault/my-vault` 将替换为 Secret 提供商的实际**Secret 前缀**。最后，发送到 HashiCorp Vault 的路径将是 `secret/api7/consumer/alice/secret-key`。
 
 :::
 
@@ -368,13 +369,13 @@ values={[
 
 <TabItem value="adc">
 
-即将推出。
+暂不支持。
 
 </TabItem>
 
 <TabItem value="ingress">
 
-即将推出。
+暂不支持。
 
 </TabItem>
 
@@ -382,7 +383,7 @@ values={[
 
 ## 引用密钥以启用插件
 
-插件配置中的以下敏感字段可以存储在外部密钥管理器（HashiCorp Vault、AWS Secret Manager 等）中，并在 API7 网关中引用：
+插件配置中的以下敏感字段可以存储在外部Secret 管理服务（HashiCorp Vault、AWS Secret Manager 等）中，并在 API7 网关中引用：
 
 |插件|字段|
 |:---|:---|
@@ -395,7 +396,7 @@ values={[
 
 ### 创建密钥
 
-创建一个密钥 `username=api7`，并将其存储在 Vault 的路径 `secret/api7/redis` 中。**确保路径与你配置的密钥前缀一致**：
+创建一个密钥 `username=api7`，并将其存储在 Vault 的路径 `secret/api7/redis` 中。**确保路径与你配置的Secret 前缀一致**：
 
 ```shell
 docker exec api7-quickstart-vault vault kv put secret/api7/redis username=api7
@@ -425,7 +426,7 @@ docker exec api7-quickstart-vault vault kv put secret/api7/redis password=redis-
 
 ### 配置 Limit Count 插件
 
-有关在何处以及如何启用 [Limit Count 插件](/hub/limit-count)，请参阅 [对 API 应用速率限制](../api-security/rate-limiting.md)。
+有关在何处以及如何启用 [Limit Count 插件](/hub/limit-count)，请参阅 [API 限流限速](../api-security/rate-limiting.md)。
 
 <Tabs
 groupId="api"
@@ -438,7 +439,7 @@ values={[
 
 <TabItem value="dashboard">
 
-将以下配置新增到**JSON 编辑器**：
+将以下配置添加到**JSON 编辑器**：
 
 ```json
 {
@@ -462,4 +463,31 @@ values={[
 
 :::note
 
-所有密钥引用都以 `$secret://` 开头。`vault` 是 Secret 提供商的**密钥管理器**，`my-vault` 是** Secret 提供商 ID**。连接到 HashiCorp Vault 时，`$secret://vault/my-vault` 将替换为 Secret 提供商的实际
+所有密钥引用都以 `$secret://` 开头。`vault` 是Secret 提供商的**Secret 管理服务**，`my-vault` 是**Secret 提供商 ID**。连接到 HashiCorp Vault 时，`$secret://vault/my-vault` 将替换为Secret 提供商的实际**Secret 前缀**。最后，发送到 HashiCorp Vault 的路径将是 `secret/api7/redis/username` 和 `secret/api7/redis/password`。
+
+:::
+
+</TabItem>
+
+<TabItem value="adc">
+
+暂不支持。
+
+</TabItem>
+
+<TabItem value="ingress">
+
+暂不支持。
+
+</TabItem>
+
+</Tabs>
+
+## 相关阅读
+
+* 核心概念
+  * [密钥](../key-concepts/secrets.md)
+  * [插件](../key-concepts/plugins.md)
+  * [消费者](../key-concepts/consumers.md)
+* API 使用
+  * [管理消费者凭据](../api-consumption/manage-consumer-credentials.md)
