@@ -1,4 +1,3 @@
-
 ---
 title: 在 AWS Secrets Manager 中引用密钥
 slug: /api-security/aws-secrets-manager
