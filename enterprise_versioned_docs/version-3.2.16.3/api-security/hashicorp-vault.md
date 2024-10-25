@@ -1,4 +1,3 @@
-
 ---
 title: 引用在 HashiCorp Vault 中的密钥
 slug: /api-security/hashicorp-vault
