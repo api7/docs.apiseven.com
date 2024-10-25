@@ -9,7 +9,7 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 [消费者](../key-concepts/consumers)是指使用你的API的应用程序或开发者。在[服务](../key-concepts/services)上启用身份验证可以让你控制访问，要求消费者在访问API之前获得凭据。
 
-在服务上启用的身份验证插件就像API上的锁，而消费者凭据则是解锁它们的钥匙。在API7企业版中，你需要一个唯一的用户名和至少一个凭据来设置消费者。
+在服务上启用的身份验证插件就像API上的锁，而消费者凭据则是解锁它们的钥匙。在API7 企业版中，你需要一个唯一的用户名和至少一个凭据来设置消费者。
 
 消费者可以使用多种不同类型的凭据，所有凭据在身份验证方面都被视为平等的。
 
@@ -18,15 +18,15 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 ## 前提条件
 
 1. [安装API7企业版](../getting-started/install-api7-ee)。
-2. [在网关组上运行API](../getting-started/launch-your-first-api)。
+2. [在网关组上运行 API](../getting-started/launch-your-first-api)。
 
-## 配置密钥认证凭据
+## 配置Key Authentication凭据
 
 <Tabs
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'},
 ]}>
@@ -34,20 +34,20 @@ values={[
 <TabItem value="dashboard">
 
 1. 从侧边栏选择网关组的**消费者**。
-2. 点击**+ 添加消费者**。
+2. 点击**+ 新增消费者**。
 3. 在对话框中，执行以下操作：
-   * 在**名称**字段中，输入 `Alice`。
-   * 点击**添加**。
-4. 在**凭据**选项卡下，点击**+ 添加密钥认证凭据**。
+   * **名称**，输入 `Alice`。
+   * 点击**新增**。
+4. **凭据**选项卡下，点击**+ 新增Key Authentication凭据**。
 5. 在对话框中，执行以下操作：
-   * 在**名称**字段中，输入 `primary-key`。
-   * 在**密钥**字段中，选择**手动输入**，然后输入 `alice-primary-key`。
-   * 如果你想选择**从密钥提供程序引用**，请参阅[在 HashiCorp Vault 中引用密钥](../api-security/hashicorp-vault) 或 [在 AWS Secrets Manager 中引用密钥](../api-security/aws-secrets-manager)。
-   * 点击**添加**。
+   * **名称**，输入 `primary-key`。
+   * **Key**，选择**手动输入**，然后输入 `alice-primary-key`。
+   * 如果你想选择**引用 Secret 提供商**，请参阅[引用 HashiCorp Vault 中的密钥](../api-security/hashicorp-vault) 或 [引用 AWS Secrets Manager 中的密钥](../api-security/aws-secrets-manager)。
+   * 点击**新增**。
 
-6. 再次尝试添加另一个名为 `backup-key` 的密钥认证凭据，密钥为 `alice-backup-key`。所有凭据都是有效的，可以互换使用以进行 API 身份验证。
+6. 再次尝试新增另一个名为 `backup-key` 的Key Authentication凭据，Key 为 `alice-backup-key`。所有凭据都是有效的，可以互换使用以进行 API 身份验证。
 
-下面是一个交互式演示，提供了使用 API7 企业版配置密钥认证凭据的实践介绍。
+下面是一个交互式演示，提供了使用 API7 企业版配置Key Authentication凭据的实践介绍。
 
 <StorylaneEmbed src='https://app.storylane.io/demo/1sb3joej3mek' />
 
@@ -79,7 +79,7 @@ adc sync -f adc-consumer.yaml
 
 <TabItem value="ingress">
 
-Ingress Controller 目前不支持凭据和匿名消费者。
+暂不支持。
 
 </TabItem>
 
@@ -87,17 +87,17 @@ Ingress Controller 目前不支持凭据和匿名消费者。
 
 ### 验证
 
-有关说明，请参阅[为 API 启用密钥认证](../api-security/api-authentication#enable-key-authentication-for-apis)，并在服务级别启用 [Key Auth 插件](/hub/key-auth)。
+有关说明，请参阅[为 API 启用Key Authentication](../api-security/api-authentication#enable-key-authentication-for-apis)，并在服务级别启用 [Key Auth 插件](/hub/key-auth)。
 
-然后按照[验证密钥认证](../api-security/api-authentication#validate-key-authentication) 说明进行操作。
+然后按照[验证Key Authentication](../api-security/api-authentication#validate-key-authentication) 说明进行操作。
 
-## 配置基本认证凭据
+## 配置Basic Authentication凭据
 
 <Tabs
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'},
 ]}>
@@ -105,19 +105,19 @@ values={[
 <TabItem value="dashboard">
 
 1. 从侧边栏选择网关组的**消费者**。
-2. 点击**添加消费者**。
+2. 点击**新增消费者**。
 3. 在对话框中，执行以下操作：
-   * 在**名称**字段中，输入 `Alice`。
-   * 点击**添加**。
-4. 在**凭据**选项卡下，点击**基本认证**选项卡，然后点击**添加基本认证凭据**。
+   * **名称**，输入 `Alice`。
+   * 点击**新增**。
+4. **凭据**选项卡下，点击**Basic Authentication**选项卡，然后点击**新增Basic Authentication凭据**。
 5. 在对话框中，执行以下操作：
-   * 在**名称**字段中，输入 `primary-basic`。
-   * 在**用户名**字段中，输入 `alice`。
-   * 在**密码**字段中，选择**手动输入**，然后输入 `alice-password`。
-   * 如果你想选择**从密钥提供程序引用**，请参阅[在 HashiCorp Vault 中引用密钥](../api-security/hashicorp-vault) 或 [在 AWS Secrets Manager 中引用密钥](../api-security/aws-secrets-manager)。
-   * 点击**添加**。
+   * **名称**，输入 `primary-basic`。
+   * **用户名**，输入 `alice`。
+   * **密码**，选择**手动输入**，然后输入 `alice-password`。
+   * 如果你想选择**引用 Secret 提供商**，请参阅[引用 HashiCorp Vault 中的密钥](../api-security/hashicorp-vault) 或 [引用 AWS Secrets Manager 中的密钥](../api-security/aws-secrets-manager)。
+   * 点击**新增**。
 
-6. 再次尝试添加另一个名为 `backup-basic` 的基本认证凭据，用户名为 `alice-backup`，密码为 `alice-backup-password`。所有凭据都是有效的，可以互换使用以进行 API 身份验证。
+6. 再次尝试新增另一个名为 `backup-basic` 的Basic Authentication凭据，用户名为 `alice-backup`，密码为 `alice-backup-password`。所有凭据都是有效的，可以互换使用以进行 API 身份验证。
 
 </TabItem>
 
@@ -137,9 +137,9 @@ Ingress Controller 目前不支持凭据和匿名消费者。
 
 ### 验证
 
-有关说明，请参阅[为 API 启用基本认证](../api-security/api-authentication#enable-basic-authentication-for-apis)，并在服务级别启用 [Key Auth 插件](/hub/key-auth)。
+有关说明，请参阅[为 API 启用Basic Authentication](../api-security/api-authentication#enable-basic-authentication-for-apis)，并在服务级别启用 [Key Auth 插件](/hub/key-auth)。
 
-然后按照[验证基本认证](../api-security/api-authentication#validate-basic-authentication) 说明进行操作。
+然后按照[验证Basic Authentication](../api-security/api-authentication#validate-basic-authentication) 说明进行操作。
 
 ## 配置不同的身份验证凭据
 
@@ -153,7 +153,7 @@ Ingress Controller 目前不支持凭据和匿名消费者。
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'}
 ]}>
@@ -161,43 +161,43 @@ values={[
 <TabItem value="dashboard">
 
 1. 从侧边栏选择网关组的**消费者**。
-2. 点击**+ 添加消费者**。
+2. 点击**+ 新增消费者**。
 3. 在对话框中，执行以下操作：
-   * 在**名称**字段中，输入 `John`。
-   * 点击**添加**。
-4. 在**凭据**选项卡下，点击**添加密钥认证凭据**。
+   * **名称**，输入 `John`。
+   * 点击**新增**。
+4. **凭据**选项卡下，点击**新增Key Authentication凭据**。
 5. 在对话框中，执行以下操作：
-   * 在**名称**字段中，输入 `key-auth`。
-   * 在**密钥**字段中，选择**手动输入**，然后输入 `john-key-auth`。
-   * 点击**添加**。
+   * **名称**，输入 `key-auth`。
+   * **密钥**，选择**手动输入**，然后输入 `john-key-auth`。
+   * 点击**新增**。
 
-6. 在**凭据**选项卡下，选择**基本认证**，然后点击**添加基本认证凭据**。
+6. **凭据**选项卡下，选择**Basic Authentication**，然后点击**新增Basic Authentication凭据**。
 7. 在对话框中，执行以下操作：
-   * 在**名称**字段中，输入 `basic-auth`。
-   * 在**用户名**字段中，输入 `john`。
-   * 在**密码**字段中，选择**手动输入**，然后输入 `john-password`。
-   * 点击**添加**。
+   * **名称**，输入 `basic-auth`。
+   * **用户名**，输入 `john`。
+   * **密码**，选择**手动输入**，然后输入 `john-password`。
+   * 点击**新增**。
 
-8. 在**凭据**选项卡下，选择**JWT**，然后点击**添加 JWT 凭据**。
+8. **凭据**选项卡下，选择**JWT**，然后点击**新增 JWT 凭据**。
 9. 在对话框中，执行以下操作：
-   * 在**名称**字段中，输入 `jwt-auth`。
-   * 在**密钥**字段中，输入 `john-jwt-key`。
-   * 在**算法**字段中，选择 `RS256`。
-   * 在**公钥**字段中，选择**手动输入**，然后输入你的公钥。
-   * 点击**添加**。
+   * **名称**，输入 `jwt-auth`。
+   * **密钥**，输入 `john-jwt-key`。
+   * **算法**，选择 `RS256`。
+   * **公钥**，选择**手动输入**，然后输入你的公钥。
+   * 点击**新增**。
 
-10. 在**凭据**选项卡下，选择**HMAC 认证**，然后点击**添加 HMAC 认证凭据**。
+10. **凭据**选项卡下，选择**HMAC 认证**，然后点击**新增 HMAC 认证凭据**。
 11. 在对话框中，执行以下操作：
-   * 在**名称**字段中，输入 `hmac-auth`。
-   * 在**密钥 ID** 字段中，输入 `john-key`。
-   * 在**密钥**字段中，选择**手动输入**，然后输入 `john-hmac-key`。
-   * 点击**添加**。
+   * **名称**，输入 `hmac-auth`。
+   * **密钥 ID** ，输入 `john-key`。
+   * **密钥**，选择**手动输入**，然后输入 `john-hmac-key`。
+   * 点击**新增**。
 
 </TabItem>
 
 <TabItem value="adc">
 
-即将推出。
+暂不支持。
 
 </TabItem>
 
@@ -209,9 +209,19 @@ Ingress Controller 目前不支持凭据和匿名消费者。
 
 </Tabs>
 
-## 扩展阅读
+## 相关阅读
 
-* 关键概念
+* 核心概念
   * [服务](../key-concepts/services)
   * [路由](../key-concepts/routes)
-  * [插件
+  * [插件](../key-concepts/plugins)
+  * [消费者](../key-concepts/consumers)
+* API 安全
+  * [设置 API 身份验证](../api-security/api-authentication)
+* API 使用
+  * [应用基于列表的访问控制](./consumer-restriction)
+* 插件中心
+  * [Key Authentication](/hub/key-auth)
+  * [Basic Authentication](/hub/basic-auth)
+  * [JWT Authentication](/hub/jwt-auth)
+  * [HMAC Authentication](/hub/hmac-auth)
