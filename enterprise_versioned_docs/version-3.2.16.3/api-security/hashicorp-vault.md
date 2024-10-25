@@ -83,7 +83,7 @@ policies             ["api7-policy" "default"]
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'}
 ]}>
@@ -132,7 +132,7 @@ values={[
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'},
 ]}>
@@ -211,7 +211,7 @@ docker exec api7-quickstart-vault vault kv put secret/api7/consumer/alice secret
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'},
 ]}>
@@ -223,7 +223,7 @@ values={[
 3. **凭据**选项卡下，点击**新增Key Authentication 凭据**。
 4. 在对话框中，执行以下操作：
    * **名称**，输入 `primary-key`。
-   * **密钥**，选择**引用 Secret 提供商**，然后输入 `$secret://vault/my-vault/consumer/alice/key`。
+   * **Key**，选择**引用 Secret 提供商**，然后输入 `$secret://vault/my-vault/consumer/alice/key`。
    * 点击**新增**。
 
 :::note
@@ -254,7 +254,7 @@ values={[
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'},
 ]}>
@@ -298,7 +298,7 @@ values={[
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'},
 ]}>
@@ -343,7 +343,7 @@ values={[
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'},
 ]}>
@@ -432,7 +432,7 @@ docker exec api7-quickstart-vault vault kv put secret/api7/redis password=redis-
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'},
 ]}>
