@@ -749,7 +749,7 @@ values={[
 
 <TabItem value="adc">
 
-更新服务配置以使用 Basic Authentication：
+更新服务配置以使用 HMAC Authentication：
 
 ```yaml title="adc-service.yaml"
 services:
@@ -789,9 +789,7 @@ ADC 使用配置文件作为单一事实来源。因此，请确保将消费者�
 
 <TabItem value="ingress">
 
-ApisixService 自定义资源尚不可用。
-
-[//]: <TODO: update this section when ApisixService is available>
+暂不支持。
 
 </TabItem>
 
@@ -810,7 +808,7 @@ values={[
 
 <TabItem value="dashboard">
 
-要对特定路由使用 HMAC 认证，请在路由上启用 [HMAC Auth 插件](/hub/hmac-auth)，而不是在服务上启用。
+要对特定路由使用 HMAC 认证，请在路由上启用 `HMAC Auth 插件`，而不是在服务上启用。
 
 1. 从侧边栏选择网关组的**已发布服务**，然后选择要修改的服务，例如，版本为 `1.0.0` 的 `httpbin`。
 2. 在已发布的服务下，从侧边栏选择**路由**。
@@ -968,13 +966,12 @@ python3 hmac-sig-header-gen.py
 curl -i "http://127.0.0.1:9080/ip"  
 ```
 
-由于未提供凭据，你将收到一个 `HTTP/1.1 401 Unauthorized` 响应，其请求正文如下：
+由于未提供认证凭据，你将收到一个 `HTTP/1.1 401 Unauthorized` 响应，其请求正文如下：
 
 ```text
 {"message":"Missing authorization in request"}
 ```
 
-```markdown
 3. 使用请求头向你的 API 发送请求：
 
 ```bash
@@ -983,7 +980,7 @@ curl -X GET "http://127.0.0.1:9080/ip" \
   -H 'Authorization: Signature keyId="alice-keyid",algorithm="hmac-sha256",headers="@request-target date",signature="wWfKQvPDr0wHQ4IHdluB4IzeNZcj0bGJs2wvoCOT5rM="'
 ```
 
-使用正确的凭据发送请求，你将收到一个类似于以下内容的 `HTTP/1.1 200 OK` 响应：
+因为使用了正确的凭据发送请求，你将收到一个类似于以下内容的 `HTTP/1.1 200 OK` 响应：
 
 ```json
 {
@@ -1002,12 +999,12 @@ curl -X GET "http://127.0.0.1:9080/ip" \
 }
 ```
 
-## 扩展阅读
+## 相关阅读
 
-* 关键概念
+* 核心概念
   * [服务](../key-concepts/services) 
   * [路由](../key-concepts/routes)
   * [插件](../key-concepts/plugins)
-* API 使用
+* API 消费
   * [管理消费者凭据](../api-consumption/manage-consumer-credentials)
-  * [应用基于列表的访问控制](../api-consumption/consumer-restriction)
+  * [应用基于黑白名单的访问控制](../api-consumption/consumer-restriction)
