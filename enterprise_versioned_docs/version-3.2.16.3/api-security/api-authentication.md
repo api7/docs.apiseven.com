@@ -1,39 +1,39 @@
 ---
-title: 设置 API 身份验证
+title: 设置 API 身份认证
 slug: /api-security/api-authentication
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-为了安全起见，你应该只允许经过身份验证和授权的[消费者](../key-concepts/consumers)访问你的 API。API7 网关提供了多种插件来启用身份验证和授权。
+为了安全起见，你应该只允许经过身份认证和授权的[消费者](../key-concepts/consumers)访问你的 API。API7 网关提供了多种插件来启用身份认证和授权。
 
-在服务上启用的身份验证插件就像API上的锁，而消费者凭据则是解锁它们的钥匙。在API7网关中，你需要一个唯一的用户名和至少一个凭据来设置消费者。
+在服务上启用的身份认证插件就像给 API 上的锁，而消费者凭据则是解锁它们的钥匙。在 API7 网关中，你需要一个唯一的用户名和至少一个认证凭据来设置消费者。
 
-消费者可以使用多种不同类型的凭据，所有凭据在身份验证方面都被视为平等的。
+消费者可以使用多种不同类型的认证凭据，所有认证凭据在身份认证方面都被视为平等的。
 
 ## 前提条件
 
-1. [安装API7企业版](../getting-started/install-api7-ee)。
-2. [在网关组上运行API](../getting-started/launch-your-first-api)。
+1. [安装 API7 企业版](../getting-started/install-api7-ee)。
+2. [在网关组上运行 API](../getting-started/launch-your-first-api)。
 
 :::note
 
-避免在同一服务/路由上配置多个身份验证插件，以防止冲突。
+避免在同一服务/路由上配置多个身份认证插件，以防止冲突。
 
 :::
 
-## 为 API 启用密钥认证
+## 为 API 启用 Key Authentication
 
 ### 针对服务
 
-要在服务中的所有路由上使用密钥认证，请在服务上启用 [Key Auth 插件](/hub/key-auth)。
+要在服务中的所有路由上使用 Key Authentication，请在服务上启用 `Key Auth 插件`。
 
 <Tabs
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'}
 ]}>
@@ -57,7 +57,7 @@ values={[
 
 <TabItem value="adc">
 
-更新服务配置以使用密钥认证：
+更新服务配置以使用 Key Authentication：
 
 ```yaml title="adc-service.yaml"
 services:
@@ -97,9 +97,7 @@ ADC 使用配置文件作为单一事实来源。因此，请确保将消费者�
 
 <TabItem value="ingress">
 
-ApisixService 自定义资源尚不可用。
-
-[//]: <TODO: update this section when ApisixService is available>
+暂不支持。
 
 </TabItem>
 
@@ -111,19 +109,19 @@ ApisixService 自定义资源尚不可用。
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'}
 ]}>
 
 <TabItem value="dashboard">
 
-要对特定路由使用密钥认证，请在路由上启用 [Key Auth 插件](/hub/key-auth)，而不是在服务上启用。
+要对特定路由使用 Key Authentication，请在路由上启用 `Key Auth 插件`，而不是在服务上启用。
 
 1. 从侧边栏选择网关组的**已发布服务**，然后选择要修改的服务，例如，版本为 `1.0.0` 的 `httpbin`。
 2. 在已发布的服务下，从侧边栏选择**路由**。
 3. 选择你的目标路由，例如，`get-ip`。
-4. 在**插件**字段中，点击**启用插件**。
+4. **插件**，点击**启用插件**。
 5. 搜索 `key-auth` 插件，然后点击**启用**。
 6. 在对话框中执行以下操作：
    * 将以下配置添加到**JSON 编辑器**：
@@ -139,7 +137,7 @@ values={[
 
 <TabItem value="adc">
 
-更新路由配置以使用密钥认证：
+更新路由配置以使用Key Authentication：
 
 ```yaml title="adc-route.yaml"
 services:
@@ -179,7 +177,7 @@ ADC 使用配置文件作为单一事实来源。因此，请确保将消费者�
 
 <TabItem value="ingress">
 
-创建一个启用了密钥认证的路由的 Kubernetes 清单文件：
+创建一个启用了 Key Authentication 的路由的 Kubernetes mainfest文件：
 
 ```yaml title="httpbin-route.yaml"
 apiVersion: apisix.apache.org/v2
@@ -213,13 +211,13 @@ kubectl apply -f httpbin-route.yaml
 
 </Tabs>
 
-### 验证密钥认证
+### 验证Key Authentication
 
-按照[配置密钥认证凭据](../api-consumption/manage-consumer-credentials#configure-key-authentication-credentials)创建具有密钥认证凭据的消费者。
+按照[配置Key Authentication凭据](../api-consumption/manage-consumer-credentials#configure-key-authentication-credentials)创建具有Key Authentication凭据的消费者。
 
-然后按照以下步骤验证密钥认证。
+然后按照以下步骤验证Key Authentication。
 
-1. 发送不带 `apikey` 标头的请求：
+1. 发送不带 `apikey` 请求头的请求：
 
 ```bash
 curl -i "http://127.0.0.1:9080/ip"
@@ -231,7 +229,7 @@ curl -i "http://127.0.0.1:9080/ip"
 {"message":"Missing API key found in request"}
 ```
 
-2. 在 `apikey` 标头中发送带有错误密钥的请求：
+2. 在 `apikey` 请求头中发送带有错误密钥的请求：
 
 ```bash
 curl -i "http://127.0.0.1:9080/ip" -H "apikey: wrongkey"
@@ -243,7 +241,7 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: wrongkey"
 {"message":"Invalid API key in request"}
 ```
 
-3. 在 `apikey` 标头中发送带有正确密钥的请求：
+3. 在 `apikey` 请求头中发送带有正确密钥的请求：
 
 ```bash
 curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-primary-key"
@@ -252,17 +250,17 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-primary-key"
 使用正确的密钥发送请求，你将收到一个 `HTTP/1.1 200 OK` 响应。
 
 ```markdown
-## 为 API 启用基本认证
+## 为 API 启用Basic Authentication
 
 ### 针对服务
 
-要在服务中的所有路由上使用基本认证，请在服务上启用 [Basic Auth 插件](/hub/basic-auth)。
+要在服务中的所有路由上使用Basic Authentication，请在服务上启用 [Basic Auth 插件](/hub/basic-auth)。
 
 <Tabs
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'}
 ]}>
@@ -286,7 +284,7 @@ values={[
 
 <TabItem value="adc">
 
-更新服务配置以使用基本认证：
+更新服务配置以使用Basic Authentication：
 
 ```yaml title="adc-service.yaml"
 services:
@@ -326,9 +324,7 @@ ADC 使用配置文件作为单一事实来源。因此，请确保将消费者�
 
 <TabItem value="ingress">
 
-ApisixService 自定义资源尚不可用。
-
-[//]: <TODO: update this section when ApisixService is available>
+暂不支持。
 
 </TabItem>
 
@@ -340,19 +336,19 @@ ApisixService 自定义资源尚不可用。
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'}
 ]}>
 
 <TabItem value="dashboard">
 
-要对特定路由使用基本认证，请在路由上启用 [Basic Auth 插件](/hub/basic-auth)，而不是在服务上启用。
+要对特定路由使用 Basic Authentication，请在路由上启用 `Basic Auth 插件`，而不是在服务上启用。
 
 1. 从侧边栏选择网关组的**已发布服务**，然后选择要修改的服务，例如，版本为 `1.0.0` 的 `httpbin`。
 2. 在已发布的服务下，从侧边栏选择**路由**。
 3. 选择你的目标路由，例如，`get-ip`。
-4. 在**插件**字段中，点击**启用插件**。
+4. **插件**，点击**启用插件**。
 5. 搜索 `basic-auth` 插件，然后点击**启用**。
 6. 在对话框中执行以下操作：
    * 将以下配置添加到**JSON 编辑器**：
@@ -404,7 +400,7 @@ ADC 使用配置文件作为单一事实来源。因此，请确保将消费者�
 
 <TabItem value="ingress">
 
-创建一个启用了基本认证的路由的 Kubernetes 清单文件：
+创建一个启用了 Basic Authentication 的路由的 Kubernetes mainfest 文件：
 
 ```yaml title="httpbin-route.yaml"
 apiVersion: apisix.apache.org/v2
@@ -438,13 +434,13 @@ kubectl apply -f httpbin-route.yaml
 
 </Tabs>
 
-### 验证基本认证
+### 验证 Basic Authentication
 
-按照[配置基本认证凭据](../api-consumption/manage-consumer-credentials#configure-basic-authentication-credentials)创建具有基本认证凭据的消费者。
+按照[配置Basic Authentication 凭据](../api-consumption/manage-consumer-credentials#configure-basic-authentication-credentials)创建具有 Basic Authentication 凭据的消费者。
 
-请按照以下步骤验证基本认证。
+请按照以下步骤验证 Basic Authentication。
 
-1. 发送不带基本认证凭据的请求：
+1. 发送不带 Basic Authentication 凭据的请求：
 
 ```bash
 curl -i "http://127.0.0.1:9080/ip"  
@@ -456,7 +452,7 @@ curl -i "http://127.0.0.1:9080/ip"
 {"message":"Missing authorization in request"}
 ```
 
-2. 发送带有无效基本认证凭据（用户名密码不匹配，或用户名不存在）的请求：
+2. 发送带有无效 Basic Authentication凭 据（用户名密码不匹配，或用户名不存在）的请求：
 
 ```bash
 curl -i "http://127.0.0.1:9080/ip" -u alice:wrong-password
@@ -468,7 +464,7 @@ curl -i "http://127.0.0.1:9080/ip" -u alice:wrong-password
 {"message":"Invalid user authorization"}
 ```
 
-3. 发送带有正确基本认证凭据的请求：
+3. 发送带有正确 Basic Authentication 凭据的请求：
 
 ```bash
 curl -i "http://127.0.0.1:9080/ip" -u alice:alice-password 
@@ -480,13 +476,13 @@ curl -i "http://127.0.0.1:9080/ip" -u alice:alice-password
 
 ### 针对服务
 
-要在服务中的所有路由上使用 JWT 认证，请在服务上启用 [JWT Auth 插件](/hub/jwt-auth)。
+要在服务中的所有路由上使用 JWT 认证，请在服务上启用 `JWT Auth 插件`。
 
 <Tabs
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'}
 ]}>
@@ -510,7 +506,7 @@ values={[
 
 <TabItem value="adc">
 
-更新服务配置以使用基本认证：
+更新服务配置以使用 Basic Authentication：
 
 ```yaml title- name: httpbin
     upstream:
@@ -548,34 +544,31 @@ ADC 使用配置文件作为单一事实来源。因此，请确保将消费者�
 
 <TabItem value="ingress">
 
-ApisixService 自定义资源尚不可用。
-
-[//]: <TODO: update this section when ApisixService is available>
+暂不支持。
 
 </TabItem>
 
 </Tabs>
 
-```markdown
 ### 针对单个路由
 
 <Tabs
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'}
 ]}>
 
 <TabItem value="dashboard">
 
-要对特定路由使用 JWT 认证，请在路由上启用 [JWT Auth 插件](/hub/jwt-auth)，而不是在服务上启用。
+要对特定路由使用 JWT 认证，请在路由上启用 `JWT Auth 插件`，而不是在服务上启用。
 
 1. 从侧边栏选择网关组的**已发布服务**，然后选择要修改的服务，例如，版本为 `1.0.0` 的 `httpbin`。
 2. 在已发布的服务下，从侧边栏选择**路由**。
 3. 选择你的目标路由，例如，`get-ip`。
-4. 在**插件**字段中，点击**启用插件**。
+4. **插件**，点击**启用插件**。
 5. 搜索 `jwt-auth` 插件，然后点击**启用**。
 6. 在对话框中执行以下操作：
    * 将以下配置添加到**JSON 编辑器**：
@@ -631,7 +624,7 @@ ADC 使用配置文件作为单一事实来源。因此，请确保将消费者�
 
 <TabItem value="ingress">
 
-创建一个启用了 JWT 认证的路由的 Kubernetes 清单文件：
+创建一个启用了 JWT 认证的路由的 Kubernetes mainfest文件：
 
 ```yaml title="httpbin-route.yaml"
 apiVersion: apisix.apache.org/v2
@@ -667,9 +660,9 @@ kubectl apply -f httpbin-route.yaml
 
 ### 暴露 JWT 签名端点
 
-这是在 API7 企业版中暴露 JWT 签名端点的准备步骤。如果你使用的是对称算法（例如 HS256（默认）或 HS512），其中 API7 企业版既是 JWT 签发者又是验证者，则此步骤是强制性的。如果你使用的是非对称算法（例如 RS256 或 ES256），则此步骤是可选的，因为签发者和验证者可以是不同的方。
+这是在 API7 企业版中暴露 JWT 签名端点的准备步骤。如果你使用的是对称算法（例如 HS256（默认）或 HS512），其中 API7 企业版既是 JWT 签发者又是验证者，则此步骤是强制性的。如果你使用的是非对称算法（例如 RS256 或 ES256），则此步骤是可选的，因为签发者和验证者可以是不同的两方。
 
-jwt-auth 插件会在 `/apisix/plugin/jwt/sign` 创建一个内部端点来签署 JWT。使用 [Public API 插件](/hub/public-api) 暴露该端点：
+`jwt-auth 插件`会在 `/apisix/plugin/jwt/sign` 创建一个内部端点来签署 JWT。使用 `Public API 插件` 暴露该端点：
 
 1. 添加一个名为 `jwt-auth-api` 的已发布服务，以及一个名称为 `jwt-auth-api` 且路径为 `/api7/plugin/jwt/sign` 的路由。
 2. 从侧边栏选择**插件**，然后点击**启用插件**。
@@ -708,7 +701,7 @@ curl -i "http://127.0.0.1:9080/ip"
 jwt_token=$(curl -s "http://127.0.0.1:9080/apisix/plugin/jwt/sign?key=john-jwt-key") && echo $jwt_token
 ```
 
-3. 在标头中携带 `jwt_token` 向你的 API 发送请求：
+3. 在请求头中携带 `jwt_token` 向你的 API 发送请求：
 
 ```bash
 curl -i "http://127.0.0.1:9080/ip" -H "Authorization: ${jwt_token}"
@@ -721,20 +714,18 @@ curl -i "http://127.0.0.1:9080/ip" -H "Authorization: ${jwt_token}"
 ```text
 {"message":"failed to verify jwt"}
 ```
-```
 
-```markdown
 ## 为 API 启用 HMAC 认证
 
 ### 针对服务
 
-要在服务中的所有路由上使用 HMAC 认证，请在服务上启用 [HMAC Auth 插件](/hub/hmac-auth)。
+要在服务中的所有路由上使用 HMAC 认证，请在服务上启用 `HMAC Auth 插件`。
 
 <Tabs
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'}
 ]}>
@@ -758,7 +749,7 @@ values={[
 
 <TabItem value="adc">
 
-更新服务配置以使用基本认证：
+更新服务配置以使用 Basic Authentication：
 
 ```yaml title="adc-service.yaml"
 services:
@@ -812,7 +803,7 @@ ApisixService 自定义资源尚不可用。
 groupId="api"
 defaultValue="dashboard"
 values={[
-{label: 'Dashboard', value: 'dashboard'},
+{label: '控制台', value: 'dashboard'},
 {label: 'ADC', value: 'adc'},
 {label: 'Ingress Controller', value: 'ingress'}
 ]}>
@@ -824,7 +815,7 @@ values={[
 1. 从侧边栏选择网关组的**已发布服务**，然后选择要修改的服务，例如，版本为 `1.0.0` 的 `httpbin`。
 2. 在已发布的服务下，从侧边栏选择**路由**。
 3. 选择你的目标路由，例如，`get-ip`。
-4. 在**插件**字段中，点击**启用插件**。
+4. **插件**，点击**启用插件**。
 5. 搜索 `hmac-auth` 插件，然后点击**启用**。
 6. 在对话框中执行以下操作：
    * 将以下配置添加到**JSON 编辑器**：
@@ -880,7 +871,7 @@ ADC 使用配置文件作为单一事实来源。因此，请确保将消费者�
 
 <TabItem value="ingress">
 
-创建一个启用了 HMAC 认证的路由的 Kubernetes 清单文件：
+创建一个启用了 HMAC 认证的路由的 Kubernetes mainfest文件：
 
 ```yaml title="httpbin-route.yaml"
 apiVersion: apisix.apache.org/v2
@@ -939,7 +930,7 @@ algorithm= "hmac-sha256"           # 可以使用 allowed_algorithms 中的其�
 # 你可以在签名失效后重新生成签名，或者增加时钟偏差以延长有效期，但建议在安全边界内
 gmt_time = datetime.now(timezone.utc).strftime('%a, %d %b %Y %H:%M:%S GMT')
 # 构造签名字符串（有序）
-# 日期和任何后续的自定义标头应小写，并用单个空格字符分隔，即 `<key>:<space><value>`
+# 日期和任何后续的自定义请求头应小写，并用单个空格字符分隔，即 `<key>:<space><value>`
 # [https://datatracker.ietf.org/doc/html/draft-cavage-http-signatures-12#section-2.1.6](https://datatracker.ietf.org/doc/html/draft-cavage-http-signatures-12#section-2.1.6)
 signing_string = (
   f"{key_id}\n"
@@ -951,7 +942,7 @@ signing_string = (
 signature = hmac.new(secret_key, signing_string.encode('utf-8'), hashlib.sha256).digest()
 signature_base64 = base64.b64encode(signature).decode('utf-8')
 
-# 构造请求标头
+# 构造请求请求头
 headers = {
   "Date": gmt_time,
   "Authorization": (
@@ -961,7 +952,7 @@ headers = {
   )
 }
 
-# 打印标头
+# 打印请求头
 print(headers)
 ```
 
@@ -971,7 +962,7 @@ print(headers)
 python3 hmac-sig-header-gen.py
 ```
 
-2. 发送不带标头的请求：
+2. 发送不带请求头的请求：
 
 ```bash
 curl -i "http://127.0.0.1:9080/ip"  
@@ -984,7 +975,7 @@ curl -i "http://127.0.0.1:9080/ip"
 ```
 
 ```markdown
-3. 使用标头向你的 API 发送请求：
+3. 使用请求头向你的 API 发送请求：
 
 ```bash
 curl -X GET "http://127.0.0.1:9080/ip" \
