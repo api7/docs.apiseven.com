@@ -112,7 +112,7 @@ slug: /release-notes
 ### 缺陷修复
 
 * 修复了问题：未正确清理的 `config_listen.sock` 导致数据面无法启动。
-* 修复了问题：禁用服务后请求接口报 404 错误。
+* 修复了问题：禁用服务后请求接口报 `404` 错误。
 * 为 `splunk-hec-logging` 插件添加了 `keepalive_timeout` 配置。
 * 修复了消费者的标签分割后各元素还保留分隔符前后的空白问题。
 * 修复了问题：`Skywalking` 插件销毁后无法重新启动。
