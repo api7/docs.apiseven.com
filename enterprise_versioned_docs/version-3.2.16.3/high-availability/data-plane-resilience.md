@@ -22,7 +22,7 @@ DP 可能会遇到连接 CP 的问题。以下是一些可能的原因：
 
 ## DP 弹性模式
 
-API7 企业版支持将 CP 配置为定期将配置转储到 AWS S3 存储桶，以便在 CP 发生故障时，DP 可以以[独立模式](/apisix/production/deployment-modes#standalone-mode)启动，并从存储中提取最新的网关配置以继续代理请求。
+API7 企业版支持将 CP 配置为定期将配置转储到 AWS S3 存储桶，以便在 CP 发生故障时，DP 可以以 `独立模式` 启动，并从存储中提取最新的网关配置以继续代理请求。
 
 ![解决方案图](https://static.apiseven.com/uploads/2024/07/01/yAwwzGkt_dp-resilience.png)
 
@@ -90,7 +90,7 @@ API7 应该开始每分钟将 CP 配置推送到 S3 存储桶。
 
 ### 验证
 
-在本节中，你将首先向路由发送请求以查看预期的上游响应。然后，你将在[独立模式](/apisix/production/deployment-modes#standalone-mode)下重新启动 DP 部署，以便它开始从 S3 存储桶获取配置，并验证 DP 是否照常代理请求。
+在本节中，你将首先向路由发送请求以查看预期的上游响应。然后，你将在`独立模式` 下重新启动 DP 部署，以便它开始从 S3 存储桶获取配置，并验证 DP 是否照常代理请求。
 
 <Tabs
 groupId="api"
@@ -116,7 +116,7 @@ curl "http://127.0.0.1:9080/ip"
 }
 ```
 
-假设 CP 现在不可用。将以下配置添加到 DP 配置文件以启动[独立模式](/apisix/production/deployment-modes#standalone-mode)：
+假设 CP 现在不可用。将以下配置添加到 DP 配置文件以启动`独立模式`：
 
 ```shell
 docker exec <api7-ee-gateway-container-name> /bin/sh -c "echo '
@@ -207,7 +207,7 @@ curl "http://127.0.0.1:9080/ip"
 kubectl edit cm api7-ee-3-gateway
 ```
 
-在 ConfigMap 中将配置更新为[独立模式](/apisix/production/deployment-modes#standalone-mode)：
+在 ConfigMap 中将配置更新为`独立模式`：
 
 ```yaml
 apiVersion: v1
