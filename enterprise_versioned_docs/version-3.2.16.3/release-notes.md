@@ -21,10 +21,6 @@ slug: /release-notes
 
 有关详细信息，请参阅以下文档：
     
-* [Key Auth](/hub/key-auth)
-* [Basic Auth](/hub/basic-auth)
-* [JWT Auth](/hub/jwt-auth)
-* [HMAC Auth](/hub/hmac-auth)
 * [对匿名消费者进行速率限制](./api-security/rate-limiting.md#add-an-anonymous-consumer)
 
 #### 安全
