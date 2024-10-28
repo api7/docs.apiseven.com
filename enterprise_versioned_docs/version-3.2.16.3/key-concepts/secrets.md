@@ -37,7 +37,7 @@ slug: /key-concepts/secrets
 
 |插件|字段|
 |:---|:---|
-|[Limit Count](/hub/limit-count)|`redis_username`、`redis_password`|
+|Limit Count|`redis_username`、`redis_password`|
 |[Authz-Casdoor](https://apisix.apache.org/docs/apisix/plugins/authz-casdoor/)|`client_id`、`client_secret`|
 |[Wolf RBAC](https://apisix.apache.org/docs/apisix/plugins/wolf-rbac/)|`appid`|
 |[LDAP 认证](https://apisix.apache.org/docs/apisix/plugins/ldap-auth/)|`user_dn`|
