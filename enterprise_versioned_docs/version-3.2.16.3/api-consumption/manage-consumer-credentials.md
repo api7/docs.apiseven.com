@@ -9,7 +9,7 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 [消费者](../key-concepts/consumers)是指使用你的API的应用程序或开发者。在[服务](../key-concepts/services)上启用身份验证可以让你控制访问，要求消费者在访问API之前获得凭据。
 
-在服务上启用的身份验证插件就像API上的锁，而消费者凭据则是解锁它们的钥匙。在API7 企业版中，你需要一个唯一的用户名和至少一个凭据来设置消费者。
+在服务上启用的身份验证插件就像 API 上的锁，而消费者凭据则是解锁它们的钥匙。在 API7 企业版中，你需要一个唯一的用户名和至少一个凭据来设置消费者。
 
 消费者可以使用多种不同类型的凭据，所有凭据在身份验证方面都被视为平等的。
 
@@ -17,7 +17,7 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 ## 前提条件
 
-1. [安装API7企业版](../getting-started/install-api7-ee)。
+1. [安装 API7 企业版](../getting-started/install-api7-ee)。
 2. [在网关组上运行 API](../getting-started/launch-your-first-api)。
 
 ## 配置Key Authentication凭据
@@ -47,7 +47,7 @@ values={[
 
 6. 再次尝试新增另一个名为 `backup-key` 的Key Authentication凭据，Key 为 `alice-backup-key`。所有凭据都是有效的，可以互换使用以进行 API 身份验证。
 
-下面是一个交互式演示，提供了使用 API7 企业版配置Key Authentication凭据的实践介绍。
+下面是一个交互式演示，提供了使用 API7 企业版配置 Key Authentication 凭据的实践介绍。
 
 <StorylaneEmbed src='https://app.storylane.io/demo/1sb3joej3mek' />
 
@@ -87,9 +87,9 @@ adc sync -f adc-consumer.yaml
 
 ### 验证
 
-有关说明，请参阅[为 API 启用Key Authentication](../api-security/api-authentication#enable-key-authentication-for-apis)，并在服务级别启用 [Key Auth 插件](/hub/key-auth)。
+有关说明，请参阅[为 API 启用 Key Authentication](../api-security/api-authentication#enable-key-authentication-for-apis)，并在服务级别启用 [Key Auth 插件](/hub/key-auth)。
 
-然后按照[验证Key Authentication](../api-security/api-authentication#validate-key-authentication) 说明进行操作。
+然后按照[验证 Key Authentication](../api-security/api-authentication#validate-key-authentication) 说明进行操作。
 
 ## 配置Basic Authentication凭据
 
