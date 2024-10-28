@@ -89,7 +89,7 @@ adc sync -f adc-consumer.yaml
 
 有关说明，请参阅[为 API 启用 Key Authentication](../api-security/api-authentication#enable-key-authentication-for-apis)，并在服务级别启用 [Key Auth 插件](/hub/key-auth)。
 
-然后按照[验证Key Authentication](../api-security/api-authentication#validate-key-authentication) 说明进行操作。
+然后按照[验证 Key Authentication](../api-security/api-authentication#validate-key-authentication) 说明进行操作。
 
 ## 配置Basic Authentication凭据
 
