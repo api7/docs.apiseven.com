@@ -22,7 +22,7 @@ DP 可能会遇到连接 CP 的问题。以下是一些可能的原因：
 
 ## DP 弹性模式
 
-API7 企业版支持将 CP 配置为定期将配置转储到 AWS S3 存储桶，以便在 CP 发生故障时，DP 可以以[独立模式](/apisix/production/deployment-modes#standalone-mode)启动，并从存储中提取最新的网关配置以继续代理请求。
+API7 企业版支持将 CP 配置为定期将配置转储到 AWS S3 存储桶，以便在 CP 发生故障时，DP 可以以独立模式启动，并从存储中提取最新的网关配置以继续代理请求。
 
 ![解决方案图](https://static.apiseven.com/uploads/2024/07/01/yAwwzGkt_dp-resilience.png)
 
