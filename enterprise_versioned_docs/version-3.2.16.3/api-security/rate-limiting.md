@@ -419,7 +419,6 @@ Ingress Controller 目前不支持凭据和匿名消费者。
 
 </Tabs>
 
-```markdown
 ### 新增匿名消费者
 
 创建一个匿名消费者 `anonymous` 并配置 `Limit Count 插件` 以允许在 60 秒窗口内使用 1 个配额：
