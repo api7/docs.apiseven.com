@@ -87,7 +87,7 @@ adc sync -f adc-consumer.yaml
 
 ### 验证
 
-有关说明，请参阅[为 API 启用 Key Authentication](../api-security/api-authentication#enable-key-authentication-for-apis)，并在服务级别启用 [Key Auth 插件](/hub/key-auth)。
+有关说明，请参阅[为 API 启用 Key Authentication](../api-security/api-authentication#enable-key-authentication-for-apis)，并在服务级别启用 `Key Auth 插件`。
 
 然后按照[验证 Key Authentication](../api-security/api-authentication#validate-key-authentication) 说明进行操作。
 
@@ -137,7 +137,7 @@ Ingress Controller 目前不支持凭据和匿名消费者。
 
 ### 验证
 
-有关说明，请参阅[为 API 启用Basic Authentication](../api-security/api-authentication#enable-basic-authentication-for-apis)，并在服务级别启用 [Key Auth 插件](/hub/key-auth)。
+有关说明，请参阅[为 API 启用Basic Authentication](../api-security/api-authentication#enable-basic-authentication-for-apis)，并在服务级别启用 `Key Auth 插件`。
 
 然后按照[验证Basic Authentication](../api-security/api-authentication#validate-basic-authentication) 说明进行操作。
 
@@ -220,8 +220,3 @@ Ingress Controller 目前不支持凭据和匿名消费者。
   * [设置 API 身份验证](../api-security/api-authentication)
 * API 使用
   * [应用基于列表的访问控制](./consumer-restriction)
-* 插件中心
-  * [Key Authentication](/hub/key-auth)
-  * [Basic Authentication](/hub/basic-auth)
-  * [JWT Authentication](/hub/jwt-auth)
-  * [HMAC Authentication](/hub/hmac-auth)
