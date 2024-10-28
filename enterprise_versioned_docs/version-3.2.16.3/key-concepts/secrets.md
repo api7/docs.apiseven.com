@@ -24,8 +24,8 @@ slug: /key-concepts/secrets
 
 消费者凭据中的以下敏感字段可以存储在外部密钥管理服务（HashiCorp Vault、AWS Secret Manager 等）中，并在 API7 网关中引用：
 
-* Key Authentication凭据中的 `key`
-* Basic Authentication凭据中的 `password`
+* Key Authentication 凭据中的 `key`
+* Basic Authentication 凭据中的 `password`
 * JWT 认证凭据中的 `secret`、`public key`
 * HMAC 认证凭据中的 `secret key`
 
