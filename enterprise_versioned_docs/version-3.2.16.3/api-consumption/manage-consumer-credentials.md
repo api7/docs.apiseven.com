@@ -47,7 +47,7 @@ values={[
 
 6. 再次尝试新增另一个名为 `backup-key` 的Key Authentication凭据，Key 为 `alice-backup-key`。所有凭据都是有效的，可以互换使用以进行 API 身份验证。
 
-下面是一个交互式演示，提供了使用 API7 企业版配置Key Authentication凭据的实践介绍。
+下面是一个交互式演示，提供了使用 API7 企业版配置 Key Authentication 凭据的实践介绍。
 
 <StorylaneEmbed src='https://app.storylane.io/demo/1sb3joej3mek' />
 
