@@ -253,7 +253,7 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-primary-key"
 
 ### 针对服务
 
-要在服务中的所有路由上使用Basic Authentication，请在服务上启用 [Basic Auth 插件](/hub/basic-auth)。
+要在服务中的所有路由上使用Basic Authentication，请在服务上启用 `Basic Auth 插件`。
 
 <Tabs
 groupId="api"
