@@ -9,7 +9,7 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 [消费者](../key-concepts/consumers)是指使用你的API的应用程序或开发者。在[服务](../key-concepts/services)上启用身份验证可以让你控制访问，要求消费者在访问API之前获得凭据。
 
-在服务上启用的身份验证插件就像API上的锁，而消费者凭据则是解锁它们的钥匙。在API7 企业版中，你需要一个唯一的用户名和至少一个凭据来设置消费者。
+在服务上启用的身份验证插件就像 API 上的锁，而消费者凭据则是解锁它们的钥匙。在 API7 企业版中，你需要一个唯一的用户名和至少一个凭据来设置消费者。
 
 消费者可以使用多种不同类型的凭据，所有凭据在身份验证方面都被视为平等的。
 
