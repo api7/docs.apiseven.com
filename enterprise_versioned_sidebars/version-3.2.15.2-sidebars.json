@@ -136,9 +136,9 @@
           "type": "category",
           "label": "ADC",
           "items": [
-				    "reference/adc",
-				    "reference/configuration-adc",
-				    "reference/openapi-adc"
+            "reference/adc",
+            "reference/configuration-adc",
+            "reference/openapi-adc"
           ]
         },
         {
