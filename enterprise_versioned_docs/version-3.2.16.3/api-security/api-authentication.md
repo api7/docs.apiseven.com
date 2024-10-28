@@ -249,7 +249,6 @@ curl -i "http://127.0.0.1:9080/ip" -H "apikey: alice-primary-key"
 
 使用正确的密钥发送请求，你将收到一个 `HTTP/1.1 200 OK` 响应。
 
-```markdown
 ## 为 API 启用Basic Authentication
 
 ### 针对服务
@@ -284,7 +283,7 @@ values={[
 
 <TabItem value="adc">
 
-更新服务配置以使用Basic Authentication：
+更新服务配置以使用 Basic Authentication：
 
 ```yaml title="adc-service.yaml"
 services:
