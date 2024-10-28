@@ -386,12 +386,12 @@ values={[
 
 |插件|字段|
 |:---|:---|
-|[Limit Count](/hub/limit-count)|`redis_username`、`redis_password`|
+|Limit Count|`redis_username`、`redis_password`|
 |[Authz-Casdoor](https://apisix.apache.org/docs/apisix/plugins/authz-casdoor/)|`client_id`、`client_secret`|
 |[Wolf RBAC](https://apisix.apache.org/docs/apisix/plugins/wolf-rbac/)|`appid`|
 |[LDAP 认证](https://apisix.apache.org/docs/apisix/plugins/ldap-auth/)|`user_dn`|
 
-本节以配置 [Limit Count 插件](/hub/limit-count) 为例进行演示。
+本节以配置 `Limit Count 插件` 为例进行演示。
 
 ### 创建密钥
 
@@ -425,7 +425,7 @@ docker exec api7-quickstart-vault vault kv put secret/api7/redis password=redis-
 
 ### 配置 Limit Count 插件
 
-有关在何处以及如何启用 [Limit Count 插件](/hub/limit-count)，请参阅 [API 限流限速](../api-security/rate-limiting.md)。
+有关在何处以及如何启用 `Limit Count 插件`，请参阅 [API 限流限速](../api-security/rate-limiting.md)。
 
 <Tabs
 groupId="api"
