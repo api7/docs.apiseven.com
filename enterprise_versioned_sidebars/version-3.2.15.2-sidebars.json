@@ -124,10 +124,53 @@
           "label": "Admin APIs",
           "href": "/enterprise/reference/admin-api"
         },
-        "reference/adc",
-        "reference/permission-policy-action-and-resource",
-        "reference/permission-policy-example",
-        "reference/hardening"
+        {
+          "type": "category",
+          "label": "部署",
+          "items": [
+            "deployment/k8s-openshift",
+            "deployment/ingress-controller"
+          ]
+        },     
+        {
+          "type": "category",
+          "label": "ADC",
+          "items": [
+            "reference/adc",
+            "reference/configuration-adc",
+            "reference/openapi-adc"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "高可用",
+          "items": [
+            "high-availability/overview",
+            "high-availability/prepare-for-high-availability",
+            "high-availability/high-availability-installation",
+            "high-availability/data-plane-resilience"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "性能报告",
+          "items": [
+            "performance/performance-testing",
+            "performance/benchmark",
+            "performance/aws-eks"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "权限策略",
+          "items": [
+            "reference/permission-policy-action-and-resource",
+            "reference/permission-policy-example"
+          ]
+        },
+        "reference/hardening",
+        "reference/configuration",
+        "reference/alert-template"
       ]
     }
   ]
