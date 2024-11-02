@@ -3,6 +3,58 @@ title: 更新日志
 slug: /release-notes
 ---
 
+## 3.2.16.4 版本
+
+**发布日期：** 2024-11-01
+
+### 新功能
+
+#### 通过电子邮件发送通知
+
+告警策略现在可以通过利用新的`联系人`同时通过 webhook 和电子邮件发送通知。_联系人_ 定义了一组可由多个告警策略使用的电子邮件地址或 webhook URL。
+
+有关说明，请参阅[触发网关告警](./api-observability/alert)。
+
+:::note
+
+现有的`Webhook 模板`将迁移到新的联系人和告警策略内的通知，确保告警策略的无缝过渡和向后兼容性。
+
+:::
+
+#### 新的 Limit Count Advanced 插件
+
+使用滑动窗口算法增强了开源的 limit count 插件，以实现更准确的速率限制。
+
+有关详细信息，请参阅 [Limit Count Advanced 插件](https://docs.api7.ai/hub/limit-count-advanced)。
+
+#### 新的 Exit Transformer 插件
+
+`exit-transformer` 插件支持根据 APISIX 插件返回的状态码、标头和正文来自定义网关响应。当配置为全局插件时，它还支持在请求不存在的路由时自定义响应。
+
+有关详细信息，请参阅 [Exit Transformer 插件](https://docs.api7.ai/hub/exit-transformer)。
+
+#### 通过告警策略计算网关组中的健康网关实例数
+
+如果网关组中健康网关实例的数量低于临界阈值，则表明可能会出现服务中断并影响流量处理。
+这种情况在 Kubernetes 部署中尤其重要，因为网关实例可能会遇到故障或意外缩减。
+
+[创建用于统计网关组中健康网关实例数的告警策略](./api-observability/alert.md#count-healthy-gateway-instances-in-a-gateway-group) 并向相关人员发送通知。
+
+### 功能优化
+
+* [JWT Auth 插件](https://docs.api7.ai/hub/jwt-auth) 现在支持更多算法。
+* 支持利用表达式匹配来更精确地路由流量。
+* 在 [Grafana 控制台模板](https://grafana.com/grafana/dashboards/11719-apache-apisix/) 中丰富了更多指标。
+* 允许用户按 Enter 键登录。
+
+### 缺陷修复
+
+* 解决了问题：[CORS 插件](https://docs.api7.ai/hub/cors) `expose_header` 的默认值不应为 `*`。
+* 解决了问题：添加四层服务时可以成功添加第一个四层路由。
+* 解决了问题：`max_req_body_bytes` 限制在日志记录器插件中不起作用。
+* 解决了问题：[Limit Count 插件](https://docs.api7.ai/hub/limit-count) 中速率限制参数的动态更新现在会反映在数据面中。
+* 解决了问题：通过 API 删除的服务可以从数据面中一致地删除。
+
 ## 3.2.16.3 版本
 
 **发布日期：** 2024-10-21
@@ -463,8 +515,8 @@ API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连�
 
 ### 缺陷修复
 
-- 使用 [key-auth](https://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
-- 使用 [ua-restriction](https://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
+- 使用 [key-auth](https://docs.api7.aihttps://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
+- 使用 [ua-restriction](https://docs.api7.aihttps://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
 - 重置用户密码时不会引起访问令牌失效。
 - 使用 [loggly](https://apisix.apache.org/zh/docs/apisix/plugins/loggly/) 插件时配置能校验成功。
 - API7 网关中的状态字段取值含义和 Apache APISIX 保持一致。
@@ -593,7 +645,7 @@ API7 企业版新增支持对接 SAML 第三方登录。详情见[如何设置�
 
 #### 新插件： Data Mask
 
-Data-mask 插件提供了在请求头、请求体和URL查询中移除或替换敏感信息的能力。了解更多： [Data Mask](https://docs.api7.ai/hub/data-mask)。
+Data-mask 插件提供了在请求头、请求体和URL查询中移除或替换敏感信息的能力。了解更多： [Data Mask](https://docs.api7.aihttps://docs.api7.ai/hub/data-mask)。
 
 ### 功能优化
 
