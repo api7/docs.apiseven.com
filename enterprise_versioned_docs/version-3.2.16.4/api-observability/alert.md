@@ -444,5 +444,3 @@ Number of requests with status code 500 received by all published services of th
 Ratio of requests with status code 500 received by all published services of the gateway group: VIP 网关组 is 15% in the last 60 minutes.
 Ratio of requests with status code 500 received by all published services of the gateway group: US 网关组 is 10% in the last 60 minutes.
 ```
-
-
