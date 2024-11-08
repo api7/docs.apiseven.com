@@ -137,9 +137,9 @@ Ingress Controller 目前不支持凭据和匿名消费者。
 
 ### 验证
 
-有关说明，请参阅[为 API 启用Basic Authentication](../api-security/api-authentication#enable-basic-authentication-for-apis)，并在服务级别启用 `Key Auth 插件`。
+有关说明，请参阅[为 API 启用 Basic Authentication](../api-security/api-authentication#enable-basic-authentication-for-apis)，并在服务级别启用 `Basic Auth 插件`。
 
-然后按照[验证Basic Authentication](../api-security/api-authentication#validate-basic-authentication) 说明进行操作。
+然后按照[验证 Basic Authentication](../api-security/api-authentication#validate-basic-authentication) 说明进行操作。
 
 ## 配置不同的身份验证凭据
 
@@ -188,10 +188,11 @@ values={[
 
 10. **凭据**选项卡下，选择**HMAC 认证**，然后点击**新增 HMAC 认证凭据**。
 11. 在对话框中，执行以下操作：
-   * **名称**，输入 `hmac-auth`。
-   * **密钥 ID** ，输入 `john-key`。
-   * **密钥**，选择**手动输入**，然后输入 `john-hmac-key`。
-   * 点击**新增**。
+
+* **名称**，输入 `hmac-auth`。
+* **密钥 ID** ，输入 `john-key`。
+* **密钥**，选择**手动输入**，然后输入 `john-hmac-key`。
+* 点击**新增**。
 
 </TabItem>
 
