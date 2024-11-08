@@ -293,11 +293,11 @@ spec:
 
 ## 测试配置
 
-- [1 条路由且未启用任何插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/1-one-route-without-plugin.yaml)
-- [1 条路由只启用 limit-count 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/2-one-route-with-limit-count.yaml)
-- [1 条路由同时启用 limit-count 和 key-auth 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/3-one-route-with-key-auth-and-limit-count.yaml)
-- [1 条路由和 1 个消费者只启用 key-auth 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/4-one-route-with-key-auth.yaml)
-- [100 条路由且未启用任何插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/5-100-route-without-plugin.yaml)
-- [100 条路由只启用 limit-count 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/6-100-route-with-limit-count.yaml)
-- [100 条路由和 100 个消费者同时启用 key-auth 和 limit-count 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/7-100-route-and-consumer-with-key-auth-limit-count.yaml)
-- [100 条路由和 100 个消费者只启用 key-auth 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/api7-resources-configuration/8-100-route-and-consumer-with-key-auth.yaml)
+- [1 条路由且未启用任何插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/adc_conf/1-one-route-without-plugin.yaml)
+- [1 条路由只启用 limit-count 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/adc_conf/2-one-route-with-limit-count.yaml)
+- [1 条路由同时启用 limit-count 和 key-auth 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/adc_conf/3-one-route-with-key-auth-and-limit-count.yaml)
+- [1 条路由和 1 个消费者只启用 key-auth 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/adc_conf/4-one-route-with-key-auth.yaml)
+- [100 条路由且未启用任何插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/adc_conf/5-100-route-without-plugin.yaml)
+- [100 条路由只启用 limit-count 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/adc_conf/6-100-route-with-limit-count.yaml)
+- [100 条路由和 100 个消费者同时启用 key-auth 和 limit-count 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/adc_conf/7-100-route-and-consumer-with-key-auth-limit-count.yaml)
+- [100 条路由和 100 个消费者只启用 key-auth 插件](https://github.com/api7/api7-gateway-performance-benchmark/blob/main/adc_conf/8-100-route-and-consumer-with-key-auth.yaml)
