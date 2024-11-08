@@ -384,9 +384,9 @@ curl -i "http://127.0.0.1:9080/ip" -H 'apikey: alice-key'
 
 :::
 
-* Basic凭证，请使用：password: alice-password 进行验证。
-* JWT 身份验证凭证，请使用：secret: alice-secret 进行验证。
-* HMAC 身份验证凭证，请使用：secret-key: alice-secret-key 进行验证。
+* Basic-auth 凭证，请使用：password: alice-password 进行验证。
+* JWT-auth 凭证，请使用：secret: alice-secret 进行验证。
+* HMAC-auth 凭证，请使用：secret-key: alice-secret-key 进行验证。
 
 ## 引用密钥以启用插件
 
