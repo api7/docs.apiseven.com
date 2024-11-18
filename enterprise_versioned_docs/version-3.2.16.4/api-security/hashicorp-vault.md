@@ -1,5 +1,5 @@
 ---
-title: 引用在 HashiCorp Vault 中的密钥
+title: 引用 HashiCorp Vault 中的密钥
 slug: /api-security/hashicorp-vault
 ---
 
