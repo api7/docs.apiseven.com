@@ -30,11 +30,12 @@ docker run -d --cap-add=IPC_LOCK \
 # highlight-start
     -e 'VAULT_DEV_ROOT_TOKEN_ID=api7-quickstart-vault-token' \
     -e 'VAULT_TOKEN=api7-quickstart-vault-token' \
-    --network=api7-quickstart-net \
     --name api7-quickstart-vault \
 # highlight-end
     -p 8200:8200 vault:1.13.0
 ```
+
+选择 `kv` 作为 API7 网关的 SSL 证书存储路径：
 
 API7 网关需要访问 Vault 和检索密钥的权限。你应该创建一个 [HashiCorp 配置语言 (HCL)](https://github.com/hashicorp/hcl) 策略文件来为 API7 网关生成 Vault 访问令牌。在 Vault 实例中创建一个名为 `api7-policy.hcl` 的 Vault 策略文件，以授予 API7 网关对路径 `secret/` 的读取权限。你可以将密钥放在路径 `secret/` 下以允许 API7 网关读取它们：
 
@@ -94,8 +95,8 @@ values={[
    * **Secret 提供商 ID**，输入 `my-vault`。
    * **Secret 管理服务**，选择 `HashiCorp Vault`。
    * **KV 版本**，选择 `KV version 1`。
-   * 填写**Vault 服务器 URL**字段。例如，`127.0.0.1`。
-   * 填写**Secret 前缀**字段。例如，`secret/api7`。
+   * 填写**Vault 服务器 URL**字段。例如，`127.0.0.1:8200`。
+   * 填写**Secret 前缀**字段。例如，`kv/api7`。
    * **身份验证方法**，选择 `Token`。
    * 填写**令牌**字段。
    * 点击**新增**。
@@ -165,7 +166,7 @@ values={[
 为 Key Authentication 凭据创建一个密钥 `key=alice-primary-key`，并将其存储在 Vault 的路径 `secret/api7/consumer/alice` 中。**确保路径与你配置的Secret 前缀一致**：
 
 ```shell
-docker exec api7-quickstart-vault vault kv put secret/api7/consumer/alice key=alice-primary-key
+docker exec api7-quickstart-vault vault kv put kv/api7/consumer/alice key=alice-primary-key
 ```
 
 预期响应类似于以下内容：
@@ -189,19 +190,19 @@ version            1
 * 对于Basic Authentication 凭据：
 
 ```shell
-docker exec api7-quickstart-vault vault kv put secret/api7/consumer/alice password=alice-password
+docker exec api7-quickstart-vault vault kv put kv/api7/consumer/alice password=alice-password
 ```
 
 * 对于 JWT 认证凭据：
 
 ```shell
-docker exec api7-quickstart-vault vault kv put secret/api7/consumer/alice secret=alice-secret
+docker exec api7-quickstart-vault vault kv put kv/api7/consumer/alice secret=alice-secret
 ```
 
 * 对于 HMAC 认证凭据：
 
 ```shell
-docker exec api7-quickstart-vault vault kv put secret/api7/consumer/alice secret-key=alice-secret-key
+docker exec api7-quickstart-vault vault kv put kv/api7/consumer/alice secret-key=alice-secret-key
 ```
 
 ### 新增Key Authentication 凭据
@@ -379,6 +380,32 @@ values={[
 </TabItem>
 
 </Tabs>
+
+## 验证
+
+### 验证 Key Authentication
+
+有关说明，请参阅[为 API 启用 Key Authentication](../api-security/api-authentication#enable-key-authentication-for-apis)，并在服务级别启用 `Key Auth 插件`。
+
+然后按照[验证 Key Authentication](../api-security/api-authentication#validate-key-authentication) 说明进行操作。
+
+### 验证 Basic Authentication
+
+有关说明，请参阅[为 API 启用 Basic Authentication](../api-security/api-authentication#enable-basic-authentication-for-apis)，并在服务级别启用 `Basic Auth 插件`。
+
+然后按照[验证 Basic Authentication](../api-security/api-authentication#validate-basic-authentication) 说明进行操作。
+
+### 验证 JWT Authentication
+
+有关说明，请参阅[为 API 启用 JWT Authentication](../api-security/api-authentication#enable-jwt-authentication-for-apis)，并在服务级别启用 `JWT Auth 插件`。
+
+然后按照[验证 JWT Authentication](../api-security/api-authentication#validate-jwt-authentication) 说明进行操作。
+
+### 验证 HMAC Authentication
+
+有关说明，请参阅[为 API 启用 HMAC Authentication](../api-security/api-authentication#enable-hmac-authentication-for-apis)，并在服务级别启用 `HMAC Auth 插件`。
+
+然后按照[验证 HMAC Authentication](../api-security/api-authentication#validate-hmac-authentication) 说明进行操作。
 
 ## 引用密钥以启用插件
 

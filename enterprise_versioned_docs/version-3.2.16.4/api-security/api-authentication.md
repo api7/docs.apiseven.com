@@ -177,7 +177,7 @@ ADC 使用配置文件作为单一事实来源。因此，请确保将消费者�
 
 <TabItem value="ingress">
 
-创建一个启用了 Key Authentication 的路由的 Kubernetes mainfest文件：
+创建一个启用了 Key Authentication 的路由的 Kubernetes mainfest 文件：
 
 ```yaml title="httpbin-route.yaml"
 apiVersion: apisix.apache.org/v2
@@ -211,11 +211,11 @@ kubectl apply -f httpbin-route.yaml
 
 </Tabs>
 
-### 验证Key Authentication
+### 验证 Key Authentication
 
-按照[配置Key Authentication凭据](../api-consumption/manage-consumer-credentials#configure-key-authentication-credentials)创建具有Key Authentication凭据的消费者。
+按照[配置 Key Authentication 凭据](../api-consumption/manage-consumer-credentials#configure-key-authentication-credentials)创建具有 Key Authentication 凭据的消费者。
 
-然后按照以下步骤验证Key Authentication。
+然后按照以下步骤验证 Key Authentication。
 
 1. 发送不带 `apikey` 请求头的请求：
 
@@ -435,7 +435,7 @@ kubectl apply -f httpbin-route.yaml
 
 ### 验证 Basic Authentication
 
-按照[配置Basic Authentication 凭据](../api-consumption/manage-consumer-credentials#configure-basic-authentication-credentials)创建具有 Basic Authentication 凭据的消费者。
+按照[配置 Basic Authentication 凭据](../api-consumption/manage-consumer-credentials#configure-basic-authentication-credentials)创建具有 Basic Authentication 凭据的消费者。
 
 请按照以下步骤验证 Basic Authentication。
 

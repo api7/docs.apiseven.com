@@ -17,7 +17,7 @@ slug: /release-notes
 
 :::note
 
-现有的`Webhook 模板`将迁移到新的联系人和告警策略内的通知，确保告警策略的无缝过渡和向后兼容性。
+现有的 `Webhook 模板` 将迁移到新的联系人和告警策略内的通知，确保告警策略的无缝过渡和向后兼容性。
 
 :::
 
@@ -645,7 +645,7 @@ API7 企业版新增支持对接 SAML 第三方登录。详情见[如何设置�
 
 #### 新插件： Data Mask
 
-Data-mask 插件提供了在请求头、请求体和URL查询中移除或替换敏感信息的能力。了解更多： [Data Mask](https://docs.api7.aihttps://docs.api7.ai/hub/data-mask)。
+Data-mask 插件提供了在请求头、请求体和 URL 查询中移除或替换敏感信息的能力。了解更多： [Data Mask](https://docs.api7.aihttps://docs.api7.ai/hub/data-mask)。
 
 ### 功能优化
 
