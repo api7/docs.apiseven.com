@@ -1,5 +1,5 @@
 ---
-title: 在 AWS Secrets Manager 中引用密钥
+title: 引用 AWS Secrets Manager 中的密钥
 slug: /api-security/aws-secrets-manager
 ---
 
