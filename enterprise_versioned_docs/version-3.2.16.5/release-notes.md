@@ -44,7 +44,7 @@ slug: /release-notes
 
 使用滑动窗口算法增强了开源的 limit count 插件，以实现更准确的速率限制。
 
-有关详细信息，请参阅 [Limit Count Advanced 插件](https://docs.api7.aihttps://docs.api7.ai/hub/limit-count-advanced)。
+有关详细信息，请参阅 [Limit Count Advanced 插件](https://docs.api7.ai/hub/limit-count-advanced)。
 
 #### 新的 Exit Transformer 插件
 
