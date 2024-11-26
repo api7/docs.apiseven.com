@@ -61,7 +61,7 @@ slug: /release-notes
 
 ### 功能优化
 
-* [JWT Auth 插件](https://docs.api7.aihttps://docs.api7.ai/hub/jwt-auth) 现在支持更多算法。
+* [JWT Auth 插件](https://docs.api7.ai/hub/jwt-auth) 现在支持更多算法。
 * 支持利用表达式匹配来更精确地路由流量。
 * 在 [Grafana 控制台模板](https://grafana.com/grafana/dashboards/11719-apache-apisix/) 中丰富了更多指标。
 * 允许用户按 Enter 键登录。
