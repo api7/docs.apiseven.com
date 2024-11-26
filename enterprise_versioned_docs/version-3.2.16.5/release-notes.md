@@ -71,7 +71,7 @@ slug: /release-notes
 * 解决了问题：[CORS 插件](https://docs.api7.ai/hub/cors) `expose_header` 的默认值不应为 `*`。
 * 解决了问题：添加四层服务时可以成功添加第一个四层路由。
 * 解决了问题：`max_req_body_bytes` 限制在日志记录器插件中不起作用。
-* 解决了问题：[Limit Count 插件](https://docs.api7.aihttps://docs.api7.ai/hub/limit-count) 中速率限制参数的动态更新现在会反映在数据面中。
+* 解决了问题：[Limit Count 插件](https://docs.api7.ai/hub/limit-count) 中速率限制参数的动态更新现在会反映在数据面中。
 * 解决了问题：通过 API 删除的服务可以从数据面中一致地删除。
 
 ## 3.2.16.3 版本
