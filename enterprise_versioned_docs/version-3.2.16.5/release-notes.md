@@ -9,7 +9,7 @@ slug: /release-notes
 
 ### 功能优化
 
-* 为 [body transformer](https://docs.api7.ai/hub/body-transformer) 插件添加了`multipart content type`。
+* 为 [body transformer](https://docs.api7.ai/hub/body-transformer) 插件添加了 `multipart content type`。
 * 将资源 ID 长度限制从 64 调整为 256。
 * [workflow](https://docs.api7.ai/hub/workflow) 插件支持 `limit-count-advanced` 作为操作项。
 * 重构了 `core.response.exit` 以阐明参数定义。
