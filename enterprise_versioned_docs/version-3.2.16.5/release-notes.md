@@ -534,8 +534,8 @@ API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连�
 
 ### 缺陷修复
 
-- 使用 [key-auth](https://docs.api7.aihttps://docs.api7.aihttps://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
-- 使用 [ua-restriction](https://docs.api7.aihttps://docs.api7.aihttps://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
+- 使用 [key-auth](https://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
+- 使用 [ua-restriction](https://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
 - 重置用户密码时不会引起访问令牌失效。
 - 使用 [loggly](https://apisix.apache.org/zh/docs/apisix/plugins/loggly/) 插件时配置能校验成功。
 - API7 网关中的状态字段取值含义和 Apache APISIX 保持一致。
