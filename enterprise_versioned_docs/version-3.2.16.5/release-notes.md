@@ -3,6 +3,25 @@ title: 更新日志
 slug: /release-notes
 ---
 
+## 3.2.16.5 版本
+
+**发布日期：** 2024-11-21
+
+### 功能优化
+
+* 为 [body transformer](https://docs.api7.ai/hub/body-transformer) 插件添加了 `multipart content type`。
+* 将资源 ID 长度限制从 64 调整为 256。
+* [workflow](https://docs.api7.ai/hub/workflow) 插件支持 `limit-count-advanced` 作为操作项。
+* 重构了 `core.response.exit` 以阐明参数定义。
+* 在请求上下文中记录已执行的插件，以确保在使用 [workflow](https://docs.api7.ai/hub/workflow) 插件时，同一插件仅被执行一次。
+
+### 缺陷修复
+
+* 解决了问题：在 [Prometheus](https://docs.api7.ai/hub/prometheus) 插件中启用 `prefer_name` 选项将导致监控页面上的过滤器发生故障。
+* 解决了问题：匹配匿名消费者时，不会将 `x-consumer-custom-id` 标头添加到请求中。
+* 解决了问题：当同时配置时，[body transformer](https://docs.api7.ai/hub/body-transformer) 插件和 [CORS](https://docs.api7.ai/hub/cors) 插件会导致 OPTIONS 请求出错。
+* 临时删除了 [exit transformer](https://docs.api7.ai/hub/exit-transformer) 插件中的沙箱机制。
+
 ## 3.2.16.4 版本
 
 **发布日期：** 2024-11-01
@@ -515,8 +534,8 @@ API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连�
 
 ### 缺陷修复
 
-- 使用 [key-auth](https://docs.api7.aihttps://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
-- 使用 [ua-restriction](https://docs.api7.aihttps://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
+- 使用 [key-auth](https://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
+- 使用 [ua-restriction](https://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
 - 重置用户密码时不会引起访问令牌失效。
 - 使用 [loggly](https://apisix.apache.org/zh/docs/apisix/plugins/loggly/) 插件时配置能校验成功。
 - API7 网关中的状态字段取值含义和 Apache APISIX 保持一致。
@@ -645,7 +664,7 @@ API7 企业版新增支持对接 SAML 第三方登录。详情见[如何设置�
 
 #### 新插件： Data Mask
 
-Data-mask 插件提供了在请求头、请求体和 URL 查询中移除或替换敏感信息的能力。了解更多： [Data Mask](https://docs.api7.aihttps://docs.api7.ai/hub/data-mask)。
+Data-mask 插件提供了在请求头、请求体和 URL 查询中移除或替换敏感信息的能力。了解更多： [Data Mask](https://docs.api7.ai/hub/data-mask)。
 
 ### 功能优化
 
