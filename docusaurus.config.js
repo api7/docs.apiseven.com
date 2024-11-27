@@ -57,8 +57,12 @@ const config = {
       {
         specs: [
           {
+            spec: "https://run.api7.ai/api7-ee/openapi-latest.json",
+            route: "/enterprise/reference/admin-api",
+          },
+          {
             spec: "enterprise_versioned_docs/version-3.2.11.8/reference/admin-api.json",
-            route: "/enterprise/reference/admin-api"
+            route: "/enterprise/3.2.11.8/reference/admin-api"
           }
         ],
         theme: {
