@@ -15,8 +15,8 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 ## 前提条件
 
-1. [安装 API7 企业版](../getting-started/install-api7-ee.md)。
-2. [在网关组上有一个运行的 API](../getting-started/launch-your-first-api.md)。
+1. [安装 API7 企业版](../getting-started/install-api7-ee)。
+2. [在网关组上有一个运行的 API](../getting-started/launch-your-first-api)。
 
 ## 生成证书和密钥
 
@@ -196,6 +196,6 @@ curl -ikv --resolve "test.com:9443:127.0.0.1" "https://test.com:9443/ip"
 ## 相关阅读
 
 - 核心概念
-  - [SSL 证书](../key-concepts/ssl-certificates.md)
+  - [SSL 证书](../key-concepts/ssl-certificates)
 - 快速入门
-  - [创建一个简单的 API](../getting-started/launch-your-first-api.md)
+  - [创建一个简单的 API](../getting-started/launch-your-first-api)

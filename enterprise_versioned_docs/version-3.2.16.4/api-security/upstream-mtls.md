@@ -13,9 +13,9 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 ## 前提条件
 
-1. [安装 API7 企业版](../getting-started/install-api7-ee.md)。
-2. [在网关组上有一个运行的 API](../getting-started/launch-your-first-api.md)。
-3. 在 API7 Enterprise 上创建一个令牌。
+1. [安装 API7 企业版](../getting-started/install-api7-ee)。
+2. [在网关组上有一个运行的 API](../getting-started/launch-your-first-api)。
+3. 在 API7 企业版上创建一个令牌。
 
 ## 生成证书和密钥
 
@@ -238,6 +238,6 @@ curl -ik "http://127.0.0.1:9080/hello"
 ## 相关阅读
 
 - 核心概念
-  - [SSL 证书](../key-concepts/services.md)
+  - [SSL 证书](../key-concepts/services)
 - 快速入门
-  - [创建一个简单的 API](../getting-started/launch-your-first-api.md)
+  - [创建一个简单的 API](../getting-started/launch-your-first-api)
