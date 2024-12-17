@@ -51,7 +51,8 @@
         "api-security/api-authentication",
         "api-security/rate-limiting",
         "api-security/block-ip",
-        "api-security/configure-mtls",
+        "api-security/client-mtls",
+        "api-security/upstream-mtls",
         "api-security/aws-secrets-manager",
         "api-security/hashicorp-vault"
       ]
