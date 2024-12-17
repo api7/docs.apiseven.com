@@ -196,6 +196,6 @@ curl -ikv --resolve "test.com:9443:127.0.0.1" "https://test.com:9443/ip"
 ## 相关阅读
 
 - 核心概念
-  - [SSL 证书](../key-concepts/services.md)
+  - [SSL 证书](../key-concepts/ssl-certificates.md)
 - 快速入门
   - [创建一个简单的 API](../getting-started/launch-your-first-api.md)
