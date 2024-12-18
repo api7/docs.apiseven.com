@@ -254,7 +254,7 @@ slug: /release-notes
 
 :::info
 
-这是一项不兼容变更。不再支持为消费者创建新的身份验证插件（key-auth、basic-auth、JWT-auth 或 HMAC-auth）。请改用消费者凭据。现有的插件配置将保持可访问和可编辑，直到被禁用。
+这是一项不兼容变更。不再支持为消费者创建新的身份验证插件（Key Auth、Basic Auth、JWT Auth 或 HMAC Auth）。请改用消费者凭据。现有的插件配置将保持可访问和可编辑，直到被禁用。
 
 :::
 
