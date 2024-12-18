@@ -56,7 +56,7 @@ slug: /release-notes
 * 解决了问题：在 [Prometheus](https://docs.api7.ai/hub/prometheus) 插件中启用 `prefer_name` 选项将导致监控页面上的过滤器发生故障。
 * 解决了问题：匹配匿名消费者时，不会将 `x-consumer-custom-id` 标头添加到请求中。
 * 解决了问题：当同时配置时，[Body Transformer](https://docs.api7.ai/hub/body-transformer) 插件和 [CORS](https://docs.api7.ai/hub/cors) 插件会导致 OPTIONS 请求出错。
-* 临时删除了 [Exit transformer](https://docs.api7.ai/hub/exit-transformer) 插件中的沙箱机制。
+* 临时删除了 [Exit Transformer](https://docs.api7.ai/hub/exit-transformer) 插件中的沙箱机制。
 
 ## 3.2.16.4 版本
 
