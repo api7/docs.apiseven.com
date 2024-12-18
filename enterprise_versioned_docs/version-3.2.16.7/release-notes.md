@@ -174,7 +174,7 @@ slug: /release-notes
 
 ### 功能优化
 
-* 提升了开发者门户(Beta) 性能。
+* 提升了 API7 Portal(Beta) 性能。
 
 ### 缺陷修复
 
@@ -416,7 +416,7 @@ API7 企业版改进了传统的基于角色的权限，采用了权限策略架
 
 - 从旧版本升级可能会导致上游数据丢失或 404 错误。
 - 服务请求 URL 更新期间遇到 UI 错误。
-- 修复了开发者门户库问题。
+- 修复了 API7 Portal(Beta) 库问题。
 - 修复了 HTTP logger 插件内存泄漏。
 - 前端和后端密码策略不一致。
 - 当 GET 请求与任何路由都不匹配时，[Data Mask](https://docs.api7.ai/hub/data-mask) 插件会报告错误。
