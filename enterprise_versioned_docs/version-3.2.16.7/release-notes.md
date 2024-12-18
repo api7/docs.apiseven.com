@@ -549,7 +549,7 @@ Prometheus 远程写入现在支持 Basic Auth/mTLS。
 
 #### 四层路由（Stream Route）
 
-API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连接。 添加一个四层类型的服务，并在其中添加若干个四层路由（Stream Route，即可[转发四层流量](./getting-started/proxy-l4-traffic.md).
+API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连接。 添加一个四层类型的服务，并在其中添加若干个四层路由（Stream Route，即可[转发四层流量](./getting-started/proxy-l4-traffic.md)。
 
 #### 自定义角色 (控制台支持)
 
