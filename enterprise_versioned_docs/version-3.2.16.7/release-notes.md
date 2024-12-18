@@ -531,7 +531,7 @@ Prometheus 远程写入现在支持 Basic Auth/mTLS。
 
 ### Admin API 不兼容变更
 
-1. service status 字段从 0: 启用，1: 禁用 变更为 0:禁用，1: 启用
+1. service status 字段从“0: 启用，1: 禁用”变更为“0: 禁用，1: 启用”
 
 - [Publish a service](https://docs.api7.ai/enterprise/reference/admin-api#tag/Services/paths/~1api~1services~1publish/post)
 - [Update service runtime configurations by ID](https://docs.api7.ai/enterprise/reference/admin-api#tag/Gateway-Groups/operation/changeServiceRuntimeConfiguration)
