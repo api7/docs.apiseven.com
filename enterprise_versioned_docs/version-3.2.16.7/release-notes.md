@@ -555,9 +555,9 @@ API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连�
 
 当默认提供的角色无法满足需求时，你可以自行设计自定义角色，实现精细化权限控制。可参阅[添加自定义角色](./getting-started/rbac.md)
 
-#### Ingress 控制器(Beta 测试版, 仅 API 支持)
+#### Ingress Controller（Beta 测试版，仅 API 支持）
 
-集成 Ingress 控制器.
+集成 Ingress Controller。
 
 ### 功能优化
 
