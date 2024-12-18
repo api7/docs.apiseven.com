@@ -22,7 +22,7 @@ slug: /release-notes
 
 ### 功能优化
 
-* [JWT 认证](https://docs.api7.ai/hub/jwt-auth) 插件支持 `key_claim_name`。
+* [JWT Auth](https://docs.api7.ai/hub/jwt-auth) 插件支持 `key_claim_name`。
 * 为监控添加了网关组过滤。
 
 ### 缺陷修复
@@ -45,18 +45,18 @@ slug: /release-notes
 
 ### 功能优化
 
-* 为 [body transformer](https://docs.api7.ai/hub/body-transformer) 插件添加了 `multipart content type`。
+* 为 [Body Transformer](https://docs.api7.ai/hub/body-transformer) 插件添加了 `multipart content type`。
 * 将资源 ID 长度限制从 64 调整为 256。
-* [workflow](https://docs.api7.ai/hub/workflow) 插件支持 `limit-count-advanced` 作为操作项。
+* [Workflow](https://docs.api7.ai/hub/workflow) 插件支持 `limit-count-advanced` 作为操作项。
 * 重构了 `core.response.exit` 以阐明参数定义。
-* 在请求上下文中记录已执行的插件，以确保在使用 [workflow](https://docs.api7.ai/hub/workflow) 插件时，同一插件仅被执行一次。
+* 在请求上下文中记录已执行的插件，以确保在使用 [Workflow](https://docs.api7.ai/hub/workflow) 插件时，同一插件仅被执行一次。
 
 ### 缺陷修复
 
 * 解决了问题：在 [Prometheus](https://docs.api7.ai/hub/prometheus) 插件中启用 `prefer_name` 选项将导致监控页面上的过滤器发生故障。
 * 解决了问题：匹配匿名消费者时，不会将 `x-consumer-custom-id` 标头添加到请求中。
-* 解决了问题：当同时配置时，[body transformer](https://docs.api7.ai/hub/body-transformer) 插件和 [CORS](https://docs.api7.ai/hub/cors) 插件会导致 OPTIONS 请求出错。
-* 临时删除了 [exit transformer](https://docs.api7.ai/hub/exit-transformer) 插件中的沙箱机制。
+* 解决了问题：当同时配置时，[Body Transformer](https://docs.api7.ai/hub/body-transformer) 插件和 [CORS](https://docs.api7.ai/hub/cors) 插件会导致 OPTIONS 请求出错。
+* 临时删除了 [Exit transformer](https://docs.api7.ai/hub/exit-transformer) 插件中的沙箱机制。
 
 ## 3.2.16.4 版本
 
@@ -80,13 +80,11 @@ slug: /release-notes
 
 使用滑动窗口算法增强了开源的 limit count 插件，以实现更准确的速率限制。
 
-有关详细信息，请参阅 [Limit Count Advanced 插件](https://docs.api7.ai/hub/limit-count-advanced)。
+有关详细信息，请参阅 [Limit Count Advanced](https://docs.api7.ai/hub/limit-count-advanced)插件。
 
 #### 新的 Exit Transformer 插件
 
-`exit-transformer` 插件支持根据 APISIX 插件返回的状态码、标头和正文来自定义网关响应。当配置为全局插件时，它还支持在请求不存在的路由时自定义响应。
-
-有关详细信息，请参阅 [Exit Transformer 插件](https://docs.api7.ai/hub/exit-transformer)。
+[Exit transformer](https://docs.api7.ai/hub/exit-transformer) 插件支持根据 APISIX 插件返回的状态码、标头和正文来自定义网关响应。当配置为全局插件时，它还支持在请求不存在的路由时自定义响应。
 
 #### 通过告警策略计算网关组中的健康网关实例数
 
@@ -97,17 +95,17 @@ slug: /release-notes
 
 ### 功能优化
 
-* [JWT Auth 插件](https://docs.api7.ai/hub/jwt-auth) 现在支持更多算法。
+* [JWT Auth](https://docs.api7.ai/hub/jwt-auth) 插件 现在支持更多算法。
 * 支持利用表达式匹配来更精确地路由流量。
 * 在 [Grafana 控制台模板](https://grafana.com/grafana/dashboards/11719-apache-apisix/) 中丰富了更多指标。
 * 允许用户按 Enter 键登录。
 
 ### 缺陷修复
 
-* 解决了问题：[CORS 插件](https://docs.api7.ai/hub/cors) `expose_header` 的默认值不应为 `*`。
+* 解决了问题：[CORS](https://docs.api7.ai/hub/cors)插件 `expose_header` 的默认值不应为 `*`。
 * 解决了问题：添加四层服务时可以成功添加第一个四层路由。
 * 解决了问题：`max_req_body_bytes` 限制在日志记录器插件中不起作用。
-* 解决了问题：[Limit Count 插件](https://docs.api7.ai/hub/limit-count) 中速率限制参数的动态更新现在会反映在数据面中。
+* 解决了问题：[Limit Count](https://docs.api7.ai/hub/limit-count) 插件中速率限制参数的动态更新现在会反映在数据面中。
 * 解决了问题：通过 API 删除的服务可以从数据面中一致地删除。
 
 ## 3.2.16.3 版本
@@ -139,7 +137,7 @@ slug: /release-notes
 * 支持 200 万量级消费者。
 * 消费者列表支持按名称排序。
 * 从 API7 网关中删除了 `conf_server`。
-* 改进了速率限制相关插件以使其更加灵活，允许针对每个服务/路由进行特定于消费者的速率限制。有关详细信息，请参阅 `Limit Count 插件` 和 `Limit Req 插件`。
+* 改进了速率限制相关插件以使其更加灵活，允许针对每个服务/路由进行特定于消费者的速率限制。有关详细信息，请参阅 [Limit Count](https://docs.api7.ai/hub/limit-count) 插件 和 [Limit Req](https://docs.api7.ai/hub/limit-req) 插件。
 * 升级请求和响应转换插件：
   * 在请求转换期间，支持传递 Lua 代码以获取值。
   * 对齐 Kong 的请求转换和响应转换的功能。
@@ -154,10 +152,10 @@ slug: /release-notes
 ### 缺陷修复
 
 * 解决了问题：现在可以在控制台上为单个路由配置多个路径。
-* 解决了问题：`OpenTelemetry 插件`不支持 `set_ngx_var`。
-* 解决了问题：`ACL 插件` 在正常使用情况下不应输出警告日志。
+* 解决了问题：[OpenTelemetry](https://docs.api7.ai/hub/opentelemetry) 插件不支持 `set_ngx_var`。
+* 解决了问题：[ACL](https://docs.api7.ai/hub/limit-count) 插件 在正常使用情况下不应输出警告日志。
 * 增强了数据面 `lua_ssl_trusted_certificate` 配置项。
-* 将 `Body Transformer 插件` 代码与 APISIX 主线版本同步。
+* 将 [Body Transformer](https://docs.api7.ai/hub/body-transformer) 插件代码与 APISIX 主线版本同步。
 * 解决了问题：当在服务上配置了流模块不可用的插件时，数据面会打印错误日志。
 * 将 Token 的 `Edit` 操作更改为 `Edit Name`。
 * 解决了问题：编辑服务注册中心时，服务发现类型与表单不符。
@@ -181,7 +179,7 @@ slug: /release-notes
 ### 缺陷修复
 
 * 解决了删除路由时 `radixtree_host_uri` 路由模式下的 panic 问题。
-* 解决了自定义认证类型插件与 `multi-auth` 插件不兼容的问题。
+* 解决了自定义认证类型插件与[Multi Auth](https://docs.api7.ai/hub/multi-auth) 插件不兼容的问题。
 
 ## 3.2.16.0 版本
 
@@ -216,9 +214,9 @@ slug: /release-notes
 
 * 修复了问题：未正确清理的 `config_listen.sock` 导致数据面无法启动。
 * 修复了问题：禁用服务后请求接口报 `404` 错误。
-* 为 `splunk-hec-logging` 插件添加了 `keepalive_timeout` 配置。
+* 为 [Splunk-Hec-Logging](https://docs.api7.ai/hub/splunk-hec-logging) 插件添加了 `keepalive_timeout` 配置。
 * 修复了消费者的标签分割后各元素还保留分隔符前后的空白问题。
-* 修复了问题：`Skywalking` 插件销毁后无法重新启动。
+* 修复了问题：[Skywalking](https://docs.api7.ai/hub/skywalking) 插件销毁后无法重新启动。
 * 修复了问题：数据面没有正确处理非认证插件配置在消费者上时的加解密。
 * 修复了问题：内置权限策略应无法删除。
 * 修复了问题：ingress controller 类型网关组应能够删除。
@@ -236,7 +234,7 @@ slug: /release-notes
 
 ### 缺陷修复
 
-* 调整 `attach-consumer-label` 插件到 `before_proxy` 阶段执行。
+* 调整 [Attach Consumer Label](https://docs.api7.ai/hub/attach-consumer-label) 插件到 `before_proxy` 阶段执行。
 
 ## 3.2.15.1 版本
 
@@ -260,7 +258,7 @@ slug: /release-notes
 
 :::
 
-消费者凭据通过允许多个凭据对应每个消费者来增强灵活性。它们取代了传统的身份验证插件，如 key-auth、basic-auth、JWT-auth 和 HMAC-auth，提供了更友好的用户体验。有关详细信息，请参阅[管理消费者凭据](./api-consumption/manage-consumer-credentials.md)。
+消费者凭据通过允许多个凭据对应每个消费者来增强灵活性。它们取代了传统的身份验证插件，如 [Key Auth](https://docs.api7.ai/hub/key-auth)、[Basic Auth](https://docs.api7.ai/hub/basic-auth)、[JWT Auth](https://docs.api7.ai/hub/jwt-auth) 和 [HMAC Auth](https://docs.api7.ai/hub/hmac-auth)，提供了更友好的用户体验。有关详细信息，请参阅[管理消费者凭据](./api-consumption/manage-consumer-credentials.md)。
 
 ### 安全
 
@@ -371,7 +369,7 @@ API7 网关允许为各个路由配置不同的上游超时，以覆盖上游侧
 
 ### 缺陷修复
 
-* 将 datadog 插件修复 (https://github.com/apache/apisix/pull/11354) 合并到 API7 企业版。
+* 将 [Datadog](https://docs.api7.ai/hub/datadog) 插件修复 (https://github.com/apache/apisix/pull/11354) 合并到 API7 企业版。
 * 修复了控制台上数据面不可见的问题。
 * 修复了一个问题：将 Prometheus 数据报告方法从远程写入更改为抓取后，服务注册表状态始终显示为“断开连接”。
 * 修复了通过控制台部署自定义插件后，数据面遇到错误的问题。
@@ -421,7 +419,7 @@ API7 企业版改进了传统的基于角色的权限，采用了权限策略架
 - 修复了开发者门户库问题。
 - 修复了 HTTP logger 插件内存泄漏。
 - 前端和后端密码策略不一致。
-- 当 GET 请求与任何路由都不匹配时，`data-mask` 插件会报告错误。
+- 当 GET 请求与任何路由都不匹配时，[Data Mask](https://docs.api7.ai/hub/data-mask) 插件会报告错误。
 - ApisixUpstream CRD 的 status 字段记录不正确。
 - 数据面支持配置监控数据的报告间隔。
 - 修复了配置插件元数据后的警告日志。
@@ -570,8 +568,8 @@ API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连�
 
 ### 缺陷修复
 
-- 使用 [key-auth](https://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
-- 使用 [ua-restriction](https://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
+- 使用 [Key Auth](https://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
+- 使用 [UA Restriction](https://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
 - 重置用户密码时不会引起访问令牌失效。
 - 使用 [loggly](https://apisix.apache.org/zh/docs/apisix/plugins/loggly/) 插件时配置能校验成功。
 - API7 网关中的状态字段取值含义和 Apache APISIX 保持一致。
@@ -700,7 +698,7 @@ API7 企业版新增支持对接 SAML 第三方登录。详情见[如何设置�
 
 #### 新插件： Data Mask
 
-Data-mask 插件提供了在请求头、请求体和 URL 查询中移除或替换敏感信息的能力。了解更多： [Data Mask](https://docs.api7.ai/hub/data-mask)。
+[Data Mask](https://docs.api7.ai/hub/data-mask) 插件提供了在请求头、请求体和 URL 查询中移除或替换敏感信息的能力。
 
 ### 功能优化
 
