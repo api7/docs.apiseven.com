@@ -84,7 +84,7 @@ slug: /release-notes
 
 #### 新的 Exit Transformer 插件
 
-[Exit transformer](https://docs.api7.ai/hub/exit-transformer) 插件支持根据 APISIX 插件返回的状态码、标头和正文来自定义网关响应。当配置为全局插件时，它还支持在请求不存在的路由时自定义响应。
+[Exit Transformer](https://docs.api7.ai/hub/exit-transformer) 插件支持根据 APISIX 插件返回的状态码、标头和正文来自定义网关响应。当配置为全局插件时，它还支持在请求不存在的路由时自定义响应。
 
 #### 通过告警策略计算网关组中的健康网关实例数
 
