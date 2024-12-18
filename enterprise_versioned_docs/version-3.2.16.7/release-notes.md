@@ -153,7 +153,7 @@ slug: /release-notes
 
 * 解决了问题：现在可以在控制台上为单个路由配置多个路径。
 * 解决了问题：[OpenTelemetry](https://docs.api7.ai/hub/opentelemetry) 插件不支持 `set_ngx_var`。
-* 解决了问题：[ACL](https://docs.api7.ai/hub/limit-count) 插件 在正常使用情况下不应输出警告日志。
+* 解决了问题：[ACL](https://docs.api7.ai/hub/acl) 插件 在正常使用情况下不应输出警告日志。
 * 增强了数据面 `lua_ssl_trusted_certificate` 配置项。
 * 将 [Body Transformer](https://docs.api7.ai/hub/body-transformer) 插件代码与 APISIX 主线版本同步。
 * 解决了问题：当在服务上配置了流模块不可用的插件时，数据面会打印错误日志。
