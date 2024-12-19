@@ -61,14 +61,6 @@
     },
     {
       "type": "category",
-      "label": "API 消费",
-      "items": [
-        "api-consumption/manage-consumer-credentials",
-        "api-consumption/consumer-restriction"
-      ]
-    },
-    {
-      "type": "category",
       "label": "API 可观测性",
       "items": [
         "api-observability/monitoring",
@@ -78,11 +70,18 @@
     },
     {
       "type": "category",
-      "label": "高可用",
+      "label": "API 消费",
       "items": [
-        "high-availability/overview",
-        "high-availability/prepare-for-high-availability",
-        "high-availability/high-availability-installation"
+        "api-consumption/manage-consumer-credentials",
+        "api-consumption/consumer-restriction"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "API 门户",
+      "items": [
+        "api-portal/productize-services",
+        "api-portal/developer-sso"
       ]
     },
     {
