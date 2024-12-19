@@ -1,0 +1,136 @@
+{
+  "docs": [
+    {
+      "type": "category",
+      "label": "产品介绍",
+      "items": [
+        "introduction/what-is-api7-ee",
+        "introduction/api7-ee-architecture"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "核心概念",
+      "items": [
+        "key-concepts/overview",
+        "key-concepts/services",
+        "key-concepts/routes",
+        "key-concepts/upstreams",
+        "key-concepts/gateway-groups",
+        "key-concepts/stream-routes",
+        "key-concepts/consumers",
+        "key-concepts/plugins",
+        "key-concepts/roles-and-permission-policies",
+        "key-concepts/authentication",
+        "key-concepts/ssl-certificates"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "快速入门",
+      "items": [
+        "getting-started/install-api7-ee",
+        "getting-started/deploy-resources-on-k8s",
+        "getting-started/launch-your-first-api",
+        "getting-started/add-gateway-group",
+        "getting-started/add-gateway-instance",
+        "getting-started/proxy-l4-traffic",
+        "getting-started/create-custom-role",
+        "getting-started/rbac",
+        "getting-started/license",
+        "getting-started/canary-upstream",
+        "getting-started/publish-service",
+        "getting-started/sync-service",
+        "getting-started/rollback-service",
+        "getting-started/audit-logging"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "API 安全",
+      "items": [
+        "api-security/api-authentication",
+        "api-security/rate-limiting",
+        "api-security/block-ip",
+        "api-security/client-mtls",
+        "api-security/upstream-mtls"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "API 消费",
+      "items": [
+        "api-consumption/manage-consumer-credentials",
+        "api-consumption/consumer-restriction"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "API 可观测性",
+      "items": [
+        "api-observability/monitoring",
+        "api-observability/logging",
+        "api-observability/alert"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "高可用",
+      "items": [
+        "high-availability/overview",
+        "high-availability/prepare-for-high-availability",
+        "high-availability/high-availability-installation"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "性能测试",
+      "items": [
+        "performance/performance-testing",
+        "performance/benchmark",
+        {
+          "type": "category",
+          "label": "Kubernetes 环境测试指南",
+          "items": [
+            "performance/aws-eks"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "最佳实践",
+      "items": [
+        "best-practices/api-version-control",
+        "best-practices/configure-grpc",
+        "best-practices/manage-token",
+        "best-practices/upstream-ha",
+        "best-practices/service-discovery",
+        "best-practices/manage-services-in-multi-environments",
+        "best-practices/sso",
+        "best-practices/devops-adc",
+        "best-practices/design-custom-role-system"
+      ]
+    },
+    {
+      "type": "doc",
+      "label": "更新日志",
+      "id": "release-notes"
+    },
+    {
+      "type": "category",
+      "label": "开发参考",
+      "items": [
+        {
+          "type": "link",
+          "label": "Admin APIs",
+          "href": "/enterprise/reference/admin-api"
+        },
+        "reference/adc",
+        "reference/permission-policy-action-and-resource",
+        "reference/permission-policy-example",
+        "reference/hardening"
+      ]
+    }
+  ]
+}
