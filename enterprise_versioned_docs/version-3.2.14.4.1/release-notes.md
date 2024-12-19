@@ -102,7 +102,7 @@ API7 网关允许为各个路由配置不同的上游超时，以覆盖上游侧
 
 ### 缺陷修复
 
-* 将 datadog 插件修复 (https://github.com/apache/apisix/pull/11354) 合并到 API7 企业版。
+* 将 [Datadog](https://docs.api7.ai/hub/datadog) 插件修复 (https://github.com/apache/apisix/pull/11354) 合并到 API7 企业版。
 * 修复了控制台上数据面不可见的问题。
 * 修复了一个问题：将 Prometheus 数据报告方法从远程写入更改为抓取后，服务注册表状态始终显示为“断开连接”。
 * 修复了通过控制台部署自定义插件后，数据面遇到错误的问题。
@@ -149,10 +149,10 @@ API7 企业版改进了传统的基于角色的权限，采用了权限策略架
 
 - 从旧版本升级可能会导致上游数据丢失或 404 错误。
 - 服务请求 URL 更新期间遇到 UI 错误。
-- 修复了开发者门户库问题。
-- 修复了 HTTP logger 插件内存泄漏。
+- 修复了 API7 Portal (Beta) 库问题。
+- 修复了 [HTTP Logger](https://docs.api7.ai/hub/http-logger) 插件内存泄漏。
 - 前端和后端密码策略不一致。
-- 当 GET 请求与任何路由都不匹配时，`data-mask` 插件会报告错误。
+- 当 GET 请求与任何路由都不匹配时，[Data Mask](https://docs.api7.ai/hub/data-mask) 插件会报告错误。
 - ApisixUpstream CRD 的 status 字段记录不正确。
 - 数据面支持配置监控数据的报告间隔。
 - 修复了配置插件元数据后的警告日志。
@@ -209,15 +209,15 @@ API7 企业版改进了传统的基于角色的权限，采用了权限策略架
 
 #### 在网关组上创建/更新服务而不发布
 
-如果版本控制不是您的要求，您现在可以直接在网关组上创建服务。这些服务会立即生效，无需单独的发布步骤。这简化了部署过程并节省了时间。
+如果版本控制不是你的要求，你现在可以直接在网关组上创建服务。这些服务会立即生效，无需单独的发布步骤。这简化了部署过程并节省了时间。
 
-但是，重要的是要考虑所涉及的权衡。通过绕过发布阶段，您也失去了轻松回滚到以前版本或跟踪版本更改的能力。
+但是，重要的是要考虑所涉及的权衡。通过绕过发布阶段，你也失去了轻松回滚到以前版本或跟踪版本更改的能力。
 
-有关详细信息，请参阅最新的入门教程：[启动您的第一个 API](./getting-started/launch-your-first-api.md)。
+有关详细信息，请参阅最新的入门教程：[启动你的第一个 API](./getting-started/launch-your-first-api.md)。
 
 #### 与 Ingress Controller 集成（UI 支持）
 
-API7 Gateway 正式推出 Ingress Controllers，这是一种新型的网关组。虽然控制台提供了方便的管理功能来创建和查看您的 Ingress Controller，但配置修改需要对任何配置更改采用声明方式。
+API7 Gateway 正式推出 Ingress Controllers，这是一种新型的网关组。虽然控制台提供了方便的管理功能来创建和查看你的 Ingress Controller，但配置修改需要对任何配置更改采用声明方式。
 
 ### 功能优化
 
@@ -264,7 +264,7 @@ Prometheus 远程写入现在支持 Basic Auth/mTLS。
 
 ### Admin API 不兼容变更
 
-1. service status 字段从 0: 启用，1: 禁用 变更为 0:禁用，1: 启用
+1. service status 字段从“0: 启用，1: 禁用”变更为“0: 禁用，1: 启用”
 
 - [Publish a service](https://docs.api7.ai/enterprise/reference/admin-api#tag/Services/paths/~1api~1services~1publish/post)
 - [Update service runtime configurations by ID](https://docs.api7.ai/enterprise/reference/admin-api#tag/Gateway-Groups/operation/changeServiceRuntimeConfiguration)
@@ -282,15 +282,15 @@ Prometheus 远程写入现在支持 Basic Auth/mTLS。
 
 #### 四层路由（Stream Route）
 
-API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连接。 添加一个四层类型的服务，并在其中添加若干个四层路由（Stream Route，即可[转发四层流量](./getting-started/proxy-l4-traffic.md).
+API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连接。 添加一个四层类型的服务，并在其中添加若干个四层路由（Stream Route，即可[转发四层流量](./getting-started/proxy-l4-traffic.md)。
 
 #### 自定义角色 (控制台支持)
 
 当默认提供的角色无法满足需求时，你可以自行设计自定义角色，实现精细化权限控制。可参阅[添加自定义角色](./getting-started/rbac.md)
 
-#### Ingress 控制器(Beta 测试版, 仅 API 支持)
+#### Ingress Controller（Beta 测试版，仅 API 支持）
 
-集成 Ingress 控制器.
+集成 Ingress Controller。
 
 ### 功能优化
 
@@ -301,10 +301,10 @@ API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连�
 
 ### 缺陷修复
 
-- 使用 [key-auth](https://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
-- 使用 [ua-restriction](https://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
+- 使用 [Key Auth](https://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
+- 使用 [UA Restriction](https://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
 - 重置用户密码时不会引起访问令牌失效。
-- 使用 [loggly](https://apisix.apache.org/zh/docs/apisix/plugins/loggly/) 插件时配置能校验成功。
+- 使用 [Loggly](https://apisix.apache.org/zh/docs/apisix/plugins/loggly/) 插件时配置能校验成功。
 - API7 网关中的状态字段取值含义和 Apache APISIX 保持一致。
 
 ## 版本 3.2.11.3
@@ -431,7 +431,7 @@ API7 企业版新增支持对接 SAML 第三方登录。详情见[如何设置�
 
 #### 新插件： Data Mask
 
-Data-mask 插件提供了在请求头、请求体和URL查询中移除或替换敏感信息的能力。了解更多： [Data Mask](https://docs.api7.ai/hub/data-mask)。
+[Data Mask](https://docs.api7.ai/hub/data-mask) 插件提供了在请求头、请求体和 URL 查询中移除或替换敏感信息的能力。
 
 ### 功能优化
 
