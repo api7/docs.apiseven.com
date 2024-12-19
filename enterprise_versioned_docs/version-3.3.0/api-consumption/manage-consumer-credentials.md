@@ -13,6 +13,12 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 消费者可以使用多种不同类型的凭据，所有凭据在身份验证方面都被视为平等的。
 
+:::note
+
+在实施基于消费者的凭据管理之前，请考虑 [开发者](../key-concepts/developers) 是否是更好的解决方案。
+
+:::
+
 本教程将指导你创建消费者和配置身份验证凭据。
 
 ## 前提条件
