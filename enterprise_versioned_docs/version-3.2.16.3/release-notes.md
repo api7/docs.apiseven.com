@@ -32,7 +32,7 @@ slug: /release-notes
 * 支持 200 万量级消费者。
 * 消费者列表支持按名称排序。
 * 从 API7 网关中删除了 `conf_server`。
-* 改进了速率限制相关插件以使其更加灵活，允许针对每个服务/路由进行特定于消费者的速率限制。有关详细信息，请参阅 `Limit Count 插件` 和 `Limit Req 插件`。
+* 改进了速率限制相关插件以使其更加灵活，允许针对每个服务/路由进行特定于消费者的速率限制。有关详细信息，请参阅 [Limit Count](https://docs.api7.ai/hub/limit-count) 插件 和 [Limit Req](https://docs.api7.ai/hub/limit-req) 插件。
 * 升级请求和响应转换插件：
   * 在请求转换期间，支持传递 Lua 代码以获取值。
   * 对齐 Kong 的请求转换和响应转换的功能。
@@ -42,15 +42,15 @@ slug: /release-notes
 * 在因多设备登录而重定向到登录页面之前显示通知，说明登出原因。
 * 改善了前端页面响应速度和加载速度。
 * 优化了“使用上游超时”UI。
-* 优化了 API7 Portal(Beta) 列表页渲染速度。
+* 优化了 API7 Portal (Beta) 列表页渲染速度。
 
 ### 缺陷修复
 
 * 解决了问题：现在可以在控制台上为单个路由配置多个路径。
-* 解决了问题：`OpenTelemetry 插件`不支持 `set_ngx_var`。
-* 解决了问题：`ACL 插件` 在正常使用情况下不应输出警告日志。
+* 解决了问题：[OpenTelemetry](https://docs.api7.ai/hub/opentelemetry) 插件不支持 `set_ngx_var`。
+* 解决了问题：[ACL](https://docs.api7.ai/hub/acl) 插件 在正常使用情况下不应输出警告日志。
 * 增强了数据面 `lua_ssl_trusted_certificate` 配置项。
-* 将 `Body Transformer 插件` 代码与 APISIX 主线版本同步。
+* 将 [Body Transformer](https://docs.api7.ai/hub/body-transformer) 插件代码与 APISIX 主线版本同步。
 * 解决了问题：当在服务上配置了流模块不可用的插件时，数据面会打印错误日志。
 * 将 Token 的 `Edit` 操作更改为 `Edit Name`。
 * 解决了问题：编辑服务注册中心时，服务发现类型与表单不符。
@@ -69,12 +69,12 @@ slug: /release-notes
 
 ### 功能优化
 
-* 提升了开发者门户(Beta) 性能。
+* 提升了 API7 Portal(Beta) 性能。
 
 ### 缺陷修复
 
 * 解决了删除路由时 `radixtree_host_uri` 路由模式下的 panic 问题。
-* 解决了自定义认证类型插件与 `multi-auth` 插件不兼容的问题。
+* 解决了自定义认证类型插件与[Multi Auth](https://docs.api7.ai/hub/multi-auth) 插件不兼容的问题。
 
 ## 3.2.16.0 版本
 
@@ -109,9 +109,9 @@ slug: /release-notes
 
 * 修复了问题：未正确清理的 `config_listen.sock` 导致数据面无法启动。
 * 修复了问题：禁用服务后请求接口报 `404` 错误。
-* 为 `splunk-hec-logging` 插件添加了 `keepalive_timeout` 配置。
+* 为 [Splunk-Hec-Logging](https://docs.api7.ai/hub/splunk-hec-logging) 插件添加了 `keepalive_timeout` 配置。
 * 修复了消费者的标签分割后各元素还保留分隔符前后的空白问题。
-* 修复了问题：`Skywalking` 插件销毁后无法重新启动。
+* 修复了问题：[Skywalking](https://docs.api7.ai/hub/skywalking) 插件销毁后无法重新启动。
 * 修复了问题：数据面没有正确处理非认证插件配置在消费者上时的加解密。
 * 修复了问题：内置权限策略应无法删除。
 * 修复了问题：ingress controller 类型网关组应能够删除。
@@ -122,6 +122,14 @@ slug: /release-notes
 * 扩大了插件描述文字框，以完整显示插件的介绍。
 * 修复了新建令牌并删除令牌后，新建提示没有消失的问题。
 
+## 3.2.15.2.1 版本
+
+**发布日期：** 2024-12-09
+
+### 缺陷修复
+
+* 修复了问题：当 DP 管理器收到截断的 Prometheus 指标时，它会进入无限循环。
+* 修复了问题：由于 watch 中断，数据面与控制面的同步可能会中断。
 
 ## 3.2.15.2 版本
 
@@ -129,7 +137,7 @@ slug: /release-notes
 
 ### 缺陷修复
 
-* 调整 `attach-consumer-label` 插件到 `before_proxy` 阶段执行。
+* 调整 [Attach Consumer Label](https://docs.api7.ai/hub/attach-consumer-label) 插件到 `before_proxy` 阶段执行。
 
 ## 3.2.15.1 版本
 
@@ -149,11 +157,11 @@ slug: /release-notes
 
 :::info
 
-这是一项不兼容变更。不再支持为消费者创建新的身份验证插件（key-auth、basic-auth、JWT-auth 或 HMAC-auth）。请改用消费者凭据。现有的插件配置将保持可访问和可编辑，直到被禁用。
+这是一项不兼容变更。不再支持为消费者创建新的身份验证插件（Key Auth、Basic Auth、JWT Auth 或 HMAC Auth）。请改用消费者凭据。现有的插件配置将保持可访问和可编辑，直到被禁用。
 
 :::
 
-消费者凭据通过允许多个凭据对应每个消费者来增强灵活性。它们取代了传统的身份验证插件，如 key-auth、basic-auth、JWT-auth 和 HMAC-auth，提供了更友好的用户体验。有关详细信息，请参阅[管理消费者凭据](./api-consumption/manage-consumer-credentials.md)。
+消费者凭据通过允许多个凭据对应每个消费者来增强灵活性。它们取代了传统的身份验证插件，如 [Key Auth](https://docs.api7.ai/hub/key-auth)、[Basic Auth](https://docs.api7.ai/hub/basic-auth)、[JWT Auth](https://docs.api7.ai/hub/jwt-auth) 和 [HMAC Auth](https://docs.api7.ai/hub/hmac-auth)，提供了更友好的用户体验。有关详细信息，请参阅[管理消费者凭据](./api-consumption/manage-consumer-credentials.md)。
 
 ### 安全
 
@@ -173,6 +181,15 @@ slug: /release-notes
 
 * 优化了在启用 SCIM 后用户通过 SSO 登录但系统中不存在该用户时的错误消息。
 * 修复了修改未发布版本的服务后灰度配置调整失败的问题。
+
+## 3.2.14.4.1 版本
+
+**发布日期：** 2024-12-09
+
+### 缺陷修复
+
+* 修复了问题：当 DP 管理器收到截断的 Prometheus 指标时，它会进入无限循环。
+* 修复了问题：由于 watch 中断，数据面与控制面的同步可能会中断。
 
 ## 3.2.14.4 版本
 
@@ -264,7 +281,7 @@ API7 网关允许为各个路由配置不同的上游超时，以覆盖上游侧
 
 ### 缺陷修复
 
-* 将 datadog 插件修复 (https://github.com/apache/apisix/pull/11354) 合并到 API7 企业版。
+* 将 [Datadog](https://docs.api7.ai/hub/datadog) 插件修复 (https://github.com/apache/apisix/pull/11354) 合并到 API7 企业版。
 * 修复了控制台上数据面不可见的问题。
 * 修复了一个问题：将 Prometheus 数据报告方法从远程写入更改为抓取后，服务注册表状态始终显示为“断开连接”。
 * 修复了通过控制台部署自定义插件后，数据面遇到错误的问题。
@@ -311,10 +328,10 @@ API7 企业版改进了传统的基于角色的权限，采用了权限策略架
 
 - 从旧版本升级可能会导致上游数据丢失或 404 错误。
 - 服务请求 URL 更新期间遇到 UI 错误。
-- 修复了开发者门户库问题。
-- 修复了 HTTP logger 插件内存泄漏。
+- 修复了 API7 Portal (Beta) 库问题。
+- 修复了 [HTTP Logger](https://docs.api7.ai/hub/http-logger) 插件内存泄漏。
 - 前端和后端密码策略不一致。
-- 当 GET 请求与任何路由都不匹配时，`data-mask` 插件会报告错误。
+- 当 GET 请求与任何路由都不匹配时，[Data Mask](https://docs.api7.ai/hub/data-mask) 插件会报告错误。
 - ApisixUpstream CRD 的 status 字段记录不正确。
 - 数据面支持配置监控数据的报告间隔。
 - 修复了配置插件元数据后的警告日志。
@@ -426,7 +443,7 @@ Prometheus 远程写入现在支持 Basic Auth/mTLS。
 
 ### Admin API 不兼容变更
 
-1. service status 字段从 0: 启用，1: 禁用 变更为 0:禁用，1: 启用
+1. service status 字段从“0: 启用，1: 禁用”变更为“0: 禁用，1: 启用”
 
 - [Publish a service](https://docs.api7.ai/enterprise/reference/admin-api#tag/Services/paths/~1api~1services~1publish/post)
 - [Update service runtime configurations by ID](https://docs.api7.ai/enterprise/reference/admin-api#tag/Gateway-Groups/operation/changeServiceRuntimeConfiguration)
@@ -444,15 +461,15 @@ Prometheus 远程写入现在支持 Basic Auth/mTLS。
 
 #### 四层路由（Stream Route）
 
-API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连接。 添加一个四层类型的服务，并在其中添加若干个四层路由（Stream Route，即可[转发四层流量](./getting-started/proxy-l4-traffic.md).
+API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连接。 添加一个四层类型的服务，并在其中添加若干个四层路由（Stream Route，即可[转发四层流量](./getting-started/proxy-l4-traffic.md)。
 
 #### 自定义角色 (控制台支持)
 
 当默认提供的角色无法满足需求时，你可以自行设计自定义角色，实现精细化权限控制。可参阅[添加自定义角色](./getting-started/rbac.md)
 
-#### Ingress 控制器(Beta 测试版, 仅 API 支持)
+#### Ingress Controller（Beta 测试版，仅 API 支持）
 
-集成 Ingress 控制器.
+集成 Ingress Controller。
 
 ### 功能优化
 
@@ -463,10 +480,10 @@ API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连�
 
 ### 缺陷修复
 
-- 使用 [key-auth](https://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
-- 使用 [ua-restriction](https://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
+- 使用 [Key Auth](https://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
+- 使用 [UA Restriction](https://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
 - 重置用户密码时不会引起访问令牌失效。
-- 使用 [loggly](https://apisix.apache.org/zh/docs/apisix/plugins/loggly/) 插件时配置能校验成功。
+- 使用 [Loggly](https://apisix.apache.org/zh/docs/apisix/plugins/loggly/) 插件时配置能校验成功。
 - API7 网关中的状态字段取值含义和 Apache APISIX 保持一致。
 
 ## 版本 3.2.11.3
@@ -593,7 +610,7 @@ API7 企业版新增支持对接 SAML 第三方登录。详情见[如何设置�
 
 #### 新插件： Data Mask
 
-Data-mask 插件提供了在请求头、请求体和URL查询中移除或替换敏感信息的能力。了解更多： [Data Mask](https://docs.api7.ai/hub/data-mask)。
+[Data Mask](https://docs.api7.ai/hub/data-mask) 插件提供了在请求头、请求体和 URL 查询中移除或替换敏感信息的能力。
 
 ### 功能优化
 
