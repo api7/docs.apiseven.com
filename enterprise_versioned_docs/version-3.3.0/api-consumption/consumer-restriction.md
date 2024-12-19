@@ -8,7 +8,13 @@ import TabItem from '@theme/TabItem';
 
 有时候，你需要比身份验证插件提供的更精确的访问控制。例如，你可能希望保留可以访问 API 的[消费者](../key-concepts/consumers.md)白名单。现在，消费者必须发送经过身份验证的请求，并且在白名单上（而且不在黑名单上）才能访问 API。
 
-本教程将指导你通过 `consumer-restriction` 插件创建消费者白名单来配置精确的访问控制。
+:::note
+
+在实施基于消费者的访问控制之前，请考虑 [API 门户](../key-concepts/api-portal) 是否是更好的解决方案。
+
+:::
+
+本教程将指导你通过 [Consumer Restriction](https://docs.api7.ai/hub/consumer-restriction) 插件创建消费者白名单来配置精确的访问控制。
 
 ## 前提条件
 
