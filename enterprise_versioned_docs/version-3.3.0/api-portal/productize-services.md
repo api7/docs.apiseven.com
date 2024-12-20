@@ -56,6 +56,7 @@ slug: /api-portal/productize-services
             origin:
             type: string
     ```
+
 5. 点击 **保存**。
 6. 为避免身份验证冲突，请勿在已发布的服务中启用任何身份验证插件。API 产品配置将处理身份验证。
 
