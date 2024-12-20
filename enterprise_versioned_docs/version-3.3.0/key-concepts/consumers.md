@@ -9,7 +9,7 @@ slug: /key-concepts/consumers
 
 消费者表示向 API 网关发送请求并使用后端服务的**用户**、**应用程序**或**主机**。它与身份验证系统一起使用。每个消费者都必须至少配置一个身份验证凭据或使用插件（如 **Authz Keycloak** 或 **OpenID Connect**）与外部身份验证系统集成。
 
-下图说明了具有一个路由和两个消费者的 API7 企业版示例。一个消费者 `FetchBot` 是一个数据获取机器人，另一个消费者 `JohnDoe` 是一个用户。路由和消费者都启用了 `key-auth` 插件。因此，请求将使用 API 密钥进行身份验证。要访问内部服务，`FetchBot` 使用 `bot-key` 发送其请求，`JohnDoe` 使用 `john-key` 发送其请求。
+下图说明了具有一个路由和两个消费者的 API7 企业版示例。一个消费者 `FetchBot` 是一个数据获取机器人，另一个消费者 `JohnDoe` 是一个用户。路由和消费者都启用了 `key-auth` 插件，因此，请求将使用 API 密钥进行身份验证。要访问内部服务，`FetchBot` 使用 `bot-key` 发送其请求，`JohnDoe` 使用 `john-key` 发送其请求。
 
 <br />
 <div style={{textAlign: 'center'}}>
