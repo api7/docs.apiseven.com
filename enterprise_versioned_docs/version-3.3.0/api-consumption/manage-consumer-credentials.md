@@ -97,7 +97,7 @@ adc sync -f adc-consumer.yaml
 
 然后按照[验证 Key Authentication](../api-security/api-authentication#validate-key-authentication) 说明进行操作。
 
-## 配置Basic Authentication凭据
+## 配置 Basic Authentication 凭据
 
 <Tabs
 groupId="api"
