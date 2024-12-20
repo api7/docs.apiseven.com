@@ -123,7 +123,7 @@ values={[
    * 如果你想选择**引用 Secret 提供商**，请参阅[引用 HashiCorp Vault 中的密钥](../api-security/hashicorp-vault) 或 [引用 AWS Secrets Manager 中的密钥](../api-security/aws-secrets-manager)。
    * 点击**新增**。
 
-6. 再次尝试新增另一个名为 `backup-basic` 的Basic Authentication凭据，用户名为 `alice-backup`，密码为 `alice-backup-password`。所有凭据都是有效的，可以互换使用以进行 API 身份验证。
+6. 再次尝试新增另一个名为 `backup-basic` 的 Basic Authentication 凭据，用户名为 `alice-backup`，密码为 `alice-backup-password`。所有凭据都是有效的，可以互换使用以进行 API 身份验证。
 
 </TabItem>
 
