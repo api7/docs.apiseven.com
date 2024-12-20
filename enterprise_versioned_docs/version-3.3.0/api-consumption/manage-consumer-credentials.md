@@ -115,7 +115,7 @@ values={[
 3. 在对话框中，执行以下操作：
    * **名称**，输入 `Alice`。
    * 点击**新增**。
-4. **凭据**选项卡下，点击**Basic Authentication**选项卡，然后点击**新增Basic Authentication凭据**。
+4. **凭据**选项卡下，点击**Basic Authentication**选项卡，然后点击**新增 Basic Authentication 凭据**。
 5. 在对话框中，执行以下操作：
    * **名称**，输入 `primary-basic`。
    * **用户名**，输入 `alice`。
