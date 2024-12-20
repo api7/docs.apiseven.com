@@ -26,7 +26,7 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 1. [安装 API7 企业版](../getting-started/install-api7-ee)。
 2. [在网关组上运行 API](../getting-started/launch-your-first-api)。
 
-## 配置Key Authentication凭据
+## 配置 Key Authentication 凭据
 
 <Tabs
 groupId="api"
