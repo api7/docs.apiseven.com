@@ -177,7 +177,7 @@ values={[
    * **密钥**，选择**手动输入**，然后输入 `john-key-auth`。
    * 点击**新增**。
 
-6. **凭据**选项卡下，选择**Basic Authentication**，然后点击**新增Basic Authentication凭据**。
+6. **凭据**选项卡下，选择**Basic Authentication**，然后点击**新增 Basic Authentication 凭据**。
 7. 在对话框中，执行以下操作：
    * **名称**，输入 `basic-auth`。
    * **用户名**，输入 `john`。
