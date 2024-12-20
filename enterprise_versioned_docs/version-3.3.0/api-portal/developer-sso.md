@@ -14,7 +14,7 @@ API7 的开发者门户可以配置为支持单点登录 (SSO)，以便内部和
 
 ## 与 SSO 集成
 
-对于 API 提供者和开发者都属于同一组织的内部 API 门户，可以集成同一个个身份提供者 (IDP) 以支持开发者 SSO 和 API7 企业版 SSO。
+对于 API 提供者和开发者都属于同一组织的内部 API 门户，可以集成同一个身份提供者 (IDP) 以支持开发者 SSO 和 API7 企业版 SSO。
 
 <Tabs
   defaultValue="LDAP"
