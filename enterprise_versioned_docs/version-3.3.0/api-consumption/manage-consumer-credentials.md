@@ -44,7 +44,7 @@ values={[
 3. 在对话框中，执行以下操作：
    * **名称**，输入 `Alice`。
    * 点击**新增**。
-4. **凭据**选项卡下，点击**+ 新增Key Authentication凭据**。
+4. **凭据**选项卡下，点击**+ 新增 Key Authentication 凭据**。
 5. 在对话框中，执行以下操作：
    * **名称**，输入 `primary-key`。
    * **Key**，选择**手动输入**，然后输入 `alice-primary-key`。
