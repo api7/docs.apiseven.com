@@ -39,7 +39,7 @@ slug: /key-concepts/consumers
 
 在某些环境中，请求可能需要经过多个 IdP 才能转发到上游端点。在这种情况下，你可以在一个消费者上配置多个身份验证插件，每个插件对应一个 IdP。在所有 IdP 都授予请求访问权限之前，API7 企业版不会显示成功的响应。
 
-第二种也是更基本的方法是在 API 网关本身上使用内置凭据执行身份验证和授权。到目前为止，凭据 Key Authentication 验证、Basic Authentication 验证、JWT Authentication 验证和 HMAC Authentication验证。
+第二种也是更基本的方法是直接在 API 网关上使用内置凭据执行身份验证和授权。到目前为止，支持 Key Authentication 验证、Basic Authentication 验证、JWT Authentication 验证和 HMAC Authentication 凭据验证。
 
 与传统的用户登录类似，每个消费者可以创建多个凭据，所有凭据都链接到一个消费者身份。凭据应安全存储并定期更新。
 
