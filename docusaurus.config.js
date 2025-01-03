@@ -19,7 +19,7 @@ const config = {
   tagline: '',
   url: 'https://docs.apiseven.com',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 

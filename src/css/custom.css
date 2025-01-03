@@ -95,6 +95,7 @@
 .menu {
   font-weight: 400;
   padding-top: 20px !important;
+  margin-right: 2px !important;
 }
 
 @media (min-width: 997px) {

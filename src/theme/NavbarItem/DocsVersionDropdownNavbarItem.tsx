@@ -29,7 +29,8 @@ const LabelWithBadge: FC<LabelWithBadgeProps> = (props) => {
   return (
     <div>
       {version.label}
-      {version.isLast && badgeObj.Latest}
+      {/* Archive doce not show latest badge */}
+      {/* {version.isLast && badgeObj.Latest} */}
     </div>
   );
 };
