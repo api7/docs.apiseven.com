@@ -6,11 +6,11 @@ const archivedVersions = [
   {
     type: 'html',
     className: 'dropdown-archived-versions',
-    value: 'Archived versions',
+    value: '已归档版本',
   },
   {
-    label: 'test',
-    href: 'https://docs-archive.api7.ai/enterprise/introduction',
+    label: '旧版本文档',
+    href: 'https://docs-archive.apiseven.com/enterprise/introduction',
   },
 ];
 
