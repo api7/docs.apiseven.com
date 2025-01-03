@@ -2,6 +2,7 @@ import React from 'react';
 import DocsVersionDropdownNavbarItem from '@theme/NavbarItem/DocsVersionDropdownNavbarItem';
 
 import styles from './styles.module.css';
+import archivedVersions from '@site/config/enterprise-version';
 
 const DocVersionWrapper: React.FC<{ docsPluginId: string, type?: 'mobile' | 'desktop' }> = ({ docsPluginId, type = 'desktop' }) => {
   return (
@@ -10,7 +11,7 @@ const DocVersionWrapper: React.FC<{ docsPluginId: string, type?: 'mobile' | 'des
       <DocsVersionDropdownNavbarItem
         docsPluginId={docsPluginId}
         dropdownItemsBefore={[]}
-        dropdownItemsAfter={[]}
+        dropdownItemsAfter={docsPluginId === 'enterprise' ? archivedVersions : []}
         items={[]}
       />
     </div>
