@@ -97,6 +97,19 @@
   padding-top: 20px !important;
 }
 
+.dropdown-separator {
+  margin: 0.3rem 0;
+  background-color: var(--ifm-hr-background-color);
+  height: var(--ifm-hr-height);
+  border: 0;
+}
+
+.dropdown-archived-versions {
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.2rem 0.5rem;
+}
+
 @media (min-width: 997px) {
   .container {
     padding-left: 32px;
