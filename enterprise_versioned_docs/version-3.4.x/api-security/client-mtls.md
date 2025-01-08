@@ -1,6 +1,6 @@
 ---
 title: 配置客户端与 API7 网关之间的 mTLS
-slug: /api-security/configure-mtls
+slug: /api-security/client-mtls
 ---
 
 import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
