@@ -21,7 +21,8 @@
         "key-concepts/consumers",
         "key-concepts/plugins",
         "key-concepts/roles-and-permission-policies",
-        "key-concepts/ssl-certificates",
+        "key-concepts/certificates",
+        "key-concepts/snis",
         "key-concepts/api-portal",
         "key-concepts/api-products",
         "key-concepts/developers"
