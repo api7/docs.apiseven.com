@@ -16,7 +16,7 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 ## 前提条件
 
 1. [安装 API7 企业版](../getting-started/install-api7-ee.md)。
-2. [在网关组上有一个运行的 API](../getting-started/launch-your-first-api.md)。
+2. [在网关组上有一个运行的 API](../getting-started/launch-your-first-api.md), 并确保你的服务已配置主机名 `test.com`。
 
 ## 生成证书和密钥
 
@@ -56,21 +56,40 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
     ❸ `ca.crt`: CA 证书
 
-## 为 API7 企业版配置 mTLS
+## 创建证书
 
-1. 从侧边栏选择网关组的 **SSL 证书**，然后点击 **+ 新增 SSL 证书**。
+1. 从侧边导航栏中选择网关组的 **证书**，进入 **SSL 证书** 选项卡。
+2. 单击 **新增 SSL 证书**。
+3. 在对话框中，执行以下操作：
 
-2. 在对话框中，执行以下操作：
+* 在 **名称** 字段中，输入 `测试 SSL 证书`。
+* 在 **证书** 字段中，上传 `server.crt` 文件。
+* 在 **私钥** 字段中，上传 `server.key` 文件。
+* 单击 **新增**。
 
-* **类型** 选择 `服务器`。
-* 选择 **上传** 方法。
-* 在 **证书** 字段中上传 `server.crt` 文件。
-* 在 **私钥** 字段中上传 `server.key` 文件。
-* 打开 **对等验证** 按钮。
-* 在 **CA 证书（可选）** 字段中上传 `ca.crt` 文件。
-* 点击 **新增**。
+4. 从侧边导航栏中选择网关组的 **证书**，然后单击 **CA 证书** 选项卡。
+5. 单击 **新增 CA 证书**。
+6. 在对话框中，执行以下操作：
 
-3. 添加完成后，可以在 SSL 证书列表中看到一个新条目，包含一个唯一的 ID 和 `test.com` 作为其服务名称指示符（SNIS）。
+* 在 **名称** 字段中，输入 `测试 CA 证书`。
+* 在 **证书** 字段中，上传 `ca.crt` 文件。
+* 单击 **新增**。
+
+## 创建 SNI
+
+1. 从侧边导航栏中选择网关组的 **SNI**。
+2. 单击 **新增 SNI**。
+3. 在对话框中，执行以下操作：
+
+* 在 **名称** 字段中，输入 `测试 SNI`。
+* 在 **域名** 字段中，输入 `test.com`。
+* 在 **SSL 协议** 字段中，选择 `TLS 1.2` 和 `TLS 1.3`。
+* 在 **SSL 证书** 字段中，选择你之前创建的 `测试 SSL 证书`。
+* 打开 **mTLS** 开关。
+* 在 **CA 证书** 字段中，选择你之前创建的 `测试 CA 证书`。
+* 单击 **新增**。
+
+4. 在 **使用情况** 字段中，你应该会看到一个与主机名 `test.com` 匹配的已发布服务。然后你就可以进行验证了。
 
 ## 验证客户端与 API7 网关之间的 mTLS 连接
 
@@ -179,6 +198,7 @@ curl -ikv --resolve "test.com:9443:127.0.0.1" "https://test.com:9443/ip"
 ## 相关阅读
 
 * 核心概念
-  * [SSL 证书](../key-concepts/services.md)
+  * [证书](../key-concepts/certificates)
+  * [SNI](../key-concepts/snis)
 * 快速入门
-  * [创建一个简单的 API](../getting-started/launch-your-first-api.md)
+  * [创建一个简单的 API](../getting-started/launch-your-first-api)
