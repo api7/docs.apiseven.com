@@ -21,7 +21,8 @@
         "key-concepts/consumers",
         "key-concepts/plugins",
         "key-concepts/roles-and-permission-policies",
-        "key-concepts/ssl-certificates",
+        "key-concepts/certificates",
+        "key-concepts/snis",
         "key-concepts/api-portal",
         "key-concepts/api-products",
         "key-concepts/developers"
@@ -54,7 +55,7 @@
         "api-security/api-authentication",
         "api-security/rate-limiting",
         "api-security/block-ip",
-        "api-security/configure-mtls",
+        "api-security/client-mtls",
         "api-security/aws-secrets-manager",
         "api-security/hashicorp-vault"
       ]
