@@ -2,6 +2,7 @@
 title: 更新日志
 slug: /release-notes
 ---
+
 ## 3.4.1 版本
 
 **发布日期：** 2025-01-14
@@ -35,6 +36,15 @@ slug: /release-notes
 
 * 修复了问题：Redis 延迟同步功能使用的共享内存泄漏。
 * 修复了问题：批量发布超多 service 时审计日志记录失败。
+
+## 3.3.3 版本
+
+**发布日期：** 2025-01-14
+
+### 缺陷修复
+
+* 修复了问题：在 API7 门户中使用 BasicAuth 身份验证进行在线调试时，粘贴密码失败。
+* 修复了问题：在 DP 中配置 `access_log_format` 并将 `access_log_format_escape` 设置为 `json` 时，结果会附加一个额外的 `request_id`。
 
 ## 3.3.2 版本
 
