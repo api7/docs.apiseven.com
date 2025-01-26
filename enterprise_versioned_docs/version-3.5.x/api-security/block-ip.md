@@ -33,7 +33,7 @@ values={[
 1. 选择你的服务所在的网关组。
 2. 从侧边栏选择 **插件设置**，然后选择 **插件全局规则**。
 3. 在 **插件** 字段中，搜索 `ip-restriction` 插件。
-4. 点击 **加号** 图标 (+)。
+4. 点击 **新增插件**
 5. 在出现的对话框中，将以下配置添加到 **JSON 编辑器** 中，将 IP 地址 `127.0.0.1` 添加到黑名单中：
 
     ```json
@@ -43,7 +43,7 @@ values={[
     }
     ```
 
-6. 点击 **启用**。
+6. 点击 **新增**。
 
 </TabItem>
 
@@ -151,7 +151,7 @@ curl -i "http://127.0.0.1:9080/ip"
 
 ## 相关阅读
 
-- 核心概念
-  - [服务](../key-concepts/services.md)
-  - [路由](../key-concepts/routes.md)
-  - [插件](../key-concepts/plugins.md)
+* 核心概念
+  * [服务](../key-concepts/services.md)
+  * [路由](../key-concepts/routes.md)
+  * [插件](../key-concepts/plugins.md)
