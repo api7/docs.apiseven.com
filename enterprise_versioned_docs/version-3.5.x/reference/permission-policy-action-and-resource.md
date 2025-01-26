@@ -37,11 +37,28 @@ slug: /reference/permission-policy-action-and-resource
 
 | Action                       | Resource                         | API                                                                                                                                                |
 | ---------------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| gateway:GetSSLCertificate    | arn:api7:gateway:gatewaygroup/%s | [GET /apisix/admin/ssls](https://docs.api7.ai/enterprise/reference/admin-api#tag/SSLs/paths/~1apisix~1admin~1ssls/get)                             |
-| gateway:GetSSLCertificate    | arn:api7:gateway:gatewaygroup/%s | [GET /apisix/admin/ssls/:ssl_id](https://docs.api7.ai/enterprise/reference/admin-api#tag/SSLs/paths/~1apisix~1admin~1ssls~1%7Bssl_id%7D/get)       |
-| gateway:CreateSSLCertificate | arn:api7:gateway:gatewaygroup/%s | [POST /apisix/admin/ssls](https://docs.api7.ai/enterprise/reference/admin-api#tag/SSLs/paths/~1apisix~1admin~1ssls/post)                           |
-| gateway:UpdateSSLCertificate | arn:api7:gateway:gatewaygroup/%s | [PUT /apisix/admin/ssls/:ssl_id](https://docs.api7.ai/enterprise/reference/admin-api#tag/SSLs/paths/~1apisix~1admin~1ssls~1%7Bssl_id%7D/put)       |
-| gateway:DeleteSSLCertificate | arn:api7:gateway:gatewaygroup/%s | [DELETE /apisix/admin/ssls/:ssl_id](https://docs.api7.ai/enterprise/reference/admin-api#tag/SSLs/paths/~1apisix~1admin~1ssls~1%7Bssl_id%7D/delete) |
+| gateway:GetCertificate    | arn:api7:gateway:gatewaygroup/%s | [List all SSL certificates on a gateway group](/enterprise/reference/admin-api#tag/Certificate/operation/listCertificates) , [Get a SSL certificate on a gateway group](/enterprise/reference/admin-api#tag/Certificate/operation/getCertificate)       |
+| gateway:CreateCertificate | arn:api7:gateway:gatewaygroup/%s | [Create a SSL certificate on a gateway group](/enterprise/reference/admin-api#tag/Certificate/operation/createCertificate)                           |
+| gateway:UpdateCertificate | arn:api7:gateway:gatewaygroup/%s | [Update a SSL certificate on a gateway group](/enterprise/reference/admin-api#tag/Certificate/operation/putCertificate) ,   [Patch a SSL certificate on a gateway group](/enterprise/reference/admin-api#tag/Certificate/operation/patchCertificate)    |
+| gateway:DeleteCertificate | arn:api7:gateway:gatewaygroup/%s | [Delete a SSL certificate on a gateway group](/enterprise/reference/admin-api#tag/Certificate/operation/deleteCertificate) |
+
+### CA 证书
+
+| Action                       | Resource                         | API                                                                                                                                                |
+| ---------------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| gateway:GetCertificate    | arn:api7:gateway:gatewaygroup/%s | [List all CA certificates on a gateway group](/enterprise/reference/admin-api#tag/CACertificate/operation/listCACertificates) , [Get a CA certificate on a gateway group](/enterprise/reference/admin-api#tag/CACertificate/operation/getCACertificate)       |
+| gateway:CreateCertificate | arn:api7:gateway:gatewaygroup/%s | [Create a CA certificate on a gateway group](/enterprise/reference/admin-api#tag/CACertificate/operation/createCACertificate)                           |
+| gateway:UpdateCertificate | arn:api7:gateway:gatewaygroup/%s | [Update a CA certificate on a gateway group](/enterprise/reference/admin-api#tag/CACertificate/operation/putCACertificate) ,   [Patch a CA certificate on a gateway group](/enterprise/reference/admin-api#tag/CACertificate/operation/patchCACertificate)    |
+| gateway:DeleteCertificate | arn:api7:gateway:gatewaygroup/%s | [Delete a CA certificate on a gateway group](/enterprise/reference/admin-api#tag/CACertificate/operation/deleteCACertificate) |
+
+### SNI
+
+| Action                       | Resource                         | API                                                                                                                                                |
+| ---------------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| gateway:GetSNI    | arn:api7:gateway:gatewaygroup/%s | [List all SNIs on a gateway group](/enterprise/reference/admin-api#tag/SNI/operation/listSNI) , [Get a SNI on a gateway group](/enterprise/reference/admin-api#tag/SNI/operation/getCertificate)       |
+| gateway:CreateSNI | arn:api7:gateway:gatewaygroup/%s | [Create a SNI on a gateway group](/enterprise/reference/admin-api#tag/SNI/operation/createSNI)                           |
+| gateway:UpdateSNI | arn:api7:gateway:gatewaygroup/%s | [Update a SNI on a gateway group](/enterprise/reference/admin-api#tag/SNI/operation/putSNI) ,   [Patch a SNI on a gateway group](/enterprise/reference/admin-api#tag/SNI/operation/patchSNI)    |
+| gateway:DeleteSNI | arn:api7:gateway:gatewaygroup/%s | [Delete a SNI on a gateway group](/enterprise/reference/admin-api#tag/SNI/operation/deleteSNI) |
 
 ### 插件全局规则
 
