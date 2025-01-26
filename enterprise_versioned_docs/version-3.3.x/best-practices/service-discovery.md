@@ -1,6 +1,6 @@
 ---
 title: 上游使用服务发现
-slug: /best-practice/service-discovery
+slug: /best-practices/service-discovery
 ---
 
 import Tabs from '@theme/Tabs';
