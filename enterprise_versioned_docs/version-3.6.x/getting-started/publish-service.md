@@ -7,12 +7,14 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
-当你的 API 设计、开发和部署完成后，如果有版本管理的场景和需求，可以使用 API7 网关将服务发布到不同的网关组，而非直接在网关组上对配置进行修改。 通常，API 会先发布到测试环境，然后再发布到生产环境。API7 企业版通过网关组来隔离不同的环境，在各个环境中，API 从属于一个服务（Service），服务内所有 API 拥有共享的上游 (Upstream)。 
+为了对已部署的 API 进行版本控制，可以利用 API7 企业版将可复用的服务模板发布到不同的[网关组](../key-concepts/gateway-groups.md)形成不同的服务版本，而不是在网关组上直接进行配置编辑。
 
-本教程将指导你将 [httpbin](https://httpbin.org/) 服务发布到一个网关组。你将学习如何：
+通常，API 版本会在发布到生产环境之前，先发布到测试和暂存环境中。API7 Gateway 通过[网关组](../key-concepts/gateway-groups.md)管理这种环境隔离，其中 API 属于具有共享[上游](../key-concepts/upstreams.md)的单个[已发布服务](../key-concepts/services.md)。
 
-1. 手动创建服务模板以及通过 OpenAPI 文件创建服务模板。
-2. 通过配置上游节点和使用服务发现机制来发布服务。
+本教程将指导您在 API7 Gateway 上将 [httpbin](https://httpbin.org/) 服务发布到网关组。您将学习如何：
+
+1. 手动和通过 OpenAPI 规范文件创建服务。
+2. 通过配置上游节点和使用服务发现机制发布服务。
 
 ## 前提条件
 
