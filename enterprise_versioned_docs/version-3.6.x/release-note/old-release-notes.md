@@ -9,6 +9,18 @@ slug: /old-release-notes
 
 :::
 
+## 3.5.5 版本
+
+**发布日期**: 2025-03-14
+
+### 安全性
+
+* 解决安全漏洞：[OpenID Connect](/hub/openid-connect) 插件现在支持配置验证发行者。
+
+### Bug 修复
+
+* 修复问题：[Limit Count Advanced](/hub/limit-count-advanced) 插件在负载测试期间偶尔出现 500 错误。
+
 ## 3.5.4 版本
 
 **发布日期**: 2025-03-07
