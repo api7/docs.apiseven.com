@@ -1,13 +1,65 @@
 ---
-title: API7 企业版更新日志(版本3.5.x及之前)
-slug: /old-release-notes
+title: API7 企业版更新日志
+slug: /release-notes
 ---
 
-:::note
+## 3.6.1 版本
 
-从 3.6.0 版本开始，数据面和控制面的版本将解耦，允许独立升级。控制面通常会兼容多个数据面版本，而数据面版本会以较慢的速度更新以保持稳定性。
+**发布日期**: 2025-03-14
 
-:::
+**兼容数据平面版本**: 3.2.x.x - 3.6.x
+
+### 缺陷修复
+
+#### 插件
+
+* 修复问题：[Limit Count Advanced](https://docs.api7.ai//hub/limit-count-advanced) 插件在负载测试期间偶尔出现 500 错误。
+* 修复问题：[OpenID Connect](https://docs.api7.ai//hub/openid-connect) 插件现在支持配置验证发行者。
+
+## 3.6.0 版本
+
+**发布日期**: 2025-02-26
+
+**兼容数据平面版本**: 3.2.x.x - 3.6.x
+
+### 不兼容变更
+
+* 移除了服务模板中的[服务运行时配置](./key-concepts/services.md#运行时配置)，以便在网关组之间更好地复用模板。**这是一项不兼容变更。服务模板中现有的服务运行时配置将被移除，但已发布的服务的配置将保持不变。** 此外，发布过程得到了简化和优化，在此过程中不需要进行服务运行时配置。请参阅更新后的[发布服务](./getting-started/publish-service.md)指南。
+
+### 新功能
+
+#### 数据面
+
+* **为上游配置 mTLS**: 为了防止未经授权的访问并加强安全性，请考虑[在 API7 企业版和上游之间配置 mTLS](./api-security/upstream-mtls.md)。
+
+#### Admin API
+
+* [Published Service](/enterprise/reference/admin-api#tag/Published-Service) API 当 `scheme` 为 `https` 时已更新，用于支持新功能：**为上游配置 mTLS**，
+* [Login Option](/enterprise/reference/admin-api#tag/Login-Option) API 已扩展，接受环境变量作为值。
+* [Service Template](/enterprise/reference/admin-api#tag/Service-Template) API 已更新，用于支持新特性：**移除了服务运行时配置**。
+
+#### 控制台
+
+* **使用电子邮件登录**: API7 企业版控制台现在支持使用用户名或电子邮件地址以及密码登录。要使用电子邮件登录或接收通知，请将电子邮件地址绑定到您的用户配置文件。
+* 支持为上游配置 mTLS。
+
+### 功能优化
+
+#### 控制台
+
+* 支持在 SSO 连接信息的中引用环境变量。
+* 为[Proxy Rewrite](https://docs.api7.ai/hub/proxy-rewrite)插件配置引入了表单样式的 UI。
+
+#### API7 门户
+
+* 将 Basic Authentication 添加为开发者门户的身份验证选项。如果 API 产品允许多种身份验证类型，则开发者可以使用任意一个有效凭据。
+
+### 缺陷修复
+
+#### 数据面
+
+* 修复问题：更新 `upstream.nodes` 时的竞争条件问题。
+* 修复服务发现问题：[使用节点缓存 original_nodes](https://github.com/apache/apisix/pull/10722)，[更新 upstream.nodes 时的竞争条件问题](https://github.com/apache/apisix/pull/11916)。
 
 ## 3.5.5 版本
 
@@ -15,11 +67,11 @@ slug: /old-release-notes
 
 ### 安全性
 
-* 解决安全漏洞：[OpenID Connect](/hub/openid-connect) 插件现在支持配置验证发行者。
+* 解决安全漏洞：[OpenID Connect](https://docs.api7.ai/hub/openid-connect) 插件现在支持配置验证发行者。
 
-### Bug 修复
+### 缺陷修复
 
-* 修复问题：[Limit Count Advanced](/hub/limit-count-advanced) 插件在负载测试期间偶尔出现 500 错误。
+* 修复问题：[Limit Count Advanced](https://docs.api7.ai/hub/limit-count-advanced) 插件在负载测试期间偶尔出现 500 错误。
 
 ## 3.5.4 版本
 
@@ -27,7 +79,7 @@ slug: /old-release-notes
 
 ## 功能优化
 
-* 支持在 [Elasticsearch Logger](/hub/elasticsearch-logger) 插件中配置索引以根据当前日期动态发送数据。
+* 支持在 [Elasticsearch Logger](https://docs.api7.ai/hub/elasticsearch-logger) 插件中配置索引以根据当前日期动态发送数据。
 * 优化了慢查询。
 
 ### Bug 修复
@@ -60,7 +112,7 @@ slug: /old-release-notes
 ### 缺陷修复
 
 * 修复了问题：无法配置 Azure SMTP 服务器发送警报电子邮件。
-* 支持在 OTEL 插件报告动态路由 `/v2/:customerNumber` 时将 `request.url` 报告为 `route.url`。
+* 支持在 [OpenTelemetry] 插件报告动态路由 `/v2/:customerNumber` 时将 `request.url` 报告为 `route.url`。
 
 ## 3.5.0 版本
 

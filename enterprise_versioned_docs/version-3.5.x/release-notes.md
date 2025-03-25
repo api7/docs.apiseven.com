@@ -3,13 +3,23 @@ title: 更新日志
 slug: /release-notes
 ---
 
+## 3.5.5 版本
+
+**发布日期**: 2025-03-14
+
+### 缺陷修复
+
+* 修复缺陷：[Limit Count Advanced](https://docs.api7.ai/hub/limit-count-advanced) 插件在负载测试期间偶尔出现 500 错误。
+* 修复缺陷：[OpenID Connect](https://docs.api7.ai/hub/openid-connect) 插件现在支持配置验证发行者。
+* 修复缺陷：[无法使用 openid-connect 验证 audience claim](https://github.com/orgs/apache/projects/273/views/2?pane=issue&itemId=55833755&issue=apache%7Capisix%7C11018)。
+
 ## 3.5.4 版本
 
 **发布日期**: 2025-03-07
 
 ## 功能优化
 
-* 支持在 [Elasticsearch Logger](/hub/elasticsearch-logger) 插件中配置索引以根据当前日期动态发送数据。
+* 支持在 [Elasticsearch Logger](https://docs.api7.ai/hub/elasticsearch-logger) 插件中配置索引以根据当前日期动态发送数据。
 * 优化了慢查询。
 
 ### Bug 修复
@@ -42,7 +52,7 @@ slug: /release-notes
 ### 缺陷修复
 
 * 修复了问题：无法配置 Azure SMTP 服务器发送警报电子邮件。
-* 支持在 OTEL 插件报告动态路由 `/v2/:customerNumber` 时将 `request.url` 报告为 `route.url`。
+* 支持在 [OpenTelemetry](https://docs.api7.ai/hub/opentelemetry) 插件报告动态路由 `/v2/:customerNumber` 时将 `request.url` 报告为 `route.url`。
 
 ## 3.5.0 版本
 
