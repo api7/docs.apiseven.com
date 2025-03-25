@@ -188,7 +188,7 @@ curl -ik "https://127.0.0.1:8443/hello" --cert client.crt --key client.key
 2. 点击 **新增 SSL 证书**。
 3. 在对话框中，执行以下操作：
 
-* 在 **名称** 字段中，输入 `Upstream SSL Certificate`。
+* 在 **名称** 字段中，输入 `上游 SSL 证书`。
 * 在 **证书** 字段中，上传 `client.crt` 文件。
 * 在 **私钥** 字段中，上传 `client.key` 文件。
 * 点击 **新增**。
@@ -197,7 +197,7 @@ curl -ik "https://127.0.0.1:8443/hello" --cert client.crt --key client.key
 5. 点击 **新增 CA 证书**。
 6. 在对话框中，执行以下操作：
 
-* 在 **名称** 字段中，输入 `Upstream CA Certificate`。
+* 在 **名称** 字段中，输入 `上游 CA 证书`。
 * 在 **证书** 字段中，上传 `ca.crt` 文件。
 * 点击 **新增**。
 
@@ -208,8 +208,8 @@ curl -ik "https://127.0.0.1:8443/hello" --cert client.crt --key client.key
 3. 点击 **连接配置** 字段的编辑按钮。
 4. 在对话框中，执行以下操作：
 
-* 在 **客户端证书** 字段中，选择 `Upstream SSL Certificate`。
-* 在 **CA 证书** 字段中，选择 `Upstream CA Certificate`。
+* 在 **客户端证书** 字段中，选择 `上游 SSL 证书`。
+* 在 **CA 证书** 字段中，选择 `上游 CA 证书`。
 * 点击 **保存**。
 
 ## 验证 API7 企业版和上游服务之间的 mTLS
