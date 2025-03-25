@@ -106,14 +106,21 @@
       "id": "release-notes"
     },
     {
+      "type": "link",
+      "label": "Admin APIs",
+      "href": "/enterprise/reference/admin-api"
+    },
+    {
+      "type": "category",
+      "label": "Upgrade Guides",
+      "items": [
+        "upgrade-guides/breaking-changes"
+      ]
+    },
+    {
       "type": "category",
       "label": "开发参考",
       "items": [
-        {
-          "type": "link",
-          "label": "Admin APIs",
-          "href": "/enterprise/reference/admin-api"
-        },
         {
           "type": "category",
           "label": "部署",
