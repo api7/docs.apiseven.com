@@ -71,7 +71,9 @@ slug: /release-notes
 
 ### 缺陷修复
 
-* 修复问题：[Limit Count Advanced](https://docs.api7.ai/hub/limit-count-advanced) 插件在负载测试期间偶尔出现 500 错误。
+* 修复缺陷：[Limit Count Advanced](https://docs.api7.ai/hub/limit-count-advanced) 插件在负载测试期间偶尔出现 500 错误。
+* 修复缺陷：[OpenID Connect](https://docs.api7.ai/hub/openid-connect) 插件现在支持配置验证发行者。
+* 修复缺陷：[无法使用 openid-connect 验证 audience claim](https://github.com/orgs/apache/projects/273/views/2?pane=issue&itemId=55833755&issue=apache%7Capisix%7C11018)。
 
 ## 3.5.4 版本
 
