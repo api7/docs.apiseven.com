@@ -112,13 +112,6 @@
     },
     {
       "type": "category",
-      "label": "Upgrade Guides",
-      "items": [
-        "upgrade-guides/breaking-changes"
-      ]
-    },
-    {
-      "type": "category",
       "label": "开发参考",
       "items": [
         {
