@@ -11,9 +11,9 @@ import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
 通常，API 版本会在发布到生产环境之前，先发布到测试和暂存环境中。API7 Gateway 通过[网关组](../key-concepts/gateway-groups.md)管理这种环境隔离，其中 API 属于具有共享[上游](../key-concepts/upstreams.md)的单个[已发布服务](../key-concepts/services.md)。
 
-本教程将指导您在 API7 Gateway 上将 [httpbin](https://httpbin.org/) 服务发布到网关组。您将学习如何：
+本教程将指导你在 API7 企业版上将 [httpbin](https://httpbin.org/) 服务发布到网关组。你将学习如何：
 
-1. 手动和通过 OpenAPI 规范文件创建服务。
+1. 手动和通过 OpenAPI 文件创建服务。
 2. 通过配置上游节点和使用服务发现机制发布服务。
 
 ## 前提条件
@@ -39,19 +39,17 @@ values={[
 2. 选择 **手动新增**。
 3. 在表单中执行以下操作：
 
-* **名称** 填写 `httpbin API`。
 * **服务类型** 选择 `HTTP （七层代理）`。
-* **上游 Scheme** 选择 `HTTP`。
+* **名称** 填写 `httpbin`。
 * 点击 **新增**。
 
 4. 进入服务内，点击 **新增路由**。
 5. 在表单中，执行以下操作：
 
-* **名称** 填写 `getting-started-anything`.
-* **路径** 填写 `/anything/*`。
+* **名称** 填写 `get-ip`.
+* **路径** 填写 `/ip`。
 * **HTTP 方法** 选择 `GET`。
-
-6. 点击 **新增**。
+* 点击 **新增**。
 
 </TabItem>
 
@@ -61,7 +59,7 @@ values={[
 
 ```yaml title="adc.yaml"
 services:
-  - name: httpbin API
+  - name: httpbin
     upstream:
       name: httpbin upstream
       scheme: http
@@ -71,8 +69,8 @@ services:
           weight: 100
     routes:
       - uris:
-          - /anything/*
-        name: getting-started-anything
+          - /ip
+        name: get-ip
         methods:
           - GET
 ```
@@ -83,23 +81,23 @@ services:
 
 ### 导入 OpenAPI 文件
 
-控制台和 ADC 都支持导入 [OpenAPI v3.0](https://swagger.io/specification/) 规范。
+控制台和 ADC 都支持导入 [OpenAPI v3.0](https://swagger.io/specification/) 文件。
 
 在 YAML/JSON 文件中定义你的 API，如下所示：
 
 ```yaml title="OpenAPI.yaml"
 openapi: 3.1.0
 info:
-  title: httpbin API
+  title: httpbin
   description: "httpbin API for the API7 Enterprise Getting Started guides."
   version: 1.0.0
 paths:
   "/anything/*":
     get:
       tags:
-        - Anything
-      summary: Returns anything that is passed into the request.
-      operationId: getting-started-anything
+        - ip
+      summary: Returns the ip of the request.
+      operationId: get-ip
       responses:
         "200":
           description: Successful Response
@@ -108,8 +106,8 @@ paths:
               schema:
                 type: string
 tags:
-  - name: Anything
-    description: Return anything that is passed in on the request.
+  - name: ip
+    description: Return the ip of the request.
 ```
 
 然后在 API7 网关中使用：
@@ -129,7 +127,6 @@ values={[
 3. 在表单中执行以下操作：
 
 * 上传你的 YAML/JSON 文件。
-* **上游 Scheme** 选择 `HTTP`。
 * 点击 **下一步**。
 
 4. 确认以下信息：
@@ -138,8 +135,7 @@ values={[
 * **标签**：来自 OpenAPI 文件的 `tag`。
 * **描述**：来自 OpenAPI 文件的 `description`。
 * **路由**: 来自 OpenAPI 文件的 `Paths`。
-
-5. 点击 **新增**。
+* 点击 **新增**。
 
 </TabItem>
 
@@ -157,10 +153,6 @@ adc convert openapi -f openapi.yaml -o adc.yaml
 
 ## 将服务版本发布到网关组
 
-在 API7 网关中，你可以使用静态上游节点或动态服务发现来定义请求的目标。静态上游节点适用于地址固定的、定义明确的服务，而动态服务发现则更适合于服务实例可以动态添加或删除的微服务架构。
-
-### 发布单个服务
-
 <Tabs
 groupId="api"
 defaultValue="dashboard"
@@ -171,18 +163,19 @@ values={[
 
 <TabItem value="dashboard">
 
-1. 在左侧导航栏中选择 **服务中心**， 然后选择之前创建的 `httpbin API` 服务。
+1. 在左侧导航栏中选择 **服务中心**， 然后选择之前创建的 `httpbin` 服务。
 2. 点击 **发布新版本**。
-3. 在对话框中选择目标网关组，例如 `默认网关组`， 然后点击 **下一步**。
-4. 在表单中执行以下操作：
+3. 在表单中执行以下操作：，
 
+* **网关组** 中选择你要发布的目标网关组，例如 `默认网关组`。
 * **新版本** 填写 `1.0.0`。
-* **如何找到上游** 选择 `使用节点`。
-* 点击 **新增节点**。在表单中执行以下操作：
-  * **主机** 和 **端口** 填写 `httpbin.org` 和 `80`。
-  * **权重** 使用默认值 `100`。
-  * 点击 **新增**。
-* 确认服务信息，然后点击 **发布**。
+* 点击 **发布**。
+
+:::Note
+
+首次发布服务之后，请在网关组中配置必要的[服务运行时配置](../key-concepts/services.md#service-runtime-configurations)并**启用**该服务以激活你的 API。对于后续发布，服务状态和运行时配置将继承先前版本。
+
+:::
 
 </TabItem>
 
@@ -198,83 +191,31 @@ adc sync -f adc.yaml --gateway-group default
 
 </Tabs>
 
-### 批量发布服务
+## 配置服务运行时配置
 
-<Tabs
-groupId="api"
-defaultValue="dashboard"
-values={[
-{label: '控制台', value: 'dashboard'},
-{label: 'ADC', value: 'adc'},
-]}>
+1. 发布后，你将被重定向到网关组上的已发布服务。
+2. 从侧边导航栏中选择 **上游**。
+3. 点击 **新增节点**。
+4. 在表单中执行以下操作：
 
-<TabItem value="dashboard">
+* **主机** 字段中，输入 `httpbin.org`。
+* **端口** 字段中，输入 `80`。
+* **权重** 字段中，输入 `100`。
+* 点击 **添加**。
 
-1. 从侧边栏选择 **服务中心**，然后点击 **批量发布服务**。
-2. 选择你的目标网关组，例如，`default`，然后点击 **下一步**。
-3. 点击 **新增服务**。
-4. 在对话框中，执行以下操作：
-
-   * 在 **服务** 下拉列表中，选择你要发布的服务。
-   * **新版本** 输入 `1.0.0`。
-   * 点击 **新增**。
-
-5. 重复上述步骤以添加更多服务。
-6. 点击 **下一步** 继续发布服务。
-7. 在新窗口中，为每个服务执行以下操作：
-
-   * 在**如何查找上游**字段中，选择 `使用节点`。
-   * 点击 **新增节点**。在对话框中，执行以下操作：
-      * **主机**和**端口** 输入 `httpbin.org` 作为主机，`80` 作为端口。
-      * **权重** 使用默认值 `100`。
-      * 点击 **新增**。
-
-8. 确认信息，然后点击**发布**。
-
-下面是一个交互式演示，提供了发布版本化服务的实践介绍。跟随演示，你将直观了解如何在 API7 企业版中使用这个功能。
-
-<StorylaneEmbed src='https://app.storylane.io/demo/wqs2feuaqbyw' />
-
-</TabItem>
-
-<TabItem value="adc">
-
-要发布多个服务，你可以更新你的 ADC 配置文件以包含其他服务，或者使用多个配置文件并将它们同步到你的目标网关组，例如 `default`，如下所示：
-
-
-```shell
-adc sync -f adc-1.yaml -f adc-2.yaml
-```
-
-</TabItem>
-
-</Tabs>
+5. 从已发布服务的顶部标题栏中点击 **启用** 并确认。
 
 ## 验证 API
 
 ```bash
-curl "http://127.0.0.1:9080/anything/publish"
+curl "http://127.0.0.1:9080/ip"
 ```
 
 你应该会看到以下输出：
 
-```json
+```text
 {
-  "args": {},
-  "data": "",
-  "files": {},
-  "form": {},
-  "headers": {
-    "Accept": "*/*",
-    "Host": "localhost",
-    "User-Agent": "curl/7.88.1",
-    "X-Amzn-Trace-Id": "Root=1-664cc6d6-10fe9f740ab1629e19cf85a2",
-    "X-Forwarded-Host": "localhost"
-  },
-  "json": null,
-  "method": "GET",
-  "origin": "152.15.0.1, 116.212.249.196",
-  "url": "http://localhost/anything/publish"
+  "origin": "127.0.0.1"
 }
 ```
 
