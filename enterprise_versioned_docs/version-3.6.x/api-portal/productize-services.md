@@ -75,7 +75,7 @@ slug: /api-portal/productize-services
 2. 点击 **新增 API 产品**，然后选择 **从 API7 网关创建**。
 3. 填写表单：
     * **名称** 输入 `httpbin`。
-    * **认证方式** 选择 `Key Authentication`。
+    * **认证方式** 选择 `Key Authentication` 或者 `Basic Authentication`。
     * 关闭 **订阅自动审批** 开关。
     * **API Hub 列表可见性** 选择 `仅对登录的开发者可见`。
     * 打开 **未订阅的开发者可以查看 API 详情** 开关。
@@ -109,6 +109,9 @@ slug: /api-portal/productize-services
 3. 选择 `httpbin`。
 4. 点击 **Test Request**。
 5. 预先选择了 **Auth Type**，并自动填写 API 密钥，从开发者的凭据中复制。
+
+* 如果 API 产品在设置时允许多种身份验证类型，则开发者可以使用任意一个有效的凭据来调用 API。
+
 6. 点击 **Send**。
 7. 接收 `200` 响应。
 
