@@ -219,7 +219,7 @@ gateway:
    * 在**Key**字段选择**Manually Input**，然后输入`$env://ALICE_AUTH_KEY`
    * 点击**Add**
 
-6. 验证：参照[为API启用密钥认证](../api-security/api-authentication#enable-key-authentication-for-apis)的说明，在服务级别启用[Key Auth Plugin](/hub/key-auth)。然后按照[验证密钥认证](../api-security/api-authentication#validate-key-authentication)的步骤操作。
+6. 验证：参照[为API启用密钥认证](../api-security/api-authentication#enable-key-authentication-for-apis)的说明，在服务级别启用[Key Auth Plugin](https://docs.api7.ai/hub/key-auth)。然后按照[验证密钥认证](../api-security/api-authentication#validate-key-authentication)的步骤操作。
 
 ### SSL证书
 

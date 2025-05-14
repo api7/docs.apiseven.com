@@ -334,25 +334,25 @@ values={[
 
 #### 验证密钥认证
 
-参见 [为 API 启用密钥认证](../api-security/api-authentication#enable-key-authentication-for-apis)，在服务级别启用 [Key Auth 插件](/hub/key-auth)。
+参见 [为 API 启用密钥认证](../api-security/api-authentication#enable-key-authentication-for-apis)，在服务级别启用 [Key Auth 插件](https://docs.api7.ai/hub/key-auth)。
 
 然后按照 [验证密钥认证](../api-security/api-authentication#validate-key-authentication) 操作。
 
 #### 验证基础认证
 
-参见 [为 API 启用基础认证](../api-security/api-authentication#enable-basic-authentication-for-apis)，在服务级别启用 [Basic Auth 插件](/hub/basic-auth)。
+参见 [为 API 启用基础认证](../api-security/api-authentication#enable-basic-authentication-for-apis)，在服务级别启用 [Basic Auth 插件](https://docs.api7.ai/hub/basic-auth)。
 
 然后按照 [验证基础认证](../api-security/api-authentication#validate-basic-authentication) 操作。
 
 #### 验证 JWT 认证
 
-参见 [为 API 启用 JWT 认证](../api-security/api-authentication#enable-jwt-authentication-for-apis)，在服务级别启用 [JWT Auth 插件](/hub/jwt-auth)。
+参见 [为 API 启用 JWT 认证](../api-security/api-authentication#enable-jwt-authentication-for-apis)，在服务级别启用 [JWT Auth 插件](https://docs.api7.ai/hub/jwt-auth)。
 
 然后按照 [验证 JWT 认证](../api-security/api-authentication#validate-jwt-authentication) 操作。
 
 #### 验证 HMAC 认证
 
-参见 [为 API 启用 HMAC 认证](../api-security/api-authentication#enable-hmac-authentication-for-apis)，在服务级别启用 [HMAC Auth 插件](/hub/hmac-auth)。
+参见 [为 API 启用 HMAC 认证](../api-security/api-authentication#enable-hmac-authentication-for-apis)，在服务级别启用 [HMAC Auth 插件](https://docs.api7.ai/hub/hmac-auth)。
 
 然后按照 [验证 HMAC 认证](../api-security/api-authentication#validate-hmac-authentication) 操作。
 
@@ -362,12 +362,12 @@ values={[
 
 | 插件               | 字段                         |
 | -------------------- | -------------------------------- |
-| [Limit Count](/hub/limit-count)|  `redis_username`, `redis_password` |
+| [Limit Count](https://docs.api7.ai/hub/limit-count)|  `redis_username`, `redis_password` |
 | [Authz-Casdoor](https://apisix.apache.org/docs/apisix/plugins/authz-casdoor/)|  `client_id`, `client_secret` |
 | [Wolf RBAC](https://apisix.apache.org/docs/apisix/plugins/wolf-rbac/)|  `appid`|
 | [LDAP 认证](https://apisix.apache.org/docs/apisix/plugins/ldap-auth/)|  `user_dn` |
 
-本节以配置 [Limit Count 插件](/hub/limit-count) 为例。
+本节以配置 [Limit Count 插件](https://docs.api7.ai/hub/limit-count) 为例。
 
 ### 存储密钥
 
@@ -393,7 +393,7 @@ kubectl apply -f redis-secret.yaml
 
 ### 配置 Limit Count 插件
 
-关于如何启用 [Limit Count 插件](/hub/limit-count)，参见 [对 API 应用速率限制](../api-security/rate-limiting.md)。
+关于如何启用 [Limit Count 插件](https://docs.api7.ai/hub/limit-count)，参见 [对 API 应用速率限制](../api-security/rate-limiting.md)。
 
 <Tabs
 groupId="api"
