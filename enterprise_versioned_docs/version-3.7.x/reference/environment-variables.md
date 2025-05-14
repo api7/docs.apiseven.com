@@ -1,13 +1,13 @@
 ---
 title: 环境变量
 slug: /reference/environment-variables
-description: 了解如何在API7企业版中使用环境变量配置消费者凭证、SSL证书和插件。
+description: 了解如何在 API7 企业版中使用环境变量配置消费者凭证、 SSL 证书和插件。
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-API7 企业版支持使用[消费者凭证](../key-concepts/consumers.md#authentication--authorization)、[SSL证书](../key-concepts/ssl-certificates.md)以及部分插件。系统保留了一些特殊用途的环境变量，同时也支持创建自定义名称的环境变量并进行引用。
+API7 企业版支持使用 [消费者凭证](../key-concepts/consumers.md#authentication--authorization)、[SSL 证书](../key-concepts/ssl-certificates.md) 以及部分插件。系统保留了一些特殊用途的环境变量，同时也支持创建自定义名称的环境变量并进行引用。
 
 ## 保留环境变量
 
@@ -15,10 +15,10 @@ API7 企业版目前保留以下环境变量：
 
 | 变量名                  | 描述                                                                 |
 |-------------------------|---------------------------------------------------------------------|
-| `APISIX_DEPLOYMENT_ETCD_HOST` | etcd主机地址。            |
+| `APISIX_DEPLOYMENT_ETCD_HOST` | etcd 主机地址。            |
 | `APISIX_WORKER_PROCESSES`    | 工作进程数量。            |
 
-使用这些配置时，需在启动APISIX前为环境变量赋值。
+使用这些配置时，需在启动 APISIX 前为环境变量赋值。
 
 ## 自定义环境变量
 
@@ -26,18 +26,18 @@ API7 企业版目前保留以下环境变量：
 
 :::warning
 
-环境变量直接配置在各数据平面（网关实例）上，重启后立即生效。由于这种配置方式，您无法从控制平面查看实际值。此外，网关组内不同网关实例间的环境变量配置不一致可能导致不可预测的行为和API故障。
+环境变量直接配置在各数据平面（网关实例）上，重启后立即生效。由于这种配置方式，您无法从控制平面查看实际值。此外，网关组内不同网关实例间的环境变量配置不一致可能导致不可预测的行为和 API 故障。
 
 :::
 
 ### 消费者凭证
 
-以下消费者凭证中的敏感字段可通过[NGINX `env`指令](https://nginx.org/en/docs/ngx_core_module.html#env)存储于环境变量：
+以下消费者凭证中的敏感字段可通过 [NGINX `env` 指令](https://nginx.org/en/docs/ngx_core_module.html#env) 存储于环境变量：
 
-* 密钥认证凭证中的`key`
-* 基础认证凭证中的`password`
-* JWT认证凭证中的`secret`和`public key`
-* HMAC认证凭证中的`secret key`
+* 密钥认证凭证中的 `key`
+* 基础认证凭证中的 `password`
+* JWT 认证凭证中的 `secret` 和 `public key`
+* HMAC 认证凭证中的 `secret key`
 
 以下示例展示如何配置密钥认证凭证从环境变量获取用户认证密钥。
 
@@ -46,9 +46,9 @@ API7 企业版目前保留以下环境变量：
 <Tabs>
 <TabItem value="docker" label="Docker" default>
 
-部署网关实例时设置环境变量。参照[添加网关实例](../getting-started/add-gateway-instance.md)，然后将环境变量添加到生成的脚本中。
+部署网关实例时设置环境变量。参照 [添加网关实例](../getting-started/add-gateway-instance.md)，然后将环境变量添加到生成的脚本中。
 
-Docker示例，在`docker run`命令中添加自定义环境变量：
+Docker 示例，在 `docker run` 命令中添加自定义环境变量：
 
 ```shell
 docker run -d -e API7_CONTROL_PLANE_ENDPOINTS='["https://your-host-or-ip:443"]' \
@@ -95,9 +95,9 @@ api7/api7-ee-3-gateway:dev
 
 <TabItem value="k8s" label="Kubernetes">
 
-部署网关实例时设置环境变量。参照[添加网关实例](../getting-started/add-gateway-instance.md)，然后将环境变量添加到生成的脚本/YAML中。
+部署网关实例时设置环境变量。参照 [添加网关实例](../getting-started/add-gateway-instance.md)，然后将环境变量添加到生成的脚本 YAML 中。
 
-脚本示例，在`helm upgrade`命令中添加自定义环境变量：
+脚本示例，在 `helm upgrade` 命令中添加自定义环境变量：
 
 ```shell
 helm repo add api7 https://charts.api7.ai
@@ -154,7 +154,7 @@ helm upgrade --install -n test --create-namespace api7-ee-3-gateway api7/gateway
   --set "apisix.image.tag=dev"
 ```
 
-YAML示例：
+YAML 示例：
 
 ```yaml
 apiVersion: v1
@@ -207,34 +207,34 @@ gateway:
 
 #### 配置使用环境变量的消费者凭证
 
-1. 从侧边栏选择您网关组的**Consumers**。
-2. 点击**+ Add Consumer**。
+1. 从侧边栏选择您网关组的 **Consumers**。
+2. 点击 **+ Add Consumer**。
 3. 在对话框中：
-   * 在**Name**字段输入`Alice`
-   * 点击**Add**
+   * 在 **Name** 字段输入 `Alice`
+   * 点击 **Add**
 
-4. 在**Credentials**标签页下，点击**+ Add Key Authentication Credential**
+4. 在 **Credentials** 标签页下，点击 **+ Add Key Authentication Credential**
 5. 在对话框中：
-   * 在**Name**字段输入`primary-key`
-   * 在**Key**字段选择**Manually Input**，然后输入`$env://ALICE_AUTH_KEY`
-   * 点击**Add**
+   * 在 **Name** 字段输入 `primary-key`
+   * 在 **Key** 字段选择 **Manually Input**，然后输入 `$env://ALICE_AUTH_KEY`
+   * 点击 **Add**
 
-6. 验证：参照[为API启用密钥认证](../api-security/api-authentication#enable-key-authentication-for-apis)的说明，在服务级别启用[Key Auth Plugin](https://docs.api7.ai/hub/key-auth)。然后按照[验证密钥认证](../api-security/api-authentication#validate-key-authentication)的步骤操作。
+6. 验证：参照 [为 API 启用密钥认证](../api-security/api-authentication#enable-key-authentication-for-apis) 的说明，在服务级别启用 [Key Auth Plugin](https://docs.api7.ai/hub/key-auth)。然后按照 [验证密钥认证](../api-security/api-authentication#validate-key-authentication) 的步骤操作。
 
-### SSL证书
+### SSL 证书
 
-SSL证书中的敏感字段`private key`和`certificate`可通过[NGINX `env`指令](https://nginx.org/en/docs/ngx_core_module.html#env)存储于环境变量。
+SSL 证书中的敏感字段 `private key` 和 `certificate` 可通过 [NGINX `env` 指令](https://nginx.org/en/docs/ngx_core_module.html#env) 存储于环境变量。
 
-以下示例展示如何配置SSL证书从环境变量获取敏感数据。
+以下示例展示如何配置 SSL 证书从环境变量获取敏感数据。
 
 #### 设置环境变量
 
 <Tabs>
 <TabItem value="docker" label="Docker" default>
 
-部署网关实例时设置环境变量。参照[添加网关实例](../getting-started/add-gateway-instance.md)，然后将环境变量添加到生成的脚本中。
+部署网关实例时设置环境变量。参照 [添加网关实例](../getting-started/add-gateway-instance.md)，然后将环境变量添加到生成的脚本中。
 
-Docker示例，在`docker run`命令中添加自定义环境变量：
+Docker 示例，在 `docker run` 命令中添加自定义环境变量：
 
 ```shell
 docker run -d -e API7_CONTROL_PLANE_ENDPOINTS='["https://your-host-or-ip:443"]' \
@@ -294,7 +294,7 @@ api7/api7-ee-3-gateway:dev
 
 <TabItem value="k8s" label="Kubernetes">
 
-部署网关实例时设置环境变量。参照[添加网关实例](../getting-started/add-gateway-instance.md)，然后将环境变量作为Kubernetes Secrets添加到生成的脚本或YAML文件中。
+部署网关实例时设置环境变量。参照 [添加网关实例](../getting-started/add-gateway-instance.md)，然后将环境变量作为 Kubernetes Secrets 添加到生成的脚本或 YAML 文件中。
 
 脚本示例：
 
@@ -365,7 +365,7 @@ helm upgrade --install -n demo --create-namespace api7-ee-3-gateway api7/gateway
   --set "apisix.image.tag=dev"
 ```
 
-YAML示例：
+YAML 示例：
 
 ```yaml
 apiVersion: v1
@@ -428,11 +428,11 @@ gateway:
 </TabItem>
 </Tabs>
 
-#### 配置使用环境变量的SSL证书
+#### 配置使用环境变量的 SSL 证书
 
-1. 从侧边栏选择您网关组的**SSL Certificates**。
-2. 点击**+ Add SSL Certificate**。
+1. 从侧边栏选择您网关组的 **SSL Certificates**。
+2. 点击 **+ Add SSL Certificate**。
 3. 在对话框中：
-   * 在**Certificate**字段输入`$env://SSL_CERTIFICATE`
-   * 在**Key**字段输入`$env://SSL_PRIVATE_KEY`
+   * 在**Certificate** 字段输入 `$env://SSL_CERTIFICATE`
+   * 在**Key** 字段输入 `$env://SSL_PRIVATE_KEY`
    * 点击**Add**

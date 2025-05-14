@@ -1,5 +1,5 @@
 ---
-title: 升级至 API7 企业版3.7.x
+title: 升级至 API7 企业版 3.7.x
 slug: /upgrade-guides/upgrade
 description: 为 API7 企业版升级做好准备并确保稳定性。
 ---
