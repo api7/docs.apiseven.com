@@ -1,20 +1,20 @@
 ---
-title: 在日志中掩码敏感数据
+title: 在日志中脱敏敏感数据
 slug: /api-security/mask-data
-description: 按照本指南使用 API7 Enterprise 在日志中掩码敏感数据，确保日志文件中不会暴露机密信息。
+description: 按照本指南使用 API7 企业版在日志中脱敏敏感数据，确保日志文件中不会暴露机密信息。
 ---
 
 import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-数据掩码是一种数据保护技术，旨在防止敏感信息在各种环境中暴露，从而在不损害隐私的前提下支持应用程序的安全测试和数据分析。
+数据脱敏是一种数据保护技术，旨在防止敏感信息在各种环境中暴露，从而在不损害隐私的前提下支持应用程序的安全测试和数据分析。
 
-API7 Enterprise 提供的内置 [`data-mask`](https://docs.api7.ai/hub/data-mask) 插件可以帮助您删除或替换 URL 编码请求体、请求头、URL 查询参数中的敏感信息。
+API7 企业版提供的内置 [`data-mask`](https://docs.api7.ai/hub/data-mask) 插件可以帮助您删除或替换 URL 编码请求体、请求头、URL 查询参数中的敏感信息。
 
-本指南将带您了解如何使用 API7 Enterprise 在 URL 编码的请求体中掩码敏感信息。示例中使用的 [`file-logger`](https://apisix.apache.org/docs/apisix/plugins/file-logger/) 插件是为了展示信息已成功被掩码，请根据您的实际用例进行调整。
+本指南将带您了解如何使用 API7 企业版在 URL 编码的请求体中脱敏敏感信息。示例中使用的 [`file-logger`](https://apisix.apache.org/docs/apisix/plugins/file-logger/) 插件是为了展示信息已成功被脱敏，请根据您的实际用例进行调整。
 
-以下是一个交互式演示，为您介绍如何在日志中掩码敏感数据。
+以下是一个交互式演示，为您介绍如何在日志中脱敏敏感数据。
 
 <StorylaneEmbed src='https://app.storylane.io/demo/xl4f5spwjmu6' />
 
