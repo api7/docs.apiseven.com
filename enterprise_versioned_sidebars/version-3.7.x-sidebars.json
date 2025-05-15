@@ -80,10 +80,7 @@
     {
       "type": "category",
       "label": "API 门户",
-      "items": [
-        "api-portal/productize-services",
-        "api-portal/developer-sso"
-      ]
+      "items": ["api-portal/productize-services", "api-portal/developer-sso"]
     },
     {
       "type": "category",
@@ -117,11 +114,8 @@
         {
           "type": "category",
           "label": "部署",
-          "items": [
-            "deployment/k8s-openshift",
-            "deployment/ingress-controller"
-          ]
-        },     
+          "items": ["deployment/k8s-openshift", "deployment/ingress-controller"]
+        },
         {
           "type": "category",
           "label": "ADC",
@@ -160,7 +154,11 @@
         },
         "reference/hardening",
         "reference/configuration",
-        "reference/alert-template"
+        "reference/environment-variables",
+        "reference/alert-template",
+        "reference/approval-variables",
+        "reference/expressions",
+        "reference/built-in-variables"
       ]
     }
   ]

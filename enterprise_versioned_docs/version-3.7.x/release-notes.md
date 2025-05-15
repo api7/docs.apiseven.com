@@ -252,7 +252,7 @@ slug: /release-notes
 
 #### 引用在 AWS Secrets Manager 中的密钥（Secrets）
 
-*密钥（Secrets）* 对象是一条需要防止未经授权访问的敏感信息，而 *Secret 提供商（Secret Provider）* 对象用于设置与外部密钥管理器（HashiCorp Vault、AWS Secret Manager 等）的集成，以便 API7 网关可以在运行时动态地建立连接并从密钥管理器中获取密钥。
+_密钥（Secrets）_ 对象是一条需要防止未经授权访问的敏感信息，而 _Secret 提供商（Secret Provider）_ 对象用于设置与外部密钥管理器（HashiCorp Vault、AWS Secret Manager 等）的集成，以便 API7 网关可以在运行时动态地建立连接并从密钥管理器中获取密钥。
 
 有关更多详细信息，请参阅 [引用在 AWS Secrets Manager 中的密钥](./api-security/aws-secrets-manager.md)。
 
@@ -261,7 +261,7 @@ slug: /release-notes
 匿名消费者无需身份验证，但可以限制访问速率。你可以在服务/路由上的身份验证插件中配置匿名消费者，然后与速率限制插件结合使用。
 
 有关详细信息，请参阅以下文档：
-    
+
 * [对匿名消费者进行速率限制](./api-security/rate-limiting.md#add-an-anonymous-consumer)
 
 #### 安全
@@ -331,7 +331,7 @@ slug: /release-notes
 
 :::
 
-*密钥（Secrets）* 对象是一条需要防止未经授权访问的敏感信息，而 *Secret 提供商（Secret Provider）* 对象用于设置与外部密钥管理器（HashiCorp Vault、AWS Secret Manager 等）的集成，以便 API7 网关可以在运行时动态地建立连接并从密钥管理器中获取密钥。
+_密钥（Secrets）_ 对象是一条需要防止未经授权访问的敏感信息，而 _Secret 提供商（Secret Provider）_ 对象用于设置与外部密钥管理器（HashiCorp Vault、AWS Secret Manager 等）的集成，以便 API7 网关可以在运行时动态地建立连接并从密钥管理器中获取密钥。
 
 有关更多详细信息，请参阅 [在 HashiCorp Vault 中引用密钥](./api-security/hashicorp-vault.md)。
 
@@ -362,7 +362,6 @@ slug: /release-notes
 * 为插件分类添加了中文翻译。
 * 扩大了插件描述文字框，以完整显示插件的介绍。
 * 修复了新建令牌并删除令牌后，新建提示没有消失的问题。
-
 
 ## 3.2.15.2 版本
 
@@ -505,7 +504,7 @@ API7 网关允许为各个路由配置不同的上游超时，以覆盖上游侧
 
 ### 缺陷修复
 
-* 将 [Datadog](https://docs.api7.ai/hub/datadog) 插件修复 (https://github.com/apache/apisix/pull/11354) 合并到 API7 企业版。
+* 将 [Datadog](https://docs.api7.ai/hub/datadog) 插件修复 (<https://github.com/apache/apisix/pull/11354>) 合并到 API7 企业版。
 * 修复了控制台上数据面不可见的问题。
 * 修复了一个问题：将 Prometheus 数据报告方法从远程写入更改为抓取后，服务注册表状态始终显示为“断开连接”。
 * 修复了通过控制台部署自定义插件后，数据面遇到错误的问题。
@@ -539,10 +538,10 @@ API7 企业版改进了传统的基于角色的权限，采用了权限策略架
 
 改进了以下问题：
 
-- 过长的证书：证书字符串太长，应该缩短。
-- 不必要的标记：证书包含不必要的标记，应该删除。
-- 共享 CA：为多个证书使用相同的证书颁发机构 (CA) 是不安全的。
-- 证书不匹配处理：当发生证书不匹配时，握手应立即失败，拒绝客户端的请求，而不是继续进行进一步的验证。
+* 过长的证书：证书字符串太长，应该缩短。
+* 不必要的标记：证书包含不必要的标记，应该删除。
+* 共享 CA：为多个证书使用相同的证书颁发机构 (CA) 是不安全的。
+* 证书不匹配处理：当发生证书不匹配时，握手应立即失败，拒绝客户端的请求，而不是继续进行进一步的验证。
 
 #### 在 API7 Helm Chart 中包含新的参数 `lua_shared_dict`
 
@@ -550,20 +549,20 @@ API7 企业版改进了传统的基于角色的权限，采用了权限策略架
 
 ### 缺陷修复
 
-- 从旧版本升级可能会导致上游数据丢失或 404 错误。
-- 服务请求 URL 更新期间遇到 UI 错误。
-- 修复了 API7 Portal (Beta) 库问题。
-- 修复了 [HTTP Logger](https://docs.api7.ai/hub/http-logger) 插件内存泄漏。
-- 前端和后端密码策略不一致。
-- 当 GET 请求与任何路由都不匹配时，[Data Mask](https://docs.api7.ai/hub/data-mask) 插件会报告错误。
-- ApisixUpstream CRD 的 status 字段记录不正确。
-- 数据面支持配置监控数据的报告间隔。
-- 修复了配置插件元数据后的警告日志。
-- 修复了插件重新加载问题。
-- 减少 PostgreSQL 连接数。
-- 优化前端资源消耗。
-- 删除 FQDN 中的尾随点。
-- 插件元数据应该能够被删除。
+* 从旧版本升级可能会导致上游数据丢失或 404 错误。
+* 服务请求 URL 更新期间遇到 UI 错误。
+* 修复了 API7 Portal (Beta) 库问题。
+* 修复了 [HTTP Logger](https://docs.api7.ai/hub/http-logger) 插件内存泄漏。
+* 前端和后端密码策略不一致。
+* 当 GET 请求与任何路由都不匹配时，[Data Mask](https://docs.api7.ai/hub/data-mask) 插件会报告错误。
+* ApisixUpstream CRD 的 status 字段记录不正确。
+* 数据面支持配置监控数据的报告间隔。
+* 修复了配置插件元数据后的警告日志。
+* 修复了插件重新加载问题。
+* 减少 PostgreSQL 连接数。
+* 优化前端资源消耗。
+* 删除 FQDN 中的尾随点。
+* 插件元数据应该能够被删除。
 
 ## 3.2.11.8 版本
 
@@ -571,8 +570,8 @@ API7 企业版改进了传统的基于角色的权限，采用了权限策略架
 
 ### 缺陷修复
 
-- 通过减少 etcd 调用来降低 API 延迟。
-- Kine 数据库连接池配置可以正常工作。
+* 通过减少 etcd 调用来降低 API 延迟。
+* Kine 数据库连接池配置可以正常工作。
 
 ## 3.2.11.7 版本
 
@@ -580,9 +579,9 @@ API7 企业版改进了传统的基于角色的权限，采用了权限策略架
 
 ### 缺陷修复
 
-- 提升 API 性能。
-- 数据面支持禁用遥测数据收集和配置报告间隔。
-- 自定义插件即使没有 schema 定义也可以正常工作。
+* 提升 API 性能。
+* 数据面支持禁用遥测数据收集和配置报告间隔。
+* 自定义插件即使没有 schema 定义也可以正常工作。
 
 ## 3.2.11.6 版本
 
@@ -590,7 +589,7 @@ API7 企业版改进了传统的基于角色的权限，采用了权限策略架
 
 ### 缺陷修复
 
-- 大数据集不再导致 etcd range API 错误。
+* 大数据集不再导致 etcd range API 错误。
 
 ## 3.2.13.0 版本
 
@@ -600,13 +599,13 @@ API7 企业版改进了传统的基于角色的权限，采用了权限策略架
 
 1. 服务模板 API 已迁移到 "/api/services/template" 路径前缀下。
 
-- [服务模板 API](https://docs.api7.ai/enterprise/reference/admin-api#tag/Services-Template)
-- [路由模板 API](https://docs.api7.ai/enterprise/reference/admin-api#tag/Routes-Template)
+* [服务模板 API](https://docs.api7.ai/enterprise/reference/admin-api#tag/Services-Template)
+* [路由模板 API](https://docs.api7.ai/enterprise/reference/admin-api#tag/Routes-Template)
 
 2. 原始的 "/apisix/admin/services" 端点现在需要 gateway_group_id 参数。
 
-- [网关组上的服务 API](https://docs.api7.ai/enterprise/reference/admin-api#tag/Services)
-- [网关组上的路由 API](https://docs.api7.ai/enterprise/reference/admin-api#tag/Routes)
+* [网关组上的服务 API](https://docs.api7.ai/enterprise/reference/admin-api#tag/Services)
+* [网关组上的路由 API](https://docs.api7.ai/enterprise/reference/admin-api#tag/Routes)
 
 ### 新增功能
 
@@ -642,8 +641,8 @@ Prometheus 远程写入现在支持 Basic Auth/mTLS。
 
 ### 缺陷修复
 
-- 设置标头后，`ctx.var` 变量将立即更新。
-- 无法上传重复的 SSL 证书。
+* 设置标头后，`ctx.var` 变量将立即更新。
+* 无法上传重复的 SSL 证书。
 
 ## 3.2.11.5 版本
 
@@ -651,7 +650,7 @@ Prometheus 远程写入现在支持 Basic Auth/mTLS。
 
 ### 缺陷修复
 
-- ssl_verify 配置现在适用于登录选项 OIDC 和 LDAP 协议。
+* ssl_verify 配置现在适用于登录选项 OIDC 和 LDAP 协议。
 
 ## 3.2.11.4 版本
 
@@ -659,7 +658,7 @@ Prometheus 远程写入现在支持 Basic Auth/mTLS。
 
 ### 缺陷修复
 
-- 保护与 API 相关的登录选项中的敏感字段。
+* 保护与 API 相关的登录选项中的敏感字段。
 
 ## 版本 3.2.12.0
 
@@ -669,17 +668,17 @@ Prometheus 远程写入现在支持 Basic Auth/mTLS。
 
 1. service status 字段从“0: 启用，1: 禁用”变更为“0: 禁用，1: 启用”
 
-- [Publish a service](https://docs.api7.ai/enterprise/reference/admin-api#tag/Services/paths/~1api~1services~1publish/post)
-- [Update service runtime configurations by ID](https://docs.api7.ai/enterprise/reference/admin-api#tag/Gateway-Groups/operation/changeServiceRuntimeConfiguration)
-- [Get all published services in Gateway Group](https://docs.api7.ai/enterprise/reference/admin-api#tag/Gateway-Groups/operation/listPublishedService)
+* [Publish a service](https://docs.api7.ai/enterprise/reference/admin-api#tag/Services/paths/~1api~1services~1publish/post)
+* [Update service runtime configurations by ID](https://docs.api7.ai/enterprise/reference/admin-api#tag/Gateway-Groups/operation/changeServiceRuntimeConfiguration)
+* [Get all published services in Gateway Group](https://docs.api7.ai/enterprise/reference/admin-api#tag/Gateway-Groups/operation/listPublishedService)
 
 2. consumer api 移除 id 字段，使用 gateway group id & username 做查询、删除
 
-- [Consumers APIs](https://docs.api7.ai/enterprise/reference/admin-api#tag/Consumers)
+* [Consumers APIs](https://docs.api7.ai/enterprise/reference/admin-api#tag/Consumers)
 
 3. ssl 相关 api 强制 gateway group id 参数
 
-- [SSL APIs](https://docs.api7.ai/enterprise/reference/admin-api#tag/SSLs)
+* [SSL APIs](https://docs.api7.ai/enterprise/reference/admin-api#tag/SSLs)
 
 ### 新增功能
 
@@ -699,16 +698,16 @@ API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连�
 
 #### 优化左侧导航菜单
 
-- 用户登录后落地页改为网关组菜单中已发布服务。
-- **服务** 菜单项改名为 **服务中心**。
+* 用户登录后落地页改为网关组菜单中已发布服务。
+* **服务** 菜单项改名为 **服务中心**。
 
 ### 缺陷修复
 
-- 使用 [Key Auth](https://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
-- 使用 [UA Restriction](https://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
-- 重置用户密码时不会引起访问令牌失效。
-- 使用 [Loggly](https://apisix.apache.org/zh/docs/apisix/plugins/loggly/) 插件时配置能校验成功。
-- API7 网关中的状态字段取值含义和 Apache APISIX 保持一致。
+* 使用 [Key Auth](https://docs.api7.ai/hub/key-auth) 插件时，禁止出现重复的 API 密钥。
+* 使用 [UA Restriction](https://docs.api7.ai/hub/ua-restriction) 插件时，允许同时配置黑名单和白名单。
+* 重置用户密码时不会引起访问令牌失效。
+* 使用 [Loggly](https://apisix.apache.org/zh/docs/apisix/plugins/loggly/) 插件时配置能校验成功。
+* API7 网关中的状态字段取值含义和 Apache APISIX 保持一致。
 
 ## 版本 3.2.11.3
 
@@ -716,8 +715,8 @@ API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连�
 
 ### 缺陷修复
 
-- etcd watch 可以正确地传递 SNI。
-- API7 企业版在安装时会先尝试创建新的数据库。如果没有对应权限导致失败，会使用预先指定的已有数据库，避免安装失败。
+* etcd watch 可以正确地传递 SNI。
+* API7 企业版在安装时会先尝试创建新的数据库。如果没有对应权限导致失败，会使用预先指定的已有数据库，避免安装失败。
 
 ## 版本 3.2.11.2
 
@@ -725,8 +724,8 @@ API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连�
 
 ### 缺陷修复
 
-- 标签支持最长 64 个字符，且可以包含空格。
-- 即使包含 schema 校验错误，也可以正常完成与数据面的配置同步，避免数据丢失或工作流中断。
+* 标签支持最长 64 个字符，且可以包含空格。
+* 即使包含 schema 校验错误，也可以正常完成与数据面的配置同步，避免数据丢失或工作流中断。
 
 ## 版本 3.2.11.1
 
@@ -856,7 +855,7 @@ API7 企业版新增支持对接 SAML 第三方登录。详情见[如何设置�
 
 ## 版本 3.2.9.1
 
-**发布日期*: 2024-03-19
+*_发布日期_: 2024-03-19
 
 ### 新增功能
 
