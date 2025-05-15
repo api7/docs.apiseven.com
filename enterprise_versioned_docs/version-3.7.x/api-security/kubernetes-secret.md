@@ -19,7 +19,7 @@ Kubernetes Secrets 是用于存储密码、API 密钥和令牌等敏感数据的
 3. 准备用于存储密钥的 Kubernetes 集群
 4. 安装 [cURL](https://curl.se/) 用于服务验证
 
-## 在网关组中添加 Secret 提供商
+## 在网关组中新增 Secret 提供商
 
 <Tabs
 groupId="api"
@@ -32,13 +32,13 @@ values={[
 
 <TabItem value="dashboard">
 
-1. 从侧边栏选择网关组的 **Secret 提供商**，点击 **添加 Secret 提供商**。
+1. 从侧边栏选择网关组的 **Secret 提供商**，点击 **新增 Secret 提供商**。
 2. 在对话框中：
    * **Secret 提供商 ID** 输入 `my-kubernetes-secret`。
    * **密钥管理器** 选择 `Kubernetes`。
    * 填写 **API 服务器地址** 如 `http://127.0.0.1`。
    * 填写 **Token**。
-   * 点击**添加**。
+   * 点击**新增**。
 3. 复制 **密钥变量** 供后续使用，所有密钥引用都基于此生成，例如：`$secret://kubernetes/my-kubernetes-secret/$namespace/$secret_name/$key`。
 
 </TabItem>
@@ -98,15 +98,15 @@ data: # 必须使用 base64 编码值
 kubectl apply -f ssl-secret.yaml
 ```
 
-### 添加 SSL 证书
+### 新增 SSL 证书
 
 1. 从侧边栏选择网关组的 **证书**，进入 **SSL 证书** 标签页。
-2. 点击 **添加 SSL 证书**。
+2. 点击 **新增 SSL 证书**。
 3. 在对话框中：
    * **名称** 输入 `测试 SSL 证书`。
    * **证书** 输入 `$secret://kubernetes/my-kubernetes-secret/default/ssl/tls.crt`。
    * **私钥** 输入 `$secret://kubernetes/my-kubernetes-secret/default/ssl/tls.key`。
-   * 点击**添加**。
+   * 点击**新增**。
 
 4. 完整使用和验证 SSL 证书，参见 [配置客户端与 API7 网关间的 mTLS](client-mtls.md)
 
@@ -119,7 +119,7 @@ kubectl apply -f ssl-secret.yaml
 * JWT 认证凭据中的 `secret`、`public key`
 * HMAC 认证凭据中的 `secret key`
 
-### 添加消费者
+### 新增消费者
 
 <Tabs
 groupId="api"
@@ -133,10 +133,10 @@ values={[
 <TabItem value="dashboard">
 
 1. 从侧边栏选择网关组的 **消费者**。
-2. 点击 **添加消费者**。
+2. 点击 **新增消费者**。
 3. 在对话框中：
    * **名称** 输入 `Alice`。
-   * 点击**添加**。
+   * 点击**新增**。
 
 </TabItem>
 
@@ -178,7 +178,7 @@ stringData: # 必须使用 base64 编码值
 kubectl apply -f alice-secret.yaml
 ```
 
-### 添加密钥认证凭据
+### 新增密钥认证凭据
 
 <Tabs
 groupId="api"
@@ -193,11 +193,11 @@ values={[
 
 1. 从侧边栏选择网关组的 **消费者**。
 2. 选择目标消费者如 `Alice`。
-3. 在 **认证凭据** 标签页点击 **添加密钥认证凭据**。
+3. 在 **认证凭据** 标签页点击 **新增密钥认证凭据**。
 4. 在对话框中：
    * **名称** 输入 `primary-key`。
    * **密钥** 输入 `$secret://kubernetes/my-kubernetes-secret/default/alice/key`。
-   * 点击**添加**。
+   * 点击**新增**。
 
 </TabItem>
 
@@ -215,7 +215,7 @@ values={[
 
 </Tabs>
 
-### 添加基础认证凭据
+### 新增基础认证凭据
 
 <Tabs
 groupId="api"
@@ -230,12 +230,12 @@ values={[
 
 1. 从侧边栏选择网关组的 **消费者**。
 2. 选择目标消费者如 `Alice`。
-3. 在 **认证凭据** 标签页的 **基础认证** 子标签下点击 **添加基础认证凭据**。
+3. 在 **认证凭据** 标签页的 **基础认证** 子标签下点击 **新增基础认证凭据**。
 4. 在对话框中：
    * **名称** 输入 `primary-basic`。
    * **用户名** 输入 `Alice`。
    * **密码** 输入 `$secret://kubernetes/my-kubernetes-secret/default/alice/password`。
-   * 点击**添加**。
+   * 点击**新增**。
 
 </TabItem>
 
@@ -253,7 +253,7 @@ values={[
 
 </Tabs>
 
-### 添加 JWT 认证凭据
+### 新增 JWT 认证凭据
 
 <Tabs
 groupId="api"
@@ -268,13 +268,13 @@ values={[
 
 1. 从侧边栏选择网关组的 **消费者**。
 2. 选择目标消费者如 `Alice`。
-3. 在 **认证凭据** 标签页的 **JWT** 子标签下点击 **添加 JWT 凭据**。
+3. 在 **认证凭据** 标签页的 **JWT** 子标签下点击 **新增 JWT 凭据**。
 4. 在对话框中：
    * **名称** 输入 `primary-jwt`。
    * **密钥** 输入 `alice-key`。
    * **算法** 选择 `HS256`。
    * **密钥** 输入 `$secret://kubernetes/my-kubernetes-secret/default/alice/secret`。
-   * 点击**添加**。
+   * 点击**新增**。
 
 </TabItem>
 
@@ -292,7 +292,7 @@ values={[
 
 </Tabs>
 
-### 添加 HMAC 认证凭据
+### 新增 HMAC 认证凭据
 
 <Tabs
 groupId="api"
@@ -307,12 +307,12 @@ values={[
 
 1. 从侧边栏选择网关组的 **消费者**。
 2. 选择目标消费者如 `Alice`。
-3. 在 **认证凭据** 标签页的 **HMAC 认证** 子标签下点击 **添加 HMAC 认证凭据**。
+3. 在 **认证凭据** 标签页的 **HMAC 认证** 子标签下点击 **新增 HMAC 认证凭据**。
 4. 在对话框中：
    * **名称** 输入 `primary-hmac`。
    * **密钥 ID** 输入 `alice-keyid`。
    * **密钥** 输入 `$secret://kubernetes/my-kubernetes-secret/default/alice/secret-key`。
-   * 点击**添加**。
+   * 点击**新增**。
 
 </TabItem>
 
@@ -406,7 +406,7 @@ values={[
 
 <TabItem value="dashboard">
 
-在 **JSON 编辑器** 中添加以下配置：
+在 **JSON 编辑器** 中新增以下配置：
 
 ```json
 {
