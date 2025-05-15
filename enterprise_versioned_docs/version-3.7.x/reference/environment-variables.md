@@ -207,16 +207,16 @@ gateway:
 
 #### 配置使用环境变量的消费者凭证
 
-1. 从侧边栏选择您网关组的 **Consumers**。
-2. 点击 **+ Add Consumer**。
+1. 从侧边栏选择您网关组的 **消费者**。
+2. 点击 **+ 新增消费者**。
 3. 在对话框中：
-   * 在 **Name** 字段输入 `Alice`
-   * 点击 **Add**
+   * 在 **名称** 字段输入 `Alice`
+   * 点击 **新增**
 
-4. 在 **Credentials** 标签页下，点击 **+ Add Key Authentication Credential**
+4. 在 **认证凭据** 标签页下，点击 **+ 新增 Key Authentication 凭据**
 5. 在对话框中：
-   * 在 **Name** 字段输入 `primary-key`
-   * 在 **Key** 字段选择 **Manually Input**，然后输入 `$env://ALICE_AUTH_KEY`
+   * 在 **名称** 字段输入 `primary-key`
+   * 在 **密钥** 字段选择 **手动输入**，然后输入 `$env://ALICE_AUTH_KEY`
    * 点击 **Add**
 
 6. 验证：参照 [为 API 启用密钥认证](../api-security/api-authentication#enable-key-authentication-for-apis) 的说明，在服务级别启用 [Key Auth Plugin](https://docs.api7.ai/hub/key-auth)。然后按照 [验证密钥认证](../api-security/api-authentication#validate-key-authentication) 的步骤操作。
