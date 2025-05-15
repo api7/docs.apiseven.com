@@ -430,9 +430,9 @@ gateway:
 
 #### 配置使用环境变量的 SSL 证书
 
-1. 从侧边栏选择您网关组的 **SSL Certificates**。
-2. 点击 **+ Add SSL Certificate**。
+1. 从侧边栏选择您网关组的 **证书**。
+2. 点击 **+ 新增 SSL 证书**。
 3. 在对话框中：
-   * 在**Certificate** 字段输入 `$env://SSL_CERTIFICATE`
-   * 在**Key** 字段输入 `$env://SSL_PRIVATE_KEY`
-   * 点击**Add**
+   * 在**证书** 字段输入 `$env://SSL_CERTIFICATE`
+   * 在**私钥** 字段输入 `$env://SSL_PRIVATE_KEY`
+   * 点击**添加**
