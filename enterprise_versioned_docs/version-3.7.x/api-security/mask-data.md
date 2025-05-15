@@ -20,7 +20,7 @@ API7 企业版提供的内置 [`data-mask`](https://docs.api7.ai/hub/data-mask) 
 
 ## 前提条件
 
-- [安装 API7 Enterprise](../getting-started/install-api7-ee.md)
+- [安装 API7 企业版](../getting-started/install-api7-ee.md)
 - [在网关组中已有一个正在运行的 API](../getting-started/launch-your-first-api.md)
 
 ## 启用 `data-mask` 和 `file-logger` 插件

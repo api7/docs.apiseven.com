@@ -8,18 +8,18 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
 
-Kubernetes Secrets 是用于存储密码、 API 密钥和令牌等敏感数据的对象。这些密钥可以作为环境变量暴露给 Pod，或作为密钥提供者集成以增强 API 安全性。
+Kubernetes Secrets 是用于存储密码、API 密钥和令牌等敏感数据的对象。这些密钥可以作为环境变量暴露给 Pod，或作为 Secret 提供商集成以增强 API 安全性。
 
-本教程演示如何将 API7 企业版与 Kubernetes 集成作为密钥提供者，使您能够安全地存储和引用消费者凭据及插件配置。
+本教程演示如何将 API7 企业版与 Kubernetes 集成作为Secret 提供商，使您能够安全地存储和引用消费者凭据及插件配置。
 
-## 先决条件
+## 前提条件
 
 1. [安装 API7 企业版](../getting-started/install-api7-ee.md)
 2. [网关组中至少有一个网关实例](../getting-started/add-gateway-instance.md)
 3. 准备用于存储密钥的 Kubernetes 集群
 4. 安装 [cURL](https://curl.se/) 用于服务验证
 
-## 在网关组中添加密钥提供者
+## 在网关组中添加 Secret 提供商
 
 <Tabs
 groupId="api"
@@ -32,20 +32,20 @@ values={[
 
 <TabItem value="dashboard">
 
-1. 从侧边栏选择网关组的 **密钥提供者**，点击 **添加密钥提供者**
+1. 从侧边栏选择网关组的 **Secret 提供商**，点击 **添加 Secret 提供商**。
 2. 在对话框中：
-   * **密钥提供者 ID** 输入 `my-kubernetes-secret`
-   * **密钥管理器** 选择 `Kubernetes`
-   * 填写**API 服务器地址** 如 `http://127.0.0.1`
-   * 填写**Token**
-   * 点击**添加**
-3. 复制 **密钥变量** 供后续使用，所有密钥引用都基于此生成，例如：`$secret://kubernetes/my-kubernetes-secret/$namespace/$secret_name/$key`
+   * **Secret 提供商 ID** 输入 `my-kubernetes-secret`。
+   * **密钥管理器** 选择 `Kubernetes`。
+   * 填写 **API 服务器地址** 如 `http://127.0.0.1`。
+   * 填写 **Token**。
+   * 点击**添加**。
+3. 复制 **密钥变量** 供后续使用，所有密钥引用都基于此生成，例如：`$secret://kubernetes/my-kubernetes-secret/$namespace/$secret_name/$key`。
 
 </TabItem>
 
 <TabItem value="adc">
 
-即将推出
+即将推出。
 
 </TabItem>
 
@@ -59,7 +59,7 @@ values={[
 
 ## 为 SSL 证书引用密钥
 
-SSL 证书对象中的敏感字段 `certificate` 和 `private key` 可以安全地存储在外部密钥管理器 ( 如 HashiCorp Vault、 AWS Secret Manager 或 Kubernetes Secret) 中，并在 API7 网关中引用。
+SSL 证书对象中的敏感字段 `certificate` 和 `private key` 可以安全地存储在外部密钥管理器 (如 HashiCorp Vault、 AWS Secret Manager 或 Kubernetes Secret) 中，并在 API7 网关中引用。
 
 ### 存储密钥
 
