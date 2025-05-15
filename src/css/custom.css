@@ -142,3 +142,11 @@
 .pagination-nav__link:hover .pagination-nav__label {
   color: var(--ifm-color-primary);
 }
+
+.docs-doc-id-release-notes .theme-doc-version-badge {
+  display: none !important;
+}
+
+.docs-doc-id-release-notes .theme-doc-version-banner {
+  display: none !important;
+}
