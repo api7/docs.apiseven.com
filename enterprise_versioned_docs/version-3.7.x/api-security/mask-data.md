@@ -37,7 +37,7 @@ values={[
 <TabItem value="dashboard">
 
 1. 从侧边导航栏中选择您的网关组下的 **已发布服务**，然后点击您要修改的服务，例如一个无版本的 `httpbin` 服务。
-2. 在已发布服务下，从侧边栏选择 **路由（Routes）**。
+2. 在已发布服务中，从侧边栏选择 **路由**。
 3. 选择您的目标路由，例如 `/anything`。
 4. 点击 **+ 添加插件**。
 5. 搜索 `data-mask` 插件。
@@ -137,7 +137,7 @@ services:
             path: /tmp/mask-urlencoded-body.log
 ```
 
-将配置同步到 API7 Enterprise：
+将配置同步到 API7 企业版：
 
 ```shell
 adc sync -f adc.yaml

@@ -100,13 +100,13 @@ kubectl apply -f ssl-secret.yaml
 
 ### 添加 SSL 证书
 
-1. 从侧边栏选择网关组的 **证书**，进入 **SSL 证书** 标签页
-2. 点击 **添加 SSL 证书**
+1. 从侧边栏选择网关组的 **证书**，进入 **SSL 证书** 标签页。
+2. 点击 **添加 SSL 证书**。
 3. 在对话框中：
-   * **名称** 输入 `测试 SSL 证书`
-   * **证书** 输入 `$secret://kubernetes/my-kubernetes-secret/default/ssl/tls.crt`
-   * **私钥** 输入 `$secret://kubernetes/my-kubernetes-secret/default/ssl/tls.key`
-   * 点击**添加**
+   * **名称** 输入 `测试 SSL 证书`。
+   * **证书** 输入 `$secret://kubernetes/my-kubernetes-secret/default/ssl/tls.crt`。
+   * **私钥** 输入 `$secret://kubernetes/my-kubernetes-secret/default/ssl/tls.key`。
+   * 点击**添加**。
 
 4. 完整使用和验证 SSL 证书，参见 [配置客户端与 API7 网关间的 mTLS](client-mtls.md)
 
@@ -132,11 +132,11 @@ values={[
 
 <TabItem value="dashboard">
 
-1. 从侧边栏选择网关组的 **消费者**
-2. 点击 **添加消费者**
+1. 从侧边栏选择网关组的 **消费者**。
+2. 点击 **添加消费者**。
 3. 在对话框中：
-   * **名称** 输入 `Alice`
-   * 点击**添加**
+   * **名称** 输入 `Alice`。
+   * 点击**添加**。
 
 </TabItem>
 
@@ -191,13 +191,13 @@ values={[
 
 <TabItem value="dashboard">
 
-1. 从侧边栏选择网关组的 **消费者**
-2. 选择目标消费者如 `Alice`
-3. 在 **凭据** 标签页点击 **添加密钥认证凭据**
+1. 从侧边栏选择网关组的 **消费者**。
+2. 选择目标消费者如 `Alice`。
+3. 在 **认证凭据** 标签页点击 **添加密钥认证凭据**。
 4. 在对话框中：
-   * **名称** 输入 `primary-key`
-   * **密钥** 输入 `$secret://kubernetes/my-kubernetes-secret/default/alice/key`
-   * 点击**添加**
+   * **名称** 输入 `primary-key`。
+   * **密钥** 输入 `$secret://kubernetes/my-kubernetes-secret/default/alice/key`。
+   * 点击**添加**。
 
 </TabItem>
 
@@ -228,14 +228,14 @@ values={[
 
 <TabItem value="dashboard">
 
-1. 从侧边栏选择网关组的 **消费者**
-2. 选择目标消费者如 `Alice`
-3. 在 **凭据** 标签页的 **基础认证** 子标签下点击 **添加基础认证凭据**
+1. 从侧边栏选择网关组的 **消费者**。
+2. 选择目标消费者如 `Alice`。
+3. 在 **认证凭据** 标签页的 **基础认证** 子标签下点击 **添加基础认证凭据**。
 4. 在对话框中：
-   * **名称** 输入 `primary-basic`
-   * **用户名** 输入 `Alice`
-   * **密码** 输入 `$secret://kubernetes/my-kubernetes-secret/default/alice/password`
-   * 点击**添加**
+   * **名称** 输入 `primary-basic`。
+   * **用户名** 输入 `Alice`。
+   * **密码** 输入 `$secret://kubernetes/my-kubernetes-secret/default/alice/password`。
+   * 点击**添加**。
 
 </TabItem>
 
@@ -266,15 +266,15 @@ values={[
 
 <TabItem value="dashboard">
 
-1. 从侧边栏选择网关组的 **消费者**
-2. 选择目标消费者如 `Alice`
-3. 在 **凭据** 标签页的 **JWT** 子标签下点击 **添加 JWT 凭据**
+1. 从侧边栏选择网关组的 **消费者**。
+2. 选择目标消费者如 `Alice`。
+3. 在 **认证凭据** 标签页的 **JWT** 子标签下点击 **添加 JWT 凭据**。
 4. 在对话框中：
-   * **名称** 输入 `primary-jwt`
-   * **密钥** 输入 `alice-key`
-   * **算法** 选择 `HS256`
-   * **密钥** 输入 `$secret://kubernetes/my-kubernetes-secret/default/alice/secret`
-   * 点击**添加**
+   * **名称** 输入 `primary-jwt`。
+   * **密钥** 输入 `alice-key`。
+   * **算法** 选择 `HS256`。
+   * **密钥** 输入 `$secret://kubernetes/my-kubernetes-secret/default/alice/secret`。
+   * 点击**添加**。
 
 </TabItem>
 
@@ -305,14 +305,14 @@ values={[
 
 <TabItem value="dashboard">
 
-1. 从侧边栏选择网关组的 **消费者**
-2. 选择目标消费者如 `Alice`
-3. 在 **凭据** 标签页的 **HMAC 认证** 子标签下点击 **添加 HMAC 认证凭据**
+1. 从侧边栏选择网关组的 **消费者**。
+2. 选择目标消费者如 `Alice`。
+3. 在 **认证凭据** 标签页的 **HMAC 认证** 子标签下点击 **添加 HMAC 认证凭据**。
 4. 在对话框中：
-   * **名称** 输入 `primary-hmac`
-   * **密钥 ID** 输入 `alice-keyid`
-   * **密钥** 输入 `$secret://kubernetes/my-kubernetes-secret/default/alice/secret-key`
-   * 点击**添加**
+   * **名称** 输入 `primary-hmac`。
+   * **密钥 ID** 输入 `alice-keyid`。
+   * **密钥** 输入 `$secret://kubernetes/my-kubernetes-secret/default/alice/secret-key`。
+   * 点击**添加**。
 
 </TabItem>
 
