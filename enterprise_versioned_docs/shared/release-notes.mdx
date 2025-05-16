@@ -1,3 +1,295 @@
+## 3.8.1
+
+**发布日期**: 2025-05-07
+
+### 新功能
+
+#### 控制台
+
+* 在添加网关实例时，指定网关实例证书的有效期。
+* 在网关实例列表中，当证书即将过期时添加警告提示。
+* 支持在控制台中查看网关实例的证书续期方法，并生成新的网关实例证书。
+
+### 缺陷修复
+
+#### 数据面
+
+* 修复问题：使用 TCP 服务时健康检查未按预期工作，请求仍被转发到不健康的上游节点。
+* 修复问题：由于 Redis 服务故障导致网关请求延迟高。
+* 修复问题：AI Gateway 中 `llm_time_to_first_token` 默认值判断错误。
+
+#### 插件
+
+* 移除 `request-id` 和 `snowflake` 插件，因其存在潜在风险。
+
+#### 控制台
+
+* 修复问题：监控页面上的总带宽图表数据与 Prometheus 不一致。
+* 修复问题：当启用强制发布时，已发布服务中不允许修改路由的超时和插件配置。
+
+## 3.8.0
+
+**发布日期**: 2025-04-22
+
+### 新功能
+
+#### 数据面
+
+* 支持在路由条件中使用用户请求体中数组对象的值。虽然 `post_arg` 已在路由条件中允许使用，但本次更新引入了对类型字段位置的数组场景支持。
+* 支持在访问日志中记录额外的 AI 请求上下文信息。
+* 支持向 Prometheus 指标添加请求类型标识符，以收集更细粒度的 AI 请求数据。
+
+#### 插件
+
+* **[AI Proxy](/hub/ai-proxy)**
+  * 实现了新的标识字段 `logging` 和 `summaries`，用于收集 LLM 请求和响应内容。
+* **[AI Proxy Multi](/hub/ai-proxy-multi)**
+  * 支持 HTTP POST 方法的健康检查。
+  * 如果触发了回退，则在警告日志级别显示记录。
+  * 实现了新的标识字段，用于收集 LLM 请求和响应内容。
+* **[AI Aliyun Content Moderation](/hub/ai-aliyun-content-moderation)**  
+  * 新增对流式（HTTP SSE）场景的支持。
+* **[AI Prompt Guard](/hub/ai-prompt-guard)**  
+  * 新增插件。
+* **[Kafka Logger](/hub/kafka-logger)**
+  * 支持读取缓存在 `ctx` 中的用户请求和响应体内容，并将其推送到指定的 Kafka 服务。
+
+#### 控制台
+
+* 在状态码告警消息中添加了服务名称和路由名称的详细统计信息。
+* 优化插件配置：在服务或路由上配置 [Traffic Split](/hub/traffic-split) 插件时，验证配置的 `upstream_id` 确实属于当前服务的上游。
+* 在已发布服务中将上游连接配置字段名称与 API 对齐。
+* 为 [CORS](/hub/cors) 插件配置引入了基于表单的 UI。
+
+### 缺陷修复
+
+#### 数据面
+
+* 修复问题：当上游类型为 Kubernetes 服务发现时，健康检查中的节点在节点变更后未更新，导致大量健康检查失败日志。
+* 修复问题：当 Kubernetes 服务发现的 `shared_size` 参数调整为 100m 时出现错误。[#11857](https://github.com/apache/apisix/issues/11857)
+* 修复问题：使用 Kubernetes 发现的 APISIX/API7 企业版 在令牌文件过期后会失败。[#11779](https://github.com/apache/apisix/issues/11779)
+* 修复问题：更新 Vault Secret 提供商的 `prefix` 后，数据面仍使用旧配置。
+
+#### 控制台
+
+* 修复问题：上游中的 `retries` 字段被错误地设置为必填。
+* 修复问题：由于缺少服务模板权限，已发布服务页面出现错误。
+* 修复问题：在已发布服务中更新服务发现的服务名称未生效。
+* 修复问题：快速点击创建多条记录。
+* 修复问题：使用大规模消费者时数据库 CPU 使用率高。
+* 优化 [Permission Policy](/enterprise/key-concepts/roles-and-permission-policies) 的通配符配置方法：  
+  * 现在支持在授权语句中使用 `*` 进行通配符配置，其含义与当前的 `<.*>` 相同；
+  * 限制星号 `*` 不允许出现在任何资源 ID 字段中，以防止授权失败。
+
+## 3.7.4
+
+**发布日期**: 2025-04-30
+
+### 新功能
+
+#### 控制台
+
+* 在添加网关实例时，指定网关实例证书的有效期。
+* 在网关实例列表中，当证书即将过期时添加警告提示。
+* 支持在控制台中查看网关实例的证书续期方法，并生成新的网关实例证书。
+
+### 缺陷修复
+
+#### 数据面
+
+* 修复问题：使用 TCP 服务时健康检查未按预期工作，请求仍被转发到不健康的上游节点。
+* 修复问题：由于 Redis 服务故障导致网关请求延迟高。
+* 修复问题：AI Gateway 中 `llm_time_to_first_token` 默认值判断错误。
+
+#### 插件
+
+* 移除 `request-id` 和 `snowflake` 插件，因其存在潜在风险。
+
+#### 控制台
+
+* 修复问题：监控页面上的总带宽图表数据与 Prometheus 不一致。
+* 修复问题：当启用强制发布时，已发布服务中不允许修改路由的超时和插件配置。
+
+## 3.7.3
+
+**发布日期**: 2025-04-22
+
+### 缺陷修复
+
+#### 控制台
+
+* 修复问题：使用大规模消费者时数据库 CPU 使用率高。
+* 优化 [Permission Policy](/enterprise/key-concepts/roles-and-permission-policies) 的通配符配置方法：  
+  * 现在支持在授权语句中使用 `*` 进行通配符配置，其含义与当前的 `<.*>` 相同；
+  * 限制星号 `*` 不允许出现在任何资源 ID 字段中，以防止授权失败。
+
+## 3.7.2
+
+**发布日期**: 2025-03-24
+
+### 缺陷修复
+
+#### 插件
+
+* **[OpenTelemetry](/hub/opentelemetry)**
+  * 修复问题：动态路由 `/v2/:customerNumber` 上的 404 响应导致报告路径为空。
+
+#### 管理 API
+
+* 修复问题：资源缺乏一致的 `name` 和 `desc` 长度限制（最多 65535 个字符），导致用户输入有效长字符串时出错。
+
+#### 控制台
+
+* 修复问题：用户在数据库存储后看到的是加密密文，而非原始明文输入的服务和路由敏感字段。
+* 修复问题：控制台重启后，之前删除的默认网关组被错误地重新生成。
+* 修复问题：令牌名称更新未在通知区域展示。
+
+### 依赖项
+
+* 升级至 [Go 1.23](https://tip.golang.org/doc/go1.23)。
+
+## 3.7.1
+
+**发布日期**: 2025-03-14
+
+### 缺陷修复
+
+#### 插件
+
+* **[OpenID Connect](/hub/openid-connect)**
+  * 修复问题：无法配置验证颁发者。
+  * 修复问题：无法验证受众声明。[#11018](https://github.com/apache/apisix/issues/11018)。
+
+## 3.7.0
+
+**发布日期**: 2025-03-10
+
+### 新功能
+
+#### 数据面
+
+* **引用 Kubernetes Secret 中的密钥**：Secret 提供商现在支持 Kubernetes Secret。这允许您从 Kubernetes Secret 中引用敏感值，用于 SSL 证书、SSL 私钥、消费者凭据和各种插件配置。
+
+#### 插件
+
+* **[AI Rate Limiting](/hub/ai-rate-limiting)**
+  * 引入新的 AI 插件，用于对发送到 LLM 服务的请求实施基于令牌的速率限制。它通过控制指定时间范围内消耗的令牌数量来管理 API 使用，确保资源公平分配并防止服务过载。通常与 [AI Proxy Multi](/hub/ai-proxy-multi) 插件一起使用。
+* **[AI Proxy](/hub/ai-proxy)**
+  * 支持 openai 兼容的提供者。
+  * 支持代理嵌入模型 API。
+* **[AI Proxy Multi](/hub/ai-proxy-multi)**
+  * 支持 openai 兼容的提供者。
+  * 支持在使用插件时绕过上游配置。
+  * 支持主动健康检查。
+  * 支持代理嵌入模型 API。
+
+#### 控制台
+
+* 支持**引用 Kubernetes Secret 中的特定密钥**：详情请参阅 [引用 Kubernetes Secret 中的密钥](/enterprise/api-security/kubernetes-secret)。
+* 为所有表格添加页面大小选择器。
+* 在服务页面标题中显示服务 ID 和服务模板 ID，在路由页面标题中显示路由 ID 和路由模板 ID。
+
+#### 管理 API
+
+* 新增**引用 Kubernetes Secret 中的密钥**相关 API：
+  * [获取网关组上的 Kubernetes Secret 提供商](/enterprise/3.7.x/admin-api#tag/Secret-Provider/operation/getKubernetesSecretProvider)。
+  * [更新网关组上的 Kubernetes Secret 提供商](/enterprise/3.7.x/admin-api#tag/Secret-Provider/operation/putKubernetesSecretProvider)。
+  * [删除网关组上的 Kubernetes Secret 提供商](/enterprise/3.7.x/admin-api#tag/Secret-Provider/operation/deleteKubernetesSecretProvider)。
+
+### 缺陷修复
+
+#### 数据面
+
+* 修复问题：重复的网关实例 ID 导致 CPU 计数不准确。
+
+#### 控制台
+
+* 修复问题：由于 SMTP 服务器配置中的 `From Name` 格式无效，导致告警邮件发送失败。
+* 修复问题：删除自定义插件时未删除插件元数据。
+* 修复问题：手动添加流服务时未移除 `Skip Path Prefix` 字段。
+* 修复问题：路由的优先级不能设置为负数。
+
+## 3.6.1
+
+**发布日期**: 2025-03-14
+
+### 缺陷修复
+
+#### 插件
+
+* **[Limit Count Advanced](/hub/limit-count-advanced)**
+  * 修复问题：在负载测试期间间歇性出现 500 错误。
+* **[OpenID Connect](/hub/openid-connect)**  
+  * 修复问题：插件不支持配置验证颁发者。
+
+## 3.6.0
+
+**发布日期**: 2025-02-26
+
+### 重大变更
+
+* 移除服务模板中的[服务运行时配置](/enterprise/key-concepts/services#service-runtime-configurations)，以便更好地跨网关组重用模板。**服务模板中现有的服务运行时配置将被移除，但您的已发布服务配置将保持不变。** 此外，发布流程得到简化和优化，发布过程中不允许配置服务运行时配置。请参阅更新的[发布服务](/enterprise/getting-started/publish-service)指南。
+
+### 新功能
+
+#### 数据面
+
+* 支持配置上游 mTLS：详情请参阅[配置 API7 企业版 与上游之间的 mTLS](/enterprise/api-security/upstream-mtls)。
+
+#### 控制台
+
+* 支持**使用邮箱登录**：API7 企业版 控制台现在支持使用用户名或邮箱地址和密码登录。要使用邮箱登录或接收通知，请将邮箱地址绑定到您的用户资料。
+* 支持为上游配置 mTLS。
+* 支持引用环境变量作为 SSO 连接信息。
+* 为插件配置引入基于表单的 UI。
+* 将 Basic Authentication 添加为开发者门户凭据的认证选项。如果 API 产品允许多种认证类型，则可以使用任何有效的凭据。
+
+### 缺陷修复
+
+#### 数据面
+
+* 修复问题：更新 `upstream.nodes` 时的竞态条件问题。[#11916](https://github.com/apache/apisix/pull/11916)。
+* 修复服务发现问题：在克隆节点表后填充节点信息结构时，上游 `original_nodes` 未更新。[#10722](https://github.com/apache/apisix/pull/10722)。
+
+## 3.5.5
+
+**发布日期**: 2025-03-14
+
+### 缺陷修复
+
+#### 插件
+
+* **[Limit Count Advanced](/hub/limit-count-advanced)**
+  * 修复问题：在负载测试期间间歇性出现 500 错误。
+* **[OpenID Connect](/hub/openid-connect)**  
+  * 修复问题：插件不支持配置验证颁发者。
+  * 修复问题：无法验证受众声明。[#11018](https://github.com/apache/apisix/pull/11018)
+
+## 3.5.4
+
+**发布日期**: 2025-03-07
+
+### 缺陷修复
+
+#### 插件
+
+* **[Elasticsearch Logger](/hub/elasticsearch-logger)**
+  * 修复问题：插件无法配置索引以根据当前日期动态发送数据。
+
+#### 控制台
+
+* 修复问题：使用模板重新发布可能导致上游配置丢失。
+* 修复问题：使用 ADC 重建服务后，页面上的 OpenAPI 缓存失效失败。
+* 优化慢查询。
+
+## 3.5.3
+
+**发布日期**: 2025-02-18
+
+### 缺陷修复
+
+* 修复问题：告警邮件主题不能包含变量。
+
 ## 3.5.2 版本
 
 **发布日期：** 2025-02-13
@@ -36,7 +328,7 @@
 ### 功能优化
 
 * 支持通过 Prometheus 插件元数据自定义配置 DP 指标标签。
-* 优化了数据平面 Prometheus 指标报告的性能。
+* 优化了数据面 Prometheus 指标报告的性能。
 * 禁止由于超过许可证 CPU 限制而创建新资源。
 * 为 API7 门户的控制台页面添加了页面大小选择。
 * 支持 YAML/JSON 格式的插件配置。
