@@ -1,8 +1,3 @@
----
-title: 更新日志
-slug: /release-notes
----
-
 ## 3.5.2 版本
 
 **发布日期：** 2025-02-13
@@ -30,7 +25,7 @@ slug: /release-notes
 
 #### 服务中的多个上游
 
-对于高级场景，例如灰度部署、蓝绿部署或管理多个集群，服务现在可以使用多个上游。在这种情况下，默认上游充当大多数请求的主要目标，而其他上游可用于特定目的，例如将流量路由到灰度部署或辅助集群。有关详细信息，请参阅更新后的[配置灰度流量转移](./getting-started/canary-upstream.md)。
+对于高级场景，例如灰度部署、蓝绿部署或管理多个集群，服务现在可以使用多个上游。在这种情况下，默认上游充当大多数请求的主要目标，而其他上游可用于特定目的，例如将流量路由到灰度部署或辅助集群。有关详细信息，请参阅更新后的[配置灰度流量转移](/enterprise/getting-started/canary-upstream)。
 
 :::info
 
@@ -70,7 +65,7 @@ slug: /release-notes
 
 #### SNI 管理
 
-引入了 [SNI](./key-concepts/snis) 作为管理 TLS 和 mTLS 身份验证以及证书匹配的新机制。有关详细信息，请参阅 [在客户端和 API7 网关之间配置 mTLS](./api-security/client-mtls)。
+引入了 [SNI](/enterprise/key-concepts/snis) 作为管理 TLS 和 mTLS 身份验证以及证书匹配的新机制。有关详细信息，请参阅 [在客户端和 API7 网关之间配置 mTLS](/enterprise/api-security/client-mtls)。
 
 #### API7 门户监控
 
@@ -78,7 +73,7 @@ slug: /release-notes
 
 ### 功能优化
 
-* 自定义插件配置现在应用于网关组级别。有关详细信息，请参阅 [添加自定义插件](./best-practices/custom-plugin)。
+* 自定义插件配置现在应用于网关组级别。有关详细信息，请参阅 [添加自定义插件](/enterprise/best-practices/custom-plugin)。
 * 数据面升级到 LuaJit 2.1-20240815。
 * 删除了 `grpc-client-nginx-module`。
 
@@ -120,7 +115,7 @@ slug: /release-notes
 
 #### API7 门户
 
-宣布 API7 门户正式发布 (GA)，这是一个用于 API 发现和使用的综合解决方案。探索 [API7 门户](./key-concepts/api-portal) 和 [开发者](./key-concepts/developers) 的关键概念，并开始你的 [服务产品化](./api-portal/productize-services.md) 之旅。
+宣布 API7 门户正式发布 (GA)，这是一个用于 API 发现和使用的综合解决方案。探索 [API7 门户](/enterprise/key-concepts/api-portal) 和 [开发者](/enterprise/key-concepts/developers) 的关键概念，并开始你的 [服务产品化](/enterprise/api-portal/productize-services) 之旅。
 
 ### 功能优化
 
@@ -204,7 +199,7 @@ slug: /release-notes
 
 告警策略现在可以通过利用新的`联系人`同时通过 webhook 和电子邮件发送通知。_联系人_ 定义了一组可由多个告警策略使用的电子邮件地址或 webhook URL。
 
-有关说明，请参阅[触发网关告警](./api-observability/alert)。
+有关说明，请参阅[触发网关告警](/enterprise/api-observability/alert)。
 
 :::note
 
@@ -227,7 +222,7 @@ slug: /release-notes
 如果网关组中健康网关实例的数量低于临界阈值，则表明可能会出现服务中断并影响流量处理。
 这种情况在 Kubernetes 部署中尤其重要，因为网关实例可能会遇到故障或意外缩减。
 
-[创建用于统计网关组中健康网关实例数的告警策略](./api-observability/alert.md#count-healthy-gateway-instances-in-a-gateway-group) 并向相关人员发送通知。
+[创建用于统计网关组中健康网关实例数的告警策略](/enterprise/api-observability/alert#count-healthy-gateway-instances-in-a-gateway-group) 并向相关人员发送通知。
 
 ### 功能优化
 
@@ -254,19 +249,19 @@ slug: /release-notes
 
 _密钥（Secrets）_ 对象是一条需要防止未经授权访问的敏感信息，而 _Secret 提供商（Secret Provider）_ 对象用于设置与外部密钥管理器（HashiCorp Vault、AWS Secret Manager 等）的集成，以便 API7 网关可以在运行时动态地建立连接并从密钥管理器中获取密钥。
 
-有关更多详细信息，请参阅 [引用在 AWS Secrets Manager 中的密钥](./api-security/aws-secrets-manager.md)。
+有关更多详细信息，请参阅 [引用在 AWS Secrets Manager 中的密钥](/enterprise/api-security/aws-secrets-manager)。
 
 #### 用于 API 身份验证的匿名消费者
 
 匿名消费者无需身份验证，但可以限制访问速率。你可以在服务/路由上的身份验证插件中配置匿名消费者，然后与速率限制插件结合使用。
 
 有关详细信息，请参阅以下文档：
-
-* [对匿名消费者进行速率限制](./api-security/rate-limiting.md#add-an-anonymous-consumer)
+    
+* [对匿名消费者进行速率限制](/enterprise/api-security/rate-limiting#add-an-anonymous-consumer)
 
 #### 安全
 
-* 在数据面上添加了用于自身健康检查的状态接口。有关详细信息，请参阅 [启用数据面健康检查以实现高可用性](./high-availability/high-availability-installation.md#health-check)。
+* 在数据面上添加了用于自身健康检查的状态接口。有关详细信息，请参阅 [启用数据面健康检查以实现高可用性](/enterprise/high-availability/high-availability-installation#health-check)。
 
 ### 功能优化
 
@@ -333,7 +328,7 @@ _密钥（Secrets）_ 对象是一条需要防止未经授权访问的敏感信�
 
 _密钥（Secrets）_ 对象是一条需要防止未经授权访问的敏感信息，而 _Secret 提供商（Secret Provider）_ 对象用于设置与外部密钥管理器（HashiCorp Vault、AWS Secret Manager 等）的集成，以便 API7 网关可以在运行时动态地建立连接并从密钥管理器中获取密钥。
 
-有关更多详细信息，请参阅 [在 HashiCorp Vault 中引用密钥](./api-security/hashicorp-vault.md)。
+有关更多详细信息，请参阅 [在 HashiCorp Vault 中引用密钥](/enterprise/api-security/hashicorp-vault)。
 
 ### 功能优化
 
@@ -393,7 +388,7 @@ _密钥（Secrets）_ 对象是一条需要防止未经授权访问的敏感信�
 
 :::
 
-消费者凭据通过允许多个凭据对应每个消费者来增强灵活性。它们取代了传统的身份验证插件，如 [Key Auth](https://docs.api7.ai/hub/key-auth)、[Basic Auth](https://docs.api7.ai/hub/basic-auth)、[JWT Auth](https://docs.api7.ai/hub/jwt-auth) 和 [HMAC Auth](https://docs.api7.ai/hub/hmac-auth)，提供了更友好的用户体验。有关详细信息，请参阅[管理消费者凭据](./api-consumption/manage-consumer-credentials.md)。
+消费者凭据通过允许多个凭据对应每个消费者来增强灵活性。它们取代了传统的身份验证插件，如 [Key Auth](https://docs.api7.ai/hub/key-auth)、[Basic Auth](https://docs.api7.ai/hub/basic-auth)、[JWT Auth](https://docs.api7.ai/hub/jwt-auth) 和 [HMAC Auth](https://docs.api7.ai/hub/hmac-auth)，提供了更友好的用户体验。有关详细信息，请参阅[管理消费者凭据](/enterprise/api-consumption/manage-consumer-credentials)。
 
 ### 安全
 
@@ -526,7 +521,7 @@ API7 网关允许为各个路由配置不同的上游超时，以覆盖上游侧
 
 :::
 
-API7 企业版改进了传统的基于角色的权限，采用了权限策略架构，通过分配给角色的可复用策略来实现精细的访问控制。请参阅[角色和权限策略](./key-concepts/roles-and-permission-policies.md)。
+API7 企业版改进了传统的基于角色的权限，采用了权限策略架构，通过分配给角色的可复用策略来实现精细的访问控制。请参阅[角色和权限策略](/enterprise/key-concepts/roles-and-permission-policies)。
 
 ### 功能优化
 
@@ -615,7 +610,7 @@ API7 企业版改进了传统的基于角色的权限，采用了权限策略架
 
 但是，重要的是要考虑所涉及的权衡。通过绕过发布阶段，你也失去了轻松回滚到以前版本或跟踪版本更改的能力。
 
-有关详细信息，请参阅最新的入门教程：[启动你的第一个 API](./getting-started/launch-your-first-api.md)。
+有关详细信息，请参阅最新的入门教程：[启动你的第一个 API](/enterprise/getting-started/launch-your-first-api)。
 
 #### 与 Ingress Controller 集成（UI 支持）
 
@@ -684,11 +679,11 @@ Prometheus 远程写入现在支持 Basic Auth/mTLS。
 
 #### 四层路由（Stream Route）
 
-API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连接。 添加一个四层类型的服务，并在其中添加若干个四层路由（Stream Route，即可[转发四层流量](./getting-started/proxy-l4-traffic.md)。
+API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连接。 添加一个四层类型的服务，并在其中添加若干个四层路由（Stream Route，即可[转发四层流量](/enterprise/getting-started/proxy-l4-traffic)。
 
 #### 自定义角色 (控制台支持)
 
-当默认提供的角色无法满足需求时，你可以自行设计自定义角色，实现精细化权限控制。可参阅[添加自定义角色](./getting-started/rbac.md)
+当默认提供的角色无法满足需求时，你可以自行设计自定义角色，实现精细化权限控制。可参阅[添加自定义角色](/enterprise/getting-started/rbac)
 
 #### Ingress Controller（Beta 测试版，仅 API 支持）
 
@@ -735,11 +730,11 @@ API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连�
 
 #### SSO 角色映射
 
-设置自动角色映射，可以避免超级管理员需要频繁为 SSO 登陆的用户分配角色。 满足预先设置的映射条件的用户，在登陆 API7 企业版时会自动获得相应的角色权限。详情参阅[设置角色映射](./best-practices/sso.md#设置角色映射)。
+设置自动角色映射，可以避免超级管理员需要频繁为 SSO 登陆的用户分配角色。 满足预先设置的映射条件的用户，在登陆 API7 企业版时会自动获得相应的角色权限。详情参阅[设置角色映射](/enterprise/best-practices/sso#设置角色映射)。
 
 #### SCIM 用户同步
 
-使用 SCIM 用户同步协议简化 SSO 用户管理。它可以自动从所有支持了 SCIM 协议的、已经添加了登陆选项的身份提供商同步用户数据，确保用户信息一致性。新用户在身份提供商注册，或用户在身份提供商注销，API7 企业版即可得到及时通知，避免新用户无法登陆或已注销用户非法登陆。详情参阅[Sync User Data from IdP](./best-practices/sso.md#从身份提供商同步用户数据)。
+使用 SCIM 用户同步协议简化 SSO 用户管理。它可以自动从所有支持了 SCIM 协议的、已经添加了登陆选项的身份提供商同步用户数据，确保用户信息一致性。新用户在身份提供商注册，或用户在身份提供商注销，API7 企业版即可得到及时通知，避免新用户无法登陆或已注销用户非法登陆。详情参阅[Sync User Data from IdP](/enterprise/best-practices/sso#从身份提供商同步用户数据)。
 
 #### 自定义角色 (Beta, 仅 API 支持)
 
@@ -829,7 +824,7 @@ API7 网关现在可以处理四层流量，比如与数据库或 Kafka 的连�
 
 #### 支持 SAML 第三方登录
 
-API7 企业版新增支持对接 SAML 第三方登录。详情见[如何设置第三方登录](./best-practices/sso.md)。
+API7 企业版新增支持对接 SAML 第三方登录。详情见[如何设置第三方登录](/enterprise/best-practices/sso)。
 
 #### 新插件： Data Mask
 
@@ -861,11 +856,11 @@ API7 企业版新增支持对接 SAML 第三方登录。详情见[如何设置�
 
 #### 支持自定义插件管理
 
-API7 企业版支持上传你自行编写的自定义插件，以扩展 API 管理的功能。详情见[新增自定义插件](./best-practices/custom-plugin.md).
+API7 企业版支持上传你自行编写的自定义插件，以扩展 API 管理的功能。详情见[新增自定义插件](/enterprise/best-practices/custom-plugin).
 
 #### 支持 OIDC 第三方登录
 
-API7 企业版即 LDAP 之后，新增支持对接 OIDC 第三方登录。详情见[如何设置第三方登录](./best-practices/sso.md).
+API7 企业版即 LDAP 之后，新增支持对接 OIDC 第三方登录。详情见[如何设置第三方登录](/enterprise/best-practices/sso).
 
 #### 将服务标签作为 API 提供者授权范围
 
@@ -881,12 +876,12 @@ API7 企业版即 LDAP 之后，新增支持对接 OIDC 第三方登录。详情
 
 API7 企业版利用服务发现功能自动检测可用的上游服务，并将其地址保存在数据库（也被称之为服务注册中心）中。因此，API 网关能够通过服务注册中心获取最新的上游地址列表，确保所有请求都被转发到健康的上游节点。
 
-在本版本中，API7 企业版支持与 Nacos 服务发现集成。用户可以使用 Nacos 服务发现来[发布服务](./getting-started/publish-service.md)和[在网关组之间同步服务](./getting-started/sync-service.md)。
+在本版本中，API7 企业版支持与 Nacos 服务发现集成。用户可以使用 Nacos 服务发现来[发布服务](/enterprise/getting-started/publish-service)和[在网关组之间同步服务](/enterprise/getting-started/sync-service)。
 
 #### 支持 LDAP SSO 登录
 
-API7 企业版支持 LDAP 单点登录（Single Sign-On，SSO）。将 API7 企业版与 LDAP 集成后，用户可以直接使用 LDAP 用户名和密码登录 API7 控制台，创建和管理 API7 网关资源。有关如何配置 LDAP SSO 登录方法的具体信息，参见[配置 LDAP 单点登录](./best-practices/sso.md)。
+API7 企业版支持 LDAP 单点登录（Single Sign-On，SSO）。将 API7 企业版与 LDAP 集成后，用户可以直接使用 LDAP 用户名和密码登录 API7 控制台，创建和管理 API7 网关资源。有关如何配置 LDAP SSO 登录方法的具体信息，参见[配置 LDAP 单点登录](/enterprise/best-practices/sso)。
 
 #### 支持使用 Kubernetes 添加网关实例
 
-用户使用网关实例来处理流量。在本版本中，API7 企业版支持使用 Kubernetes 向网关组添加网关实例。有关如何通过 Kubernetes 添加网关实例的具体信息，参见[添加网关实例](./getting-started/add-gateway-instance.md)。
+用户使用网关实例来处理流量。在本版本中，API7 企业版支持使用 Kubernetes 向网关组添加网关实例。有关如何通过 Kubernetes 添加网关实例的具体信息，参见[添加网关实例](/enterprise/getting-started/add-gateway-instance)。
