@@ -19,7 +19,7 @@ description: 遵循本指南在 API7 企业版 中创建告警策略，以便接
 
 ## 设置 SMTP 服务器  
 
-1. 从顶部导航栏选择 **组织**，然后选择 **Settings**。  
+1. 从顶部导航栏选择 **组织**，然后选择 **设置**。  
 2. 点击 **SMTP 服务器** 选项卡。  
 3. 点击 **启用**。  
 4. 在对话框中执行以下操作：  
@@ -45,7 +45,7 @@ _联系点_ 定义了可以被多个告警策略使用的一组电子邮件地�
 
 ### 添加 Webhook 联系点  
 
-使用 [Slack 入站 Webhook](https://api.slack.com/messaging/webhooks) 将 API7 企业版 的消息发布到 Slack。  
+使用 [Slack 入站 Webhook](https://api.slack.com/messaging/webhooks) 将 API7 企业版的消息发布到 Slack。  
 
 1. 从顶部导航栏选择 **组织**，然后选择 **联系人**。  
 2. 点击 **新增联系人**。  
@@ -81,22 +81,28 @@ API7 控制面证书和 API7 控制面 CA 证书实现了控制面与数据面�
      * 在 **类型** 字段中选择 `邮箱`。  
      * 在 **联系人** 字段中选择 `应急团队邮箱列表`。  
      * 在 **告警邮件主题** 字段中输入：  
+
        ```text  
        [API7 Alert] 网关实例证书过期告警 
        ```  
+
      * 在 **告警邮件内容** 字段中输入：  
+
        ```text  
        告警时间: {{.AlertTime.Format "2006 Jan 02 15:04:05"}}, 详情:{{.AlertDetail}}.  
        ```  
+
      * 点击 **新增**。  
    * 点击 **新增通知**。  
    * 在对话框中执行以下操作：  
      * 在 **类型** 字段中选择 `Webhook`。  
      * 在 **联系人** 字段中选择 `Slack 通知`。  
      * 在 **告警消息** 字段中输入：  
+
        ```json  
        "text": "{{.AlertDetail}}."  
        ```  
+
      * 点击 **新增**。  
 5. 点击 **新增**。  
 
@@ -105,12 +111,14 @@ API7 控制面证书和 API7 控制面 CA 证书实现了控制面与数据面�
 假设控制面证书将于 2024-12-31 过期。在 2024-12-10，告警策略将触发：  
 
 1. 一封电子邮件，内容如下：  
+
    ```text  
    * 主题: [API7 Alert] 网关实例证书过期告警  
    * 告警时间: 2024 DEC 10 17:00:00, 详情: The certificate for gateway instance: gateway 123 will expire in 21 days.  
    ```  
 
 2. Slack 中的一条消息：  
+
    ```text  
    The certificate for gateway instance: gateway 123 will expire in 21 days.  
    ```  
@@ -145,22 +153,28 @@ API7 控制面证书和 API7 控制面 CA 证书实现了控制面与数据面�
      * 在 **类型** 字段中选择 `邮箱`。  
      * 在 **联系人** 字段中选择 `应急团队邮箱列表`。  
      * 在 **告警邮件主题** 字段中输入：  
+
        ```text  
        [API7 Alert] 网关实例离线告警 
        ```  
+
      * 在 **告警邮件内容** 字段中输入：  
+
        ```text  
        Alert Time: {{.AlertTime.Format "2006 Jan 02 15:04:05"}}, Detail:{{.AlertDetail}}.  
        ```  
+
      * 点击 **新增**。  
    * 点击 **添加通知**。  
    * 在对话框中执行以下操作：  
      * 在 **类型** 字段中选择 `Webhook`。  
      * 在 **联系人** 字段中选择 `Slack 通知`。  
      * 在 **告警消息** 字段中输入：  
+
        ```json  
        "text": "{{.AlertDetail}}"  
        ```  
+
      * 点击 **新增**。  
 4. 点击 **新增**。  
 
@@ -169,12 +183,14 @@ API7 控制面证书和 API7 控制面 CA 证书实现了控制面与数据面�
 假设两个网关实例分别于 2024-12-31 14:00:00 和 2024-12-31 13:00:00 离线。在 2024-12-31 17:00:00，告警策略将触发：  
 
 1. 一封电子邮件，内容如下：  
+
    ```text  
    * 主题: [API7 Alert] 网关实例离线告警
    * 告警时间: 2024 DEC 31 17:00:00, 详情: Gateway instance: gateway 123 in the gateway group: 生产网关组 has been offline for 3 hours. Gateway instance: gateway 456 in the gateway group: test group has been offline for 4 hours.  
    ```  
 
 2. Slack 中的一条消息：  
+
    ```text  
    Gateway instance: gateway 123 in the gateway group: 生产网关组 has been offline for 3 hours. Gateway instance: gateway 456 in the gateway group: test group has been offline for 4 hours.  
    ```  
@@ -207,22 +223,28 @@ API7 控制面证书和 API7 控制面 CA 证书实现了控制面与数据面�
      * 在 **类型** 字段中选择 `邮箱`。  
      * 在 **联系人** 字段中选择 `应急团队邮箱列表`。  
      * 在 **告警邮件主题** 字段中输入：  
+
        ```text  
        [API7 Alert] CPU 核心数超出限额
        ```  
+
      * 在 **告警邮件内容** 字段中输入：  
+
        ```text  
        Alert Time: {{.AlertTime.Format "2006 Jan 02 15:04:05"}}, Detail:{{.AlertDetail}}.  
        ```  
+
      * 点击 **新增**。  
    * 点击 **添加通知**。  
    * 在对话框中执行以下操作：  
      * 在 **类型** 字段中选择 `Webhook`。  
      * 在 **联系人** 字段中选择 `Slack 通知`。  
      * 在 **告警消息** 字段中输入：  
+
        ```json  
        "text": "{{.AlertDetail}}"  
        ```  
+
      * 点击 **新增**。  
 5. 点击 **新增**。  
 
@@ -231,19 +253,21 @@ API7 控制面证书和 API7 控制面 CA 证书实现了控制面与数据面�
 假设您的 API7 企业版 许可证限制为 100 个 CPU 核心。在 2024-12-31 17:00:00，告警策略将触发：  
 
 1. 一封电子邮件，内容如下：  
+
    ```text  
    * 主题: [API7 Alert]CPU 核心数超出限额  
    * 告警时间: 2024 DEC 31 17:00:00, 详情: Total CPU usage 110c has exceeded the allowed license CPU quota 100c.  
    ```  
 
 2. Slack 中的一条消息：  
+
    ```text  
    Total CPU usage 110c has exceeded the allowed license CPU quota 100c.  
    ```  
 
 3. 告警历史记录。从侧边导航栏选择 **告警**，然后点击 **历史** 查看记录。  
 4. 记录详情。点击 **详情** 可以看到：  
-   * 告警策略: CPU 核心数超出限额 
+   * 告警策略: CPU 核心数超出限额
    * 告警等级: 高  
    * 告警时间: 5 分钟前  
    * 告警详情: Total CPU usage 110c has exceeded the allowed license CPU quota 100c.  
@@ -270,22 +294,28 @@ API7 控制面证书和 API7 控制面 CA 证书实现了控制面与数据面�
      * 在 **类型** 字段中选择 `邮箱`。  
      * 在 **联系人** 字段中选择 `应急团队邮箱列表`。  
      * 在 **告警邮件主题** 字段中输入：  
+
        ```text  
        [API7 Alert] SSL 证书过期告警  
        ```  
+
      * 在 **告警邮件内容** 字段中输入：  
+
        ```text  
        Alert Time: {{.AlertTime.Format "2006 Jan 02 15:04:05"}}, Detail:{{.AlertDetail}}.  
        ```  
+
      * 点击 **新增**。  
    * 点击 **添加通知**。  
    * 在对话框中执行以下操作：  
      * 在 **类型** 字段中选择 `Webhook`。  
      * 在 **联系人** 字段中选择 `Slack 通知`。  
      * 在 **告警消息** 字段中输入：  
+
        ```json  
        "text": "{{.AlertDetail}}."  
        ```  
+
      * 点击 **新增**。  
 5. 点击 **新增**。  
 
@@ -294,12 +324,14 @@ API7 控制面证书和 API7 控制面 CA 证书实现了控制面与数据面�
 假设 SSL 证书将于 2024-12-31 过期。在 2024-12-10，告警策略将触发：  
 
 1. 一封电子邮件，内容如下：  
+
    ```text  
    * 主题: [API7 Alert] SSL 证书过期告警
    * 告警时间: 2024 DEC 10 17:00:00, 详情: SSL Certificate: sslcert123 in gateway group: 生产网关组 expires in 21 days.  
    ```  
 
 2. Slack 中的一条消息：  
+
    ```text  
    SSL Certificate: sslcert123 in gateway group: 生产网关组 will expire in 21 days.  
    ```  
@@ -334,22 +366,28 @@ API7 控制面证书和 API7 控制面 CA 证书实现了控制面与数据面�
      * 在 **类型** 字段中选择 `邮箱`。  
      * 在 **联系人** 字段中选择 `应急团队邮箱列表`。  
      * 在 **告警邮件主题** 字段中输入：  
+
        ```text  
        [API7 Alert] 生产网关组中健康网关实例数量不足  
        ```  
+
      * 在 **告警邮件内容** 字段中输入：  
+
        ```text  
        Alert Time: {{.AlertTime.Format "2006 Jan 02 15:04:05"}}, Detail:{{.AlertDetail}}.  
        ```  
+
      * 点击 **新增**。  
    * 点击 **添加通知**。  
    * 在对话框中执行以下操作：  
      * 在 **类型** 字段中选择 `Webhook`。  
      * 在 **联系人** 字段中选择 `Slack 通知`。  
      * 在 **告警消息** 字段中输入：  
+
        ```json  
        "text": "{{.AlertDetail}}"  
        ```  
+
      * 点击 **新增**。  
 5. 点击 **新增**。  
 
@@ -358,12 +396,14 @@ API7 控制面证书和 API7 控制面 CA 证书实现了控制面与数据面�
 假设您的网关组需要至少 50 个健康网关实例。然而，截至 2024-12-31，只有 40 个实例在运行。这种健康实例严重不足的情况可能导致服务降级和潜在中断，需要立即关注。  
 
 1. 一封电子邮件，内容如下：  
+
    ```text  
    * 主题: [API7 Alert] 生产网关组中健康网关实例数量不足  
    * 告警时间: 2024 DEC 31 17:00:00, 详情: The number of healthy gateway instances 40 in gateway group: 生产网关组 is less than the minimum requirement of 50.  
    ```  
 
 2. Slack 中的一条消息：  
+
    ```text  
    The number of healthy gateway instances 40 in gateway group: 生产网关组 is less than the minimum requirement of 50.  
    ```  
@@ -402,22 +442,28 @@ API7 控制面证书和 API7 控制面 CA 证书实现了控制面与数据面�
      * 在 **类型** 字段中选择 `邮箱`。  
      * 在 **联系人** 字段中选择 `应急团队邮箱列表`。  
      * 在 **告警邮件主题** 字段中输入：  
+
        ```text  
        [API7 Alert] 生产网关组中过多 500 状态码  
        ```  
+
      * 在 **告警邮件内容** 字段中输入：  
+
        ```text  
        Alert Time: {{.AlertTime.Format "2006 Jan 02 15:04:05"}}, Detail:{{.AlertDetail}}.  
        ```  
+
      * 点击 **新增**。  
    * 点击 **添加通知**。  
    * 在对话框中执行以下操作：  
      * 在 **类型** 字段中选择 `Webhook`。  
      * 在 **联系人** 字段中选择 `Slack 通知`。  
      * 在 **告警消息** 字段中输入：  
+
        ```json  
        "text": "{{.AlertDetail}}"  
        ```  
+
      * 点击 **新增**。  
 5. 点击 **新增**。  
 
@@ -427,6 +473,7 @@ API7 控制面证书和 API7 控制面 CA 证书实现了控制面与数据面�
 网关组 `US Group` 有一个标签 `envType:production`，在 2024 年 12 月 31 日 16:00 至 17:00 期间有 10% 的请求错误率。在 500 次请求中，有 50 次返回 500 错误。  
 
 1. 一封电子邮件，内容如下：  
+
    ```text  
    * 主题: [API7 Alert] [API7 Alert] 生产网关组中过多 500 状态码
    * 告警时间: 2024 DEC 31 17:00:00, 详情: The number of 500 status code requests received by all published services in gateway group: VIP Group exceeded the threshold of 100 with a count of 150 in the last 60 minutes. Details: 100 requests for get-ip-route within httpbin-service, 40 requests for get-address-route within httpbin-service, and 10 unmatched requests.  
@@ -435,6 +482,7 @@ API7 控制面证书和 API7 控制面 CA 证书实现了控制面与数据面�
    ```  
 
 2. Slack 中的一条消息：  
+
    ```text  
    The number of 500 status code requests received by all published services in gateway group: VIP Group exceeded the threshold of 100 with a count of 150 in the last 60 minutes. Details: 100 requests for get-ip-route within httpbin-service, 40 requests for get-address-route within httpbin-service, and 10 unmatched requests.  
    500 status code request ratio for gateway group: VIP Group was 15% in the last 60 minutes (Total requests: 1000). Details: 100 requests (10%) for get-ip-route in httpbin-service, 40 requests (4%) for get-address-route in httpbin-service, and 10 (1%) for unmatched requests.  
