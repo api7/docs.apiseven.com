@@ -4,12 +4,14 @@
 
 ### 新功能
 
-#### AI插件
+#### 插件
 
 * **[AI Proxy Multi](https://docs.api7.ai/hub/ai-proxy-multi)**
   * 新增对 429/5xx 响应码的重试逻辑，提高请求成功率。
-* **AI Gateway**
-  * 新增支持反向代理 AzureAI 服务。
+
+#### AI 网关
+
+* 新增支持反向代理 AzureAI 服务。
 
 #### 控制台
 
@@ -123,6 +125,7 @@
 * 修复问题：已发布服务在编辑基本信息时报错。
 
 #### 数据面
+
 * 修复问题：standalone 模式下使用大体积的配置文件时启动时间过长。
 * 修复问题：[OAS Validator](https://docs.api7.ai/hub/oas-validator) 插件错误拒绝 1.11-1.19 范围内符合 `multipleOf: 0.01` 规则的数字。
 
