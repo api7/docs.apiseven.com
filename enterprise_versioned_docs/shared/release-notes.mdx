@@ -1,3 +1,36 @@
+## 3.8.2
+
+**发布日期**: 2025-05-19
+
+### 新功能
+
+#### 插件
+
+* **[AI Proxy Multi](https://docs.api7.ai/hub/ai-proxy-multi)**
+  * 新增对 429/5xx 响应码的重试逻辑，提高请求成功率。
+
+#### AI 网关
+
+* 新增支持反向代理 AzureAI 服务。
+
+#### 控制台
+
+* 支持 CAS 作为 API7 企业版的 SSO 登录选项。
+
+### 缺陷修复
+
+#### 控制台
+
+* 修复问题：已发布服务在编辑基本信息时报错。
+* 修复问题：`retry_timeout` 和 `retries` 不能在 Stream 类型服务上游编辑。
+* 修复问题：当网关实例缺少兼容性字段时页面崩溃。
+
+#### 数据面
+
+* 修复问题：standalone 模式下使用大体积的配置文件时启动时间过长。
+* 修复问题：[OAS Validator](https://docs.api7.ai/hub/oas-validator) 插件错误拒绝 1.11-1.19 范围内符合 `multipleOf: 0.01` 规则的数字。
+* 修复问题：[AI Proxy](https://docs.api7.ai/hub/ai-proxy) 插件会接受无效的端点 URL（例如，“http//localhost” 缺少冒号的情况）。
+
 ## 3.8.1
 
 **发布日期**: 2025-05-07
@@ -80,6 +113,21 @@
 * 优化 [Permission Policy](/enterprise/key-concepts/roles-and-permission-policies) 的通配符配置方法：  
   * 现在支持在授权语句中使用 `*` 进行通配符配置，其含义与当前的 `<.*>` 相同；
   * 限制星号 `*` 不允许出现在任何资源 ID 字段中，以防止授权失败。
+
+## 3.7.5
+
+**发布日期**: 2025-05-19
+
+### 缺陷修复
+
+#### 控制台
+
+* 修复问题：已发布服务在编辑基本信息时报错。
+
+#### 数据面
+
+* 修复问题：standalone 模式下使用大体积的配置文件时启动时间过长。
+* 修复问题：[OAS Validator](https://docs.api7.ai/hub/oas-validator) 插件错误拒绝 1.11-1.19 范围内符合 `multipleOf: 0.01` 规则的数字。
 
 ## 3.7.4
 
