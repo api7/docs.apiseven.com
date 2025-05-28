@@ -23,13 +23,13 @@
 
 * 修复问题：已发布服务在编辑基本信息时报错。
 * 修复问题：`retry_timeout` 和 `retries` 不能在 Stream 类型服务上游编辑。
+* 修复问题：当网关实例缺少兼容性字段时页面崩溃。
 
 #### 数据面
 
-* 修复问题：独立模式下使用大型配置文件时启动时间过长。
+* 修复问题：standalone 模式下使用大体积的配置文件时启动时间过长。
 * 修复问题：[OAS Validator](https://docs.api7.ai/hub/oas-validator) 插件错误拒绝 1.11-1.19 范围内符合 `multipleOf: 0.01` 规则的数字。
 * 修复问题：[AI Proxy](https://docs.api7.ai/hub/ai-proxy) 插件插件会接受无效的端点 URL（例如，“http//localhost” 缺少冒号的情况）。
-* 修复问题：standalone 模式下使用大体积型配置文件时启动时间过长。
 
 ## 3.8.1
 
