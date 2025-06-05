@@ -1,3 +1,40 @@
+## 3.8.3
+
+**发布日期**: 2025-06-04
+
+### 新功能
+
+#### 数据面
+
+* 支持在 `conf/config.yaml` 中配置 `apisix.disable_upstream_healthcheck`，通过单个开关禁用所有健康检查。
+* 通过减少内存消耗优化 Prometheus 性能。
+* 发布了 [API7 Ingress Controller 2.0](https://github.com/api7/api7-ingress-controller/releases/tag/2.0.0)。
+
+#### 插件
+
+* 自动在自定义插件模式中插入 `_meta` 字段。
+
+#### 控制台
+
+* 优化了 Ingress Controller 类型网关组的部署流程。
+* 新增**许可证即将过期**的告警策略触发事件。
+
+### 缺陷修复
+
+#### 数据面
+
+* 修复问题：当使用 `post_arg` 读取 GraphQL 请求体时偶尔出现路由匹配错误。
+
+#### 控制台
+
+* 修复问题：升级依赖 `ramda` 至 `0.30.1` 和 `cross-spawn` 至 `7.0.5` 以避免高危漏洞。
+* 修复问题：使用控制台表单配置 `cors` 插件详情时 `max-age` 字段显示不正确。
+* 修复问题：当 ADC 从 17.x 版本升级到 19.x 后，如果同时更新同一服务下的多条路由，控制台仍显示过时的配置。
+* 修复问题：在控制台中，拥有 `gateway:GetPublishedService` 或 `gateway:GetServiceTemplate` 权限的用户无法查看服务内的插件配置。
+* 修复问题：当两个自定义插件包含错误代码时，API7 企业版内置插件无法正常工作。
+* 修复问题：Kubernetes 服务发现在上游节点数量较多时出现性能问题。
+* 修复问题：表格表头大小写不一致，现已统一为首字母大写格式。
+
 ## 3.8.2
 
 **发布日期**: 2025-05-19
