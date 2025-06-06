@@ -42,9 +42,9 @@ API7 企业版支持 Docker 和 [Kubernetes](https://docs.api7.ai/enterprise/dep
 
 ### 下载 ADC
 
-- <https://run.api7.ai/adc/release/adc_0.8.0_linux_amd64.tar.gz>
-- <https://run.api7.ai/adc/release/adc_0.8.0_linux_arm64.tar.gz>
-- <https://run.api7.ai/adc/release/adc_0.8.0_darwin_arm64.tar.gz>
+- [Linux AMD64](https://run.api7.ai/adc/release/adc_0.8.0_linux_amd64.tar.gz)
+- [Linux ARM64](https://run.api7.ai/adc/release/adc_0.8.0_linux_arm64.tar.gz)
+- [Darwin ARM64](https://run.api7.ai/adc/release/adc_0.8.0_darwin_arm64.tar.gz)
 
 ```bash
 $ ./adc -h

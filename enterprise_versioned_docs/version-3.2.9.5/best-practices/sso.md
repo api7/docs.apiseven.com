@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 单点登录（SSO）允许用户一次登录即可访问多个系统，而无需重新输入凭据。它通过消除对多个密码的需求，提高了效率，增强了用户体验，并加强了安全性。
 
-在API7 Enterprise中，你可以同时使用多种登录选项。你可以在API7内部创建用户，同时也可以从其他现有系统中导入用户。
+在 API7 Enterprise 中，你可以同时使用多种登录选项。你可以在 API7 内部创建用户，同时也可以从其他现有系统中导入用户。
 
 ## 架构原理
 
@@ -17,10 +17,10 @@ import TabItem from '@theme/TabItem';
 ![Architecture of LDAP](https://static.apiseven.com/uploads/2024/03/12/B3YpRXbf_LDAP-2.png)
 
 1. **用户登录请求**：用户在登录 API7 企业版时输入他们的用户名和密码。
-2. **LDAP验证**：API7 企业版将用户提供的凭据传输到 LDAP 服务器进行验证。LDAP 服务器是一个集中的用户信息管理系统，存储了用户的用户名、密码以及其他相关信息。
+2. **LDAP 验证**：API7 企业版将用户提供的凭据传输到 LDAP 服务器进行验证。LDAP 服务器是一个集中的用户信息管理系统，存储了用户的用户名、密码以及其他相关信息。
 3. **身份验证**：LDAP 服务器验证用户的凭据是否与 LDAP 目录中存储的用户信息匹配。如果用户名和密码与 LDAP 服务器中的记录相匹配，那么身份验证就成功了。
 4. **授权**：如果身份验证成功，LDAP 服务器将授权信息返回给 API7 企业版。系统基于这些信息授权用户访问相应的资源。这通常涉及到角色和权限的分配，确保用户只能访问他们被授权访问的资源。
-5. **访问资源**：用户以经过验证的身份访问API7 企业版，无需重新输入凭据。
+5. **访问资源**：用户以经过验证的身份访问 API7 企业版，无需重新输入凭据。
 
 ## 前提条件
 
@@ -31,50 +31,46 @@ import TabItem from '@theme/TabItem';
 API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与其他用户系统集成后，你可以让现有用户登录 API7 企业版，而无需注册新的 API7 帐户。
 
 <Tabs
-  defaultValue="LDAP"
-  values={[
-    {label: 'LDAP', value: 'LDAP'},
-    {label: 'OIDC', value: 'OIDC'},
-  ]}>
-  <TabItem value="LDAP">
-      <ol>
-      <li> 在顶部导航栏中，选择<strong>组织</strong>，然后选择<strong>设置</strong>。</li>
-      <li> 单击<strong>新增登录选项</strong>。</li>
-      <li> 填写<strong>新增登录选项</strong>表单：
-        <ol>
-          <li><strong>名称</strong>：唯一的登录名称，必须让用户容易识别。例如<code>员工账户</code>。</li>
-          <li><strong>提供者</strong>：选择<code>LDAP</code>。</li>
-          <li><strong>主机名</strong>：LDAP 的主机域名。例如<code>ldap.example.com</code>。</li>
-          <li><strong>端口</strong>：例如<code>1563</code>。</li>
-          <li><strong>基本专有名称</strong>：例如<code>oc=users,dc=org,dc=example</code>。</li>
-          <li><strong>绑定专有名称</strong>：LDAP 绑定的 DN，用来实现 LDAP 用户搜索。 应该被授予必要的嗖嗖权限。例如<code>cn=admin,dc=org,dc=example</code>。</li>
-          <li><strong>绑定密码</strong>：和绑定专有名称一起，用于向 LDAP 服务器进行身份认证。</li>
-          <li><strong>标识符</strong>：用在 LDAP 中识别用户的属性。例如<code>cn</code>。</li>
-          <li><strong>属性映射</strong>: 将 API7 企业版中字段映射到 LDAP 系统中用于无缝集成和同步数据。</li>
-        </ol>
-      </li>
-      <li> 单击<strong>新增</strong>。</li>
-    </ol>
-  </TabItem>
-  <TabItem value="OIDC">
-      <ol>
-      <li> 在顶部导航栏中，选择<strong>组织</strong>，然后选择<strong>设置</strong>。</li>
-      <li> 单击<strong>新增登录选项</strong>。</li>
-      <li> 填写<strong>新增登录选项</strong>表单：
-        <ol>
-          <li><strong>名称</strong>：唯一的登录名称，必须让用户容易识别。例如<code>员工账户</code>。</li>
-          <li><strong>提供者</strong>：选择<code>OIDC</code>。</li>
-          <li><strong>发行方</strong>：OpenID connect提供方的标识符。例如<code>https://accounts.example.com</code>.</li>
-          <li><strong>客户端 ID</strong>：由 OIDC 签发的，属于你的应用的唯一标识符。例如<code>API7</code>。</li>
-          <li><strong>客户端密钥</strong>：用于和 OIDC 提供者进行身份认证的密钥。</li>
-          <li><strong>请求范围</strong>：访问令牌通常受请求范围的限制。例如<code>profile,email</code>。</li>
-          <li><strong>根地址</strong>：用于访问 API7 企业版用来生成回地址。例如<code>https://auth.example.com/oidc</code>。</li>
-          <li><strong>SSL 验证</strong>：默认开启。</li>
-        </ol>
-      </li>
-      <li> 单击<strong>新增</strong>。</li>
-    </ol>
-  </TabItem>
+defaultValue="LDAP"
+values={[
+{label: 'LDAP', value: 'LDAP'},
+{label: 'OIDC', value: 'OIDC'},
+]}>
+
+<TabItem value="LDAP">
+
+1. 在顶部导航栏中，选择**组织**，然后选择**设置**。
+2. 单击**新增登录选项**。
+3. 填写**新增登录选项**表单：
+   1. **名称**：唯一的登录名称，必须让用户容易识别。例如`员工账户`。
+   2. **提供者**：选择`LDAP`。
+   3. **主机名**：LDAP 的主机域名。例如`ldap.example.com`。
+   4. **端口**：例如`1563`。
+   5. **基本专有名称**：例如`oc=users,dc=org,dc=example`。
+   6. **绑定专有名称**：LDAP 绑定的 DN，用来实现 LDAP 用户搜索。 应该被授予必要的嗖嗖权限。例如`cn=admin,dc=org,dc=example`。
+   7. **绑定密码**：和绑定专有名称一起，用于向 LDAP 服务器进行身份认证。
+   8. **标识符**：用在 LDAP 中识别用户的属性。例如`cn`。
+   9. **属性映射**: 将 API7 企业版中字段映射到 LDAP 系统中用于无缝集成和同步数据。
+4. 单击**新增**。
+
+</TabItem>
+<TabItem value="OIDC">
+
+1. 在顶部导航栏中，选择**组织**，然后选择**设置**。
+2. 单击**新增登录选项**。
+3. 填写**新增登录选项**表单：
+   1. **名称**：唯一的登录名称，必须让用户容易识别。例如`员工账户`。
+   2. **提供者**：选择`OIDC`。
+   3. **发行方**：OpenID connect 提供方的标识符。例如`https://accounts.example.com`。
+   4. **客户端 ID**：由 OIDC 签发的，属于你的应用的唯一标识符。例如`API7`。
+   5. **客户端密钥**：用于和 OIDC 提供者进行身份认证的密钥。
+   6. **请求范围**：访问令牌通常受请求范围的限制。例如`profile,email`。
+   7. **根地址**：用于访问 API7 企业版用来生成回地址。例如`https://auth.example.com/oidc`。
+   8. **SSL 验证**：默认开启。
+4. 单击**新增**。
+
+</TabItem>
+
 </Tabs>
 
 ## 用 SSO 登录
@@ -83,7 +79,7 @@ API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与
 
 请按照以下步骤操作：
 
-1. 访问位于 http://localhost:7080 的 API7 企业版控制台。
+1. 访问位于 [http://localhost:7080](http://localhost:7080) 的 API7 企业版控制台。
 2. 从登录选项名称中选择，例如`使用员工帐户登录`。
 3. 输入用户名和密码。
 4. 点击登录。
@@ -111,4 +107,3 @@ API7 企业版支持以下实现的单点登录（SSO）。将 API7 企业版与
 3. 在顶部导航栏中，选择**组织**，然后选择**设置**。
 4. 单击目标登录选项的**删除**。
 5. 二次确认。
-
