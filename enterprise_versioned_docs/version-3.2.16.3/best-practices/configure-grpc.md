@@ -4,6 +4,8 @@ slug: /best-practices/configure-grpc
 ---
 
 import StorylaneEmbed from '@site/src/MDXComponents/StorylaneEmbed';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 Google Remote Procedure Call（gRPC）是基于 HTTP/2 协议的开源高性能远程过程调用（Remote Procedure Call，RPC）框架。gRPC 使用 Protocol Buffers（protobuf）作为接口描述语言（Interface Description Language，IDL）。API7 企业版提供协议转换、负载均衡、身份验证和授权等关键功能，增强了 gRPC 的潜力。
 
@@ -111,7 +113,6 @@ helloworld.TestImport
 
 列出所有 `helloworld.Greeter` 服务可用的方法:
 
-
 ```shell
 grpcurl -plaintext 127.0.0.1:50051 list helloworld.Greeter
 ```
@@ -145,31 +146,31 @@ values={[
 
 <h3>新增服务</h3>
 
-1. 在左侧菜单选择目标网关组下的 **已发布服务** 菜单，然后点击 **新增服务**。 
+1. 在左侧菜单选择目标网关组下的 **已发布服务** 菜单，然后点击 **新增服务**。
 2. 选择 **手动新增**。
 3. 在对话框中执行以下操作：
 
-* **名称** 填写 `grpc-example`。
-* **服务类型** 选择 `HTTP （七层）`。 
-* **上游 Scheme** 选择 `gRPC`。
-* **如何找到上游** 选择 `使用节点`。
-* 点击 **新增节点**。
-* 在新增节点对话框中，执行以下操作：
-  * **主机** 填写你的私有 IP 地址，例如`192.168.2.103`。
-  * **端口** 填写 `50051`。
-  * **权重** 填写 `100`。
+- **名称** 填写 `grpc-example`。
+- **服务类型** 选择 `HTTP （七层）`。
+- **上游 Scheme** 选择 `gRPC`。
+- **如何找到上游** 选择 `使用节点`。
+- 点击 **新增节点**。
+- 在新增节点对话框中，执行以下操作：
+  - **主机** 填写你的私有 IP 地址，例如`192.168.2.103`。
+  - **端口** 填写 `50051`。
+  - **权重** 填写 `100`。
 
-4. 点击 **新增**。 
+4. 点击 **新增**。
 
 <h3>创建一条路由</h3>
 
 1. 进入刚才创建好的服务，然后点击 **新增路由**。
 2. 在对话框中，执行以下操作：
 
-* **名称** 填写 `helloworld.Greeter`。
-* **路径** 填写 `helloworld.Greeter/SayHello`。
-* **HTTP 方法** 选择 `GET` 和 `POST`。
-* 点击 **新增**。
+- **名称** 填写 `helloworld.Greeter`。
+- **路径** 填写 `helloworld.Greeter/SayHello`。
+- **HTTP 方法** 选择 `GET` 和 `POST`。
+- 点击 **新增**。
 
 </TabItem>
 
@@ -337,7 +338,7 @@ apisix:
   node_listen:
     - port: 9080
       enable_http2: false
-# highlight-start
+    # highlight-start
     - port: 9081
       enable_http2: true
 # highlight-end
@@ -428,7 +429,7 @@ grpcurl -plaintext \
 
 ## 相关阅读
 
-* Key Concepts
-  * [Services](../key-concepts/services.md)
-  * [Routes](../key-concepts/routes.md)
-  * [Plugins](../key-concepts/plugins.md)
+- Key Concepts
+  - [Services](../key-concepts/services.md)
+  - [Routes](../key-concepts/routes.md)
+  - [Plugins](../key-concepts/plugins.md)

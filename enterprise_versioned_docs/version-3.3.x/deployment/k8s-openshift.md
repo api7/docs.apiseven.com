@@ -52,7 +52,7 @@ OpenShift 中默认启用的 SCC 非常严格，要求容器中的进程对文�
 oc login \
   --token=sha256~pesd0RAyKiKJLkkKJ4Oh2lmy4KSX9b5J6Fc24FYM2EQ \
   --server=[https://api.api7.93ew.p1.openshiftapps.com:6443](https://api.api7.93ew.p1.openshiftapps.com:6443)
-````
+```
 
 :::info
 
@@ -190,7 +190,7 @@ kubectl port-forward svc/api7ee3-dashboard 7443:7443
 
 在添加更多[网关实例](../key-concepts/gateway-groups.md)之前，首先配置控制面的连接地址。
 
-在同一个集群中，数据面和控制面遵循 \`https://{service-name}.{namespace}.svc.cluster:7943\` 的格式，无论它们是否部署在同一命名空间下。
+在同一个集群中，数据面和控制面遵循 `https://{service-name}.{namespace}.svc.cluster:7943` 的格式，无论它们是否部署在同一命名空间下。
 
 ![添加控制面地址](https://static.apiseven.com/uploads/2024/08/09/Zzgc5aic_20240809-150435.jpeg)
 
@@ -207,6 +207,7 @@ API7 网关需要在运行时生成本地文件，包括 `nginx.conf`、日志�
 
 ```shell
 oc create serviceaccount api7-gateway
+```
 ````
 
 创建具有 `nonroot-v2` SCC 的角色：
@@ -214,7 +215,7 @@ oc create serviceaccount api7-gateway
 ```shell
 oc create role api7-gateway \
   --verb=use \
-  --resource=scc 
+  --resource=scc
   --resource-name=nonroot-v2
 ```
 
