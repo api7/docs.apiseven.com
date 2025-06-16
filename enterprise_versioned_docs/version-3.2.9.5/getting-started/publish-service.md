@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 ## 前提条件
 
-1. [安装API7 企业版](install-api7-ee.md)。
+1. [安装 API7 企业版](install-api7-ee.md)。
 2. 获取一个具有**超级管理员** 或 **API 提供者** 角色的用户账户。
 3. 将默认网关组重命名为`测试网关组`并配置网络。该网关组将作为测试环境的 API 网关。
 4. [在网关组中至少新增一个网关实例](add-gateway-instance.md)。
@@ -20,84 +20,74 @@ import TabItem from '@theme/TabItem';
 ## 新增服务和路由
 
 <Tabs
-  defaultValue="manually"
-  values={[
-    {label: '手动新增', value: 'manually'},
-    {label: '导入OpenAPI 3.0', value: 'openapi'},
-  ]}>
-  <TabItem value="manually">
-    <ol>
-      <li> 从左侧导航栏中选择 <strong>服务</strong>， 然后单击<strong>新增服务</strong>。</li>
-      <li> 选择 <strong>手动新增</strong>。</li>
-      <li> <strong>名称</strong>填写<code>Swagger Petstore</code>。</li>
-      <li> 单击<strong>新增</strong>。</li>
-      <li> 在服务详情页面中，单击<strong>新增路由</strong>。</li>
-      <li> 在<strong>新增路由</strong> 对话框中, 执行以下操作:
-        <ol>
-          <li><strong>名称</strong>填写<code>getPetById</code>。</li>
-          <li><strong>路径</strong>填写<code>/pet/*</code>。</li>
-          <li><strong>HTTP方法</strong>选择<code>GET</code>。</li>
-        </ol>
-      </li>
-      <li>单击<strong>新增</strong>。</li>
-    </ol>
-  </TabItem>
-  <TabItem value="openapi">
-    <ol>
-      <li> 从左侧导航栏中选择<strong>服务</strong>，然后单击<strong>新增服务</strong>。</li>
-      <li> 选择<strong>导入OpenAPI</strong>.</li>
-      <li> 上传 YAML/JSON 文件，然后选择<code>HTTP</code>作为<strong>上游 Scheme</strong>。</li>
-      <li> 单击<strong>下一步</strong>。</li>
-      <li> 确认以下信息都无误后单击<strong>下一步</strong>：
-      <ol>
-        <li> <strong>名称</strong>：来自 OpenAPI 文件中的<code>title</code>。</li>
-        <li> <strong>标签</strong>：来自 OpenAPI 文件中的<code>tag</code>。</li>
-        <li> <strong>描述</strong>：来自 OpenAPI 文件中的<code>description</code>。</li>
-        <li> <strong>路由</strong>：来自 OpenAPI 文件中的<code>Paths</code>。</li>
-      </ol>
-      </li>
-      <li> 单击<strong>新增</strong>。</li>
-    </ol>
-  </TabItem>
+defaultValue="manually"
+values={[
+{label: '手动新增', value: 'manually'},
+{label: '导入 OpenAPI 3.0', value: 'openapi'},
+]}>
+<TabItem value="manually">
+
+1. 从左侧导航栏中选择 **服务**， 然后单击**新增服务**。
+2. 选择 **手动新增**。
+3. **名称**填写`Swagger Petstore`。
+4. 单击**新增**。
+5. 在服务详情页面中，单击**新增路由**。
+6. 在**新增路由** 对话框中, 执行以下操作:
+   1. **名称**填写`getPetById`。
+   2. **路径**填写`/pet/*`。
+   3. **HTTP 方法**选择`GET`。
+7. 单击**新增**。
+
+</TabItem>
+<TabItem value="openapi">
+
+1. 从左侧导航栏中选择**服务**，然后单击**新增服务**。
+2. 选择**导入 OpenAPI**。
+3. 上传 YAML/JSON 文件，然后选择`HTTP`作为**上游 Scheme**。
+4. 单击**下一步**。
+5. 确认以下信息都无误后单击**下一步**：
+   1. **名称**：来自 OpenAPI 文件中的`title`。
+   2. **标签**：来自 OpenAPI 文件中的`tag`。
+   3. **描述**：来自 OpenAPI 文件中的`description`。
+   4. **路由**：来自 OpenAPI 文件中的`Paths`。
+6. 单击**新增**。
+
+ </TabItem>
 </Tabs>
 
 ## 使用上游节点发布服务
 
 <Tabs
-  defaultValue="single"
-  values={[
-    {label: '发布单个服务', value: 'single'},
-    {label: '批量发布服务', value: 'batch'},
-  ]}>
-  <TabItem value="single">
-    <ol>
-      <li> 从左侧导航栏中选择 <strong>服务</strong>， 然后选择目标服务<code>Swagger Petstore</code>，然后单击<strong>立刻发布</strong>。</li>
-      <li> 选择<code>测试网关组</code>，然后单击<strong>下一步</strong>。</li>
-      <li> 在<strong>服务发布</strong> 对话框中, 执行以下操作:
-        <ol>
-          <li><strong>新版本</strong>填写<code>1.0.0</code>。</li>
-          <li><strong>如何找到上游</strong>选择<code>使用节点</code>。</li>
-        </ol>
-      </li>
-      <li> 单击<strong>新增节点</strong>，在对话框中, 执行以下操作:
-        <ol>
-          <li><strong>主机</strong>和<strong>端口</strong>，填写 API 在测试环境的后端服务地址。</li>
-          <li><strong>权重</strong>使用默认值<code>100</code>。</li>
-          <li>单击<strong>新增</strong>。</li>
-        </ol>
-      </li>
-      <li> 确认信息都无误后，单击<strong>发布</strong>。</li>
-    </ol>
-  </TabItem>
-  <TabItem value="openapi">
-    <ol>
-      <li> 从左侧导航栏中选择 <strong>服务</strong>， 单击<strong>批量发布服务</strong>。</li>
-      <li> 选择<code>测试网关组</code>，然后单击<strong>下一步</strong>。</li>
-      <li> 按照发布单个服务的类似步骤，添加多个待发布的服务。</li>
-      <li> 批量发布服务要求操作者同时具有所选的所有服务的操作权限（API Provider授权范围），且多个服务之间不可以有重复路径的路由，以免发布后引起冲突。</li>
-      <li> 确认信息都无误后，单击<strong>发布</strong>。</li>
-    </ol>
-  </TabItem>
+defaultValue="single"
+values={[
+{label: '发布单个服务', value: 'single'},
+{label: '批量发布服务', value: 'batch'},
+]}>
+
+<TabItem value="single">
+
+1. 从左侧导航栏中选择 **服务**， 然后选择目标服务`Swagger Petstore`，然后单击**立刻发布**。
+2. 选择`测试网关组`，然后单击**下一步**。
+3. 在**服务发布** 对话框中, 执行以下操作:
+   1. **新版本**填写`1.0.0`。
+   2. **如何找到上游**选择`使用节点`。
+4. 单击**新增节点**，在对话框中, 执行以下操作:
+   1. **主机**和**端口**，填写 API 在测试环境的后端服务地址。
+   2. **权重**使用默认值`100`。
+   3. 单击**新增**。
+5. 确认信息都无误后，单击**发布**。
+
+</TabItem>
+<TabItem value="batch">
+
+1. 从左侧导航栏中选择 **服务**， 单击**批量发布服务**。
+2. 选择`测试网关组`，然后单击**下一步**。
+3. 按照发布单个服务的类似步骤，添加多个待发布的服务。
+4. 批量发布服务要求操作者同时具有所选的所有服务的操作权限（API Provider 授权范围），且多个服务之间不可以有重复路径的路由，以免发布后引起冲突。
+5. 确认信息都无误后，单击**发布**。
+
+</TabItem>
+
 </Tabs>
 
 ## 使用服务发现发布服务
@@ -111,63 +101,74 @@ Consul、Eureka、Nacos 或 Kubernetes Service Discovery 等服务发现机制�
 :::
 
 <Tabs
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes', value: 'k8s'},
-    {label: 'Nacos', value: 'Nacos'},
-  ]}>
-  <TabItem value="k8s">
-    <ol>
-      <li> 从左侧导航栏中选择 <strong>网关组</strong>， 然后选择<code>测试网关组</code>。</li>
-      <li> 从左侧导航栏中选择<code>服务注册中心</code>，然后单击<strong>新增服务注册中心连接</strong>。</li>
-      <li> 在<strong>新增服务注册中心连接</strong> 对话框中, 执行以下操作:
-        <ol>
-          <li><strong>名称</strong>填写<code>测试 Kubernetes 注册中心</code>。</li>
-          <li><strong>发现类型</strong>选择<code>Kubernetes</code>。</li>
-          <li>填写<strong>API 服务器地址</strong>和<strong>令牌</strong>。</li>
-        </ol>
-      </li>
-      <li> 等待连接，确保注册中心连接状态为<code>健康</code>。</li>
-      <li> 从左侧导航栏中选择 <strong>服务</strong>， 然后选择目标服务<code>Swagger Petstore</code>，然后单击<strong>立刻发布</strong>。</li>
-      <li> 选择<code>测试网关组</code>，然后单击<strong>下一步</strong>。</li>
-      <li> 在<strong>服务发布</strong> 对话框中, 执行以下操作:
-        <ol>
-          <li><strong>新版本</strong>填写<code>1.0.0</code>。</li>
-          <li><strong>如何找到上游</strong>选择<code>使用服务发现</code>。</li>
-          <li><strong>服务注册中心</strong>选择<code>测试 Kubernetes 注册中心</code>，并选择好对应的命名空间和服务名称。</li>
-        </ol>
-      </li>
-    </ol>
-  </TabItem>
-  <TabItem value="Nacos">
-    <ol>
-      <li> 从左侧导航栏中选择 <strong>网关组</strong>， 然后选择<code>测试网关组</code>。</li>
-      <li> 从左侧导航栏中选择<code>服务注册中心</code>，然后单击<strong>新增服务注册中心连接</strong>。</li>
-      <li> 在<strong>新增服务注册中心连接</strong> 对话框中, 执行以下操作:
-        <ol>
-          <li><strong>名称</strong>填写<code>测试 Nacos 注册中心</code>。</li>
-          <li><strong>发现类型</strong>选择<code>Nacos</code>。</li>
-          <li>填写<strong>主机地址</strong>和<strong>端口号</strong>。</li>
-        </ol>
-      </li>
-      <li> 等待连接，确保注册中心连接状态为<code>健康</code>。</li>
-      <li> 从左侧导航栏中选择 <strong>服务</strong>， 然后选择目标服务<code>Swagger Petstore</code>，然后单击<strong>立刻发布</strong>。</li>
-      <li> 选择<code>测试网关组</code>，然后单击<strong>下一步</strong>。</li>
-      <li> 在<strong>服务发布</strong> 对话框中, 执行以下操作:
-        <ol>
-          <li><strong>新版本</strong>填写<code>1.0.0</code>。</li>
-          <li><strong>如何找到上游</strong>选择<code>使用服务发现</code>。</li>
-          <li><strong>服务注册中心</strong>选择<code>测试 Nacos 注册中心</code>，并选择好对应的命名空间、分组和服务名称。</li>
-        </ol>
-      </li>
-    </ol>
-  </TabItem>
+defaultValue="k8s"
+values={[
+{label: 'Kubernetes', value: 'k8s'},
+{label: 'Nacos', value: 'Nacos'},
+]}>
+<TabItem value="k8s">
+
+1. 从左侧导航栏中选择 **网关组**， 然后选择`测试网关组`。
+2. 从左侧导航栏中选择**服务注册中心**，然后单击**新增服务注册中心连接**。
+3. 在**新增服务注册中心连接** 对话框中, 执行以下操作:
+   1. **名称**填写`测试 Kubernetes 注册中心`。
+   2. **发现类型**选择`Kubernetes`。
+   3. 填写**API 服务器地址**和**令牌**。
+   4. 单击**新增**。
+   5. 等待连接，确保注册中心连接状态为`健康`。
+   6. 从左侧导航栏中选择 **服务**， 然后选择目标服务`Swagger Petstore`，然后单击**立刻发布**。
+4. 选择`测试网关组`，然后单击**下一步**。
+5. 在**服务发布** 对话框中, 执行以下操作:
+   1. **新版本**填写`1.0.0`。
+   2. **如何找到上游**选择`使用服务发现`。
+   3. **服务注册中心**选择`测试 Kubernetes 注册中心`，并选择好对应的命名空间和服务名称。
+   4. 单击**发布**。
+
+</TabItem>
+<TabItem value="Nacos">
+
+1. 从左侧导航栏中选择 **网关组**， 然后选择`测试网关组`。
+2. 从左侧导航栏中选择**服务注册中心**，然后单击**新增服务注册中心连接**。
+3. 在**新增服务注册中心连接** 对话框中, 执行以下操作:
+   1. **名称**填写`测试 Nacos 注册中心`。
+   2. **发现类型**选择`Nacos`。
+   3. 填写**主机地址**和**端口号**。
+   4. 单击**新增**。
+   5. 等待连接，确保注册中心连接状态为`健康`。
+   6. 从左侧导航栏中选择 **服务**， 然后选择目标服务`Swagger Petstore`，然后单击**立刻发布**。
+4. 选择`测试网关组`，然后单击**下一步**。
+5. 在**服务发布** 对话框中, 执行以下操作:
+   1. **新版本**填写`1.0.0`。
+   2. **如何找到上游**选择`使用服务发现`。
+   3. **服务注册中心**选择`测试 Nacos 注册中心`，并选择好对应的命名空间和服务名称。
+   4. 单击**发布**。
+
+</TabItem>
+<TabItem value="Nacos">
+
+1. 从左侧导航栏中选择 **网关组**， 然后选择`测试网关组`。
+2. 从左侧导航栏中选择**服务注册中心**，然后单击**新增服务注册中心连接**。
+3. 在**新增服务注册中心连接** 对话框中, 执行以下操作:
+   1. **名称**填写`测试 Nacos 注册中心`。
+   2. **发现类型**选择`Nacos`。
+   3. 填写**主机地址**和**端口号**。
+   4. 单击**新增**。
+   5. 等待连接，确保注册中心连接状态为`健康`。
+   6. 从左侧导航栏中选择 **服务**， 然后选择目标服务`Swagger Petstore`，然后单击**立刻发布**。
+4. 选择`测试网关组`，然后单击**下一步**。
+5. 在**服务发布** 对话框中, 执行以下操作:
+   1. **新版本**填写`1.0.0`。
+   2. **如何找到上游**选择`使用服务发现`。
+   3. **服务注册中心**选择`测试 Nacos 注册中心`，并选择好对应的命名空间、分组和服务名称。
+   4. 单击**发布**。
+
+</TabItem>
 </Tabs>
 
 ## 验证 API
 
 ```bash
-curl "http://127.0.0.1:9080/pet/1" 
+curl "http://127.0.0.1:9080/pet/1"
 ```
 
 你应该会看到以下输出：

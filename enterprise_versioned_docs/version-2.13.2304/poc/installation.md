@@ -153,22 +153,22 @@ Download `packages_api7_2.8.2206_api7-2.8.2206-cp.tar.gz` and upload to Control 
 
 ```text
 ├── images                 // Docker Images
-├── cli.sh                 
-├── alertmanager_conf      
-├── confd_conf             
-├── dashboard_conf         
-      └── conf.yaml        
-├── dashboard_logs         
-├── etcd_data              
+├── cli.sh
+├── alertmanager_conf
+├── confd_conf
+├── dashboard_conf
+      └── conf.yaml
+├── dashboard_logs
+├── etcd_data
 ├── opensearch_data
 ├── prometheus_conf
 ├── prometheus_data
 ```
 
 :::tip
-The opensearch_data and prometheus_data directories need write permissions. 
+The opensearch_data and prometheus_data directories need write permissions.
 
-For the convenience of PoC, we can directly change their permissions to 666. 
+For the convenience of PoC, we can directly change their permissions to 666.
 
 ```sh
 sudo chmod -R 666 opensearch_data
@@ -186,9 +186,9 @@ Download `packages_api7_2.8.2206_api7-2.8.2206-dp.tar.gz` and upload to Data Pla
 
 ```text
 ├── images                 // Docker Images
-├── cli.sh                 
-├── gateway_conf           
-        └── config.yaml    
+├── cli.sh
+├── gateway_conf
+        └── config.yaml
 ├── gateway_logs
 ```
 
@@ -222,7 +222,7 @@ $ sudo systemctl status docker
 1. Put Control Plane package under the /usr/local/api7_ent directory.
 2. Run sudo sh cli.sh start to start service.
 3. Run sudo docker ps to check service status.
-4. Visit {Control_Plane_IP}:9000 in browser. Username and Password are admin by default.
+4. Visit `{Control_Plane_IP}:9000` in browser. Username and Password are admin by default.
 5. Create a Cluster on Dashboard, and copy the Cluster ID.
 
 :::tip
@@ -237,7 +237,7 @@ Cluster ID acts as etcd key prefix in Data Plane.
 4. Run the following command to start service.
 
 ```sh
-$ sudo sh cli.sh start --cp-ip {Control_Plane_IP}
+$ sudo sh cli.sh start --cp-ip `{Control_Plane_IP}`
 ```
 
 5. Run `sudo docker ps` to check the service status

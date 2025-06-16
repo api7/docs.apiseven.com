@@ -42,9 +42,9 @@ API7 企业版支持 Docker 和 [Kubernetes](https://docs.api7.ai/enterprise/dep
 
 ### 下载 ADC
 
-- <https://run.api7.ai/adc/release/adc_0.8.0_linux_amd64.tar.gz>
-- <https://run.api7.ai/adc/release/adc_0.8.0_linux_arm64.tar.gz>
-- <https://run.api7.ai/adc/release/adc_0.8.0_darwin_arm64.tar.gz>
+- [Linux AMD64](https://run.api7.ai/adc/release/adc_0.8.0_linux_amd64.tar.gz)
+- [Linux ARM64](https://run.api7.ai/adc/release/adc_0.8.0_linux_arm64.tar.gz)
+- [Darwin ARM64](https://run.api7.ai/adc/release/adc_0.8.0_darwin_arm64.tar.gz)
 
 ```bash
 $ ./adc -h
@@ -225,7 +225,7 @@ $ curl 152.42.234.39:9080/uuid -v
 > Host: 152.42.234.39:9080
 > User-Agent: curl/8.4.0
 > Accept: */*
-> 
+>
 < HTTP/1.1 200 OK
 < Content-Type: application/json
 < Content-Length: 53
@@ -253,21 +253,21 @@ $ curl 152.42.234.39:9080/anything
 $ curl 152.42.234.39:9080/anything -H "apikey: tomskey"
 
 {
-  "args": {}, 
-  "data": "", 
-  "files": {}, 
-  "form": {}, 
+  "args": {},
+  "data": "",
+  "files": {},
+  "form": {},
   "headers": {
-    "Accept": "*/*", 
-    "Apikey": "tomskey", 
-    "Host": "152.42.234.39", 
-    "User-Agent": "curl/8.4.0", 
-    "X-Amzn-Trace-Id": "Root=1-661f9d57-42c4a66b07b361713713da44", 
+    "Accept": "*/*",
+    "Apikey": "tomskey",
+    "Host": "152.42.234.39",
+    "User-Agent": "curl/8.4.0",
+    "X-Amzn-Trace-Id": "Root=1-661f9d57-42c4a66b07b361713713da44",
     "X-Forwarded-Host": "152.42.234.39"
-  }, 
-  "json": null, 
-  "method": "GET", 
-  "origin": "182.255.32.50, 152.42.234.39", 
+  },
+  "json": null,
+  "method": "GET",
+  "origin": "182.255.32.50, 152.42.234.39",
   "url": "http://152.42.234.39/anything"
 }
 ```
@@ -676,10 +676,10 @@ $ curl 152.42.234.39:9080/headers
 
 {
   "headers": {
-    "Accept": "*/*", 
-    "Host": "152.42.234.39", 
-    "User-Agent": "curl/8.4.0", 
-    "X-Amzn-Trace-Id": "Root=1-661f9edd-188a0adf5d3bf0a509f5b034", 
+    "Accept": "*/*",
+    "Host": "152.42.234.39",
+    "User-Agent": "curl/8.4.0",
+    "X-Amzn-Trace-Id": "Root=1-661f9edd-188a0adf5d3bf0a509f5b034",
     "X-Forwarded-Host": "152.42.234.39"
   }
 }
