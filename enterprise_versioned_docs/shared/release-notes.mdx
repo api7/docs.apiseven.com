@@ -1,3 +1,54 @@
+## 3.8.7
+
+**发布时间**: 2025-07-17
+
+### 新功能
+
+#### 数据面
+
+  * 支持组件升级序列控制，确保 `dp-manager` 在数据库迁移完成后才启动。
+
+#### 插件
+
+  * **[Limit Count Advanced](https://docs.api7.ai/hub/limit-count-advanced)**
+      * 新增支持 Redis Sentinel 模式。
+
+#### 控制台
+
+  * 支持 OpenAPI 编辑器回显上次的服务 OpenAPI 规范数据，避免简单修改时需重新填写整个文件。
+  * 支持默认配置和启用内容安全策略 (CSP)。
+  * 支持为 Ingress Controller 网关组同时显示 Gateway API 和 Ingress 部署脚本。
+
+#### 开发者门户
+
+  * 支持在提供者门户中删除开发者。
+  * 引入“应用”资源，用于在应用级别管理 API 产品订阅和凭据。
+
+### 缺陷修复
+
+#### 安全
+
+  * 修复问题：部分控制面 API (`/api/license`、`/api/system_infos`、`/api/developer-portal-url`) 未经授权即可访问。
+
+#### 数据面
+
+  * 修复问题：`delay_encode` 每行日志仅能使用一次。
+  * 修复问题：启动后由于证书问题导致指标报告失败。
+
+#### 插件
+
+  * **[Zipkin](https://docs.api7.ai/hub/zipkin)**
+      * 修复问题：`access.log` 中 `zipkin_trace_id` 出现乱码。
+
+#### 控制台
+
+  * 修复问题：编辑自定义插件时删除源代码会清空整个表单。
+
+#### 开发者门户
+
+  * 修复问题：未认证用户在筛选订阅的 API 产品后，能看到不可订阅的产品。
+  * 修复问题：当 API 产品仅有一种条件筛选时，“Clear”按钮因与“All”条件选择重复因此移除。
+
 ## 3.8.6
 
 **发布时间**: 2025-06-27
