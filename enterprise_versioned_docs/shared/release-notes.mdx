@@ -1,3 +1,60 @@
+## 3.8.9 {#389}
+
+**发布日期**: 2025-08-11
+
+### 新功能 {#389-新功能}
+
+#### 数据面 {#389-新功能-数据面}
+
+* API7 企业版 Ingress Controller 支持 Kubernetes 1.18。
+* 从 APISIX 迁移 Chaitin WAF 插件到 API7 企业版。
+
+#### 插件 {#389-新功能-插件}
+
+* **[JWT Auth](https://docs.api7.ai/hub/jwt-auth)**
+  * 新增 `store_in_ctx` 参数，用于在请求上下文中存储已验证的 JWT 对象。当设置为 true（默认为 false）时，插件会将已验证的 JWT 对象存储在请求上下文中，这对于需要解析 JWT 以提取权限的自定义插件非常有用。
+* **[Workflow](https://docs.api7.ai/hub/workflow)**
+  * 新增对 `limit-conn` 插件集成的支持，允许根据用户请求和当前 APISIX 负载压力动态调整连接限制策略。
+
+#### 控制台 {#389-新功能-控制台}
+
+* 新增审计日志记录 TTL 配置选项，允许用户设置审计日志表数据的自动删除时间。默认值为 60 天。
+* 优化了更新缓存的消费者数据时数据面管理器（Dataplane manager）的 SQL 语句。
+
+#### 开发者门户 {#389-新功能-开发者门户}
+
+* 新增对 CAS 登录的支持。
+
+### 缺陷修复 {#389-缺陷修复}
+
+#### 数据面 {#389-缺陷修复-数据面}
+
+* 修复问题：在 `ctx` 变量中读取请求体时，错误信息无法被正确记录。
+
+#### 插件 {#389-缺陷修复-插件}
+
+* **[OAS Validator](https://docs.api7.ai/hub/oas-validator)**
+  * 修复问题：当 `verbose_errors` 启用时，将详细响应错误的错误级别从 `error` 调整为 `warn`。
+* **[JWT Auth](https://docs.api7.ai/hub/jwt-auth)**
+  * 修复问题：当设置 `claims_to_verify: ["exp"]` 时，插件无法验证 `exp` 声明。
+* **[Consumer Restriction](https://docs.api7.ai/hub/consumer-restriction)**
+  * 修复问题：改进了将 `consumer-restriction` 与 `basic-auth` 插件一起使用时的错误消息。当 `type` 设置为 `consumer_group_id` 并配置黑名单时，未被列入黑名单的消费者现在会收到适当的错误消息。
+* **[Kafka Logger](https://docs.api7.ai/hub/kafka-logger)**
+  * 修复问题：在服务配置中启用 `max_pending_entries` 且存在大量路由时，性能下降。该问题是由于在服务和路由合并期间插件配置深度复制，导致每个路由创建单独的批处理器缓冲区。
+* **[Limit Count Advanced](https://docs.api7.ai/hub/limit-count-advanced)**
+  * 修复问题：插件 panic 引发共享内存死锁。
+
+#### 控制台 {#389-缺陷修复-控制台}
+
+* 修复问题：从 OpenAPI 文件导入的中文标签显示为中文拼音而非原始中文字符。
+* 修复问题：频繁切换路由后，路由信息偶尔会卡在加载状态。
+* 修复问题：PUT API 会为不存在的消费者创建凭证。
+* 修复问题：语言切换不一致，在登录页面切换到英文后，登录后会恢复为中文。
+
+#### 开发者门户 {#389-缺陷修复-开发者门户}
+
+* 修复问题：SAML/OIDC 注销未从 IDP 登录状态正确签出。SSO 注销后，仅清除了控制面登录状态，而 IDP 登录状态仍然存在，导致再次点击 SSO 登录按钮时自动登录成功。
+
 ## 3.8.8 {#388}
 
 **发布日期**: 2025-07-28
