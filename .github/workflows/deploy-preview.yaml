@@ -140,6 +140,9 @@ jobs:
         with:
           node-version: 20.x
 
+      - name: Install Wrangler
+        run: npm install wrangler@3.90.0 --legacy-peer-deps
+
       - name: Delete Worker
         uses: cloudflare/wrangler-action@v3
         with:
