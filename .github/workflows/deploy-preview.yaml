@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize, closed]
     branches: [main, master]
 env:
-  CLOUDFLARE_WORKERS_NAME: pr-${{ github.event.pull_request.number }}-${{ github.event.repository.name }}-preview
+  CLOUDFLARE_WORKERS_NAME: pr-${{ github.event.pull_request.number }}-docs-apiseven-com-preview
 
 jobs:
   deploy:
