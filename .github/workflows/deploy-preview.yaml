@@ -137,5 +137,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: delete --name pr-130-docs-apiseven-com-preview
+          command: delete --name ${{ env.CLOUDFLARE_WORKERS_NAME }}
         continue-on-error: true
