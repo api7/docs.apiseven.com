@@ -130,7 +130,7 @@ jobs:
 
   cleanup:
     runs-on: ubuntu-latest
-    # if: github.event.pull_request.state == 'closed'
+    if: github.event.pull_request.state == 'closed'
     steps:
       - name: Delete Worker
         uses: cloudflare/wrangler-action@v3
