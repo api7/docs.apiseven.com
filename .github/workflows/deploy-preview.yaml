@@ -130,7 +130,7 @@ jobs:
 
   cleanup:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.state == 'closed'
+    # if: github.event.pull_request.state == 'closed'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -140,16 +140,10 @@ jobs:
         with:
           node-version: 20.x
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 9
-          run_install: false
-
       - name: Delete Worker
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: delete --name ${{ env.CLOUDFLARE_WORKERS_NAME }}
+          command: delete --name pr-130-docs-apiseven-com-preview
         continue-on-error: true
