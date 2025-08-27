@@ -23,7 +23,7 @@ jobs:
             Building and deploying your Cloudflare Worker for this PR...
             
             **Status:** 🔄 Deploying
-            **Started at:** ${new Date().toISOString()}`;
+            **Started at:** ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}`;
 
             const comments = await github.rest.issues.listComments({
               issue_number: context.issue.number,
@@ -96,7 +96,7 @@ jobs:
             
             **Preview URL:** ${deploymentUrl}
             **Status:** ✅ Deployed and verified
-            **Completed at:** ${new Date().toISOString()}`;
+            **Completed at:** ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}`;
 
             await github.rest.issues.updateComment({
               comment_id: commentId,
@@ -117,7 +117,7 @@ jobs:
             The deployment of your Cloudflare Worker failed.
             
             **Status:** ❌ Deployment failed
-            **Failed at:** ${new Date().toISOString()}
+            **Failed at:** ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}
             
             Please check the workflow logs for more details.`;
 
