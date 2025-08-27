@@ -1,0 +1,155 @@
+name: Deploy Cloudflare Worker (PR)
+
+on:
+  pull_request:
+    types: [opened, synchronize, closed]
+    branches: [main, master]
+env:
+  CLOUDFLARE_WORKERS_NAME: pr-${{ github.event.pull_request.number }}-${{ github.event.repository.name }}-preview
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.state == 'open' && github.event.pull_request.merged == false
+    
+    steps:
+      - name: Create or Update Initial PR Comment
+        uses: actions/github-script@v7
+        id: create-comment
+        with:
+          script: |
+            const initialBody = `🔄 **PR Preview Deployment Started**
+            
+            Building and deploying your Cloudflare Worker for this PR...
+            
+            **Status:** 🔄 Deploying
+            **Started at:** ${new Date().toISOString()}`;
+
+            const comments = await github.rest.issues.listComments({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            
+            const existingComment = comments.data.find(comment => 
+              comment.user.login === 'github-actions[bot]' && 
+              comment.body.includes('PR Preview ')
+            );
+            
+            let commentId;
+            if (existingComment) {
+              await github.rest.issues.updateComment({
+                comment_id: existingComment.id,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: initialBody
+              });
+              commentId = existingComment.id;
+            } else {
+              const comment = await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: initialBody
+              });
+              commentId = comment.data.id;
+            }
+            
+            core.setOutput('comment_id', commentId);
+            return commentId;
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - name: Build
+        run: |
+          yarn install
+          yarn build
+
+      - name: Deploy app
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --name ${{ env.CLOUDFLARE_WORKERS_NAME }}
+        continue-on-error: false
+
+      - name: Update PR Comment
+        uses: actions/github-script@v7
+        if: success()
+        with:
+          script: |
+            const deploymentUrl = `https://${{ env.CLOUDFLARE_WORKERS_NAME }}.juzhiyuan.workers.dev`;
+            const commentId = '${{ steps.create-comment.outputs.comment_id }}';
+            
+            const successBody = `✅ **PR Preview Deployed Successfully!**
+            
+            Your Cloudflare Worker has been deployed for this PR.
+            
+            **Preview URL:** ${deploymentUrl}
+            **Status:** ✅ Deployed and verified
+            **Completed at:** ${new Date().toISOString()}`;
+
+            await github.rest.issues.updateComment({
+              comment_id: commentId,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: successBody
+            });
+
+      - name: Update PR Comment on Failure
+        uses: actions/github-script@v7
+        if: failure()
+        with:
+          script: |
+            const commentId = '${{ steps.create-comment.outputs.comment_id }}';
+            
+            const failureBody = `❌ **PR Preview Deployment Failed**
+            
+            The deployment of your Cloudflare Worker failed.
+            
+            **Status:** ❌ Deployment failed
+            **Failed at:** ${new Date().toISOString()}
+            
+            Please check the workflow logs for more details.`;
+
+            await github.rest.issues.updateComment({
+              comment_id: commentId,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: failureBody
+            });
+
+  cleanup:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.state == 'closed'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+          run_install: false
+
+      - name: Delete Worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: delete --name ${{ env.CLOUDFLARE_WORKERS_NAME }}
+        continue-on-error: true
