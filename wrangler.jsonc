@@ -1,0 +1,7 @@
+{
+  "name": "docs-apiseven",
+  "compatibility_date": "2025-08-26",
+  "assets": {
+    "directory": "./build"
+  }
+}
