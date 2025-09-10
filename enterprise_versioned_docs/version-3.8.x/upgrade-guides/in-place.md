@@ -30,9 +30,9 @@ description: API7 Enterprise 控制平面就地升级的分步指南，涵盖数
 2. 备份您当前的数据，参考 [备份指南](./backup-and-restore.md#database-backup)。
 3. 阅读 [升级注意事项](./upgrade.md#upgrade-considerations)。
 4. 检查当前版本和目标升级版本之间的所有变更。
-    - [完整变更日志](/enterprise/release-notesx)
+    - [完整变更日志](/enterprise/release-notes)
     - [破坏性变更](./breaking-changes.md)
-5. 根据您的 API7 Enterprise 安装方法（[Docker](../deployment/docker.md)、[Kubernetes](../deployment/k8s-openshift.md)），在相应的配置文件中修改 `api7-ee-dashboard` 和 `api7-ee-dp-manager` 的镜像版本（`docker-compose`、`helm chart`）。
+5. 根据您的 API7 Enterprise 安装方法（[Docker](../getting-started/install-api7-ee.md)、[Kubernetes](../deployment/k8s-openshift.md)），在相应的配置文件中修改 `api7-ee-dashboard` 和 `api7-ee-dp-manager` 的镜像版本（`docker-compose`、`helm chart`）。
 6. 使用修改后的配置文件重启 CP。
 7. 访问 Dashboard 检查是否正常运行。
 8. 如果遇到任何问题，请参考 [回滚升级](./backup-and-restore#data-restore-and-rollback)。

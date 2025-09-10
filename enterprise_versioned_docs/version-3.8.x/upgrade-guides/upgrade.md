@@ -11,23 +11,23 @@ import TabItem from '@theme/TabItem';
 
 API7 Enterprise `v3.x.x` 版本之间的升级主要涉及 **控制平面 (CP)** 和 **数据平面 (DP)** 的更新。由于所有 `v3.x.x` 版本都保持架构兼容性，本文档将指导您完成以下升级策略：
 
-- [CP 就地升级](#cp-in-place-upgrade)：此策略在升级 CP 时重用现有数据库。
-- [DP 滚动升级](#dp-rolling-upgrade)：此策略涉及逐步添加新版本的 DP 节点并关闭旧节点，确保零停机时间。
+- [CP 就地升级](#cp-就地升级)：此策略在升级 CP 时重用现有数据库。
+- [DP 滚动升级](#dp-滚动升级)：此策略涉及逐步添加新版本的 DP 节点并关闭旧节点，确保零停机时间。
 
 ## 升级概述
 
-API7 Enterprise 的升级通常分为两个阶段：[准备阶段](#preparation-phase) 和 [实施阶段](#start-upgrade)。
+API7 Enterprise 的升级通常分为两个阶段：[准备阶段](#准备阶段) 和 [实施阶段](#执行升级)。
 
 ### 准备阶段
 
 1. 查看当前版本和目标版本之间的完整变更日志和兼容性。
     - [破坏性变更](breaking-changes.md)
-    - [完整变更日志](/enterprise/release-notesx)
+    - [完整变更日志](/enterprise/release-notes)
 2. 确认要执行的升级策略。
-    - [CP 就地升级](#cp-in-place-upgrade)
-    - [DP 滚动升级](#dp-rolling-upgrade)
-3. 查看 [升级注意事项](#upgrade-considerations)。
-4. 数据库 [备份](#data-backup-strategy)。
+    - [CP 就地升级](#cp-就地升级)
+    - [DP 滚动升级](#dp-滚动升级)
+3. 查看 [升级注意事项](#升级注意事项)。
+4. 数据库 [备份](#数据备份策略)。
 5. 在测试或预生产环境中执行升级测试。
 
 ### 执行升级
@@ -94,15 +94,15 @@ CP 升级完成后，您可以继续升级 DP 节点。对于 DP 升级，建议
 
 ## 检查破坏性变更和变更日志
 
-根据当前版本和升级目标版本，确认版本之间的 [所有破坏性变更](./breaking-changes.md) 和 [变更日志](/enterprise/release-notesx)。根据变更日志中的提示提前准备和调整您的配置。
+根据当前版本和升级目标版本，确认版本之间的 [所有破坏性变更](./breaking-changes.md) 和 [变更日志](/enterprise/release-notes)。根据变更日志中的提示提前准备和调整您的配置。
 
 ## 升级注意事项
 
 无论您如何部署 API7 Enterprise，都有一些影响升级过程的通用因素。在开始升级之前，请注意：
 
 1. 在升级过程中，禁止对数据库进行任何更改。在升级完成之前，请勿通过 API 或 Dashboard UI 修改任何数据。
-2. 请仔细查看当前版本和升级目标版本之间的 [所有变更日志](/enterprise/release-notesx)，特别注意 [破坏性变更](./breaking-changes.md)。检查任何潜在的冲突，如功能移除、API 更改等。
-3. 如果您有自定义插件，请检查 [变更日志](/enterprise/release-notesx) 中是否有任何核心修改，并在测试环境中使用新版本测试您的自定义插件，以确保它们正常工作。
+2. 请仔细查看当前版本和升级目标版本之间的 [所有变更日志](/enterprise/release-notes)，特别注意 [破坏性变更](./breaking-changes.md)。检查任何潜在的冲突，如功能移除、API 更改等。
+3. 如果您有自定义插件，请检查 [变更日志](/enterprise/release-notes) 中是否有任何核心修改，并在测试环境中使用新版本测试您的自定义插件，以确保它们正常工作。
 4. [数据库备份](./backup-and-restore) 始终是强制性的。请确保在每次升级之前备份您的数据。
 
 ## 执行升级
