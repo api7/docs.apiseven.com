@@ -109,6 +109,10 @@
       "type": "category",
       "label": "升级指南",
       "items": [
+        "upgrade-guides/upgrade",
+        "upgrade-guides/backup-and-restore",
+        "upgrade-guides/in-place",
+        "upgrade-guides/rolling-upgrade",
         "upgrade-guides/breaking-changes"
       ]
     },
