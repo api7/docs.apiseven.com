@@ -1,3 +1,31 @@
+## 3.8.15 {#3815}
+
+**发布日期**：2025-10-13
+
+### 新功能 {#3815-新功能}
+
+#### 插件 {#3815-新功能-插件}
+
+* 从 APISIX 中 backport [Lago](https://docs.api7.ai/hub/lago) 插件。
+* 在 Ingress Controller Stream 子系统中支持 [traffic-split](https://docs.api7.ai/hub/traffic-split) 插件。
+
+#### 控制面 {#3815-新功能-控制面}
+
+* 控制台新增 Prometheus 查询 URL 自定义配置。
+
+### 缺陷修复 {#3815-缺陷修复}
+
+#### 数据面 {#3815-缺陷修复-数据面}
+
+* 修复问题：同一个网关组下多 `GatewayProxy`/`IngressClass` 并存时，路由等资源产生冲突和覆盖，导致 Ingress Controller 网关组已发布服务异常消失的问题。
+* 修复问题：由于 MCP Server 通过内存维护了 session 与 MCP SDK 中几个关键对象的映射关系，MCP Server 多节点部署时状态不一致时，请求会出现异常。因而将 MCP Server 改造为无状态服务。
+* 修复问题：APISIX 中裁剪含 `encrypt_fields` 的冗余日志，仅保留关键信息，并发版 3.13.1。
+* 修复问题：`grpc-web` 在响应体为空时丢失 trailers 的问题。
+
+#### 控制台 {#3815-缺陷修复-控制台}
+
+* 修复问题：API7 Cloud 前端异常收集的问题。
+
 ## 3.8.14 {#3814}
 
 **发布日期**：2025-09-25
