@@ -1,3 +1,29 @@
+## 3.8.15 {#3815}
+
+**发布日期**：2025-10-13
+
+### 新功能 {#3815-新功能}
+
+#### 插件 {#3815-新功能-插件}
+
+* **[Lago](https://apisix.apache.org/docs/apisix/plugins/lago)**
+  * 新增插件。
+* 在 Stream 类型 service 中支持 [traffic-split](https://docs.api7.ai/hub/traffic-split) 插件。
+* **[OpenAPI to MCP](/hub/openapi-to-mcp)**
+  * 支持 streamable HTTP 作为 MCP 传输协议。
+
+#### 控制面 {#3815-新功能-控制面}
+
+* 支持自定义 Prometheus 查询 API 的路径前缀。
+
+### 缺陷修复 {#3815-缺陷修复}
+
+#### 数据面 {#3815-缺陷修复-数据面}
+
+* 修复问题：为同一网关组创建多个GatewayProxy/IngressClass将导致资源冲突和路由覆盖。
+* 修复问题：错误日志中包含敏感信息。
+* 修复问题：`grpc-web` 在响应体为空时丢失 trailers 的问题。
+
 ## 3.8.14 {#3814}
 
 **发布日期**：2025-09-25
