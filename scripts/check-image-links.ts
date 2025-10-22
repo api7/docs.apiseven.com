@@ -29,12 +29,12 @@ interface CheckReport {
 }
 
 class ImageLinkChecker {
-  private readonly imageUrlRegex: RegExp // = /https:\/\/static\.apiseven\.com\/uploads\/[^\s\)"\'\`\]\}>]+/g;
+  private readonly imageUrlRegex: RegExp
   private readonly projectRoot: string;
   private readonly cosClient: any;
   private readonly cosBucket: string;
   private readonly cosRegion: string;
-  private readonly cosCdnUrl: string;
+  private readonly cosCdnUrls: string[];
   private readonly ignorePatterns = [
     'node_modules',
     '.git',
@@ -77,9 +77,17 @@ class ImageLinkChecker {
 
     this.cosBucket = process.env.COS_BUCKET!;
     this.cosRegion = process.env.COS_REGION!;
-    this.cosCdnUrl = process.env.COS_CDN_URL!;
-    const escapedCdnUrl = this.cosCdnUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    this.imageUrlRegex = new RegExp(`${escapedCdnUrl}uploads\\/[^\\s\)\"\'\`\\]\\}>]+`, 'g');
+    
+    // Parse comma-separated CDN URLs
+    const cdnUrlsString = process.env.COS_CDN_URL!;
+    this.cosCdnUrls = cdnUrlsString.split(',').map(url => url.trim()).filter(url => url.length > 0);
+    
+    // Build regex to match any of the CDN URLs
+    const escapedCdnUrls = this.cosCdnUrls.map(url => 
+      url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    );
+    const cdnUrlsPattern = escapedCdnUrls.join('|');
+    this.imageUrlRegex = new RegExp(`(${cdnUrlsPattern})uploads\\/[^\\s\)\"\'\`\\]\\}>]+`, 'g');
     
     // Initialize COS client
     this.cosClient = new COS({
@@ -88,6 +96,7 @@ class ImageLinkChecker {
     });
     
     console.log(`🔧 COS Configuration: Bucket=${this.cosBucket}, Region=${this.cosRegion}`);
+    console.log(`📡 CDN URLs: ${this.cosCdnUrls.join(', ')}`);
   }
 
   /**
