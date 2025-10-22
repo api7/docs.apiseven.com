@@ -1,0 +1,501 @@
+name: Check Image Links
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches: [main, master]
+  push:
+    branches: [main, master]
+  schedule:
+    # Run daily at 02:00 UTC (10:00 Beijing time)
+    - cron: '0 2 * * *'
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Create or Update Initial PR Comment
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        id: create-comment
+        with:
+          script: |
+            const initialBody = `🔍 **Image Link Check Started**
+            
+            Scanning documentation for image links and validating against COS...
+            
+            **Status:** 🔄 Checking links
+            **Started at:** ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}`;
+
+            const comments = await github.rest.issues.listComments({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            
+            const existingComment = comments.data.find(comment => 
+              comment.user.login === 'github-actions[bot]' && 
+              comment.body.includes('Image Link Check')
+            );
+            
+            let commentId;
+            if (existingComment) {
+              await github.rest.issues.updateComment({
+                comment_id: existingComment.id,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: initialBody
+              });
+              commentId = existingComment.id;
+            } else {
+              const comment = await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: initialBody
+              });
+              commentId = comment.data.id;
+            }
+            
+            core.setOutput('comment_id', commentId);
+            return commentId;
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - name: Install Dependencies
+        run: yarn add cos-nodejs-sdk-v5 tsx --dev
+
+      - name: Run Image Link Check
+        id: check-links
+        env:
+          COS_SECRET_ID: ${{ secrets.COS_SECRET_ID }}
+          COS_SECRET_KEY: ${{ secrets.COS_SECRET_KEY }}
+          COS_BUCKET: ${{ secrets.COS_BUCKET }}
+          COS_REGION: ${{ secrets.COS_REGION }}
+          COS_CDN_URL: ${{ secrets.COS_CDN_URL }}
+          COS_ALERT_WEBHOOK: ${{ secrets.COS_ALERT_WEBHOOK }}
+        run: |
+          npx tsx scripts/check-image-links.ts > check-output.log 2>&1
+          echo "Exit code: $?"
+        continue-on-error: true
+
+      - name: Process Results
+        id: process-results
+        run: |
+          # The script generates reports in project root (one level up)
+          if [ -f "../image-links-report.json" ]; then
+            echo "report_exists=true" >> $GITHUB_OUTPUT
+            echo "Report file found"
+            cat ../image-links-report.json | jq '.'
+            # Copy report to current directory for other steps
+            cp ../image-links-report.json .
+          else
+            echo "report_exists=false" >> $GITHUB_OUTPUT
+            echo "No report file found"
+          fi
+          
+          if [ -f "check-output.log" ]; then
+            echo "=== Check Output ==="
+            cat check-output.log
+          fi
+
+      - name: Update PR Comment - Success
+        if: github.event_name == 'pull_request' && steps.process-results.outputs.report_exists == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const commentId = '${{ steps.create-comment.outputs.comment_id }}';
+            
+            let report;
+            try {
+              report = JSON.parse(fs.readFileSync('image-links-report.json', 'utf8'));
+            } catch (error) {
+              console.error('Failed to read report:', error);
+              return;
+            }
+            
+            let body;
+            if (report.brokenImages && report.brokenImages.length > 0) {
+              body = `❌ **Image Link Check - Issues Found**
+              
+              Found ${report.brokenImages.length} broken image links in your documentation.
+              
+              **Status:** ❌ Issues detected
+              **Completed at:** ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}
+              
+              ## 🔗 Broken Links Details
+              
+              `;
+              
+              // Group by URL
+              const brokenByUrl = {};
+              report.brokenImages.forEach(img => {
+                if (!brokenByUrl[img.url]) {
+                  brokenByUrl[img.url] = [];
+                }
+                brokenByUrl[img.url].push(img);
+              });
+              
+              Object.entries(brokenByUrl).forEach(([url, occurrences], index) => {
+                body += `### ${index + 1}. ${url}
+                
+                **Error:** ${occurrences[0].error}
+                **Occurrences:** ${occurrences.length}
+                
+                `;
+                
+                occurrences.forEach((occ, i) => {
+                  body += `- **${occ.file}** line ${occ.line}`;
+                  if (i < 3) body += '\n';
+                });
+                
+                if (occurrences.length > 3) {
+                  body += `\n- ... and ${occurrences.length - 3} more locations`;
+                }
+                body += '\n\n';
+              });
+              
+            } else {
+              body = `✅ **Image Link Check - All Links Valid**
+              
+              All ${report.totalLinks || 0} image links in your documentation are working correctly.
+              
+              **Status:** ✅ All links valid
+              **Completed at:** ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}
+              **Unique URLs checked:** ${report.uniqueUrls || 0}`;
+            }
+
+            await github.rest.issues.updateComment({
+              comment_id: commentId,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
+
+      - name: Update PR Comment - Configuration Error
+        if: github.event_name == 'pull_request' && steps.process-results.outputs.report_exists == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const commentId = '${{ steps.create-comment.outputs.comment_id }}';
+            
+            let errorMessage = 'Unknown error occurred';
+            try {
+              if (fs.existsSync('check-output.log')) {
+                const logContent = fs.readFileSync('check-output.log', 'utf8');
+                if (logContent.includes('Missing required environment variables')) {
+                  errorMessage = 'Missing required environment variables: COS_SECRET_ID, COS_SECRET_KEY, COS_BUCKET, COS_REGION';
+                } else {
+                  // Extract only error lines, skip scanning progress
+                  const lines = logContent.split('\n');
+                  const errorLines = lines.filter(line => 
+                    line.includes('❌') || 
+                    line.includes('Error') || 
+                    line.includes('Failed') || 
+                    line.includes('Cannot') ||
+                    (line.trim() && !line.includes('📄 Scanning:') && !line.includes('🔗 Found link:'))
+                  );
+                  errorMessage = errorLines.slice(0, 5).join('\n').trim() || 'Check failed - see workflow logs for details';
+                }
+              }
+            } catch (error) {
+              console.error('Failed to read log file:', error);
+            }
+            
+            const body = `⚠️ **Image Link Check - Configuration Error**
+            
+            The image link check could not run due to a configuration issue.
+            
+            **Status:** ⚠️ Configuration error
+            **Error at:** ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}
+            
+            ## 🔧 Error Details
+            
+            \`\`\`
+            ${errorMessage}
+            \`\`\`
+            
+            ## 🛠️ How to Fix
+            
+            Please ensure that the following GitHub repository secrets are configured:
+            - \`COS_SECRET_ID\` - Tencent Cloud SecretId
+            - \`COS_SECRET_KEY\` - Tencent Cloud SecretKey
+            - \`COS_BUCKET\` - Bucket name (e.g., api7-website-1301662268)
+            - \`COS_REGION\` - Region (e.g., ap-guangzhou)
+            - \`COS_CDN_URL\` - CDN URL (e.g., https://static.apiseven.com/)
+            
+            Contact the repository administrator to configure these secrets.`;
+
+            await github.rest.issues.updateComment({
+              comment_id: commentId,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
+
+      - name: Update PR Comment - Failure
+        if: github.event_name == 'pull_request' && failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const commentId = '${{ steps.create-comment.outputs.comment_id }}';
+            
+            const failureBody = `❌ **Image Link Check - Error**
+            
+            The image link check failed to complete due to an error.
+            
+            **Status:** ❌ Check failed
+            **Failed at:** ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}
+            
+            Please check the workflow logs for more details.`;
+
+            await github.rest.issues.updateComment({
+              comment_id: commentId,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: failureBody
+            });
+
+      - name: Send Alert for Broken Links
+        if: steps.process-results.outputs.report_exists == 'true'
+        env:
+          COS_ALERT_WEBHOOK: ${{ secrets.COS_ALERT_WEBHOOK }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            let report;
+            try {
+              report = JSON.parse(fs.readFileSync('image-links-report.json', 'utf8'));
+            } catch (error) {
+              console.error('Failed to read report:', error);
+              return;
+            }
+            
+            // Only send alert if there are broken links
+            if (!report.brokenImages || report.brokenImages.length === 0) {
+              console.log('No broken links found, skipping alert');
+              return;
+            }
+            
+            const triggerType = context.eventName === 'pull_request' ? 'PR' : 
+                               context.eventName === 'schedule' ? 'Scheduled Check' : 'Main Branch Push';
+            
+            // Generate link URL based on trigger type
+            let linkUrl, linkText;
+            if (context.eventName === 'pull_request') {
+              linkUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/pull/${context.payload.pull_request.number}`;
+              linkText = `PR #${context.payload.pull_request.number}`;
+            } else {
+              linkUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${context.sha}`;
+              linkText = `Commit ${context.sha.substring(0, 7)}`;
+            }
+            
+            // Group broken links by URL for concise display
+            const brokenByUrl = {};
+            report.brokenImages.forEach(img => {
+              if (!brokenByUrl[img.url]) brokenByUrl[img.url] = [];
+              brokenByUrl[img.url].push(img);
+            });
+            
+            // Generate broken links details in same format as PR comments
+            const brokenLinksEntries = Object.entries(brokenByUrl);
+            
+            // Build detailed message for each broken link
+            const buildDetailedMessage = (entries) => {
+              let message = '';
+              entries.forEach(([url, occurrences], index) => {
+                message += `${index + 1}. ${url}\n`;
+                message += '    - Error: ' + occurrences[0].error + '\n\n';
+                message += `    - Occurrences: ${occurrences.length}\n`;
+                
+                // Add file locations as sub-list items
+                occurrences.forEach((occ) => {
+                  message += `        - ${occ.file} line ${occ.line}\n`;
+                });
+                
+                message += '\n';
+              });
+              return message;
+            };
+            
+            // Split into batches based on content size (10KB limit for broken links details)
+            const MAX_CONTENT_SIZE = 10000; // 10KB for broken links details only
+            const chunks = [];
+            let currentChunk = [];
+            let currentSize = 0;
+            
+            for (const entry of brokenLinksEntries) {
+              const tempChunk = [...currentChunk, entry];
+              const tempMessage = buildDetailedMessage(tempChunk);
+              const tempSize = tempMessage.length;
+              
+              if (tempSize > MAX_CONTENT_SIZE && currentChunk.length > 0) {
+                chunks.push(currentChunk);
+                currentChunk = [entry];
+                currentSize = buildDetailedMessage([entry]).length;
+              } else {
+                currentChunk.push(entry);
+                currentSize = tempSize;
+              }
+            }
+            
+            if (currentChunk.length > 0) {
+              chunks.push(currentChunk);
+            }
+            
+            const totalChunks = chunks.length;
+            console.log(`📦 Splitting into ${totalChunks} message(s) to fit webhook size limit`);
+            
+            // Send webhook notification
+            const webhookUrl = process.env.COS_ALERT_WEBHOOK;
+            if (!webhookUrl) {
+              console.error('❌ COS_ALERT_WEBHOOK environment variable is required but not configured');
+              throw new Error('COS_ALERT_WEBHOOK environment variable is required but not configured');
+            }
+            
+            // Send each chunk as a separate message
+            for (let i = 0; i < chunks.length; i++) {
+              const chunkDetails = buildDetailedMessage(chunks[i]);
+              const repoName = context.repo.repo;
+              const orgName = context.repo.owner;
+              const chunkTitle = totalChunks > 1 ? `图片链接检查失败 (${i + 1}/${totalChunks})` : '图片链接检查失败';
+              const chunkStatusText = totalChunks > 1 
+                ? `仓库 ${orgName}/${repoName} 中发现 ${report.brokenImages.length} 处损坏 (第 ${i + 1}/${totalChunks} 条消息):\n\n`
+                : `仓库 ${orgName}/${repoName} 中发现 ${report.brokenImages.length} 处损坏:\n\n`;
+              
+              const webhookMessage = {
+                "msg_type": "interactive",
+                "card": {
+                  "schema": "2.0",
+                  "config": {
+                    "update_multi": true,
+                    "enable_forward": true,
+                    "width_mode": "fill",
+                    "summary": {
+                      "content": `图片链接检查失败：发现 ${report.brokenImages.length} 个损坏链接`
+                    },
+                    "style": {
+                      "text_size": {
+                        "normal_v2": {
+                          "default": "normal",
+                          "pc": "normal",
+                          "mobile": "normal"
+                        }
+                      }
+                    }
+                  },
+                  "body": {
+                    "direction": "vertical",
+                    "padding": "12px 8px 12px 8px",
+                    "vertical_spacing": "medium",
+                    "elements": [
+                      {
+                        "tag": "markdown",
+                        "content": chunkStatusText + chunkDetails,
+                        "text_align": "left",
+                        "text_size": "normal_v2",
+                        "margin": "0px"
+                      },
+                      {
+                        "tag": "button",
+                        "text": {
+                          "tag": "plain_text",
+                          "content": `查看${linkText}`
+                        },
+                        "type": "default",
+                        "size": "medium",
+                        "behaviors": [
+                          {
+                            "type": "open_url",
+                            "default_url": linkUrl
+                          }
+                        ],
+                        "margin": "0px"
+                      }
+                    ]
+                  },
+                  "header": {
+                    "title": {
+                      "tag": "plain_text",
+                      "content": chunkTitle
+                    },
+                    "template": "red",
+                    "padding": "12px 8px 12px 8px"
+                  }
+                }
+              };
+              
+              try {
+                console.log(`📤 Sending webhook message ${i + 1}/${totalChunks}:`);
+                console.log('URL:', webhookUrl);
+                console.log('Message:', JSON.stringify(webhookMessage, null, 2));
+                
+                const response = await fetch(webhookUrl, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(webhookMessage)
+                });
+                
+                console.log(`📥 Webhook response ${i + 1}/${totalChunks}:`);
+                console.log('Status:', response.status, response.statusText);
+                console.log('Headers:', Object.fromEntries(response.headers.entries()));
+                
+                const responseText = await response.text();
+                console.log('Response body:', responseText);
+                
+                // Check if response contains error message string
+                if (responseText.includes('ErrMsg') || !responseText.includes('"code":0')) {
+                  console.error(`❌ Failed to send alert chunk ${i + 1}/${totalChunks}:`, responseText);
+                  throw new Error(`Webhook returned error: ${responseText}`);
+                }
+                
+                if (response.ok) {
+                  console.log(`✅ Alert chunk ${i + 1}/${totalChunks} sent successfully`);
+                } else {
+                  console.error(`❌ Failed to send alert chunk ${i + 1}/${totalChunks}:`, response.status, response.statusText);
+                  throw new Error(`HTTP error: ${response.status} ${response.statusText}`);
+                }
+                
+                // Add a small delay between messages to avoid rate limiting
+                if (i < chunks.length - 1) {
+                  await new Promise(resolve => setTimeout(resolve, 500));
+                }
+              } catch (error) {
+                console.error(`❌ Error sending alert chunk ${i + 1}/${totalChunks}:`, error);
+                throw error; // Re-throw to fail the step
+              }
+            }
+
+      - name: Upload Report Artifact
+        if: always() && steps.process-results.outputs.report_exists == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: image-links-report-${{ github.run_number }}
+          path: |
+            image-links-report.json
+            check-output.log
+          retention-days: 7
+
+      - name: Fail Workflow if Issues Found
+        if: steps.process-results.outputs.report_exists == 'true'
+        run: |
+          if [ -f "image-links-report.json" ]; then
+            broken_count=$(cat image-links-report.json | jq '.brokenImages | length')
+            if [ "$broken_count" -gt 0 ]; then
+              echo "Found $broken_count broken image links"
+              exit 1
+            fi
+          fi
