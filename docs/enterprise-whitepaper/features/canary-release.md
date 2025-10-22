@@ -13,4 +13,4 @@ With API7's powerful routing capabilities, the need for grayscale publishing and
 
 Take a Canary Release as an example: after starting a Canary Release, first start the new version of the service (application) and give it to testers to test the new version. If the test is OK, then a small amount of traffic can be switched to the new version, followed by a running status check of the new version and the collection of various data. When the new version is confirmed to be working well, then gradually switch more traffic to the new version. Until 100% of the traffic is switched to the new version, then the old version is shut down and the Canary Release is completed. If you find any problem with the new version during the Canary Release, you can immediately switch the traffic back to the old version, so that the negative impact will be kept to a minimum.
 
-![Canary Release](https://static.apiseven.com/2023/01/03/63b3e2a92cb65.png)
+![Canary Release](https://static.apiseven.com/20xxxx.png)
