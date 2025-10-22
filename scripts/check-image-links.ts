@@ -87,7 +87,7 @@ class ImageLinkChecker {
       url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
     );
     const cdnUrlsPattern = escapedCdnUrls.join('|');
-    this.imageUrlRegex = new RegExp(`(${cdnUrlsPattern})uploads\\/[^\\s\)\"\'\`\\]\\}>]+`, 'g');
+    this.imageUrlRegex = new RegExp(`(${cdnUrlsPattern})[^\\s\)\"\'\`\\]\\}>]+`, 'g');
     
     // Initialize COS client
     this.cosClient = new COS({
