@@ -4,8 +4,13 @@
 
 ### 新功能 {#3816-新功能}
 
+#### 插件 {#3816-新功能-插件}
+
 * **[kafka-logger](https://docs.api7.ai/hub/kafka-logger)**
   * SASL机制支持scram-sha-512
+
+#### 控制面 {#3816-新功能-控制面}
+
 * API 门户支持在发布网关服务时指定 Host
 * 网关 secret 模块支持查询失败场景的缓存配置
 * Ingress Controller 安装表单支持配置命名空间和名称
@@ -14,10 +19,15 @@
 
 ### 缺陷修复 {#3816-缺陷修复}
 
+#### 数据面 {#3816-缺陷修复-数据面}
+
 * **[openapi-to-mcp](https://docs.api7.ai/hub/openapi-to-mcp)**
   * 当服务中配置了 `path_prefix` 和 `strip_path_prefix` 时，sse 模式不工作
   * 使用 openapi 的操作 ID 作为 mcp 工具名称
   * 如果未配置 `headers` 字段，将会抛出 500 状态码错误
+
+#### 控制面 {#3816-缺陷修复-控制面}
+
 * 如果存在相似的网关组名称，ADC 同步可能会同步到错误的网关组上
 * 登录选项角色映射如果没有匹配任何规则，不应保留以前的角色
 * OIDC 登录选项请求范围字段中移除添加按钮
