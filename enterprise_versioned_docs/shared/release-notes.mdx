@@ -1,3 +1,40 @@
+## 3.8.16 {#3816}
+
+**发布日期**：2025-10-28
+
+### 新功能 {#3816-新功能}
+
+#### 插件 {#3816-新功能-插件}
+
+* **[Kafka Logger](https://docs.api7.ai/hub/kafka-logger)**
+  * SASL 机制支持 scram-sha-512。
+
+#### 控制面 {#3816-新功能-控制面}
+
+* API 门户支持在发布网关服务时指定 Host。
+* 网关 secret 模块支持查询失败场景的缓存配置。
+* Ingress Controller 安装表单支持配置命名空间和名称。
+* 在 Dashboard UI 中导入 OpenAPI 时显示受支持的版本。
+* 从网关部署页面移除裸金属 Linux 选项卡。
+
+### 缺陷修复 {#3816-缺陷修复}
+
+#### 数据面 {#3816-缺陷修复-数据面}
+
+* **[OpenAPI to MCP](https://docs.api7.ai/hub/openapi-to-mcp)**
+  * 修复问题：当服务中配置了 `path_prefix` 和 `strip_path_prefix` 时，SSE 模式不工作。
+  * 修复问题：MCP 工具名称之前是根据 OpenAPI 路径生成的，因此可能超出工具名称的长度限制。现在，MCP 工具名称将根据 OpenAPI 操作 ID 生成。
+  * 修复问题：如果未配置 `headers` 字段，将会抛出 500 状态码错误。
+
+#### 控制面 {#3816-缺陷修复-控制面}
+
+* 修复问题：当组名称相似时，ADC 同步可能会同步到错误的网关组。
+* 修复问题：即使没有匹配的规则，登录选项角色映射也会保留之前的角色。
+* 修复问题：OIDC 登录选项的请求范围字段中存在多余的添加按钮。
+* 修复问题：旧配置有时不会显示在“编辑登录选项”表单中。
+* 修复问题：由于核心资源架构过于复杂，ADC diff 比较期间会发生不必要的更改。
+* 修复问题：更新用户角色时，用户的 `updated_at` 时间戳未刷新。
+
 ## 3.8.15 {#3815}
 
 **发布日期**：2025-10-13
@@ -9,7 +46,7 @@
 * **[Lago](https://apisix.apache.org/docs/apisix/plugins/lago)**
   * 新增插件。
 * 在 Stream 类型 service 中支持 [traffic-split](https://docs.api7.ai/hub/traffic-split) 插件。
-* **[OpenAPI to MCP](/hub/openapi-to-mcp)**
+* **[OpenAPI to MCP](https://docs.api7.ai/hub/openapi-to-mcp)**
   * 支持 streamable HTTP 作为 MCP 传输协议。
 
 #### 控制面 {#3815-新功能-控制面}
