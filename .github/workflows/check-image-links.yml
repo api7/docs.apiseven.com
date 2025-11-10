@@ -1,14 +1,9 @@
 name: Check Image Links
 
 on:
-  pull_request:
-    types: [opened, synchronize]
-    branches: [main, master]
-  push:
-    branches: [main, master]
   schedule:
-    # Run daily at 02:00 UTC (10:00 Beijing time)
-    - cron: '0 2 * * *'
+    # Run daily at 02:00 and 9:00 UTC (10:00 and 17:00 Beijing time)
+    - cron: '0 2,9 * * *'
 
 jobs:
   check-links:
