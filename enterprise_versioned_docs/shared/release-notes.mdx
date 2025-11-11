@@ -1,3 +1,46 @@
+## 3.8.17 {#3817}
+
+**发布日期**：2025-11-10
+
+### 新功能 {#3817-新功能}
+
+#### 插件 {#3817-新功能-插件}
+
+* **[Limit Conn](https://docs.api7.ai/hub/limit-conn)**
+  * 支持在 `conn` 和 `burst` 字段中使用变量语法。
+  * 添加了一个 `rules` 字段，用于同时配置多个限流规则。
+* **[Limit Count Advanced](https://docs.api7.ai/hub/limit-count-advanced)**
+  * 支持在 `count` 和 `time_window` 字段中使用变量语法。
+  * 添加了一个 `rules` 字段，用于同时配置多个限流规则。
+* **[AI Rate Limiting](https://docs.api7.ai/hub/ai-rate-limiting)**
+  * 支持在 `limit` 和 `time_window` 字段中使用变量语法。
+  * 添加了一个 `rules` 字段，用于同时配置多个限流规则。
+* **[OpenAPI to MCP](https://docs.api7.ai/hub/openapi-to-mcp)**
+  * 在向上游服务发送请求时，考虑 OpenAPI 中定义的查询参数默认值。
+* **所有日志记录插件**
+  * 支持配置批处理器中的最大待处理条目数。
+  * 在工作进程退出前将待处理日志写入日志服务。
+
+#### 控制面 {#3817-新功能-控制面}
+
+* 支持为访问 Dashboard 配置 IP 白名单和黑名单。
+
+### 缺陷修复 {#3817-缺陷修复}
+
+#### 数据面 {#3817-缺陷修复-数据面}
+
+* **[AI Proxy Multi](https://docs.api7.ai/hub/ai-proxy-multi)**
+  * 修复问题：多个 worker 无法共享 AI 实例的健康检查器。
+* **[AI Request Rewrite](https://docs.api7.ai/hub/ai-request-rewrite)**
+  * 修复问题：`aimlapi` provider 类型无法正常工作。
+
+#### 控制面 {#3817-缺陷修复-控制面}
+
+* 修复问题：当浏览器没有权限时无法上传许可证书。
+* 修复问题：当上游节点数量非常多时网关转发性能不佳。
+* 修复问题：插件如 `limit-count` 和 `limit-count advanced` 的 `policy` 字段是可选的（应为必填）。
+* 修复问题：创建新的 SSO 页面并点击返回时，页面重定向到 SMTP Server 页。
+
 ## 3.8.16 {#3816}
 
 **发布日期**：2025-10-28
