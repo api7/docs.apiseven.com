@@ -39,3 +39,5 @@ git checkout -b $BRANCH_NAME
 4. Add the file to the corresponding sidebar, for example, `enterprise_versioned_sidebars/version-xxx-sidebars.json`. If the sidebar does not exist, create a new one.
 
 5. Commit and push your changes.
+
+
