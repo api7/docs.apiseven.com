@@ -11,11 +11,11 @@
 * **[AI Rate Limiting](https://docs.api7.ai/hub/ai-rate-limiting/)**
   * 支持使用 Redis、Redis Cluster、Redis Sentinel 作为存储。
   
-  :::important
-
-  `ai-rate-limiting` 插件新增必填字段：`policy`。已有配置无须修改，在数据平面可以正常工作；但更新配置时需要补充 `policy=local` 字段，否则更新会被拒绝。
-
-  :::
+    :::important
+  
+    `ai-rate-limiting` 插件新增必填字段：`policy`。已有配置无须修改，在数据平面可以正常工作；但更新配置时需要补充 `policy=local` 字段，否则更新会被拒绝。
+  
+    :::
 
 #### 数据面 {#3818-新功能-数据面}
 
@@ -25,9 +25,9 @@
 
 #### 插件 {#3819-缺陷修复-插件}
 
-* [AI Proxy](https://docs.api7.ai/hub/ai-proxy/)/[ai-proxy-multi](https://docs.api7.ai/hub/ai-proxy-multi/)
+* [AI Proxy](https://docs.api7.ai/hub/ai-proxy/)/[AI Proxy Multi](https://docs.api7.ai/hub/ai-proxy-multi/)
   * 修复问题：未向上游透传客户端或其他插件产生的请求头。
-* [AI Rate Limiting](https://docs.api7.ai/hub/ai-rate-limiting/)/[limit-count-advanced](https://docs.api7.ai/hub/limit-count-advanced/)
+* [AI Rate Limiting](https://docs.api7.ai/hub/ai-rate-limiting/)/[Limit Count Advanced](https://docs.api7.ai/hub/limit-count-advanced/)
   * 修复问题：多个 `rules` 同时命中时，限流 header 无法区分。默认通过 `rules` 的 index 进行区分，支持配置 `header_prefix` 来自定义前缀。
   * 修复问题：在 `limit` 字段中使用变量时，在变量值发生变化后，无法实时更新限流状态。
 
