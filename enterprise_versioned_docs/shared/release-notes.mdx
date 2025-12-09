@@ -26,13 +26,13 @@
 * [ai-proxy](https://docs.api7.ai/hub/ai-proxy/)/[ai-proxy-multi](https://docs.api7.ai/hub/ai-proxy-multi/)
   * 修复问题：未向上游透传客户端或其他插件产生的请求头。
 * [ai-rate-limiting](https://docs.api7.ai/hub/ai-rate-limiting/)/[limit-count-advanced](https://docs.api7.ai/hub/limit-count-advanced/)
-  * 修复问题：多个 `rules` 同时命中时，限流 header 无法区分。默认通过 `rules` 的 index 进行区分，支持配置 `header_prefx` 来自定义前缀。
+  * 修复问题：多个 `rules` 同时命中时，限流 header 无法区分。默认通过 `rules` 的 index 进行区分，支持配置 `header_prefix` 来自定义前缀。
   * 修复问题：在 `limit` 字段中使用变量时，在变量值发生变化后，无法实时更新限流状态。
 
 #### 控制面 {#3819-缺陷修复-控制面}
 
-* 修复问题：用户的 Access Token 过期后仍然可以访问 API。
-* 修复问题：UI 中创建路由时“标签”段落出现大量重复输入框。
+* 修复问题：用户的令牌过期后仍然可以访问 API。
+* 修复问题：UI 中创建路由时“标签”字段出现大量重复输入框。
 * 修复问题：路由中禁用状态的插件无法覆盖服务中启用状态下的同名插件。
 * 修复问题：UI 中 Portal 下拉选项值频繁变化。
 * 修复问题：UI 中插件配置自动填充默认值。
