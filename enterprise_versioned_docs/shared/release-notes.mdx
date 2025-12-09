@@ -1,41 +1,43 @@
 ## 3.8.19 {#3819}
 
-**发布日期**：2025-11-25
-
-:::important
-
-`ai-rate-limiting` 插件新增必填字段：`policy`。已有配置无须修改，在数据平面可以正常工作；但更新配置时需要补充 `policy=local` 字段，否则更新会被拒绝。
-
-:::
+**发布日期**：2025-12-09
 
 ### 新功能 {#3819-新功能}
 
+#### 插件 {#3819-新功能-插件}
+
+* **[OpenAPI to MCP](https://docs.api7.ai/hub/openapi-to-mcp/)**
+  * 支持在 `base_url` 中使用变量语法。
+* **[AI Rate Limiting](https://docs.api7.ai/hub/ai-rate-limiting/)**
+  * 支持使用 Redis、Redis Cluster、Redis Sentinel 作为存储。
+  
+  :::important
+
+  `ai-rate-limiting` 插件新增必填字段：`policy`。已有配置无须修改，在数据平面可以正常工作；但更新配置时需要补充 `policy=local` 字段，否则更新会被拒绝。
+
+  :::
+
 #### 数据面 {#3818-新功能-数据面}
 
-* 变量系统支持使用 `${external_user.something}` 语法获取外部用户信息的字段值。
-  * 目前 `openid-connect` 插件和 portal 中的 oauth 认证类型会在上下文中注入 `external_user` 变量。
-* [openapi-to-mcp](https://docs.api7.ai/hub/openapi-to-mcp/)
-  * 支持在 `base_url` 中使用变量语法。
-* [ai-rate-limiting](https://docs.api7.ai/hub/ai-rate-limiting/)
-  * 支持使用 redis、redis-cluster、redis-sentinel 作为存储。
+* 变量系统支持使用 `${external_user.*}` 语法获取外部用户信息的字段值。目前该变量由 `openid-connect` 插件及门户中的 OAuth 认证注入。
 
 ### 缺陷修复 {#3819-缺陷修复}
 
-#### 数据面 {#3819-缺陷修复-数据面}
+#### 插件 {#3819-缺陷修复-插件}
 
-* [ai-proxy](https://docs.api7.ai/hub/ai-proxy/)/[ai-proxy-multi](https://docs.api7.ai/hub/ai-proxy-multi/)
+* [AI Proxy](https://docs.api7.ai/hub/ai-proxy/)/[ai-proxy-multi](https://docs.api7.ai/hub/ai-proxy-multi/)
   * 修复问题：未向上游透传客户端或其他插件产生的请求头。
-* [ai-rate-limiting](https://docs.api7.ai/hub/ai-rate-limiting/)/[limit-count-advanced](https://docs.api7.ai/hub/limit-count-advanced/)
+* [AI Rate Limiting](https://docs.api7.ai/hub/ai-rate-limiting/)/[limit-count-advanced](https://docs.api7.ai/hub/limit-count-advanced/)
   * 修复问题：多个 `rules` 同时命中时，限流 header 无法区分。默认通过 `rules` 的 index 进行区分，支持配置 `header_prefix` 来自定义前缀。
   * 修复问题：在 `limit` 字段中使用变量时，在变量值发生变化后，无法实时更新限流状态。
 
 #### 控制面 {#3819-缺陷修复-控制面}
 
-* 修复问题：用户的令牌过期后仍然可以访问 API。
-* 修复问题：UI 中创建路由时“标签”字段出现大量重复输入框。
+* 修复问题：用户的令牌过期后仍然可以用于访问 API。
+* 修复问题：控制台中创建路由时“标签”字段出现大量重复输入框。
 * 修复问题：路由中禁用状态的插件无法覆盖服务中启用状态下的同名插件。
-* 修复问题：UI 中 Portal 下拉选项值频繁变化。
-* 修复问题：UI 中插件配置自动填充默认值。
+* 修复问题：控制台中 Portal 下拉选项值频繁变化。
+* 修复问题：控制台中插件配置自动填充默认值。
 
 ## 3.8.18 {#3818}
 
