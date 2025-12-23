@@ -1,3 +1,51 @@
+## 3.8.21 {#3821}
+
+**发布日期**：2025-12-23
+
+### 新功能 {#3821-新功能}
+
+#### 插件 {#3821-新功能-插件}
+
+* **gRPC Web**
+  * 支持在使用非通配符路径的路由中启用 grpc-web 插件。
+* **[OpenAPI to MCP](https://docs.api7.ai/hub/openapi-to-mcp/)**
+  * 提供 `flatten_parameters` 参数，以控制是否将 OpenAPI 中的路径和查询参数放在 tools input schema 的最顶层。
+
+#### 数据面 {#3821-新功能-数据面}
+
+* **Fallback CP**
+  * 支持使用网关作为备份节点，向 AWS S3 和 Azure Blob 同步数据。注意：备份节点不提供 HTTP/HTTPS 服务，不计入许可限额。
+  * 支持使用 AWS IAM Role 和 Azure Managed Identity 进行身份验证。
+
+#### 控制面 {#3821-新功能-控制面}
+
+* 支持使用 MSSQL Server 2022 作为控制面的数据库。
+* 提供使用 docker compose 部署网关实例的脚本生成。
+* 优化 kubernetes 部署网关实例时各个参数的文本提示。
+
+### 缺陷修复 {#3821-缺陷修复}
+
+#### 插件 {#3821-缺陷修复-插件}
+
+* **[AI Proxy](https://docs.api7.ai/hub/ai-proxy/)**/**[AI Proxy Multi](https://docs.api7.ai/hub/ai-proxy-multi/)**
+  * 修复问题：插件中配置的 header 无法覆盖下游同名 header，即大小写不敏感的问题。
+* **[Limit Conn](https://docs.api7.ai/hub/limit-conn)**/**[Limit Count Advanced](https://docs.api7.ai/hub/limit-count-advanced)**/**[AI Rate Limiting](https://docs.api7.ai/hub/ai-rate-limiting)**
+  * 修复问题：`rules.key` 无法使用变量默认值语法。
+* **[OpenAPI to MCP](https://docs.api7.ai/hub/openapi-to-mcp/)**
+  * 修复问题：在 Cursor、Cline 等 AI 客户端中配置 MCP Server 时出现报错或持续加载。
+
+#### 数据面 {#3821-缺陷修复-数据面}
+
+* 修复问题：网关在启动过程中连接控制面失败时仍然继续启动。
+* 修复问题：网关在使用不同 IP 监听相同端口时出现的心跳失败。
+* 修复问题：Fallback CP 功能无法正确加载凭证数据。
+* 修复问题：优化 Prometheus 插件启用后的性能表现。
+
+#### 控制面 {#3821-缺陷修复-控制面}
+
+* 修复问题：通过 Admin API 创建的服务无法在控制台的监控页面选择路由及查看监控数据。
+* 修复问题：上游配置了主动健康检查后，控制台的上游页面中“不健康比例”的数据错误。
+
 ## 3.8.20 {#3820}
 
 **发布日期**：2025-12-11
@@ -36,9 +84,9 @@
 
 #### 插件 {#3819-缺陷修复-插件}
 
-* [AI Proxy](https://docs.api7.ai/hub/ai-proxy/)/[AI Proxy Multi](https://docs.api7.ai/hub/ai-proxy-multi/)
+* **[AI Proxy](https://docs.api7.ai/hub/ai-proxy/)**/**[AI Proxy Multi](https://docs.api7.ai/hub/ai-proxy-multi/)**
   * 修复问题：未向上游透传客户端或其他插件产生的请求头。
-* [AI Rate Limiting](https://docs.api7.ai/hub/ai-rate-limiting/)/[Limit Count Advanced](https://docs.api7.ai/hub/limit-count-advanced/)
+* **[AI Rate Limiting](https://docs.api7.ai/hub/ai-rate-limiting/)**/**[Limit Count Advanced](https://docs.api7.ai/hub/limit-count-advanced/)**
   * 修复问题：多个 `rules` 同时命中时，限流 header 无法区分。默认通过 `rules` 的 index 进行区分，支持配置 `header_prefix` 来自定义前缀。
   * 修复问题：在 `limit` 字段中使用变量时，在变量值发生变化后，无法实时更新限流状态。
 
