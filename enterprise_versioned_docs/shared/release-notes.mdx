@@ -18,11 +18,12 @@
 * **[Limit Conn](https://docs.api7.ai/hub/limit-conn)**/**[Limit Req](https://docs.api7.ai/hub/limit-req)**
   * 支持使用 Redis 和 Redis Cluster 作为限流数据存储后端。
 
-  :::important
+  :::important[升级说明]
   
   * 新增必填字段：`policy`，已有配置无须修改，在数据面可以正常工作，但更新配置时需要补充该字段（`policy=local`），否则更新会被拒绝。
   
   :::
+
 * **[Request ID](https://docs.api7.ai/hub/request-id/)**
   * 新增 KSUID 生成器选项。
 * **[Loki Logger](https://docs.api7.ai/hub/loki-logger/)**
@@ -93,7 +94,7 @@
 * **[Limit Conn](https://docs.api7.ai/hub/limit-conn)**/**[Limit Count Advanced](https://docs.api7.ai/hub/limit-count-advanced)**/**[AI Rate Limiting](https://docs.api7.ai/hub/ai-rate-limiting)**
   * 修复问题：`rules.key` 无法使用变量默认值语法。
 * **[OpenAPI to MCP](https://docs.api7.ai/hub/openapi-to-mcp/)**
-  * 修复问题：在 Cursor、Cline 等 AI 客户端中配置 MCP Server 时出现报错或持续加载。
+  * 修复问题：在 Cursor、Cline 等 AI 客户端中配置 MCP 服务器时出现报错或持续加载。
 
 #### 数据面 {#3821-缺陷修复-数据面}
 
@@ -131,7 +132,7 @@
 * **[AI Rate Limiting](https://docs.api7.ai/hub/ai-rate-limiting/)**
   * 支持使用 Redis、Redis Cluster、Redis Sentinel 作为存储。
   
-    :::important
+    :::important[升级说明]
   
     `ai-rate-limiting` 插件新增必填字段：`policy`。已有配置无须修改，在数据面可以正常工作；但更新配置时需要补充 `policy=local` 字段，否则更新会被拒绝。
   
