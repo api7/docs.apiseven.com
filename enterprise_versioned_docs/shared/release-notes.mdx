@@ -1,10 +1,26 @@
-## 3.8.22 {#3822}
+## 3.9.2 {#392}
 
 **发布日期**：2026-01-19
 
-### 缺陷修复 {#3822-缺陷修复}
+### 新功能 {#392-新功能}
 
-#### 插件 {#3822-缺陷修复-插件}
+#### 插件 {#392-新功能-插件}
+
+* * **[AI Proxy](https://docs.api7.ai/hub/ai-proxy/)**/**[AI Proxy Multi](https://docs.api7.ai/hub/ai-proxy-multi/)**
+  * 新增对 Gemini、Vertex AI、OpenRouter、Anthropic 四个提供商的支持。
+* 认证类插件
+  * 新增 `realm` 配置项，用于在响应头 `WWW-Authenticate` 中设置 Realm 值。
+* **[OpenID Connect](https://docs.api7.ai/hub/openid-connect)**
+  * 支持通过配置 `claim_schema` 对声明进行校验。
+
+#### 控制面 {#392-新功能-控制面}
+
+* 禁止版本高于控制面的网关节点接入。
+* 查询上游中节点健康检查状态的功能，现已支持多上游场景。
+
+### 缺陷修复 {#392-缺陷修复}
+
+#### 插件 {#392-缺陷修复-插件}
 
 * **[Limit Count](https://docs.api7.ai/hub/limit-count)**
   * 修复问题：在多个消费者中配置了相同的限流配置时，限流计数器被共享（3.8.5 引入）。
@@ -14,20 +30,23 @@
   * 修复问题：Redis Sentinel 模式下无法指定 Redis 密码。
   * 修复问题：Redis Sentinel 模式下连接 Redis 未启用连接保活。
 * **[Syslog](https://docs.api7.ai/hub/syslog/)**
-  * 修复问题：在 UDP 模式下，尝试发送一条超长日志后，后续日志发送阻塞。
+  * 修复问题：在 UDP 模式下，发送一条超长日志后，后续日志发送阻塞。
 * **[Request ID](https://docs.api7.ai/hub/request-id/)**
-  * 修复问题：在客户端传递的 request-id 为空字符串时，系统未自动生成新的 request-id。
+  * 修复问题：在客户端传递的 `request-id` 为空字符串时，系统未自动生成新的 request ID。
+* 修复问题：未启用 `enable_server_tokens` 时，server header 返回 APISIX。
+* 修复问题：在 `ai-proxy-multi` 插件更新后，健康检查器导致网关持续输出错误日志。
 
-#### 数据面 {#3822-缺陷修复-数据面}
+#### 数据面 {#392-缺陷修复-数据面}
 
 * 修复问题：启动过程可能出现 `deepcopy table overflow` 错误。
 
-#### 控制面 {#3822-缺陷修复-控制面}
+#### 控制面 {#392-缺陷修复-控制面}
 
 * 修复问题：SSL 资源默认的 `client.depth` 过小，导致 Cloud v2 用户 mTLS 功能迁移失败。
 * 修复问题：并发调用 SSL API 时可能引发数据重复。
+* 修复问题：控制台中前端组件的健康状态未反映在 `/healthz` API 返回值中。
 
-3.9.1 {#391}
+## 3.9.1 {#391}
 
 **发布日期**：2026-01-08
 
@@ -37,7 +56,7 @@
 
 * 修复在旧版本开发者门户中创建的“开发者”无法被删除的问题。
 
-3.9.0 {#390}
+## 3.9.0 {#390}
 
 **发布日期**：2026-01-06
 
@@ -98,6 +117,35 @@
 * 在网关实例列表中展示 IP 和 Port，已移除，避免误导用户。
 * 修复问题：在 API 调用次数统计表并发批量插入时可能引发数据库死锁的情况。
 * 修复问题：在 PostgreSQL 中使用非 `public` schema 时控制台启动失败。
+
+## 3.8.22 {#3822}
+
+**发布日期**：2026-01-19
+
+### 缺陷修复 {#3822-缺陷修复}
+
+#### 插件 {#3822-缺陷修复-插件}
+
+* **[Limit Count](https://docs.api7.ai/hub/limit-count)**
+  * 修复问题：在多个消费者中配置了相同的限流配置时，限流计数器被共享（3.8.5 引入）。
+* **[Limit Count Advanced](https://docs.api7.ai/hub/limit-count-advanced)**
+  * 修复问题：重置请求头时出现数据错误（3.8.19 引入）。
+  * 修复问题：开启 Redis 延迟同步功能后，限流数据未正确提交（3.8.19 引入）。
+  * 修复问题：Redis Sentinel 模式下无法指定 Redis 密码。
+  * 修复问题：Redis Sentinel 模式下连接 Redis 未启用连接保活。
+* **[Syslog](https://docs.api7.ai/hub/syslog/)**
+  * 修复问题：在 UDP 模式下，发送一条超长日志后，后续日志发送阻塞。
+* **[Request ID](https://docs.api7.ai/hub/request-id/)**
+  * 修复问题：在客户端传递的 `request-id` 为空字符串时，系统未自动生成新的 request ID。
+
+#### 数据面 {#3822-缺陷修复-数据面}
+
+* 修复问题：启动过程可能出现 `deepcopy table overflow` 错误。
+
+#### 控制面 {#3822-缺陷修复-控制面}
+
+* 修复问题：SSL 资源默认的 `client.depth` 过小，导致 Cloud v2 用户 mTLS 功能迁移失败。
+* 修复问题：并发调用 SSL API 时可能引发数据重复。
 
 ## 3.8.21 {#3821}
 
