@@ -9,18 +9,22 @@
 * **[AI Request Rewrite](https://docs.api7.ai/hub/ai-request-rewrite/)**
   * 新增对 Gemini、Vertex AI 提供商的支持。
 * **[SAML Auth](https://docs.api7.ai/hub/saml-auth/)**
-  * 新增 `auth_protocol_binding_method` 配置项，支持配置 SAML 协议绑定方法，支持 HTTP-POST 和 HTTP-Redirect 两种方式，默认为 HTTP-Redirect（兼容之前版本）。
-    * 注意：Azure AD 作为身份提供商时，必须使用 HTTP-POST
+  * 新增 `auth_protocol_binding_method` 配置项，支持配置 SAML 协议绑定方法，支持 HTTP-POST 和 HTTP-Redirect 两种方式，默认为 HTTP-Redirect（兼容之前版本）。注意，当 Azure AD 作为身份提供商时，必须使用 HTTP-POST。
 
 ### 缺陷修复 {#393-缺陷修复}
 
 #### 插件 {#393-缺陷修复-插件}
 
 * **[SAML Auth](https://docs.api7.ai/hub/saml-auth/)**
-  * 修复问题：无法在多个网关实例间共享 SAML 会话。
-    * 注意：新增必填字段 `secret` 用于配置加密 session 数据的密钥，旧版本升级上来的 saml-auth 插件可以正常工作，但无法在多个网关实例间共享会话，配置 `secret` 后即可解决该问题。
-  * 修复问题：执行登出请求时，SAML Request 中缺少 `NameID` 字段。
-    * 注意：Azure AD 作为身份提供商时，缺少 `NameID` 字段会导致登出失败。
+  * 修复问题：无法在多个网关实例间共享 SAML 会话。新增必填字段 `secret` 用于配置加密 session 数据的密钥。
+
+    :::important[升级说明]
+
+    旧版本升级上来的 `saml-auth` 插件可以正常工作，但无法在多个网关实例间共享会话，配置 `secret` 后即可解决该问题。
+
+    :::
+
+  * 修复问题：执行登出请求时，SAML Request 中缺少 `NameID` 字段。注意，当 Azure AD 作为身份提供商时，缺少 `NameID` 字段会导致登出失败。
 
 ## 3.9.2 {#392}
 
